@@ -1,0 +1,39 @@
+[gd_scene format=3 uid="uid://dpql1hxbxmec6"]
+
+[ext_resource type="Script" uid="uid://cxan81a1vq0an" path="res://Scripts/Enemies/BulletHellShooter.cs" id="1_v103o"]
+[ext_resource type="Script" uid="uid://y47n4ov38iw2" path="res://Scripts/Interactables/Hitbox.cs" id="2_pqjcv"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_7140o"]
+albedo_color = Color(0.5019608, 0.5019608, 0.5019608, 1)
+metallic = 1.0
+roughness = 0.5
+emission_enabled = true
+emission = Color(1, 1, 0, 1)
+emission_energy_multiplier = 16.0
+
+[sub_resource type="SphereMesh" id="SphereMesh_pqjcv"]
+resource_local_to_scene = true
+material = SubResource("StandardMaterial3D_7140o")
+radius = 0.25
+height = 0.5
+
+[sub_resource type="MultiMesh" id="MultiMesh_8e7so"]
+resource_local_to_scene = true
+transform_format = 1
+mesh = SubResource("SphereMesh_pqjcv")
+
+[node name="BulletHellShooter" type="Node3D" unique_id=640235778 node_paths=PackedStringArray("MultiMeshInstance3D", "HitboxData")]
+script = ExtResource("1_v103o")
+MultiMeshInstance3D = NodePath("MultiMeshInstance3D")
+MaxLifetime = 5.0
+MaxDistance = 50.0
+HitboxData = NodePath("Hitbox")
+
+[node name="MultiMeshInstance3D" type="MultiMeshInstance3D" parent="." unique_id=1971160429]
+multimesh = SubResource("MultiMesh_8e7so")
+
+[node name="Hitbox" type="Area3D" parent="." unique_id=1974237797]
+monitoring = false
+monitorable = false
+script = ExtResource("2_pqjcv")
+CanDamageEnemy = false

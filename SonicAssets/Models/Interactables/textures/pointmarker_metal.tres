@@ -1,0 +1,10 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://dc16geembm82c"]
+
+[ext_resource type="Texture2D" uid="uid://cr1we4nj4n1a" path="res://SonicAssets/Models/Interactables/textures/cmn_obj_pointmarker_dif.dds" id="1_ajp3u"]
+
+[resource]
+resource_name = "pointmarker_metal"
+cull_mode = 2
+vertex_color_use_as_albedo = true
+albedo_texture = ExtResource("1_ajp3u")
+metallic = 1.0

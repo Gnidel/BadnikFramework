@@ -1,0 +1,13 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://l38icfhr1vg3"]
+
+[ext_resource type="Texture2D" uid="uid://dsublys70cjt8" path="res://SonicAssets/Models/Sonic/textures/chr_sonic_cloth_dif_HD.dds" id="1_40f0n"]
+[ext_resource type="Texture2D" uid="uid://dil5w8pj1oxdn" path="res://SonicAssets/Models/Sonic/textures/chr_sonic_cloth_spc_HD.dds" id="2_qsnsw"]
+[ext_resource type="Texture2D" uid="uid://dduha7t6iitmu" path="res://SonicAssets/Models/Sonic/textures/chr_sonic_cloth_nrm_HD.dds" id="3_tetgq"]
+
+[resource]
+resource_name = "sonic_gm_cloth"
+diffuse_mode = 2
+vertex_color_use_as_albedo = true
+albedo_texture = ExtResource("1_40f0n")
+metallic_texture = ExtResource("2_qsnsw")
+normal_texture = ExtResource("3_tetgq")

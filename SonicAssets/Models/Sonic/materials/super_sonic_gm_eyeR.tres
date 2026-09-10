@@ -1,0 +1,10 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://bkmaqy2bw3xhk"]
+
+[ext_resource type="Texture2D" uid="uid://bwnq8r6isv3o4" path="res://SonicAssets/Models/Sonic/textures/chr_supersonic_eye_dif_HD.dds" id="1_ndvmk"]
+
+[resource]
+resource_name = "super_sonic_gm_eyeR"
+albedo_texture = ExtResource("1_ndvmk")
+metallic = 1.0
+emission_enabled = true
+emission_texture = ExtResource("1_ndvmk")

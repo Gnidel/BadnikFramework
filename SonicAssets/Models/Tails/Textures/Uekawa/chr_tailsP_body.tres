@@ -1,0 +1,11 @@
+[gd_resource type="ShaderMaterial" format=3 uid="uid://lkrx0pmlstq2"]
+
+[ext_resource type="Shader" uid="uid://cjktp1yrki104" path="res://Shaders/UekawaShader.tres" id="1_31o6w"]
+[ext_resource type="Texture2D" uid="uid://42ykdapsv3g8" path="res://SonicAssets/Models/Tails/Textures/chr_tails_body_abd.png" id="2_m6l8j"]
+
+[resource]
+render_priority = 0
+shader = ExtResource("1_31o6w")
+shader_parameter/Albedo = ExtResource("2_m6l8j")
+shader_parameter/DarkenThreshold = -0.75
+shader_parameter/HighlightThreashold = 0.3

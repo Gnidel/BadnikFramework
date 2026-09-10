@@ -1,0 +1,34 @@
+[gd_scene format=3 uid="uid://ctfovffra6gal"]
+
+[ext_resource type="PackedScene" uid="uid://crxq2s1vls3rc" path="res://SonicAssets/Prefabs/Items/[item]_ring.tscn" id="1_oyi68"]
+
+[node name="[formation]Rings1x10" type="Node3D" unique_id=2109557158]
+
+[node name="[Item] Ring" parent="." unique_id=1341512441 instance=ExtResource("1_oyi68")]
+
+[node name="[Item] Ring2" parent="." unique_id=666723822 instance=ExtResource("1_oyi68")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 3)
+
+[node name="[Item] Ring3" parent="." unique_id=1927841771 instance=ExtResource("1_oyi68")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 6)
+
+[node name="[Item] Ring4" parent="." unique_id=528484410 instance=ExtResource("1_oyi68")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 9)
+
+[node name="[Item] Ring5" parent="." unique_id=280112357 instance=ExtResource("1_oyi68")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 12)
+
+[node name="[Item] Ring6" parent="." unique_id=646160704 instance=ExtResource("1_oyi68")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 15)
+
+[node name="[Item] Ring7" parent="." unique_id=1900837254 instance=ExtResource("1_oyi68")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 18)
+
+[node name="[Item] Ring8" parent="." unique_id=1141300850 instance=ExtResource("1_oyi68")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 21)
+
+[node name="[Item] Ring9" parent="." unique_id=508662098 instance=ExtResource("1_oyi68")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 24)
+
+[node name="[Item] Ring10" parent="." unique_id=1714336852 instance=ExtResource("1_oyi68")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 28)

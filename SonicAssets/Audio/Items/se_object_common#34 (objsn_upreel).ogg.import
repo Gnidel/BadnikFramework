@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://dfydddvy8a7fl"
+path="res://.godot/imported/se_object_common#34 (objsn_upreel).ogg-83ce9ad298c7ef3c2221959511862303.oggvorbisstr"
+
+[deps]
+
+source_file="res://SonicAssets/Audio/Items/se_object_common#34 (objsn_upreel).ogg"
+dest_files=["res://.godot/imported/se_object_common#34 (objsn_upreel).ogg-83ce9ad298c7ef3c2221959511862303.oggvorbisstr"]
+
+[params]
+
+loop=true
+loop_offset=0.0
+bpm=0.0
+beat_count=0
+bar_beats=4

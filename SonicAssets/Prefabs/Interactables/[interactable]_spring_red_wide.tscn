@@ -1,0 +1,60 @@
+[gd_scene format=3 uid="uid://df5r5gehhnovh"]
+
+[ext_resource type="Script" uid="uid://bge4hsg4hukce" path="res://Scripts/Interactables/DirectionalLauncher.cs" id="1_qo47t"]
+[ext_resource type="AudioStream" uid="uid://36v1y3061oye" path="res://SonicAssets/Audio/Items/se_object_common#22 (objsn_spring; objsn_spring3; objsn_spring_false).wav" id="2_ofwua"]
+[ext_resource type="PackedScene" uid="uid://dmtd1eac02w1v" path="res://SonicAssets/Models/Interactables/spring_red_wide.blend" id="3_x7r1g"]
+[ext_resource type="PackedScene" uid="uid://bkt2qp7430moc" path="res://SonicAssets/Prefabs/Misc/homing_target.tscn" id="4_fmiwf"]
+[ext_resource type="Material" uid="uid://csrhoebp6gef" path="res://Materials/Outline.tres" id="4_uaoag"]
+[ext_resource type="Shader" uid="uid://cjktp1yrki104" path="res://Shaders/UekawaShader.tres" id="5_4fe81"]
+[ext_resource type="Texture2D" uid="uid://c0vic1isdyaax" path="res://SonicAssets/Models/Interactables/textures/cmn_obj_widespring_body_abd.dds" id="6_wh04p"]
+[ext_resource type="Texture2D" uid="uid://dsvoq0ri2nbmo" path="res://SonicAssets/Models/Interactables/textures/cmn_obj_widespring_red_e1.dds" id="7_vq8b8"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_4dxap"]
+render_priority = 0
+next_pass = ExtResource("4_uaoag")
+shader = ExtResource("5_4fe81")
+shader_parameter/Albedo = ExtResource("6_wh04p")
+shader_parameter/DarkenThreshold = -0.75
+shader_parameter/HighlightThreashold = 0.3
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_yh81y"]
+render_priority = 0
+next_pass = ExtResource("4_uaoag")
+shader = ExtResource("5_4fe81")
+shader_parameter/Albedo = ExtResource("7_vq8b8")
+shader_parameter/DarkenThreshold = -0.75
+shader_parameter/HighlightThreashold = 0.3
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_32oe4"]
+radius = 1.5
+height = 6.0
+
+[node name="[Interactable] Spring_Red_Wide" type="Node3D" unique_id=2146309494]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0)
+script = ExtResource("1_qo47t")
+MaxVelocity = 50.0
+SoundEffect = ExtResource("2_ofwua")
+
+[node name="spring_red_wide" parent="." unique_id=1139064829 instance=ExtResource("3_x7r1g")]
+transform = Transform3D(2, 0, 0, 0, -8.74228e-08, 2, 0, -2, -8.74228e-08, 0, 0, 0)
+
+[node name="cmn_obj_widespring_body" parent="spring_red_wide" index="0" unique_id=1311882863]
+surface_material_override/0 = SubResource("ShaderMaterial_4dxap")
+
+[node name="cmn_obj_widespring_red" parent="spring_red_wide" index="1" unique_id=119402907]
+surface_material_override/0 = SubResource("ShaderMaterial_yh81y")
+
+[node name="Area3D" type="Area3D" parent="." unique_id=1876932488]
+physics_interpolation_mode = 1
+collision_mask = 3
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D" unique_id=1467039193]
+transform = Transform3D(-4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0, 1, 0, -4.3711402e-08, -1.5)
+shape = SubResource("CapsuleShape3D_32oe4")
+
+[node name="HomingTarget" parent="." unique_id=1898179055 instance=ExtResource("4_fmiwf")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -1)
+
+[connection signal="body_entered" from="Area3D" to="." method="OnTriggerEnter"]
+
+[editable path="spring_red_wide"]

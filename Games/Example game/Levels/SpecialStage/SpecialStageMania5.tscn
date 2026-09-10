@@ -1,0 +1,29 @@
+[gd_scene format=3 uid="uid://ctd5uctqrmken"]
+
+[ext_resource type="PackedScene" uid="uid://bc80xnihy60tp" path="res://Games/Example game/Levels/SpecialStage/SpecialStageMania.tscn" id="1_q1201"]
+[ext_resource type="PackedScene" uid="uid://cnn22cxvpg2a5" path="res://SonicAssets/Prefabs/Items/[item]_chaosemerald_gray.tscn" id="2_m7bch"]
+
+[node name="SpecialStage5" type="Node3D" unique_id=2045796083]
+
+[node name="SpecialStage" parent="." unique_id=701708974 instance=ExtResource("1_q1201")]
+
+[node name="StageData" parent="SpecialStage" index="1"]
+StageActName = "Act 5"
+StageUniqueIdentifier = "SpecialStage5"
+
+[node name="SpecialStageManiaManager" parent="SpecialStage" index="2"]
+VictoryItem = "chaosemerald_gray"
+
+[node name="[Interactable] Goal Ring" parent="SpecialStage" index="4"]
+StagesToUnlock = PackedStringArray("SpecialStage5")
+
+[node name="RandomManiaSpecialStage" parent="SpecialStage" index="5"]
+Difficulty = 5
+
+[node name="PathFollow3D" parent="SpecialStage/RandomManiaSpecialStage/Path3D" index="0"]
+transform = Transform3D(-0.999997, 0, -8.7422514e-08, 0, 1, 0, 8.7422514e-08, 0, -0.999997, 0, 0, 0)
+
+[node name="[Item] Chaos Emerald Gray" parent="SpecialStage/RandomManiaSpecialStage/Path3D/PathFollow3D" index="0" unique_id=228308400 instance=ExtResource("2_m7bch")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, 0)
+
+[editable path="SpecialStage"]

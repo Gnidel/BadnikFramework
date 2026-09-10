@@ -1,0 +1,10 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://o6raqu610vfb"]
+
+[ext_resource type="Texture2D" uid="uid://btjrr2t0g240t" path="res://SonicAssets/Models/Sonic/textures/chr_sonic_shoes_dif_HD.dds" id="1_vw2kl"]
+
+[resource]
+resource_name = "sonic_gm_shoes_belt"
+diffuse_mode = 2
+vertex_color_use_as_albedo = true
+albedo_texture = ExtResource("1_vw2kl")
+metallic = 0.5

@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://c5pix7021l4mj"
+path="res://.godot/imported/52BOS_BEE#16 (5542_bee_dead).wav-ba7842d4867f47616b231125f627898c.sample"
+
+[deps]
+
+source_file="res://SonicAssets/Audio/Enemies/52BOS_BEE#16 (5542_bee_dead).wav"
+dest_files=["res://.godot/imported/52BOS_BEE#16 (5542_bee_dead).wav-ba7842d4867f47616b231125f627898c.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

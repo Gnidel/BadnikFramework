@@ -1,0 +1,53 @@
+[gd_scene format=3 uid="uid://brxijfg67lfx2"]
+
+[ext_resource type="Texture2D" uid="uid://b66w5vhdd5bxh" path="res://SonicAssets/Prefabs/Particles/Fire/ef_ch_sns_yh1_damagefire2.png" id="1_f8p5c"]
+
+[sub_resource type="Curve" id="Curve_gwnmh"]
+_data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(0.249071, 1), 0.0, 0.0, 0, 0, Vector2(0.754647, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
+point_count = 4
+
+[sub_resource type="CurveTexture" id="CurveTexture_pfuc6"]
+curve = SubResource("Curve_gwnmh")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_uen4r"]
+emission_shape = 6
+emission_ring_axis = Vector3(0, 0, 1)
+emission_ring_height = 1.0
+emission_ring_radius = 5.0
+emission_ring_inner_radius = 0.0
+emission_ring_cone_angle = 90.0
+angle_min = -180.0
+angle_max = 180.0
+direction = Vector3(0, 1, 0)
+spread = 10.0
+initial_velocity_min = 50.0
+initial_velocity_max = 50.0
+gravity = Vector3(0, 0, 0)
+scale_min = 5.0
+scale_max = 5.0
+scale_curve = SubResource("CurveTexture_pfuc6")
+anim_speed_min = 1.0
+anim_speed_max = 2.0
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_2pfrs"]
+transparency = 1
+shading_mode = 0
+albedo_texture = ExtResource("1_f8p5c")
+disable_receive_shadows = true
+billboard_mode = 3
+billboard_keep_scale = true
+particles_anim_h_frames = 2
+particles_anim_v_frames = 2
+particles_anim_loop = true
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_2yhjh"]
+material = SubResource("StandardMaterial3D_2pfrs")
+orientation = 2
+
+[node name="[Particles] Fire" type="GPUParticles3D" unique_id=1119807804]
+transform = Transform3D(1, 0, 0, 7.10543e-15, 1, -4.23516e-22, 0, -4.23516e-22, 1, 0, 0, 0)
+lifetime = 0.25
+speed_scale = 0.5
+local_coords = true
+process_material = SubResource("ParticleProcessMaterial_uen4r")
+draw_pass_1 = SubResource("PlaneMesh_2yhjh")

@@ -1,0 +1,45 @@
+[gd_scene format=3 uid="uid://dwkll7gml5r4a"]
+
+[ext_resource type="Theme" uid="uid://di28qbb7lki3f" path="res://Misc/MenuTheme.tres" id="1_d3jul"]
+[ext_resource type="Script" uid="uid://bd4ij6hhjrhmp" path="res://Scripts/Misc/SplashScreenControl.cs" id="2_xgmxi"]
+
+[node name="SplashScreen" type="Control" unique_id=487879496]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Black" type="ColorRect" parent="." unique_id=1115182169]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
+
+[node name="RichTextLabel" type="RichTextLabel" parent="." unique_id=478969648]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_d3jul")
+bbcode_enabled = true
+text = "[center]
+
+Sonic the Hedgehog and all related properties including assets and characters are a property of SEGA. This is an unlicenced fan creation and shouldn't under any circumstances be sold or otherwise monetized. Please support the official releases.
+
+This is a tech demo game meant to present you the capabilities of Badnik Framework.
+
+Have fun!
+- Gnidel
+[/center]"
+
+[node name="SplashScreenControl" type="Node" parent="." unique_id=217652417 node_paths=PackedStringArray("Content")]
+script = ExtResource("2_xgmxi")
+NextScene = "res://Games/Example game/Levels/MainMenu/main_menu.tscn"
+Content = NodePath("../RichTextLabel")

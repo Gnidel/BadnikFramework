@@ -1,0 +1,12 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://bsw53gbej1k7k"]
+
+[ext_resource type="Texture2D" uid="uid://j57qrtdoc2iv" path="res://SonicAssets/Models/Shadow/textures/chr_shadow_body_abd.dds" id="1_a5on6"]
+
+[resource]
+resource_name = "chr_shadow_fur"
+albedo_texture = ExtResource("1_a5on6")
+metallic_specular = 0.0
+roughness = 0.5
+emission = Color(0, 1, 1, 1)
+emission_energy_multiplier = 0.1
+normal_enabled = true

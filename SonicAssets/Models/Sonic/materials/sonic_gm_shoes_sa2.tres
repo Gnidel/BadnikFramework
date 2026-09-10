@@ -1,0 +1,9 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://14dnnsr1xur"]
+
+[ext_resource type="Texture2D" uid="uid://octstbnclssc" path="res://SonicAssets/Models/Sonic/textures/dlccrm_sonic_advshoes_body_abd.PNG" id="1_ngdq3"]
+
+[resource]
+resource_name = "sonic_gm_shoes_sa2"
+vertex_color_use_as_albedo = true
+albedo_texture = ExtResource("1_ngdq3")
+roughness = 0.5

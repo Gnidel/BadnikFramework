@@ -1,0 +1,308 @@
+[gd_scene format=3 uid="uid://cbxye0c74s42p"]
+
+[ext_resource type="PackedScene" uid="uid://bkt2qp7430moc" path="res://SonicAssets/Prefabs/Misc/homing_target.tscn" id="1_1uybo"]
+[ext_resource type="Script" uid="uid://n1dtm5k3gia" path="res://Scripts/Enemies/EnemyBehaviorManager.cs" id="2_gvrlj"]
+[ext_resource type="Script" uid="uid://b4mk85f6xpfis" path="res://Scripts/Enemies/WaitForAggroBehavior.cs" id="3_iduix"]
+[ext_resource type="Script" uid="uid://dxt4q1t0r7whx" path="res://Scripts/Enemies/EnableDisableBehavior.cs" id="4_rpj8j"]
+[ext_resource type="Script" uid="uid://bk2710vokv8b4" path="res://Scripts/Enemies/EnemyLookAtMode.cs" id="5_evsi5"]
+[ext_resource type="Script" uid="uid://nnv8sq88b1f2" path="res://Scripts/Enemies/ChasePlayerBehavior.cs" id="6_vixxp"]
+[ext_resource type="Script" uid="uid://dat1yxewba6k8" path="res://Scripts/Enemies/EnemyControl.cs" id="7_mafj1"]
+[ext_resource type="AudioStream" uid="uid://bwa5uiwsw5xfj" path="res://SonicAssets/Audio/Enemies/se_enemy_common#2 (enmsn_cmn_damage).wav" id="8_1jgo4"]
+[ext_resource type="PackedScene" uid="uid://d0mild2vdixl1" path="res://SonicAssets/Prefabs/Particles/Explosion2/[Particles] Explosion2.tscn" id="9_flbb6"]
+[ext_resource type="Script" uid="uid://y47n4ov38iw2" path="res://Scripts/Interactables/Hitbox.cs" id="10_fx2vc"]
+[ext_resource type="Script" uid="uid://d0rd6cimu685c" path="res://Scripts/Interactables/Hurtbox.cs" id="11_7yuxa"]
+[ext_resource type="AudioStream" uid="uid://6sseowdh2cdq" path="res://SonicAssets/Audio/Enemies/Synth_5000000_enemy_5111000_ENM_COP_CL_5111_000_fly_aif.wav" id="12_133a3"]
+[ext_resource type="AudioStream" uid="uid://bwmjdjw3kam0x" path="res://SonicAssets/Audio/Enemies/Synth_5000000_enemy_5112000_ENM_COP_GE_5111_002_siren_aif.ogg" id="13_pw5k2"]
+[ext_resource type="Texture2D" uid="uid://ctu5aul2bm0pe" path="res://SonicAssets/Prefabs/Particles/AttackShockwave/ef_ch_sng_yh1_hit.png" id="14_fg0hd"]
+[ext_resource type="Texture2D" uid="uid://ju7vp8xxw0gi" path="res://SonicAssets/Prefabs/Particles/AttackShockwave/ef_ch_sng_yh1_hit2.png" id="15_mydjh"]
+[ext_resource type="Script" uid="uid://pjstvdm845b" path="res://SonicAssets/Scripts/Enemies/MotobugAnimation.cs" id="17_3iacy"]
+[ext_resource type="PackedScene" uid="uid://db8hkrnmo2w5o" path="res://SonicAssets/Models/Enemies/EnemyCopSpeeder.blend" id="18_dcwoi"]
+[ext_resource type="PackedScene" uid="uid://bkm2q3gcvplul" path="res://SonicAssets/Prefabs/Particles/StepSmoke/[particles]_step_smoke.tscn" id="18_njpc3"]
+[ext_resource type="Material" uid="uid://csrhoebp6gef" path="res://Materials/Outline.tres" id="18_tv455"]
+[ext_resource type="Shader" uid="uid://cjktp1yrki104" path="res://Shaders/UekawaShader.tres" id="19_gdcfv"]
+[ext_resource type="Script" uid="uid://bw8224m0k2phx" path="res://Scripts/Interactables/NonPlayerSplineMovement.cs" id="19_jfk00"]
+[ext_resource type="Texture2D" uid="uid://covcc6l0cmyjd" path="res://SonicAssets/Models/Enemies/textures/enm_copspeeder_body_dif_HD.dds" id="20_vwk42"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_ar2vf"]
+friction = 0.0
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_vfsj3"]
+radius = 1.0
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_4t4a2"]
+radius = 1.0
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_g877g"]
+radius = 1.5
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_fx3jg"]
+radius = 50.0
+
+[sub_resource type="Curve" id="Curve_8xqta"]
+_limits = [-360.0, 360.0, 0.0, 1.0]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(1, 1), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="CurveTexture" id="CurveTexture_sdvrw"]
+curve = SubResource("Curve_8xqta")
+
+[sub_resource type="Gradient" id="Gradient_frhhl"]
+offsets = PackedFloat32Array(0, 0.520833, 1)
+colors = PackedColorArray(0, 0, 0, 0, 0.521569, 0.521569, 0.521569, 1, 1, 1, 1, 0)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_veaka"]
+gradient = SubResource("Gradient_frhhl")
+
+[sub_resource type="Curve" id="Curve_ypdqp"]
+_data = [Vector2(0.00369003, 0), 0.0, 0.0, 0, 0, Vector2(1, 1), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="CurveTexture" id="CurveTexture_l3oey"]
+curve = SubResource("Curve_ypdqp")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_ols1o"]
+angle_max = 360.0
+angle_curve = SubResource("CurveTexture_sdvrw")
+gravity = Vector3(0, 0, 0)
+scale_max = 10.0
+scale_curve = SubResource("CurveTexture_l3oey")
+color_ramp = SubResource("GradientTexture1D_veaka")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_iprt8"]
+transparency = 1
+blend_mode = 1
+no_depth_test = true
+shading_mode = 0
+vertex_color_use_as_albedo = true
+albedo_texture = ExtResource("14_fg0hd")
+disable_receive_shadows = true
+billboard_mode = 3
+particles_anim_h_frames = 1
+particles_anim_v_frames = 1
+particles_anim_loop = false
+grow_amount = 1.79
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_igbr8"]
+material = SubResource("StandardMaterial3D_iprt8")
+orientation = 2
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_12xi3"]
+transparency = 1
+blend_mode = 1
+shading_mode = 0
+albedo_texture = ExtResource("15_mydjh")
+disable_receive_shadows = true
+billboard_mode = 3
+billboard_keep_scale = true
+particles_anim_h_frames = 1
+particles_anim_v_frames = 1
+particles_anim_loop = false
+
+[sub_resource type="QuadMesh" id="QuadMesh_fkmdg"]
+material = SubResource("StandardMaterial3D_12xi3")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_f7lrs"]
+render_priority = 0
+next_pass = ExtResource("18_tv455")
+shader = ExtResource("19_gdcfv")
+shader_parameter/Albedo = ExtResource("20_vwk42")
+shader_parameter/DarkenThreshold = -0.75
+shader_parameter/HighlightThreashold = 0.3
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_kusv0"]
+render_priority = 0
+next_pass = ExtResource("18_tv455")
+shader = ExtResource("19_gdcfv")
+shader_parameter/Albedo = ExtResource("20_vwk42")
+shader_parameter/DarkenThreshold = -0.75
+shader_parameter/HighlightThreashold = 0.3
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_hrl2s"]
+render_priority = 0
+next_pass = ExtResource("18_tv455")
+shader = ExtResource("19_gdcfv")
+shader_parameter/Albedo = ExtResource("20_vwk42")
+shader_parameter/DarkenThreshold = -0.75
+shader_parameter/HighlightThreashold = 0.3
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_dbns2"]
+render_priority = 0
+next_pass = ExtResource("18_tv455")
+shader = ExtResource("19_gdcfv")
+shader_parameter/Albedo = ExtResource("20_vwk42")
+shader_parameter/DarkenThreshold = -0.75
+shader_parameter/HighlightThreashold = 0.3
+
+[node name="[Enemy] Cop Speeder" type="RigidBody3D" unique_id=299041173]
+transform = Transform3D(1, 0, 1.74846e-07, 0, 1, 0, -1.74846e-07, 0, 1, 0, 0, 0)
+collision_layer = 4
+physics_material_override = SubResource("PhysicsMaterial_ar2vf")
+gravity_scale = 0.0
+continuous_cd = true
+
+[node name="HomingTarget" parent="." unique_id=1986707504 instance=ExtResource("1_1uybo")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+TargetableByGuns = true
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1448473206]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+shape = SubResource("SphereShape3D_vfsj3")
+
+[node name="Behaviors" type="Node" parent="." unique_id=1261884416]
+script = ExtResource("2_gvrlj")
+
+[node name="Phase0Waiting" type="Node" parent="Behaviors" unique_id=1185594638]
+
+[node name="WaitForAggroBehavior" type="Node" parent="Behaviors/Phase0Waiting" unique_id=1269356018 node_paths=PackedStringArray("BehaviorManager", "NextPhase")]
+script = ExtResource("3_iduix")
+BehaviorManager = NodePath("../..")
+NextPhase = NodePath("../../Phase1")
+
+[node name="EnableDisableList" type="Node" parent="Behaviors/Phase0Waiting" unique_id=791764093]
+script = ExtResource("4_rpj8j")
+
+[node name="Phase1" type="Node" parent="Behaviors" unique_id=153851789]
+
+[node name="LookAtModeBehavior" type="Node" parent="Behaviors/Phase1" unique_id=1693261464 node_paths=PackedStringArray("EnemyControl", "ObjectToRotate", "LookReferencePoint")]
+script = ExtResource("5_evsi5")
+EnemyControl = NodePath("../../../EnemyControl")
+ObjectToRotate = NodePath("../../..")
+LookReferencePoint = NodePath("../../..")
+LookMode = 2
+RotationSpeed = 3.0
+
+[node name="EnableDisableList" type="Node" parent="Behaviors/Phase1" unique_id=1052586382 node_paths=PackedStringArray("NodesToEnable")]
+script = ExtResource("4_rpj8j")
+NodesToEnable = [NodePath("../../../Light 1"), NodePath("../../../Light 2")]
+
+[node name="ChasePlayerBehavior" type="Node" parent="Behaviors/Phase1" unique_id=1557377807 node_paths=PackedStringArray("EnemyControl", "Rigidbody")]
+script = ExtResource("6_vixxp")
+EnemyControl = NodePath("../../../EnemyControl")
+Speed = 20.0
+Acceleration = 3.0
+StopAtXZDistance = 0.0
+LimitToYZ = true
+Rigidbody = NodePath("../../..")
+
+[node name="Phase99Death" type="Node" parent="Behaviors" unique_id=791723153]
+
+[node name="EnableDisableList" type="Node" parent="Behaviors/Phase99Death" unique_id=1903869803]
+script = ExtResource("4_rpj8j")
+
+[node name="EnemyControl" type="Node" parent="." unique_id=1456749712 node_paths=PackedStringArray("Hitbox", "Hurtbox", "HomingTarget", "RigidBody", "DamageParticles", "AudioSource", "DeathAnticipationParticle", "BehaviorManager", "DeathPhase")]
+script = ExtResource("7_mafj1")
+DamageCooldown = 1.0
+Hitbox = NodePath("../Hitbox")
+Hurtbox = NodePath("../Hurtbox")
+HomingTarget = NodePath("../HomingTarget")
+RigidBody = NodePath("..")
+DamageSoundEffect = ExtResource("8_1jgo4")
+DamageParticles = NodePath("../AttackShockwaveParticles")
+AudioSource = NodePath("../AudioStreamPlayer3D")
+ExplosionParticles = ExtResource("9_flbb6")
+DeathAnticipationParticle = NodePath("../[Particles] StepSmoke")
+BehaviorManager = NodePath("../Behaviors")
+DeathPhase = NodePath("../Behaviors/Phase99Death")
+
+[node name="Hitbox" type="Area3D" parent="." unique_id=1818795179]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+collision_mask = 3
+script = ExtResource("10_fx2vc")
+CanDamageRollingPlayer = false
+CanDamageEnemy = false
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Hitbox" unique_id=1495890385]
+shape = SubResource("SphereShape3D_4t4a2")
+
+[node name="Hurtbox" type="Area3D" parent="." unique_id=12030417]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+script = ExtResource("11_7yuxa")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Hurtbox" unique_id=1532272999]
+shape = SubResource("SphereShape3D_g877g")
+
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="." unique_id=1285035533]
+stream = ExtResource("12_133a3")
+autoplay = true
+bus = &"SFX"
+
+[node name="AudioStreamPlayer3D_Aggro" type="AudioStreamPlayer3D" parent="." unique_id=871122510]
+stream = ExtResource("13_pw5k2")
+unit_size = 50.0
+bus = &"SFX"
+
+[node name="AggroArea" type="Area3D" parent="." unique_id=1724197258]
+collision_mask = 2
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="AggroArea" unique_id=2107137550]
+shape = SubResource("SphereShape3D_fx3jg")
+
+[node name="AttackShockwaveParticles" type="GPUParticles3D" parent="." unique_id=1370340015]
+emitting = false
+amount = 1
+lifetime = 0.2
+one_shot = true
+process_material = SubResource("ParticleProcessMaterial_ols1o")
+draw_passes = 2
+draw_pass_1 = SubResource("PlaneMesh_igbr8")
+draw_pass_2 = SubResource("QuadMesh_fkmdg")
+
+[node name="MotobugAnimation" type="Node" parent="." unique_id=450011132 node_paths=PackedStringArray("EnemyControl", "AnimationPlayer", "RigidBody", "AggroAudioPlayer")]
+script = ExtResource("17_3iacy")
+EnemyControl = NodePath("../EnemyControl")
+AnimationPlayer = NodePath("../EnemyCopSpeeder/AnimationPlayer")
+RigidBody = NodePath("..")
+AggroAudioPlayer = NodePath("../AudioStreamPlayer3D_Aggro")
+IdleAnimation = "cop_idle"
+MoveAnimation = "cop_chase"
+MoveRush = "cop_chase"
+
+[node name="EnemyCopSpeeder" parent="." unique_id=722433084 instance=ExtResource("18_dcwoi")]
+transform = Transform3D(-1, -8.74228e-08, 3.82137e-15, 0, -4.37114e-08, -1, 8.74228e-08, -1, 4.37114e-08, 0, 0, 0)
+
+[node name="Skeleton3D" parent="EnemyCopSpeeder/cmn_copspeeder_HD" parent_id_path=PackedInt32Array(722433084, 1458753683) index="0" unique_id=459821131]
+bones/3/position = Vector3(1.64715e-14, 0.799759, -1.18959e-15)
+bones/8/rotation = Quaternion(0.00709976, 0.707072, -0.00709938, 0.70707)
+bones/10/rotation = Quaternion(0.844127, 0.35858, 0.272361, 0.291011)
+bones/11/rotation = Quaternion(-0.425318, -1.62661e-07, 7.90603e-07, 0.905043)
+bones/12/rotation = Quaternion(0.0758164, -0.440855, 0.00514705, 0.894355)
+bones/13/rotation = Quaternion(1.65766e-07, -1.26934e-07, -0.139174, 0.990268)
+bones/14/rotation = Quaternion(-0.0493245, 0.705384, 0.0493247, 0.705384)
+bones/15/rotation = Quaternion(0.844123, -0.3586, -0.272358, 0.291003)
+bones/16/rotation = Quaternion(-0.425314, -9.80655e-08, 1.81774e-07, 0.905045)
+bones/17/rotation = Quaternion(0.0658612, 0.442096, 0.00910724, 0.8945)
+bones/18/rotation = Quaternion(-1.70292e-07, -1.26464e-07, 0.139172, 0.990268)
+bones/19/rotation = Quaternion(-0.0493255, -0.705384, -0.0493253, 0.705384)
+
+[node name="cmn_copspeeder_HD_001" parent="EnemyCopSpeeder/cmn_copspeeder_HD/Skeleton3D" index="0" unique_id=1294348672]
+surface_material_override/0 = SubResource("ShaderMaterial_f7lrs")
+surface_material_override/1 = SubResource("ShaderMaterial_kusv0")
+surface_material_override/2 = SubResource("ShaderMaterial_hrl2s")
+surface_material_override/5 = SubResource("ShaderMaterial_dbns2")
+
+[node name="[Particles] StepSmoke" parent="." unique_id=142985865 instance=ExtResource("18_njpc3")]
+
+[node name="Light 1" type="OmniLight3D" parent="." unique_id=1955066153]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 2, 1.74846e-07)
+visible = false
+light_color = Color(1, 0, 0, 1)
+light_energy = 10.0
+light_bake_mode = 0
+omni_range = 25.0
+
+[node name="Light 2" type="OmniLight3D" parent="." unique_id=1508136894]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 2, -1.74846e-07)
+visible = false
+light_color = Color(1, 0, 0, 1)
+light_energy = 10.0
+light_bake_mode = 0
+omni_range = 25.0
+
+[node name="NonPlayerSplineMovement" type="Node" parent="." unique_id=2001009177]
+script = ExtResource("19_jfk00")
+
+[connection signal="OnHitboxEnter" from="Hurtbox" to="EnemyControl" method="OnHitboxEnter"]
+[connection signal="area_entered" from="Hurtbox" to="Hurtbox" method="OnAreaEnter"]
+[connection signal="body_entered" from="AggroArea" to="Behaviors/Phase0Waiting/WaitForAggroBehavior" method="OnTriggerEnter"]
+
+[editable path="EnemyCopSpeeder"]

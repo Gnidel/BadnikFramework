@@ -1,0 +1,10 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://4xw8b5rgvjl4"]
+
+[ext_resource type="Texture2D" uid="uid://cxwo51kj8psej" path="res://SonicAssets/Models/Interactables/textures/cmn_metal_ms_panelbelt_dif.dds" id="1_qw6nn"]
+
+[resource]
+resource_name = "cmn_obj_jumppanel_HD_belt"
+transparency = 4
+cull_mode = 2
+albedo_texture = ExtResource("1_qw6nn")
+metallic = 1.0

@@ -1,0 +1,9 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://bwjj0ygpknpsi"]
+
+[ext_resource type="Texture2D" uid="uid://ke3f5vsmbcpw" path="res://SonicAssets/Models/Shadow/textures/chr_shadow_eye_abd.dds" id="1_hn57m"]
+
+[resource]
+resource_name = "chr_shadow_eyeL"
+albedo_texture = ExtResource("1_hn57m")
+roughness = 0.5
+texture_repeat = false

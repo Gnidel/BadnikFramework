@@ -1,0 +1,100 @@
+[gd_scene format=3 uid="uid://c1lfp3e5bmdoj"]
+
+[ext_resource type="Script" uid="uid://ctin2806n3bwf" path="res://Scripts/Interactables/Checkpoint.cs" id="1_acfth"]
+[ext_resource type="AudioStream" uid="uid://dvhsixa5pucb2" path="res://SonicAssets/Audio/Items/se_object_common#5 (objsn_checkpoint).wav" id="2_1ae8o"]
+[ext_resource type="PackedScene" uid="uid://bhcp3mgorhk8g" path="res://SonicAssets/Models/Interactables/checkpoint_l.blend" id="3_8w647"]
+[ext_resource type="PackedScene" uid="uid://bx4no8rs3lh5d" path="res://SonicAssets/Models/Interactables/checkpoint_r.blend" id="4_saip6"]
+[ext_resource type="Texture2D" uid="uid://dqa8oj2o700mg" path="res://SonicAssets/Models/Interactables/textures/cmn_obj_pointmarker03_dif.png" id="5_wwdr0"]
+[ext_resource type="Texture2D" uid="uid://dbvf0duiddsyv" path="res://SonicAssets/Models/Interactables/textures/cmn_obj_pointmarker03_ems.dds" id="6_18dqi"]
+[ext_resource type="PackedScene" uid="uid://cm0nx703v3pg" path="res://Models/Gizmos/StartArrow.blend" id="7_htdk8"]
+[ext_resource type="Script" uid="uid://bbh65sxbt16rg" path="res://Scripts/Ui/HideOnMobile.cs" id="8_4d0t3"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_nds5x"]
+size = Vector3(20, 60, 5)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_qq450"]
+resource_local_to_scene = true
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_tn88a"]
+resource_local_to_scene = true
+
+[sub_resource type="QuadMesh" id="QuadMesh_o5buf"]
+size = Vector2(20, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ni5wh"]
+transparency = 1
+cull_mode = 2
+albedo_texture = ExtResource("5_wwdr0")
+emission_enabled = true
+emission_texture = ExtResource("6_18dqi")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_htdk8"]
+albedo_color = Color(1, 0, 0, 1)
+
+[node name="[Interactable] Checkpoint_3D" type="Node3D" unique_id=1863287748 node_paths=PackedStringArray("AudioSource", "SpawnPos", "CameraSpawnPos", "LeftCheckpointSignpost", "RightCheckpointSignpost", "MeshWithBalls", "Ribbon")]
+script = ExtResource("1_acfth")
+AudioSource = NodePath("AudioStreamPlayer3D")
+SpawnPos = NodePath("SpawnPos")
+CameraSpawnPos = NodePath("CameraSpawnPos")
+LeftCheckpointSignpost = NodePath("checkpoint_l")
+RightCheckpointSignpost = NodePath("checkpoint_r")
+MeshWithBalls = [NodePath("checkpoint_l/cmn_obj_pointmarkerairL/Skeleton3D/cmn_obj_pointmarkerairL_001"), NodePath("checkpoint_r/cmn_obj_pointmarkerairR/Skeleton3D/cmn_obj_pointmarkerairR_001")]
+Ribbon = NodePath("Ribbon")
+
+[node name="CheckpointTrigger" type="Area3D" parent="." unique_id=1008651328]
+collision_mask = 2
+monitorable = false
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="CheckpointTrigger" unique_id=2015575759]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 30, 0)
+shape = SubResource("BoxShape3D_nds5x")
+
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="." unique_id=1845267932]
+stream = ExtResource("2_1ae8o")
+max_distance = 1000.0
+
+[node name="SpawnPos" type="Node3D" parent="." unique_id=418876876]
+
+[node name="CameraSpawnPos" type="Node3D" parent="." unique_id=1309680400]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, 3)
+
+[node name="checkpoint_l" parent="." unique_id=1506937212 instance=ExtResource("3_8w647")]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, -10, 0, 0)
+
+[node name="Skeleton3D" parent="checkpoint_l/cmn_obj_pointmarkerairL" parent_id_path=PackedInt32Array(1506937212, 1326478103) index="0" unique_id=1840956120]
+bones/2/rotation = Quaternion(-0.707107, 0, 0, 0.707107)
+
+[node name="cmn_obj_pointmarkerairL_001" parent="checkpoint_l/cmn_obj_pointmarkerairL/Skeleton3D" index="0" unique_id=592142594]
+surface_material_override/2 = SubResource("StandardMaterial3D_qq450")
+
+[node name="checkpoint_r" parent="." unique_id=509176224 instance=ExtResource("4_saip6")]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 10, 0, 0)
+
+[node name="Skeleton3D" parent="checkpoint_r/cmn_obj_pointmarkerairR" parent_id_path=PackedInt32Array(509176224, 1379024442) index="0" unique_id=584514643]
+bones/0/rotation = Quaternion(0.5, -0.5, -0.5, -0.5)
+bones/2/rotation = Quaternion(-0.707107, 0, 0, 0.707107)
+
+[node name="cmn_obj_pointmarkerairR_001" parent="checkpoint_r/cmn_obj_pointmarkerairR/Skeleton3D" index="0" unique_id=2023501718]
+surface_material_override/2 = SubResource("StandardMaterial3D_tn88a")
+
+[node name="Ribbon" type="MeshInstance3D" parent="." unique_id=2023733775]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.25, 0)
+mesh = SubResource("QuadMesh_o5buf")
+surface_material_override/0 = SubResource("StandardMaterial3D_ni5wh")
+
+[node name="StartArrow" parent="." unique_id=1394078299 instance=ExtResource("7_htdk8")]
+
+[node name="Arrow" parent="StartArrow" index="0" unique_id=607942112]
+surface_material_override/0 = SubResource("StandardMaterial3D_htdk8")
+
+[node name="DisableOnRuntime" type="Node" parent="StartArrow" unique_id=2140863415]
+script = ExtResource("8_4d0t3")
+ShowOnMobile = false
+ApplyToParent = true
+Destroy = true
+
+[connection signal="body_entered" from="CheckpointTrigger" to="." method="OnBodyEnter"]
+
+[editable path="checkpoint_l"]
+[editable path="checkpoint_r"]
+[editable path="StartArrow"]

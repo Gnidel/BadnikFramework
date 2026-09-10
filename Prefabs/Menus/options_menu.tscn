@@ -1,0 +1,1098 @@
+[gd_scene format=3 uid="uid://dxybsh1bt5u07"]
+
+[ext_resource type="Script" uid="uid://b2dhqd8mc2hm0" path="res://Scripts/Ui/OptionsMenu.cs" id="1_ey6r2"]
+[ext_resource type="Theme" uid="uid://di28qbb7lki3f" path="res://Misc/MenuTheme.tres" id="1_lhfg7"]
+[ext_resource type="Script" uid="uid://dt28n8jfsj2xh" path="res://Scripts/Ui/FixScrollInTabsFocus.cs" id="2_3mkpj"]
+[ext_resource type="Theme" uid="uid://dfn1qo0bwoxuf" path="res://Misc/OptionsMenuTheme.tres" id="2_xx6hx"]
+
+[node name="OptionsMenu" type="VBoxContainer" unique_id=621060190 node_paths=PackedStringArray("DefaultFocus", "AudioSliderMaster", "AudioSliderMusic", "AudioSliderEffects", "WindowedOption", "WindowSizeOption", "ResolutionScaleSlider", "ResolutionScaleLabel", "ScalingModeOption", "GraphicsPresetOption", "VsyncOption", "AaTaaOption", "AaMsaaOption", "AaFxaaOption", "ShadowResolutionOption", "ShadowFilteringOption", "ModelQualityOption", "GIOption", "BloomOption", "AOOption", "SSROption", "SSLOption", "VolumetricFogOption", "RenderDistanceSlider", "RenderDistanceLabel", "ShowFpsButton", "MaxFpsOption", "CameraDynamicFovOption", "CameraSmoothingOption", "CameraAutoAirMoveOption", "CameraVomitCameraOption", "CameraAutoLookDownOption", "KeyboardButtonsContainer", "KeyboardLabelTemplate", "KeyboardButtonTemplate", "MouseXSensitivitySlider", "MouseXSensitivityValue", "MouseYSensitivitySlider", "MouseYSensitivityValue")]
+custom_minimum_size = Vector2(960, 540)
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_top = -64.5
+offset_right = 351.0
+offset_bottom = 64.5
+grow_vertical = 2
+script = ExtResource("1_ey6r2")
+DefaultFocus = NodePath("OptionsTabs/Audio/GridContainer/MasterVolume")
+AudioSliderMaster = NodePath("OptionsTabs/Audio/GridContainer/MasterVolume")
+AudioSliderMusic = NodePath("OptionsTabs/Audio/GridContainer/MusicVolume")
+AudioSliderEffects = NodePath("OptionsTabs/Audio/GridContainer/MusicVolume3")
+WindowedOption = NodePath("OptionsTabs/Graphics/VBoxContainer/ResolutionContainer/WindowedOption")
+WindowSizeOption = NodePath("OptionsTabs/Graphics/VBoxContainer/ResolutionContainer/WindowSizeOption")
+ResolutionScaleSlider = NodePath("OptionsTabs/Graphics/VBoxContainer/ResolutionContainer/ResolutionScaleScale")
+ResolutionScaleLabel = NodePath("OptionsTabs/Graphics/VBoxContainer/ResolutionContainer/ResolutionScaleLabel")
+ScalingModeOption = NodePath("OptionsTabs/Graphics/VBoxContainer/ResolutionContainer/ScalingModeOption")
+GraphicsPresetOption = NodePath("OptionsTabs/Graphics/VBoxContainer/GraphicsPresetContainer/GraphicsPreset")
+VsyncOption = NodePath("OptionsTabs/Graphics/VBoxContainer/ResolutionContainer/VsyncOption")
+AaTaaOption = NodePath("OptionsTabs/Graphics/VBoxContainer/AAContainer/AaTaa")
+AaMsaaOption = NodePath("OptionsTabs/Graphics/VBoxContainer/AAContainer/AaMsaa")
+AaFxaaOption = NodePath("OptionsTabs/Graphics/VBoxContainer/AAContainer/AaFxaa")
+ShadowResolutionOption = NodePath("OptionsTabs/Graphics/VBoxContainer/QualityContainer/ShadowResolution")
+ShadowFilteringOption = NodePath("OptionsTabs/Graphics/VBoxContainer/QualityContainer/ShadowFilter")
+ModelQualityOption = NodePath("OptionsTabs/Graphics/VBoxContainer/QualityContainer/ModelQuality")
+GIOption = NodePath("OptionsTabs/Graphics/VBoxContainer/EffectsContainer/GI")
+BloomOption = NodePath("OptionsTabs/Graphics/VBoxContainer/EffectsContainer/Bloom")
+AOOption = NodePath("OptionsTabs/Graphics/VBoxContainer/EffectsContainer/AO")
+SSROption = NodePath("OptionsTabs/Graphics/VBoxContainer/EffectsContainer/SSR")
+SSLOption = NodePath("OptionsTabs/Graphics/VBoxContainer/EffectsContainer/SSL")
+VolumetricFogOption = NodePath("OptionsTabs/Graphics/VBoxContainer/EffectsContainer/VolumetricFog")
+RenderDistanceSlider = NodePath("OptionsTabs/Graphics/VBoxContainer/MiscContainer/RenderDistanceSlider")
+RenderDistanceLabel = NodePath("OptionsTabs/Graphics/VBoxContainer/MiscContainer/RenderDistanceDescription")
+ShowFpsButton = NodePath("OptionsTabs/Graphics/VBoxContainer/MiscContainer/ShowFpsCheckButton")
+MaxFpsOption = NodePath("OptionsTabs/Graphics/VBoxContainer/MiscContainer/MaxFpsOption")
+CameraDynamicFovOption = NodePath("OptionsTabs/Camera/Joypad/DynamicFOVOption")
+CameraSmoothingOption = NodePath("OptionsTabs/Camera/Joypad/SmoothingOption")
+CameraAutoAirMoveOption = NodePath("OptionsTabs/Camera/Joypad/AutoMoveOption")
+CameraVomitCameraOption = NodePath("OptionsTabs/Camera/Joypad/VomitCameraOption")
+CameraAutoLookDownOption = NodePath("OptionsTabs/Camera/Joypad/LookDownOption")
+KeyboardButtonsContainer = NodePath("OptionsTabs/Controls/TabContainer/Keyboard")
+KeyboardLabelTemplate = NodePath("OptionsTabs/Controls/TabContainer/Keyboard/LabelTemplate")
+KeyboardButtonTemplate = NodePath("OptionsTabs/Controls/TabContainer/Keyboard/ButtonTemplate")
+MouseXSensitivitySlider = NodePath("OptionsTabs/Controls/TabContainer/Mouse/XSensitivityHSlider")
+MouseXSensitivityValue = NodePath("OptionsTabs/Controls/TabContainer/Mouse/XSensitivityValueLabel")
+MouseYSensitivitySlider = NodePath("OptionsTabs/Controls/TabContainer/Mouse/YSensitivityHSlider")
+MouseYSensitivityValue = NodePath("OptionsTabs/Controls/TabContainer/Mouse/YSensitivityValueLabel")
+
+[node name="OptionsTabs" type="TabContainer" parent="." unique_id=1168922395]
+layout_mode = 2
+size_flags_vertical = 3
+theme = ExtResource("2_xx6hx")
+current_tab = 0
+
+[node name="Audio" type="ScrollContainer" parent="OptionsTabs" unique_id=1664428854]
+layout_mode = 2
+follow_focus = true
+metadata/_tab_index = 0
+
+[node name="GridContainer" type="GridContainer" parent="OptionsTabs/Audio" unique_id=677938342]
+layout_mode = 2
+columns = 2
+
+[node name="Label" type="Label" parent="OptionsTabs/Audio/GridContainer" unique_id=621654378]
+layout_mode = 2
+text = "Master volume"
+
+[node name="MasterVolume" type="HSlider" parent="OptionsTabs/Audio/GridContainer" unique_id=561110768]
+custom_minimum_size = Vector2(495, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+max_value = 1.0
+step = 0.01
+value = 0.5
+
+[node name="Label2" type="Label" parent="OptionsTabs/Audio/GridContainer" unique_id=1476646979]
+layout_mode = 2
+text = "Music volume"
+
+[node name="MusicVolume" type="HSlider" parent="OptionsTabs/Audio/GridContainer" unique_id=1604009157]
+custom_minimum_size = Vector2(495, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+max_value = 1.0
+step = 0.01
+value = 0.5
+
+[node name="Label4" type="Label" parent="OptionsTabs/Audio/GridContainer" unique_id=937857876]
+layout_mode = 2
+text = "Effects volume"
+
+[node name="MusicVolume3" type="HSlider" parent="OptionsTabs/Audio/GridContainer" unique_id=2132184635]
+custom_minimum_size = Vector2(495, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+max_value = 1.0
+step = 0.01
+value = 0.5
+
+[node name="Graphics" type="ScrollContainer" parent="OptionsTabs" unique_id=183550241]
+visible = false
+layout_mode = 2
+follow_focus = true
+metadata/_tab_index = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="OptionsTabs/Graphics" unique_id=892311319]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Resolution" type="Label" parent="OptionsTabs/Graphics/VBoxContainer" unique_id=1195209388]
+layout_mode = 2
+focus_mode = 2
+theme_override_colors/font_color = Color(0.639216, 0.756863, 1, 1)
+text = "Resolution"
+
+[node name="GraphicsPresetContainer" type="GridContainer" parent="OptionsTabs/Graphics/VBoxContainer" unique_id=1195209389]
+layout_mode = 2
+columns = 3
+
+[node name="Label" type="Label" parent="OptionsTabs/Graphics/VBoxContainer/GraphicsPresetContainer" unique_id=1195209390]
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 2
+text = "Graphics preset"
+
+[node name="GraphicsPreset" type="OptionButton" parent="OptionsTabs/Graphics/VBoxContainer/GraphicsPresetContainer" unique_id=1195209391]
+layout_mode = 2
+selected = 0
+item_count = 4
+popup/item_0/text = "Custom"
+popup/item_0/id = 0
+popup/item_1/text = "Low"
+popup/item_1/id = 1
+popup/item_2/text = "Medium"
+popup/item_2/id = 2
+popup/item_3/text = "High"
+popup/item_3/id = 3
+
+[node name="Filler" type="Control" parent="OptionsTabs/Graphics/VBoxContainer/GraphicsPresetContainer" unique_id=1195209392]
+layout_mode = 2
+
+[node name="ResolutionContainer" type="GridContainer" parent="OptionsTabs/Graphics/VBoxContainer" unique_id=1317514505]
+layout_mode = 2
+columns = 3
+
+[node name="Label5" type="Label" parent="OptionsTabs/Graphics/VBoxContainer/ResolutionContainer" unique_id=1690544210]
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 2
+text = "Windowed/Fullscreen"
+
+[node name="WindowedOption" type="OptionButton" parent="OptionsTabs/Graphics/VBoxContainer/ResolutionContainer" unique_id=305292654]
+layout_mode = 2
+selected = 0
+item_count = 3
+popup/item_0/text = "Windowed"
+popup/item_0/id = 0
+popup/item_1/text = "Fullscreen (Borderless)"
+popup/item_1/id = 1
+popup/item_2/text = "Fullscreen (Exclusive)"
+popup/item_2/id = 2
+
+[node name="Filler" type="Control" parent="OptionsTabs/Graphics/VBoxContainer/ResolutionContainer" unique_id=380896241]
+layout_mode = 2
+
+[node name="Label7" type="Label" parent="OptionsTabs/Graphics/VBoxContainer/ResolutionContainer" unique_id=2108310974]
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 2
+text = "Window size"
+
+[node name="WindowSizeOption" type="OptionButton" parent="OptionsTabs/Graphics/VBoxContainer/ResolutionContainer" unique_id=1598264433]
+layout_mode = 2
+selected = 0
+item_count = 1
+popup/item_0/text = "1920x1080"
+popup/item_0/id = 0
+
+[node name="Filler4" type="Label" parent="OptionsTabs/Graphics/VBoxContainer/ResolutionContainer" unique_id=1878950774]
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 2
+
+[node name="LabelVsync" type="Label" parent="OptionsTabs/Graphics/VBoxContainer/ResolutionContainer" unique_id=1598264434]
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 2
+text = "VSync"
+
+[node name="VsyncOption" type="OptionButton" parent="OptionsTabs/Graphics/VBoxContainer/ResolutionContainer" unique_id=1598264435]
+layout_mode = 2
+selected = 1
+item_count = 3
+popup/item_0/text = "Disabled"
+popup/item_0/id = 0
+popup/item_1/text = "Enabled"
+popup/item_1/id = 1
+popup/item_2/text = "Adaptive"
+popup/item_2/id = 2
+
+[node name="Filler3" type="Control" parent="OptionsTabs/Graphics/VBoxContainer/ResolutionContainer" unique_id=382574680]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="OptionsTabs/Graphics/VBoxContainer/ResolutionContainer" unique_id=1864920570]
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 2
+text = "Resolution scale"
+
+[node name="ResolutionScaleScale" type="HSlider" parent="OptionsTabs/Graphics/VBoxContainer/ResolutionContainer" unique_id=769160376]
+layout_mode = 2
+min_value = 0.25
+max_value = 2.0
+step = 0.25
+value = 1.0
+
+[node name="ResolutionScaleLabel" type="Label" parent="OptionsTabs/Graphics/VBoxContainer/ResolutionContainer" unique_id=937917687]
+layout_mode = 2
+text = "1x"
+
+[node name="Label6" type="Label" parent="OptionsTabs/Graphics/VBoxContainer/ResolutionContainer" unique_id=61340551]
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 2
+text = "Scaling mode"
+
+[node name="ScalingModeOption" type="OptionButton" parent="OptionsTabs/Graphics/VBoxContainer/ResolutionContainer" unique_id=1257849061]
+layout_mode = 2
+selected = 0
+item_count = 3
+popup/item_0/text = "Bilinear (Fastest)"
+popup/item_0/id = 0
+popup/item_1/text = "FSR 1.0 (Fast)"
+popup/item_1/id = 1
+popup/item_2/text = "FSR 2.2 (Slow)"
+popup/item_2/id = 2
+
+[node name="Filler2" type="Control" parent="OptionsTabs/Graphics/VBoxContainer/ResolutionContainer" unique_id=1461638913]
+layout_mode = 2
+
+[node name="Anti-Aliasing" type="Label" parent="OptionsTabs/Graphics/VBoxContainer" unique_id=1912746734]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.639216, 0.756863, 1, 1)
+text = "Anti-Aliasing
+"
+
+[node name="AAContainer" type="GridContainer" parent="OptionsTabs/Graphics/VBoxContainer" unique_id=297484474]
+layout_mode = 2
+columns = 3
+
+[node name="Label6" type="Label" parent="OptionsTabs/Graphics/VBoxContainer/AAContainer" unique_id=948550136]
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 2
+text = "Anti-Aliasing (TAA)"
+
+[node name="AaTaa" type="OptionButton" parent="OptionsTabs/Graphics/VBoxContainer/AAContainer" unique_id=2096751579]
+layout_mode = 2
+selected = 0
+item_count = 2
+popup/item_0/text = "Disabled (Fastest)"
+popup/item_0/id = 0
+popup/item_1/text = "Enabled (Average)"
+popup/item_1/id = 1
+
+[node name="Filler2" type="Control" parent="OptionsTabs/Graphics/VBoxContainer/AAContainer" unique_id=2116145922]
+layout_mode = 2
+
+[node name="Label7" type="Label" parent="OptionsTabs/Graphics/VBoxContainer/AAContainer" unique_id=1209836237]
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 2
+text = "Anti-Aliasing (MSAA)"
+
+[node name="AaMsaa" type="OptionButton" parent="OptionsTabs/Graphics/VBoxContainer/AAContainer" unique_id=1373556091]
+layout_mode = 2
+selected = 0
+item_count = 4
+popup/item_0/text = "Disabled (Fastest)"
+popup/item_0/id = 0
+popup/item_1/text = "2x (Average)"
+popup/item_1/id = 1
+popup/item_2/text = "4x (Slow)"
+popup/item_2/id = 2
+popup/item_3/text = "8x (Slower)"
+popup/item_3/id = 3
+
+[node name="Filler3" type="Control" parent="OptionsTabs/Graphics/VBoxContainer/AAContainer" unique_id=1441818215]
+layout_mode = 2
+
+[node name="Label8" type="Label" parent="OptionsTabs/Graphics/VBoxContainer/AAContainer" unique_id=1446050729]
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 2
+text = "Anti-Aliasing (FXAA)"
+
+[node name="AaFxaa" type="OptionButton" parent="OptionsTabs/Graphics/VBoxContainer/AAContainer" unique_id=1207429540]
+layout_mode = 2
+selected = 0
+item_count = 2
+popup/item_0/text = "Disabled (Fastest)"
+popup/item_0/id = 0
+popup/item_1/text = "Enabled (Fast)"
+popup/item_1/id = 1
+
+[node name="Filler4" type="Control" parent="OptionsTabs/Graphics/VBoxContainer/AAContainer" unique_id=197386519]
+layout_mode = 2
+
+[node name="Quality" type="Label" parent="OptionsTabs/Graphics/VBoxContainer" unique_id=1408096333]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.639216, 0.756863, 1, 1)
+text = "Quality"
+
+[node name="QualityContainer" type="GridContainer" parent="OptionsTabs/Graphics/VBoxContainer" unique_id=23209794]
+layout_mode = 2
+columns = 3
+
+[node name="Label6" type="Label" parent="OptionsTabs/Graphics/VBoxContainer/QualityContainer" unique_id=1560107894]
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 2
+text = "Shadow resolution"
+
+[node name="ShadowResolution" type="OptionButton" parent="OptionsTabs/Graphics/VBoxContainer/QualityContainer" unique_id=203715404]
+layout_mode = 2
+selected = 0
+item_count = 6
+popup/item_0/text = "Minimum (Fastest)"
+popup/item_0/id = 0
+popup/item_1/text = "Very Low (Faster)"
+popup/item_1/id = 1
+popup/item_2/text = "Low (Fast)"
+popup/item_2/id = 2
+popup/item_3/text = "Medium (Average)"
+popup/item_3/id = 3
+popup/item_4/text = "High (Slow)"
+popup/item_4/id = 4
+popup/item_5/text = "Ultra (Slowest)"
+popup/item_5/id = 5
+
+[node name="Filler2" type="Control" parent="OptionsTabs/Graphics/VBoxContainer/QualityContainer" unique_id=46584729]
+layout_mode = 2
+
+[node name="Label7" type="Label" parent="OptionsTabs/Graphics/VBoxContainer/QualityContainer" unique_id=865672586]
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 2
+text = "Shadow filtering"
+
+[node name="ShadowFilter" type="OptionButton" parent="OptionsTabs/Graphics/VBoxContainer/QualityContainer" unique_id=701655081]
+layout_mode = 2
+selected = 0
+item_count = 6
+popup/item_0/text = "Very Low (Fastest)"
+popup/item_0/id = 0
+popup/item_1/text = "Low (Faster)"
+popup/item_1/id = 1
+popup/item_2/text = "Medium (Fast)"
+popup/item_2/id = 2
+popup/item_3/text = "High (Average)"
+popup/item_3/id = 3
+popup/item_4/text = "Very High (Slow)"
+popup/item_4/id = 4
+popup/item_5/text = "Ultra (Slower)"
+popup/item_5/id = 5
+
+[node name="Filler3" type="Control" parent="OptionsTabs/Graphics/VBoxContainer/QualityContainer" unique_id=1994445645]
+layout_mode = 2
+
+[node name="Label8" type="Label" parent="OptionsTabs/Graphics/VBoxContainer/QualityContainer" unique_id=1923323961]
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 2
+text = "Model quality"
+
+[node name="ModelQuality" type="OptionButton" parent="OptionsTabs/Graphics/VBoxContainer/QualityContainer" unique_id=993557926]
+layout_mode = 2
+selected = 0
+item_count = 4
+popup/item_0/text = "Low (Faster)"
+popup/item_0/id = 0
+popup/item_1/text = "Medium (Fast)"
+popup/item_1/id = 1
+popup/item_2/text = "High (Average)"
+popup/item_2/id = 2
+popup/item_3/text = "Ultra (Slow)"
+popup/item_3/id = 3
+
+[node name="Filler4" type="Control" parent="OptionsTabs/Graphics/VBoxContainer/QualityContainer" unique_id=2096868509]
+layout_mode = 2
+
+[node name="Effects" type="Label" parent="OptionsTabs/Graphics/VBoxContainer" unique_id=1811571085]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.639216, 0.756863, 1, 1)
+text = "Effects"
+
+[node name="EffectsContainer" type="GridContainer" parent="OptionsTabs/Graphics/VBoxContainer" unique_id=258772882]
+layout_mode = 2
+columns = 3
+
+[node name="Label6" type="Label" parent="OptionsTabs/Graphics/VBoxContainer/EffectsContainer" unique_id=1566093860]
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 2
+text = "Global illumination"
+
+[node name="GI" type="OptionButton" parent="OptionsTabs/Graphics/VBoxContainer/EffectsContainer" unique_id=1202843523]
+layout_mode = 2
+selected = 0
+item_count = 3
+popup/item_0/text = "Lowest (Fastest)"
+popup/item_0/id = 0
+popup/item_1/text = "Low (Fast)"
+popup/item_1/id = 1
+popup/item_2/text = "High (Slow)"
+popup/item_2/id = 2
+
+[node name="Filler2" type="Control" parent="OptionsTabs/Graphics/VBoxContainer/EffectsContainer" unique_id=1115643144]
+layout_mode = 2
+
+[node name="Label7" type="Label" parent="OptionsTabs/Graphics/VBoxContainer/EffectsContainer" unique_id=437174568]
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 2
+text = "Bloom"
+
+[node name="Bloom" type="OptionButton" parent="OptionsTabs/Graphics/VBoxContainer/EffectsContainer" unique_id=1828288115]
+layout_mode = 2
+selected = 0
+item_count = 3
+popup/item_0/text = "Disabled (Fastest)"
+popup/item_0/id = 0
+popup/item_1/text = "Low (Fast)"
+popup/item_1/id = 1
+popup/item_2/text = "High (Average)"
+popup/item_2/id = 2
+
+[node name="Filler3" type="Control" parent="OptionsTabs/Graphics/VBoxContainer/EffectsContainer" unique_id=1638184316]
+layout_mode = 2
+
+[node name="Label8" type="Label" parent="OptionsTabs/Graphics/VBoxContainer/EffectsContainer" unique_id=1341956816]
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 2
+text = "Ambient occlusion"
+
+[node name="AO" type="OptionButton" parent="OptionsTabs/Graphics/VBoxContainer/EffectsContainer" unique_id=2121652720]
+layout_mode = 2
+selected = 0
+item_count = 5
+popup/item_0/text = "Disabled (Fastest)"
+popup/item_0/id = 0
+popup/item_1/text = "Very Low (Fast)"
+popup/item_1/id = 1
+popup/item_2/text = "Low (Fast)"
+popup/item_2/id = 2
+popup/item_3/text = "Medium (Average)"
+popup/item_3/id = 3
+popup/item_4/text = "High (Slow)"
+popup/item_4/id = 4
+
+[node name="Filler4" type="Control" parent="OptionsTabs/Graphics/VBoxContainer/EffectsContainer" unique_id=1540450195]
+layout_mode = 2
+
+[node name="Label9" type="Label" parent="OptionsTabs/Graphics/VBoxContainer/EffectsContainer" unique_id=502925603]
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 2
+text = "Screen-space reflections"
+
+[node name="SSR" type="OptionButton" parent="OptionsTabs/Graphics/VBoxContainer/EffectsContainer" unique_id=1269962075]
+layout_mode = 2
+selected = 0
+item_count = 4
+popup/item_0/text = "Disabled (Fastest)"
+popup/item_0/id = 0
+popup/item_1/text = "Low (Fast)"
+popup/item_1/id = 1
+popup/item_2/text = "Medium (Average)"
+popup/item_2/id = 2
+popup/item_3/text = "High (Slow)"
+popup/item_3/id = 3
+
+[node name="Filler5" type="Control" parent="OptionsTabs/Graphics/VBoxContainer/EffectsContainer" unique_id=1939022978]
+layout_mode = 2
+
+[node name="Label10" type="Label" parent="OptionsTabs/Graphics/VBoxContainer/EffectsContainer" unique_id=226328023]
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 2
+text = "Screen-space lighting"
+
+[node name="SSL" type="OptionButton" parent="OptionsTabs/Graphics/VBoxContainer/EffectsContainer" unique_id=1056722325]
+layout_mode = 2
+selected = 0
+item_count = 5
+popup/item_0/text = "Disabled (Fastest)"
+popup/item_0/id = 0
+popup/item_1/text = "Very Low (Fast)"
+popup/item_1/id = 1
+popup/item_2/text = "Low (Average)"
+popup/item_2/id = 2
+popup/item_3/text = "Medium (Slow)"
+popup/item_3/id = 3
+popup/item_4/text = "High (Slower)"
+popup/item_4/id = 4
+
+[node name="Filler6" type="Control" parent="OptionsTabs/Graphics/VBoxContainer/EffectsContainer" unique_id=1537974203]
+layout_mode = 2
+
+[node name="Label11" type="Label" parent="OptionsTabs/Graphics/VBoxContainer/EffectsContainer" unique_id=542918884]
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 2
+text = "Volumetric fog"
+
+[node name="VolumetricFog" type="OptionButton" parent="OptionsTabs/Graphics/VBoxContainer/EffectsContainer" unique_id=1631173253]
+layout_mode = 2
+selected = 0
+item_count = 2
+popup/item_0/text = "Low (Fast)"
+popup/item_0/id = 1
+popup/item_1/text = "High (Average)"
+popup/item_1/id = 2
+
+[node name="Filler7" type="Control" parent="OptionsTabs/Graphics/VBoxContainer/EffectsContainer" unique_id=144686261]
+layout_mode = 2
+
+[node name="Misc" type="Label" parent="OptionsTabs/Graphics/VBoxContainer" unique_id=264166109]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.639216, 0.756863, 1, 1)
+text = "Misc"
+
+[node name="MiscContainer" type="GridContainer" parent="OptionsTabs/Graphics/VBoxContainer" unique_id=479403625]
+layout_mode = 2
+columns = 3
+
+[node name="RenderDistance" type="Label" parent="OptionsTabs/Graphics/VBoxContainer/MiscContainer" unique_id=1679424875]
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 2
+text = "Render distance"
+
+[node name="RenderDistanceSlider" type="HSlider" parent="OptionsTabs/Graphics/VBoxContainer/MiscContainer" unique_id=1957443784]
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 1
+min_value = 500.0
+max_value = 8000.0
+step = 500.0
+value = 4000.0
+rounded = true
+
+[node name="RenderDistanceDescription" type="Label" parent="OptionsTabs/Graphics/VBoxContainer/MiscContainer" unique_id=1778559271]
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 2
+text = "4 km"
+
+[node name="ShowFpsLabel" type="Label" parent="OptionsTabs/Graphics/VBoxContainer/MiscContainer" unique_id=1375624447]
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 2
+text = "Show FPS"
+
+[node name="ShowFpsCheckButton" type="CheckButton" parent="OptionsTabs/Graphics/VBoxContainer/MiscContainer" unique_id=2058310855]
+layout_mode = 2
+
+[node name="Filler" type="Control" parent="OptionsTabs/Graphics/VBoxContainer/MiscContainer" unique_id=1651897845]
+layout_mode = 2
+
+[node name="MaxFpsLabel" type="Label" parent="OptionsTabs/Graphics/VBoxContainer/MiscContainer"]
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 2
+text = "Maximum FPS"
+
+[node name="MaxFpsOption" type="OptionButton" parent="OptionsTabs/Graphics/VBoxContainer/MiscContainer"]
+layout_mode = 2
+item_count = 8
+popup/item_0/text = "Uncapped"
+popup/item_0/id = 0
+popup/item_1/text = "30 FPS"
+popup/item_1/id = 30
+popup/item_2/text = "60 FPS"
+popup/item_2/id = 60
+popup/item_3/text = "90 FPS"
+popup/item_3/id = 90
+popup/item_4/text = "120 FPS"
+popup/item_4/id = 120
+popup/item_5/text = "144 FPS"
+popup/item_5/id = 144
+popup/item_6/text = "165 FPS"
+popup/item_6/id = 165
+popup/item_7/text = "240 FPS"
+popup/item_7/id = 240
+
+[node name="Filler2" type="Control" parent="OptionsTabs/Graphics/VBoxContainer/MiscContainer"]
+layout_mode = 2
+
+[node name="Controls" type="ScrollContainer" parent="OptionsTabs" unique_id=1938370937]
+visible = false
+layout_mode = 2
+follow_focus = true
+metadata/_tab_index = 2
+
+[node name="TabContainer" type="TabContainer" parent="OptionsTabs/Controls" unique_id=1955257095]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+current_tab = 0
+
+[node name="Keyboard" type="GridContainer" parent="OptionsTabs/Controls/TabContainer" unique_id=1891840709]
+layout_mode = 2
+columns = 3
+metadata/_tab_index = 0
+
+[node name="LabelTemplate" type="Label" parent="OptionsTabs/Controls/TabContainer/Keyboard" unique_id=960193895]
+custom_minimum_size = Vector2(150, 0)
+layout_mode = 2
+text = "Template"
+
+[node name="ButtonTemplate" type="Button" parent="OptionsTabs/Controls/TabContainer/Keyboard" unique_id=1325443328]
+custom_minimum_size = Vector2(300, 0)
+layout_mode = 2
+text = "Space"
+
+[node name="TemplateFiller" type="Control" parent="OptionsTabs/Controls/TabContainer/Keyboard" unique_id=235650001]
+layout_mode = 2
+
+[node name="Default" type="Button" parent="OptionsTabs/Controls/TabContainer/Keyboard" unique_id=1986565266]
+layout_mode = 2
+text = "Restore defaults"
+
+[node name="Filler" type="Label" parent="OptionsTabs/Controls/TabContainer/Keyboard" unique_id=126873099]
+layout_mode = 2
+
+[node name="Filler2" type="Control" parent="OptionsTabs/Controls/TabContainer/Keyboard" unique_id=235650002]
+layout_mode = 2
+
+[node name="Mouse" type="GridContainer" parent="OptionsTabs/Controls/TabContainer" unique_id=790323276]
+visible = false
+layout_mode = 2
+columns = 3
+metadata/_tab_index = 1
+
+[node name="XSensitivityLabel" type="Label" parent="OptionsTabs/Controls/TabContainer/Mouse" unique_id=2064358281]
+custom_minimum_size = Vector2(150, 0)
+layout_mode = 2
+text = "Left-right sensitivity"
+
+[node name="XSensitivityHSlider" type="HSlider" parent="OptionsTabs/Controls/TabContainer/Mouse" unique_id=435093741]
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 1
+min_value = -1.0
+max_value = 1.0
+step = 0.01
+ticks_on_borders = true
+
+[node name="XSensitivityValueLabel" type="Label" parent="OptionsTabs/Controls/TabContainer/Mouse" unique_id=1219735083]
+custom_minimum_size = Vector2(150, 0)
+layout_mode = 2
+text = "100%"
+
+[node name="YSensitivityLabel" type="Label" parent="OptionsTabs/Controls/TabContainer/Mouse" unique_id=388614567]
+custom_minimum_size = Vector2(150, 0)
+layout_mode = 2
+text = "Up-down sensitivity"
+
+[node name="YSensitivityHSlider" type="HSlider" parent="OptionsTabs/Controls/TabContainer/Mouse" unique_id=1042146744]
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 1
+min_value = -1.0
+max_value = 1.0
+step = 0.01
+ticks_on_borders = true
+
+[node name="YSensitivityValueLabel" type="Label" parent="OptionsTabs/Controls/TabContainer/Mouse" unique_id=681222198]
+custom_minimum_size = Vector2(150, 0)
+layout_mode = 2
+text = "100%"
+
+[node name="Default" type="Button" parent="OptionsTabs/Controls/TabContainer/Mouse" unique_id=1334649311]
+layout_mode = 2
+text = "Restore defaults"
+
+[node name="Filler" type="Label" parent="OptionsTabs/Controls/TabContainer/Mouse" unique_id=1481068892]
+layout_mode = 2
+
+[node name="Filler2" type="Control" parent="OptionsTabs/Controls/TabContainer/Mouse" unique_id=235650003]
+layout_mode = 2
+
+[node name="Joypad" type="GridContainer" parent="OptionsTabs/Controls/TabContainer" unique_id=278651005]
+visible = false
+layout_mode = 2
+columns = 3
+metadata/_tab_index = 2
+
+[node name="Label2" type="Label" parent="OptionsTabs/Controls/TabContainer/Joypad" unique_id=383557732]
+layout_mode = 2
+text = "Jump:"
+
+[node name="JoypadOption" type="OptionButton" parent="OptionsTabs/Controls/TabContainer/Joypad" unique_id=487015059]
+layout_mode = 2
+disabled = true
+selected = 0
+item_count = 9
+popup/item_0/text = "A"
+popup/item_0/id = 2
+popup/item_1/text = "B"
+popup/item_1/id = 1
+popup/item_2/text = "X"
+popup/item_2/id = 2
+popup/item_3/text = "Y"
+popup/item_3/id = 3
+popup/item_4/text = "LB"
+popup/item_4/id = 4
+popup/item_5/text = "LT"
+popup/item_5/id = 5
+popup/item_6/text = "LB"
+popup/item_6/id = 6
+popup/item_7/text = "RT"
+popup/item_7/id = 7
+popup/item_8/text = "Back"
+popup/item_8/id = 8
+
+[node name="Label3" type="Label" parent="OptionsTabs/Controls/TabContainer/Joypad" unique_id=1885777136]
+layout_mode = 2
+text = "Homing attack:"
+
+[node name="JoypadOption2" type="OptionButton" parent="OptionsTabs/Controls/TabContainer/Joypad" unique_id=69828775]
+layout_mode = 2
+disabled = true
+selected = 2
+item_count = 9
+popup/item_0/text = "A"
+popup/item_0/id = 2
+popup/item_1/text = "B"
+popup/item_1/id = 1
+popup/item_2/text = "X"
+popup/item_2/id = 2
+popup/item_3/text = "Y"
+popup/item_3/id = 3
+popup/item_4/text = "LB"
+popup/item_4/id = 4
+popup/item_5/text = "LT"
+popup/item_5/id = 5
+popup/item_6/text = "LB"
+popup/item_6/id = 6
+popup/item_7/text = "RT"
+popup/item_7/id = 7
+popup/item_8/text = "Back"
+popup/item_8/id = 8
+
+[node name="Label4" type="Label" parent="OptionsTabs/Controls/TabContainer/Joypad" unique_id=2142562267]
+layout_mode = 2
+text = "Dash:"
+
+[node name="JoypadOption3" type="OptionButton" parent="OptionsTabs/Controls/TabContainer/Joypad" unique_id=1086482233]
+layout_mode = 2
+disabled = true
+selected = 7
+item_count = 9
+popup/item_0/text = "A"
+popup/item_0/id = 2
+popup/item_1/text = "B"
+popup/item_1/id = 1
+popup/item_2/text = "X"
+popup/item_2/id = 2
+popup/item_3/text = "Y"
+popup/item_3/id = 3
+popup/item_4/text = "LB"
+popup/item_4/id = 4
+popup/item_5/text = "LT"
+popup/item_5/id = 5
+popup/item_6/text = "LB"
+popup/item_6/id = 6
+popup/item_7/text = "RT"
+popup/item_7/id = 7
+popup/item_8/text = "Back"
+popup/item_8/id = 8
+
+[node name="Label5" type="Label" parent="OptionsTabs/Controls/TabContainer/Joypad" unique_id=1084130153]
+layout_mode = 2
+text = "Spin/Drift:"
+
+[node name="JoypadOption4" type="OptionButton" parent="OptionsTabs/Controls/TabContainer/Joypad" unique_id=244367240]
+layout_mode = 2
+disabled = true
+selected = 5
+item_count = 9
+popup/item_0/text = "A"
+popup/item_0/id = 2
+popup/item_1/text = "B"
+popup/item_1/id = 1
+popup/item_2/text = "X"
+popup/item_2/id = 2
+popup/item_3/text = "Y"
+popup/item_3/id = 3
+popup/item_4/text = "LB"
+popup/item_4/id = 4
+popup/item_5/text = "LT"
+popup/item_5/id = 5
+popup/item_6/text = "LB"
+popup/item_6/id = 6
+popup/item_7/text = "RT"
+popup/item_7/id = 7
+popup/item_8/text = "Back"
+popup/item_8/id = 8
+
+[node name="SuperLabel" type="Label" parent="OptionsTabs/Controls/TabContainer/Joypad" unique_id=1827117444]
+layout_mode = 2
+text = "Super:"
+
+[node name="SuperOption" type="OptionButton" parent="OptionsTabs/Controls/TabContainer/Joypad" unique_id=954641408]
+layout_mode = 2
+disabled = true
+selected = 8
+item_count = 9
+popup/item_0/text = "A"
+popup/item_0/id = 2
+popup/item_1/text = "B"
+popup/item_1/id = 1
+popup/item_2/text = "X"
+popup/item_2/id = 2
+popup/item_3/text = "Y"
+popup/item_3/id = 3
+popup/item_4/text = "LB"
+popup/item_4/id = 4
+popup/item_5/text = "LT"
+popup/item_5/id = 5
+popup/item_6/text = "LB"
+popup/item_6/id = 6
+popup/item_7/text = "RT"
+popup/item_7/id = 7
+popup/item_8/text = "Back"
+popup/item_8/id = 8
+
+[node name="QSLeftLabel" type="Label" parent="OptionsTabs/Controls/TabContainer/Joypad" unique_id=1186824291]
+layout_mode = 2
+text = "Quick step ←"
+
+[node name="QSLeftButton" type="OptionButton" parent="OptionsTabs/Controls/TabContainer/Joypad" unique_id=1143397186]
+layout_mode = 2
+disabled = true
+selected = 6
+item_count = 9
+popup/item_0/text = "A"
+popup/item_0/id = 2
+popup/item_1/text = "B"
+popup/item_1/id = 1
+popup/item_2/text = "X"
+popup/item_2/id = 2
+popup/item_3/text = "Y"
+popup/item_3/id = 3
+popup/item_4/text = "LB"
+popup/item_4/id = 4
+popup/item_5/text = "LT"
+popup/item_5/id = 5
+popup/item_6/text = "LB"
+popup/item_6/id = 6
+popup/item_7/text = "RT"
+popup/item_7/id = 7
+popup/item_8/text = "Back"
+popup/item_8/id = 8
+
+[node name="QSLeftLabel2" type="Label" parent="OptionsTabs/Controls/TabContainer/Joypad" unique_id=1596200480]
+layout_mode = 2
+text = "Quick step →"
+
+[node name="QSLeftButton2" type="OptionButton" parent="OptionsTabs/Controls/TabContainer/Joypad" unique_id=178683474]
+layout_mode = 2
+disabled = true
+selected = 6
+item_count = 9
+popup/item_0/text = "A"
+popup/item_0/id = 2
+popup/item_1/text = "B"
+popup/item_1/id = 1
+popup/item_2/text = "X"
+popup/item_2/id = 2
+popup/item_3/text = "Y"
+popup/item_3/id = 3
+popup/item_4/text = "LB"
+popup/item_4/id = 4
+popup/item_5/text = "LT"
+popup/item_5/id = 5
+popup/item_6/text = "RB"
+popup/item_6/id = 6
+popup/item_7/text = "RT"
+popup/item_7/id = 7
+popup/item_8/text = "Back"
+popup/item_8/id = 8
+
+[node name="CharaswapLLabel" type="Label" parent="OptionsTabs/Controls/TabContainer/Joypad" unique_id=753913038]
+layout_mode = 2
+text = "Character swap ←"
+
+[node name="CharaswapLButton" type="OptionButton" parent="OptionsTabs/Controls/TabContainer/Joypad" unique_id=1537929540]
+layout_mode = 2
+disabled = true
+selected = 9
+item_count = 11
+popup/item_0/text = "A"
+popup/item_0/id = 2
+popup/item_1/text = "B"
+popup/item_1/id = 1
+popup/item_2/text = "X"
+popup/item_2/id = 2
+popup/item_3/text = "Y"
+popup/item_3/id = 3
+popup/item_4/text = "LB"
+popup/item_4/id = 4
+popup/item_5/text = "LT"
+popup/item_5/id = 5
+popup/item_6/text = "RB"
+popup/item_6/id = 6
+popup/item_7/text = "RT"
+popup/item_7/id = 7
+popup/item_8/text = "Back"
+popup/item_8/id = 8
+popup/item_9/text = "D-Pad Left"
+popup/item_9/id = 9
+popup/item_10/text = "D-Pad Right"
+popup/item_10/id = 10
+
+[node name="CharaswapRLabel" type="Label" parent="OptionsTabs/Controls/TabContainer/Joypad" unique_id=1846709358]
+layout_mode = 2
+text = "Character swap →"
+
+[node name="CharaswapRButton" type="OptionButton" parent="OptionsTabs/Controls/TabContainer/Joypad" unique_id=465256047]
+layout_mode = 2
+disabled = true
+selected = 10
+item_count = 11
+popup/item_0/text = "A"
+popup/item_0/id = 2
+popup/item_1/text = "B"
+popup/item_1/id = 1
+popup/item_2/text = "X"
+popup/item_2/id = 2
+popup/item_3/text = "Y"
+popup/item_3/id = 3
+popup/item_4/text = "LB"
+popup/item_4/id = 4
+popup/item_5/text = "LT"
+popup/item_5/id = 5
+popup/item_6/text = "RB"
+popup/item_6/id = 6
+popup/item_7/text = "RT"
+popup/item_7/id = 7
+popup/item_8/text = "Back"
+popup/item_8/id = 8
+popup/item_9/text = "D-Pad Left"
+popup/item_9/id = 9
+popup/item_10/text = "D-Pad Right"
+popup/item_10/id = 10
+
+[node name="SpindashLabel" type="Label" parent="OptionsTabs/Controls/TabContainer/Joypad" unique_id=2137548115]
+layout_mode = 2
+text = "Spin dash:"
+
+[node name="SpindashLabel2" type="Label" parent="OptionsTabs/Controls/TabContainer/Joypad" unique_id=144337533]
+layout_mode = 2
+text = "LT+RT"
+
+[node name="Filler" type="Control" parent="OptionsTabs/Controls/TabContainer/Joypad" unique_id=1218794627]
+layout_mode = 2
+
+[node name="Notice" type="Label" parent="OptionsTabs/Controls/TabContainer/Joypad" unique_id=910018348]
+visible = false
+layout_mode = 2
+text = "Joypad customization is not implemented yet"
+
+[node name="Camera" type="ScrollContainer" parent="OptionsTabs" unique_id=1389343065]
+visible = false
+layout_mode = 2
+follow_focus = true
+metadata/_tab_index = 3
+
+[node name="Joypad" type="GridContainer" parent="OptionsTabs/Camera" unique_id=1189672763]
+layout_mode = 2
+columns = 2
+
+[node name="DynamicFOV" type="Label" parent="OptionsTabs/Camera/Joypad" unique_id=1050397002]
+layout_mode = 2
+text = "Dynamic FOV:"
+
+[node name="DynamicFOVOption" type="OptionButton" parent="OptionsTabs/Camera/Joypad" unique_id=98114622]
+layout_mode = 2
+selected = 0
+item_count = 2
+popup/item_0/text = "No"
+popup/item_0/id = 0
+popup/item_1/text = "Yes"
+popup/item_1/id = 1
+
+[node name="Smoothing" type="Label" parent="OptionsTabs/Camera/Joypad" unique_id=976742902]
+layout_mode = 2
+text = "Camera movement smoothing:"
+
+[node name="SmoothingOption" type="OptionButton" parent="OptionsTabs/Camera/Joypad" unique_id=1672705243]
+layout_mode = 2
+selected = 0
+item_count = 2
+popup/item_0/text = "No"
+popup/item_0/id = 0
+popup/item_1/text = "Yes"
+popup/item_1/id = 1
+
+[node name="AutoMove" type="Label" parent="OptionsTabs/Camera/Joypad" unique_id=307147145]
+layout_mode = 2
+text = "Auto movement in air:"
+
+[node name="AutoMoveOption" type="OptionButton" parent="OptionsTabs/Camera/Joypad" unique_id=295773545]
+layout_mode = 2
+selected = 0
+item_count = 3
+popup/item_0/text = "No"
+popup/item_0/id = 0
+popup/item_1/text = "Yes"
+popup/item_1/id = 1
+popup/item_2/text = "Only in Special Stages"
+popup/item_2/id = 2
+
+[node name="VomitCamera" type="Label" parent="OptionsTabs/Camera/Joypad" unique_id=1444164869]
+layout_mode = 2
+text = "Vomit camera:"
+
+[node name="VomitCameraOption" type="OptionButton" parent="OptionsTabs/Camera/Joypad" unique_id=1723625179]
+layout_mode = 2
+selected = 0
+item_count = 2
+popup/item_0/text = "No (up is against gravity)"
+popup/item_0/id = 0
+popup/item_1/text = "Yes (up is character's rotation)"
+popup/item_1/id = 1
+
+[node name="LookDown" type="Label" parent="OptionsTabs/Camera/Joypad" unique_id=289244707]
+layout_mode = 2
+text = "Auto look down when falling:"
+
+[node name="LookDownOption" type="OptionButton" parent="OptionsTabs/Camera/Joypad" unique_id=1863984220]
+layout_mode = 2
+selected = 0
+item_count = 2
+popup/item_0/text = "No"
+popup/item_0/id = 0
+popup/item_1/text = "Yes"
+popup/item_1/id = 1
+
+[node name="HBoxContainer" type="HBoxContainer" parent="." unique_id=1495777298]
+layout_mode = 2
+
+[node name="Back" type="Button" parent="HBoxContainer" unique_id=320303622]
+layout_mode = 2
+size_flags_horizontal = 3
+theme = ExtResource("1_lhfg7")
+text = "BACK"
+
+[node name="Apply" type="Button" parent="HBoxContainer" unique_id=2040331143]
+layout_mode = 2
+size_flags_horizontal = 3
+theme = ExtResource("1_lhfg7")
+text = "APPLY"
+
+[node name="FixScrollInTabsFocus" type="Node" parent="." unique_id=1722702419 node_paths=PackedStringArray("TabContainer")]
+editor_description = "There is a bug where tabs container steals focus from the scroll container inside, resulting in inability to scroll all the way up. This script is meant to disable the focus of the tabs if scroll container is not scrolled up to the max."
+script = ExtResource("2_3mkpj")
+TabContainer = NodePath("../OptionsTabs")
+
+[connection signal="value_changed" from="OptionsTabs/Audio/GridContainer/MasterVolume" to="." method="OnAudioMasterSliderChange"]
+[connection signal="value_changed" from="OptionsTabs/Audio/GridContainer/MusicVolume" to="." method="OnAudioMusicSliderChange"]
+[connection signal="value_changed" from="OptionsTabs/Audio/GridContainer/MusicVolume3" to="." method="OnAudioSFXSliderChange"]
+[connection signal="item_selected" from="OptionsTabs/Graphics/VBoxContainer/GraphicsPresetContainer/GraphicsPreset" to="." method="OnGraphicsPresetChange"]
+[connection signal="item_selected" from="OptionsTabs/Graphics/VBoxContainer/ResolutionContainer/WindowedOption" to="." method="OnWindowedOptionChange"]
+[connection signal="item_selected" from="OptionsTabs/Graphics/VBoxContainer/ResolutionContainer/WindowSizeOption" to="." method="OnWindowSizeOptionChange"]
+[connection signal="item_selected" from="OptionsTabs/Graphics/VBoxContainer/ResolutionContainer/VsyncOption" to="." method="OnVsyncChange"]
+[connection signal="value_changed" from="OptionsTabs/Graphics/VBoxContainer/ResolutionContainer/ResolutionScaleScale" to="." method="OnResolutionScaleChange"]
+[connection signal="item_selected" from="OptionsTabs/Graphics/VBoxContainer/ResolutionContainer/ScalingModeOption" to="." method="OnScalingModeChange"]
+[connection signal="item_selected" from="OptionsTabs/Graphics/VBoxContainer/AAContainer/AaTaa" to="." method="OnAaTAAChange"]
+[connection signal="item_selected" from="OptionsTabs/Graphics/VBoxContainer/AAContainer/AaMsaa" to="." method="OnAaMSAAChange"]
+[connection signal="item_selected" from="OptionsTabs/Graphics/VBoxContainer/AAContainer/AaFxaa" to="." method="OnAaFXAAChange"]
+[connection signal="item_selected" from="OptionsTabs/Graphics/VBoxContainer/QualityContainer/ShadowResolution" to="." method="OnShadowResolutionChange"]
+[connection signal="item_selected" from="OptionsTabs/Graphics/VBoxContainer/QualityContainer/ShadowFilter" to="." method="OnShadowFilteringChange"]
+[connection signal="item_selected" from="OptionsTabs/Graphics/VBoxContainer/QualityContainer/ModelQuality" to="." method="OnModelQualityChange"]
+[connection signal="item_selected" from="OptionsTabs/Graphics/VBoxContainer/EffectsContainer/GI" to="." method="OnGIChange"]
+[connection signal="item_selected" from="OptionsTabs/Graphics/VBoxContainer/EffectsContainer/Bloom" to="." method="OnBloomChange"]
+[connection signal="item_selected" from="OptionsTabs/Graphics/VBoxContainer/EffectsContainer/AO" to="." method="OnAOChange"]
+[connection signal="item_selected" from="OptionsTabs/Graphics/VBoxContainer/EffectsContainer/SSR" to="." method="OnSSRChange"]
+[connection signal="item_selected" from="OptionsTabs/Graphics/VBoxContainer/EffectsContainer/SSL" to="." method="OnSSLChange"]
+[connection signal="item_selected" from="OptionsTabs/Graphics/VBoxContainer/EffectsContainer/VolumetricFog" to="." method="OnVolumetricFogChange"]
+[connection signal="value_changed" from="OptionsTabs/Graphics/VBoxContainer/MiscContainer/RenderDistanceSlider" to="." method="OnRenderDistanceChange"]
+[connection signal="toggled" from="OptionsTabs/Graphics/VBoxContainer/MiscContainer/ShowFpsCheckButton" to="." method="OnShowFpsChange"]
+[connection signal="item_selected" from="OptionsTabs/Graphics/VBoxContainer/MiscContainer/MaxFpsOption" to="." method="OnMaxFpsChange"]
+[connection signal="pressed" from="OptionsTabs/Controls/TabContainer/Keyboard/Default" to="." method="OnRestoreDefaultKeyboardControls"]
+[connection signal="value_changed" from="OptionsTabs/Controls/TabContainer/Mouse/XSensitivityHSlider" to="." method="OnMouseSensitivityXChange"]
+[connection signal="value_changed" from="OptionsTabs/Controls/TabContainer/Mouse/YSensitivityHSlider" to="." method="OnMouseSensitivityYChange"]
+[connection signal="pressed" from="OptionsTabs/Controls/TabContainer/Mouse/Default" to="." method="OnRestoreMouseOptions"]
+[connection signal="item_selected" from="OptionsTabs/Camera/Joypad/DynamicFOVOption" to="." method="OnCameraDynamicFovChange"]
+[connection signal="item_selected" from="OptionsTabs/Camera/Joypad/SmoothingOption" to="." method="OnCameraSmoothingChange"]
+[connection signal="item_selected" from="OptionsTabs/Camera/Joypad/AutoMoveOption" to="." method="OnCameraAutoAirChange"]
+[connection signal="item_selected" from="OptionsTabs/Camera/Joypad/VomitCameraOption" to="." method="OnCameraVomitCameraChange"]
+[connection signal="item_selected" from="OptionsTabs/Camera/Joypad/LookDownOption" to="." method="OnCameraAutoLookDown"]
+[connection signal="pressed" from="HBoxContainer/Back" to="." method="OnBack"]
+[connection signal="pressed" from="HBoxContainer/Apply" to="." method="OnApply"]

@@ -1,0 +1,62 @@
+[gd_scene format=3 uid="uid://c32v53appugpt"]
+
+[ext_resource type="PackedScene" uid="uid://bl1c6r6mwtogr" path="res://SonicAssets/Models/Interactables/item_box.blend" id="1_aomxt"]
+[ext_resource type="PackedScene" uid="uid://bkt2qp7430moc" path="res://SonicAssets/Prefabs/Misc/homing_target.tscn" id="1_yiv4l"]
+[ext_resource type="PackedScene" uid="uid://cqkke6ii4on2s" path="res://SonicAssets/Models/Items/Rings/Ring.blend" id="3_5q2t0"]
+[ext_resource type="Script" uid="uid://d0rd6cimu685c" path="res://Scripts/Interactables/Hurtbox.cs" id="3_o3yhp"]
+[ext_resource type="Script" uid="uid://dkowuij67ni5s" path="res://Scripts/Interactables/ItemBox.cs" id="5_cbing"]
+[ext_resource type="PackedScene" uid="uid://crxq2s1vls3rc" path="res://SonicAssets/Prefabs/Items/[item]_ring.tscn" id="6_4tpq8"]
+[ext_resource type="PackedScene" uid="uid://d3nfvof6wd606" path="res://SonicAssets/Prefabs/Particles/[particles]_item_box_destroy_smoke.tscn" id="7_52jh1"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_hgftt"]
+size = Vector3(1.5, 1.5, 1.5)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_ujlgq"]
+
+[node name="[Interactable] Item Box 10 Rings" type="Node3D" unique_id=604610917]
+
+[node name="Offset" type="Node3D" parent="." unique_id=354459028]
+transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, 0, 0, 0)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Offset" unique_id=142497147]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 0.5, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Offset/StaticBody3D" unique_id=1070261065]
+shape = SubResource("BoxShape3D_hgftt")
+
+[node name="HomingTarget" parent="Offset" unique_id=70047531 instance=ExtResource("1_yiv4l")]
+transform = Transform3D(0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, 0, 0.5, 0)
+TargetableByGuns = true
+
+[node name="item_box" parent="Offset" unique_id=1904272513 instance=ExtResource("1_aomxt")]
+transform = Transform3D(-4.37114e-08, 1, -4.37114e-08, 0, -4.37114e-08, -1, -1, -4.37114e-08, 1.91069e-15, 0, 0, 0)
+
+[node name="Hurtbox" type="Area3D" parent="Offset" unique_id=910420099]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
+collision_mask = 3
+script = ExtResource("3_o3yhp")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Offset/Hurtbox" unique_id=411908325]
+shape = SubResource("BoxShape3D_ujlgq")
+
+[node name="Ring" parent="Offset" unique_id=1036055031 instance=ExtResource("3_5q2t0")]
+transform = Transform3D(0.2, 0, 0, 0, -8.74228e-09, -0.2, 0, 0.2, -8.74228e-09, 0, 0.5, 0)
+
+[node name="ItemBoxBehavior" type="Node" parent="." unique_id=1869190678 node_paths=PackedStringArray("Box", "ThingInside", "SpawnCenter")]
+script = ExtResource("5_cbing")
+Box = NodePath("../Offset")
+ThingInside = NodePath("../Offset/Ring")
+RotationAxisOfThingInside = Vector3(0, 1, 0)
+RotationSpeedDegrees = 360.0
+SpawnCenter = NodePath("../SpawnCenter")
+ItemToRelease = ExtResource("6_4tpq8")
+ItemsCount = 10
+SpawnRadius = 10.0
+ExplosionParticles = ExtResource("7_52jh1")
+
+[node name="SpawnCenter" type="Node3D" parent="." unique_id=1417732497]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.5, 0)
+
+[connection signal="OnHitboxEnter" from="Offset/Hurtbox" to="ItemBoxBehavior" method="OnHitboxEnter"]
+
+[editable path="Offset/item_box"]

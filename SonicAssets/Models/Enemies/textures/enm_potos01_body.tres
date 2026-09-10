@@ -1,0 +1,14 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://dp7j0gyuvf0qj"]
+
+[ext_resource type="Texture2D" uid="uid://cn1rk5pxff2dd" path="res://SonicAssets/Models/Enemies/textures/enm_potos01_body_abd.PNG" id="1_dxttb"]
+[ext_resource type="Texture2D" uid="uid://xd5acbainwpr" path="res://SonicAssets/Models/Enemies/textures/enm_potos01_body_prm.PNG" id="2_jo4vt"]
+[ext_resource type="Texture2D" uid="uid://b3jtau41sjfds" path="res://SonicAssets/Models/Enemies/textures/enm_potos01_body_nrm.PNG" id="3_6b2jh"]
+
+[resource]
+resource_name = "enm_potos01_body"
+vertex_color_use_as_albedo = true
+albedo_texture = ExtResource("1_dxttb")
+metallic = 1.0
+metallic_texture = ExtResource("2_jo4vt")
+normal_enabled = true
+normal_texture = ExtResource("3_6b2jh")

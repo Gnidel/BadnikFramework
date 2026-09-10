@@ -1,0 +1,19 @@
+[gd_scene format=3 uid="uid://c578y8mp3hiek"]
+
+[ext_resource type="PackedScene" uid="uid://bc80xnihy60tp" path="res://Games/Example game/Levels/SpecialStage/SpecialStageMania.tscn" id="1_sirww"]
+[ext_resource type="PackedScene" uid="uid://d4hlu7ecb04dc" path="res://SonicAssets/Prefabs/Items/[item]_chaosemerald_red.tscn" id="21_0fexd"]
+
+[node name="SpecialStage1" type="Node3D" unique_id=1300996414]
+
+[node name="SpecialStage" parent="." unique_id=348567652 instance=ExtResource("1_sirww")]
+
+[node name="RandomManiaSpecialStage" parent="SpecialStage" index="5"]
+Difficulty = 1
+
+[node name="PathFollow3D" parent="SpecialStage/RandomManiaSpecialStage/Path3D" index="0"]
+transform = Transform3D(-0.999997, 0, -8.7422514e-08, 0, 1, 0, 8.7422514e-08, 0, -0.999997, 0, 0, 0)
+
+[node name="[Item] Chaos Emerald Red" parent="SpecialStage/RandomManiaSpecialStage/Path3D/PathFollow3D" index="0" unique_id=1054425871 instance=ExtResource("21_0fexd")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, 0)
+
+[editable path="SpecialStage"]

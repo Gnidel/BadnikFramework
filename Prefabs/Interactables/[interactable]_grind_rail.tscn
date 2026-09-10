@@ -1,0 +1,80 @@
+[gd_scene format=3 uid="uid://qjvpklol5uvl"]
+
+[ext_resource type="Script" uid="uid://c7d6611lh60tv" path="res://Scripts/Interactables/GrindRail.cs" id="1_xx0ol"]
+
+[sub_resource type="Curve3D" id="Curve3D_jrubx"]
+resource_local_to_scene = true
+_data = {
+"points": PackedVector3Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, -23.785, 0, 0, -200),
+"tilts": PackedFloat32Array(0, 0)
+}
+point_count = 2
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_fek80"]
+albedo_color = Color(1, 0, 0, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_qbxhl"]
+transparency = 1
+albedo_color = Color(0.172549, 0, 0.631373, 0.32549)
+
+[sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_5wl6b"]
+data = PackedVector3Array(-1, 0, 0, -1, 0, -200, -1, 1, -200, -1, 0, -200, -1, 0, 0, 1, 0, 0, 1, 1, -200, -1, 1, -200, -1, 0, -200, -1, 1, 0, -1, 1, -200, 1, 1, -200, -1, 1, -200, -1, 1, 0, -1, 0, 0, -1, 0, 0, -1, 1, 0, 1, 1, 0, 1, 0, 0, 1, 0, -200, -1, 0, -200, -1, 0, -200, 1, 0, -200, 1, 1, -200, 1, 1, 0, 1, 0, 0, -1, 0, 0, 1, 0, -200, 1, 0, 0, 1, 1, 0, 1, 1, 0, 1, 1, -200, 1, 0, -200, 1, 1, -200, 1, 1, 0, -1, 1, 0)
+
+[node name="[Interactable] GrindRail" type="Path3D" unique_id=501780739 node_paths=PackedStringArray("BoundingBox", "RailHitboxMesh", "RailVisibleMesh")]
+curve = SubResource("Curve3D_jrubx")
+script = ExtResource("1_xx0ol")
+BoundingBox = NodePath("Area3D/CollisionShape3D")
+RailHitboxMesh = NodePath("CSGPolygon3DHitbox")
+RailVisibleMesh = NodePath("CSGPolygon3DVisible")
+
+[node name="PathFollow3D" type="PathFollow3D" parent="." unique_id=1506879470]
+transform = Transform3D(1, 0, 0, 0, 0.999998, 0, 0, 0, 0.999998, 0, 0, 0)
+loop = false
+
+[node name="CSGPolygon3DVisible" type="CSGPolygon3D" parent="." unique_id=417363518]
+process_mode = 4
+polygon = PackedVector2Array(-0.1, -0.1, -0.1, 0, 0.1, 0, 0.1, -0.1)
+mode = 2
+path_node = NodePath("..")
+path_interval_type = 0
+path_interval = 1.0
+path_simplify_angle = 5.0
+path_rotation = 2
+path_rotation_accurate = false
+path_local = true
+path_continuous_u = true
+path_u_distance = 1.0
+path_joined = false
+smooth_faces = true
+material = SubResource("StandardMaterial3D_fek80")
+
+[node name="CSGPolygon3DHitbox" type="CSGPolygon3D" parent="." unique_id=1383450633]
+process_mode = 4
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0598373, 0.12599, -0.0594082)
+visible = false
+polygon = PackedVector2Array(-1, 0, -1, 1, 1, 1, 1, 0)
+mode = 2
+path_node = NodePath("..")
+path_interval_type = 0
+path_interval = 1.0
+path_simplify_angle = 5.0
+path_rotation = 2
+path_rotation_accurate = false
+path_local = true
+path_continuous_u = true
+path_u_distance = 1.0
+path_joined = false
+smooth_faces = true
+material = SubResource("StandardMaterial3D_qbxhl")
+
+[node name="Area3D" type="Area3D" parent="." unique_id=1638566815]
+physics_interpolation_mode = 2
+collision_layer = 256
+collision_mask = 2
+input_ray_pickable = false
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D" unique_id=609907478]
+shape = SubResource("ConcavePolygonShape3D_5wl6b")
+
+[connection signal="curve_changed" from="." to="." method="OnCurveChanged"]
+[connection signal="body_entered" from="Area3D" to="." method="OnBodyEntered"]

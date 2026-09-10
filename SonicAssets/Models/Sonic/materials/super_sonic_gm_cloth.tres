@@ -1,0 +1,10 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://clpf0n0an3uvt"]
+
+[ext_resource type="Texture2D" uid="uid://dsublys70cjt8" path="res://SonicAssets/Models/Sonic/textures/chr_sonic_cloth_dif_HD.dds" id="1_42m3c"]
+[ext_resource type="Texture2D" uid="uid://ccdnfh1bgt6s2" path="res://SonicAssets/Models/Sonic/textures/chr_supersonic_body01_dif_HD.dds" id="2_ik1xn"]
+
+[resource]
+resource_name = "super_sonic_gm_cloth"
+albedo_texture = ExtResource("1_42m3c")
+metallic = 1.0
+emission_texture = ExtResource("2_ik1xn")

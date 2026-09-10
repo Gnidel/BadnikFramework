@@ -1,0 +1,15 @@
+[gd_scene format=3 uid="uid://d17bym62436xd"]
+
+[ext_resource type="Script" uid="uid://11u208w0llxt" path="res://Scripts/Interactables/SkydivingSectionTrigger.cs" id="1_lsvb6"]
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_l8hfc"]
+resource_local_to_scene = true
+height = 250.0
+radius = 25.0
+
+[node name="[Interactable] Skydiving section" type="Area3D" unique_id=1364095598]
+collision_mask = 2
+script = ExtResource("1_lsvb6")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1690313467]
+shape = SubResource("CylinderShape3D_l8hfc")

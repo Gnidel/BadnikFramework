@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://coeq6f05okmtf"
+path="res://.godot/imported/Drowning - Sonic the Hedgehog 4 Episode II.ogg-0f9654b002bbf74ab60fdc5ead998294.oggvorbisstr"
+
+[deps]
+
+source_file="res://SonicAssets/Music/Drowning - Sonic the Hedgehog 4 Episode II.ogg"
+dest_files=["res://.godot/imported/Drowning - Sonic the Hedgehog 4 Episode II.ogg-0f9654b002bbf74ab60fdc5ead998294.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

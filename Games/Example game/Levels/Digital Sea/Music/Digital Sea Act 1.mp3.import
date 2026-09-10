@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://b2sc2sa7ba1ml"
+path="res://.godot/imported/Digital Sea Act 1.mp3-1fb021227f0a524ab69c27abd199dd70.mp3str"
+
+[deps]
+
+source_file="res://Games/Example game/Levels/Digital Sea/Music/Digital Sea Act 1.mp3"
+dest_files=["res://.godot/imported/Digital Sea Act 1.mp3-1fb021227f0a524ab69c27abd199dd70.mp3str"]
+
+[params]
+
+loop=true
+loop_offset=0.0
+bpm=0.0
+beat_count=0
+bar_beats=4

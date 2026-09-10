@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://bj5nusrtlf503"
+path="res://.godot/imported/se_player_sonic#28 (sn_run_mtlp; sn_walk_mtlp).wav-85d0584b7328daf3dbf500734502f1dc.sample"
+
+[deps]
+
+source_file="res://SonicAssets/Audio/Sonic/se_player_sonic#28 (sn_run_mtlp; sn_walk_mtlp).wav"
+dest_files=["res://.godot/imported/se_player_sonic#28 (sn_run_mtlp; sn_walk_mtlp).wav-85d0584b7328daf3dbf500734502f1dc.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2

@@ -1,0 +1,227 @@
+[gd_scene format=3 uid="uid://ube401o63sqf"]
+
+[ext_resource type="PackedScene" uid="uid://bkt2qp7430moc" path="res://SonicAssets/Prefabs/Misc/homing_target.tscn" id="1_qt6t3"]
+[ext_resource type="Script" uid="uid://n1dtm5k3gia" path="res://Scripts/Enemies/EnemyBehaviorManager.cs" id="2_nsyr2"]
+[ext_resource type="Script" uid="uid://qg5c4g484t21" path="res://SonicAssets/Scripts/Enemies/CluckerBehavior.cs" id="3_ncm0l"]
+[ext_resource type="Script" uid="uid://dat1yxewba6k8" path="res://Scripts/Enemies/EnemyControl.cs" id="4_3rx64"]
+[ext_resource type="AudioStream" uid="uid://bwa5uiwsw5xfj" path="res://SonicAssets/Audio/Enemies/se_enemy_common#2 (enmsn_cmn_damage).wav" id="5_tmach"]
+[ext_resource type="PackedScene" uid="uid://d0mild2vdixl1" path="res://SonicAssets/Prefabs/Particles/Explosion2/[Particles] Explosion2.tscn" id="6_dkh6i"]
+[ext_resource type="Script" uid="uid://y47n4ov38iw2" path="res://Scripts/Interactables/Hitbox.cs" id="7_4jw3g"]
+[ext_resource type="Script" uid="uid://d0rd6cimu685c" path="res://Scripts/Interactables/Hurtbox.cs" id="8_k5lbw"]
+[ext_resource type="AudioStream" uid="uid://bfeth58twui6c" path="res://SonicAssets/Audio/Enemies/B2_WEAPONS_17.wav" id="9_3rx64"]
+[ext_resource type="Texture2D" uid="uid://ctu5aul2bm0pe" path="res://SonicAssets/Prefabs/Particles/AttackShockwave/ef_ch_sng_yh1_hit.png" id="10_1ydqs"]
+[ext_resource type="Texture2D" uid="uid://ju7vp8xxw0gi" path="res://SonicAssets/Prefabs/Particles/AttackShockwave/ef_ch_sng_yh1_hit2.png" id="11_w8lai"]
+[ext_resource type="PackedScene" uid="uid://njyrbcaowh80" path="res://SonicAssets/Models/Enemies/EnemyClucker.glb" id="12_qt6t3"]
+[ext_resource type="PackedScene" uid="uid://bkm2q3gcvplul" path="res://SonicAssets/Prefabs/Particles/StepSmoke/[particles]_step_smoke.tscn" id="13_3gyne"]
+[ext_resource type="Script" uid="uid://cnq7ub0u0sa87" path="res://Scripts/Enemies/StuffSpawner.cs" id="13_3rx64"]
+[ext_resource type="PackedScene" uid="uid://dpql1hxbxmec6" path="res://Prefabs/EnemyUtils/bullet_hell_shooter.tscn" id="13_tmach"]
+[ext_resource type="PackedScene" uid="uid://dpne4hrdtk515" path="res://SonicAssets/Prefabs/Interactables/Obstacles/EnemyAmmo/[obstacle]_clucker_bullet.tscn" id="14_ncm0l"]
+[ext_resource type="Script" uid="uid://bw8224m0k2phx" path="res://Scripts/Interactables/NonPlayerSplineMovement.cs" id="14_tfdt7"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_ar2vf"]
+friction = 0.0
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_vfsj3"]
+radius = 1.0
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_4t4a2"]
+radius = 1.0
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_g877g"]
+radius = 1.5
+
+[sub_resource type="Curve" id="Curve_8xqta"]
+_limits = [-360.0, 360.0, 0.0, 1.0]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(1, 1), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="CurveTexture" id="CurveTexture_sdvrw"]
+curve = SubResource("Curve_8xqta")
+
+[sub_resource type="Gradient" id="Gradient_frhhl"]
+offsets = PackedFloat32Array(0, 0.520833, 1)
+colors = PackedColorArray(0, 0, 0, 0, 0.521569, 0.521569, 0.521569, 1, 1, 1, 1, 0)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_veaka"]
+gradient = SubResource("Gradient_frhhl")
+
+[sub_resource type="Curve" id="Curve_ypdqp"]
+_data = [Vector2(0.00369003, 0), 0.0, 0.0, 0, 0, Vector2(1, 1), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="CurveTexture" id="CurveTexture_l3oey"]
+curve = SubResource("Curve_ypdqp")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_ols1o"]
+angle_max = 360.0
+angle_curve = SubResource("CurveTexture_sdvrw")
+gravity = Vector3(0, 0, 0)
+scale_max = 10.0
+scale_curve = SubResource("CurveTexture_l3oey")
+color_ramp = SubResource("GradientTexture1D_veaka")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_iprt8"]
+transparency = 1
+blend_mode = 1
+no_depth_test = true
+shading_mode = 0
+vertex_color_use_as_albedo = true
+albedo_texture = ExtResource("10_1ydqs")
+disable_receive_shadows = true
+billboard_mode = 3
+particles_anim_h_frames = 1
+particles_anim_v_frames = 1
+particles_anim_loop = false
+grow_amount = 1.79
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_igbr8"]
+material = SubResource("StandardMaterial3D_iprt8")
+orientation = 2
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_12xi3"]
+transparency = 1
+blend_mode = 1
+shading_mode = 0
+albedo_texture = ExtResource("11_w8lai")
+disable_receive_shadows = true
+billboard_mode = 3
+billboard_keep_scale = true
+particles_anim_h_frames = 1
+particles_anim_v_frames = 1
+particles_anim_loop = false
+
+[sub_resource type="QuadMesh" id="QuadMesh_fkmdg"]
+material = SubResource("StandardMaterial3D_12xi3")
+
+[node name="[Enemy] Clucker" type="RigidBody3D" unique_id=700850328]
+transform = Transform3D(1, 0, 1.74846e-07, 0, 1, 0, -1.74846e-07, 0, 1, 0, 0, 0)
+collision_layer = 4
+physics_material_override = SubResource("PhysicsMaterial_ar2vf")
+gravity_scale = 0.0
+lock_rotation = true
+freeze = true
+continuous_cd = true
+
+[node name="HomingTarget" parent="." unique_id=1765233182 instance=ExtResource("1_qt6t3")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+TargetableByGuns = true
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1391773077]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+shape = SubResource("SphereShape3D_vfsj3")
+
+[node name="Behaviors" type="Node" parent="." unique_id=800843071 node_paths=PackedStringArray("CurrentPhase")]
+script = ExtResource("2_nsyr2")
+CurrentPhase = NodePath("Phase0Rotating")
+
+[node name="Phase0Rotating" type="Node" parent="Behaviors" unique_id=1109217426]
+
+[node name="CluckerBehavior" type="Node" parent="Behaviors/Phase0Rotating" unique_id=350994503 node_paths=PackedStringArray("EnemyRoot", "EnemyControl", "AnimationPlayer", "GunAudioPlayer", "BulletHellShooter")]
+script = ExtResource("3_ncm0l")
+EnemyRoot = NodePath("../../..")
+EnemyControl = NodePath("../../../EnemyControl")
+AnimationPlayer = NodePath("../../../EnemyClucker/AnimationPlayer")
+GunAudioPlayer = NodePath("../../../AudioStreamPlayer3D")
+BulletHellShooter = NodePath("../../../EnemyClucker/enm_kokeko/Skeleton3D/Muzzle/BulletHellShooter")
+
+[node name="Phase99Death" type="Node" parent="Behaviors" unique_id=947090813]
+
+[node name="EnemyControl" type="Node" parent="." unique_id=1678624798 node_paths=PackedStringArray("Hitbox", "Hurtbox", "HomingTarget", "RigidBody", "MeshInstance", "DamageParticles", "AudioSource", "DeathAnticipationParticle", "BehaviorManager", "DeathPhase")]
+script = ExtResource("4_3rx64")
+DamageCooldown = 1.0
+Hitbox = NodePath("../Hitbox")
+Hurtbox = NodePath("../Hurtbox")
+HomingTarget = NodePath("../HomingTarget")
+RigidBody = NodePath("..")
+MeshInstance = NodePath("../EnemyClucker/enm_kokeko/Skeleton3D/enm_kokeko_001")
+DamageSoundEffect = ExtResource("5_tmach")
+DamageParticles = NodePath("../AttackShockwaveParticles")
+AudioSource = NodePath("../AudioStreamPlayer3D")
+ExplosionParticles = ExtResource("6_dkh6i")
+DeathAnticipationParticle = NodePath("../[Particles] StepSmoke")
+MinDeathTime = 0.0
+MaxDeathTime = 0.0
+BehaviorManager = NodePath("../Behaviors")
+DeathPhase = NodePath("../Behaviors/Phase99Death")
+
+[node name="Hitbox" type="Area3D" parent="." unique_id=773244105]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+collision_mask = 3
+script = ExtResource("7_4jw3g")
+CanDamageRollingPlayer = false
+CanDamageEnemy = false
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Hitbox" unique_id=868463006]
+shape = SubResource("SphereShape3D_4t4a2")
+
+[node name="Hurtbox" type="Area3D" parent="." unique_id=1471528151]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+script = ExtResource("8_k5lbw")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Hurtbox" unique_id=745598637]
+shape = SubResource("SphereShape3D_g877g")
+
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="." unique_id=1606712501]
+stream = ExtResource("9_3rx64")
+unit_size = 50.0
+bus = &"SFX"
+
+[node name="AttackShockwaveParticles" type="GPUParticles3D" parent="." unique_id=150339744]
+emitting = false
+amount = 1
+lifetime = 0.2
+one_shot = true
+process_material = SubResource("ParticleProcessMaterial_ols1o")
+draw_passes = 2
+draw_pass_1 = SubResource("PlaneMesh_igbr8")
+draw_pass_2 = SubResource("QuadMesh_fkmdg")
+
+[node name="EnemyClucker" parent="." unique_id=1748655834 instance=ExtResource("12_qt6t3")]
+transform = Transform3D(-1, -1.509958e-07, 6.600236e-15, 0, -4.371139e-08, -1, 1.509958e-07, -1, 4.371139e-08, 0, -0.65, 0)
+
+[node name="Skeleton3D" parent="EnemyClucker/enm_kokeko" parent_id_path=PackedInt32Array(1748655834, 1639553395) index="0" unique_id=825415605]
+bones/4/position = Vector3(0, 0.59999985, 3.996803e-15)
+bones/4/rotation = Quaternion(-2.1355204e-11, 4.371145e-08, 0.0004884223, 0.9999999)
+bones/5/position = Vector3(2.5579538e-11, 0.097536445, -0.0819798)
+bones/5/rotation = Quaternion(-2.9564546e-09, 2.2737336e-13, 1.0746961e-12, 1)
+bones/6/rotation = Quaternion(0.6128309, 0.35338268, 0.6121132, 0.35337856)
+bones/7/position = Vector3(-0.62175953, 0.40598944, 0.016080707)
+bones/7/rotation = Quaternion(-0.6121118, 0.35338086, 0.6128336, -0.3533781)
+bones/8/position = Vector3(1.5941453e-09, 0.5870941, 0.0016447405)
+bones/8/rotation = Quaternion(0.5039567, 0.4960118, 0.5039568, 0.49601173)
+bones/9/rotation = Quaternion(0.3060559, 0.8821976, 0.29603848, -0.20104338)
+bones/10/rotation = Quaternion(0.30605584, 0.8821977, -0.29603836, 0.20104349)
+bones/11/rotation = Quaternion(0.70260626, 0.5602968, 0.05976054, -0.43455815)
+bones/12/rotation = Quaternion(0.7026063, 0.5602967, -0.05976019, 0.43455812)
+bones/13/rotation = Quaternion(-9.7543364e-08, -3.3852746e-08, 0.7067613, 0.7074521)
+bones/14/rotation = Quaternion(-2.8099237e-08, -1.03187155e-07, 0.7067613, 0.7074521)
+bones/15/position = Vector3(2.6034286e-11, 0.32160828, 0.8504003)
+bones/15/rotation = Quaternion(0.70745206, 1.6281986e-11, -4.273669e-11, 0.70676136)
+bones/16/position = Vector3(-1.4892976e-11, 0.33937255, -0.8801411)
+bones/16/rotation = Quaternion(-0.70676136, 2.6420975e-12, -1.6909061e-12, 0.70745206)
+
+[node name="Muzzle" type="BoneAttachment3D" parent="EnemyClucker/enm_kokeko/Skeleton3D" index="1" unique_id=525827954]
+transform = Transform3D(0.9999995, 1.0416848e-06, 0.0009768398, -8.750641e-08, 0.9999995, -0.0009768008, -0.0009768404, 0.0009768002, 0.99999905, -0.00031408315, 0.8504004, -0.921608)
+bone_name = "Cannon"
+bone_idx = 15
+use_external_skeleton = true
+external_skeleton = NodePath("..")
+
+[node name="BulletHellShooter" parent="EnemyClucker/enm_kokeko/Skeleton3D/Muzzle" unique_id=991263526 instance=ExtResource("13_tmach")]
+transform = Transform3D(-4.371139e-08, 1, 4.371139e-08, 0, -4.371139e-08, 1, 1, 4.371139e-08, 1.9106855e-15, 0, 0.7, 0)
+
+[node name="StuffSpawner" type="Node3D" parent="EnemyClucker/enm_kokeko/Skeleton3D/Muzzle" unique_id=43811790]
+transform = Transform3D(-1, 8.742278e-08, 3.821371e-15, 0, -4.371139e-08, 1, 8.742278e-08, 1, 4.371139e-08, 0, 0.7, 0)
+script = ExtResource("13_3rx64")
+Template = ExtResource("14_ncm0l")
+InitialRelativeVelocity = Vector3(0, 0, 20)
+
+[node name="[Particles] StepSmoke" parent="." unique_id=1000267037 instance=ExtResource("13_3gyne")]
+
+[node name="NonPlayerSplineMovement" type="Node" parent="." unique_id=1097926512]
+script = ExtResource("14_tfdt7")
+
+[connection signal="OnHitboxEnter" from="Hurtbox" to="EnemyControl" method="OnHitboxEnter"]
+[connection signal="area_entered" from="Hurtbox" to="Hurtbox" method="OnAreaEnter"]
+
+[editable path="EnemyClucker"]

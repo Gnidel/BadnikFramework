@@ -1,0 +1,17 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://cv36wb4jhguic"]
+
+[ext_resource type="Texture2D" uid="uid://c6vi3rcsmtvr4" path="res://Games/Example game/Levels/Digital Sea/Textures/grid_gray_a.png" id="1_j2ug2"]
+[ext_resource type="Texture2D" uid="uid://bl4cmm8pjy3b" path="res://Games/Example game/Levels/Digital Sea/Textures/grid_n.png" id="2_4el6b"]
+[ext_resource type="Texture2D" uid="uid://dxwtfo7jqnkru" path="res://Games/Example game/Levels/Digital Sea/Textures/grid_green_h.png" id="3_rjpko"]
+
+[resource]
+albedo_texture = ExtResource("1_j2ug2")
+metallic = 0.75
+metallic_specular = 0.75
+roughness = 0.5
+normal_enabled = true
+normal_texture = ExtResource("2_4el6b")
+bent_normal_texture = ExtResource("2_4el6b")
+heightmap_enabled = true
+heightmap_scale = 1.0
+heightmap_texture = ExtResource("3_rjpko")

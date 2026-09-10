@@ -1,0 +1,11 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://dwr7dsyjitfte"]
+
+[ext_resource type="Texture2D" uid="uid://mj4kxeld4vxv" path="res://SonicAssets/Models/Interactables/textures/cmn_metal_kt3_thorngrind_dif.dds" id="1_ild74"]
+
+[resource]
+resource_name = "cmn_obj_thorngrind_HD_stick"
+transparency = 4
+cull_mode = 2
+albedo_texture = ExtResource("1_ild74")
+metallic = 1.0
+roughness = 0.5

@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://dymw076t6mfef"
+path="res://.godot/imported/se_wars_enm_potos#2 (enm_potos_bomb).wav-c4b5ddb52ed571d2456b70c9dae150c6.sample"
+
+[deps]
+
+source_file="res://SonicAssets/Audio/Enemies/se_wars_enm_potos#2 (enm_potos_bomb).wav"
+dest_files=["res://.godot/imported/se_wars_enm_potos#2 (enm_potos_bomb).wav-c4b5ddb52ed571d2456b70c9dae150c6.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

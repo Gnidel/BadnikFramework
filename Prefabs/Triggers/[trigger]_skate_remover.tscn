@@ -1,0 +1,18 @@
+[gd_scene format=3 uid="uid://cqbir38llka4u"]
+
+[ext_resource type="Script" uid="uid://cab1mi2mhw12f" path="res://Scripts/Interactables/SkateRemoverTrigger.cs" id="1_vb5tg"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_hxqaj"]
+resource_local_to_scene = true
+size = Vector3(55, 40, 70)
+
+[node name="[Trigger] SkateRemover" type="Area3D" unique_id=833825359]
+collision_layer = 257
+collision_mask = 3
+script = ExtResource("1_vb5tg")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1182135870]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -22.279785, 5.871826, 0)
+shape = SubResource("BoxShape3D_hxqaj")
+
+[connection signal="body_entered" from="." to="." method="OnBodyEnter"]

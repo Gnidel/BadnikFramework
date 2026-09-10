@@ -1,0 +1,9 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://bdfjed8sy5q0x"]
+
+[ext_resource type="Texture2D" uid="uid://cgbyum8mwmkto" path="res://SonicAssets/Models/Shadow/textures/chr_shadow_fur_abd.dds" id="1_s8jc5"]
+
+[resource]
+resource_name = "chr_shadow_fur03"
+transparency = 1
+albedo_texture = ExtResource("1_s8jc5")
+metallic = 1.0

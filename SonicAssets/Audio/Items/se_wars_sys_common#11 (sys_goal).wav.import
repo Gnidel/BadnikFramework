@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://c8v12sdw3rfqf"
+path="res://.godot/imported/se_wars_sys_common#11 (sys_goal).wav-7c166125bfecf1fd70b17787f7bcf0b6.sample"
+
+[deps]
+
+source_file="res://SonicAssets/Audio/Items/se_wars_sys_common#11 (sys_goal).wav"
+dest_files=["res://.godot/imported/se_wars_sys_common#11 (sys_goal).wav-7c166125bfecf1fd70b17787f7bcf0b6.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

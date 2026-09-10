@@ -1,0 +1,97 @@
+[gd_scene format=3 uid="uid://bbmhfwknyuj0q"]
+
+[ext_resource type="Script" uid="uid://f3cxw7en1f5k" path="res://Scripts/Interactables/CollectableItem.cs" id="1_18bt8"]
+[ext_resource type="AudioStream" uid="uid://bq1er6q1isa24" path="res://SonicAssets/Audio/Items/se_object_common#1 (obj_ring).wav" id="2_xnv3f"]
+[ext_resource type="PackedScene" uid="uid://bcaqydwtikg31" path="res://SonicAssets/Models/Vehicles/Blue Star/Blue Star_model.tscn" id="4_lvrfr"]
+[ext_resource type="Script" uid="uid://bq8hc0nn18r1f" path="res://Scripts/Interactables/ItemSkateboardData.cs" id="5_mda1p"]
+[ext_resource type="Texture2D" uid="uid://cjyqftshxj8i4" path="res://SonicAssets/Textures/RingParticle.png" id="5_xvcf5"]
+
+[sub_resource type="Curve" id="Curve_idv40"]
+_limits = [0.0, 100.0, 0.0, 1.0]
+bake_resolution = 10
+_data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(1, 100), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_6spl5"]
+radius = 2.0
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_648yg"]
+radius = 0.25
+
+[sub_resource type="Curve" id="Curve_f3mti"]
+_data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(0.127182, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
+point_count = 3
+
+[sub_resource type="CurveTexture" id="CurveTexture_tgj3w"]
+curve = SubResource("Curve_f3mti")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_bsup1"]
+spread = 180.0
+initial_velocity_min = 1.0
+initial_velocity_max = 2.0
+gravity = Vector3(0, 0, 0)
+scale_min = 0.25
+scale_curve = SubResource("CurveTexture_tgj3w")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_xe6we"]
+transparency = 1
+shading_mode = 0
+albedo_texture = ExtResource("5_xvcf5")
+billboard_mode = 3
+billboard_keep_scale = true
+particles_anim_h_frames = 1
+particles_anim_v_frames = 1
+particles_anim_loop = false
+
+[sub_resource type="QuadMesh" id="QuadMesh_gutdc"]
+material = SubResource("StandardMaterial3D_xe6we")
+
+[node name="[Item] Skateboard Blue Star" type="Node3D" unique_id=1950705901 node_paths=PackedStringArray("particles", "modelNode")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
+script = ExtResource("1_18bt8")
+AttractionSpeed = SubResource("Curve_idv40")
+maxAttractionTime = 2.0
+SoundEffect = ExtResource("2_xnv3f")
+ItemName = "skateboard"
+ItemCount = 1
+IsAdditive = false
+particles = NodePath("RingParticles")
+modelNode = NodePath("BlueStarModel")
+CanBeAttractedAfter = 0.0
+
+[node name="AttractTrigger" type="Area3D" parent="." unique_id=1343898173]
+process_mode = 4
+collision_mask = 2
+input_ray_pickable = false
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="AttractTrigger" unique_id=308745114]
+shape = SubResource("SphereShape3D_6spl5")
+
+[node name="PickupTrigger" type="Area3D" parent="." unique_id=1271441888]
+collision_mask = 2
+input_ray_pickable = false
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="PickupTrigger" unique_id=906789721]
+shape = SubResource("SphereShape3D_648yg")
+
+[node name="RingParticles" type="GPUParticles3D" parent="." unique_id=149901393]
+emitting = false
+amount = 4
+lifetime = 0.5
+one_shot = true
+explosiveness = 1.0
+process_material = SubResource("ParticleProcessMaterial_bsup1")
+draw_pass_1 = SubResource("QuadMesh_gutdc")
+
+[node name="BlueStarModel" parent="." unique_id=1526397406 instance=ExtResource("4_lvrfr")]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 0, 0, 0)
+
+[node name="SkateboardData" type="Node" parent="." unique_id=634033574]
+script = ExtResource("5_mda1p")
+SkateboardModel = ExtResource("4_lvrfr")
+SkateboardStandingPoint = Vector3(0, 0.25, 0)
+FloatOnWater = true
+
+[connection signal="OnItemCollected" from="." to="SkateboardData" method="OnItemCollected"]
+[connection signal="body_entered" from="AttractTrigger" to="." method="OnAttract"]
+[connection signal="body_entered" from="PickupTrigger" to="." method="OnPickup"]

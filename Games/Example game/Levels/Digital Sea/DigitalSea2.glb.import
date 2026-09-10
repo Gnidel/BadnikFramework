@@ -1,0 +1,68 @@
+[remap]
+
+importer="scene"
+importer_version=1
+type="PackedScene"
+uid="uid://dmu3a1qdupxb7"
+path="res://.godot/imported/DigitalSea2.glb-cc7976976da701091f085cbc1880cbd1.scn"
+
+[deps]
+
+source_file="res://Games/Example game/Levels/Digital Sea/DigitalSea2.glb"
+dest_files=["res://.godot/imported/DigitalSea2.glb-cc7976976da701091f085cbc1880cbd1.scn"]
+
+[params]
+
+nodes/root_type=""
+nodes/root_name=""
+nodes/root_script=null
+mesh_library/use_node_names_as_mesh_names=false
+array_mesh/deduplicate_surfaces=true
+nodes/apply_root_scale=true
+nodes/root_scale=1.0
+nodes/import_as_skeleton_bones=false
+nodes/use_name_suffixes=true
+nodes/use_node_type_suffixes=true
+meshes/ensure_tangents=true
+meshes/generate_lods=true
+meshes/create_shadow_meshes=true
+meshes/light_baking=1
+meshes/lightmap_texel_size=0.2
+meshes/force_disable_compression=false
+skins/use_named_skins=true
+animation/import=true
+animation/fps=30
+animation/trimming=false
+animation/remove_immutable_tracks=true
+animation/import_rest_as_RESET=false
+import_script/path=""
+materials/extract=0
+materials/extract_format=0
+materials/extract_path=""
+_subresources={
+"materials": {
+"BB_Edge": {
+"use_external/enabled": true,
+"use_external/fallback_path": "res://Games/Example game/Levels/Digital Sea/Textures/gridplastic_gray_material.tres",
+"use_external/path": "uid://batj4yuvv07g0"
+},
+"BB_Floor": {
+"use_external/enabled": false,
+"use_external/fallback_path": "res://Games/Example game/Levels/Digital Sea/Textures/BB_Floor.tres",
+"use_external/path": "uid://k36vbp7p27p0"
+},
+"BB_Floor2": {
+"use_external/enabled": true,
+"use_external/fallback_path": "res://Games/Example game/Levels/Digital Sea/Textures/BB_Floor2.tres",
+"use_external/path": "uid://cv36wb4jhguic"
+},
+"BB_Main": {
+"use_external/enabled": true,
+"use_external/fallback_path": "res://Games/Example game/Levels/Digital Sea/Textures/HexKhakiMaterial.tres",
+"use_external/path": "uid://nwm1o2s47wm"
+}
+}
+}
+gltf/naming_version=2
+gltf/embedded_image_handling=1
+gltf/texture_map_mode=1

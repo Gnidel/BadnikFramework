@@ -1,0 +1,11 @@
+[gd_resource type="ShaderMaterial" format=3 uid="uid://bcwt7vhx7h68j"]
+
+[ext_resource type="Shader" uid="uid://cjktp1yrki104" path="res://Shaders/UekawaShader.tres" id="1_ivv73"]
+[ext_resource type="Texture2D" uid="uid://rwc5qsv405o4" path="res://SonicAssets/Models/Shadow/textures/chr_shadow_handfoot_abd.dds" id="2_5dcqj"]
+
+[resource]
+render_priority = 0
+shader = ExtResource("1_ivv73")
+shader_parameter/Albedo = ExtResource("2_5dcqj")
+shader_parameter/DarkenThreshold = -0.75
+shader_parameter/HighlightThreashold = 0.3

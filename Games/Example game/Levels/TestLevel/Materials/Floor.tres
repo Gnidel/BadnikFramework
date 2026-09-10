@@ -1,0 +1,16 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://brtdstsykygt2"]
+
+[ext_resource type="Texture2D" uid="uid://dsup1vwg61lia" path="res://Games/Example game/Levels/TestLevel/gridTexture.png" id="1_hmr3n"]
+[ext_resource type="Texture2D" uid="uid://dj7sc3cpgy8or" path="res://Games/Example game/Levels/TestLevel/gridTexture_h.png" id="2_jwd77"]
+[ext_resource type="Texture2D" uid="uid://dvwutourkmypy" path="res://Games/Example game/Levels/TestLevel/gridTexture_n.png" id="3_n7ly6"]
+
+[resource]
+resource_name = "Floor"
+cull_mode = 2
+vertex_color_use_as_albedo = true
+albedo_color = Color(0.906332, 0.906332, 0.906332, 1)
+albedo_texture = ExtResource("1_hmr3n")
+roughness = 0.5
+normal_enabled = true
+normal_texture = ExtResource("3_n7ly6")
+heightmap_texture = ExtResource("2_jwd77")

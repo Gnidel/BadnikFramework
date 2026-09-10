@@ -1,0 +1,8 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://d1o06uftgt8v0"]
+
+[resource]
+resource_name = "Edges"
+cull_mode = 2
+vertex_color_use_as_albedo = true
+albedo_color = Color(0.193326, 0.193326, 0.193326, 1)
+roughness = 0.5

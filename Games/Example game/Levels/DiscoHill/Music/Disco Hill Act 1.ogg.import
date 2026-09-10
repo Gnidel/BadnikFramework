@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://cnrhcjfn26imi"
+path="res://.godot/imported/Disco Hill Act 1.ogg-4419449fc3c79300216806f0c6cc3bb6.oggvorbisstr"
+
+[deps]
+
+source_file="res://Games/Example game/Levels/DiscoHill/Music/Disco Hill Act 1.ogg"
+dest_files=["res://.godot/imported/Disco Hill Act 1.ogg-4419449fc3c79300216806f0c6cc3bb6.oggvorbisstr"]
+
+[params]
+
+loop=true
+loop_offset=0.0
+bpm=0.0
+beat_count=0
+bar_beats=4

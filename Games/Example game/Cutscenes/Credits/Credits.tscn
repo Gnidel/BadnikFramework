@@ -1,0 +1,74 @@
+[gd_scene format=3 uid="uid://bhjt8l5to85r0"]
+
+[ext_resource type="AudioStream" uid="uid://1idmdec0e3g5" path="res://SonicAssets/Music/Doctors Mine (Goal) - Team Sonic Racing [OST].ogg" id="1_mrg4j"]
+[ext_resource type="Theme" uid="uid://di28qbb7lki3f" path="res://Misc/MenuTheme.tres" id="2_mrg4j"]
+[ext_resource type="PackedScene" uid="uid://8yace8ptej56" path="res://Prefabs/Menus/base_cutscene.tscn" id="2_xycoa"]
+
+[node name="Credits" type="Control" unique_id=98525472]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="." unique_id=123192695]
+stream = ExtResource("1_mrg4j")
+autoplay = true
+bus = &"Music"
+
+[node name="Background" type="ColorRect" parent="." unique_id=1201853819]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+color = Color(0.012, 0.016, 0.025, 1)
+
+[node name="Cool" type="RichTextLabel" parent="." unique_id=875250855]
+custom_minimum_size = Vector2(1800, 600)
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -900.0
+offset_right = 900.0
+offset_bottom = 835.0
+grow_horizontal = 2
+theme = ExtResource("2_mrg4j")
+theme_override_font_sizes/normal_font_size = 150
+bbcode_enabled = true
+text = "[wave amp=50.0 freq=5.0 connected=1][rainbow freq=0.2 sat=1 val=0.8 speed=1.0]You're too cool![/rainbow][/wave]"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Thanks" type="RichTextLabel" parent="." unique_id=1967713215]
+custom_minimum_size = Vector2(1800, 1000)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("2_mrg4j")
+bbcode_enabled = true
+text = "
+
+
+
+Thank you for playing!"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Duration" type="Timer" parent="." unique_id=1784567281]
+wait_time = 10.0
+one_shot = true
+autostart = true
+
+[node name="BaseCutscene" parent="." unique_id=2138194219 instance=ExtResource("2_xycoa")]
+layout_mode = 1
+NextScene = "res://Games/Example game/Levels/Hub/HubStage.tscn"
+
+[connection signal="timeout" from="Duration" to="BaseCutscene" method="Complete"]

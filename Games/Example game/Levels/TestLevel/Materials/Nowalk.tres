@@ -1,0 +1,9 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://dn7ibxmitldu4"]
+
+[ext_resource type="Texture2D" uid="uid://wm5nxo4ap8mm" path="res://Games/Example game/Levels/TestLevel/nowalk_a.png" id="1_t7fif"]
+
+[resource]
+resource_name = "Nowalk"
+cull_mode = 2
+albedo_texture = ExtResource("1_t7fif")
+roughness = 0.5

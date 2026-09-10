@@ -1,0 +1,11 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://cc1aol6u3a1nt"]
+
+[ext_resource type="Texture2D" uid="uid://chmysri78bysu" path="res://SonicAssets/Stages/Death Egg/Models/UnleashedEarth_wmap_lava_dif.png" id="1_spk1p"]
+
+[resource]
+resource_name = "lava.005"
+transparency = 1
+cull_mode = 2
+vertex_color_use_as_albedo = true
+albedo_texture = ExtResource("1_spk1p")
+metadata/_gltf_primary_texture_coord = 0

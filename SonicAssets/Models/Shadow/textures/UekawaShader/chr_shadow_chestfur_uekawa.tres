@@ -1,0 +1,11 @@
+[gd_resource type="ShaderMaterial" format=3 uid="uid://fob7k72v43k2"]
+
+[ext_resource type="Shader" uid="uid://cjktp1yrki104" path="res://Shaders/UekawaShader.tres" id="1_83604"]
+[ext_resource type="Texture2D" uid="uid://cgbyum8mwmkto" path="res://SonicAssets/Models/Shadow/textures/chr_shadow_fur_abd.dds" id="2_p5eoe"]
+
+[resource]
+render_priority = 0
+shader = ExtResource("1_83604")
+shader_parameter/Albedo = ExtResource("2_p5eoe")
+shader_parameter/DarkenThreshold = 0.5
+shader_parameter/HighlightThreashold = 0.1

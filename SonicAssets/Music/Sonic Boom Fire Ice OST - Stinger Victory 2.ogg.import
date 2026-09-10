@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://by12i41h7swjl"
+path="res://.godot/imported/Sonic Boom Fire Ice OST - Stinger Victory 2.ogg-d020d8ea7982b6b158ba02b2ac5d100c.oggvorbisstr"
+
+[deps]
+
+source_file="res://SonicAssets/Music/Sonic Boom Fire Ice OST - Stinger Victory 2.ogg"
+dest_files=["res://.godot/imported/Sonic Boom Fire Ice OST - Stinger Victory 2.ogg-d020d8ea7982b6b158ba02b2ac5d100c.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

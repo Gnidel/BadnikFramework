@@ -1,0 +1,8 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://d2asuqmjf8l12"]
+
+[ext_resource type="Texture2D" uid="uid://bq7maefesjjvk" path="res://SonicAssets/Models/Interactables/textures/w6_wall202_abd.dds" id="1_02nfh"]
+
+[resource]
+resource_name = "m6_wall_km1_002"
+albedo_texture = ExtResource("1_02nfh")
+metallic = 1.0

@@ -1,0 +1,9 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://qwbsy305k28y"]
+
+[ext_resource type="Texture2D" uid="uid://cv1cy4mh2xmxu" path="res://SonicAssets/Models/Enemies/textures/enm_eggpawn_body_dif_HD.dds" id="1_5scy6"]
+
+[resource]
+resource_name = "enm_eggpawn_body_plastic"
+cull_mode = 2
+albedo_texture = ExtResource("1_5scy6")
+metallic = 1.0

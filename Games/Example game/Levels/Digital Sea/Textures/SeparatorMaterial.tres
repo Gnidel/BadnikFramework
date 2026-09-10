@@ -1,0 +1,13 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://cnms7qo65ynag"]
+
+[ext_resource type="Texture2D" uid="uid://c5tsyv51sjcbm" path="res://Games/Example game/Levels/Digital Sea/Textures/separator_a.png" id="1_6m8xf"]
+[ext_resource type="Texture2D" uid="uid://pkqnuqx55kwe" path="res://Games/Example game/Levels/Digital Sea/Textures/separator_h.png" id="2_rm6p5"]
+[ext_resource type="Texture2D" uid="uid://c0fx7k1v3atm" path="res://Games/Example game/Levels/Digital Sea/Textures/separator_n.png" id="3_xtamb"]
+
+[resource]
+albedo_texture = ExtResource("1_6m8xf")
+metallic = 1.0
+normal_enabled = true
+normal_texture = ExtResource("3_xtamb")
+heightmap_enabled = true
+heightmap_texture = ExtResource("2_rm6p5")

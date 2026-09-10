@@ -1,0 +1,40 @@
+[gd_scene format=3 uid="uid://sayh8oi2r3rk"]
+
+[ext_resource type="Script" uid="uid://bge4hsg4hukce" path="res://Scripts/Interactables/DirectionalLauncher.cs" id="1_xksum"]
+[ext_resource type="AudioStream" uid="uid://cmqgs70g2vcka" path="res://SonicAssets/Audio/Items/se_object_common#25 (objsn_booster; objsn_glindbooster).wav" id="2_crg16"]
+[ext_resource type="PackedScene" uid="uid://bhkwe01s1kl7b" path="res://SonicAssets/Models/Interactables/grind_booster.blend" id="3_t12jd"]
+[ext_resource type="Material" uid="uid://d2t3akty1d1r5" path="res://SonicAssets/Models/Interactables/textures/cmn_obj_grindbooster_arrow_uvscroll.tres" id="4_03snx"]
+[ext_resource type="PackedScene" uid="uid://bkt2qp7430moc" path="res://SonicAssets/Prefabs/Misc/homing_target.tscn" id="4_7jbjk"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_5ku78"]
+radius = 1.0
+
+[node name="[Interactable] Grind_Booster (FollowPath)" type="PathFollow3D" unique_id=381263180]
+
+[node name="[Interactable] Grind_Booster" type="Node3D" parent="." unique_id=780347933]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0)
+script = ExtResource("1_xksum")
+RelativeVelocityDir = Vector3(0, -1, 0)
+IsGrinding = true
+Snap = true
+SoundEffect = ExtResource("2_crg16")
+
+[node name="grind_booster" parent="[Interactable] Grind_Booster" unique_id=850000444 instance=ExtResource("3_t12jd")]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0)
+
+[node name="cmn_obj_grindbooster_arrow" parent="[Interactable] Grind_Booster/grind_booster" index="2" unique_id=1963614582]
+surface_material_override/0 = ExtResource("4_03snx")
+
+[node name="Area3D" type="Area3D" parent="[Interactable] Grind_Booster" unique_id=1266795602]
+collision_mask = 3
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="[Interactable] Grind_Booster/Area3D" unique_id=2141956316]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.5)
+shape = SubResource("SphereShape3D_5ku78")
+
+[node name="HomingTarget" parent="[Interactable] Grind_Booster" unique_id=1560698332 instance=ExtResource("4_7jbjk")]
+visible = false
+
+[connection signal="body_entered" from="[Interactable] Grind_Booster/Area3D" to="[Interactable] Grind_Booster" method="OnTriggerEnter"]
+
+[editable path="[Interactable] Grind_Booster/grind_booster"]

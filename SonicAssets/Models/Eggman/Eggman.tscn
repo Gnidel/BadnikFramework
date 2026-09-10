@@ -1,0 +1,519 @@
+[gd_scene format=3 uid="uid://utj184wk42iu"]
+
+[ext_resource type="Script" uid="uid://cj8xx7g4qfpyv" path="res://SonicAssets/Models/Eggman/EggmanSkinController.cs" id="1_p2o8r"]
+[ext_resource type="Material" uid="uid://csrhoebp6gef" path="res://Materials/Outline.tres" id="3_auwq4"]
+[ext_resource type="PackedScene" uid="uid://clarqxri2mqsf" path="res://SonicAssets/Models/Eggman/EggMobile.glb" id="3_w08kh"]
+[ext_resource type="Shader" uid="uid://cjktp1yrki104" path="res://Shaders/UekawaShader.tres" id="3_whc82"]
+[ext_resource type="Texture2D" uid="uid://bq1v7d5btvh36" path="res://SonicAssets/Models/Eggman/EggMobile_chr_eggman_cloth-0000.png" id="5_06fue"]
+[ext_resource type="Texture2D" uid="uid://klyqpggp6nke" path="res://SonicAssets/Models/Eggman/Eggman_chr_eggman_skin-0000.png" id="6_yukpf"]
+[ext_resource type="Texture2D" uid="uid://dm6dbqmeajoee" path="res://SonicAssets/Models/Eggman/Eggman_chr_eggman_body-0000.png" id="7_4kyub"]
+[ext_resource type="Texture2D" uid="uid://b7hqeq0fj6y3" path="res://SonicAssets/Models/Eggman/Eggman_chr_eggman_metal-0000.png" id="8_i2rh3"]
+[ext_resource type="Texture2D" uid="uid://bjr527dxsvpdr" path="res://SonicAssets/Models/Eggman/Eggman_chr_eggman_lens-0000.png" id="9_ydybm"]
+[ext_resource type="Texture2D" uid="uid://c7q04pdfoi3f4" path="res://SonicAssets/Models/Eggman/Eggman_chr_eggman_seam-0000.png" id="10_4sbei"]
+[ext_resource type="Texture2D" uid="uid://8chggtj0w74n" path="res://SonicAssets/Models/Eggman/Eggman_chr_eggman_beard20-0000-chr_eggman_beard20-0000.png" id="11_ogmbd"]
+[ext_resource type="Texture2D" uid="uid://c4g82dlojgwwh" path="res://SonicAssets/Models/Eggman/Eggman_ev_obj_eggmobile_body-0000-ev_obj_eggmobile_body-0000.png" id="13_8fw0x"]
+[ext_resource type="PackedScene" uid="uid://dx57pokxhl5rn" path="res://SonicAssets/Models/Eggman/Eggman.glb" id="16_4kyub"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_8f15h"]
+render_priority = 0
+next_pass = ExtResource("3_auwq4")
+shader = ExtResource("3_whc82")
+shader_parameter/Albedo = ExtResource("5_06fue")
+shader_parameter/DarkenThreshold = -0.75
+shader_parameter/HighlightThreashold = 0.3
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_5bcwm"]
+render_priority = 0
+next_pass = ExtResource("3_auwq4")
+shader = ExtResource("3_whc82")
+shader_parameter/Albedo = ExtResource("6_yukpf")
+shader_parameter/DarkenThreshold = -0.75
+shader_parameter/HighlightThreashold = 0.3
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_6bpmb"]
+render_priority = 0
+next_pass = ExtResource("3_auwq4")
+shader = ExtResource("3_whc82")
+shader_parameter/Albedo = ExtResource("7_4kyub")
+shader_parameter/DarkenThreshold = -0.75
+shader_parameter/HighlightThreashold = 0.3
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_ts4ng"]
+render_priority = 0
+next_pass = ExtResource("3_auwq4")
+shader = ExtResource("3_whc82")
+shader_parameter/Albedo = ExtResource("8_i2rh3")
+shader_parameter/DarkenThreshold = -0.75
+shader_parameter/HighlightThreashold = 0.3
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_gmhf0"]
+render_priority = 0
+next_pass = ExtResource("3_auwq4")
+shader = ExtResource("3_whc82")
+shader_parameter/Albedo = ExtResource("9_ydybm")
+shader_parameter/DarkenThreshold = -0.75
+shader_parameter/HighlightThreashold = 0.3
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_mqtch"]
+render_priority = 0
+next_pass = ExtResource("3_auwq4")
+shader = ExtResource("3_whc82")
+shader_parameter/Albedo = ExtResource("10_4sbei")
+shader_parameter/DarkenThreshold = -0.75
+shader_parameter/HighlightThreashold = 0.3
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_fkl20"]
+render_priority = 0
+next_pass = ExtResource("3_auwq4")
+shader = ExtResource("3_whc82")
+shader_parameter/Albedo = ExtResource("11_ogmbd")
+shader_parameter/DarkenThreshold = -0.75
+shader_parameter/HighlightThreashold = 0.3
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_vnf7j"]
+render_priority = 0
+next_pass = ExtResource("3_auwq4")
+shader = ExtResource("3_whc82")
+shader_parameter/Albedo = ExtResource("11_ogmbd")
+shader_parameter/DarkenThreshold = -0.75
+shader_parameter/HighlightThreashold = 0.3
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_nwjq1"]
+render_priority = 0
+next_pass = ExtResource("3_auwq4")
+shader = ExtResource("3_whc82")
+shader_parameter/Albedo = ExtResource("11_ogmbd")
+shader_parameter/DarkenThreshold = -0.75
+shader_parameter/HighlightThreashold = 0.3
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_684ww"]
+render_priority = 0
+next_pass = ExtResource("3_auwq4")
+shader = ExtResource("3_whc82")
+shader_parameter/Albedo = ExtResource("11_ogmbd")
+shader_parameter/DarkenThreshold = -0.75
+shader_parameter/HighlightThreashold = 0.3
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_w278h"]
+render_priority = 0
+next_pass = ExtResource("3_auwq4")
+shader = ExtResource("3_whc82")
+shader_parameter/Albedo = ExtResource("11_ogmbd")
+shader_parameter/DarkenThreshold = -0.75
+shader_parameter/HighlightThreashold = 0.3
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_hu8xl"]
+render_priority = 0
+next_pass = ExtResource("3_auwq4")
+shader = ExtResource("3_whc82")
+shader_parameter/Albedo = ExtResource("11_ogmbd")
+shader_parameter/DarkenThreshold = -0.75
+shader_parameter/HighlightThreashold = 0.3
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_a0kl0"]
+render_priority = 0
+next_pass = ExtResource("3_auwq4")
+shader = ExtResource("3_whc82")
+shader_parameter/Albedo = ExtResource("11_ogmbd")
+shader_parameter/DarkenThreshold = -0.75
+shader_parameter/HighlightThreashold = 0.3
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_bn7l7"]
+render_priority = 0
+next_pass = ExtResource("3_auwq4")
+shader = ExtResource("3_whc82")
+shader_parameter/Albedo = ExtResource("11_ogmbd")
+shader_parameter/DarkenThreshold = -0.75
+shader_parameter/HighlightThreashold = 0.3
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_yhh7g"]
+render_priority = 0
+next_pass = ExtResource("3_auwq4")
+shader = ExtResource("3_whc82")
+shader_parameter/Albedo = ExtResource("11_ogmbd")
+shader_parameter/DarkenThreshold = -0.75
+shader_parameter/HighlightThreashold = 0.3
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_guroh"]
+render_priority = 0
+next_pass = ExtResource("3_auwq4")
+shader = ExtResource("3_whc82")
+shader_parameter/Albedo = ExtResource("11_ogmbd")
+shader_parameter/DarkenThreshold = -0.75
+shader_parameter/HighlightThreashold = 0.3
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_yp1xw"]
+render_priority = 0
+next_pass = ExtResource("3_auwq4")
+shader = ExtResource("3_whc82")
+shader_parameter/Albedo = ExtResource("11_ogmbd")
+shader_parameter/DarkenThreshold = -0.75
+shader_parameter/HighlightThreashold = 0.3
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_rb3i4"]
+render_priority = 0
+next_pass = ExtResource("3_auwq4")
+shader = ExtResource("3_whc82")
+shader_parameter/Albedo = ExtResource("11_ogmbd")
+shader_parameter/DarkenThreshold = -0.75
+shader_parameter/HighlightThreashold = 0.3
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_r758b"]
+render_priority = 0
+next_pass = ExtResource("3_auwq4")
+shader = ExtResource("3_whc82")
+shader_parameter/Albedo = ExtResource("11_ogmbd")
+shader_parameter/DarkenThreshold = -0.75
+shader_parameter/HighlightThreashold = 0.3
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_oc84p"]
+render_priority = 0
+next_pass = ExtResource("3_auwq4")
+shader = ExtResource("3_whc82")
+shader_parameter/Albedo = ExtResource("11_ogmbd")
+shader_parameter/DarkenThreshold = -0.75
+shader_parameter/HighlightThreashold = 0.3
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_ymbq1"]
+render_priority = 0
+next_pass = ExtResource("3_auwq4")
+shader = ExtResource("3_whc82")
+shader_parameter/Albedo = ExtResource("11_ogmbd")
+shader_parameter/DarkenThreshold = -0.75
+shader_parameter/HighlightThreashold = 0.3
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_l15cd"]
+render_priority = 0
+next_pass = ExtResource("3_auwq4")
+shader = ExtResource("3_whc82")
+shader_parameter/Albedo = ExtResource("11_ogmbd")
+shader_parameter/DarkenThreshold = -0.75
+shader_parameter/HighlightThreashold = 0.3
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_bfgks"]
+render_priority = 0
+next_pass = ExtResource("3_auwq4")
+shader = ExtResource("3_whc82")
+shader_parameter/Albedo = ExtResource("11_ogmbd")
+shader_parameter/DarkenThreshold = -0.75
+shader_parameter/HighlightThreashold = 0.3
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_m7mov"]
+render_priority = 0
+next_pass = ExtResource("3_auwq4")
+shader = ExtResource("3_whc82")
+shader_parameter/Albedo = ExtResource("11_ogmbd")
+shader_parameter/DarkenThreshold = -0.75
+shader_parameter/HighlightThreashold = 0.3
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_fkm72"]
+render_priority = 0
+next_pass = ExtResource("3_auwq4")
+shader = ExtResource("3_whc82")
+shader_parameter/Albedo = ExtResource("11_ogmbd")
+shader_parameter/DarkenThreshold = -0.75
+shader_parameter/HighlightThreashold = 0.3
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_nvjr7"]
+render_priority = 0
+next_pass = ExtResource("3_auwq4")
+shader = ExtResource("3_whc82")
+shader_parameter/Albedo = ExtResource("11_ogmbd")
+shader_parameter/DarkenThreshold = -0.75
+shader_parameter/HighlightThreashold = 0.3
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_71spi"]
+render_priority = 0
+next_pass = ExtResource("3_auwq4")
+shader = ExtResource("3_whc82")
+shader_parameter/Albedo = ExtResource("13_8fw0x")
+shader_parameter/DarkenThreshold = -0.75
+shader_parameter/HighlightThreashold = 0.3
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_ba2jd"]
+animation = &"eg_ev_01"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_npku2"]
+animation = &"eg_atk_start"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_a0ouw"]
+animation = &"eg_damage"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_85wcp"]
+animation = &"egm_dead_eg"
+use_custom_timeline = true
+timeline_length = 1.0
+stretch_time_scale = true
+start_offset = 0.2
+loop_mode = 0
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_viitb"]
+animation = &"egd_ev_01_eg"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_t5ta6"]
+animation = &"con_eggman_angry_idle"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_penu7"]
+animation = &"con_eggman_base_idle"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_6y6ey"]
+animation = &"con_eggman_base_talk"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_aoor8"]
+animation = &"con_eggman_base_idle"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_usoha"]
+animation = &"con_eggman_sad_idle"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_gf68h"]
+animation = &"con_eggman_base_idle"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_s35le"]
+animation = &"eg_idle"
+
+[sub_resource type="AnimationNodeSub2" id="AnimationNodeSub2_7wh18"]
+sync = true
+
+[sub_resource type="AnimationNodeSub2" id="AnimationNodeSub2_276wm"]
+sync = true
+
+[sub_resource type="AnimationNodeSub2" id="AnimationNodeSub2_3eyf6"]
+sync = true
+
+[sub_resource type="AnimationNodeAdd2" id="AnimationNodeAdd2_7kxeo"]
+sync = true
+
+[sub_resource type="AnimationNodeAdd2" id="AnimationNodeAdd2_1mf3c"]
+sync = true
+
+[sub_resource type="AnimationNodeAdd2" id="AnimationNodeAdd2_imdak"]
+sync = true
+
+[sub_resource type="AnimationNodeBlendTree" id="AnimationNodeBlendTree_015nu"]
+graph_offset = Vector2(-182.087, -160.741)
+nodes/output/position = Vector2(1400, 120)
+nodes/Animation/node = SubResource("AnimationNodeAnimation_s35le")
+nodes/Animation/position = Vector2(-520, 100)
+"nodes/Animation 2/node" = SubResource("AnimationNodeAnimation_t5ta6")
+"nodes/Animation 2/position" = Vector2(-520, 380)
+"nodes/Animation 3/node" = SubResource("AnimationNodeAnimation_penu7")
+"nodes/Animation 3/position" = Vector2(-520, 500)
+"nodes/Animation 4/node" = SubResource("AnimationNodeAnimation_6y6ey")
+"nodes/Animation 4/position" = Vector2(680, 440)
+"nodes/Animation 5/node" = SubResource("AnimationNodeAnimation_aoor8")
+"nodes/Animation 5/position" = Vector2(660, 600)
+"nodes/Animation 6/node" = SubResource("AnimationNodeAnimation_usoha")
+"nodes/Animation 6/position" = Vector2(0, 480)
+"nodes/Animation 7/node" = SubResource("AnimationNodeAnimation_gf68h")
+"nodes/Animation 7/position" = Vector2(-40, 600)
+nodes/Sub2/node = SubResource("AnimationNodeSub2_3eyf6")
+nodes/Sub2/position = Vector2(-160, 360)
+"nodes/Sub2 2/node" = SubResource("AnimationNodeSub2_7wh18")
+"nodes/Sub2 2/position" = Vector2(1040, 440)
+"nodes/Sub2 3/node" = SubResource("AnimationNodeSub2_276wm")
+"nodes/Sub2 3/position" = Vector2(340, 520)
+nodes/emotion_anger/node = SubResource("AnimationNodeAdd2_7kxeo")
+nodes/emotion_anger/position = Vector2(-20, 160)
+nodes/emotion_sadness/node = SubResource("AnimationNodeAdd2_1mf3c")
+nodes/emotion_sadness/position = Vector2(540, 140)
+nodes/talking/node = SubResource("AnimationNodeAdd2_imdak")
+nodes/talking/position = Vector2(1140, 120)
+node_connections = [&"output", 0, &"talking", &"Sub2", 0, &"Animation 2", &"Sub2", 1, &"Animation 3", &"Sub2 2", 0, &"Animation 4", &"Sub2 2", 1, &"Animation 5", &"Sub2 3", 0, &"Animation 6", &"Sub2 3", 1, &"Animation 7", &"emotion_anger", 0, &"Animation", &"emotion_anger", 1, &"Sub2", &"emotion_sadness", 0, &"emotion_anger", &"emotion_sadness", 1, &"Sub2 3", &"talking", 0, &"emotion_sadness", &"talking", 1, &"Sub2 2"]
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_bw6lw"]
+xfade_time = 0.2
+switch_mode = 2
+advance_mode = 2
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_s8ga5"]
+switch_mode = 2
+advance_mode = 2
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_u5aaw"]
+switch_mode = 2
+advance_mode = 2
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_dkc6w"]
+xfade_time = 0.2
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_y6wsu"]
+xfade_time = 0.2
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_w50qp"]
+xfade_time = 0.2
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_t000t"]
+advance_mode = 2
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_irf13"]
+xfade_time = 1.0
+switch_mode = 2
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_6d43t"]
+switch_mode = 2
+advance_mode = 2
+
+[sub_resource type="AnimationNodeStateMachine" id="AnimationNodeStateMachine_g81bs"]
+states/Aggro/node = SubResource("AnimationNodeAnimation_ba2jd")
+states/Aggro/position = Vector2(200, 140)
+states/Attack/node = SubResource("AnimationNodeAnimation_npku2")
+states/Attack/position = Vector2(367, 178)
+states/Damage/node = SubResource("AnimationNodeAnimation_a0ouw")
+states/Damage/position = Vector2(598, 231)
+states/Dead/node = SubResource("AnimationNodeAnimation_85wcp")
+states/Dead/position = Vector2(883, 231)
+states/Happy/node = SubResource("AnimationNodeAnimation_viitb")
+states/Happy/position = Vector2(593, 34)
+states/Idle/node = SubResource("AnimationNodeBlendTree_015nu")
+states/Idle/position = Vector2(392, 34)
+states/Start/position = Vector2(87, 87)
+transitions = ["Aggro", "Idle", SubResource("AnimationNodeStateMachineTransition_bw6lw"), "Attack", "Idle", SubResource("AnimationNodeStateMachineTransition_s8ga5"), "Damage", "Idle", SubResource("AnimationNodeStateMachineTransition_u5aaw"), "Idle", "Attack", SubResource("AnimationNodeStateMachineTransition_dkc6w"), "Idle", "Damage", SubResource("AnimationNodeStateMachineTransition_y6wsu"), "Idle", "Aggro", SubResource("AnimationNodeStateMachineTransition_w50qp"), "Start", "Idle", SubResource("AnimationNodeStateMachineTransition_t000t"), "Dead", "Idle", SubResource("AnimationNodeStateMachineTransition_irf13"), "Happy", "Idle", SubResource("AnimationNodeStateMachineTransition_6d43t")]
+graph_offset = Vector2(37, -24)
+
+[node name="Eggman" type="Node3D" unique_id=883058449 node_paths=PackedStringArray("EggmanAnimationTree", "EggmanAnimationPlayer", "EggmanSkeleton", "EggMobileSkeleton")]
+script = ExtResource("1_p2o8r")
+EggmanAnimationTree = NodePath("AnimationTree")
+EggmanAnimationPlayer = NodePath("Eggman2/AnimationPlayer")
+EggmanSkeleton = NodePath("Eggman2/chr_eggman/Skeleton3D")
+EggMobileSkeleton = NodePath("EggMobile/enm_eggmobile/Skeleton3D")
+
+[node name="Eggman2" parent="." unique_id=1591182462 instance=ExtResource("16_4kyub")]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, 0, 0)
+
+[node name="Skeleton3D" parent="Eggman2/chr_eggman" parent_id_path=PackedInt32Array(1591182462, 13701698) index="0" unique_id=1412590328]
+bones/1/rotation = Quaternion(1.4901161e-07, 0, 0, 1)
+bones/2/rotation = Quaternion(1.4901161e-07, 0, 0, 1)
+bones/4/rotation = Quaternion(1.4901161e-07, 0, 0, 1)
+bones/5/rotation = Quaternion(1.4901161e-07, 0, 0, 1)
+bones/6/rotation = Quaternion(1.4901161e-07, 0, 0, 1)
+bones/8/position = Vector3(-8.527604e-07, 0.4659902, -0.18641426)
+bones/8/rotation = Quaternion(0.00043704233, -0.7073253, 5.529728e-10, 0.70688814)
+bones/9/rotation = Quaternion(-0.63350147, -0.31412724, 0.31412724, 0.6335016)
+bones/10/rotation = Quaternion(0.5987532, -0.0618449, -0.18583643, -0.77661747)
+bones/11/rotation = Quaternion(1.2773822e-08, -0.013356931, 0.03412931, 0.99932826)
+bones/12/rotation = Quaternion(-0.0253914, -0.012023088, -0.24899364, 0.9680976)
+bones/15/rotation = Quaternion(-0.7707391, 0.17737229, 0.074690364, 0.60738933)
+bones/16/rotation = Quaternion(2.7234162e-09, -0.002225234, 0.03394729, 0.9994212)
+bones/17/rotation = Quaternion(0.042352654, 0.009994319, -0.25265697, 0.96657693)
+bones/20/position = Vector3(0.11516811, 0.15110394, -7.1425816e-09)
+bones/20/rotation = Quaternion(-1.7614735e-08, 5.5028753e-08, 0.39157176, 0.9201476)
+bones/21/scale = Vector3(1.0939311, 1.093931, 1.0939311)
+bones/22/rotation = Quaternion(-8.327843e-10, -5.776411e-08, -0.7473906, 0.66438496)
+bones/23/rotation = Quaternion(1.3078497e-08, 7.8779344e-08, 0.16812077, 0.9857664)
+bones/24/position = Vector3(1.7636921e-08, 0.051519386, 6.035298e-11)
+bones/24/rotation = Quaternion(2.6677785e-06, 2.1483702e-06, 0.13431853, 0.9909382)
+bones/25/position = Vector3(-1.0535587e-08, 0.051519383, 8.039393e-11)
+bones/25/rotation = Quaternion(0.58194757, 0.8132264, -1.0950783e-08, 5.2297885e-08)
+bones/26/position = Vector3(0.123647586, 0.15266751, 0.009322266)
+bones/26/rotation = Quaternion(0.6760177, 0.7027978, -0.19793475, -0.09948552)
+bones/27/position = Vector3(0.12364742, 0.15266736, -0.009325108)
+bones/27/rotation = Quaternion(0.6760177, 0.70279783, 0.19793455, 0.099485576)
+bones/28/position = Vector3(0.1399599, 0.14559032, 0.047051754)
+bones/28/rotation = Quaternion(0.7028083, 0.67359954, 0.07357775, -0.21658815)
+bones/29/position = Vector3(0.13996041, 0.1455898, -0.04705411)
+bones/29/rotation = Quaternion(0.7028083, 0.6735996, -0.07357773, 0.21658815)
+bones/30/position = Vector3(0.13348764, 0.119833745, 0.08420023)
+bones/30/rotation = Quaternion(0.69245034, 0.55787855, 0.43697616, -0.1354107)
+bones/31/position = Vector3(0.13348751, 0.119832665, -0.08420225)
+bones/31/rotation = Quaternion(0.69245017, 0.5578787, -0.43697616, 0.13541067)
+bones/32/position = Vector3(0.03811527, 0.14520717, -3.005539e-09)
+bones/32/rotation = Quaternion(0.6628911, 0.7487159, 3.4794606e-08, -9.813733e-08)
+bones/33/position = Vector3(0.03411169, 0.12660885, 0.067046195)
+bones/33/rotation = Quaternion(0.6376743, 0.7437901, 0.15544607, -0.1264295)
+bones/34/position = Vector3(0.034111496, 0.1266079, -0.06704836)
+bones/34/rotation = Quaternion(0.6376742, 0.7437901, -0.15544608, 0.12642942)
+bones/35/position = Vector3(0.0462638, 0.14730501, -3.674586e-09)
+bones/35/rotation = Quaternion(0.6628911, 0.7487159, 3.4785966e-08, -9.8149165e-08)
+bones/36/position = Vector3(0.042704012, 0.12850611, 0.066528305)
+bones/36/rotation = Quaternion(0.63767433, 0.7437901, 0.15544608, -0.12642947)
+bones/37/position = Vector3(0.042704158, 0.12850522, -0.06653055)
+bones/37/rotation = Quaternion(0.6376743, 0.74379003, -0.15544607, 0.12642941)
+bones/38/rotation = Quaternion(0.42241263, -0.42428967, -0.6361617, 0.48666644)
+bones/39/rotation = Quaternion(-0.42241234, 0.42428958, -0.636162, 0.4866664)
+bones/40/position = Vector3(0.010111504, 0.06399717, -1.6788135e-09)
+bones/40/rotation = Quaternion(0.70537966, 0.70881903, 0.0027635158, 0.0027635046)
+bones/41/position = Vector3(0.06396358, 0.06385874, -5.37608e-09)
+bones/41/rotation = Quaternion(0.70572513, 0.7084574, 0.004490639, 0.0044906926)
+bones/42/rotation = Quaternion(6.4240003e-06, 0.7917775, -0.6108096, 7.844305e-06)
+bones/43/rotation = Quaternion(0.3920886, 0.23099656, -0.14919078, 0.8778664)
+bones/44/rotation = Quaternion(-0.008175317, 0.008388276, 0.69581443, 0.7181261)
+bones/47/rotation = Quaternion(0.77533174, 0.49567783, 0.36715162, 0.13551342)
+bones/48/rotation = Quaternion(0.5830957, -0.25907668, 0.76830995, -0.050779156)
+bones/49/rotation = Quaternion(-0.17479043, 0.0006910063, 0.6114215, 0.7717588)
+bones/50/rotation = Quaternion(0.65978307, -0.25320688, 0.6869665, -0.16926245)
+bones/51/rotation = Quaternion(0.00034550007, 1.7105287e-07, 0.67498094, 0.73783517)
+bones/52/rotation = Quaternion(0.85936546, -0.06701487, 0.48395512, -0.15095535)
+bones/53/rotation = Quaternion(0.105012275, 0.00069123943, 0.33507183, 0.936322)
+bones/54/rotation = Quaternion(0.75306994, -0.2089886, 0.59034956, -0.2017346)
+bones/55/rotation = Quaternion(0.012781091, 1.7753624e-07, 0.59104, 0.80654097)
+bones/56/rotation = Quaternion(0.016235454, -0.41694078, 0.8722997, 0.25493136)
+bones/57/rotation = Quaternion(0.08877695, -6.16717e-08, 0.24111412, 0.96642774)
+bones/58/position = Vector3(-4.13707e-08, -1.0360964e-08, 2.2360545e-08)
+bones/58/rotation = Quaternion(0.03928765, -0.21397816, 0.5122109, 0.83084893)
+bones/60/rotation = Quaternion(6.5556524e-06, 0.79177755, 0.61080956, -7.849996e-06)
+bones/61/rotation = Quaternion(-0.43760684, -0.18023223, -0.18106928, 0.86210823)
+bones/62/rotation = Quaternion(0.009046417, -0.009324164, 0.69606245, 0.71786374)
+bones/65/rotation = Quaternion(0.8015082, 0.4866859, -0.34027255, -0.070256904)
+bones/66/rotation = Quaternion(-0.5830976, 0.25904024, 0.7683227, -0.050751314)
+bones/67/rotation = Quaternion(0.17479049, -0.00069090485, 0.6114214, 0.7717589)
+bones/68/rotation = Quaternion(0.6597904, -0.25317213, -0.6869798, 0.16923152)
+bones/69/rotation = Quaternion(-0.00034553412, -1.4311607e-07, 0.6749813, 0.73783475)
+bones/70/rotation = Quaternion(0.8593726, -0.06699122, -0.48395836, 0.15091443)
+bones/71/rotation = Quaternion(-0.100519046, -0.00034994364, 0.32090688, 0.94176143)
+bones/72/rotation = Quaternion(0.75307965, -0.20896098, -0.5903594, 0.20169811)
+bones/73/rotation = Quaternion(-0.012781291, 6.059355e-07, 0.59103894, 0.80654174)
+bones/74/rotation = Quaternion(-0.016223604, 0.41689909, 0.87231964, 0.25493217)
+bones/75/rotation = Quaternion(-0.08877494, -2.6703444e-06, 0.24111322, 0.96642816)
+bones/76/position = Vector3(-6.139234e-08, 9.026553e-08, -1.3047878e-05)
+bones/76/rotation = Quaternion(-0.023396583, 0.26394728, 0.49119395, 0.82976687)
+bones/77/rotation = Quaternion(3.354814e-07, 1.5614207e-08, -1.2312428e-07, 1)
+bones/78/rotation = Quaternion(-0.03990479, 0.99920356, -2.0720884e-07, 6.2499794e-08)
+bones/79/rotation = Quaternion(-0.039904654, 0.99920356, -3.601599e-08, -7.484323e-08)
+
+[node name="chr_eggman_001" parent="Eggman2/chr_eggman/Skeleton3D" index="0" unique_id=599969399]
+surface_material_override/0 = SubResource("ShaderMaterial_8f15h")
+surface_material_override/1 = SubResource("ShaderMaterial_5bcwm")
+surface_material_override/2 = SubResource("ShaderMaterial_6bpmb")
+surface_material_override/3 = SubResource("ShaderMaterial_ts4ng")
+surface_material_override/4 = SubResource("ShaderMaterial_gmhf0")
+surface_material_override/5 = SubResource("ShaderMaterial_mqtch")
+surface_material_override/6 = SubResource("ShaderMaterial_fkl20")
+surface_material_override/7 = SubResource("ShaderMaterial_vnf7j")
+surface_material_override/8 = SubResource("ShaderMaterial_nwjq1")
+surface_material_override/9 = SubResource("ShaderMaterial_684ww")
+surface_material_override/10 = SubResource("ShaderMaterial_w278h")
+surface_material_override/11 = SubResource("ShaderMaterial_hu8xl")
+surface_material_override/12 = SubResource("ShaderMaterial_a0kl0")
+surface_material_override/13 = SubResource("ShaderMaterial_bn7l7")
+surface_material_override/14 = SubResource("ShaderMaterial_yhh7g")
+surface_material_override/15 = SubResource("ShaderMaterial_guroh")
+surface_material_override/16 = SubResource("ShaderMaterial_yp1xw")
+surface_material_override/17 = SubResource("ShaderMaterial_rb3i4")
+surface_material_override/18 = SubResource("ShaderMaterial_r758b")
+surface_material_override/19 = SubResource("ShaderMaterial_oc84p")
+surface_material_override/20 = SubResource("ShaderMaterial_ymbq1")
+surface_material_override/21 = SubResource("ShaderMaterial_l15cd")
+surface_material_override/22 = SubResource("ShaderMaterial_bfgks")
+surface_material_override/23 = SubResource("ShaderMaterial_m7mov")
+surface_material_override/24 = SubResource("ShaderMaterial_fkm72")
+surface_material_override/25 = SubResource("ShaderMaterial_nvjr7")
+
+[node name="EggMobile" parent="." unique_id=1847859370 instance=ExtResource("3_w08kh")]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, 0, 0)
+
+[node name="enm_eggmobile_001" parent="EggMobile/enm_eggmobile/Skeleton3D" parent_id_path=PackedInt32Array(1847859370, 1869476668) index="0" unique_id=1255290071]
+surface_material_override/0 = SubResource("ShaderMaterial_71spi")
+
+[node name="AnimationTree" type="AnimationTree" parent="." unique_id=823005592]
+root_node = NodePath("../Eggman2")
+tree_root = SubResource("AnimationNodeStateMachine_g81bs")
+anim_player = NodePath("../Eggman2/AnimationPlayer")
+parameters/Idle/Sub2/sub_amount = 1.0
+"parameters/Idle/Sub2 2/sub_amount" = 1.0
+"parameters/Idle/Sub2 3/sub_amount" = 1.0
+parameters/Idle/emotion_anger/add_amount = 0.0
+parameters/Idle/emotion_sadness/add_amount = 0.0
+parameters/Idle/talking/add_amount = 0.0
+
+[editable path="Eggman2"]
+[editable path="EggMobile"]

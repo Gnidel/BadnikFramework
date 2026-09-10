@@ -1,0 +1,14 @@
+[gd_scene format=3 uid="uid://fh04wj45t0ot"]
+
+[ext_resource type="Script" uid="uid://d32weomiu2q8n" path="res://Scripts/Interactables/CameraTrigger.cs" id="1_ll5ue"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_wt7ij"]
+resource_local_to_scene = true
+size = Vector3(10, 10, 10)
+
+[node name="[Trigger] Camera Trigger" type="Area3D" unique_id=24665378]
+collision_mask = 2
+script = ExtResource("1_ll5ue")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=587286632]
+shape = SubResource("BoxShape3D_wt7ij")

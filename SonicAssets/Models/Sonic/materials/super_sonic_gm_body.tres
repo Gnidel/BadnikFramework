@@ -1,0 +1,10 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://ct8j0tcxjwmva"]
+
+[ext_resource type="Texture2D" uid="uid://ccdnfh1bgt6s2" path="res://SonicAssets/Models/Sonic/textures/chr_supersonic_body01_dif_HD.dds" id="1_tmu8x"]
+
+[resource]
+resource_name = "super_sonic_gm_body"
+albedo_texture = ExtResource("1_tmu8x")
+metallic = 1.0
+emission_enabled = true
+emission_texture = ExtResource("1_tmu8x")

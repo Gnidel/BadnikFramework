@@ -1,0 +1,48 @@
+[gd_scene format=3 uid="uid://co7vj8imnc6u4"]
+
+[ext_resource type="FontFile" uid="uid://ysevmc4grcp5" path="res://SonicAssets/Fonts/vipnagorgialla bd.otf" id="1_buthk"]
+[ext_resource type="Texture2D" uid="uid://c40nqwlkb6shg" path="res://SonicAssets/Stages/TestStage/Eggman.png" id="2_7jki1"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_llkr6"]
+cull_mode = 2
+albedo_color = Color(0, 0, 0, 1)
+
+[sub_resource type="QuadMesh" id="QuadMesh_38w3p"]
+material = SubResource("StandardMaterial3D_llkr6")
+size = Vector2(12, 4)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_b020n"]
+transparency = 1
+shading_mode = 0
+albedo_texture = ExtResource("2_7jki1")
+texture_filter = 2
+texture_repeat = false
+
+[sub_resource type="QuadMesh" id="QuadMesh_1mu7m"]
+material = SubResource("StandardMaterial3D_b020n")
+size = Vector2(3, 4)
+
+[node name="TestStageTutorial" type="Node3D" unique_id=1020071683]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -168.278, 2.99354, -59.2926)
+
+[node name="Label3D" type="Label3D" parent="." unique_id=284775712]
+text = "Welcome to Badnik Framework test level!
+It was created mostly for testing, but it's also
+a showcase of its features.
+
+Press RT to dash
+Press LT to roll
+Press LT (hold) + RT (mash) to spin dash
+Press X to homing attack
+Press A to jump"
+font = ExtResource("1_buthk")
+font_size = 64
+
+[node name="Background" type="MeshInstance3D" parent="." unique_id=1819263996]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.1)
+mesh = SubResource("QuadMesh_38w3p")
+skeleton = NodePath("../Label3D")
+
+[node name="Eggman" type="MeshInstance3D" parent="." unique_id=445891059]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.81772, -0.0722539, -0.0499992)
+mesh = SubResource("QuadMesh_1mu7m")

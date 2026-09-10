@@ -1,0 +1,40 @@
+[gd_scene format=3 uid="uid://ct1n36nr22ung"]
+
+[ext_resource type="PackedScene" uid="uid://cl7hu3frm6bc8" path="res://SonicAssets/Models/Enemies/EnemySpinner.blend" id="1_31s1q"]
+[ext_resource type="Material" uid="uid://csrhoebp6gef" path="res://Materials/Outline.tres" id="2_1170g"]
+[ext_resource type="Shader" uid="uid://cjktp1yrki104" path="res://Shaders/UekawaShader.tres" id="2_mqw7a"]
+[ext_resource type="Texture2D" uid="uid://byime7npg0iha" path="res://SonicAssets/Models/Enemies/textures/enm_spina_body_dif_HD.dds" id="3_1170g"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_6a56k"]
+render_priority = 0
+next_pass = ExtResource("2_1170g")
+shader = ExtResource("2_mqw7a")
+shader_parameter/Albedo = ExtResource("3_1170g")
+shader_parameter/DarkenThreshold = -0.75
+shader_parameter/HighlightThreashold = 0.3
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_0w8jb"]
+render_priority = 0
+next_pass = ExtResource("2_1170g")
+shader = ExtResource("2_mqw7a")
+shader_parameter/Albedo = ExtResource("3_1170g")
+shader_parameter/DarkenThreshold = -0.75
+shader_parameter/HighlightThreashold = 0.3
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_o0ln6"]
+animation = &"spn_roll_wing"
+
+[node name="EnemySpinner" unique_id=2129241663 instance=ExtResource("1_31s1q")]
+
+[node name="Skeleton3D" parent="enm_spina_HD" parent_id_path=PackedInt32Array(2143311116) index="0" unique_id=917645343]
+bones/2/rotation = Quaternion(0.707107, 0, 0, 0.707107)
+bones/4/rotation = Quaternion(4.446e-09, 4.446e-09, -0.920933, 0.389721)
+
+[node name="enm_spina_HD_001" parent="enm_spina_HD/Skeleton3D" index="0" unique_id=1967245736]
+surface_material_override/0 = SubResource("ShaderMaterial_6a56k")
+surface_material_override/1 = SubResource("ShaderMaterial_0w8jb")
+
+[node name="AnimationTree" type="AnimationTree" parent="AnimationPlayer" parent_id_path=PackedInt32Array(668219295) index="0" unique_id=862402088]
+root_node = NodePath("../..")
+tree_root = SubResource("AnimationNodeAnimation_o0ln6")
+anim_player = NodePath("..")

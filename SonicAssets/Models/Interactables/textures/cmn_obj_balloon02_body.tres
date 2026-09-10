@@ -1,0 +1,13 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://b603g3x6qn3oa"]
+
+[ext_resource type="Texture2D" uid="uid://bgb4hwrx0dx2v" path="res://SonicAssets/Models/Interactables/textures/cmn_obj_balloon02_body_abd.dds" id="1_dv36i"]
+[ext_resource type="Texture2D" uid="uid://cpb68krm0nty7" path="res://SonicAssets/Models/Interactables/textures/cmn_obj_balloon02_body_nrm.dds" id="2_jbxw0"]
+
+[resource]
+resource_name = "cmn_obj_balloon02_body"
+cull_mode = 2
+albedo_color = Color(0.906332, 0.906332, 0.906332, 1)
+albedo_texture = ExtResource("1_dv36i")
+roughness = 0.5
+normal_enabled = true
+normal_texture = ExtResource("2_jbxw0")

@@ -1,0 +1,56 @@
+[gd_scene format=3 uid="uid://bp1fwwogqqkfy"]
+
+[ext_resource type="Script" uid="uid://bge4hsg4hukce" path="res://Scripts/Interactables/DirectionalLauncher.cs" id="1_4nloq"]
+[ext_resource type="AudioStream" uid="uid://cmqgs70g2vcka" path="res://SonicAssets/Audio/Items/se_object_common#25 (objsn_booster; objsn_glindbooster).wav" id="2_l6ni7"]
+[ext_resource type="PackedScene" uid="uid://cv7rdril1a6c1" path="res://SonicAssets/Models/Interactables/dash_panel.glb" id="3_25ak4"]
+[ext_resource type="PackedScene" uid="uid://bq7p16fpdqnv0" path="res://SonicAssets/Prefabs/Particles/[particles] dir_launcher_particles.tscn" id="4_6dm5l"]
+[ext_resource type="Material" uid="uid://csrhoebp6gef" path="res://Materials/Outline.tres" id="4_yjd51"]
+[ext_resource type="Shader" uid="uid://cjktp1yrki104" path="res://Shaders/UekawaShader.tres" id="5_de4gk"]
+[ext_resource type="Texture2D" uid="uid://dwly7wchlldm5" path="res://SonicAssets/Models/Interactables/textures/cmn_metal_ms_dashpanel_dif.dds" id="6_vyibc"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_1wjyo"]
+render_priority = 0
+next_pass = ExtResource("4_yjd51")
+shader = ExtResource("5_de4gk")
+shader_parameter/Albedo = ExtResource("6_vyibc")
+shader_parameter/DarkenThreshold = -0.75
+shader_parameter/HighlightThreashold = 0.3
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_548tj"]
+render_priority = 0
+next_pass = ExtResource("4_yjd51")
+shader = ExtResource("5_de4gk")
+shader_parameter/Albedo = ExtResource("6_vyibc")
+shader_parameter/DarkenThreshold = -0.75
+shader_parameter/HighlightThreashold = 0.3
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_kthcl"]
+size = Vector3(2, 0.5, 2)
+
+[node name="[Interactable] Speed_Pad" type="Node3D" unique_id=2079534522]
+script = ExtResource("1_4nloq")
+Grounded = true
+LockInputTime = 0.5
+Snap = true
+SnapCamera = true
+SoundEffect = ExtResource("2_l6ni7")
+
+[node name="dash_panel2" parent="." unique_id=1193224805 instance=ExtResource("3_25ak4")]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0)
+
+[node name="cmn_obj_dashpanel_HD" parent="dash_panel2" index="0" unique_id=986429397]
+surface_material_override/0 = SubResource("ShaderMaterial_1wjyo")
+surface_material_override/1 = SubResource("ShaderMaterial_548tj")
+
+[node name="Area3D" type="Area3D" parent="." unique_id=323814150]
+collision_mask = 3
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D" unique_id=2034103943]
+shape = SubResource("BoxShape3D_kthcl")
+
+[node name="DirLauncherParticles" parent="." unique_id=4964157 instance=ExtResource("4_6dm5l")]
+
+[connection signal="OnLaunching" from="." to="DirLauncherParticles" method="set_emitting" binds= [true]]
+[connection signal="body_entered" from="Area3D" to="." method="OnTriggerEnter"]
+
+[editable path="dash_panel2"]

@@ -1,0 +1,122 @@
+[gd_scene format=3 uid="uid://p1l3extjhtqv"]
+
+[ext_resource type="Script" uid="uid://f3cxw7en1f5k" path="res://Scripts/Interactables/CollectableItem.cs" id="1_6uhtl"]
+[ext_resource type="AudioStream" uid="uid://dhadi43co06o4" path="res://SonicAssets/Audio/Items/se_rangers_obj_common.acb-0100-obj_key_get__obj_portal_bit.wav" id="2_yc0d1"]
+[ext_resource type="PackedScene" uid="uid://bx8jwimkxoutk" path="res://SonicAssets/Models/Items/Heart/Heart.glb" id="3_fgdj4"]
+[ext_resource type="Shader" uid="uid://beav5fdqdy2rq" path="res://Shaders/RotatingFlatColor.tres" id="4_oenlw"]
+[ext_resource type="Texture2D" uid="uid://cjyqftshxj8i4" path="res://SonicAssets/Textures/RingParticle.png" id="5_u8pew"]
+[ext_resource type="Script" uid="uid://fnc8iyq4x0eb" path="res://Scripts/Interactables/GlobalItem.cs" id="6_ff037"]
+[ext_resource type="Script" uid="uid://cceurnqlbjy0v" path="res://Scripts/Ui/MapUIIconTrackedObject.cs" id="7_yc0d1"]
+[ext_resource type="Texture2D" uid="uid://dssfy5ag8gb33" path="res://Prefabs/UI/UiHeartMagenta.png" id="8_lmfql"]
+
+[sub_resource type="Curve" id="Curve_idv40"]
+_limits = [0.0, 100.0, 0.0, 1.0]
+bake_resolution = 10
+_data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(1, 100), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_ff037"]
+render_priority = 0
+shader = ExtResource("4_oenlw")
+shader_parameter/RotationAxis = Vector3(0, 1, 0)
+shader_parameter/Color = Color(1, 0, 1, 1)
+shader_parameter/Metalic = 0.50000002375
+shader_parameter/Roughness = 0.50000002375
+shader_parameter/Emission = Color(0, 0, 0, 1)
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_6spl5"]
+radius = 2.0
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_648yg"]
+radius = 0.25
+
+[sub_resource type="Curve" id="Curve_f3mti"]
+_data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(0.127182, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
+point_count = 3
+
+[sub_resource type="CurveTexture" id="CurveTexture_tgj3w"]
+curve = SubResource("Curve_f3mti")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_bsup1"]
+spread = 180.0
+initial_velocity_min = 1.0
+initial_velocity_max = 2.0
+gravity = Vector3(0, 0, 0)
+scale_min = 0.25
+scale_curve = SubResource("CurveTexture_tgj3w")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_xe6we"]
+transparency = 1
+shading_mode = 0
+albedo_color = Color(1, 0, 1, 1)
+albedo_texture = ExtResource("5_u8pew")
+billboard_mode = 3
+billboard_keep_scale = true
+particles_anim_h_frames = 1
+particles_anim_v_frames = 1
+particles_anim_loop = false
+
+[sub_resource type="QuadMesh" id="QuadMesh_gutdc"]
+material = SubResource("StandardMaterial3D_xe6we")
+
+[node name="[globalitem] Heart" type="Node3D" unique_id=342757251 node_paths=PackedStringArray("particles", "modelNode")]
+physics_interpolation_mode = 2
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
+script = ExtResource("1_6uhtl")
+AttractionSpeed = SubResource("Curve_idv40")
+maxAttractionTime = 2.0
+SoundEffect = ExtResource("2_yc0d1")
+ItemName = "heart"
+ItemCount = 1
+particles = NodePath("RingParticles")
+modelNode = NodePath("Heart/isl_obj_heart")
+CanBeAttractedAfter = 0.0
+
+[node name="Heart" parent="." unique_id=1704770104 instance=ExtResource("3_fgdj4")]
+
+[node name="isl_obj_heart_001" parent="Heart/isl_obj_heart/Skeleton3D" parent_id_path=PackedInt32Array(1704770104, 1933561444) index="0" unique_id=1505207038]
+surface_material_override/0 = SubResource("ShaderMaterial_ff037")
+surface_material_override/1 = SubResource("ShaderMaterial_ff037")
+
+[node name="AttractTrigger" type="Area3D" parent="." unique_id=620901694]
+physics_interpolation_mode = 2
+collision_layer = 0
+collision_mask = 2
+input_ray_pickable = false
+monitorable = false
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="AttractTrigger" unique_id=542138050]
+shape = SubResource("SphereShape3D_6spl5")
+
+[node name="PickupTrigger" type="Area3D" parent="." unique_id=2014452621]
+physics_interpolation_mode = 2
+collision_layer = 0
+collision_mask = 2
+input_ray_pickable = false
+monitorable = false
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="PickupTrigger" unique_id=313885665]
+shape = SubResource("SphereShape3D_648yg")
+
+[node name="RingParticles" type="GPUParticles3D" parent="." unique_id=1462203228]
+emitting = false
+amount = 4
+lifetime = 0.5
+one_shot = true
+explosiveness = 1.0
+process_material = SubResource("ParticleProcessMaterial_bsup1")
+draw_pass_1 = SubResource("QuadMesh_gutdc")
+
+[node name="GlobalItem" type="Node3D" parent="." unique_id=176459246 node_paths=PackedStringArray("CollectableItem")]
+script = ExtResource("6_ff037")
+CollectableItem = NodePath("..")
+
+[node name="MapUIIcon" type="Node3D" parent="." unique_id=586953946]
+script = ExtResource("7_yc0d1")
+Texture = ExtResource("8_lmfql")
+Description = "Heart"
+
+[connection signal="body_entered" from="AttractTrigger" to="." method="OnAttract"]
+[connection signal="body_entered" from="PickupTrigger" to="." method="OnPickup"]
+
+[editable path="Heart"]

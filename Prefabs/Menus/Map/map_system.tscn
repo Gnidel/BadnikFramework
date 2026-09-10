@@ -1,0 +1,124 @@
+[gd_scene format=3 uid="uid://c2pkkonq4krg6"]
+
+[ext_resource type="Theme" uid="uid://di28qbb7lki3f" path="res://Misc/MenuTheme.tres" id="1_4pmaj"]
+[ext_resource type="Texture2D" uid="uid://dmy33lm0h6251" path="res://Prefabs/Menus/Map/Icons/map_you.png" id="1_ojflh"]
+[ext_resource type="Texture2D" uid="uid://decoe85t4418q" path="res://Prefabs/Menus/Map/Icons/map_cursor.png" id="3_1g6bm"]
+[ext_resource type="Script" uid="uid://o0xiw65l1xte" path="res://Scripts/Ui/MapUIControl.cs" id="3_4pmaj"]
+[ext_resource type="Script" uid="uid://bx4v4huqsajhi" path="res://Scripts/Utils/MapBaker.cs" id="5_jyqpd"]
+[ext_resource type="Texture2D" uid="uid://cdtcad2hb00wy" path="res://Games/Example game/Levels/Hub/hub_map_baked.png" id="6_sj84b"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_1g6bm"]
+radius = 25.0
+
+[node name="MapSystem" type="Node3D" unique_id=646975129]
+process_mode = 2
+
+[node name="MapUI" type="Control" parent="." unique_id=1142520450]
+z_index = 128
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_4pmaj")
+
+[node name="MapUIControl" type="Node" parent="MapUI" unique_id=1463325627 node_paths=PackedStringArray("MapUI", "IconsContainer", "Cursor", "MapRoot", "MapViewport", "MapTerrain", "FastTravelButton", "CloseButton", "DescriptionHeader", "DescriptionContent")]
+script = ExtResource("3_4pmaj")
+MapUI = NodePath("..")
+PlayerIconTexture = ExtResource("1_ojflh")
+IconsContainer = NodePath("../HBoxContainer/MapContainer/MapContainerContent/Icons")
+Cursor = NodePath("../HBoxContainer/MapContainer/MapContainerContent/Cursor")
+MapRoot = NodePath("../HBoxContainer/MapContainer/MapContainerContent")
+MapViewport = NodePath("../HBoxContainer/MapContainer")
+MapTerrain = NodePath("../HBoxContainer/MapContainer/MapContainerContent/MapTerrain")
+FastTravelButton = NodePath("../HBoxContainer/InfoContainerContainer/VBoxContainer/TeleportButton")
+CloseButton = NodePath("../CloseButton")
+DescriptionHeader = NodePath("../HBoxContainer/InfoContainerContainer/VBoxContainer/Header")
+DescriptionContent = NodePath("../HBoxContainer/InfoContainerContainer/VBoxContainer/Content")
+
+[node name="MapBaker" type="Node3D" parent="MapUI/MapUIControl" unique_id=1111343081]
+process_mode = 3
+script = ExtResource("5_jyqpd")
+AabbMin = Vector3(-100, 0, -100)
+AabbMax = Vector3(100, 0, 100)
+OutputPath = "res://Games/Example game/Levels/Hub/hub_map_baked.png"
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MapUI" unique_id=368410490]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="MapContainer" type="Control" parent="MapUI/HBoxContainer" unique_id=101669332]
+z_index = 10
+clip_contents = true
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="MapContainerContent" type="Control" parent="MapUI/HBoxContainer/MapContainer" unique_id=204532303]
+z_index = 200
+layout_mode = 1
+anchors_preset = 0
+
+[node name="MapTerrain" type="TextureRect" parent="MapUI/HBoxContainer/MapContainer/MapContainerContent" unique_id=1032196947]
+layout_mode = 0
+offset_right = 200.0
+offset_bottom = 200.0
+texture = ExtResource("6_sj84b")
+expand_mode = 1
+
+[node name="Icons" type="Node2D" parent="MapUI/HBoxContainer/MapContainer/MapContainerContent" unique_id=496053194]
+z_index = 1
+
+[node name="Cursor" type="Sprite2D" parent="MapUI/HBoxContainer/MapContainer/MapContainerContent" unique_id=1218621308]
+z_index = 2
+texture = ExtResource("3_1g6bm")
+
+[node name="Area2D" type="Area2D" parent="MapUI/HBoxContainer/MapContainer/MapContainerContent/Cursor" unique_id=1261777502]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="MapUI/HBoxContainer/MapContainer/MapContainerContent/Cursor/Area2D" unique_id=28299996]
+shape = SubResource("CircleShape2D_1g6bm")
+
+[node name="InfoContainerContainer" type="PanelContainer" parent="MapUI/HBoxContainer" unique_id=1463324771]
+z_index = 20
+custom_minimum_size = Vector2(500, 0)
+layout_mode = 2
+mouse_filter = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MapUI/HBoxContainer/InfoContainerContainer" unique_id=1597693126]
+layout_mode = 2
+
+[node name="Header" type="RichTextLabel" parent="MapUI/HBoxContainer/InfoContainerContainer/VBoxContainer" unique_id=675758200]
+custom_minimum_size = Vector2(0, 100)
+layout_mode = 2
+text = "MAP"
+
+[node name="Content" type="RichTextLabel" parent="MapUI/HBoxContainer/InfoContainerContainer/VBoxContainer" unique_id=1022350829]
+custom_minimum_size = Vector2(0, 100)
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="TeleportButton" type="Button" parent="MapUI/HBoxContainer/InfoContainerContainer/VBoxContainer" unique_id=1313899070]
+layout_mode = 2
+text = "TELEPORT"
+
+[node name="CloseButton" type="Button" parent="MapUI" unique_id=1463324772]
+z_index = 30
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+grow_horizontal = 0
+offset_left = -96.0
+offset_top = 24.0
+offset_right = -24.0
+offset_bottom = 96.0
+focus_neighbor_bottom = NodePath("../HBoxContainer/InfoContainerContainer/VBoxContainer/TeleportButton")
+mouse_default_cursor_shape = 2
+text = "X"
+
+[connection signal="pressed" from="MapUI/CloseButton" to="MapUI/MapUIControl" method="OnClose"]
+
+[connection signal="pressed" from="MapUI/HBoxContainer/InfoContainerContainer/VBoxContainer/TeleportButton" to="MapUI/MapUIControl" method="OnTeleport"]

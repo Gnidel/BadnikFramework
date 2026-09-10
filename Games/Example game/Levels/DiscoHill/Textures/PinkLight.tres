@@ -1,0 +1,10 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://6c3r4idp2oyr"]
+
+[resource]
+resource_name = "PinkLight"
+cull_mode = 2
+albedo_color = Color(0.906332, 0, 0.870505, 1)
+roughness = 0.5
+emission_enabled = true
+emission = Color(0.905882, 0, 0.870588, 1)
+emission_energy_multiplier = 10.0

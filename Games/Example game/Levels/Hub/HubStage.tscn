@@ -1,0 +1,608 @@
+[gd_scene format=3 uid="uid://brekoqvocjxht"]
+
+[ext_resource type="PackedScene" uid="uid://c2pkkonq4krg6" path="res://Prefabs/Menus/Map/map_system.tscn" id="1_1g1ix"]
+[ext_resource type="Script" uid="uid://c2i7w0nkuie1u" path="res://Scripts/System/StageData.cs" id="1_nnoon"]
+[ext_resource type="PackedScene" uid="uid://clt71rt2khju8" path="res://SonicAssets/Prefabs/Player/PlayersManager.tscn" id="2_q5nn4"]
+[ext_resource type="AudioStream" uid="uid://cak0cw4uu7qcy" path="res://Games/Example game/Levels/Hub/Music/Hub.ogg" id="2_ygwm4"]
+[ext_resource type="Script" uid="uid://pq5wwkgxhj7e" path="res://Scripts/Player/ExtraSettingsApplicator.cs" id="5_krmes"]
+[ext_resource type="PackedScene" uid="uid://wc1ll4yim1ps" path="res://SonicAssets/Prefabs/Interactables/[interactable]_stage_gate.tscn" id="6_dngfo"]
+[ext_resource type="Script" uid="uid://coh21v8jsbajm" path="res://Games/Example game/Levels/Hub/Grass/GrassController.cs" id="6_vengt"]
+[ext_resource type="Shader" uid="uid://cp3w6rg2heu2e" path="res://Games/Example game/Levels/Hub/textures/sky_shader.gdshader" id="6_xh6if"]
+[ext_resource type="Material" uid="uid://bmegwf6tgyyxk" path="res://Games/Example game/Levels/Hub/Grass/GrassShaderMaterial.tres" id="7_cuwcx"]
+[ext_resource type="Sky" uid="uid://b00ar4wexlg0w" path="res://Games/Example game/Levels/Hub/textures/HubMobileSky.tres" id="7_k240n"]
+[ext_resource type="Script" uid="uid://c2iwclb013o1y" path="res://Scripts/System/ApplyWorldEnvironmentSettings.cs" id="8_3k6rf"]
+[ext_resource type="Texture2D" uid="uid://b3r0e4nhha2nw" path="res://Prefabs/UI/Noise737x737.png" id="8_jffnw"]
+[ext_resource type="Texture2D" uid="uid://b37ugq4myog35" path="res://Games/Example game/Levels/DiscoHill/Icons/StageIconDiscoHill1.png" id="9_kt05c"]
+[ext_resource type="Script" uid="uid://do8pllvqf2jj5" path="res://Scripts/Utils/SkyMaterialForMobile.cs" id="9_usryn"]
+[ext_resource type="Script" uid="uid://y47n4ov38iw2" path="res://Scripts/Interactables/Hitbox.cs" id="9_vp0ud"]
+[ext_resource type="Script" uid="uid://ci2oh22k5mq5c" path="res://addons/sky_baker/SkyBaker.cs" id="10_k240n"]
+[ext_resource type="PackedScene" uid="uid://c0fohra07pret" path="res://Games/Example game/Levels/DiscoHill/Models/StageEntrance_DiscoHill.glb" id="10_kt05c"]
+[ext_resource type="Texture2D" uid="uid://bha340lqasd61" path="res://Games/Example game/Levels/DiscoHill/Icons/StageIconDiscoHill2.png" id="10_q3et7"]
+[ext_resource type="Texture2D" uid="uid://c12yy6qbhstai" path="res://Games/Example game/Levels/DiscoHill/Icons/StageIconDiscoHillB1.png" id="11_vjyiv"]
+[ext_resource type="PackedScene" uid="uid://cmqhhhyl8hl5l" path="res://Games/Example game/Levels/Hub/Numbers/1.glb" id="12_lb6jg"]
+[ext_resource type="Script" uid="uid://cceurnqlbjy0v" path="res://Scripts/Ui/MapUIIconTrackedObject.cs" id="12_rd43j"]
+[ext_resource type="Material" uid="uid://whb1p20jxcnu" path="res://Games/Example game/Levels/DiscoHill/Textures/Borders.tres" id="13_8unk1"]
+[ext_resource type="Texture2D" uid="uid://bfju8egoankkc" path="res://Prefabs/Menus/Map/Icons/map_stage.png" id="13_jdx1r"]
+[ext_resource type="Texture2D" uid="uid://bl2my8jfufuve" path="res://Games/Example game/Levels/Digital Sea/Icons/StageIconDigitalSea1.png" id="13_tgitv"]
+[ext_resource type="Material" uid="uid://6c3r4idp2oyr" path="res://Games/Example game/Levels/DiscoHill/Textures/PinkLight.tres" id="14_qly5o"]
+[ext_resource type="ArrayMesh" uid="uid://byb2y3yh2we33" path="res://Games/Example game/Levels/Hub/Grass/GrassBlade.tres" id="15_cuwcx"]
+[ext_resource type="PackedScene" uid="uid://llpg0l8kcl5v" path="res://Games/Example game/Levels/Hub/Numbers/2.glb" id="18_ll8xy"]
+[ext_resource type="Material" uid="uid://degj6i8f466ax" path="res://Materials/Water.tres" id="18_mfvqt"]
+[ext_resource type="Script" uid="uid://vdgtusf5dt38" path="res://Scripts/Interactables/WaterTrigger.cs" id="19_tqd2b"]
+[ext_resource type="PackedScene" uid="uid://b012kej47se0f" path="res://Games/Example game/Levels/Hub/Numbers/EggmanLogo.glb" id="20_krmes"]
+[ext_resource type="PackedScene" uid="uid://cfht4omj54h6v" path="res://Games/Example game/Levels/Hub/Seabed.glb" id="20_tqd2b"]
+[ext_resource type="Texture2D" uid="uid://beae5fgemkhv6" path="res://SonicAssets/Images/Map/map_boss.png" id="21_ll8xy"]
+[ext_resource type="Texture2D" uid="uid://dsnpdm22xalvi" path="res://SonicAssets/Images/Chaos Emeralds/chaosemerald_red.png" id="22_3k6rf"]
+[ext_resource type="Material" uid="uid://b22xxl12677yc" path="res://Games/Example game/Levels/Digital Sea/Textures/Grid2Material.tres" id="22_jujyu"]
+[ext_resource type="Material" uid="uid://nwm1o2s47wm" path="res://Games/Example game/Levels/Digital Sea/Textures/HexKhakiMaterial.tres" id="23_5dtfi"]
+[ext_resource type="Texture2D" uid="uid://bclhmktycvtoo" path="res://SonicAssets/Images/Chaos Emeralds/chaosemerald_blue.png" id="23_vs4bg"]
+[ext_resource type="Material" uid="uid://2houmkb1ws8w" path="res://Games/Example game/Levels/Digital Sea/Textures/gridplastic_material.tres" id="24_di6k1"]
+[ext_resource type="Texture2D" uid="uid://bhln1h0f7yux2" path="res://SonicAssets/Images/Chaos Emeralds/chaosemerald_yellow.png" id="24_usryn"]
+[ext_resource type="Material" uid="uid://cnms7qo65ynag" path="res://Games/Example game/Levels/Digital Sea/Textures/SeparatorMaterial.tres" id="25_8xw4r"]
+[ext_resource type="Texture2D" uid="uid://bjunr1k21yhx7" path="res://SonicAssets/Images/Chaos Emeralds/chaosemerald_green.png" id="25_k240n"]
+[ext_resource type="Texture2D" uid="uid://dek0vvk5pf3if" path="res://SonicAssets/Images/Chaos Emeralds/chaosemerald_gray.png" id="26_dt8er"]
+[ext_resource type="Texture2D" uid="uid://b74xfad0xng8p" path="res://Games/Example game/Levels/Digital Sea/Icons/StageIconDigitalSea2.png" id="26_qly5o"]
+[ext_resource type="Texture2D" uid="uid://b5fr2ieacp5cm" path="res://SonicAssets/Images/Chaos Emeralds/chaosemerald_cyan.png" id="27_d4b60"]
+[ext_resource type="Texture2D" uid="uid://b0o2r6uvjo5gm" path="res://Games/Example game/Levels/Digital Sea/Icons/StageIconDigitalSeaB1.png" id="27_ll8xy"]
+[ext_resource type="Texture2D" uid="uid://d352jnpld48pp" path="res://SonicAssets/Images/Chaos Emeralds/chaosemerald_magenta.png" id="28_ik4c1"]
+[ext_resource type="Texture2D" uid="uid://d3wo6y1r3sdm4" path="res://SonicAssets/Stages/Death Egg/Models/DeathEggSeparator_ssz_metal_ym2_hunger01_dif.png" id="29_cs6gc"]
+[ext_resource type="Script" uid="uid://chn5uhs6ryrhn" path="res://Scripts/Interactables/RequiredItem.cs" id="30_5dtfi"]
+[ext_resource type="Texture2D" uid="uid://dimvcsqrmhy1l" path="res://SonicAssets/Stages/Death Egg/Models/DeathEgg_ssz_metal_ym2_mplate11_dif.png" id="30_boll5"]
+[ext_resource type="Texture2D" uid="uid://ca4g6sgnp1tds" path="res://SonicAssets/Stages/Death Egg/Models/DeathEgg_ssz_metal_ym2_eseye01_dif.png" id="31_e0dgu"]
+[ext_resource type="Texture2D" uid="uid://c4m2p4icd0pe3" path="res://SonicAssets/Stages/Death Egg/Icons/StageIconDeathEgg.png" id="32_vs4bg"]
+[ext_resource type="Script" uid="uid://bbh65sxbt16rg" path="res://Scripts/Ui/HideOnMobile.cs" id="50_dt8er"]
+[ext_resource type="Texture2D" uid="uid://be2tgcx8ltscy" path="res://Games/Example game/Levels/Digital Sea/Textures/water_lowend_n.png" id="50_k240n"]
+[ext_resource type="PackedScene" uid="uid://dxhrlgbfh6rn2" path="res://Games/Example game/Levels/Hub/Hub.glb" id="51_vs4bg"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_fhrgg"]
+size = Vector3(10000, 1, 10000)
+
+[sub_resource type="Environment" id="Environment_sajgr"]
+background_mode = 2
+sky = ExtResource("7_k240n")
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_mfvqt"]
+seed = 1
+frequency = 0.005
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_0xuqh"]
+noise = SubResource("FastNoiseLite_mfvqt")
+seamless = true
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_xh6if"]
+shader = ExtResource("6_xh6if")
+shader_parameter/sky_top_color = Color(0.05, 0.18, 0.55, 1)
+shader_parameter/sky_horizon_color = Color(0.45, 0.72, 0.98, 1)
+shader_parameter/sky_bottom_color = Color(0.7, 0.85, 1, 1)
+shader_parameter/sun_color = Color(1, 0.95, 0.8, 1)
+shader_parameter/sun_size = 0.004
+shader_parameter/sun_glow_size = 0.15
+shader_parameter/sun_glow_intensity = 0.6
+shader_parameter/cloud_color_top = Color(1, 1, 1, 1)
+shader_parameter/cloud_color_base = Color(0.75, 0.8, 0.9, 1)
+shader_parameter/cloud_shadow_color = Color(0.5, 0.55, 0.68, 1)
+shader_parameter/cloud_coverage = 0.5
+shader_parameter/cloud_sharpness = 2.8
+shader_parameter/cloud_speed = 0.002
+shader_parameter/cloud_height = 0.18
+shader_parameter/cloud_thickness = 0.35
+shader_parameter/cloud_scale = 0.025
+shader_parameter/noise_tex = SubResource("NoiseTexture2D_0xuqh")
+
+[sub_resource type="Sky" id="Sky_482wa"]
+sky_material = SubResource("ShaderMaterial_xh6if")
+
+[sub_resource type="Resource" id="Resource_kgyni"]
+script = ExtResource("30_5dtfi")
+Id = "chaosemerald_red"
+VisibleName = "Red Chaos Emerald"
+Count = 1
+Icon = ExtResource("22_3k6rf")
+metadata/_custom_type_script = "uid://chn5uhs6ryrhn"
+
+[sub_resource type="Resource" id="Resource_ibbm4"]
+script = ExtResource("30_5dtfi")
+Id = "chaosemerald_blue"
+VisibleName = "Blue Chaos Emerald"
+Count = 1
+Icon = ExtResource("23_vs4bg")
+metadata/_custom_type_script = "uid://chn5uhs6ryrhn"
+
+[sub_resource type="Resource" id="Resource_rugsk"]
+script = ExtResource("30_5dtfi")
+Id = "chaosemerald_yellow"
+VisibleName = "Yellow Chaos Emerald"
+Count = 1
+Icon = ExtResource("24_usryn")
+metadata/_custom_type_script = "uid://chn5uhs6ryrhn"
+
+[sub_resource type="Resource" id="Resource_nsxh1"]
+script = ExtResource("30_5dtfi")
+Id = "chaosemerald_green"
+VisibleName = "Green Chaos Emerald"
+Count = 1
+Icon = ExtResource("25_k240n")
+metadata/_custom_type_script = "uid://chn5uhs6ryrhn"
+
+[sub_resource type="Resource" id="Resource_tc7km"]
+script = ExtResource("30_5dtfi")
+Id = "chaosemerald_gray"
+VisibleName = "Gray Chaos Emerald"
+Count = 1
+Icon = ExtResource("26_dt8er")
+metadata/_custom_type_script = "uid://chn5uhs6ryrhn"
+
+[sub_resource type="Resource" id="Resource_xewja"]
+script = ExtResource("30_5dtfi")
+Id = "chaosemerald_cyan"
+VisibleName = "Cyan Chaos Emerald"
+Count = 1
+Icon = ExtResource("27_d4b60")
+metadata/_custom_type_script = "uid://chn5uhs6ryrhn"
+
+[sub_resource type="Resource" id="Resource_n4ys5"]
+script = ExtResource("30_5dtfi")
+Id = "chaosemerald_magenta"
+VisibleName = "Magenta Chaos Emerald"
+Count = 1
+Icon = ExtResource("28_ik4c1")
+metadata/_custom_type_script = "uid://chn5uhs6ryrhn"
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_lkhne"]
+albedo_texture = ExtResource("29_cs6gc")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_rtk3g"]
+albedo_texture = ExtResource("30_boll5")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_nwo73"]
+albedo_texture = ExtResource("31_e0dgu")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_2qpv8"]
+albedo_texture = ExtResource("30_boll5")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_0dx5x"]
+albedo_texture = ExtResource("29_cs6gc")
+
+[sub_resource type="BoxMesh" id="BoxMesh_mdt0r"]
+material = ExtResource("18_mfvqt")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_dt8er"]
+transparency = 1
+albedo_color = Color(0, 0.2527313, 0.2527313, 0.5019608)
+normal_enabled = true
+normal_texture = ExtResource("50_k240n")
+uv1_scale = Vector3(50, 50, 50)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_tgitv"]
+
+[node name="HubStage" type="Node3D" unique_id=220796014]
+
+[node name="MapSystem" parent="." unique_id=646975129 instance=ExtResource("1_1g1ix")]
+
+[node name="MapBaker" parent="MapSystem/MapUI/MapUIControl" parent_id_path=PackedInt32Array(646975129, 1463325627) index="0" unique_id=1111343081]
+top_level = true
+AabbMin = Vector3(-100, -100, -100)
+AabbMax = Vector3(100, 100, 100)
+HeightmapOutputPath = "res://Games/Example game/Levels/Hub/hub_map_height_baked.png"
+HeightmapSize = Vector2i(1024, 1024)
+
+[node name="MapContainerContent" parent="MapSystem/MapUI/HBoxContainer/MapContainer" parent_id_path=PackedInt32Array(646975129, 101669332) index="0" unique_id=204532303]
+offset_left = 730.0
+offset_top = 493.0
+offset_right = -686.0
+offset_bottom = -587.0
+
+[node name="MapTerrain" parent="MapSystem/MapUI/HBoxContainer/MapContainer/MapContainerContent" index="0" unique_id=1032196947]
+offset_right = 0.0
+offset_bottom = 0.0
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=1259250097]
+transform = Transform3D(-0.8660254, -0.43301278, 0.25, 0, 0.49999997, 0.86602545, -0.50000006, 0.75, -0.43301266, 0, 0, 0)
+directional_shadow_mode = 0
+directional_shadow_max_distance = 1000.0
+
+[node name="StageData" type="Node" parent="." unique_id=791645848]
+script = ExtResource("1_nnoon")
+StageZoneName = "Hub"
+Style = 1
+StageUniqueIdentifier = "Hub"
+StageMusic = ExtResource("2_ygwm4")
+SRankRings = 50
+RankWeightTime = 1.0
+RankWeightRings = 0.0
+ExitSceneOverride = "res://Games/Example game/Levels/MainMenu/main_menu.tscn"
+
+[node name="PlayersManager" parent="." unique_id=1706967680 instance=ExtResource("2_q5nn4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 8, 0)
+
+[node name="ExtraSettingsApplicator" type="Node" parent="PlayersManager" unique_id=1782295377]
+script = ExtResource("5_krmes")
+
+[node name="Pit" type="Area3D" parent="." unique_id=1652095181]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -200, 0)
+collision_mask = 7
+script = ExtResource("9_vp0ud")
+IsInstaKill = true
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Pit" unique_id=905589749]
+shape = SubResource("BoxShape3D_fhrgg")
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=688646335]
+environment = SubResource("Environment_sajgr")
+script = ExtResource("8_3k6rf")
+
+[node name="MobileSky" type="Node" parent="WorldEnvironment" unique_id=2032867285 node_paths=PackedStringArray("WorldEnvironment")]
+script = ExtResource("9_usryn")
+WorldEnvironment = NodePath("..")
+MobileSky = ExtResource("7_k240n")
+HqSky = SubResource("Sky_482wa")
+
+[node name="SkyBaker" type="Node3D" parent="WorldEnvironment" unique_id=1625962982]
+script = ExtResource("10_k240n")
+SourceWorldEnvironmentPath = NodePath("..")
+CapturePosition = Vector3(-1000, 1, 0)
+CaptureFar = 10.0
+TextureOutputPath = "res://Games/Example game/Levels/Hub/textures/HubMobileSky.png"
+MaterialOutputPath = "res://Games/Example game/Levels/Hub/textures/HubMobileSkyMaterial.tres"
+SkyOutputPath = "res://Games/Example game/Levels/Hub/textures/HubMobileSky.tres"
+
+[node name="StageGates" type="Node3D" parent="." unique_id=1571904847]
+
+[node name="[Interactable] StageGate_DH1" parent="StageGates" unique_id=808181291 node_paths=PackedStringArray("MapIcon") instance=ExtResource("6_dngfo")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -20, 14.979, -84.246)
+StageName = "Disco Hill"
+StageActName = "Act 1"
+StageUniqueIdentifier = "DiscoHill1"
+UnlockedByDefault = true
+UnlockedImage = ExtResource("9_kt05c")
+LockedImage = ExtResource("8_jffnw")
+MapIcon = NodePath("MapUIIcon")
+NextStagePath = "res://Games/Example game/Levels/DiscoHill/DiscoHill.tscn"
+
+[node name="Label" parent="StageGates/[Interactable] StageGate_DH1" index="0" unique_id=72198829]
+text = "DISCO HILL ACT 1"
+
+[node name="StageEntrance_DiscoHill1" parent="StageGates/[Interactable] StageGate_DH1" unique_id=1133743565 instance=ExtResource("10_kt05c")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -10, 0)
+
+[node name="Cube" parent="StageGates/[Interactable] StageGate_DH1/StageEntrance_DiscoHill1" index="1" unique_id=549979986]
+visible = false
+
+[node name="Number1" parent="StageGates/[Interactable] StageGate_DH1/StageEntrance_DiscoHill1" unique_id=1665918525 instance=ExtResource("12_lb6jg")]
+transform = Transform3D(10, 0, 0, 0, -4.371139e-07, -10, 0, 10, -4.371139e-07, -1, 2.897, 0)
+
+[node name="1" parent="StageGates/[Interactable] StageGate_DH1/StageEntrance_DiscoHill1/Number1" index="0" unique_id=1259135473]
+surface_material_override/0 = ExtResource("13_8unk1")
+surface_material_override/1 = ExtResource("13_8unk1")
+surface_material_override/2 = ExtResource("14_qly5o")
+
+[node name="MapUIIcon" type="Node3D" parent="StageGates/[Interactable] StageGate_DH1" unique_id=1125245409 node_paths=PackedStringArray("FastTravelPoint")]
+script = ExtResource("12_rd43j")
+Texture = ExtResource("13_jdx1r")
+FastTravelPoint = NodePath("TeleportPoint")
+
+[node name="TeleportPoint" type="Node3D" parent="StageGates/[Interactable] StageGate_DH1/MapUIIcon" unique_id=991174022]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -10, 16)
+
+[node name="[Interactable] StageGate_DH2" parent="StageGates" unique_id=675156310 node_paths=PackedStringArray("MapIcon") instance=ExtResource("6_dngfo")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 14.979, -84.246)
+StageName = "Disco Hill"
+StageActName = "Act 2"
+StageUniqueIdentifier = "DiscoHill2"
+UnlockedImage = ExtResource("10_q3et7")
+LockedImage = ExtResource("8_jffnw")
+MapIcon = NodePath("MapUIIcon")
+NextStagePath = "res://Games/Example game/Levels/DiscoHill/DiscoHill2.tscn"
+
+[node name="Label" parent="StageGates/[Interactable] StageGate_DH2" index="0" unique_id=72198829]
+text = "DISCO HILL ACT 2"
+
+[node name="StageEntrance_DiscoHill2" parent="StageGates/[Interactable] StageGate_DH2" unique_id=1844892097 instance=ExtResource("10_kt05c")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -10, 0)
+
+[node name="Cube" parent="StageGates/[Interactable] StageGate_DH2/StageEntrance_DiscoHill2" index="1" unique_id=549979986]
+visible = false
+
+[node name="Number2" parent="StageGates/[Interactable] StageGate_DH2/StageEntrance_DiscoHill2" unique_id=2062346342 instance=ExtResource("18_ll8xy")]
+transform = Transform3D(10, 0, 0, 0, -4.371139e-07, -10, 0, 10, -4.371139e-07, -1, 2.897, 0)
+
+[node name="2" parent="StageGates/[Interactable] StageGate_DH2/StageEntrance_DiscoHill2/Number2" index="0" unique_id=1109184148]
+surface_material_override/0 = ExtResource("13_8unk1")
+surface_material_override/1 = ExtResource("13_8unk1")
+surface_material_override/2 = ExtResource("14_qly5o")
+
+[node name="MapUIIcon" type="Node3D" parent="StageGates/[Interactable] StageGate_DH2" unique_id=1814687692 node_paths=PackedStringArray("FastTravelPoint")]
+script = ExtResource("12_rd43j")
+Texture = ExtResource("13_jdx1r")
+FastTravelPoint = NodePath("TeleportPoint")
+
+[node name="TeleportPoint" type="Node3D" parent="StageGates/[Interactable] StageGate_DH2/MapUIIcon" unique_id=121740235]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -10, 16)
+
+[node name="[Interactable] StageGate_DHB1" parent="StageGates" unique_id=1011302086 node_paths=PackedStringArray("MapIcon") instance=ExtResource("6_dngfo")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 20, 14.979, -84.246)
+StageName = "Disco Hill"
+StageActName = "Boss"
+StageUniqueIdentifier = "DiscoHillB1"
+UnlockedImage = ExtResource("11_vjyiv")
+LockedImage = ExtResource("8_jffnw")
+MapIcon = NodePath("MapUIIcon")
+NextStagePath = "res://Games/Example game/Levels/DiscoHill/DiscoHillB1.tscn"
+
+[node name="Label" parent="StageGates/[Interactable] StageGate_DHB1" index="0" unique_id=72198829]
+text = "DISCO HILL BOSS"
+
+[node name="StageEntrance_DiscoHillBoss" parent="StageGates/[Interactable] StageGate_DHB1" unique_id=1108182716 instance=ExtResource("10_kt05c")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -10, 0)
+
+[node name="Cube" parent="StageGates/[Interactable] StageGate_DHB1/StageEntrance_DiscoHillBoss" index="1" unique_id=549979986]
+visible = false
+
+[node name="EggmanLogo2" parent="StageGates/[Interactable] StageGate_DHB1/StageEntrance_DiscoHillBoss" unique_id=297279856 instance=ExtResource("20_krmes")]
+transform = Transform3D(3, 0, 0, 0, -1.3113416e-07, -3, 0, 3, -1.3113416e-07, -1, 5.8970003, 0)
+
+[node name="EggmanLogo" parent="StageGates/[Interactable] StageGate_DHB1/StageEntrance_DiscoHillBoss/EggmanLogo2" index="0" unique_id=641044809]
+surface_material_override/0 = ExtResource("14_qly5o")
+surface_material_override/1 = ExtResource("13_8unk1")
+
+[node name="MapUIIcon" type="Node3D" parent="StageGates/[Interactable] StageGate_DHB1" unique_id=689224664 node_paths=PackedStringArray("FastTravelPoint")]
+script = ExtResource("12_rd43j")
+Texture = ExtResource("21_ll8xy")
+FastTravelPoint = NodePath("TeleportPoint")
+
+[node name="TeleportPoint" type="Node3D" parent="StageGates/[Interactable] StageGate_DHB1/MapUIIcon" unique_id=59759393]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -10, 16)
+
+[node name="[Interactable] StageGate_DS1" parent="StageGates" unique_id=33604559 node_paths=PackedStringArray("MapIcon") instance=ExtResource("6_dngfo")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 90, 14.979, -31.246002)
+StageName = "Digital Sea"
+StageActName = "Act 1"
+StageUniqueIdentifier = "Digital Sea 1"
+UnlockedByDefault = true
+UnlockedImage = ExtResource("13_tgitv")
+LockedImage = ExtResource("8_jffnw")
+MapIcon = NodePath("MapUIIcon")
+NextStagePath = "res://Games/Example game/Levels/Digital Sea/DigitalSeaAct1.tscn"
+
+[node name="Label" parent="StageGates/[Interactable] StageGate_DS1" index="0" unique_id=72198829]
+outline_modulate = Color(0, 0.5019608, 0, 1)
+text = "Digital Sea
+Act 1"
+
+[node name="StageEntrance_DigitalSea" parent="StageGates/[Interactable] StageGate_DS1" unique_id=1663460158 instance=ExtResource("10_kt05c")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -10, 0)
+
+[node name="StageEntrance_DiscoHill" parent="StageGates/[Interactable] StageGate_DS1/StageEntrance_DigitalSea" index="0" unique_id=989637729]
+surface_material_override/1 = ExtResource("22_jujyu")
+surface_material_override/2 = ExtResource("23_5dtfi")
+surface_material_override/3 = ExtResource("24_di6k1")
+surface_material_override/4 = ExtResource("25_8xw4r")
+
+[node name="Cube" parent="StageGates/[Interactable] StageGate_DS1/StageEntrance_DigitalSea" index="1" unique_id=549979986]
+visible = false
+
+[node name="Number1" parent="StageGates/[Interactable] StageGate_DS1/StageEntrance_DigitalSea" unique_id=1773721174 instance=ExtResource("12_lb6jg")]
+transform = Transform3D(10, 0, 0, 0, -4.371139e-07, -10, 0, 10, -4.371139e-07, -1, 2.897, 0)
+
+[node name="1" parent="StageGates/[Interactable] StageGate_DS1/StageEntrance_DigitalSea/Number1" index="0" unique_id=1259135473]
+surface_material_override/0 = ExtResource("23_5dtfi")
+surface_material_override/1 = ExtResource("23_5dtfi")
+surface_material_override/2 = ExtResource("24_di6k1")
+
+[node name="MapUIIcon" type="Node3D" parent="StageGates/[Interactable] StageGate_DS1" unique_id=1225721010 node_paths=PackedStringArray("FastTravelPoint")]
+script = ExtResource("12_rd43j")
+Texture = ExtResource("13_jdx1r")
+FastTravelPoint = NodePath("TeleportPoint")
+
+[node name="TeleportPoint" type="Node3D" parent="StageGates/[Interactable] StageGate_DS1/MapUIIcon" unique_id=1546905545]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -10, 16)
+
+[node name="[Interactable] StageGate_DS2" parent="StageGates" unique_id=253752090 node_paths=PackedStringArray("MapIcon") instance=ExtResource("6_dngfo")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 90, 14.979, -10.246002)
+StageName = "Digital Sea"
+StageActName = "Act 2"
+StageUniqueIdentifier = "Digital Sea 2"
+UnlockedImage = ExtResource("26_qly5o")
+LockedImage = ExtResource("8_jffnw")
+MapIcon = NodePath("MapUIIcon")
+NextStagePath = "res://Games/Example game/Levels/Digital Sea/DigitalSeaAct2.tscn"
+
+[node name="Label" parent="StageGates/[Interactable] StageGate_DS2" index="0" unique_id=72198829]
+outline_modulate = Color(0, 0.5019608, 0, 1)
+text = "Digital Sea
+Act 2"
+
+[node name="StageEntrance_DigitalSea" parent="StageGates/[Interactable] StageGate_DS2" unique_id=1804144290 instance=ExtResource("10_kt05c")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -10, 0)
+
+[node name="StageEntrance_DiscoHill" parent="StageGates/[Interactable] StageGate_DS2/StageEntrance_DigitalSea" index="0" unique_id=989637729]
+surface_material_override/1 = ExtResource("22_jujyu")
+surface_material_override/2 = ExtResource("23_5dtfi")
+surface_material_override/3 = ExtResource("24_di6k1")
+surface_material_override/4 = ExtResource("25_8xw4r")
+
+[node name="Cube" parent="StageGates/[Interactable] StageGate_DS2/StageEntrance_DigitalSea" index="1" unique_id=549979986]
+visible = false
+
+[node name="Number2" parent="StageGates/[Interactable] StageGate_DS2/StageEntrance_DigitalSea" unique_id=1071857326 instance=ExtResource("18_ll8xy")]
+transform = Transform3D(10, 0, 0, 0, -4.371139e-07, -10, 0, 10, -4.371139e-07, -1, 2.897, 0)
+
+[node name="2" parent="StageGates/[Interactable] StageGate_DS2/StageEntrance_DigitalSea/Number2" index="0" unique_id=1109184148]
+surface_material_override/0 = ExtResource("23_5dtfi")
+surface_material_override/1 = ExtResource("23_5dtfi")
+surface_material_override/2 = ExtResource("24_di6k1")
+
+[node name="MapUIIcon" type="Node3D" parent="StageGates/[Interactable] StageGate_DS2" unique_id=2080236648 node_paths=PackedStringArray("FastTravelPoint")]
+script = ExtResource("12_rd43j")
+Texture = ExtResource("13_jdx1r")
+FastTravelPoint = NodePath("TeleportPoint")
+
+[node name="TeleportPoint" type="Node3D" parent="StageGates/[Interactable] StageGate_DS2/MapUIIcon" unique_id=1991864534]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -10, 16)
+
+[node name="[Interactable] StageGate_DSB1" parent="StageGates" unique_id=1160465538 node_paths=PackedStringArray("MapIcon") instance=ExtResource("6_dngfo")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 90, 14.979, 10.753998)
+StageName = "Digital Sea"
+StageActName = "Boss"
+StageUniqueIdentifier = "Digital Sea B1"
+UnlockedImage = ExtResource("27_ll8xy")
+LockedImage = ExtResource("8_jffnw")
+MapIcon = NodePath("MapUIIcon")
+NextStagePath = "res://Games/Example game/Levels/Digital Sea/DigitalSeaActB1.tscn"
+ConsumeItems = true
+
+[node name="Label" parent="StageGates/[Interactable] StageGate_DSB1" index="0" unique_id=72198829]
+outline_modulate = Color(0, 0.5019608, 0, 1)
+text = "Digital Sea
+Boss"
+
+[node name="StageEntrance_DigitalSea" parent="StageGates/[Interactable] StageGate_DSB1" unique_id=1535451296 instance=ExtResource("10_kt05c")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -10, 0)
+
+[node name="StageEntrance_DiscoHill" parent="StageGates/[Interactable] StageGate_DSB1/StageEntrance_DigitalSea" index="0" unique_id=989637729]
+surface_material_override/1 = ExtResource("22_jujyu")
+surface_material_override/2 = ExtResource("23_5dtfi")
+surface_material_override/3 = ExtResource("24_di6k1")
+surface_material_override/4 = ExtResource("25_8xw4r")
+
+[node name="Cube" parent="StageGates/[Interactable] StageGate_DSB1/StageEntrance_DigitalSea" index="1" unique_id=549979986]
+visible = false
+
+[node name="EggmanLogo2" parent="StageGates/[Interactable] StageGate_DSB1/StageEntrance_DigitalSea" unique_id=1323307223 instance=ExtResource("20_krmes")]
+transform = Transform3D(3, 0, 0, 0, -1.3113416e-07, -3, 0, 3, -1.3113416e-07, -1, 5.8970003, 0)
+
+[node name="EggmanLogo" parent="StageGates/[Interactable] StageGate_DSB1/StageEntrance_DigitalSea/EggmanLogo2" index="0" unique_id=641044809]
+surface_material_override/0 = ExtResource("24_di6k1")
+surface_material_override/1 = ExtResource("23_5dtfi")
+
+[node name="MapUIIcon" type="Node3D" parent="StageGates/[Interactable] StageGate_DSB1" unique_id=129113520 node_paths=PackedStringArray("FastTravelPoint")]
+script = ExtResource("12_rd43j")
+Texture = ExtResource("21_ll8xy")
+FastTravelPoint = NodePath("TeleportPoint")
+
+[node name="TeleportPoint" type="Node3D" parent="StageGates/[Interactable] StageGate_DSB1/MapUIIcon" unique_id=1637653304]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -10, 16)
+
+[node name="[Interactable] StageGate_DE" parent="StageGates" unique_id=1767566205 node_paths=PackedStringArray("MapIcon") instance=ExtResource("6_dngfo")]
+transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, 7.6293945e-06, 14.979, 89.75399)
+StageName = "Death Egg"
+StageActName = ""
+StageUniqueIdentifier = "WFB1"
+UnlockedImage = ExtResource("32_vs4bg")
+LockedImage = ExtResource("8_jffnw")
+MapIcon = NodePath("MapUIIcon")
+NextStagePath = "res://Games/Example game/Levels/Finale/WFB1.tscn"
+UnlockedWithItems = true
+RequiredItems = Array[ExtResource("30_5dtfi")]([SubResource("Resource_kgyni"), SubResource("Resource_ibbm4"), SubResource("Resource_rugsk"), SubResource("Resource_nsxh1"), SubResource("Resource_tc7km"), SubResource("Resource_xewja"), SubResource("Resource_n4ys5")])
+
+[node name="Label" parent="StageGates/[Interactable] StageGate_DE" index="0" unique_id=72198829]
+outline_modulate = Color(0.49148947, 0.50130427, 0.48665583, 1)
+text = "DEATH EGG"
+
+[node name="StageEntrance_DiscoHill2" parent="StageGates/[Interactable] StageGate_DE" unique_id=1977257429 instance=ExtResource("10_kt05c")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -10, 0)
+
+[node name="StageEntrance_DiscoHill" parent="StageGates/[Interactable] StageGate_DE/StageEntrance_DiscoHill2" index="0" unique_id=989637729]
+surface_material_override/0 = SubResource("StandardMaterial3D_lkhne")
+surface_material_override/1 = SubResource("StandardMaterial3D_rtk3g")
+surface_material_override/2 = SubResource("StandardMaterial3D_nwo73")
+surface_material_override/3 = SubResource("StandardMaterial3D_2qpv8")
+surface_material_override/4 = SubResource("StandardMaterial3D_0dx5x")
+
+[node name="Cube" parent="StageGates/[Interactable] StageGate_DE/StageEntrance_DiscoHill2" index="1" unique_id=549979986]
+visible = false
+
+[node name="MapUIIcon" type="Node3D" parent="StageGates/[Interactable] StageGate_DE" unique_id=816302063 node_paths=PackedStringArray("FastTravelPoint")]
+script = ExtResource("12_rd43j")
+Texture = ExtResource("13_jdx1r")
+FastTravelPoint = NodePath("TeleportPoint")
+
+[node name="TeleportPoint" type="Node3D" parent="StageGates/[Interactable] StageGate_DE/MapUIIcon" unique_id=1826672664]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -10, 16)
+
+[node name="Seabed" parent="." unique_id=1854560705 instance=ExtResource("20_tqd2b")]
+transform = Transform3D(50, 0, 0, 0, 10, 0, 0, 0, 50, 0, -1232.7554, 0)
+
+[node name="GrassController" type="Node3D" parent="." unique_id=90529529 node_paths=PackedStringArray("MeshInstancesToPopulate")]
+script = ExtResource("6_vengt")
+GrassMesh = ExtResource("15_cuwcx")
+Count = 100000
+GrassMaterial = ExtResource("7_cuwcx")
+MeshInstancesToPopulate = [NodePath("../Hub/Cylinder_Top_Grass_001"), NodePath("../Hub/Cylinder_Top_Grass_002"), NodePath("../Hub/Cylinder_Top_Grass_003"), NodePath("../Hub/Cylinder_Top_Grass_004"), NodePath("../Hub/Cylinder_Top_Grass_005")]
+
+[node name="Hub" parent="." unique_id=1795078070 instance=ExtResource("51_vs4bg")]
+
+[node name="StaticBody3D" parent="Hub/Cylinder_Top" parent_id_path=PackedInt32Array(1795078070, 1965278894) index="0" unique_id=896518583]
+collision_layer = 2097153
+
+[node name="StaticBody3D" parent="Hub/Cylinder_Top_Grass_001" parent_id_path=PackedInt32Array(1795078070, 2001278977) index="0" unique_id=1354623771]
+collision_layer = 1048577
+
+[node name="StaticBody3D" parent="Hub/Cylinder_Top_Grass_002" parent_id_path=PackedInt32Array(1795078070, 1757925189) index="0" unique_id=827488741]
+collision_layer = 1048577
+
+[node name="StaticBody3D" parent="Hub/Cylinder_Top_Grass_003" parent_id_path=PackedInt32Array(1795078070, 1874037246) index="0" unique_id=934134702]
+collision_layer = 1048577
+
+[node name="StaticBody3D" parent="Hub/Cylinder_Top_Grass_004" parent_id_path=PackedInt32Array(1795078070, 694864053) index="0" unique_id=1194015084]
+collision_layer = 1048577
+
+[node name="StaticBody3D" parent="Hub/Cylinder_Top_Grass_005" parent_id_path=PackedInt32Array(1795078070, 369818499) index="0" unique_id=1881327373]
+collision_layer = 1048577
+
+[node name="Water" type="Node3D" parent="." unique_id=2042637376]
+transform = Transform3D(10000, 0, 0, 0, 1000, 0, 0, 0, 10000, 0, -500, 0)
+
+[node name="Water" type="MeshInstance3D" parent="Water" unique_id=2061254533]
+process_mode = 3
+visible = false
+mesh = SubResource("BoxMesh_mdt0r")
+surface_material_override/0 = ExtResource("18_mfvqt")
+
+[node name="HideOnMobile" type="Node" parent="Water/Water" unique_id=205544907]
+script = ExtResource("50_dt8er")
+ShowOnMobile = false
+ShowOnNonMobile = true
+ApplyToParent = true
+Destroy = true
+
+[node name="Water_Mobile" type="MeshInstance3D" parent="Water" unique_id=808781672]
+process_mode = 3
+mesh = SubResource("BoxMesh_mdt0r")
+surface_material_override/0 = SubResource("StandardMaterial3D_dt8er")
+
+[node name="HideOnNonMobile" type="Node" parent="Water/Water_Mobile" unique_id=411904510]
+script = ExtResource("50_dt8er")
+ApplyToParent = true
+Destroy = true
+
+[node name="Area3D" type="Area3D" parent="Water" unique_id=715368078]
+script = ExtResource("19_tqd2b")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Water/Area3D" unique_id=263439540]
+shape = SubResource("BoxShape3D_tgitv")
+
+[connection signal="OnAfterSpawningDone" from="PlayersManager" to="PlayersManager/ExtraSettingsApplicator" method="ApplySettings"]
+
+[editable path="MapSystem"]
+[editable path="StageGates/[Interactable] StageGate_DH1"]
+[editable path="StageGates/[Interactable] StageGate_DH1/StageEntrance_DiscoHill1"]
+[editable path="StageGates/[Interactable] StageGate_DH1/StageEntrance_DiscoHill1/Number1"]
+[editable path="StageGates/[Interactable] StageGate_DH2"]
+[editable path="StageGates/[Interactable] StageGate_DH2/StageEntrance_DiscoHill2"]
+[editable path="StageGates/[Interactable] StageGate_DH2/StageEntrance_DiscoHill2/Number2"]
+[editable path="StageGates/[Interactable] StageGate_DHB1"]
+[editable path="StageGates/[Interactable] StageGate_DHB1/StageEntrance_DiscoHillBoss"]
+[editable path="StageGates/[Interactable] StageGate_DHB1/StageEntrance_DiscoHillBoss/EggmanLogo2"]
+[editable path="StageGates/[Interactable] StageGate_DS1"]
+[editable path="StageGates/[Interactable] StageGate_DS1/StageEntrance_DigitalSea"]
+[editable path="StageGates/[Interactable] StageGate_DS1/StageEntrance_DigitalSea/Number1"]
+[editable path="StageGates/[Interactable] StageGate_DS2"]
+[editable path="StageGates/[Interactable] StageGate_DS2/StageEntrance_DigitalSea"]
+[editable path="StageGates/[Interactable] StageGate_DS2/StageEntrance_DigitalSea/Number2"]
+[editable path="StageGates/[Interactable] StageGate_DSB1"]
+[editable path="StageGates/[Interactable] StageGate_DSB1/StageEntrance_DigitalSea"]
+[editable path="StageGates/[Interactable] StageGate_DSB1/StageEntrance_DigitalSea/EggmanLogo2"]
+[editable path="StageGates/[Interactable] StageGate_DE"]
+[editable path="StageGates/[Interactable] StageGate_DE/StageEntrance_DiscoHill2"]
+[editable path="Hub"]

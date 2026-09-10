@@ -1,0 +1,50 @@
+[gd_scene format=3 uid="uid://b5phasqupvnea"]
+
+[ext_resource type="Texture2D" uid="uid://boy6pa0yygw0w" path="res://SonicAssets/Prefabs/Particles/GrindSpark/grind_spark.png" id="1_38rpk"]
+
+[sub_resource type="Gradient" id="Gradient_wfqdw"]
+offsets = PackedFloat32Array(0.12973, 0.583784, 1)
+colors = PackedColorArray(1, 1, 1, 0, 1, 1, 1, 0.501961, 1, 1, 1, 0)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_shr8f"]
+gradient = SubResource("Gradient_wfqdw")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_xfbkd"]
+emission_shape = 1
+emission_sphere_radius = 1.0
+angle_min = -180.0
+angle_max = 180.0
+spread = 5.0
+flatness = 0.25
+initial_velocity_min = 45.0
+initial_velocity_max = 45.0
+gravity = Vector3(0, 0, 0)
+scale_min = 0.0
+color_ramp = SubResource("GradientTexture1D_shr8f")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_kt4xs"]
+transparency = 1
+shading_mode = 0
+vertex_color_use_as_albedo = true
+albedo_texture = ExtResource("1_38rpk")
+billboard_mode = 3
+billboard_keep_scale = true
+particles_anim_h_frames = 1
+particles_anim_v_frames = 1
+particles_anim_loop = false
+use_particle_trails = true
+
+[sub_resource type="RibbonTrailMesh" id="RibbonTrailMesh_0smyv"]
+material = SubResource("StandardMaterial3D_kt4xs")
+size = 0.1
+section_length = 0.4
+
+[node name="RunTrail" type="GPUParticles3D" unique_id=737647403]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 0, 0, 0)
+amount = 32
+lifetime = 0.25
+preprocess = 0.25
+local_coords = true
+trail_enabled = true
+process_material = SubResource("ParticleProcessMaterial_xfbkd")
+draw_pass_1 = SubResource("RibbonTrailMesh_0smyv")

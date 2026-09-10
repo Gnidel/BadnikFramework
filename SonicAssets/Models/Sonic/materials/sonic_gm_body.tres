@@ -1,0 +1,15 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://n6fu1ix46fgs"]
+
+[ext_resource type="Texture2D" uid="uid://csofyhb5wwspp" path="res://SonicAssets/Models/Sonic/textures/chr_sonic_body01_dif_HD.dds" id="1_fhvyp"]
+[ext_resource type="Texture2D" uid="uid://c6by58d5o2n1w" path="res://SonicAssets/Models/Sonic/textures/chr_sonic_body01_fal_HD.dds" id="2_1eei6"]
+
+[resource]
+resource_name = "sonic_gm_body"
+diffuse_mode = 2
+vertex_color_use_as_albedo = true
+albedo_texture = ExtResource("1_fhvyp")
+metallic = 0.5
+heightmap_enabled = true
+heightmap_scale = 1.0
+heightmap_texture = ExtResource("2_1eei6")
+heightmap_flip_texture = true

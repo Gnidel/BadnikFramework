@@ -1,0 +1,40 @@
+[gd_scene format=3 uid="uid://bv2cv2nejm2w"]
+
+[ext_resource type="Script" uid="uid://dyfj4260gsllo" path="res://Scripts/Interactables/SpecialStageEntrance.cs" id="1_ykocm"]
+[ext_resource type="AudioStream" uid="uid://gnf232u67c7c" path="res://SonicAssets/Audio/Game/SpecialRing.wav" id="2_6u6vb"]
+[ext_resource type="AudioStream" uid="uid://crllgcx3lovuo" path="res://SonicAssets/Audio/Game/SpecialWarp.wav" id="3_eo4qj"]
+[ext_resource type="PackedScene" uid="uid://dvj5t50j5tyv6" path="res://SonicAssets/Models/Items/SpecialStageRing/SpecialStageRing.blend" id="4_joyj8"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_nejyh"]
+radius = 3.0
+
+[node name="[Interactable] Special Stage Entrance" type="Area3D" unique_id=1841242884 node_paths=PackedStringArray("AudioPlayer", "RingEnabledMesh", "RingDisabledMesh", "WhiteOut")]
+collision_mask = 2
+script = ExtResource("1_ykocm")
+AudioPlayer = NodePath("AudioStreamPlayer3D")
+CollectSoundEffect = ExtResource("2_6u6vb")
+WarpSoundEffect = ExtResource("3_eo4qj")
+RingEnabledMesh = NodePath("SpecialStageRing/SpecialStageRingOn")
+RingDisabledMesh = NodePath("SpecialStageRing/SpecialStageRingOff")
+WhiteOut = NodePath("Whiteout")
+ChaosEmeraldItemNames = PackedStringArray("chaosemerald_red", "chaosemerald_blue", "chaosemerald_yellow", "chaosemerald_green", "chaosemerald_gray", "chaosemerald_cyan", "chaosemerald_magenta")
+SpecialStagePaths = PackedStringArray("res://Games/Example game/Levels/SpecialStage/SpecialStageMania1.tscn", "res://Games/Example game/Levels/SpecialStage/SpecialStageMania2.tscn", "res://Games/Example game/Levels/SpecialStage/SpecialStageMania3.tscn", "res://Games/Example game/Levels/SpecialStage/SpecialStageMania4.tscn", "res://Games/Example game/Levels/SpecialStage/SpecialStageMania5.tscn", "res://Games/Example game/Levels/SpecialStage/SpecialStageMania6.tscn", "res://Games/Example game/Levels/SpecialStage/SpecialStageMania7.tscn")
+
+[node name="SpecialStageRing" parent="." unique_id=284735204 instance=ExtResource("4_joyj8")]
+transform = Transform3D(2, 0, 0, 0, -8.74228e-08, -2, 0, 2, -8.74228e-08, 0, 0, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=937055846]
+shape = SubResource("SphereShape3D_nejyh")
+
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="." unique_id=399796691]
+
+[node name="Whiteout" type="ColorRect" parent="." unique_id=1500719258]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+color = Color(1, 1, 1, 0)
+
+[editable path="SpecialStageRing"]

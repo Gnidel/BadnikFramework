@@ -1,0 +1,10 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://7di7blvflwr6"]
+
+[ext_resource type="Texture2D" uid="uid://b088k1yy77mwq" path="res://SonicAssets/Models/Interactables/textures/cmn_metal_ms_dashbelt_dif.dds" id="1_ryjcq"]
+
+[resource]
+resource_name = "cmn_obj_dashpanel_HD_belt"
+cull_mode = 2
+vertex_color_use_as_albedo = true
+albedo_texture = ExtResource("1_ryjcq")
+metallic = 1.0

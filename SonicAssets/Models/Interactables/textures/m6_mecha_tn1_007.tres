@@ -1,0 +1,8 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://d0xfnffpjer8n"]
+
+[ext_resource type="Texture2D" uid="uid://wsroxejcseim" path="res://SonicAssets/Models/Interactables/textures/w6_uni201_abd.dds" id="1_cvet4"]
+
+[resource]
+resource_name = "m6_mecha_tn1_007"
+albedo_texture = ExtResource("1_cvet4")
+metallic = 1.0

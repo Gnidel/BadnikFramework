@@ -1,0 +1,50 @@
+[gd_scene format=3 uid="uid://bjde1ctybxjkm"]
+
+[ext_resource type="PackedScene" uid="uid://bkt2qp7430moc" path="res://SonicAssets/Prefabs/Misc/homing_target.tscn" id="1_bgdka"]
+[ext_resource type="PackedScene" uid="uid://fbg75jfyw6rq" path="res://SonicAssets/Prefabs/Particles/BalloonPop/[particles]_balloon_pop.tscn" id="2_namh8"]
+[ext_resource type="PackedScene" uid="uid://bkl7d86ygm4b4" path="res://SonicAssets/Models/Interactables/balloon.blend" id="4_6anpg"]
+[ext_resource type="Script" uid="uid://bi46ukhuyd6wl" path="res://Scripts/Interactables/Balloon.cs" id="5_3sili"]
+[ext_resource type="Texture2D" uid="uid://cbhotimqommnq" path="res://SonicAssets/Models/Interactables/textures/cmn_obj_balloon02_balloon_abd.dds" id="5_qb3s0"]
+[ext_resource type="Material" uid="uid://csrhoebp6gef" path="res://Materials/Outline.tres" id="6_pcpal"]
+[ext_resource type="Texture2D" uid="uid://con0dvq4m7dl8" path="res://SonicAssets/Models/Interactables/textures/cmn_obj_balloon02_balloon_nrm.dds" id="7_n0lxi"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_kgwva"]
+radius = 1.0
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_5dx12"]
+resource_local_to_scene = true
+resource_name = "cmn_obj_balloon02_balloon"
+next_pass = ExtResource("6_pcpal")
+cull_mode = 2
+albedo_color = Color(0.91, 0.91, 0.91, 1)
+albedo_texture = ExtResource("5_qb3s0")
+roughness = 0.4
+normal_enabled = true
+normal_texture = ExtResource("7_n0lxi")
+
+[node name="[Interactable] Baloon" type="Node3D" unique_id=1736901062 node_paths=PackedStringArray("BalloonMesh")]
+script = ExtResource("5_3sili")
+ExplosionParticles = ExtResource("2_namh8")
+BalloonMesh = NodePath("Offset/balloon/cmn_obj_balloon02_balloon")
+
+[node name="Offset" type="Node3D" parent="." unique_id=1698212314]
+transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, 0, 0, 0)
+
+[node name="HomingTarget" parent="Offset" unique_id=491689920 instance=ExtResource("1_bgdka")]
+transform = Transform3D(0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, 0, 0, 0)
+
+[node name="Hitbox" type="Area3D" parent="Offset" unique_id=777183708]
+collision_mask = 2
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Offset/Hitbox" unique_id=1765673150]
+shape = SubResource("SphereShape3D_kgwva")
+
+[node name="balloon" parent="Offset" unique_id=1827545279 instance=ExtResource("4_6anpg")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 0, 0)
+
+[node name="cmn_obj_balloon02_balloon" parent="Offset/balloon" index="2" unique_id=546967782]
+surface_material_override/0 = SubResource("StandardMaterial3D_5dx12")
+
+[connection signal="body_entered" from="Offset/Hitbox" to="." method="OnBodyEnter"]
+
+[editable path="Offset/balloon"]

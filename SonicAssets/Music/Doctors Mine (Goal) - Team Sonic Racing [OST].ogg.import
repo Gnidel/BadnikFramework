@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://1idmdec0e3g5"
+path="res://.godot/imported/Doctors Mine (Goal) - Team Sonic Racing [OST].ogg-8a1b713561428b1f76b765cbe3d3b39d.oggvorbisstr"
+
+[deps]
+
+source_file="res://SonicAssets/Music/Doctors Mine (Goal) - Team Sonic Racing [OST].ogg"
+dest_files=["res://.godot/imported/Doctors Mine (Goal) - Team Sonic Racing [OST].ogg-8a1b713561428b1f76b765cbe3d3b39d.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

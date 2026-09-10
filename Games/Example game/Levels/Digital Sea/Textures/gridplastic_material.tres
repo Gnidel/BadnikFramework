@@ -1,0 +1,11 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://2houmkb1ws8w"]
+
+[ext_resource type="Texture2D" uid="uid://ddpn8dcnhjd0" path="res://Games/Example game/Levels/Digital Sea/Textures/plasticgrid_h.png" id="1_n0try"]
+[ext_resource type="Texture2D" uid="uid://c83wio3preu7h" path="res://Games/Example game/Levels/Digital Sea/Textures/plasticgrid_n.png" id="2_qvpmb"]
+
+[resource]
+normal_enabled = true
+normal_scale = 16.0
+normal_texture = ExtResource("2_qvpmb")
+heightmap_enabled = true
+heightmap_texture = ExtResource("1_n0try")

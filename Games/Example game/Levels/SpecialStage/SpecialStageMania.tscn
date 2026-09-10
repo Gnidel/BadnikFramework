@@ -1,0 +1,202 @@
+[gd_scene format=3 uid="uid://bc80xnihy60tp"]
+
+[ext_resource type="Script" uid="uid://c2i7w0nkuie1u" path="res://Scripts/System/StageData.cs" id="1_bygtw"]
+[ext_resource type="PackedScene" uid="uid://clt71rt2khju8" path="res://SonicAssets/Prefabs/Player/PlayersManager.tscn" id="2_jq70x"]
+[ext_resource type="AudioStream" uid="uid://c41kluwy3my8x" path="res://SonicAssets/Music/100m - Sonic at the Olympic Games ~ Tokyo 2020.ogg" id="2_n2skp"]
+[ext_resource type="Script" uid="uid://xd3swsgan1hs" path="res://Scripts/Stages/SpecialStageManiaManager.cs" id="4_ow3bn"]
+[ext_resource type="AudioStream" uid="uid://dji44arvy8tr0" path="res://SonicAssets/Music/200m - Sonic at the Olympic Games ~ Tokyo 2020.ogg" id="5_bs8lv"]
+[ext_resource type="AudioStream" uid="uid://bduwicvy0n207" path="res://SonicAssets/Music/400m - Sonic at the Olympic Games ~ Tokyo 2020.ogg" id="6_l33dw"]
+[ext_resource type="Theme" uid="uid://di28qbb7lki3f" path="res://Misc/MenuTheme.tres" id="7_lx22c"]
+[ext_resource type="AudioStream" uid="uid://tdao7kreywq5" path="res://SonicAssets/Audio/Game/MachSpeed.wav" id="8_imut8"]
+[ext_resource type="Material" uid="uid://c8tynmbvotvnq" path="res://SonicAssets/Stages/SpecialStage/SS1/SS1Sky.tres" id="9_44ly5"]
+[ext_resource type="PackedScene" uid="uid://4sfnun4udt5s" path="res://SonicAssets/Prefabs/Items/[item]_blue_sphere.tscn" id="9_a5ueh"]
+[ext_resource type="Environment" uid="uid://ntyrcn1pykbn" path="res://SonicAssets/Stages/SpecialStage/SS1/SS1Environment.tres" id="9_pgf13"]
+[ext_resource type="Script" uid="uid://bbh65sxbt16rg" path="res://Scripts/Ui/HideOnMobile.cs" id="10_2tjeg"]
+[ext_resource type="PackedScene" uid="uid://dhu1smr7ks2e5" path="res://SonicAssets/Prefabs/Interactables/[interactable]_goal_ring.tscn" id="13_6fvb6"]
+[ext_resource type="Material" uid="uid://btdkam4nwd2ih" path="res://SonicAssets/Stages/SpecialStage/SS2/SS2Sky.tres" id="14_i6a8q"]
+[ext_resource type="Material" uid="uid://xnwb5ee2ywab" path="res://SonicAssets/Stages/SpecialStage/SS3/SS3Sky.tres" id="15_jqld3"]
+[ext_resource type="Script" uid="uid://bemhal0at6x5m" path="res://Scripts/Stages/RandomManiaSpecialStage.cs" id="15_vw4ms"]
+[ext_resource type="PackedScene" uid="uid://crxq2s1vls3rc" path="res://SonicAssets/Prefabs/Items/[item]_ring.tscn" id="16_0v2l7"]
+[ext_resource type="Material" uid="uid://bhwqcbasbp5fx" path="res://SonicAssets/Stages/SpecialStage/SS4/SS4Sky.tres" id="16_mtmqb"]
+[ext_resource type="Material" uid="uid://cc2ttqdqgrrao" path="res://SonicAssets/Stages/SpecialStage/SS5/SS5Sky.tres" id="17_3tpo6"]
+[ext_resource type="Script" uid="uid://d32weomiu2q8n" path="res://Scripts/Interactables/CameraTrigger.cs" id="17_v7ww1"]
+[ext_resource type="Script" uid="uid://y47n4ov38iw2" path="res://Scripts/Interactables/Hitbox.cs" id="18_05t7u"]
+[ext_resource type="Material" uid="uid://g722glujm2sx" path="res://SonicAssets/Stages/SpecialStage/SS6/SS6Sky.tres" id="18_hsktg"]
+[ext_resource type="Material" uid="uid://dvqi7hsxc7eyf" path="res://SonicAssets/Stages/SpecialStage/SS7/SS7Sky.tres" id="19_j1ftc"]
+[ext_resource type="PackedScene" uid="uid://bkt2qp7430moc" path="res://SonicAssets/Prefabs/Misc/homing_target.tscn" id="21_ke8ik"]
+[ext_resource type="Texture2D" uid="uid://b775w8of3qwac" path="res://Games/Example game/Levels/TestLevel/gridTexture_nonum_a.png" id="23_hpbcv"]
+[ext_resource type="Texture2D" uid="uid://dj7sc3cpgy8or" path="res://Games/Example game/Levels/TestLevel/gridTexture_h.png" id="24_13nsg"]
+[ext_resource type="Texture2D" uid="uid://dvwutourkmypy" path="res://Games/Example game/Levels/TestLevel/gridTexture_n.png" id="25_r4gov"]
+
+[sub_resource type="Curve3D" id="Curve3D_sihbg"]
+_data = {
+"points": PackedVector3Array(0, 0, 0, 0, 0, 50, 0, 0, 0, -58, 0, -28, 58, 0, 28, 0, 0, 500, -70, 0, 79, 70, 0, -79, 500, 0, 500, 0, 0, 0, 0, 0, -100, 500, 0, 0, 500, 0, 0, -100, 0, 0, 255, 0, -473, 0, 0, 0, 0, 0, 0, 0, 0, -50),
+"tilts": PackedFloat32Array(0, 0, 0, 0, 0, 0)
+}
+point_count = 6
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_j7fyq"]
+albedo_texture = ExtResource("23_hpbcv")
+normal_enabled = true
+normal_texture = ExtResource("25_r4gov")
+heightmap_enabled = true
+heightmap_texture = ExtResource("24_13nsg")
+uv1_scale = Vector3(0.1, 0.1, 0.1)
+uv1_triplanar = true
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_dgmue"]
+size = Vector3(100, 100, 100)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_jtku8"]
+size = Vector3(10000, 1, 10000)
+
+[node name="SpecialStage" type="Node3D" unique_id=440402018]
+
+[node name="PlayersManager" parent="." unique_id=1302152484 instance=ExtResource("2_jq70x")]
+
+[node name="StageData" type="Node" parent="." unique_id=924306629]
+script = ExtResource("1_bygtw")
+StageZoneName = "Special Stage"
+StageActName = "Act 1"
+Style = 2
+StageUniqueIdentifier = "SpecialStage1"
+MaxTime = 30.0
+SRankTime = 60.0
+SRankBlueSpheres = 150
+RankWeightTime = 0.5
+RankWeightRings = 0.25
+RankWeightSpheres = 0.25
+
+[node name="SpecialStageManiaManager" type="Node" parent="." unique_id=1622583739 node_paths=PackedStringArray("SpecialStageUI", "MachLabel", "MachProgressBar", "MachSpeedSoundPlayer", "GoalRing", "EmeraldPathFollow", "HomingTarget")]
+script = ExtResource("4_ow3bn")
+MachMusics = [ExtResource("2_n2skp"), ExtResource("5_bs8lv"), ExtResource("6_l33dw")]
+SpecialStageUI = NodePath("ColorRect")
+MachLabel = NodePath("ColorRect/GridContainer/ProgressBar/MachLabel")
+MachProgressBar = NodePath("ColorRect/GridContainer/ProgressBar")
+MachSpeedSoundPlayer = NodePath("AudioStreamPlayer")
+GoalRing = NodePath("../[Interactable] Goal Ring")
+EmeraldPathFollow = NodePath("../RandomManiaSpecialStage/Path3D/PathFollow3D")
+HomingTarget = NodePath("../RandomManiaSpecialStage/Path3D/PathFollow3D/HomingTarget")
+
+[node name="ColorRect" type="ColorRect" parent="SpecialStageManiaManager" unique_id=2021908185]
+custom_minimum_size = Vector2(400, 100)
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -200.0
+offset_top = 32.0
+offset_right = 200.0
+offset_bottom = 132.0
+grow_horizontal = 2
+color = Color(0, 0, 0, 0.501961)
+
+[node name="GridContainer" type="GridContainer" parent="SpecialStageManiaManager/ColorRect" unique_id=1777943090]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ProgressBar" type="ProgressBar" parent="SpecialStageManiaManager/ColorRect/GridContainer" unique_id=1108730532]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme = ExtResource("7_lx22c")
+value = 50.0
+show_percentage = false
+
+[node name="MachLabel" type="RichTextLabel" parent="SpecialStageManiaManager/ColorRect/GridContainer/ProgressBar" unique_id=1325701110]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -200.0
+offset_top = -30.5
+offset_right = 200.0
+offset_bottom = 30.5
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme = ExtResource("7_lx22c")
+bbcode_enabled = true
+text = "[center]MACH 1[/center]"
+fit_content = true
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="SpecialStageManiaManager" unique_id=2041066725]
+stream = ExtResource("8_imut8")
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=515152265]
+environment = ExtResource("9_pgf13")
+
+[node name="HideOnMobile" type="Node" parent="WorldEnvironment" unique_id=91526700]
+script = ExtResource("10_2tjeg")
+ShowOnMobile = false
+ShowOnNonMobile = true
+ApplyToParent = true
+
+[node name="[Interactable] Goal Ring" parent="." unique_id=2039055417 instance=ExtResource("13_6fvb6")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 203, 0, 0)
+StagesToUnlock = PackedStringArray("SpecialStage1")
+
+[node name="RandomManiaSpecialStage" type="Node3D" parent="." unique_id=613876058 node_paths=PackedStringArray("Path", "ObjectContainer", "WorldEnvironment")]
+script = ExtResource("15_vw4ms")
+Path = NodePath("Path3D")
+PathWidth = 20.0
+ObjectContainer = NodePath("ObjectContainer")
+RingPrefab = ExtResource("16_0v2l7")
+BlueSpherePrefab = ExtResource("9_a5ueh")
+WorldEnvironment = NodePath("../WorldEnvironment")
+Skies = [ExtResource("9_44ly5"), ExtResource("14_i6a8q"), ExtResource("15_jqld3"), ExtResource("16_mtmqb"), ExtResource("17_3tpo6"), ExtResource("18_hsktg"), ExtResource("19_j1ftc")]
+
+[node name="Path3D" type="Path3D" parent="RandomManiaSpecialStage" unique_id=2106712375]
+curve = SubResource("Curve3D_sihbg")
+
+[node name="PathFollow3D" type="PathFollow3D" parent="RandomManiaSpecialStage/Path3D" unique_id=1056261967]
+transform = Transform3D(-0.999997, 0, -8.7422514e-08, 0, 1, 0, 8.7422514e-08, 0, -0.999997, 0, 0, 0)
+tilt_enabled = false
+
+[node name="HomingTarget" parent="RandomManiaSpecialStage/Path3D/PathFollow3D" unique_id=854057781 instance=ExtResource("21_ke8ik")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, 0)
+
+[node name="CSGPolygon3D" type="CSGPolygon3D" parent="RandomManiaSpecialStage" unique_id=1699687520]
+use_collision = true
+polygon = PackedVector2Array(-10, 0, -10, -1, 10, -1, 10, 0)
+mode = 2
+path_node = NodePath("../Path3D")
+path_interval_type = 0
+path_interval = 0.1
+path_simplify_angle = 1.0
+path_rotation = 2
+path_rotation_accurate = false
+path_local = true
+path_continuous_u = true
+path_u_distance = 1.0
+path_joined = true
+material = SubResource("StandardMaterial3D_j7fyq")
+
+[node name="ObjectContainer" type="Node3D" parent="RandomManiaSpecialStage" unique_id=2023734201]
+
+[node name="CameraTrigger" type="Area3D" parent="." unique_id=101057210]
+process_mode = 4
+visible = false
+collision_mask = 2
+script = ExtResource("17_v7ww1")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="CameraTrigger" unique_id=998701366]
+shape = SubResource("BoxShape3D_dgmue")
+
+[node name="Pit" type="Area3D" parent="." unique_id=341114152]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -200, 0)
+collision_mask = 7
+script = ExtResource("18_05t7u")
+IsInstaKill = true
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Pit" unique_id=135062693]
+shape = SubResource("BoxShape3D_jtku8")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=1146079374]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0, 0)

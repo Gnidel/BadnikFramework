@@ -1,0 +1,61 @@
+[gd_scene format=3 uid="uid://dvy6pbmwuo7st"]
+
+[ext_resource type="Script" uid="uid://cl2fi0tbj7mkw" path="res://Scripts/Interactables/ChaseSection.cs" id="1_s27o2"]
+
+[sub_resource type="Curve3D" id="Curve3D_tb3k0"]
+resource_local_to_scene = true
+_data = {
+"points": PackedVector3Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 100, 0, 0),
+"tilts": PackedFloat32Array(0, 0)
+}
+point_count = 2
+
+[sub_resource type="BoxMesh" id="BoxMesh_s27o2"]
+size = Vector3(5, 5, 1)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_6iont"]
+resource_local_to_scene = true
+size = Vector3(10, 25, 25)
+
+[node name="[Interactable] ChaseSection" type="Node3D" unique_id=523813964 node_paths=PackedStringArray("Path", "Follower")]
+script = ExtResource("1_s27o2")
+Path = NodePath("ChasePath")
+Follower = NodePath("ChasePath/ChasingFollower")
+
+[node name="ChasePath" type="Path3D" parent="." unique_id=1058885054]
+curve = SubResource("Curve3D_tb3k0")
+
+[node name="ChasingFollower" type="PathFollow3D" parent="ChasePath" unique_id=1665256038]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 0, 0, 0)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="ChasePath/ChasingFollower" unique_id=1738772109]
+visible = false
+mesh = SubResource("BoxMesh_s27o2")
+
+[node name="ChaseStartFollow" type="PathFollow3D" parent="ChasePath" unique_id=1868763449]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 0, 0, 0)
+
+[node name="ChaseStartTrigger" type="Area3D" parent="ChasePath/ChaseStartFollow" unique_id=1382055412]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0, 0, 0)
+collision_layer = 0
+collision_mask = 2
+monitorable = false
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="ChasePath/ChaseStartFollow/ChaseStartTrigger" unique_id=178184736]
+shape = SubResource("BoxShape3D_6iont")
+
+[node name="ChaseEndFollow" type="PathFollow3D" parent="ChasePath" unique_id=1570250900]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 100.000015, 0, 0)
+progress = 100.0
+
+[node name="ChaseEndTrigger" type="Area3D" parent="ChasePath/ChaseEndFollow" unique_id=885331311]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0, 0, 0)
+collision_layer = 0
+collision_mask = 2
+monitorable = false
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="ChasePath/ChaseEndFollow/ChaseEndTrigger" unique_id=616462476]
+shape = SubResource("BoxShape3D_6iont")
+
+[connection signal="body_entered" from="ChasePath/ChaseStartFollow/ChaseStartTrigger" to="." method="OnStartBodyEnter"]
+[connection signal="body_entered" from="ChasePath/ChaseEndFollow/ChaseEndTrigger" to="." method="OnEndBodyEnter"]

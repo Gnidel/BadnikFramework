@@ -1,0 +1,6 @@
+[gd_resource type="PanoramaSkyMaterial" format=3 uid="uid://crias3r8xt804"]
+
+[ext_resource type="Texture2D" uid="uid://b58mfqmg4nep5" path="res://Games/Example game/Levels/DiscoHill/Textures/DiscoHill1MobileSky.png" id="1_4ohte"]
+
+[resource]
+panorama = ExtResource("1_4ohte")

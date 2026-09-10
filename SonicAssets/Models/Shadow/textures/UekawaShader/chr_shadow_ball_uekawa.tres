@@ -1,0 +1,11 @@
+[gd_resource type="ShaderMaterial" format=3 uid="uid://4r2xcyunbbpe"]
+
+[ext_resource type="Shader" uid="uid://cjktp1yrki104" path="res://Shaders/UekawaShader.tres" id="1_lq1gc"]
+[ext_resource type="Texture2D" uid="uid://dryyfvj6tgvfx" path="res://SonicAssets/Models/Shadow/textures/chr_shadowspin_body_abd_withred.png" id="2_xkfjc"]
+
+[resource]
+render_priority = 0
+shader = ExtResource("1_lq1gc")
+shader_parameter/Albedo = ExtResource("2_xkfjc")
+shader_parameter/DarkenThreshold = 0.5
+shader_parameter/HighlightThreashold = 0.1

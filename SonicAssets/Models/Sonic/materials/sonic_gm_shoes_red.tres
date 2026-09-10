@@ -1,0 +1,11 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://c0cjb778pyv1l"]
+
+[ext_resource type="Texture2D" uid="uid://btjrr2t0g240t" path="res://SonicAssets/Models/Sonic/textures/chr_sonic_shoes_dif_HD.dds" id="1_x2cd1"]
+[ext_resource type="Texture2D" uid="uid://3jhvddec4x82" path="res://SonicAssets/Models/Sonic/textures/chr_sonic_shoes_spc_HD.dds" id="2_hlfgm"]
+
+[resource]
+resource_name = "sonic_gm_shoes_red"
+diffuse_mode = 2
+vertex_color_use_as_albedo = true
+albedo_texture = ExtResource("1_x2cd1")
+metallic_texture = ExtResource("2_hlfgm")

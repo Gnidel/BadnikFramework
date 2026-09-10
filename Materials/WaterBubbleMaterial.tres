@@ -1,0 +1,17 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://bf7517k627un3"]
+
+[resource]
+transparency = 1
+cull_mode = 2
+vertex_color_use_as_albedo = true
+albedo_color = Color(1, 1, 1, 0.25098)
+metallic = 0.9
+metallic_specular = 1.0
+roughness = 0.1
+rim_enabled = true
+rim_tint = 1.0
+clearcoat_enabled = true
+clearcoat_roughness = 1.0
+anisotropy = 1.0
+subsurf_scatter_strength = 1.0
+subsurf_scatter_skin_mode = true

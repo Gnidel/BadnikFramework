@@ -1,0 +1,11 @@
+[gd_resource type="ShaderMaterial" format=3 uid="uid://drec2jx4wr0le"]
+
+[ext_resource type="Shader" uid="uid://cjktp1yrki104" path="res://Shaders/UekawaShader.tres" id="1_1dwbc"]
+[ext_resource type="Texture2D" uid="uid://dw3v2dwn7by1f" path="res://SonicAssets/Models/Tails/Textures/chr_tails_cloth_abd.png" id="2_cnagb"]
+
+[resource]
+render_priority = 0
+shader = ExtResource("1_1dwbc")
+shader_parameter/Albedo = ExtResource("2_cnagb")
+shader_parameter/DarkenThreshold = -0.75
+shader_parameter/HighlightThreashold = 0.3

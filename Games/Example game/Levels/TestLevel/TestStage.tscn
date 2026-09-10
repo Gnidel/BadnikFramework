@@ -1,0 +1,1966 @@
+[gd_scene format=3 uid="uid://be4pyxrkfbe72"]
+
+[ext_resource type="Script" uid="uid://c2i7w0nkuie1u" path="res://Scripts/System/StageData.cs" id="1_jfse3"]
+[ext_resource type="PackedScene" uid="uid://d0l71if36iysv" path="res://Games/Example game/Levels/TestLevel/TestLevelFloor.blend" id="1_uldn8"]
+[ext_resource type="AudioStream" uid="uid://cg34xurj18be8" path="res://SonicAssets/Music/Beyond The Speed Of... Sonic Sessions.ogg" id="2_mymat"]
+[ext_resource type="PackedScene" uid="uid://btqvh6bandifd" path="res://SonicAssets/Prefabs/Interactables/[interactable]_spring_red.tscn" id="2_s6x8v"]
+[ext_resource type="PackedScene" uid="uid://clt71rt2khju8" path="res://SonicAssets/Prefabs/Player/PlayersManager.tscn" id="3_4w3j3"]
+[ext_resource type="Script" uid="uid://c2iwclb013o1y" path="res://Scripts/System/ApplyWorldEnvironmentSettings.cs" id="3_hs168"]
+[ext_resource type="Texture2D" uid="uid://dngm06vsafimm" path="res://Prefabs/UI/UiHeart.png" id="3_kivhq"]
+[ext_resource type="PackedScene" uid="uid://dph66v4hrgccw" path="res://SonicAssets/Prefabs/Player/player_shadow.tscn" id="5_dj2s0"]
+[ext_resource type="PackedScene" uid="uid://b2myq4ve7aw2x" path="res://SonicAssets/Prefabs/Interactables/Obstacles/[obstacle]_thorns.tscn" id="5_ojf5n"]
+[ext_resource type="PackedScene" uid="uid://dvy6pbmwuo7st" path="res://Prefabs/Interactables/[interactable]_chase_section.tscn" id="6_ogu4x"]
+[ext_resource type="Script" uid="uid://pq5wwkgxhj7e" path="res://Scripts/Player/ExtraSettingsApplicator.cs" id="6_xkren"]
+[ext_resource type="PackedScene" uid="uid://cribrhlmjp54e" path="res://Prefabs/Menus/Map/map_ui_icon.tscn" id="8_oxg3e"]
+[ext_resource type="PackedScene" uid="uid://crxq2s1vls3rc" path="res://SonicAssets/Prefabs/Items/[item]_ring.tscn" id="8_voj5x"]
+[ext_resource type="PackedScene" uid="uid://dihc118cta0m7" path="res://SonicAssets/Prefabs/Items/[item]_physics_ring.tscn" id="9_2138c"]
+[ext_resource type="Script" uid="uid://b02j5q21h57h8" path="res://Scripts/Interactables/LostWorldGravityTrigger.cs" id="10_2bboj"]
+[ext_resource type="PackedScene" uid="uid://bp1fwwogqqkfy" path="res://SonicAssets/Prefabs/Interactables/[interactable]_speed_pad.tscn" id="11_kys5k"]
+[ext_resource type="Script" uid="uid://d32weomiu2q8n" path="res://Scripts/Interactables/CameraTrigger.cs" id="12_srflh"]
+[ext_resource type="PackedScene" uid="uid://qjvpklol5uvl" path="res://Prefabs/Interactables/[interactable]_grind_rail.tscn" id="12_uj43x"]
+[ext_resource type="Script" uid="uid://djdxqop8mup2u" path="res://Scripts/Interactables/Spline2DTrigger.cs" id="13_60he6"]
+[ext_resource type="Script" uid="uid://bfibfvipco58n" path="res://Scripts/Player/Camera/SplineCameraParams.cs" id="14_glwdl"]
+[ext_resource type="Script" uid="uid://dgxh4pe7e2bln" path="res://Scripts/Interactables/AutoPathFollow3D.cs" id="15_j8sfa"]
+[ext_resource type="PackedScene" uid="uid://gpc3840r0uj5" path="res://SonicAssets/Prefabs/Interactables/[interactable]_checkpoint_sv.tscn" id="15_jub88"]
+[ext_resource type="PackedScene" uid="uid://dcjip7txdvwhi" path="res://SonicAssets/Prefabs/Interactables/Obstacles/[obstacle]_flamethrower.tscn" id="16_oq74e"]
+[ext_resource type="PackedScene" uid="uid://dcoachq0hf3gd" path="res://SonicAssets/Prefabs/Interactables/Obstacles/[obstacle]_thorn_cylinder.tscn" id="17_0ywdy"]
+[ext_resource type="Material" uid="uid://csrhoebp6gef" path="res://Materials/Outline.tres" id="17_djmio"]
+[ext_resource type="PackedScene" uid="uid://vwjoljvwo0fw" path="res://SonicAssets/Prefabs/Enemies/Bosses/[boss_arena] boss_egg_flamethrower.tscn" id="18_5tj2u"]
+[ext_resource type="Shader" uid="uid://cjktp1yrki104" path="res://Shaders/UekawaShader.tres" id="18_ogu4x"]
+[ext_resource type="Texture2D" uid="uid://dj7sc3cpgy8or" path="res://Games/Example game/Levels/TestLevel/gridTexture_h.png" id="19_s7tt2"]
+[ext_resource type="PackedScene" uid="uid://bkt2qp7430moc" path="res://SonicAssets/Prefabs/Misc/homing_target.tscn" id="23_tn5wt"]
+[ext_resource type="Script" uid="uid://pruwuii5643i" path="res://Scripts/Player/Camera/FreeCameraParams.cs" id="24_cvst0"]
+[ext_resource type="PackedScene" uid="uid://cd5ndaer544my" path="res://SonicAssets/Models/Interactables/pulley.blend" id="27_1dkr6"]
+[ext_resource type="PackedScene" uid="uid://bd0480pq8p5uu" path="res://Prefabs/Triggers/[trigger]_input_prompt_center.tscn" id="27_ik7xs"]
+[ext_resource type="Script" uid="uid://bus1ja230judn" path="res://Scripts/Utils/Rotate.cs" id="28_7wve1"]
+[ext_resource type="AudioStream" uid="uid://dfydddvy8a7fl" path="res://SonicAssets/Audio/Items/se_object_common#34 (objsn_upreel).ogg" id="28_s22lf"]
+[ext_resource type="Material" uid="uid://d1o06uftgt8v0" path="res://Games/Example game/Levels/TestLevel/Materials/Edges.tres" id="34_mwder"]
+[ext_resource type="Material" uid="uid://bqh8sx2pqf5aw" path="res://Games/Example game/Levels/TestLevel/Materials/Numbers.tres" id="37_786hh"]
+[ext_resource type="PackedScene" uid="uid://cqxeq5d8trj0j" path="res://SonicAssets/Prefabs/Interactables/[interactable]_pulley_path.tscn" id="40_sfpp8"]
+[ext_resource type="PackedScene" uid="uid://23jj2uyqxooe" path="res://SonicAssets/Models/Interactables/laserturret.glb" id="41_v0xnb"]
+[ext_resource type="PackedScene" uid="uid://sayh8oi2r3rk" path="res://SonicAssets/Prefabs/Interactables/[interactable]_grind_booster.tscn" id="42_3766v"]
+[ext_resource type="PackedScene" uid="uid://bu2rhr3b5kdrb" path="res://SonicAssets/Prefabs/Interactables/Obstacles/[obstacle]_grind_thorns.tscn" id="42_gwktq"]
+[ext_resource type="Script" uid="uid://tty417yl4b3x" path="res://Scripts/Interactables/Grabbable.cs" id="42_vj05h"]
+[ext_resource type="PackedScene" uid="uid://ckuh7n0eskbd" path="res://SonicAssets/Prefabs/Items/[item]_red_ring_1.tscn" id="43_uwck0"]
+[ext_resource type="PackedScene" uid="uid://c4d6ef2j71sxf" path="res://SonicAssets/Prefabs/Items/[item]_red_ring_2.tscn" id="44_vopl1"]
+[ext_resource type="PackedScene" uid="uid://dnulayoi0l3o8" path="res://SonicAssets/Prefabs/Items/[item]_red_ring_3.tscn" id="45_1j0rc"]
+[ext_resource type="PackedScene" uid="uid://bpgng4r75cppe" path="res://SonicAssets/Prefabs/Items/[item]_red_ring_4.tscn" id="46_6etuo"]
+[ext_resource type="PackedScene" uid="uid://bjg1gje70id88" path="res://SonicAssets/Prefabs/Items/[item]_red_ring_5.tscn" id="47_veixa"]
+[ext_resource type="PackedScene" uid="uid://daw4tm8o4oxei" path="res://SonicAssets/Prefabs/Interactables/[interactable]_dash_ring.tscn" id="57_fnrby"]
+[ext_resource type="PackedScene" uid="uid://dhu1smr7ks2e5" path="res://SonicAssets/Prefabs/Interactables/[interactable]_goal_ring.tscn" id="58_8ammw"]
+[ext_resource type="PackedScene" uid="uid://16kx1j02l040" path="res://SonicAssets/Prefabs/Interactables/[interactable]_giant_spring.tscn" id="59_7ao4o"]
+[ext_resource type="PackedScene" uid="uid://glul7ke1mfjn" path="res://SonicAssets/Prefabs/Enemies/[enemy]_spinner.tscn" id="59_kwumx"]
+[ext_resource type="PackedScene" uid="uid://cbxye0c74s42p" path="res://SonicAssets/Prefabs/Enemies/[enemy]_cop_speeder.tscn" id="59_mxf3s"]
+[ext_resource type="PackedScene" uid="uid://co7vj8imnc6u4" path="res://SonicAssets/Stages/TestStage/test_stage_tutorial.tscn" id="59_nd2cx"]
+[ext_resource type="PackedScene" uid="uid://cf0qstb6i7bk6" path="res://SonicAssets/Prefabs/Enemies/[enemy]_nebula.tscn" id="59_oqs00"]
+[ext_resource type="PackedScene" uid="uid://c1lfp3e5bmdoj" path="res://SonicAssets/Prefabs/Interactables/[interactable]_checkpoint_3d.tscn" id="60_82c8v"]
+[ext_resource type="PackedScene" uid="uid://bq514nf1hehl5" path="res://SonicAssets/Prefabs/Interactables/[interactable]_jump_panel15.tscn" id="60_ewdrt"]
+[ext_resource type="PackedScene" uid="uid://dre8xwwke4ya5" path="res://SonicAssets/Prefabs/Interactables/Obstacles/Laser/[interactable]_laser.tscn" id="60_fac65"]
+[ext_resource type="PackedScene" uid="uid://4lpb7voaefep" path="res://SonicAssets/Prefabs/Enemies/[enemy]_motobug.tscn" id="61_1xi0r"]
+[ext_resource type="PackedScene" uid="uid://mwwlnd3pk6vc" path="res://SonicAssets/Prefabs/Items/[item]_ring10.tscn" id="61_5eskj"]
+[ext_resource type="PackedScene" uid="uid://cksgb7nrtyqif" path="res://SonicAssets/Prefabs/Interactables/[interactable]_jump_panel30.tscn" id="61_cruxb"]
+[ext_resource type="Script" uid="uid://clwt567x2s1dw" path="res://Scripts/Player/Camera/ConstantCameraParams.cs" id="61_fpr6t"]
+[ext_resource type="PackedScene" uid="uid://fh04wj45t0ot" path="res://Prefabs/Triggers/[trigger]_camera_trigger.tscn" id="62_a2uub"]
+[ext_resource type="PackedScene" uid="uid://d17bym62436xd" path="res://Prefabs/Interactables/[interactable]_skydiving_section.tscn" id="62_g3e0e"]
+[ext_resource type="PackedScene" uid="uid://d2gmh4mexcq3" path="res://SonicAssets/Prefabs/Enemies/[enemy]_egg_pawn_gun.tscn" id="62_pi0si"]
+[ext_resource type="PackedScene" uid="uid://cvls441klklh1" path="res://Prefabs/Triggers/[trigger]no_2d_trigger.tscn" id="62_t3gf5"]
+[ext_resource type="Script" uid="uid://cd3cn8knmt25g" path="res://Scripts/Player/Camera/PointCameraParams.cs" id="63_4thnm"]
+[ext_resource type="Material" uid="uid://btlgdeq7b5723" path="res://Games/Example game/Levels/TestLevel/Materials/Walls.tres" id="63_miv03"]
+[ext_resource type="PackedScene" uid="uid://bjde1ctybxjkm" path="res://SonicAssets/Prefabs/Interactables/[interactable]_balloon.tscn" id="64_th5q8"]
+[ext_resource type="PackedScene" uid="uid://c32v53appugpt" path="res://SonicAssets/Prefabs/Interactables/[interactable]_item_box_10_rings.tscn" id="64_tspyj"]
+[ext_resource type="PackedScene" uid="uid://df5r5gehhnovh" path="res://SonicAssets/Prefabs/Interactables/[interactable]_spring_red_wide.tscn" id="65_itsfd"]
+[ext_resource type="PackedScene" uid="uid://2l7w0rd542kc" path="res://SonicAssets/Prefabs/Interactables/[interactable]_transport_pipe.tscn" id="65_w4d8e"]
+[ext_resource type="PackedScene" uid="uid://bbmhfwknyuj0q" path="res://SonicAssets/Prefabs/Items/[item]_skateboard_blue_star.tscn" id="66_i705k"]
+[ext_resource type="PackedScene" uid="uid://rhb0y8rs74i1" path="res://SonicAssets/Prefabs/Interactables/[interactable]_pole.tscn" id="66_ri0yi"]
+[ext_resource type="PackedScene" uid="uid://drw7s3yh0m7c3" path="res://SonicAssets/Prefabs/Items/[item]_water_bubble.tscn" id="67_msila"]
+[ext_resource type="PackedScene" uid="uid://d4hlu7ecb04dc" path="res://SonicAssets/Prefabs/Items/[item]_chaosemerald_red.tscn" id="67_opu58"]
+[ext_resource type="PackedScene" uid="uid://tc8f2l3mmr2b" path="res://Prefabs/Triggers/[trigger]_input_prompt_bottom.tscn" id="68_gljh1"]
+[ext_resource type="PackedScene" uid="uid://bc28wx6y12yqw" path="res://SonicAssets/Prefabs/Items/[item]_chaosemerald_blue.tscn" id="68_x307c"]
+[ext_resource type="PackedScene" uid="uid://bpcglabq44f3f" path="res://SonicAssets/Prefabs/Items/[item]_chaosemerald_yellow.tscn" id="69_rfsny"]
+[ext_resource type="PackedScene" uid="uid://ct2jfrkp0bbi4" path="res://SonicAssets/Prefabs/Items/[item]_chaosemerald_green.tscn" id="70_7cys4"]
+[ext_resource type="PackedScene" uid="uid://cnn22cxvpg2a5" path="res://SonicAssets/Prefabs/Items/[item]_chaosemerald_gray.tscn" id="71_dhmce"]
+[ext_resource type="PackedScene" uid="uid://c7xbejrme8vlw" path="res://SonicAssets/Prefabs/Items/[item]_chaosemerald_cyan.tscn" id="72_y8i2r"]
+[ext_resource type="PackedScene" uid="uid://blny1e7u71001" path="res://SonicAssets/Prefabs/Items/[item]_chaosemerald_magenta.tscn" id="73_w7yg5"]
+[ext_resource type="PackedScene" uid="uid://bv2cv2nejm2w" path="res://SonicAssets/Prefabs/Interactables/[interactable]_special_stage_entrance.tscn" id="74_css6n"]
+[ext_resource type="Material" uid="uid://degj6i8f466ax" path="res://Materials/Water.tres" id="76_gcfb4"]
+[ext_resource type="Script" uid="uid://vdgtusf5dt38" path="res://Scripts/Interactables/WaterTrigger.cs" id="77_cr33u"]
+[ext_resource type="PackedScene" uid="uid://bbn8dw6qgb42j" path="res://Prefabs/Triggers/[trigger]2d_path_trigger.tscn" id="78_02h0o"]
+[ext_resource type="PackedScene" uid="uid://dpro47univr31" path="res://SonicAssets/Prefabs/Interactables/[interactable]_water_bubble_spawner.tscn" id="81_dj2s0"]
+[ext_resource type="PackedScene" uid="uid://l453ra0lvwyi" path="res://SonicAssets/Prefabs/Interactables/[interactable]_portal_pair.tscn" id="83_utfrw"]
+[ext_resource type="PackedScene" uid="uid://ube401o63sqf" path="res://SonicAssets/Prefabs/Enemies/[enemy]_clucker.tscn" id="84_dj2s0"]
+[ext_resource type="PackedScene" uid="uid://c2pkkonq4krg6" path="res://Prefabs/Menus/Map/map_system.tscn" id="85_mei83"]
+[ext_resource type="Texture2D" uid="uid://cl532i71en3wi" path="res://Games/Example game/Levels/TestLevel/test_level_map_baked.png" id="86_oxg3e"]
+[ext_resource type="PackedScene" uid="uid://benjgxkifq122" path="res://SonicAssets/Prefabs/Enemies/[enemy]_egg_chaser.tscn" id="88_oenwu"]
+[ext_resource type="Script" uid="uid://b3dpdfwhls8c5" path="res://Scripts/Interactables/UniversalPlayerEnterTrigger.cs" id="89_xkren"]
+[ext_resource type="PackedScene" uid="uid://p1l3extjhtqv" path="res://SonicAssets/Prefabs/Items/[globalitem]_heart.tscn" id="92_mwder"]
+[ext_resource type="PackedScene" uid="uid://cqbir38llka4u" path="res://Prefabs/Triggers/[trigger]_skate_remover.tscn" id="94_vgpqo"]
+[ext_resource type="FontFile" uid="uid://ysevmc4grcp5" path="res://SonicAssets/Fonts/vipnagorgialla bd.otf" id="95_mgq4a"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_4wo0b"]
+sky_energy_multiplier = 2.0
+
+[sub_resource type="Sky" id="Sky_1ndst"]
+sky_material = SubResource("ProceduralSkyMaterial_4wo0b")
+
+[sub_resource type="Environment" id="Environment_wj3j7"]
+background_mode = 2
+sky = SubResource("Sky_1ndst")
+ambient_light_source = 3
+ambient_light_color = Color(0.501961, 0.501961, 0.501961, 1)
+ssao_enabled = true
+
+[sub_resource type="Curve3D" id="Curve3D_vgpqo"]
+resource_local_to_scene = true
+_data = {
+"points": PackedVector3Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 100, 0, 0),
+"tilts": PackedFloat32Array(0, 0)
+}
+point_count = 2
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_mgq4a"]
+resource_local_to_scene = true
+size = Vector3(10, 25, 25)
+
+[sub_resource type="Resource" id="Resource_ogu4x"]
+script = ExtResource("63_4thnm")
+CameraPoint = NodePath("../../../ChasingFollower/MeshInstance3D")
+PointMode = 2
+metadata/_custom_type_script = "uid://cd3cn8knmt25g"
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_humid"]
+resource_local_to_scene = true
+size = Vector3(107.465, 18.0991, 10)
+
+[sub_resource type="Curve" id="Curve_idv40"]
+_limits = [0.0, 100.0, 0.0, 1.0]
+bake_resolution = 10
+_data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(1, 100), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="Curve3D" id="Curve3D_ghmrj"]
+_data = {
+"points": PackedVector3Array(0, 0, 0, 0, 0, 0, 0, 0, -100, 0, 0, 0, 0, 0, 0, 0, 0, 100),
+"tilts": PackedFloat32Array(0, 0)
+}
+point_count = 2
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_vwwdn"]
+margin = 0.0
+height = 200.0
+radius = 80.0
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_htx3u"]
+size = Vector3(5, 10, 1)
+
+[sub_resource type="Curve3D" id="Curve3D_7q6si"]
+_data = {
+"points": PackedVector3Array(0, 0, 0, 0, 0, 0, -14.221, 0, 11.078, 0, 0, 0, 0, 0, 0, -14.221, 0, -87.926),
+"tilts": PackedFloat32Array(0, 0)
+}
+point_count = 2
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_xhjod"]
+size = Vector3(5, 1, 5)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_1ymkg"]
+size = Vector3(5, 1, 5)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_ntra2"]
+size = Vector3(20, 40, 20)
+
+[sub_resource type="Curve3D" id="Curve3D_cftbc"]
+_data = {
+"points": PackedVector3Array(0, 0, 0, 0, 0, 40, -40, 0, 0, 0, 0, 0, 40, 0, 0, 0, 0, 40, 0, 0, 0, 0, 0, -40, 40, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, -40, 0, 0, -40, 0, 0, 40, -40, 0, 0),
+"tilts": PackedFloat32Array(0, 0, 0, 0, 0)
+}
+point_count = 5
+
+[sub_resource type="Resource" id="Resource_cvst0"]
+script = ExtResource("14_glwdl")
+CameraPath3D = NodePath("../[Trigger] 2DSplineTrigger3/Path3D")
+SplineMode = 2
+metadata/_custom_type_script = "uid://bfibfvipco58n"
+
+[sub_resource type="Curve3D" id="Curve3D_qnddl"]
+_data = {
+"points": PackedVector3Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 40, 0, 0, 0, 0, 0, 0, 0, -40, 40, 0),
+"tilts": PackedFloat32Array(0, 0, 0)
+}
+point_count = 3
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_utfrw"]
+render_priority = 0
+next_pass = ExtResource("17_djmio")
+shader = ExtResource("18_ogu4x")
+shader_parameter/Albedo = ExtResource("19_s7tt2")
+shader_parameter/DarkenThreshold = -0.75
+shader_parameter/HighlightThreashold = 0.3
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_i1rxw"]
+material = SubResource("ShaderMaterial_utfrw")
+top_radius = 5.0
+bottom_radius = 5.0
+height = 0.1
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_s8wps"]
+height = 0.1
+radius = 5.0
+
+[sub_resource type="Curve3D" id="Curve3D_ebwb8"]
+_data = {
+"points": PackedVector3Array(3.27043, 0.704094, 54.5189, -3.27043, -0.704094, -54.5189, 0, 0, 0, 30.01, 0, 92.381, -30.0095, -5.79688, -92.3814, 0, 0, -100, 9.44276, -4.10416, 56.031, -9.44276, 4.10416, -56.031, 0, 10, -200, 0, 0, -50, 0, 0, 50, 15.5791, 49.2141, -194.154, 0, 0, 50, 0, 0, 0, -45.8366, 53.1454, -202.292),
+"tilts": PackedFloat32Array(0, 0, 0, 0, 0)
+}
+point_count = 5
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_6fv6k"]
+size = Vector3(2, 2, 0.5)
+
+[sub_resource type="Resource" id="Resource_gljh1"]
+script = ExtResource("63_4thnm")
+CameraPoint = NodePath("../../CameraPoint")
+PointMode = 1
+metadata/_custom_type_script = "uid://cd3cn8knmt25g"
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_piund"]
+resource_local_to_scene = true
+size = Vector3(2, 2, 2)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_or4aq"]
+resource_local_to_scene = true
+size = Vector3(2, 2, 2)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_nsl4b"]
+resource_local_to_scene = true
+size = Vector3(2, 2, 2)
+
+[sub_resource type="Resource" id="Resource_mgggb"]
+script = ExtResource("24_cvst0")
+metadata/_custom_type_script = "uid://pruwuii5643i"
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_puvv5"]
+resource_local_to_scene = true
+size = Vector3(100, 100, 300)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_qmjp3"]
+resource_local_to_scene = true
+size = Vector3(50, 50, 10)
+
+[sub_resource type="Curve3D" id="Curve3D_e6uap"]
+resource_local_to_scene = true
+_data = {
+"points": PackedVector3Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, -23.785, 0, 0, -200),
+"tilts": PackedFloat32Array(0, 0)
+}
+point_count = 2
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_bn3f4"]
+resource_local_to_scene = true
+size = Vector3(2, 10, 30)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_4bdrk"]
+resource_local_to_scene = true
+size = Vector3(2, 10, 30)
+
+[sub_resource type="Curve3D" id="Curve3D_wnu2v"]
+_data = {
+"points": PackedVector3Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, -200, -4.1, 0.1, 0.4, 4.1, -0.1, -0.4, 15.2495, 4.35621, -215.699, -12.9629, 2.42359, 0.645309, 12.9629, -2.42359, -0.645309, 35.1577, -7, -236.129, -10, 3.8, 4.3, 10, -3.8, -4.3, 72.1577, -21, -316.129, -6, -4, 3, 6, 4, -3, 98.1199, -13.1372, -316.14, 24, -2, -6, -24, 2, 6, 79.1577, 21, -311.129, -6, 2, 1, 6, -2, -1, 79.1577, -21, -312.129, 0, 0, 0, 0, 0, 0, 96.7646, -20.7271, -316.14),
+"tilts": PackedFloat32Array(0, 0, 0, 0, 0, 0, 0.154279, 0.261799, 0.261799)
+}
+point_count = 9
+
+[sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_8uc20"]
+data = PackedVector3Array(24.297499, -2.5951, -231.1037, 22.628399, -1.3632, -228.82709, 24.0415, -1.9876, -227.55699, 22.628399, -1.3632, -228.82709, 24.297499, -2.5951, -231.1037, 24.7717, -1.7204, -231.2036, 24.7717, -1.7204, -231.2036, 23.1218, -0.5026, -228.9529, 22.628399, -1.3632, -228.82709, 26.0952, -2.2789, -229.812, 24.534899, -1.127, -227.68289, 23.1218, -0.5026, -228.9529, 44.8419, -9.6823, -250.3154, 41.855198, -8.688399, -244.1727, 43.5239, -9.1445, -243.16899, 41.383698, -8.5054, -239.72119, 43.5239, -9.1445, -243.16899, 41.855198, -8.688399, -244.1727, 37.397697, -7.4442, -238.17479, 38.679398, -7.7682, -239.4372, 38.938297, -6.8023, -239.4336, 39.832897, -8.0843, -240.91179, 38.679398, -7.7682, -239.4372, 40.1082, -8.156, -238.0925, 40.1082, -8.156, -238.0925, 41.383698, -8.5054, -239.72119, 39.832897, -8.0843, -240.91179, 38.679398, -7.7682, -239.4372, 39.832897, -8.0843, -240.91179, 40.0986, -7.1203, -240.9169, 40.0986, -7.1203, -240.9169, 38.938297, -6.8023, -239.4336, 38.679398, -7.7682, -239.4372, 38.938297, -6.8023, -239.4336, 40.0986, -7.1203, -240.9169, 41.649498, -7.5414, -239.72629, 41.649498, -7.5414, -239.72629, 40.3671, -7.1900997, -238.08899, 38.938297, -6.8023, -239.4336, 41.855198, -8.688399, -244.1727, 39.832897, -8.0843, -240.91179, 41.383698, -8.5054, -239.72119, 39.832897, -8.0843, -240.91179, 41.855198, -8.688399, -244.1727, 42.1277, -7.7264, -244.18869, 43.5239, -9.1445, -243.16899, 41.383698, -8.5054, -239.72119, 41.649498, -7.5414, -239.72629, 42.1277, -7.7264, -244.18869, 40.0986, -7.1203, -240.9169, 39.832897, -8.0843, -240.91179, 40.3671, -7.1900997, -238.08899, 41.649498, -7.5414, -239.72629, 41.383698, -8.5054, -239.72119, 40.0986, -7.1203, -240.9169, 42.1277, -7.7264, -244.18869, 43.7964, -8.1825, -243.18489, 43.7964, -8.1825, -243.18489, 41.649498, -7.5414, -239.72629, 40.0986, -7.1203, -240.9169, 45.1194, -8.7219, -250.34149, 42.1277, -7.7264, -244.18869, 41.855198, -8.688399, -244.1727, 41.649498, -7.5414, -239.72629, 43.7964, -8.1825, -243.18489, 43.5239, -9.1445, -243.16899, 43.5239, -9.1445, -243.16899, 46.5916, -10.1651, -249.4756, 44.8419, -9.6823, -250.3154, 41.855198, -8.688399, -244.1727, 44.8419, -9.6823, -250.3154, 45.1194, -8.7219, -250.34149, 46.5916, -10.1651, -249.4756, 43.5239, -9.1445, -243.16899, 43.7964, -8.1825, -243.18489, 43.7964, -8.1825, -243.18489, 46.8691, -9.2048, -249.50159, 46.5916, -10.1651, -249.4756, 53.016598, -12.8716, -272.5376, 44.8419, -9.6823, -250.3154, 46.5916, -10.1651, -249.4756, 53.2995, -11.9133, -272.57788, 45.1194, -8.7219, -250.34149, 44.8419, -9.6823, -250.3154, 54.8303, -13.378699, -271.8643, 46.5916, -10.1651, -249.4756, 46.8691, -9.2048, -249.50159, 55.113197, -12.4204, -271.9046, 46.8691, -9.2048, -249.50159, 45.1194, -8.7219, -250.34149, 46.8691, -9.2048, -249.50159, 43.7964, -8.1825, -243.18489, 42.1277, -7.7264, -244.18869, 42.1277, -7.7264, -244.18869, 45.1194, -8.7219, -250.34149, 46.8691, -9.2048, -249.50159, 30.263199, -5.6327996, -233.7388, 31.8737, -6.212, -234.46799, 31.2624, -5.9839, -236.3586, 33.256798, -6.5494, -236.9061, 31.2624, -5.9839, -236.3586, 31.8737, -6.212, -234.46799, 33.5941, -6.6998997, -234.94049, 31.8737, -6.212, -234.46799, 32.184, -5.2615, -234.4536, 35.2196, -6.9719, -237.13339, 33.256798, -6.5494, -236.9061, 33.5941, -6.6998997, -234.94049, 31.8737, -6.212, -234.46799, 33.5941, -6.6998997, -234.94049, 33.256798, -6.5494, -236.9061, 31.2624, -5.9839, -236.3586, 33.256798, -6.5494, -236.9061, 33.5027, -5.5807, -236.87419, 32.184, -5.2615, -234.4536, 33.84, -5.7311997, -234.9085, 33.5941, -6.6998997, -234.94049, 35.4206, -5.993, -237.0963, 33.5027, -5.5807, -236.87419, 33.256798, -6.5494, -236.9061, 36.7068, -7.2826996, -237.6794, 35.993, -7.1267996, -237.32129, 36.64, -7.3335, -235.4402, 37.397697, -7.4442, -238.17479, 36.7068, -7.2826996, -237.6794, 37.6804, -7.5603, -235.95459, 36.64, -7.3335, -235.4402, 37.6804, -7.5603, -235.95459, 36.7068, -7.2826996, -237.6794, 33.5941, -6.6998997, -234.94049, 35.513298, -7.1071, -235.1597, 35.2196, -6.9719, -237.13339, 35.993, -7.1267996, -237.32129, 35.2196, -6.9719, -237.13339, 35.513298, -7.1071, -235.1597, 33.256798, -6.5494, -236.9061, 35.2196, -6.9719, -237.13339, 35.4206, -5.993, -237.0963, 35.513298, -7.1071, -235.1597, 33.5941, -6.6998997, -234.94049, 33.84, -5.7311997, -234.9085, 33.5027, -5.5807, -236.87419, 35.4206, -5.993, -237.0963, 35.7143, -6.1282997, -235.12259, 36.2091, -6.151, -237.28839, 35.4206, -5.993, -237.0963, 35.2196, -6.9719, -237.13339, 33.84, -5.7311997, -234.9085, 35.7143, -6.1282997, -235.12259, 35.513298, -7.1071, -235.1597, 35.993, -7.1267996, -237.32129, 36.7068, -7.2826996, -237.6794, 36.940598, -6.3108, -237.655, 35.513298, -7.1071, -235.1597, 36.64, -7.3335, -235.4402, 35.993, -7.1267996, -237.32129, 35.2196, -6.9719, -237.13339, 35.993, -7.1267996, -237.32129, 36.2091, -6.151, -237.28839, 36.64, -7.3335, -235.4402, 35.513298, -7.1071, -235.1597, 35.7143, -6.1282997, -235.12259, 35.7143, -6.1282997, -235.12259, 36.8561, -6.3577, -235.40729, 36.64, -7.3335, -235.4402, 36.7068, -7.2826996, -237.6794, 37.397697, -7.4442, -238.17479, 37.6434, -6.475, -238.1586, 37.6804, -7.5603, -235.95459, 36.64, -7.3335, -235.4402, 36.8561, -6.3577, -235.40729, 37.6434, -6.475, -238.1586, 36.940598, -6.3108, -237.655, 36.7068, -7.2826996, -237.6794, 36.940598, -6.3108, -237.655, 36.2091, -6.151, -237.28839, 35.993, -7.1267996, -237.32129, 35.4206, -5.993, -237.0963, 36.2091, -6.151, -237.28839, 36.8561, -6.3577, -235.40729, 36.8561, -6.3577, -235.40729, 35.7143, -6.1282997, -235.12259, 35.4206, -5.993, -237.0963, 36.2091, -6.151, -237.28839, 36.940598, -6.3108, -237.655, 37.9142, -6.5884, -235.93019, 37.9142, -6.5884, -235.93019, 36.8561, -6.3577, -235.40729, 36.2091, -6.151, -237.28839, 26.2477, -3.8068998, -233.2041, 24.297499, -2.5951, -231.1037, 25.621, -3.1536999, -229.7121, 26.2477, -3.8068998, -233.2041, 27.742899, -4.5854, -234.4518, 28.152199, -3.6738, -234.4901, 27.742899, -4.5854, -234.4518, 26.2477, -3.8068998, -233.2041, 27.4263, -4.2759, -231.65779, 25.621, -3.1536999, -229.7121, 27.4263, -4.2759, -231.65779, 26.2477, -3.8068998, -233.2041, 27.4263, -4.2759, -231.65779, 25.621, -3.1536999, -229.7121, 26.0952, -2.2789, -229.812, 28.152199, -3.6738, -234.4901, 26.6894, -2.9120998, -233.26929, 26.2477, -3.8068998, -233.2041, 26.0952, -2.2789, -229.812, 27.868, -3.3811998, -231.7231, 27.4263, -4.2759, -231.65779, 29.4147, -5.3197, -235.5226, 27.742899, -4.5854, -234.4518, 28.779799, -4.981, -232.78789, 27.742899, -4.5854, -234.4518, 29.4147, -5.3197, -235.5226, 29.7804, -4.389, -235.53319, 27.4263, -4.2759, -231.65779, 28.779799, -4.981, -232.78789, 27.742899, -4.5854, -234.4518, 28.779799, -4.981, -232.78789, 30.263199, -5.6327996, -233.7388, 29.4147, -5.3197, -235.5226, 31.2624, -5.9839, -236.3586, 29.4147, -5.3197, -235.5226, 30.263199, -5.6327996, -233.7388, 29.4147, -5.3197, -235.5226, 31.2624, -5.9839, -236.3586, 31.572699, -5.0334, -236.3442, 31.8737, -6.212, -234.46799, 30.263199, -5.6327996, -233.7388, 30.6288, -4.7021, -233.7493, 31.572699, -5.0334, -236.3442, 29.7804, -4.389, -235.53319, 29.4147, -5.3197, -235.5226, 32.184, -5.2615, -234.4536, 30.6288, -4.7021, -233.7493, 29.7804, -4.389, -235.53319, 30.263199, -5.6327996, -233.7388, 28.779799, -4.981, -232.78789, 29.189, -4.0694, -232.8263, 29.189, -4.0694, -232.8263, 30.6288, -4.7021, -233.7493, 30.263199, -5.6327996, -233.7388, 29.7804, -4.389, -235.53319, 28.152199, -3.6738, -234.4901, 27.742899, -4.5854, -234.4518, 28.779799, -4.981, -232.78789, 27.4263, -4.2759, -231.65779, 27.868, -3.3811998, -231.7231, 27.868, -3.3811998, -231.7231, 29.189, -4.0694, -232.8263, 28.779799, -4.981, -232.78789, 30.6288, -4.7021, -233.7493, 29.189, -4.0694, -232.8263, 28.152199, -3.6738, -234.4901, 26.6894, -2.9120998, -233.26929, 28.152199, -3.6738, -234.4901, 29.189, -4.0694, -232.8263, 29.189, -4.0694, -232.8263, 27.868, -3.3811998, -231.7231, 26.6894, -2.9120998, -233.26929, 28.152199, -3.6738, -234.4901, 29.7804, -4.389, -235.53319, 30.6288, -4.7021, -233.7493, 24.0415, -1.9876, -227.55699, 25.621, -3.1536999, -229.7121, 24.297499, -2.5951, -231.1037, 24.297499, -2.5951, -231.1037, 26.2477, -3.8068998, -233.2041, 26.6894, -2.9120998, -233.26929, 26.6894, -2.9120998, -233.26929, 24.7717, -1.7204, -231.2036, 24.297499, -2.5951, -231.1037, 24.534899, -1.127, -227.68289, 26.0952, -2.2789, -229.812, 25.621, -3.1536999, -229.7121, 24.7717, -1.7204, -231.2036, 26.6894, -2.9120998, -233.26929, 27.868, -3.3811998, -231.7231, 27.868, -3.3811998, -231.7231, 26.0952, -2.2789, -229.812, 24.7717, -1.7204, -231.2036, 25.621, -3.1536999, -229.7121, 24.0415, -1.9876, -227.55699, 24.534899, -1.127, -227.68289, 23.1218, -0.5026, -228.9529, 24.7717, -1.7204, -231.2036, 26.0952, -2.2789, -229.812, 30.6288, -4.7021, -233.7493, 32.184, -5.2615, -234.4536, 31.8737, -6.212, -234.46799, 33.5027, -5.5807, -236.87419, 31.572699, -5.0334, -236.3442, 31.2624, -5.9839, -236.3586, 33.84, -5.7311997, -234.9085, 32.184, -5.2615, -234.4536, 31.572699, -5.0334, -236.3442, 29.7804, -4.389, -235.53319, 31.572699, -5.0334, -236.3442, 32.184, -5.2615, -234.4536, 31.572699, -5.0334, -236.3442, 33.5027, -5.5807, -236.87419, 33.84, -5.7311997, -234.9085, 35.7143, -6.1282997, -235.12259, 33.84, -5.7311997, -234.9085, 33.5027, -5.5807, -236.87419, 37.6804, -7.5603, -235.95459, 38.5864, -7.7717, -236.59999, 37.397697, -7.4442, -238.17479, 38.5864, -7.7717, -236.59999, 37.6804, -7.5603, -235.95459, 37.9142, -6.5884, -235.93019, 38.679398, -7.7682, -239.4372, 37.397697, -7.4442, -238.17479, 38.5864, -7.7717, -236.59999, 38.5864, -7.7717, -236.59999, 40.1082, -8.156, -238.0925, 38.679398, -7.7682, -239.4372, 40.1082, -8.156, -238.0925, 38.5864, -7.7717, -236.59999, 38.832, -6.8025, -236.5838, 38.832, -6.8025, -236.5838, 40.3671, -7.1900997, -238.08899, 40.1082, -8.156, -238.0925, 38.938297, -6.8023, -239.4336, 37.6434, -6.475, -238.1586, 37.397697, -7.4442, -238.17479, 38.832, -6.8025, -236.5838, 37.9142, -6.5884, -235.93019, 36.940598, -6.3108, -237.655, 36.8561, -6.3577, -235.40729, 37.9142, -6.5884, -235.93019, 37.6804, -7.5603, -235.95459, 37.9142, -6.5884, -235.93019, 38.832, -6.8025, -236.5838, 38.5864, -7.7717, -236.59999, 37.6434, -6.475, -238.1586, 38.938297, -6.8023, -239.4336, 40.3671, -7.1900997, -238.08899, 40.3671, -7.1900997, -238.08899, 38.832, -6.8025, -236.5838, 37.6434, -6.475, -238.1586, 36.940598, -6.3108, -237.655, 37.6434, -6.475, -238.1586, 38.832, -6.8025, -236.5838, 41.383698, -8.5054, -239.72119, 40.1082, -8.156, -238.0925, 40.3671, -7.1900997, -238.08899, 2.7203, 1.4038, -205.1774, -0.9593, 0, -200.1976, 0.9593, 0, -199.6326, 4.3005, 1.2379999, -203.9628, 0.9593, 0, -199.6326, 0.92819995, 0.9939, -199.5269, 2.6504998, 2.376, -204.95389, -0.99039996, 0.9939, -200.09189, -0.9593, 0, -200.1976, 4.2307, 2.2101998, -203.7392, 0.92819995, 0.9939, -199.5269, -0.99039996, 0.9939, -200.09189, -0.9593, 0, -200.1976, 2.7203, 1.4038, -205.1774, 2.6504998, 2.376, -204.95389, -0.99039996, 0.9939, -200.09189, 2.6504998, 2.376, -204.95389, 4.2307, 2.2101998, -203.7392, 0.9593, 0, -199.6326, 4.3005, 1.2379999, -203.9628, 2.7203, 1.4038, -205.1774, 0.92819995, 0.9939, -199.5269, 4.2307, 2.2101998, -203.7392, 4.3005, 1.2379999, -203.9628, 8.525, 3.3105998, -211.90039, 2.7203, 1.4038, -205.1774, 4.3005, 1.2379999, -203.9628, 8.464499, 4.2858, -211.6875, 2.6504998, 2.376, -204.95389, 2.7203, 1.4038, -205.1774, 9.9873, 3.1067998, -210.5513, 4.3005, 1.2379999, -203.9628, 4.2307, 2.2101998, -203.7392, 2.7203, 1.4038, -205.1774, 8.525, 3.3105998, -211.90039, 8.464499, 4.2858, -211.6875, 9.9268, 4.082, -210.3384, 4.2307, 2.2101998, -203.7392, 2.6504998, 2.376, -204.95389, 4.3005, 1.2379999, -203.9628, 9.9873, 3.1067998, -210.5513, 8.525, 3.3105998, -211.90039, 4.2307, 2.2101998, -203.7392, 9.9268, 4.082, -210.3384, 9.9873, 3.1067998, -210.5513, 2.6504998, 2.376, -204.95389, 8.464499, 4.2858, -211.6875, 9.9268, 4.082, -210.3384, 11.4598, 4.0684, -214.6796, 8.525, 3.3105998, -211.90039, 9.9873, 3.1067998, -210.5513, 11.412399, 5.0469, -214.4789, 8.464499, 4.2858, -211.6875, 8.525, 3.3105998, -211.90039, 12.7546, 3.8225, -213.1753, 9.9873, 3.1067998, -210.5513, 9.9268, 4.082, -210.3384, 8.525, 3.3105998, -211.90039, 11.4598, 4.0684, -214.6796, 11.412399, 5.0469, -214.4789, 9.9873, 3.1067998, -210.5513, 12.7546, 3.8225, -213.1753, 11.4598, 4.0684, -214.6796, 12.707299, 4.8009996, -212.9746, 9.9268, 4.082, -210.3384, 8.464499, 4.2858, -211.6875, 8.464499, 4.2858, -211.6875, 11.412399, 5.0469, -214.4789, 12.707299, 4.8009996, -212.9746, 13.1909, 4.3879, -215.9356, 11.4598, 4.0684, -214.6796, 12.7546, 3.8225, -213.1753, 12.7546, 3.8225, -213.1753, 14.217199, 4.0949, -214.2442, 13.1909, 4.3879, -215.9356, 13.1647, 5.3701, -215.7495, 11.412399, 5.0469, -214.4789, 11.4598, 4.0684, -214.6796, 11.4598, 4.0684, -214.6796, 13.1909, 4.3879, -215.9356, 13.1647, 5.3701, -215.7495, 9.9268, 4.082, -210.3384, 12.707299, 4.8009996, -212.9746, 12.7546, 3.8225, -213.1753, 14.217199, 4.0949, -214.2442, 12.7546, 3.8225, -213.1753, 12.707299, 4.8009996, -212.9746, 14.2478, 4.5017, -216.4583, 13.1909, 4.3879, -215.9356, 14.217199, 4.0949, -214.2442, 13.1909, 4.3879, -215.9356, 14.2478, 4.5017, -216.4583, 14.261499, 5.4873, -216.28949, 14.217199, 4.0949, -214.2442, 14.9375, 4.1755, -214.6095, 14.2478, 4.5017, -216.4583, 14.9375, 4.1755, -214.6095, 14.217199, 4.0949, -214.2442, 14.191, 5.0771, -214.05809, 15.2028, 4.5231, -216.6805, 14.2478, 4.5017, -216.4583, 14.9375, 4.1755, -214.6095, 14.2478, 4.5017, -216.4583, 15.2028, 4.5231, -216.6805, 15.3833, 5.4976, -216.5468, 14.191, 5.0771, -214.05809, 14.951099, 5.1611, -214.4408, 14.9375, 4.1755, -214.6095, 12.707299, 4.8009996, -212.9746, 14.191, 5.0771, -214.05809, 14.217199, 4.0949, -214.2442, 17.6887, 3.4956, -216.3131, 18.765299, 2.738, -217.9625, 17.2922, 3.4153, -219.13359, 16.3344, 4.0931997, -217.6581, 15.811199, 4.3585997, -217.06589, 16.9464, 3.8621, -215.4959, 15.9183, 4.1398997, -214.8526, 16.9464, 3.8621, -215.4959, 15.811199, 4.3585997, -217.06589, 14.9375, 4.1755, -214.6095, 15.9183, 4.1398997, -214.8526, 15.2028, 4.5231, -216.6805, 15.9183, 4.1398997, -214.8526, 14.9375, 4.1755, -214.6095, 14.951099, 5.1611, -214.4408, 15.811199, 4.3585997, -217.06589, 15.2028, 4.5231, -216.6805, 15.9183, 4.1398997, -214.8526, 15.2028, 4.5231, -216.6805, 15.811199, 4.3585997, -217.06589, 16.1789, 5.2881, -217.0378, 14.951099, 5.1611, -214.4408, 16.0987, 5.1144, -214.71889, 15.9183, 4.1398997, -214.8526, 15.811199, 4.3585997, -217.06589, 16.3344, 4.0931997, -217.6581, 16.7798, 4.9870996, -217.70929, 16.9464, 3.8621, -215.4959, 15.9183, 4.1398997, -214.8526, 16.0987, 5.1144, -214.71889, 16.7798, 4.9870996, -217.70929, 16.1789, 5.2881, -217.0378, 15.811199, 4.3585997, -217.06589, 17.2922, 3.4153, -219.13359, 16.3344, 4.0931997, -217.6581, 17.6887, 3.4956, -216.3131, 16.9464, 3.8621, -215.4959, 17.6887, 3.4956, -216.3131, 16.3344, 4.0931997, -217.6581, 16.3344, 4.0931997, -217.6581, 17.2922, 3.4153, -219.13359, 17.782099, 4.2792, -219.2502, 17.6887, 3.4956, -216.3131, 16.9464, 3.8621, -215.4959, 17.3141, 4.7915998, -215.46779, 17.3141, 4.7915998, -215.46779, 18.133999, 4.3894997, -216.3644, 17.6887, 3.4956, -216.3131, 17.782099, 4.2792, -219.2502, 16.7798, 4.9870996, -217.70929, 16.3344, 4.0931997, -217.6581, 16.1789, 5.2881, -217.0378, 16.7798, 4.9870996, -217.70929, 18.133999, 4.3894997, -216.3644, 16.0987, 5.1144, -214.71889, 17.3141, 4.7915998, -215.46779, 16.9464, 3.8621, -215.4959, 18.133999, 4.3894997, -216.3644, 17.3141, 4.7915998, -215.46779, 16.1789, 5.2881, -217.0378, 16.7798, 4.9870996, -217.70929, 17.782099, 4.2792, -219.2502, 19.2552, 3.602, -218.0792, 19.2552, 3.602, -218.0792, 18.133999, 4.3894997, -216.3644, 16.7798, 4.9870996, -217.70929, 17.2922, 3.4153, -219.13359, 22.628399, -1.3632, -228.82709, 23.1218, -0.5026, -228.9529, 22.628399, -1.3632, -228.82709, 17.2922, 3.4153, -219.13359, 18.765299, 2.738, -217.9625, 24.0415, -1.9876, -227.55699, 18.765299, 2.738, -217.9625, 19.2552, 3.602, -218.0792, 18.765299, 2.738, -217.9625, 24.0415, -1.9876, -227.55699, 22.628399, -1.3632, -228.82709, 19.2552, 3.602, -218.0792, 24.534899, -1.127, -227.68289, 24.0415, -1.9876, -227.55699, 17.782099, 4.2792, -219.2502, 23.1218, -0.5026, -228.9529, 24.534899, -1.127, -227.68289, 23.1218, -0.5026, -228.9529, 17.782099, 4.2792, -219.2502, 17.2922, 3.4153, -219.13359, 24.534899, -1.127, -227.68289, 19.2552, 3.602, -218.0792, 17.782099, 4.2792, -219.2502, 18.765299, 2.738, -217.9625, 17.6887, 3.4956, -216.3131, 18.133999, 4.3894997, -216.3644, 18.133999, 4.3894997, -216.3644, 19.2552, 3.602, -218.0792, 18.765299, 2.738, -217.9625, 11.412399, 5.0469, -214.4789, 13.1647, 5.3701, -215.7495, 14.191, 5.0771, -214.05809, 14.191, 5.0771, -214.05809, 12.707299, 4.8009996, -212.9746, 11.412399, 5.0469, -214.4789, 14.261499, 5.4873, -216.28949, 13.1647, 5.3701, -215.7495, 13.1909, 4.3879, -215.9356, 14.951099, 5.1611, -214.4408, 14.191, 5.0771, -214.05809, 13.1647, 5.3701, -215.7495, 13.1647, 5.3701, -215.7495, 14.261499, 5.4873, -216.28949, 14.951099, 5.1611, -214.4408, 15.3833, 5.4976, -216.5468, 14.261499, 5.4873, -216.28949, 14.2478, 4.5017, -216.4583, 16.1789, 5.2881, -217.0378, 15.3833, 5.4976, -216.5468, 15.2028, 4.5231, -216.6805, 14.261499, 5.4873, -216.28949, 15.3833, 5.4976, -216.5468, 16.0987, 5.1144, -214.71889, 16.0987, 5.1144, -214.71889, 14.951099, 5.1611, -214.4408, 14.261499, 5.4873, -216.28949, 17.3141, 4.7915998, -215.46779, 16.0987, 5.1144, -214.71889, 15.3833, 5.4976, -216.5468, 15.3833, 5.4976, -216.5468, 16.1789, 5.2881, -217.0378, 17.3141, 4.7915998, -215.46779, 1, 0, 0, 0.9593, 0, -199.6326, -0.9593, 0, -200.1976, -1, 0, 0, -0.9593, 0, -200.1976, -0.99039996, 0.9939, -200.09189, 1, 1, 0, 0.92819995, 0.9939, -199.5269, 0.9593, 0, -199.6326, -1, 1, 0, -0.99039996, 0.9939, -200.09189, 0.92819995, 0.9939, -199.5269, -0.9593, 0, -200.1976, -1, 0, 0, 1, 0, 0, -0.99039996, 0.9939, -200.09189, -1, 1, 0, -1, 0, 0, 0.9593, 0, -199.6326, 1, 0, 0, 1, 1, 0, 0.92819995, 0.9939, -199.5269, 1, 1, 0, -1, 1, 0, -1, 0, 0, -1, 1, 0, 1, 1, 0, 1, 1, 0, 1, 0, 0, -1, 0, 0, 64.681496, -18.0087, -306.26828, 53.016598, -12.8716, -272.5376, 54.8303, -13.378699, -271.8643, 66.437, -18.489899, -305.4396, 54.8303, -13.378699, -271.8643, 55.113197, -12.4204, -271.9046, 53.016598, -12.8716, -272.5376, 64.681496, -18.0087, -306.26828, 64.9699, -17.0528, -306.3241, 54.8303, -13.378699, -271.8643, 66.437, -18.489899, -305.4396, 64.681496, -18.0087, -306.26828, 55.113197, -12.4204, -271.9046, 66.725395, -17.534, -305.4954, 66.437, -18.489899, -305.4396, 53.2995, -11.9133, -272.57788, 64.9699, -17.0528, -306.3241, 66.725395, -17.534, -305.4954, 64.9699, -17.0528, -306.3241, 53.2995, -11.9133, -272.57788, 53.016598, -12.8716, -272.5376, 66.725395, -17.534, -305.4954, 55.113197, -12.4204, -271.9046, 53.2995, -11.9133, -272.57788, 46.5916, -10.1651, -249.4756, 54.8303, -13.378699, -271.8643, 53.016598, -12.8716, -272.5376, 44.8419, -9.6823, -250.3154, 53.016598, -12.8716, -272.5376, 53.2995, -11.9133, -272.57788, 46.8691, -9.2048, -249.50159, 55.113197, -12.4204, -271.9046, 54.8303, -13.378699, -271.8643, 68.822495, -19.7843, -314.294, 67.232796, -19.116299, -311.6936, 68.901695, -19.56, -310.6846, 68.901695, -19.56, -310.6846, 70.3638, -20.1745, -313.0807, 68.822495, -19.7843, -314.294, 67.232796, -19.116299, -311.6936, 64.681496, -18.0087, -306.26828, 66.437, -18.489899, -305.4396, 67.5244, -18.1619, -311.7562, 64.9699, -17.0528, -306.3241, 64.681496, -18.0087, -306.26828, 66.437, -18.489899, -305.4396, 68.901695, -19.56, -310.6846, 67.232796, -19.116299, -311.6936, 64.681496, -18.0087, -306.26828, 67.232796, -19.116299, -311.6936, 67.5244, -18.1619, -311.7562, 67.232796, -19.116299, -311.6936, 68.822495, -19.7843, -314.294, 69.1184, -18.8316, -314.3635, 69.1184, -18.8316, -314.3635, 67.5244, -18.1619, -311.7562, 67.232796, -19.116299, -311.6936, 67.5244, -18.1619, -311.7562, 69.1184, -18.8316, -314.3635, 70.6597, -19.2218, -313.15018, 66.725395, -17.534, -305.4954, 69.1933, -18.6055, -310.7472, 68.901695, -19.56, -310.6846, 70.6597, -19.2218, -313.15018, 69.1933, -18.6055, -310.7472, 67.5244, -18.1619, -311.7562, 68.901695, -19.56, -310.6846, 66.437, -18.489899, -305.4396, 66.725395, -17.534, -305.4954, 64.9699, -17.0528, -306.3241, 67.5244, -18.1619, -311.7562, 69.1933, -18.6055, -310.7472, 69.1933, -18.6055, -310.7472, 66.725395, -17.534, -305.4954, 64.9699, -17.0528, -306.3241, 72.0002, -21.041199, -317.14648, 71.029396, -20.6707, -316.6338, 72.0867, -20.867899, -314.94748, 71.4827, -20.6295, -314.4343, 72.0867, -20.867899, -314.94748, 71.029396, -20.6707, -316.6338, 72.0867, -20.867899, -314.94748, 72.7903, -21.135, -315.3115, 72.0002, -21.041199, -317.14648, 70.1715, -20.3326, -315.9151, 68.822495, -19.7843, -314.294, 70.3638, -20.1745, -313.0807, 71.029396, -20.6707, -316.6338, 70.1715, -20.3326, -315.9151, 71.4827, -20.6295, -314.4343, 70.3638, -20.1745, -313.0807, 71.4827, -20.6295, -314.4343, 70.1715, -20.3326, -315.9151, 70.1715, -20.3326, -315.9151, 71.029396, -20.6707, -316.6338, 71.3397, -19.723799, -316.7176, 68.822495, -19.7843, -314.294, 70.1715, -20.3326, -315.9151, 70.4747, -19.3828, -315.9931, 71.3397, -19.723799, -316.7176, 70.4747, -19.3828, -315.9931, 70.1715, -20.3326, -315.9151, 71.4827, -20.6295, -314.4343, 70.3638, -20.1745, -313.0807, 70.6597, -19.2218, -313.15018, 70.3638, -20.1745, -313.0807, 68.901695, -19.56, -310.6846, 69.1933, -18.6055, -310.7472, 71.029396, -20.6707, -316.6338, 72.0002, -21.041199, -317.14648, 72.3004, -20.0908, -317.22708, 72.3004, -20.0908, -317.22708, 71.3397, -19.723799, -316.7176, 71.029396, -20.6707, -316.6338, 72.0867, -20.867899, -314.94748, 71.4827, -20.6295, -314.4343, 71.7858, -19.6798, -314.5123, 72.7903, -21.135, -315.3115, 72.0867, -20.867899, -314.94748, 72.396996, -19.9209, -315.0314, 71.7858, -19.6798, -314.5123, 72.396996, -19.9209, -315.0314, 72.0867, -20.867899, -314.94748, 70.6597, -19.2218, -313.15018, 71.7858, -19.6798, -314.5123, 71.4827, -20.6295, -314.4343, 70.4747, -19.3828, -315.9931, 71.3397, -19.723799, -316.7176, 72.396996, -19.9209, -315.0314, 72.396996, -19.9209, -315.0314, 71.7858, -19.6798, -314.5123, 70.4747, -19.3828, -315.9931, 71.3397, -19.723799, -316.7176, 72.3004, -20.0908, -317.22708, 73.0904, -20.1845, -315.39218, 73.0904, -20.1845, -315.39218, 72.396996, -19.9209, -315.0314, 71.3397, -19.723799, -316.7176, 72.7903, -21.135, -315.3115, 74.483, -21.633, -315.8942, 73.9441, -21.6168, -317.8202, 73.9441, -21.6168, -317.8202, 72.0002, -21.041199, -317.14648, 72.7903, -21.135, -315.3115, 72.0002, -21.041199, -317.14648, 73.9441, -21.6168, -317.8202, 74.1543, -20.6404, -317.8708, 74.483, -21.633, -315.8942, 72.7903, -21.135, -315.3115, 73.0904, -20.1845, -315.39218, 73.0904, -20.1845, -315.39218, 74.6933, -20.6567, -315.9448, 74.483, -21.633, -315.8942, 75.9779, -21.9536, -318.2685, 73.9441, -21.6168, -317.8202, 74.483, -21.633, -315.8942, 74.483, -21.633, -315.8942, 76.2995, -21.9338, -316.2946, 75.9779, -21.9536, -318.2685, 73.9441, -21.6168, -317.8202, 75.9779, -21.9536, -318.2685, 76.0757, -20.9587, -318.2944, 76.2995, -21.9338, -316.2946, 74.483, -21.633, -315.8942, 74.6933, -20.6567, -315.9448, 76.0757, -20.9587, -318.2944, 74.1543, -20.6404, -317.8708, 73.9441, -21.6168, -317.8202, 76.3972, -20.9389, -316.3205, 74.6933, -20.6567, -315.9448, 74.1543, -20.6404, -317.8708, 74.1543, -20.6404, -317.8708, 76.0757, -20.9587, -318.2944, 76.3972, -20.9389, -316.3205, 74.1543, -20.6404, -317.8708, 72.3004, -20.0908, -317.22708, 72.0002, -21.041199, -317.14648, 72.396996, -19.9209, -315.0314, 73.0904, -20.1845, -315.39218, 72.7903, -21.135, -315.3115, 74.6933, -20.6567, -315.9448, 73.0904, -20.1845, -315.39218, 72.3004, -20.0908, -317.22708, 72.3004, -20.0908, -317.22708, 74.1543, -20.6404, -317.8708, 74.6933, -20.6567, -315.9448, 70.4747, -19.3828, -315.9931, 69.1184, -18.8316, -314.3635, 68.822495, -19.7843, -314.294, 69.1184, -18.8316, -314.3635, 70.4747, -19.3828, -315.9931, 71.7858, -19.6798, -314.5123, 71.7858, -19.6798, -314.5123, 70.6597, -19.2218, -313.15018, 69.1184, -18.8316, -314.3635, 69.1933, -18.6055, -310.7472, 70.6597, -19.2218, -313.15018, 70.3638, -20.1745, -313.0807, 76.298195, -18.423899, -312.5352, 75.165, -16.805, -312.2504, 75.4293, -16.9653, -310.27438, 73.4606, -13.5243, -309.7396, 75.4293, -16.9653, -310.27438, 75.165, -16.805, -312.2504, 73.1857, -13.378099, -311.71518, 75.165, -16.805, -312.2504, 75.998, -16.2556, -312.3172, 74.3395, -13.0553, -309.82718, 76.2622, -16.4159, -310.3412, 75.4293, -16.9653, -310.27438, 75.165, -16.805, -312.2504, 73.1857, -13.378099, -311.71518, 73.4606, -13.5243, -309.7396, 74.0645, -12.9092, -311.8028, 75.998, -16.2556, -312.3172, 76.2622, -16.4159, -310.3412, 75.4293, -16.9653, -310.27438, 73.4606, -13.5243, -309.7396, 74.3395, -13.0553, -309.82718, 75.998, -16.2556, -312.3172, 74.0645, -12.9092, -311.8028, 73.1857, -13.378099, -311.71518, 76.2622, -16.4159, -310.3412, 74.3395, -13.0553, -309.82718, 74.0645, -12.9092, -311.8028, 71.0011, -8.099999, -309.0119, 73.4606, -13.5243, -309.7396, 73.1857, -13.378099, -311.71518, 70.7111, -7.9719, -310.9866, 73.1857, -13.378099, -311.71518, 74.0645, -12.9092, -311.8028, 71.9193, -7.7195997, -309.12198, 74.3395, -13.0553, -309.82718, 73.4606, -13.5243, -309.7396, 45.1194, -8.7219, -250.34149, 53.2995, -11.9133, -272.57788, 55.113197, -12.4204, -271.9046, 73.1857, -13.378099, -311.71518, 70.7111, -7.9719, -310.9866, 71.0011, -8.099999, -309.0119, 73.4606, -13.5243, -309.7396, 71.0011, -8.099999, -309.0119, 71.9193, -7.7195997, -309.12198, 74.0645, -12.9092, -311.8028, 71.629295, -7.5915, -311.09668, 70.7111, -7.9719, -310.9866, 71.629295, -7.5915, -311.09668, 74.0645, -12.9092, -311.8028, 74.3395, -13.0553, -309.82718, 74.3395, -13.0553, -309.82718, 71.9193, -7.7195997, -309.12198, 71.629295, -7.5915, -311.09668, 69.0555, -2.4586, -308.37848, 71.0011, -8.099999, -309.0119, 70.7111, -7.9719, -310.9866, 68.7509, -2.3483, -310.35208, 70.7111, -7.9719, -310.9866, 71.629295, -7.5915, -311.09668, 70.0032, -2.167, -308.50848, 71.9193, -7.7195997, -309.12198, 71.0011, -8.099999, -309.0119, 67.8767, 2.3836, -307.9425, 69.0555, -2.4586, -308.37848, 68.7509, -2.3483, -310.35208, 67.559395, 2.4771, -309.91498, 68.7509, -2.3483, -310.35208, 69.6986, -2.0567, -310.482, 68.845795, 2.5822, -308.089, 70.0032, -2.167, -308.50848, 69.0555, -2.4586, -308.37848, 69.6986, -2.0567, -310.482, 71.629295, -7.5915, -311.09668, 71.9193, -7.7195997, -309.12198, 70.7111, -7.9719, -310.9866, 68.7509, -2.3483, -310.35208, 69.0555, -2.4586, -308.37848, 71.0011, -8.099999, -309.0119, 69.0555, -2.4586, -308.37848, 70.0032, -2.167, -308.50848, 71.629295, -7.5915, -311.09668, 69.6986, -2.0567, -310.482, 68.7509, -2.3483, -310.35208, 71.9193, -7.7195997, -309.12198, 70.0032, -2.167, -308.50848, 69.6986, -2.0567, -310.482, 68.528496, 2.6755998, -310.0614, 69.6986, -2.0567, -310.482, 70.0032, -2.167, -308.50848, 78.0675, -22.039799, -318.4917, 75.9779, -21.9536, -318.2685, 76.2995, -21.9338, -316.2946, 78.177895, -22.011, -316.495, 76.2995, -21.9338, -316.2946, 76.3972, -20.9389, -316.3205, 75.9779, -21.9536, -318.2685, 78.0675, -22.039799, -318.4917, 78.0488, -21.0401, -318.5051, 74.6933, -20.6567, -315.9448, 76.3972, -20.9389, -316.3205, 76.2995, -21.9338, -316.2946, 78.0488, -21.0401, -318.5051, 76.0757, -20.9587, -318.2944, 75.9779, -21.9536, -318.2685, 78.159195, -21.0112, -316.5084, 76.3972, -20.9389, -316.3205, 76.0757, -20.9587, -318.2944, 76.2995, -21.9338, -316.2946, 78.177895, -22.011, -316.495, 78.0675, -22.039799, -318.4917, 80.149796, -21.8842, -318.5095, 78.0675, -22.039799, -318.4917, 78.177895, -22.011, -316.495, 80.0793, -21.868399, -316.5108, 78.177895, -22.011, -316.495, 78.159195, -21.0112, -316.5084, 76.3972, -20.9389, -316.3205, 78.159195, -21.0112, -316.5084, 78.177895, -22.011, -316.495, 76.0757, -20.9587, -318.2944, 78.0488, -21.0401, -318.5051, 78.159195, -21.0112, -316.5084, 80.0222, -20.892399, -318.5218, 78.0488, -21.0401, -318.5051, 78.0675, -22.039799, -318.4917, 79.9517, -20.8766, -316.5231, 78.159195, -21.0112, -316.5084, 78.0488, -21.0401, -318.5051, 79.2202, -20.9601, -313.1478, 78.3463, -20.5406, -312.991, 78.6019, -20.7334, -311.01678, 76.557, -18.593199, -310.5592, 77.8473, -20.0926, -310.85928, 77.592995, -19.9105, -312.8347, 78.3463, -20.5406, -312.991, 77.592995, -19.9105, -312.8347, 77.8473, -20.0926, -310.85928, 77.8473, -20.0926, -310.85928, 78.6019, -20.7334, -311.01678, 78.3463, -20.5406, -312.991, 77.592995, -19.9105, -312.8347, 78.3463, -20.5406, -312.991, 78.8921, -19.702799, -312.9799, 79.5756, -20.0266, -313.0987, 78.8921, -19.702799, -312.9799, 78.3463, -20.5406, -312.991, 78.6019, -20.7334, -311.01678, 77.8473, -20.0926, -310.85928, 78.5343, -19.3662, -310.8808, 78.5343, -19.3662, -310.8808, 79.1477, -19.8956, -311.0057, 78.6019, -20.7334, -311.01678, 78.8921, -19.702799, -312.9799, 78.2799, -19.1841, -312.8562, 77.592995, -19.9105, -312.8347, 78.2799, -19.1841, -312.8562, 78.8921, -19.702799, -312.9799, 79.1477, -19.8956, -311.0057, 79.1477, -19.8956, -311.0057, 78.5343, -19.3662, -310.8808, 78.2799, -19.1841, -312.8562, 78.177895, -22.011, -316.495, 80.0793, -21.868399, -316.5108, 80.149796, -21.8842, -318.5095, 78.0675, -22.039799, -318.4917, 80.149796, -21.8842, -318.5095, 80.0222, -20.892399, -318.5218, 78.159195, -21.0112, -316.5084, 79.9517, -20.8766, -316.5231, 80.0793, -21.868399, -316.5108, 78.0488, -21.0401, -318.5051, 80.0222, -20.892399, -318.5218, 79.9517, -20.8766, -316.5231, 78.6019, -20.7334, -311.01678, 79.4955, -21.1684, -311.1778, 79.2202, -20.9601, -313.1478, 81.1006, -21.393799, -313.4951, 79.2202, -20.9601, -313.1478, 79.4955, -21.1684, -311.1778, 79.2202, -20.9601, -313.1478, 81.1006, -21.393799, -313.4951, 81.28, -20.4133, -313.4141, 81.446396, -21.618599, -311.538, 79.4955, -21.1684, -311.1778, 79.8508, -20.234999, -311.12878, 82.18, -21.5176, -318.3628, 80.149796, -21.8842, -318.5095, 80.0793, -21.868399, -316.5108, 81.9715, -21.5262, -316.37378, 80.0793, -21.868399, -316.5108, 79.9517, -20.8766, -316.5231, 80.0793, -21.868399, -316.5108, 81.9715, -21.5262, -316.37378, 82.18, -21.5176, -318.3628, 79.4955, -21.1684, -311.1778, 81.446396, -21.618599, -311.538, 81.1006, -21.393799, -313.4951, 81.9582, -20.5427, -318.3819, 80.0222, -20.892399, -318.5218, 80.149796, -21.8842, -318.5095, 81.749596, -20.5513, -316.3928, 79.9517, -20.8766, -316.5231, 80.0222, -20.892399, -318.5218, 79.9517, -20.8766, -316.5231, 81.749596, -20.5513, -316.3928, 81.9715, -21.5262, -316.37378, 80.149796, -21.8842, -318.5095, 82.18, -21.5176, -318.3628, 81.9582, -20.5427, -318.3819, 84.0541, -20.683199, -313.99118, 81.28, -20.4133, -313.4141, 81.1006, -21.393799, -313.4951, 79.8508, -20.234999, -311.12878, 81.6258, -20.6381, -311.4571, 81.446396, -21.618599, -311.538, 79.4955, -21.1684, -311.1778, 78.6019, -20.7334, -311.01678, 79.1477, -19.8956, -311.0057, 78.3463, -20.5406, -312.991, 79.2202, -20.9601, -313.1478, 79.5756, -20.0266, -313.0987, 79.1477, -19.8956, -311.0057, 79.8508, -20.234999, -311.12878, 79.4955, -21.1684, -311.1778, 81.28, -20.4133, -313.4141, 79.5756, -20.0266, -313.0987, 79.2202, -20.9601, -313.1478, 81.6258, -20.6381, -311.4571, 79.8508, -20.234999, -311.12878, 79.5756, -20.0266, -313.0987, 79.8508, -20.234999, -311.12878, 79.1477, -19.8956, -311.0057, 78.8921, -19.702799, -312.9799, 78.8921, -19.702799, -312.9799, 79.5756, -20.0266, -313.0987, 79.8508, -20.234999, -311.12878, 80.0222, -20.892399, -318.5218, 81.9582, -20.5427, -318.3819, 81.749596, -20.5513, -316.3928, 79.5756, -20.0266, -313.0987, 81.28, -20.4133, -313.4141, 81.6258, -20.6381, -311.4571, 77.592995, -19.9105, -312.8347, 76.298195, -18.423899, -312.5352, 76.557, -18.593199, -310.5592, 77.8473, -20.0926, -310.85928, 76.557, -18.593199, -310.5592, 77.3459, -17.9809, -310.61008, 78.2799, -19.1841, -312.8562, 77.0871, -17.811499, -312.586, 76.298195, -18.423899, -312.5352, 76.298195, -18.423899, -312.5352, 77.592995, -19.9105, -312.8347, 78.2799, -19.1841, -312.8562, 77.3459, -17.9809, -310.61008, 78.5343, -19.3662, -310.8808, 77.8473, -20.0926, -310.85928, 77.0871, -17.811499, -312.586, 78.2799, -19.1841, -312.8562, 78.5343, -19.3662, -310.8808, 78.5343, -19.3662, -310.8808, 77.3459, -17.9809, -310.61008, 77.0871, -17.811499, -312.586, 75.4293, -16.9653, -310.27438, 76.557, -18.593199, -310.5592, 76.298195, -18.423899, -312.5352, 75.165, -16.805, -312.2504, 76.298195, -18.423899, -312.5352, 77.0871, -17.811499, -312.586, 76.557, -18.593199, -310.5592, 75.4293, -16.9653, -310.27438, 76.2622, -16.4159, -310.3412, 76.2622, -16.4159, -310.3412, 77.3459, -17.9809, -310.61008, 76.557, -18.593199, -310.5592, 75.998, -16.2556, -312.3172, 77.0871, -17.811499, -312.586, 77.3459, -17.9809, -310.61008, 77.0871, -17.811499, -312.586, 75.998, -16.2556, -312.3172, 75.165, -16.805, -312.2504, 77.3459, -17.9809, -310.61008, 76.2622, -16.4159, -310.3412, 75.998, -16.2556, -312.3172, 83.9881, -21.675499, -314.09558, 81.1006, -21.393799, -313.4951, 81.446396, -21.618599, -311.538, 84.4006, -21.907299, -312.1524, 81.446396, -21.618599, -311.538, 81.6258, -20.6381, -311.4571, 81.446396, -21.618599, -311.538, 84.4006, -21.907299, -312.1524, 83.9881, -21.675499, -314.09558, 83.8347, -21.0119, -316.12268, 81.9715, -21.5262, -316.37378, 81.749596, -20.5513, -316.3928, 84.137695, -20.9776, -318.0993, 82.18, -21.5176, -318.3628, 81.9715, -21.5262, -316.37378, 83.8376, -20.0242, -318.12878, 81.9582, -20.5427, -318.3819, 82.18, -21.5176, -318.3628, 81.9715, -21.5262, -316.37378, 83.8347, -21.0119, -316.12268, 84.137695, -20.9776, -318.0993, 81.1006, -21.393799, -313.4951, 83.9881, -21.675499, -314.09558, 84.0541, -20.683199, -313.99118, 82.18, -21.5176, -318.3628, 84.137695, -20.9776, -318.0993, 83.8376, -20.0242, -318.12878, 81.6258, -20.6381, -311.4571, 84.4666, -20.914999, -312.048, 84.4006, -21.907299, -312.1524, 83.5347, -20.0584, -316.1521, 81.749596, -20.5513, -316.3928, 81.9582, -20.5427, -318.3819, 81.749596, -20.5513, -316.3928, 83.5347, -20.0584, -316.1521, 83.8347, -21.0119, -316.12268, 81.9582, -20.5427, -318.3819, 83.8376, -20.0242, -318.12878, 83.5347, -20.0584, -316.1521, 84.4666, -20.914999, -312.048, 81.6258, -20.6381, -311.4571, 81.28, -20.4133, -313.4141, 81.28, -20.4133, -313.4141, 84.0541, -20.683199, -313.99118, 84.4666, -20.914999, -312.048, 86.933395, -19.9167, -317.5821, 84.137695, -20.9776, -318.0993, 83.8347, -21.0119, -316.12268, 86.5614, -19.9762, -315.6179, 83.8347, -21.0119, -316.12268, 83.5347, -20.0584, -316.1521, 86.1701, -19.0571, -315.6641, 83.5347, -20.0584, -316.1521, 83.8376, -20.0242, -318.12878, 86.5422, -18.9975, -317.6283, 83.8376, -20.0242, -318.12878, 84.137695, -20.9776, -318.0993, 88.8273, -21.5872, -315.20038, 83.9881, -21.675499, -314.09558, 84.4006, -21.907299, -312.1524, 89.3003, -21.8183, -313.2709, 84.4006, -21.907299, -312.1524, 84.4666, -20.914999, -312.048, 88.7902, -20.5961, -315.07248, 84.0541, -20.683199, -313.99118, 83.9881, -21.675499, -314.09558, 89.2632, -20.8272, -313.1431, 84.4666, -20.914999, -312.048, 84.0541, -20.683199, -313.99118, 84.4006, -21.907299, -312.1524, 89.3003, -21.8183, -313.2709, 88.8273, -21.5872, -315.20038, 83.9881, -21.675499, -314.09558, 88.8273, -21.5872, -315.20038, 88.7902, -20.5961, -315.07248, 84.0541, -20.683199, -313.99118, 88.7902, -20.5961, -315.07248, 89.2632, -20.8272, -313.1431, 84.4666, -20.914999, -312.048, 89.2632, -20.8272, -313.1431, 89.3003, -21.8183, -313.2709, 83.8347, -21.0119, -316.12268, 86.5614, -19.9762, -315.6179, 86.933395, -19.9167, -317.5821, 84.137695, -20.9776, -318.0993, 86.933395, -19.9167, -317.5821, 86.5422, -18.9975, -317.6283, 83.5347, -20.0584, -316.1521, 86.1701, -19.0571, -315.6641, 86.5614, -19.9762, -315.6179, 83.8376, -20.0242, -318.12878, 86.5422, -18.9975, -317.6283, 86.1701, -19.0571, -315.6641, 90.4357, -18.1642, -316.86798, 86.933395, -19.9167, -317.5821, 86.5614, -19.9762, -315.6179, 90.0908, -18.2085, -314.8985, 86.5614, -19.9762, -315.6179, 86.1701, -19.0571, -315.6641, 89.957596, -17.2882, -316.932, 86.5422, -18.9975, -317.6283, 86.933395, -19.9167, -317.5821, 89.6127, -17.3326, -314.9625, 86.1701, -19.0571, -315.6641, 86.5422, -18.9975, -317.6283, 95.547295, -20.785099, -316.8536, 88.8273, -21.5872, -315.20038, 89.3003, -21.8183, -313.2709, 96.0738, -21.0098, -314.9373, 89.3003, -21.8183, -313.2709, 89.2632, -20.8272, -313.1431, 95.4191, -19.804699, -316.7034, 88.7902, -20.5961, -315.07248, 88.8273, -21.5872, -315.20038, 95.945595, -20.0295, -314.78708, 89.2632, -20.8272, -313.1431, 88.7902, -20.5961, -315.07248, 88.8273, -21.5872, -315.20038, 95.547295, -20.785099, -316.8536, 95.4191, -19.804699, -316.7034, 89.3003, -21.8183, -313.2709, 96.0738, -21.0098, -314.9373, 95.547295, -20.785099, -316.8536, 89.2632, -20.8272, -313.1431, 95.945595, -20.0295, -314.78708, 96.0738, -21.0098, -314.9373, 88.7902, -20.5961, -315.07248, 95.4191, -19.804699, -316.7034, 95.945595, -20.0295, -314.78708, 86.5614, -19.9762, -315.6179, 90.0908, -18.2085, -314.8985, 90.4357, -18.1642, -316.86798, 86.933395, -19.9167, -317.5821, 90.4357, -18.1642, -316.86798, 89.957596, -17.2882, -316.932, 86.1701, -19.0571, -315.6641, 89.6127, -17.3326, -314.9625, 90.0908, -18.2085, -314.8985, 86.5422, -18.9975, -317.6283, 89.957596, -17.2882, -316.932, 89.6127, -17.3326, -314.9625, 92.703094, -16.651, -314.49658, 90.0908, -18.2085, -314.8985, 89.6127, -17.3326, -314.9625, 92.928696, -16.6785, -316.48358, 90.4357, -18.1642, -316.86798, 90.0908, -18.2085, -314.8985, 92.4034, -15.8306, -316.555, 89.957596, -17.2882, -316.932, 90.4357, -18.1642, -316.86798, 92.177795, -15.8031, -314.5679, 89.6127, -17.3326, -314.9625, 89.957596, -17.2882, -316.932, 90.0908, -18.2085, -314.8985, 92.703094, -16.651, -314.49658, 92.928696, -16.6785, -316.48358, 90.4357, -18.1642, -316.86798, 92.928696, -16.6785, -316.48358, 92.4034, -15.8306, -316.555, 96.4991, -20.615099, -317.0976, 95.547295, -20.785099, -316.8536, 96.0738, -21.0098, -314.9373, 96.0738, -21.0098, -314.9373, 97.0301, -20.8391, -315.1824, 96.4991, -20.615099, -317.0976, 97.0301, -20.8391, -315.1824, 96.0738, -21.0098, -314.9373, 95.945595, -20.0295, -314.78708, 95.547295, -20.785099, -316.8536, 96.4991, -20.615099, -317.0976, 96.3633, -19.636099, -316.9454, 96.3633, -19.636099, -316.9454, 95.4191, -19.804699, -316.7034, 95.547295, -20.785099, -316.8536, 95.4191, -19.804699, -316.7034, 96.3633, -19.636099, -316.9454, 96.894295, -19.8601, -315.0303, 96.894295, -19.8601, -315.0303, 95.945595, -20.0295, -314.78708, 95.4191, -19.804699, -316.7034, 96.4991, -20.615099, -317.0976, 97.0301, -20.8391, -315.1824, 96.894295, -19.8601, -315.0303, 96.894295, -19.8601, -315.0303, 96.3633, -19.636099, -316.9454, 96.4991, -20.615099, -317.0976, 95.945595, -20.0295, -314.78708, 96.894295, -19.8601, -315.0303, 97.0301, -20.8391, -315.1824, 89.6127, -17.3326, -314.9625, 92.177795, -15.8031, -314.5679, 92.703094, -16.651, -314.49658, 89.957596, -17.2882, -316.932, 92.4034, -15.8306, -316.555, 92.177795, -15.8031, -314.5679, 94.4532, -15.5203, -314.3952, 92.703094, -16.651, -314.49658, 92.177795, -15.8031, -314.5679, 93.9821, -14.8108, -316.4628, 92.4034, -15.8306, -316.555, 92.928696, -16.6785, -316.48358, 93.903496, -14.6881, -314.46808, 92.177795, -15.8031, -314.5679, 92.4034, -15.8306, -316.555, 94.5318, -15.643, -316.3899, 92.928696, -16.6785, -316.48358, 92.703094, -16.651, -314.49658, 92.928696, -16.6785, -316.48358, 94.5318, -15.643, -316.3899, 93.9821, -14.8108, -316.4628, 92.703094, -16.651, -314.49658, 94.4532, -15.5203, -314.3952, 94.5318, -15.643, -316.3899, 92.177795, -15.8031, -314.5679, 93.903496, -14.6881, -314.46808, 94.4532, -15.5203, -314.3952, 92.4034, -15.8306, -316.555, 93.9821, -14.8108, -316.4628, 93.903496, -14.6881, -314.46808, 95.5073, -13.7873, -316.577, 93.9821, -14.8108, -316.4628, 94.5318, -15.643, -316.3899, 96.2211, -14.333699, -314.52948, 94.4532, -15.5203, -314.3952, 93.903496, -14.6881, -314.46808, 95.653595, -13.513499, -314.6012, 93.903496, -14.6881, -314.46808, 93.9821, -14.8108, -316.4628, 96.0748, -14.607599, -316.50528, 94.5318, -15.643, -316.3899, 94.4532, -15.5203, -314.3952, 94.5318, -15.643, -316.3899, 96.0748, -14.607599, -316.50528, 95.5073, -13.7873, -316.577, 94.4532, -15.5203, -314.3952, 96.2211, -14.333699, -314.52948, 96.0748, -14.607599, -316.50528, 93.903496, -14.6881, -314.46808, 95.653595, -13.513499, -314.6012, 96.2211, -14.333699, -314.52948, 93.9821, -14.8108, -316.4628, 95.5073, -13.7873, -316.577, 95.653595, -13.513499, -314.6012, 96.8133, -14.1061, -316.6672, 96.0748, -14.607599, -316.50528, 96.2211, -14.333699, -314.52948, 96.0748, -14.607599, -316.50528, 96.8133, -14.1061, -316.6672, 96.2401, -13.2897, -316.7377, 96.2211, -14.333699, -314.52948, 97.1092, -13.7307, -314.7252, 96.8133, -14.1061, -316.6672, 96.2401, -13.2897, -316.7377, 95.5073, -13.7873, -316.577, 96.0748, -14.607599, -316.50528, 97.1092, -13.7307, -314.7252, 96.2211, -14.333699, -314.52948, 95.653595, -13.513499, -314.6012, 95.5073, -13.7873, -316.577, 96.2401, -13.2897, -316.7377, 96.535995, -12.9143, -314.7957, 96.535995, -12.9143, -314.7957, 95.653595, -13.513499, -314.6012, 95.5073, -13.7873, -316.577, 95.653595, -13.513499, -314.6012, 96.535995, -12.9143, -314.7957, 97.1092, -13.7307, -314.7252, 97.534195, -13.6186, -316.9188, 96.8133, -14.1061, -316.6672, 97.1092, -13.7307, -314.7252, 96.9444, -12.8137, -316.9827, 96.2401, -13.2897, -316.7377, 96.8133, -14.1061, -316.6672, 96.8133, -14.1061, -316.6672, 97.534195, -13.6186, -316.9188, 96.9444, -12.8137, -316.9827, 97.1092, -13.7307, -314.7252, 97.9786, -13.142799, -315.02768, 97.534195, -13.6186, -316.9188, 97.9786, -13.142799, -315.02768, 97.1092, -13.7307, -314.7252, 96.535995, -12.9143, -314.7957, 96.2401, -13.2897, -316.7377, 96.9444, -12.8137, -316.9827, 97.388695, -12.3378, -315.0917, 97.6012, -12.332399, -317.2933, 96.9444, -12.8137, -316.9827, 97.534195, -13.6186, -316.9188, 97.388695, -12.3378, -315.0917, 96.535995, -12.9143, -314.7957, 96.2401, -13.2897, -316.7377, 96.535995, -12.9143, -314.7957, 97.388695, -12.3378, -315.0917, 97.9786, -13.142799, -315.02768, 98.273994, -13.0721, -317.275, 97.534195, -13.6186, -316.9188, 97.9786, -13.142799, -315.02768, 97.534195, -13.6186, -316.9188, 98.273994, -13.0721, -317.275, 97.6012, -12.332399, -317.2933, 98.746895, -12.5954, -315.39108, 97.9786, -13.142799, -315.02768, 97.388695, -12.3378, -315.0917, 96.9444, -12.8137, -316.9827, 97.6012, -12.332399, -317.2933, 98.0741, -11.8558, -315.4094, 98.1595, -11.706599, -317.5564, 97.6012, -12.332399, -317.2933, 98.273994, -13.0721, -317.275, 98.0741, -11.8558, -315.4094, 97.388695, -12.3378, -315.0917, 96.9444, -12.8137, -316.9827, 97.388695, -12.3378, -315.0917, 98.0741, -11.8558, -315.4094, 98.746895, -12.5954, -315.39108, 97.6012, -12.332399, -317.2933, 98.1595, -11.706599, -317.5564, 98.563194, -11.3248, -315.6352, 98.563194, -11.3248, -315.6352, 98.0741, -11.8558, -315.4094, 97.6012, -12.332399, -317.2933, 98.947, -12.3215, -317.5997, 98.273994, -13.0721, -317.275, 98.746895, -12.5954, -315.39108, 97.9786, -13.142799, -315.02768, 98.746895, -12.5954, -315.39108, 98.273994, -13.0721, -317.275, 98.273994, -13.0721, -317.275, 98.947, -12.3215, -317.5997, 98.1595, -11.706599, -317.5564, 99.3506, -11.9397, -315.6784, 98.746895, -12.5954, -315.39108, 98.0741, -11.8558, -315.4094, 98.746895, -12.5954, -315.39108, 99.3506, -11.9397, -315.6784, 98.947, -12.3215, -317.5997, 98.6262, -10.9606, -317.7675, 98.1595, -11.706599, -317.5564, 98.947, -12.3215, -317.5997, 98.0741, -11.8558, -315.4094, 98.563194, -11.3248, -315.6352, 99.3506, -11.9397, -315.6784, 99.49, -11.4572, -317.852, 98.947, -12.3215, -317.5997, 99.3506, -11.9397, -315.6784, 98.947, -12.3215, -317.5997, 99.49, -11.4572, -317.852, 98.6262, -10.9606, -317.7675, 99.3506, -11.9397, -315.6784, 99.847, -11.167399, -315.90558, 99.49, -11.4572, -317.852, 99.847, -11.167399, -315.90558, 99.3506, -11.9397, -315.6784, 98.563194, -11.3248, -315.6352, 98.9831, -10.670899, -315.82098, 98.563194, -11.3248, -315.6352, 98.1595, -11.706599, -317.5564, 98.1595, -11.706599, -317.5564, 98.6262, -10.9606, -317.7675, 98.9831, -10.670899, -315.82098, 99.9207, -10.5337, -318.0451, 99.49, -11.4572, -317.852, 99.847, -11.167399, -315.90558, 98.563194, -11.3248, -315.6352, 98.9831, -10.670899, -315.82098, 99.847, -11.167399, -315.90558, 99.01009, -10.1356, -317.9344, 98.6262, -10.9606, -317.7675, 99.49, -11.4572, -317.852, 99.49, -11.4572, -317.852, 99.9207, -10.5337, -318.0451, 99.01009, -10.1356, -317.9344, 100.254395, -10.3158, -316.0852, 99.847, -11.167399, -315.90558, 98.9831, -10.670899, -315.82098, 99.343796, -9.9177, -315.9745, 98.9831, -10.670899, -315.82098, 98.6262, -10.9606, -317.7675, 98.6262, -10.9606, -317.7675, 99.01009, -10.1356, -317.9344, 99.343796, -9.9177, -315.9745, 98.9831, -10.670899, -315.82098, 99.343796, -9.9177, -315.9745, 100.254395, -10.3158, -316.0852, 99.847, -11.167399, -315.90558, 100.254395, -10.3158, -316.0852, 99.9207, -10.5337, -318.0451, 99.569, -8.3497, -318.1636, 99.01009, -10.1356, -317.9344, 99.9207, -10.5337, -318.0451, 99.8891, -8.231999, -316.1929, 99.343796, -9.9177, -315.9745, 99.01009, -10.1356, -317.9344, 99.01009, -10.1356, -317.9344, 99.569, -8.3497, -318.1636, 99.8891, -8.231999, -316.1929, 100.5279, -8.5962, -318.3047, 99.9207, -10.5337, -318.0451, 100.254395, -10.3158, -316.0852, 100.8479, -8.478499, -316.33398, 100.254395, -10.3158, -316.0852, 99.343796, -9.9177, -315.9745, 99.9207, -10.5337, -318.0451, 100.5279, -8.5962, -318.3047, 99.569, -8.3497, -318.1636, 100.254395, -10.3158, -316.0852, 100.8479, -8.478499, -316.33398, 100.5279, -8.5962, -318.3047, 99.343796, -9.9177, -315.9745, 99.8891, -8.231999, -316.1929, 100.8479, -8.478499, -316.33398, 99.9005, -6.4705, -318.28708, 99.569, -8.3497, -318.1636, 100.5279, -8.5962, -318.3047, 100.2251, -6.4179997, -316.3144, 99.8891, -8.231999, -316.1929, 99.569, -8.3497, -318.1636, 100.5279, -8.5962, -318.3047, 100.879196, -6.6021, -318.4447, 99.9005, -6.4705, -318.28708, 100.879196, -6.6021, -318.4447, 100.5279, -8.5962, -318.3047, 100.8479, -8.478499, -316.33398, 101.2038, -6.5495996, -316.4719, 100.8479, -8.478499, -316.33398, 99.8891, -8.231999, -316.1929, 99.569, -8.3497, -318.1636, 99.9005, -6.4705, -318.28708, 100.2251, -6.4179997, -316.3144, 99.8891, -8.231999, -316.1929, 100.2251, -6.4179997, -316.3144, 101.2038, -6.5495996, -316.4719, 100.8479, -8.478499, -316.33398, 101.2038, -6.5495996, -316.4719, 100.879196, -6.6021, -318.4447, 100.046295, -4.551, -318.3309, 99.9005, -6.4705, -318.28708, 100.879196, -6.6021, -318.4447, 101.031395, -4.5881, -318.4987, 100.879196, -6.6021, -318.4447, 101.2038, -6.5495996, -316.4719, 100.3824, -4.5438, -316.3594, 100.2251, -6.4179997, -316.3144, 99.9005, -6.4705, -318.28708, 101.3675, -4.5808, -316.5272, 101.2038, -6.5495996, -316.4719, 100.2251, -6.4179997, -316.3144, 100.879196, -6.6021, -318.4447, 101.031395, -4.5881, -318.4987, 100.046295, -4.551, -318.3309, 101.2038, -6.5495996, -316.4719, 101.3675, -4.5808, -316.5272, 101.031395, -4.5881, -318.4987, 99.9005, -6.4705, -318.28708, 100.046295, -4.551, -318.3309, 100.3824, -4.5438, -316.3594, 100.2251, -6.4179997, -316.3144, 100.3824, -4.5438, -316.3594, 101.3675, -4.5808, -316.5272, 99.9687, -1.6545, -318.28, 100.046295, -4.551, -318.3309, 101.031395, -4.5881, -318.4987, 100.3267, -1.6933, -316.31268, 100.3824, -4.5438, -316.3594, 100.046295, -4.551, -318.3309, 100.949196, -1.5694, -318.4568, 101.031395, -4.5881, -318.4987, 101.3675, -4.5808, -316.5272, 101.3072, -1.6082, -316.48938, 101.3675, -4.5808, -316.5272, 100.3824, -4.5438, -316.3594, 100.046295, -4.551, -318.3309, 99.9687, -1.6545, -318.28, 100.3267, -1.6933, -316.31268, 101.031395, -4.5881, -318.4987, 100.949196, -1.5694, -318.4568, 99.9687, -1.6545, -318.28, 100.3824, -4.5438, -316.3594, 100.3267, -1.6933, -316.31268, 101.3072, -1.6082, -316.48938, 101.3675, -4.5808, -316.5272, 101.3072, -1.6082, -316.48938, 100.949196, -1.5694, -318.4568, 99.5722, 1.2153, -318.1147, 99.9687, -1.6545, -318.28, 100.949196, -1.5694, -318.4568, 99.953995, 1.1467, -316.1526, 100.3267, -1.6933, -316.31268, 99.9687, -1.6545, -318.28, 100.535995, 1.4115, -318.29538, 100.949196, -1.5694, -318.4568, 101.3072, -1.6082, -316.48938, 100.9178, 1.3428, -316.33328, 101.3072, -1.6082, -316.48938, 100.3267, -1.6933, -316.31268, 68.7509, -2.3483, -310.35208, 67.559395, 2.4771, -309.91498, 67.8767, 2.3836, -307.9425, 69.0555, -2.4586, -308.37848, 67.8767, 2.3836, -307.9425, 68.845795, 2.5822, -308.089, 69.6986, -2.0567, -310.482, 68.528496, 2.6755998, -310.0614, 67.559395, 2.4771, -309.91498, 70.0032, -2.167, -308.50848, 68.845795, 2.5822, -308.089, 68.528496, 2.6755998, -310.0614, 66.9862, 6.4161997, -309.6499, 67.559395, 2.4771, -309.91498, 68.528496, 2.6755998, -310.0614, 67.9686, 6.5123997, -309.81, 68.528496, 2.6755998, -310.0614, 68.845795, 2.5822, -308.089, 67.314995, 6.3387, -307.67868, 67.8767, 2.3836, -307.9425, 67.559395, 2.4771, -309.91498, 68.2974, 6.4349, -307.83868, 68.845795, 2.5822, -308.089, 67.8767, 2.3836, -307.9425, 67.559395, 2.4771, -309.91498, 66.9862, 6.4161997, -309.6499, 67.314995, 6.3387, -307.67868, 68.528496, 2.6755998, -310.0614, 67.9686, 6.5123997, -309.81, 66.9862, 6.4161997, -309.6499, 68.845795, 2.5822, -308.089, 68.2974, 6.4349, -307.83868, 67.9686, 6.5123997, -309.81, 67.8767, 2.3836, -307.9425, 67.314995, 6.3387, -307.67868, 68.2974, 6.4349, -307.83868, 66.8618, 9.4011, -309.52228, 66.9862, 6.4161997, -309.6499, 67.9686, 6.5123997, -309.81, 67.8473, 9.3905, -309.6922, 67.9686, 6.5123997, -309.81, 68.2974, 6.4349, -307.83868, 67.2009, 9.3383, -307.5523, 67.314995, 6.3387, -307.67868, 66.9862, 6.4161997, -309.6499, 68.186295, 9.3277, -307.7222, 68.2974, 6.4349, -307.83868, 67.314995, 6.3387, -307.67868, 66.9862, 6.4161997, -309.6499, 66.8618, 9.4011, -309.52228, 67.2009, 9.3383, -307.5523, 67.9686, 6.5123997, -309.81, 67.8473, 9.3905, -309.6922, 66.8618, 9.4011, -309.52228, 67.314995, 6.3387, -307.67868, 67.2009, 9.3383, -307.5523, 68.186295, 9.3277, -307.7222, 68.2974, 6.4349, -307.83868, 68.186295, 9.3277, -307.7222, 67.8473, 9.3905, -309.6922, 66.975395, 11.3898, -309.4844, 66.8618, 9.4011, -309.52228, 67.8473, 9.3905, -309.6922, 67.9543, 11.285399, -309.6598, 67.8473, 9.3905, -309.6922, 68.186295, 9.3277, -307.7222, 67.3227, 11.338699, -307.5155, 67.2009, 9.3383, -307.5523, 66.8618, 9.4011, -309.52228, 68.3016, 11.2342, -307.6909, 68.186295, 9.3277, -307.7222, 67.2009, 9.3383, -307.5523, 66.8618, 9.4011, -309.52228, 66.975395, 11.3898, -309.4844, 67.3227, 11.338699, -307.5155, 67.8473, 9.3905, -309.6922, 67.9543, 11.285399, -309.6598, 66.975395, 11.3898, -309.4844, 67.2009, 9.3383, -307.5523, 67.3227, 11.338699, -307.5155, 68.3016, 11.2342, -307.6909, 68.186295, 9.3277, -307.7222, 68.3016, 11.2342, -307.6909, 67.9543, 11.285399, -309.6598, 67.2938, 13.3546, -309.4968, 66.975395, 11.3898, -309.4844, 67.9543, 11.285399, -309.6598, 66.975395, 11.3898, -309.4844, 67.2938, 13.3546, -309.4968, 67.6514, 13.316899, -307.5294, 68.2519, 13.130799, -309.6753, 67.9543, 11.285399, -309.6598, 68.3016, 11.2342, -307.6909, 67.9543, 11.285399, -309.6598, 68.2519, 13.130799, -309.6753, 67.2938, 13.3546, -309.4968, 67.6514, 13.316899, -307.5294, 67.3227, 11.338699, -307.5155, 66.975395, 11.3898, -309.4844, 68.6096, 13.0931, -307.7079, 68.3016, 11.2342, -307.6909, 67.3227, 11.338699, -307.5155, 67.3227, 11.338699, -307.5155, 67.6514, 13.316899, -307.5294, 68.6096, 13.0931, -307.7079, 68.3016, 11.2342, -307.6909, 68.6096, 13.0931, -307.7079, 68.2519, 13.130799, -309.6753, 67.8716, 15.254999, -309.5744, 67.2938, 13.3546, -309.4968, 68.2519, 13.130799, -309.6753, 68.7821, 14.880899, -309.7507, 68.2519, 13.130799, -309.6753, 68.6096, 13.0931, -307.7079, 68.2428, 15.2324, -307.6094, 67.6514, 13.316899, -307.5294, 67.2938, 13.3546, -309.4968, 69.1533, 14.858299, -307.78558, 68.6096, 13.0931, -307.7079, 67.6514, 13.316899, -307.5294, 68.6096, 13.0931, -307.7079, 69.1533, 14.858299, -307.78558, 68.7821, 14.880899, -309.7507, 67.2938, 13.3546, -309.4968, 67.8716, 15.254999, -309.5744, 68.2428, 15.2324, -307.6094, 68.2519, 13.130799, -309.6753, 68.7821, 14.880899, -309.7507, 67.8716, 15.254999, -309.5744, 68.2764, 16.16, -309.6431, 67.8716, 15.254999, -309.5744, 68.7821, 14.880899, -309.7507, 69.1476, 15.700199, -309.815, 68.7821, 14.880899, -309.7507, 69.1533, 14.858299, -307.78558, 68.7821, 14.880899, -309.7507, 69.1476, 15.700199, -309.815, 68.2764, 16.16, -309.6431, 67.6514, 13.316899, -307.5294, 68.2428, 15.2324, -307.6094, 69.1533, 14.858299, -307.78558, 68.656, 16.1453, -307.6795, 68.2428, 15.2324, -307.6094, 67.8716, 15.254999, -309.5744, 69.5272, 15.6854, -307.85138, 69.1533, 14.858299, -307.78558, 68.2428, 15.2324, -307.6094, 69.1533, 14.858299, -307.78558, 69.5272, 15.6854, -307.85138, 69.1476, 15.700199, -309.815, 67.8716, 15.254999, -309.5744, 68.2764, 16.16, -309.6431, 68.656, 16.1453, -307.6795, 68.7662, 17.0194, -309.7342, 68.2764, 16.16, -309.6431, 69.1476, 15.700199, -309.815, 69.1476, 15.700199, -309.815, 69.584595, 16.4686, -309.8985, 68.7662, 17.0194, -309.7342, 68.2764, 16.16, -309.6431, 68.7662, 17.0194, -309.7342, 69.155396, 17.0123, -307.7724, 68.2428, 15.2324, -307.6094, 68.656, 16.1453, -307.6795, 69.5272, 15.6854, -307.85138, 69.155396, 17.0123, -307.7724, 68.656, 16.1453, -307.6795, 68.2764, 16.16, -309.6431, 68.656, 16.1453, -307.6795, 69.155396, 17.0123, -307.7724, 69.9737, 16.4615, -307.9367, 69.3451, 17.8179, -309.8491, 68.7662, 17.0194, -309.7342, 69.584595, 16.4686, -309.8985, 68.7662, 17.0194, -309.7342, 69.3451, 17.8179, -309.8491, 69.744995, 17.8177, -307.8895, 69.744995, 17.8177, -307.8895, 69.155396, 17.0123, -307.7724, 68.7662, 17.0194, -309.7342, 69.584595, 16.4686, -309.8985, 69.1476, 15.700199, -309.815, 69.5272, 15.6854, -307.85138, 70.096, 17.175499, -310.00238, 69.584595, 16.4686, -309.8985, 69.9737, 16.4615, -307.9367, 69.9737, 16.4615, -307.9367, 70.495895, 17.175299, -308.0428, 70.096, 17.175499, -310.00238, 69.9737, 16.4615, -307.9367, 69.5272, 15.6854, -307.85138, 68.656, 16.1453, -307.6795, 69.5272, 15.6854, -307.85138, 69.9737, 16.4615, -307.9367, 69.584595, 16.4686, -309.8985, 70.495895, 17.175299, -308.0428, 69.9737, 16.4615, -307.9367, 69.155396, 17.0123, -307.7724, 69.584595, 16.4686, -309.8985, 70.096, 17.175499, -310.00238, 69.3451, 17.8179, -309.8491, 70.6803, 17.8119, -310.1266, 70.096, 17.175499, -310.00238, 70.495895, 17.175299, -308.0428, 70.495895, 17.175299, -308.0428, 71.0916, 17.8175, -308.1694, 70.6803, 17.8119, -310.1266, 70.0106, 18.5415, -309.988, 69.3451, 17.8179, -309.8491, 70.096, 17.175499, -310.00238, 70.422, 18.5471, -308.0307, 69.744995, 17.8177, -307.8895, 69.3451, 17.8179, -309.8491, 69.3451, 17.8179, -309.8491, 70.0106, 18.5415, -309.988, 70.422, 18.5471, -308.0307, 70.096, 17.175499, -310.00238, 70.6803, 17.8119, -310.1266, 70.0106, 18.5415, -309.988, 71.3343, 18.3695, -310.27078, 70.6803, 17.8119, -310.1266, 71.0916, 17.8175, -308.1694, 71.0916, 17.8175, -308.1694, 71.7575, 18.3792, -308.31598, 71.3343, 18.3695, -310.27078, 69.155396, 17.0123, -307.7724, 69.744995, 17.8177, -307.8895, 70.495895, 17.175299, -308.0428, 71.0916, 17.8175, -308.1694, 70.495895, 17.175299, -308.0428, 69.744995, 17.8177, -307.8895, 69.744995, 17.8177, -307.8895, 70.422, 18.5471, -308.0307, 71.0916, 17.8175, -308.1694, 71.7575, 18.3792, -308.31598, 71.0916, 17.8175, -308.1694, 70.422, 18.5471, -308.0307, 70.7565, 19.176699, -310.1497, 70.0106, 18.5415, -309.988, 70.6803, 17.8119, -310.1266, 70.6803, 17.8119, -310.1266, 71.3343, 18.3695, -310.27078, 70.7565, 19.176699, -310.1497, 71.179695, 19.1863, -308.195, 70.422, 18.5471, -308.0307, 70.0106, 18.5415, -309.988, 70.0106, 18.5415, -309.988, 70.7565, 19.176699, -310.1497, 71.179695, 19.1863, -308.195, 72.0521, 18.8449, -310.43338, 71.3343, 18.3695, -310.27078, 71.7575, 18.3792, -308.31598, 71.3343, 18.3695, -310.27078, 72.0521, 18.8449, -310.43338, 71.571, 19.7156, -310.3316, 71.7575, 18.3792, -308.31598, 72.4867, 18.8568, -308.4812, 72.0521, 18.8449, -310.43338, 72.824196, 19.2365, -310.61218, 72.0521, 18.8449, -310.43338, 72.4867, 18.8568, -308.4812, 71.571, 19.7156, -310.3316, 70.7565, 19.176699, -310.1497, 71.3343, 18.3695, -310.27078, 72.0056, 19.727499, -308.3794, 71.179695, 19.1863, -308.195, 70.7565, 19.176699, -310.1497, 70.7565, 19.176699, -310.1497, 71.571, 19.7156, -310.3316, 72.0056, 19.727499, -308.3794, 72.4397, 20.156, -310.5303, 71.571, 19.7156, -310.3316, 72.0521, 18.8449, -310.43338, 72.0521, 18.8449, -310.43338, 72.824196, 19.2365, -310.61218, 72.4397, 20.156, -310.5303, 70.422, 18.5471, -308.0307, 71.179695, 19.1863, -308.195, 71.7575, 18.3792, -308.31598, 72.4867, 18.8568, -308.4812, 71.7575, 18.3792, -308.31598, 71.179695, 19.1863, -308.195, 71.179695, 19.1863, -308.195, 72.0056, 19.727499, -308.3794, 72.4867, 18.8568, -308.4812, 72.884895, 20.168499, -308.5806, 72.0056, 19.727499, -308.3794, 71.571, 19.7156, -310.3316, 71.571, 19.7156, -310.3316, 72.4397, 20.156, -310.5303, 72.884895, 20.168499, -308.5806, 72.4867, 18.8568, -308.4812, 73.2694, 19.248999, -308.6625, 72.824196, 19.2365, -310.61218, 73.6412, 19.5458, -310.805, 72.824196, 19.2365, -310.61218, 73.2694, 19.248999, -308.6625, 73.2694, 19.248999, -308.6625, 74.095695, 19.557499, -308.8574, 73.6412, 19.5458, -310.805, 74.095695, 19.557499, -308.8574, 73.2694, 19.248999, -308.6625, 72.884895, 20.168499, -308.5806, 75.3724, 19.937199, -311.2223, 73.6412, 19.5458, -310.805, 74.095695, 19.557499, -308.8574, 73.2694, 19.248999, -308.6625, 72.4867, 18.8568, -308.4812, 72.0056, 19.727499, -308.3794, 72.0056, 19.727499, -308.3794, 72.884895, 20.168499, -308.5806, 73.2694, 19.248999, -308.6625, 73.3487, 20.5, -310.7425, 72.4397, 20.156, -310.5303, 72.824196, 19.2365, -310.61218, 72.824196, 19.2365, -310.61218, 73.6412, 19.5458, -310.805, 73.3487, 20.5, -310.7425, 72.4397, 20.156, -310.5303, 73.3487, 20.5, -310.7425, 73.8032, 20.5117, -308.7949, 73.8032, 20.5117, -308.7949, 72.884895, 20.168499, -308.5806, 72.4397, 20.156, -310.5303, 72.884895, 20.168499, -308.5806, 73.8032, 20.5117, -308.7949, 74.095695, 19.557499, -308.8574, 75.239, 20.9279, -311.19388, 73.3487, 20.5, -310.7425, 73.6412, 19.5458, -310.805, 75.8414, 19.9446, -309.2781, 74.095695, 19.557499, -308.8574, 73.8032, 20.5117, -308.7949, 73.6412, 19.5458, -310.805, 75.3724, 19.937199, -311.2223, 75.239, 20.9279, -311.19388, 74.095695, 19.557499, -308.8574, 75.8414, 19.9446, -309.2781, 75.3724, 19.937199, -311.2223, 75.708, 20.9352, -309.2497, 73.8032, 20.5117, -308.7949, 73.3487, 20.5, -310.7425, 73.3487, 20.5, -310.7425, 75.239, 20.9279, -311.19388, 75.708, 20.9352, -309.2497, 73.8032, 20.5117, -308.7949, 75.708, 20.9352, -309.2497, 75.8414, 19.9446, -309.2781, 99.9687, -1.6545, -318.28, 99.5722, 1.2153, -318.1147, 99.953995, 1.1467, -316.1526, 100.949196, -1.5694, -318.4568, 100.535995, 1.4115, -318.29538, 99.5722, 1.2153, -318.1147, 100.3267, -1.6933, -316.31268, 99.953995, 1.1467, -316.1526, 100.9178, 1.3428, -316.33328, 101.3072, -1.6082, -316.48938, 100.9178, 1.3428, -316.33328, 100.535995, 1.4115, -318.29538, 99.2819, 3.9301, -315.8953, 99.953995, 1.1467, -316.1526, 99.5722, 1.2153, -318.1147, 98.8761, 4.0176, -317.8518, 99.5722, 1.2153, -318.1147, 100.535995, 1.4115, -318.29538, 99.5722, 1.2153, -318.1147, 98.8761, 4.0176, -317.8518, 99.2819, 3.9301, -315.8953, 100.535995, 1.4115, -318.29538, 99.8118, 4.3206, -318.0323, 98.8761, 4.0176, -317.8518, 99.8118, 4.3206, -318.0323, 100.535995, 1.4115, -318.29538, 100.9178, 1.3428, -316.33328, 100.2176, 4.2331, -316.0758, 100.9178, 1.3428, -316.33328, 99.953995, 1.1467, -316.1526, 99.953995, 1.1467, -316.1526, 99.2819, 3.9301, -315.8953, 100.2176, 4.2331, -316.0758, 100.9178, 1.3428, -316.33328, 100.2176, 4.2331, -316.0758, 99.8118, 4.3206, -318.0323, 98.3161, 6.6154, -315.5506, 99.2819, 3.9301, -315.8953, 98.8761, 4.0176, -317.8518, 97.057594, 9.1608, -315.1255, 98.3161, 6.6154, -315.5506, 97.887, 6.7135997, -317.5016, 97.887, 6.7135997, -317.5016, 98.8761, 4.0176, -317.8518, 99.8118, 4.3206, -318.0323, 98.782295, 7.1228, -317.6778, 99.8118, 4.3206, -318.0323, 100.2176, 4.2331, -316.0758, 99.211296, 7.0246997, -315.7268, 100.2176, 4.2331, -316.0758, 99.2819, 3.9301, -315.8953, 98.8761, 4.0176, -317.8518, 97.887, 6.7135997, -317.5016, 98.3161, 6.6154, -315.5506, 99.2819, 3.9301, -315.8953, 98.3161, 6.6154, -315.5506, 99.211296, 7.0246997, -315.7268, 99.8118, 4.3206, -318.0323, 98.782295, 7.1228, -317.6778, 97.887, 6.7135997, -317.5016, 100.2176, 4.2331, -316.0758, 99.211296, 7.0246997, -315.7268, 98.782295, 7.1228, -317.6778, 96.606895, 9.2625, -317.07138, 97.887, 6.7135997, -317.5016, 98.782295, 7.1228, -317.6778, 97.887, 6.7135997, -317.5016, 96.606895, 9.2625, -317.07138, 97.057594, 9.1608, -315.1255, 98.3161, 6.6154, -315.5506, 97.057594, 9.1608, -315.1255, 97.898094, 9.676, -315.29318, 98.782295, 7.1228, -317.6778, 97.447395, 9.777699, -317.2391, 96.606895, 9.2625, -317.07138, 95.0391, 11.6195, -316.5683, 96.606895, 9.2625, -317.07138, 97.447395, 9.777699, -317.2391, 95.5088, 11.520599, -314.62668, 97.057594, 9.1608, -315.1255, 96.606895, 9.2625, -317.07138, 97.898094, 9.676, -315.29318, 99.211296, 7.0246997, -315.7268, 98.3161, 6.6154, -315.5506, 97.447395, 9.777699, -317.2391, 98.782295, 7.1228, -317.6778, 99.211296, 7.0246997, -315.7268, 99.211296, 7.0246997, -315.7268, 97.898094, 9.676, -315.29318, 97.447395, 9.777699, -317.2391, 77.1794, 20.067999, -311.6673, 75.3724, 19.937199, -311.2223, 75.8414, 19.9446, -309.2781, 75.3724, 19.937199, -311.2223, 77.1794, 20.067999, -311.6673, 77.170296, 21.0679, -311.66568, 77.658195, 20.0693, -309.7254, 75.8414, 19.9446, -309.2781, 75.708, 20.9352, -309.2497, 75.8414, 19.9446, -309.2781, 77.658195, 20.0693, -309.7254, 77.1794, 20.067999, -311.6673, 77.170296, 21.0679, -311.66568, 75.239, 20.9279, -311.19388, 75.3724, 19.937199, -311.2223, 77.648994, 21.0693, -309.72388, 75.708, 20.9352, -309.2497, 75.239, 20.9279, -311.19388, 75.708, 20.9352, -309.2497, 77.648994, 21.0693, -309.72388, 77.658195, 20.0693, -309.7254, 75.239, 20.9279, -311.19388, 77.170296, 21.0679, -311.66568, 77.648994, 21.0693, -309.72388, 79.022095, 19.9897, -312.1286, 77.1794, 20.067999, -311.6673, 77.658195, 20.0693, -309.7254, 77.658195, 20.0693, -309.7254, 79.5076, 19.984499, -310.1884, 79.022095, 19.9897, -312.1286, 77.1794, 20.067999, -311.6673, 79.022095, 19.9897, -312.1286, 79.1045, 20.9861, -312.14648, 79.5076, 19.984499, -310.1884, 77.658195, 20.0693, -309.7254, 77.648994, 21.0693, -309.72388, 79.1045, 20.9861, -312.14648, 77.170296, 21.0679, -311.66568, 77.1794, 20.067999, -311.6673, 79.59, 20.980999, -310.2063, 77.648994, 21.0693, -309.72388, 77.170296, 21.0679, -311.66568, 77.648994, 21.0693, -309.72388, 79.59, 20.980999, -310.2063, 79.5076, 19.984499, -310.1884, 77.170296, 21.0679, -311.66568, 79.1045, 20.9861, -312.14648, 79.59, 20.980999, -310.2063, 81.7998, 19.6087, -312.8393, 79.022095, 19.9897, -312.1286, 79.5076, 19.984499, -310.1884, 82.293594, 19.5893, -310.9013, 79.5076, 19.984499, -310.1884, 79.59, 20.980999, -310.2063, 81.9798, 20.5917, -312.8753, 79.1045, 20.9861, -312.14648, 79.022095, 19.9897, -312.1286, 82.473595, 20.5723, -310.9373, 79.59, 20.980999, -310.2063, 79.1045, 20.9861, -312.14648, 79.5076, 19.984499, -310.1884, 82.293594, 19.5893, -310.9013, 81.7998, 19.6087, -312.8393, 79.022095, 19.9897, -312.1286, 81.7998, 19.6087, -312.8393, 81.9798, 20.5917, -312.8753, 79.59, 20.980999, -310.2063, 82.473595, 20.5723, -310.9373, 82.293594, 19.5893, -310.9013, 79.1045, 20.9861, -312.14648, 81.9798, 20.5917, -312.8753, 82.473595, 20.5723, -310.9373, 85.0104, 18.9009, -311.6154, 87.616, 17.8971, -312.3205, 87.1137, 17.9488, -314.2557, 89.564995, 16.6352, -314.94, 87.1137, 17.9488, -314.2557, 87.616, 17.8971, -312.3205, 90.074394, 17.4897, -315.0415, 87.5102, 18.8634, -314.3342, 87.1137, 17.9488, -314.2557, 90.064995, 16.5671, -313.0047, 87.616, 17.8971, -312.3205, 88.0124, 18.8118, -312.3989, 84.5106, 18.935999, -313.5516, 81.7998, 19.6087, -312.8393, 82.293594, 19.5893, -310.9013, 85.0104, 18.9009, -311.6154, 82.293594, 19.5893, -310.9013, 82.473595, 20.5723, -310.9373, 81.7998, 19.6087, -312.8393, 84.5106, 18.935999, -313.5516, 84.7956, 19.892899, -313.6078, 82.293594, 19.5893, -310.9013, 85.0104, 18.9009, -311.6154, 84.5106, 18.935999, -313.5516, 84.7956, 19.892899, -313.6078, 81.9798, 20.5917, -312.8753, 81.7998, 19.6087, -312.8393, 85.295296, 19.8578, -311.6716, 82.473595, 20.5723, -310.9373, 81.9798, 20.5917, -312.8753, 82.473595, 20.5723, -310.9373, 85.295296, 19.8578, -311.6716, 85.0104, 18.9009, -311.6154, 81.9798, 20.5917, -312.8753, 84.7956, 19.892899, -313.6078, 85.295296, 19.8578, -311.6716, 84.5106, 18.935999, -313.5516, 87.1137, 17.9488, -314.2557, 87.5102, 18.8634, -314.3342, 87.1137, 17.9488, -314.2557, 84.5106, 18.935999, -313.5516, 85.0104, 18.9009, -311.6154, 87.616, 17.8971, -312.3205, 85.0104, 18.9009, -311.6154, 85.295296, 19.8578, -311.6716, 87.5102, 18.8634, -314.3342, 84.7956, 19.892899, -313.6078, 84.5106, 18.935999, -313.5516, 88.0124, 18.8118, -312.3989, 85.295296, 19.8578, -311.6716, 84.7956, 19.892899, -313.6078, 84.7956, 19.892899, -313.6078, 87.5102, 18.8634, -314.3342, 88.0124, 18.8118, -312.3989, 85.295296, 19.8578, -311.6716, 88.0124, 18.8118, -312.3989, 87.616, 17.8971, -312.3205, 93.8389, 13.0616, -316.19638, 95.0391, 11.6195, -316.5683, 95.809, 12.2387, -316.723, 94.3193, 12.9677, -314.2573, 95.5088, 11.520599, -314.62668, 95.0391, 11.6195, -316.5683, 95.0391, 11.6195, -316.5683, 93.8389, 13.0616, -316.19638, 94.3193, 12.9677, -314.2573, 95.5088, 11.520599, -314.62668, 94.3193, 12.9677, -314.2573, 95.0331, 13.653199, -314.40088, 92.5207, 14.3853, -315.7987, 91.0926, 15.5793, -315.3787, 91.588394, 15.5012, -313.4427, 93.8389, 13.0616, -316.19638, 92.5207, 14.3853, -315.7987, 93.009895, 14.2983, -313.8614, 93.009895, 14.2983, -313.8614, 94.3193, 12.9677, -314.2573, 93.8389, 13.0616, -316.19638, 95.809, 12.2387, -316.723, 94.5527, 13.7471, -316.34, 93.8389, 13.0616, -316.19638, 92.5207, 14.3853, -315.7987, 93.8389, 13.0616, -316.19638, 94.5527, 13.7471, -316.34, 94.3193, 12.9677, -314.2573, 93.009895, 14.2983, -313.8614, 93.6607, 15.0462, -313.9922, 93.6607, 15.0462, -313.9922, 95.0331, 13.653199, -314.40088, 94.3193, 12.9677, -314.2573, 93.1716, 15.1331, -315.9295, 94.5527, 13.7471, -316.34, 95.0331, 13.653199, -314.40088, 91.588394, 15.5012, -313.4427, 93.009895, 14.2983, -313.8614, 92.5207, 14.3853, -315.7987, 91.0926, 15.5793, -315.3787, 92.5207, 14.3853, -315.7987, 93.1716, 15.1331, -315.9295, 93.009895, 14.2983, -313.8614, 91.588394, 15.5012, -313.4427, 92.1706, 16.305899, -313.5593, 92.1706, 16.305899, -313.5593, 93.6607, 15.0462, -313.9922, 93.009895, 14.2983, -313.8614, 91.6748, 16.383999, -315.4953, 93.1716, 15.1331, -315.9295, 93.6607, 15.0462, -313.9922, 94.5527, 13.7471, -316.34, 93.1716, 15.1331, -315.9295, 92.5207, 14.3853, -315.7987, 95.0331, 13.653199, -314.40088, 93.6607, 15.0462, -313.9922, 93.1716, 15.1331, -315.9295, 96.606895, 9.2625, -317.07138, 95.0391, 11.6195, -316.5683, 95.5088, 11.520599, -314.62668, 97.057594, 9.1608, -315.1255, 95.5088, 11.520599, -314.62668, 96.278694, 12.1397, -314.7814, 97.447395, 9.777699, -317.2391, 95.809, 12.2387, -316.723, 95.0391, 11.6195, -316.5683, 95.809, 12.2387, -316.723, 97.447395, 9.777699, -317.2391, 97.898094, 9.676, -315.29318, 96.278694, 12.1397, -314.7814, 97.898094, 9.676, -315.29318, 97.057594, 9.1608, -315.1255, 97.898094, 9.676, -315.29318, 96.278694, 12.1397, -314.7814, 95.809, 12.2387, -316.723, 95.0331, 13.653199, -314.40088, 96.278694, 12.1397, -314.7814, 95.5088, 11.520599, -314.62668, 94.5527, 13.7471, -316.34, 95.809, 12.2387, -316.723, 96.278694, 12.1397, -314.7814, 96.278694, 12.1397, -314.7814, 95.0331, 13.653199, -314.40088, 94.5527, 13.7471, -316.34, 90.064995, 16.5671, -313.0047, 91.588394, 15.5012, -313.4427, 91.0926, 15.5793, -315.3787, 91.0926, 15.5793, -315.3787, 89.564995, 16.6352, -314.94, 90.064995, 16.5671, -313.0047, 89.564995, 16.6352, -314.94, 91.0926, 15.5793, -315.3787, 91.6748, 16.383999, -315.4953, 91.6748, 16.383999, -315.4953, 90.074394, 17.4897, -315.0415, 89.564995, 16.6352, -314.94, 90.074394, 17.4897, -315.0415, 91.6748, 16.383999, -315.4953, 92.1706, 16.305899, -313.5593, 91.588394, 15.5012, -313.4427, 90.064995, 16.5671, -313.0047, 90.574394, 17.4217, -313.1062, 90.574394, 17.4217, -313.1062, 92.1706, 16.305899, -313.5593, 91.588394, 15.5012, -313.4427, 87.1137, 17.9488, -314.2557, 89.564995, 16.6352, -314.94, 90.074394, 17.4897, -315.0415, 87.616, 17.8971, -312.3205, 90.064995, 16.5671, -313.0047, 89.564995, 16.6352, -314.94, 88.0124, 18.8118, -312.3989, 90.574394, 17.4217, -313.1062, 90.064995, 16.5671, -313.0047, 87.5102, 18.8634, -314.3342, 90.074394, 17.4897, -315.0415, 90.574394, 17.4217, -313.1062, 90.574394, 17.4217, -313.1062, 88.0124, 18.8118, -312.3989, 87.5102, 18.8634, -314.3342, 92.1706, 16.305899, -313.5593, 90.574394, 17.4217, -313.1062, 90.074394, 17.4897, -315.0415, 93.1716, 15.1331, -315.9295, 91.6748, 16.383999, -315.4953, 91.0926, 15.5793, -315.3787, 93.6607, 15.0462, -313.9922, 92.1706, 16.305899, -313.5593, 91.6748, 16.383999, -315.4953)
+
+[sub_resource type="Curve3D" id="Curve3D_nompr"]
+_data = {
+"points": PackedVector3Array(0, 0, 0, 0, 10, 0, 0, 0, 0, 0, 0, 10, 0, 0, -10, 0, 50, -10, 0, 0, 10, 0, 0, 10, 0, 50, -50, 0, 0, -10, 0, 0, 0, 0, 50, -50),
+"tilts": PackedFloat32Array(0, 0, 0, 0)
+}
+point_count = 4
+
+[sub_resource type="Curve3D" id="Curve3D_mikri"]
+_data = {
+"points": PackedVector3Array(0, 0, 0, 0, 10, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 6000, 0, 0, 0, 0, 0, 0, 0, 50, 6000, 0),
+"tilts": PackedFloat32Array(0, 0, 0)
+}
+point_count = 3
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_26ldo"]
+albedo_color = Color(0, 0, 0, 1)
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_epbnn"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_6eqhl"]
+size = Vector3(1.5, 1.6, 1.6)
+
+[sub_resource type="Curve3D" id="Curve3D_e1dhr"]
+_data = {
+"points": PackedVector3Array(0, 0, 0, 0, 0, 0, 0, 0, 0, -11, 0, 0, 11, 0, 0, 100, 0, 0, -18, 0, 0, 18, 0, 0, 200, -50, 0, 0, 0, 0, 0, 0, 0, 250, -50, 0),
+"tilts": PackedFloat32Array(0, 0, 0, 0)
+}
+point_count = 4
+
+[sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_jg2ll"]
+data = PackedVector3Array(100.8761, 0.9299, -1, 0, 1, -1, 0, 0, -1, 0, 0, -1, 0, 1, -1, 0, 1, 1, 100.7435, -0.0613, -1, 0, 0, -1, 0, 0, 1, 0, 0, -1, 100.7435, -0.0613, -1, 100.8761, 0.9299, -1, 106.3889, -2.0016, -1, 120.536896, -9.3763, -1, 121.0274, -8.5049, -1, 102.979996, 0.4111, -1, 100.8761, 0.9299, -1, 100.7435, -0.0613, -1, 102.6775, -0.5421, -1, 106.3889, -2.0016, -1, 106.7949, -1.0877, -1, 100.7435, -0.0613, -1, 102.6775, -0.5421, -1, 102.979996, 0.4111, -1, 106.7949, -1.0877, -1, 102.979996, 0.4111, -1, 102.6775, -0.5421, -1, 121.0274, -8.5049, -1, 106.7949, -1.0877, -1, 106.3889, -2.0016, -1, 0, 1, -1, 100.8761, 0.9299, -1, 100.8761, 0.9299, 1, 106.7949, -1.0877, -1, 121.0274, -8.5049, -1, 121.0274, -8.5049, 1, 102.6775, -0.5421, -1, 100.7435, -0.0613, -1, 100.7435, -0.0613, 1, 106.3889, -2.0016, -1, 102.6775, -0.5421, -1, 102.6775, -0.5421, 1, 100.8761, 0.9299, -1, 102.979996, 0.4111, -1, 102.979996, 0.4111, 1, 102.979996, 0.4111, -1, 106.7949, -1.0877, -1, 106.7949, -1.0877, 1, 120.536896, -9.3763, -1, 106.3889, -2.0016, -1, 106.3889, -2.0016, 1, 0, 1, 1, 0, 0, 1, 0, 0, -1, 100.8761, 0.9299, 1, 0, 1, 1, 0, 1, -1, 100.7435, -0.0613, 1, 0, 0, 1, 0, 1, 1, 0, 0, 1, 100.7435, -0.0613, 1, 100.7435, -0.0613, -1, 106.3889, -2.0016, 1, 120.536896, -9.3763, 1, 120.536896, -9.3763, -1, 102.6775, -0.5421, 1, 106.3889, -2.0016, 1, 106.3889, -2.0016, -1, 100.7435, -0.0613, 1, 102.6775, -0.5421, 1, 102.6775, -0.5421, -1, 106.7949, -1.0877, 1, 102.979996, 0.4111, 1, 102.979996, 0.4111, -1, 102.979996, 0.4111, 1, 100.8761, 0.9299, 1, 100.8761, 0.9299, -1, 121.0274, -8.5049, 1, 106.7949, -1.0877, 1, 106.7949, -1.0877, -1, 0, 1, 1, 100.8761, 0.9299, 1, 100.7435, -0.0613, 1, 106.7949, -1.0877, 1, 121.0274, -8.5049, 1, 120.536896, -9.3763, 1, 102.6775, -0.5421, 1, 100.7435, -0.0613, 1, 100.8761, 0.9299, 1, 106.3889, -2.0016, 1, 102.6775, -0.5421, 1, 102.979996, 0.4111, 1, 102.979996, 0.4111, 1, 106.7949, -1.0877, 1, 106.3889, -2.0016, 1, 100.8761, 0.9299, 1, 102.979996, 0.4111, 1, 102.6775, -0.5421, 1, 120.536896, -9.3763, 1, 106.3889, -2.0016, 1, 106.7949, -1.0877, 1, 192.6809, -47.396297, -1, 184.46779, -44.0322, -1, 184.051, -44.9412, -1, 192.3555, -48.3419, -1, 184.051, -44.9412, -1, 184.051, -44.9412, 1, 120.536896, -9.3763, -1, 184.051, -44.9412, -1, 184.46779, -44.0322, -1, 121.0274, -8.5049, -1, 184.46779, -44.0322, -1, 184.46779, -44.0322, 1, 192.3555, -48.3419, -1, 196.1799, -49.474, -1, 196.409, -48.5006, -1, 184.051, -44.9412, -1, 192.3555, -48.3419, -1, 192.6809, -47.396297, -1, 196.409, -48.5006, -1, 192.6809, -47.396297, -1, 192.3555, -48.3419, -1, 196.1799, -49.474, -1, 198.1378, -49.8532, -1, 198.2779, -48.8631, -1, 200.14319, -49.0002, -1, 198.2779, -48.8631, -1, 198.1378, -49.8532, -1, 198.2779, -48.8631, -1, 196.409, -48.5006, -1, 196.1799, -49.474, -1, 198.1378, -49.8532, -1, 200.1254, -50, -1, 200.14319, -49.0002, -1, 250, -49, -1, 200.14319, -49.0002, -1, 200.1254, -50, -1, 200.1254, -50, -1, 250, -50, -1, 250, -49, -1, 196.1799, -49.474, -1, 192.3555, -48.3419, -1, 192.3555, -48.3419, 1, 192.6809, -47.396297, -1, 196.409, -48.5006, -1, 196.409, -48.5006, 1, 198.1378, -49.8532, -1, 196.1799, -49.474, -1, 196.1799, -49.474, 1, 200.1254, -50, -1, 198.1378, -49.8532, -1, 198.1378, -49.8532, 1, 196.409, -48.5006, -1, 198.2779, -48.8631, -1, 198.2779, -48.8631, 1, 198.2779, -48.8631, -1, 200.14319, -49.0002, -1, 200.14319, -49.0002, 1, 184.46779, -44.0322, -1, 192.6809, -47.396297, -1, 192.6809, -47.396297, 1, 250, -50, -1, 200.1254, -50, -1, 200.1254, -50, 1, 200.14319, -49.0002, -1, 250, -49, -1, 250, -49, 1, 250, -49, 1, 250, -49, -1, 250, -50, -1, 192.6809, -47.396297, 1, 184.46779, -44.0322, 1, 184.46779, -44.0322, -1, 192.3555, -48.3419, 1, 184.051, -44.9412, 1, 184.46779, -44.0322, 1, 120.536896, -9.3763, 1, 184.051, -44.9412, 1, 184.051, -44.9412, -1, 121.0274, -8.5049, 1, 184.46779, -44.0322, 1, 184.051, -44.9412, 1, 192.3555, -48.3419, 1, 196.1799, -49.474, 1, 196.1799, -49.474, -1, 184.051, -44.9412, 1, 192.3555, -48.3419, 1, 192.3555, -48.3419, -1, 196.409, -48.5006, 1, 192.6809, -47.396297, 1, 192.6809, -47.396297, -1, 196.1799, -49.474, 1, 198.1378, -49.8532, 1, 198.1378, -49.8532, -1, 198.2779, -48.8631, 1, 196.409, -48.5006, 1, 196.409, -48.5006, -1, 200.14319, -49.0002, 1, 198.2779, -48.8631, 1, 198.2779, -48.8631, -1, 198.1378, -49.8532, 1, 200.1254, -50, 1, 200.1254, -50, -1, 250, -49, 1, 200.14319, -49.0002, 1, 200.14319, -49.0002, -1, 200.1254, -50, 1, 250, -50, 1, 250, -50, -1, 250, -50, -1, 250, -50, 1, 250, -49, 1, 192.6809, -47.396297, 1, 196.409, -48.5006, 1, 196.1799, -49.474, 1, 196.1799, -49.474, 1, 192.3555, -48.3419, 1, 192.6809, -47.396297, 1, 198.1378, -49.8532, 1, 196.1799, -49.474, 1, 196.409, -48.5006, 1, 200.1254, -50, 1, 198.1378, -49.8532, 1, 198.2779, -48.8631, 1, 196.409, -48.5006, 1, 198.2779, -48.8631, 1, 198.1378, -49.8532, 1, 198.2779, -48.8631, 1, 200.14319, -49.0002, 1, 200.1254, -50, 1, 184.46779, -44.0322, 1, 192.6809, -47.396297, 1, 192.3555, -48.3419, 1, 250, -50, 1, 200.1254, -50, 1, 200.14319, -49.0002, 1, 200.14319, -49.0002, 1, 250, -49, 1, 250, -50, 1, 184.46779, -44.0322, -1, 121.0274, -8.5049, -1, 120.536896, -9.3763, -1, 184.051, -44.9412, -1, 120.536896, -9.3763, -1, 120.536896, -9.3763, 1, 184.46779, -44.0322, 1, 121.0274, -8.5049, 1, 121.0274, -8.5049, -1, 184.051, -44.9412, 1, 120.536896, -9.3763, 1, 121.0274, -8.5049, 1)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_cx3m2"]
+resource_local_to_scene = true
+
+[sub_resource type="Curve3D" id="Curve3D_vw3je"]
+_data = {
+"points": PackedVector3Array(0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 4, 0, 0, 2, -10, 0, 0, 10, 0, 0, 22.5, 7, 7, 0, 0, 4, 0, 0, 0, 42, 0, 2, 0, 0, 1, 0, 0, 0, 42, 0, 0),
+"tilts": PackedFloat32Array(0, 0, 1.5, 0, 0)
+}
+point_count = 5
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_u4apl"]
+material = ExtResource("63_miv03")
+top_radius = 20.0
+bottom_radius = 20.0
+height = 20.0
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_84nkg"]
+height = 20.0
+radius = 20.0
+
+[sub_resource type="BoxMesh" id="BoxMesh_cm40f"]
+material = ExtResource("76_gcfb4")
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_ey6ct"]
+
+[sub_resource type="Curve3D" id="Curve3D_kb3vi"]
+_data = {
+"points": PackedVector3Array(0, 0, 0, 0, 0, 5, 0, 0, 0, 0, 0, 5, 0, 0, -23.785, 0, 0, -700),
+"tilts": PackedFloat32Array(0, 0)
+}
+point_count = 2
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_20mfj"]
+size = Vector3(10, 123.319, 174.531)
+
+[sub_resource type="Resource" id="Resource_5wlh0"]
+script = ExtResource("61_fpr6t")
+ConstantCameraRotation = Quaternion(0, -0.707, 0, 0.707)
+
+[sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_64d0u"]
+resource_local_to_scene = true
+backface_collision = true
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_8688x"]
+size = Vector3(10, 37.9899, 514.355)
+
+[sub_resource type="Resource" id="Resource_tghum"]
+script = ExtResource("61_fpr6t")
+ConstantCameraRotation = Quaternion(0, -0.707, 0, 0.707)
+ConstantDirectionModifiedBySpeed = true
+
+[sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_5e5fr"]
+resource_local_to_scene = true
+backface_collision = true
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_djmio"]
+size = Vector3(10, 50, 200)
+
+[sub_resource type="Resource" id="Resource_gd8hc"]
+script = ExtResource("63_4thnm")
+CameraPoint = NodePath("CameraPoint")
+PointMode = 1
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_ocmjp"]
+resource_local_to_scene = true
+size = Vector3(25, 2, 2)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_1rfqw"]
+resource_local_to_scene = true
+size = Vector3(20, 10, 30)
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_8doys"]
+resource_local_to_scene = true
+height = 362.856
+radius = 25.0
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_tadk0"]
+resource_local_to_scene = true
+size = Vector3(100, 1, 1000)
+
+[sub_resource type="Curve3D" id="Curve3D_djmio"]
+_data = {
+"points": PackedVector3Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, -42.7715, 40.3861, 40.1852, 0, 0, 0, 0, 0, 0, -22.4459, 57.469, -12.1455, 0, 0, 0, 0, 0, 0, 13.8419, 104.8, -46.4032),
+"tilts": PackedFloat32Array(0, 0, 0, 0)
+}
+point_count = 4
+
+[sub_resource type="Resource" id="Resource_utfrw"]
+script = ExtResource("14_glwdl")
+CameraPath3D = NodePath("Path3D")
+metadata/_custom_type_script = "uid://bfibfvipco58n"
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_hllei"]
+resource_local_to_scene = true
+size = Vector3(129.025, 14.8398, 32.2207)
+
+[sub_resource type="Curve3D" id="Curve3D_oxg3e"]
+_data = {
+"points": PackedVector3Array(0, 0, 0, 0, 0, 0, 0, 0, -25, 0, 0, 0, 0, 0, 5, 0, 0, -5, -5, 0, 0, 0, 0, 0, 5, 0, 0, 0, 0, 0, 0, 0, 0, 120, 0, 0),
+"tilts": PackedFloat32Array(0, 0, 0, 0)
+}
+point_count = 4
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_vyr7x"]
+resource_local_to_scene = true
+flip_faces = true
+top_radius = 0.4
+bottom_radius = 0.4
+height = 2.224
+radial_segments = 16
+cap_top = false
+cap_bottom = false
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_5slkl"]
+resource_local_to_scene = true
+flip_faces = true
+height = 2.224
+radial_segments = 16
+cap_top = false
+cap_bottom = false
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_t4cnx"]
+resource_local_to_scene = true
+radius = 0.8
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_kgyni"]
+resource_local_to_scene = true
+flip_faces = true
+top_radius = 0.4
+bottom_radius = 0.4
+height = 2.224
+radial_segments = 16
+cap_top = false
+cap_bottom = false
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_ibbm4"]
+resource_local_to_scene = true
+flip_faces = true
+height = 2.224
+radial_segments = 16
+cap_top = false
+cap_bottom = false
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_rugsk"]
+resource_local_to_scene = true
+radius = 0.8
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_sajgr"]
+size = Vector3(10, 20, 10)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_nsxh1"]
+resource_local_to_scene = true
+size = Vector3(10, 10, 10)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_482wa"]
+transparency = 1
+albedo_color = Color(1, 1, 1, 0.2509804)
+
+[sub_resource type="BoxMesh" id="BoxMesh_sajgr"]
+material = SubResource("StandardMaterial3D_482wa")
+size = Vector3(10, 10, 10)
+
+[node name="TestStage" type="Node3D" unique_id=1836534022]
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=1232420870]
+transform = Transform3D(-0.8660254, -0.43301278, 0.25, 0, 0.49999997, 0.86602545, -0.50000006, 0.75, -0.43301266, 0, 0, 0)
+
+[node name="StageData" type="Node" parent="." unique_id=540863040]
+script = ExtResource("1_jfse3")
+StageZoneName = "Test Stage"
+StageUniqueIdentifier = "TestStage"
+StageMusic = ExtResource("2_mymat")
+HasRedRings = true
+SRankTime = 5.0
+SRankRings = 10
+ExtraTrackedItems = Dictionary[String, Texture2D]({
+"heart": ExtResource("3_kivhq")
+})
+
+[node name="PlayersManager" parent="." unique_id=253082189 instance=ExtResource("3_4w3j3")]
+transform = Transform3D(1, 0, -1.06581e-14, 0, 1, 0, 1.06581e-14, 0, 1, 90.0366, 12.3948, 93.9944)
+DefaultPlayablePlayers = Array[PackedScene]([ExtResource("5_dj2s0")])
+CharacterSwappingEnabled = true
+
+[node name="ExtraSettingsApplicator" type="Node" parent="PlayersManager" unique_id=1742614868]
+script = ExtResource("6_xkren")
+
+[node name="MapSystem" parent="." unique_id=646975129 instance=ExtResource("85_mei83")]
+
+[node name="MapUIControl" parent="MapSystem/MapUI" parent_id_path=PackedInt32Array(646975129, 1142520450) index="0" unique_id=1463325627]
+MapBorders = AABB(-600, 0, -1000, 1600, 0, 1600)
+
+[node name="MapBaker" parent="MapSystem/MapUI/MapUIControl" index="0" unique_id=1111343081]
+AabbMin = Vector3(-600, -100, -1000)
+AabbMax = Vector3(1000, 1000, 600)
+TextureSize = Vector2i(3200, 3200)
+OutputPath = "res://Games/Example game/Levels/TestLevel//test_level_map_baked.png"
+
+[node name="MapTerrain" parent="MapSystem/MapUI/HBoxContainer/MapContainer/MapContainerContent" parent_id_path=PackedInt32Array(646975129, 204532303) index="0" unique_id=1032196947]
+texture = ExtResource("86_oxg3e")
+
+[node name="CloseButton" parent="MapSystem/MapUI" parent_id_path=PackedInt32Array(646975129, 1142520450) index="2" unique_id=1463324772]
+layout_mode = 0
+anchors_preset = 0
+anchor_left = 0.0
+anchor_right = 0.0
+offset_left = 0.0
+offset_top = 0.0
+offset_right = 72.0
+offset_bottom = 72.0
+grow_horizontal = 1
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=1174576643]
+environment = SubResource("Environment_wj3j7")
+script = ExtResource("3_hs168")
+
+[node name="MapIcons" type="Node3D" parent="." unique_id=1944021865]
+
+[node name="MapUIIcon_High" parent="MapIcons" unique_id=1125245409 instance=ExtResource("8_oxg3e")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 300, 5928, 443.34)
+Description = "Top of the really tall slope."
+
+[node name="MapUIIcon_EnemyTower" parent="MapIcons" unique_id=1146789033 instance=ExtResource("8_oxg3e")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -221.62059, 5.6960535, 178.5179)
+Description = "Enemy tower"
+
+[node name="MapUIIcon_Eggman" parent="MapIcons" unique_id=16335375 instance=ExtResource("8_oxg3e")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -180.5315, 5.6960535, -67.541565)
+Description = "Boss fight"
+
+[node name="MapUIIcon_2D" parent="MapIcons" unique_id=1588247845 instance=ExtResource("8_oxg3e")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -43.732876, 12.104407, -209.92615)
+Description = "2D section"
+
+[node name="MapUIIcon_Water" parent="MapIcons" unique_id=1971688633 instance=ExtResource("8_oxg3e")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 225.73073, 31.57587, -386.61087)
+Description = "Water"
+
+[node name="MapUIIcon_Skateboard" parent="MapIcons" unique_id=1487462794 instance=ExtResource("8_oxg3e")]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 689.3419, 6.836525, -53.883385)
+Description = "Skateboard"
+
+[node name="MapUIIcon_Auto" parent="MapIcons" unique_id=1812425506 instance=ExtResource("8_oxg3e")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 107.56567, 13.246742, -2.0511017)
+Description = "Automated path"
+
+[node name="MapUIIcon_SpringChain" parent="MapIcons" unique_id=1799385211 instance=ExtResource("8_oxg3e")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 46.966286, 7.0571327, -162.38405)
+Description = "Spring chain"
+
+[node name="MapUIIcon_Skydive" parent="MapIcons" unique_id=1264062746 instance=ExtResource("8_oxg3e")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 381.147, 7.0571327, -577.44324)
+Description = "Skydiving"
+
+[node name="MapUIIcon_Portal" parent="MapIcons" unique_id=503897862 instance=ExtResource("8_oxg3e")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 194.82579, 1, 199.30402)
+Description = "Portals"
+
+[node name="MapUIIcon_ChaosEmeralds" parent="MapIcons" unique_id=2112687192 instance=ExtResource("8_oxg3e")]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, -25.296608, 45.23076, -181.6527)
+Description = "Chaos Emeralds"
+
+[node name="Stage" type="Node3D" parent="." unique_id=1484106602]
+
+[node name="TestLevelFloor" parent="Stage" unique_id=2128305274 instance=ExtResource("1_uldn8")]
+transform = Transform3D(10, 0, 0, 0, 10, 0, 0, 0, 10, 0, 0, 0)
+
+[node name="StaticBody3D" parent="Stage/TestLevelFloor/Circle" parent_id_path=PackedInt32Array(2128305274, 662695661) index="0" unique_id=2025395322]
+collision_layer = 2097153
+
+[node name="CollisionShape3D" parent="Stage/TestLevelFloor/Loop2/StaticBody3D" parent_id_path=PackedInt32Array(2128305274, 562871389) index="0" unique_id=898428119]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0018188953, -0.0062122345, 0.00037193298)
+
+[node name="[Interactable] ChaseSection" parent="Stage/TestLevelFloor/ChasePlatform" parent_id_path=PackedInt32Array(2128305274, 985467234) index="1" unique_id=1207985714 instance=ExtResource("6_ogu4x")]
+Distance = -5.0
+
+[node name="ChasePath" parent="Stage/TestLevelFloor/ChasePlatform/[Interactable] ChaseSection" index="0" unique_id=1058885054]
+curve = SubResource("Curve3D_vgpqo")
+
+[node name="CollisionShape3D" parent="Stage/TestLevelFloor/ChasePlatform/[Interactable] ChaseSection/ChasePath/ChaseStartFollow/ChaseStartTrigger" parent_id_path=PackedInt32Array(1207985714, 1382055412) index="0" unique_id=178184736]
+shape = SubResource("BoxShape3D_mgq4a")
+
+[node name="[Trigger] Camera Trigger" parent="Stage/TestLevelFloor/ChasePlatform/[Interactable] ChaseSection/ChasePath/ChaseStartFollow/ChaseStartTrigger" parent_id_path=PackedInt32Array(1207985714, 1382055412) index="1" unique_id=1525396256 instance=ExtResource("62_a2uub")]
+Params = SubResource("Resource_ogu4x")
+CardinalDirectionBias = true
+FreeOnExit = true
+EnterLerpTime = 0.5
+
+[node name="CollisionShape3D" parent="Stage/TestLevelFloor/ChasePlatform/[Interactable] ChaseSection/ChasePath/ChaseStartFollow/ChaseStartTrigger/[Trigger] Camera Trigger" index="0" unique_id=587286632]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 48.158, 4.04956, 0)
+shape = SubResource("BoxShape3D_humid")
+
+[node name="CollisionShape3D" parent="Stage/TestLevelFloor/ChasePlatform/[Interactable] ChaseSection/ChasePath/ChaseEndFollow/ChaseEndTrigger" parent_id_path=PackedInt32Array(1207985714, 885331311) index="0" unique_id=616462476]
+shape = SubResource("BoxShape3D_mgq4a")
+
+[node name="Items" type="Node3D" parent="Stage" unique_id=2070251908]
+
+[node name="[Interactable] Spring_Red" parent="Stage/Items" unique_id=1825527685 instance=ExtResource("2_s6x8v")]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 79.722, 1.22158, -1.41835)
+
+[node name="[Interactable] Spring_Red slow but high" parent="Stage/Items" unique_id=1244310796 instance=ExtResource("2_s6x8v")]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 32.1546, 1.22158, -19.0304)
+KeepVelocityDistance = 100.0
+
+[node name="[Obstacle] Thorns" parent="Stage/Items" unique_id=648882035 instance=ExtResource("5_ojf5n")]
+
+[node name="[Item] Ring" parent="Stage/Items" unique_id=914197282 instance=ExtResource("8_voj5x")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 107.113, 6.38929, 24.2862)
+AttractionSpeed = SubResource("Curve_idv40")
+
+[node name="[Item] PhysicsRing" parent="Stage/Items" unique_id=1052094980 instance=ExtResource("9_2138c")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 103.283, 7.038, 24.2862)
+
+[node name="[Interactable] Speed_Pad" parent="Stage/Items" unique_id=2119620325 instance=ExtResource("11_kys5k")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 92.9458, 1.45692, -0.108413)
+
+[node name="[Trigger] LostWorldGravityTriggerTowards2" type="Area3D" parent="Stage/Items" unique_id=348232108 node_paths=PackedStringArray("Path")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 200, 100, 5)
+collision_mask = 7
+script = ExtResource("10_2bboj")
+Path = NodePath("Path3D")
+
+[node name="Path3D" type="Path3D" parent="Stage/Items/[Trigger] LostWorldGravityTriggerTowards2" unique_id=887216531]
+curve = SubResource("Curve3D_ghmrj")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Stage/Items/[Trigger] LostWorldGravityTriggerTowards2" unique_id=828584351]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0)
+shape = SubResource("CylinderShape3D_vwwdn")
+
+[node name="[Trigger] LostWorldGravityTriggerAgainst2" type="Area3D" parent="Stage/Items" unique_id=2093675130 node_paths=PackedStringArray("Path")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 200, 100, -205)
+collision_mask = 7
+script = ExtResource("10_2bboj")
+Path = NodePath("Path3D")
+Mode = 1
+
+[node name="Path3D" type="Path3D" parent="Stage/Items/[Trigger] LostWorldGravityTriggerAgainst2" unique_id=569190662]
+curve = SubResource("Curve3D_ghmrj")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Stage/Items/[Trigger] LostWorldGravityTriggerAgainst2" unique_id=803264107]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0)
+shape = SubResource("CylinderShape3D_vwwdn")
+
+[node name="[Trigger] 2DSplineTrigger" type="Area3D" parent="Stage/Items" unique_id=2108158579 node_paths=PackedStringArray("Path")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 59.3202, -717.319)
+collision_mask = 2
+script = ExtResource("13_60he6")
+Path = NodePath("Path3D")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Stage/Items/[Trigger] 2DSplineTrigger" unique_id=1679463428]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.09725, 7.16619, -37.8452)
+shape = SubResource("BoxShape3D_htx3u")
+
+[node name="Path3D" type="Path3D" parent="Stage/Items/[Trigger] 2DSplineTrigger" unique_id=1390465624]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.84, 0, 0)
+curve = SubResource("Curve3D_7q6si")
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="Stage/Items/[Trigger] 2DSplineTrigger" unique_id=1169867663]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12.2348, -3.52914, -39.4584)
+shape = SubResource("BoxShape3D_xhjod")
+
+[node name="[Trigger] 2DSplineTrigger2" type="Area3D" parent="Stage/Items" unique_id=287546180 node_paths=PackedStringArray("Path")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 59.3202, -717.319)
+collision_mask = 2
+script = ExtResource("13_60he6")
+Path = NodePath("Path3D")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Stage/Items/[Trigger] 2DSplineTrigger2" unique_id=791555692]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11.8464, 7.16619, -38.9227)
+shape = SubResource("BoxShape3D_htx3u")
+
+[node name="Path3D" type="Path3D" parent="Stage/Items/[Trigger] 2DSplineTrigger2" unique_id=1907491478]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.91196, 0, 0)
+curve = SubResource("Curve3D_7q6si")
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="Stage/Items/[Trigger] 2DSplineTrigger2" unique_id=647098540]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.97164, -3.37735, -37.2286)
+shape = SubResource("BoxShape3D_1ymkg")
+
+[node name="[Trigger] 2DSplineTrigger3" type="Area3D" parent="Stage/Items" unique_id=1400780132 node_paths=PackedStringArray("Path")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -13.7092, 59.3202, -893.635)
+collision_mask = 6
+script = ExtResource("13_60he6")
+Path = NodePath("Path3D")
+TwoDimensionalMode = true
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Stage/Items/[Trigger] 2DSplineTrigger3" unique_id=1756885901]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 42.79)
+shape = SubResource("BoxShape3D_ntra2")
+
+[node name="Path3D" type="Path3D" parent="Stage/Items/[Trigger] 2DSplineTrigger3" unique_id=1198254948]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.18394, 0, 3.63995)
+curve = SubResource("Curve3D_cftbc")
+
+[node name="[Trigger]2DSplineCameraTrigger" type="Area3D" parent="Stage/Items" unique_id=1333807550]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -13.7092, 59.3202, -893.635)
+collision_mask = 2
+script = ExtResource("12_srflh")
+Params = SubResource("Resource_cvst0")
+DisableRaycast = true
+CameraDistance = 10.0
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Stage/Items/[Trigger]2DSplineCameraTrigger" unique_id=395400588]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 42.79)
+shape = SubResource("BoxShape3D_ntra2")
+
+[node name="Center" type="Node3D" parent="Stage/Items/[Trigger]2DSplineCameraTrigger" unique_id=655585370]
+
+[node name="[Interactable] Checkpoint_SV" parent="Stage/Items" unique_id=901337433 instance=ExtResource("15_jub88")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -107.641, 1.22347, -42.5158)
+
+[node name="[MovingPlatform] CPZ_MovingPlatformStable" type="Node3D" parent="Stage/Items" unique_id=438342974]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 41.5442, 4.42169, 0)
+
+[node name="Path3D" type="Path3D" parent="Stage/Items/[MovingPlatform] CPZ_MovingPlatformStable" unique_id=519208069]
+curve = SubResource("Curve3D_qnddl")
+
+[node name="PathFollow3D" type="PathFollow3D" parent="Stage/Items/[MovingPlatform] CPZ_MovingPlatformStable/Path3D" unique_id=701071381]
+rotation_mode = 0
+loop = false
+tilt_enabled = false
+script = ExtResource("15_j8sfa")
+Speed = 10.0
+MoveMode = 2
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Stage/Items/[MovingPlatform] CPZ_MovingPlatformStable/Path3D/PathFollow3D" unique_id=1970022733]
+transform = Transform3D(-4.37114e-08, 4.37114e-08, 1, -4.37114e-08, -1, 4.37114e-08, 1, -4.37114e-08, 4.37114e-08, 0, 0, 0)
+mesh = SubResource("CylinderMesh_i1rxw")
+script = ExtResource("28_7wve1")
+RelativeAxis = Vector3(0, 1, 0)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Stage/Items/[MovingPlatform] CPZ_MovingPlatformStable/Path3D/PathFollow3D/MeshInstance3D" unique_id=1328928542]
+collision_layer = 17
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Stage/Items/[MovingPlatform] CPZ_MovingPlatformStable/Path3D/PathFollow3D/MeshInstance3D/StaticBody3D" unique_id=452195574]
+shape = SubResource("CylinderShape3D_s8wps")
+
+[node name="[Interactable] Flamethrower" parent="Stage/Items" unique_id=649206384 instance=ExtResource("16_oq74e")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 80.6844, 0.932078, 22.715)
+
+[node name="[Obstacle] Thorn Cylinder" parent="Stage/Items" unique_id=1554526542 instance=ExtResource("17_0ywdy")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 86.43, 1, 19.731)
+
+[node name="Enemies" type="Node3D" parent="Stage" unique_id=1076951513]
+
+[node name="[Enemy] Spinner" parent="Stage/Enemies" unique_id=90378405 instance=ExtResource("59_kwumx")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.46828, 4.81852, -0.651367)
+
+[node name="[Enemy] Spinner2" parent="Stage/Enemies" unique_id=1206815390 instance=ExtResource("59_kwumx")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.62718, 4.3874, -7.02629)
+
+[node name="[Boss arena] Egg Flamethrower Arena" parent="Stage/Enemies" unique_id=1891313484 instance=ExtResource("18_5tj2u")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -179.967, 8.77576, -149.905)
+
+[node name="AutorunRoad" type="Path3D" parent="Stage" unique_id=536279745]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 106.673, 4.90312, 0)
+curve = SubResource("Curve3D_ebwb8")
+
+[node name="CameraPoint" type="Node3D" parent="Stage/AutorunRoad" unique_id=2039609640]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -23.6889, 29.0262, -203.896)
+
+[node name="CSGPolygon3DBorderR" type="CSGPolygon3D" parent="Stage/AutorunRoad" unique_id=1451451177]
+use_collision = true
+polygon = PackedVector2Array(2, 1, 2, 1.5, 3, 1.5, 3, 1)
+mode = 2
+path_node = NodePath("..")
+path_interval_type = 0
+path_interval = 0.5
+path_simplify_angle = 0.0
+path_rotation = 2
+path_rotation_accurate = false
+path_local = true
+path_continuous_u = true
+path_u_distance = 1.0
+path_joined = false
+material = ExtResource("34_mwder")
+
+[node name="CSGPolygon3DBorderL" type="CSGPolygon3D" parent="Stage/AutorunRoad" unique_id=1003320934]
+use_collision = true
+polygon = PackedVector2Array(-3, 1, -3, 1.5, -2, 1.5, -2, 1)
+mode = 2
+path_node = NodePath("..")
+path_interval_type = 0
+path_interval = 0.5
+path_simplify_angle = 0.0
+path_rotation = 2
+path_rotation_accurate = false
+path_local = true
+path_continuous_u = true
+path_u_distance = 1.0
+path_joined = false
+material = ExtResource("34_mwder")
+
+[node name="CSGPolygon3D" type="CSGPolygon3D" parent="Stage/AutorunRoad" unique_id=222200377]
+use_collision = true
+polygon = PackedVector2Array(-3, -1, -3, 1, 3, 1, 3, -1)
+mode = 2
+path_node = NodePath("..")
+path_interval_type = 0
+path_interval = 0.5
+path_simplify_angle = 0.0
+path_rotation = 2
+path_rotation_accurate = false
+path_local = true
+path_continuous_u = true
+path_u_distance = 60.0
+path_joined = false
+material = ExtResource("37_786hh")
+
+[node name="PathFollow3D" type="PathFollow3D" parent="Stage/AutorunRoad" unique_id=1782745884]
+transform = Transform3D(0.9989499, -0.00076981826, 0.04555158, 0.00018459179, 0.999917, 0.012849642, -0.04555839, -0.012828227, 0.99885267, -0.105688326, -0.025743442, -1.997069)
+progress = 2.0
+
+[node name="Area3D" type="Area3D" parent="Stage/AutorunRoad/PathFollow3D" unique_id=456401378 node_paths=PackedStringArray("Path")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -2)
+collision_mask = 2
+script = ExtResource("13_60he6")
+Path = NodePath("../..")
+ReleaseOnJump = true
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Stage/AutorunRoad/PathFollow3D/Area3D" unique_id=1436861225]
+transform = Transform3D(1, 1.74623e-10, -3.72529e-09, -1.16415e-10, 1, 0, 0, 0, 1, -0.972572, 1.98377, 0)
+shape = SubResource("BoxShape3D_6fv6k")
+
+[node name="[Interactable] Speed_Pad" parent="Stage/AutorunRoad/PathFollow3D" unique_id=556750203 instance=ExtResource("11_kys5k")]
+transform = Transform3D(1, -4.65661e-10, 2.6077e-08, 0, 0.999999, -1.86265e-09, 1.49012e-08, 1.86265e-09, 0.999999, 0.000183105, 0.999917, 0.0128503)
+MinVelocity = 100.0
+LockInputTime = 2.0
+SnapCamera = false
+
+[node name="CSGPolygon3DTrigger" type="CSGPolygon3D" parent="Stage/AutorunRoad" unique_id=1190885283]
+visible = false
+calculate_tangents = false
+polygon = PackedVector2Array(0, 0, -3, 0, -3, 2, 3, 2, 3, 0)
+mode = 2
+path_node = NodePath("..")
+path_interval_type = 0
+path_interval = 1.0
+path_simplify_angle = 0.0
+path_rotation = 2
+path_rotation_accurate = false
+path_local = true
+path_continuous_u = true
+path_u_distance = 1.0
+path_joined = false
+
+[node name="PathFollow3D2" type="PathFollow3D" parent="Stage/AutorunRoad" unique_id=1360734993]
+transform = Transform3D(0.9542621, -0.013915727, 0.29864606, 0.014717389, 0.9998272, -0.00043242838, -0.2986078, 0.004807636, 0.954363, 2.4100997, -0.0016612336, -92.44753)
+progress = 96.9049
+
+[node name="Area3D" type="Area3D" parent="Stage/AutorunRoad/PathFollow3D2" unique_id=546510479 node_paths=PackedStringArray("Path")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -2)
+collision_mask = 2
+script = ExtResource("13_60he6")
+Path = NodePath("../..")
+ReleaseOnJump = true
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Stage/AutorunRoad/PathFollow3D2/Area3D" unique_id=1575484944]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.972572, 1.98377, 0)
+shape = SubResource("BoxShape3D_6fv6k")
+
+[node name="[Interactable] Speed_Pad" parent="Stage/AutorunRoad/PathFollow3D2" unique_id=77920920 instance=ExtResource("11_kys5k")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+MinVelocity = 100.0
+LockInputTime = 2.0
+SnapCamera = false
+
+[node name="PathFollow3D3" type="PathFollow3D" parent="Stage/AutorunRoad" unique_id=562730449]
+transform = Transform3D(0.996917, -0.0643396, -0.044684265, 0.05578383, 0.98357695, -0.17164885, 0.054993823, 0.168629, 0.984142, 1.4508046, 8.016443, -182.59601)
+progress = 193.81
+
+[node name="Area3D" type="Area3D" parent="Stage/AutorunRoad/PathFollow3D3" unique_id=752406206 node_paths=PackedStringArray("Path")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -2)
+collision_mask = 2
+script = ExtResource("13_60he6")
+Path = NodePath("../..")
+ReleaseOnJump = true
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Stage/AutorunRoad/PathFollow3D3/Area3D" unique_id=628352415]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.972572, 1.98377, 0)
+shape = SubResource("BoxShape3D_6fv6k")
+
+[node name="[Interactable] Speed_Pad" parent="Stage/AutorunRoad/PathFollow3D3" unique_id=1930952258 instance=ExtResource("11_kys5k")]
+transform = Transform3D(1, 5.58794e-09, 7.45058e-09, -3.72529e-09, 1, 1.49012e-08, 0, 1.49012e-08, 1, 0, 0.999998, -1.52588e-05)
+MinVelocity = 150.0
+LockInputTime = 2.0
+SnapCamera = false
+
+[node name="[Trigger] Camera Trigger" parent="Stage/AutorunRoad/PathFollow3D3" unique_id=663020698 instance=ExtResource("62_a2uub")]
+Params = SubResource("Resource_gljh1")
+EnterLerpTime = 0.5
+
+[node name="CollisionShape3D" parent="Stage/AutorunRoad/PathFollow3D3/[Trigger] Camera Trigger" index="0" unique_id=587286632]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+shape = SubResource("BoxShape3D_piund")
+
+[node name="PathFollow3D4" type="PathFollow3D" parent="Stage/AutorunRoad" unique_id=1637986249]
+transform = Transform3D(0.5978262, -0.78606814, -0.15716255, -0.79617685, -0.5594239, -0.23053357, 0.09329455, 0.26294872, -0.9602878, 14.0774145, 47.047558, -214.06276)
+progress = 290.715
+
+[node name="Area3D" type="Area3D" parent="Stage/AutorunRoad/PathFollow3D4" unique_id=2135423038 node_paths=PackedStringArray("Path")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -2)
+collision_mask = 2
+script = ExtResource("13_60he6")
+Path = NodePath("../..")
+ReleaseOnJump = true
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Stage/AutorunRoad/PathFollow3D4/Area3D" unique_id=1618435660]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.972572, 1.98377, 0)
+shape = SubResource("BoxShape3D_6fv6k")
+
+[node name="[Interactable] Speed_Pad" parent="Stage/AutorunRoad/PathFollow3D4" unique_id=483257613 instance=ExtResource("11_kys5k")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+MinVelocity = 150.0
+LockInputTime = 2.0
+SnapCamera = false
+
+[node name="[Trigger] Camera Trigger" parent="Stage/AutorunRoad/PathFollow3D4" unique_id=544092915 instance=ExtResource("62_a2uub")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+Params = SubResource("Resource_gljh1")
+EnterLerpTime = 0.5
+
+[node name="CollisionShape3D" parent="Stage/AutorunRoad/PathFollow3D4/[Trigger] Camera Trigger" index="0" unique_id=587286632]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+shape = SubResource("BoxShape3D_or4aq")
+
+[node name="PathFollow3D5" type="PathFollow3D" parent="Stage/AutorunRoad" unique_id=1532731994]
+transform = Transform3D(-0.2291167, 0.17498486, 0.95753944, -0.75487816, -0.6529949, -0.061293356, 0.6145441, -0.7368709, 0.28170356, -19.643959, 51.468777, -161.68396)
+progress = 367.738
+
+[node name="Area3D" type="Area3D" parent="Stage/AutorunRoad/PathFollow3D5" unique_id=524190187 node_paths=PackedStringArray("Path")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -2)
+collision_mask = 2
+script = ExtResource("13_60he6")
+Path = NodePath("../..")
+ReleaseOnJump = true
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Stage/AutorunRoad/PathFollow3D5/Area3D" unique_id=596911272]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.972572, 1.98377, 0)
+shape = SubResource("BoxShape3D_6fv6k")
+
+[node name="[Interactable] Speed_Pad" parent="Stage/AutorunRoad/PathFollow3D5" unique_id=296466788 instance=ExtResource("11_kys5k")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+MinVelocity = 150.0
+LockInputTime = 2.0
+SnapCamera = false
+
+[node name="[Trigger] Camera Trigger" parent="Stage/AutorunRoad/PathFollow3D5" unique_id=1676249457 instance=ExtResource("62_a2uub")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+Params = SubResource("Resource_gljh1")
+EnterLerpTime = 0.5
+
+[node name="CollisionShape3D" parent="Stage/AutorunRoad/PathFollow3D5/[Trigger] Camera Trigger" index="0" unique_id=587286632]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+shape = SubResource("BoxShape3D_nsl4b")
+
+[node name="[Trigger] Camera Trigger Free" parent="Stage/AutorunRoad" unique_id=1282003219 instance=ExtResource("62_a2uub")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 25, -126.905)
+Params = SubResource("Resource_mgggb")
+FreeOnExit = true
+
+[node name="CollisionShape3D" parent="Stage/AutorunRoad/[Trigger] Camera Trigger Free" index="0" unique_id=587286632]
+shape = SubResource("BoxShape3D_puvv5")
+
+[node name="[Trigger] Camera Trigger Free2" parent="Stage/AutorunRoad" unique_id=1441993758 instance=ExtResource("62_a2uub")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -45.0145, 51.3223, -259.68)
+Params = SubResource("Resource_mgggb")
+EnterLerpTime = 0.5
+
+[node name="CollisionShape3D" parent="Stage/AutorunRoad/[Trigger] Camera Trigger Free2" index="0" unique_id=587286632]
+shape = SubResource("BoxShape3D_qmjp3")
+
+[node name="[Interactable] GrindRail" parent="." unique_id=121541866 instance=ExtResource("12_uj43x")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 57.6134, 25, -12.2045)
+curve = SubResource("Curve3D_e6uap")
+
+[node name="PathFollow3D2" parent="[Interactable] GrindRail" unique_id=1609876299 instance=ExtResource("42_gwktq")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -49.999973)
+progress = 50.0
+
+[node name="PathFollow3D3" type="PathFollow3D" parent="[Interactable] GrindRail" unique_id=1896730490]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -41.539944)
+progress = 41.54
+
+[node name="[Trigger] InputPromptCenter_quickstep_r" parent="[Interactable] GrindRail/PathFollow3D3" unique_id=553031840 instance=ExtResource("27_ik7xs")]
+Text = "[input]quickstep_r[/input]"
+
+[node name="CollisionShape3D" parent="[Interactable] GrindRail/PathFollow3D3/[Trigger] InputPromptCenter_quickstep_r/Area3D" parent_id_path=PackedInt32Array(553031840, 1374411602) index="0" unique_id=913205703]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5, 11.824)
+shape = SubResource("BoxShape3D_bn3f4")
+
+[node name="PathFollow3D4" type="PathFollow3D" parent="[Interactable] GrindRail" unique_id=1060390436]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -185.80006)
+progress = 185.8
+
+[node name="[Trigger] InputPromptCenter_quickstep_r" parent="[Interactable] GrindRail/PathFollow3D4" unique_id=762826400 instance=ExtResource("27_ik7xs")]
+Text = "[input]quickstep_r[/input]"
+
+[node name="CollisionShape3D" parent="[Interactable] GrindRail/PathFollow3D4/[Trigger] InputPromptCenter_quickstep_r/Area3D" parent_id_path=PackedInt32Array(762826400, 1374411602) index="0" unique_id=913205703]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5, 11.824)
+shape = SubResource("BoxShape3D_4bdrk")
+
+[node name="[Interactable] GrindRail2" parent="." unique_id=1348326444 instance=ExtResource("12_uj43x")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 59.8423, 25, -11.8711)
+curve = SubResource("Curve3D_wnu2v")
+
+[node name="CSGPolygon3DVisible" parent="[Interactable] GrindRail2" index="1" unique_id=417363518]
+path_simplify_angle = 2.0
+
+[node name="CollisionShape3D" parent="[Interactable] GrindRail2/Area3D" parent_id_path=PackedInt32Array(1348326444, 1638566815) index="0" unique_id=609907478]
+shape = SubResource("ConcavePolygonShape3D_8uc20")
+
+[node name="[Interactable] Grind_Booster (FollowPath)" parent="[Interactable] GrindRail2" unique_id=681695698 instance=ExtResource("42_3766v")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -49.999973)
+progress = 50.0
+
+[node name="[Interactable] PulleyPath" parent="." unique_id=1368638735 instance=ExtResource("40_sfpp8")]
+curve = SubResource("Curve3D_nompr")
+
+[node name="[Interactable] PulleyPath2" type="Path3D" parent="." unique_id=238878348]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 188.595, 6.76886, 337.43)
+curve = SubResource("Curve3D_mikri")
+
+[node name="CSGPolygon3D" type="CSGPolygon3D" parent="[Interactable] PulleyPath2" unique_id=1139835030]
+polygon = PackedVector2Array(-0.1, -0.1, 0.1, -0.1, 0.1, 0.1, -0.1, 0.1)
+mode = 2
+path_node = NodePath("..")
+path_interval_type = 0
+path_interval = 1.0
+path_simplify_angle = 0.1
+path_rotation = 2
+path_rotation_accurate = false
+path_local = true
+path_continuous_u = true
+path_u_distance = 1.0
+path_joined = false
+smooth_faces = true
+material = SubResource("StandardMaterial3D_26ldo")
+
+[node name="PathFollow3D" type="PathFollow3D" parent="[Interactable] PulleyPath2" unique_id=1503834649]
+rotation_mode = 0
+cubic_interp = false
+loop = false
+
+[node name="[Interactable] Pulley" type="Node3D" parent="[Interactable] PulleyPath2/PathFollow3D" unique_id=1578502649 node_paths=PackedStringArray("PathFollow3D", "PlayerLockPosition", "HomingTarget", "AudioPlayer", "RemoteTransform3D")]
+script = ExtResource("42_vj05h")
+Animation = "PulleyUp"
+PathFollow3D = NodePath("..")
+Speed = 1000.0
+PlayerLockPosition = NodePath("PlayerLockPosition")
+HomingTarget = NodePath("HomingTarget")
+AudioPlayer = NodePath("AudioStreamPlayer3D")
+RemoteTransform3D = NodePath("PlayerLockPosition/RemoteTransform3D")
+
+[node name="pulley" parent="[Interactable] PulleyPath2/PathFollow3D/[Interactable] Pulley" unique_id=1436888947 instance=ExtResource("27_1dkr6")]
+transform = Transform3D(-1, -8.74228e-08, 3.82137e-15, 0, -4.37114e-08, -1, 8.74228e-08, -1, 4.37114e-08, 0, 0, 0)
+
+[node name="Area3D" type="Area3D" parent="[Interactable] PulleyPath2/PathFollow3D/[Interactable] Pulley" unique_id=1624338215]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1, 0)
+collision_mask = 2
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="[Interactable] PulleyPath2/PathFollow3D/[Interactable] Pulley/Area3D" unique_id=298186059]
+shape = SubResource("SphereShape3D_epbnn")
+
+[node name="HomingTarget" parent="[Interactable] PulleyPath2/PathFollow3D/[Interactable] Pulley" unique_id=2043701903 instance=ExtResource("23_tn5wt")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.5, 0)
+
+[node name="PlayerLockPosition" type="Node3D" parent="[Interactable] PulleyPath2/PathFollow3D/[Interactable] Pulley" unique_id=930852036]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -2.25, 0)
+
+[node name="RemoteTransform3D" type="RemoteTransform3D" parent="[Interactable] PulleyPath2/PathFollow3D/[Interactable] Pulley/PlayerLockPosition" unique_id=1380456953]
+
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="[Interactable] PulleyPath2/PathFollow3D/[Interactable] Pulley" unique_id=1366398339]
+stream = ExtResource("28_s22lf")
+
+[node name="[Interactable] Spring_Red3" parent="." unique_id=784886935 instance=ExtResource("2_s6x8v")]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 198, 1, 125)
+MinVelocity = 150.0
+MaxVelocity = 150.0
+
+[node name="[Interactable] Spring_Red4" parent="." unique_id=1931452929 instance=ExtResource("2_s6x8v")]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 192.743, 1.00001, -370.147)
+MinVelocity = 150.0
+MaxVelocity = 150.0
+
+[node name="[Item] RedRing1" parent="." unique_id=823312739 instance=ExtResource("43_uwck0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12, 42, 0)
+
+[node name="[Item] RedRing2" parent="." unique_id=387565235 instance=ExtResource("44_vopl1")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 15, 42, 0)
+
+[node name="[Item] RedRing3" parent="." unique_id=1184469839 instance=ExtResource("45_1j0rc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 18, 42, 0)
+
+[node name="[Item] RedRing4" parent="." unique_id=812396890 instance=ExtResource("46_6etuo")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 21, 42, 0)
+
+[node name="[Item] RedRing5" parent="." unique_id=1047959330 instance=ExtResource("47_veixa")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 24, 42, 0)
+
+[node name="[Interactable] Dash_Ring" parent="." unique_id=1840866056 instance=ExtResource("57_fnrby")]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 86.1392, 5.2541, -3.11315)
+
+[node name="[Interactable] Goal Ring" parent="." unique_id=857683928 instance=ExtResource("58_8ammw")]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, -58.7926, 1, -52.2363)
+NextLevel = "res://Games/Example game/Levels/DiscoHill/DiscoHill.tscn"
+S3KTransition = true
+StagesToUnlock = PackedStringArray("DiscoHill1")
+
+[node name="[Item] Rings10" parent="." unique_id=1577293421 instance=ExtResource("61_5eskj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 103.488, 6.23206, 23.2585)
+
+[node name="[Interactable] JumpPanel15Degrees" parent="." unique_id=114377061 instance=ExtResource("60_ewdrt")]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 96.8114, 1, -0.00731134)
+
+[node name="[Interactable] JumpPanel30Degrees" parent="." unique_id=2041016300 instance=ExtResource("61_cruxb")]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 101, 1, 0)
+
+[node name="[Enemy] Motobug" parent="." unique_id=400687948 instance=ExtResource("61_1xi0r")]
+transform = Transform3D(1, 0, 1.74846e-07, 0, 1, 0, -1.74846e-07, 0, 1, -284.315, 1.93532, -151.161)
+
+[node name="[Enemy] Cop Speeder" parent="." unique_id=1571656967 instance=ExtResource("59_mxf3s")]
+transform = Transform3D(1, 0, 1.74846e-07, 0, 1, 0, -1.74846e-07, 0, 1, -266.997, 1, -155.478)
+
+[node name="[Enemy] Motobug2" parent="." unique_id=1982072497 instance=ExtResource("61_1xi0r")]
+transform = Transform3D(1, 0, 1.74846e-07, 0, 1, 0, -1.74846e-07, 0, 1, 201.929, 110.057, 43.7436)
+
+[node name="laserturret2" parent="." unique_id=906272974 instance=ExtResource("41_v0xnb")]
+transform = Transform3D(-4.37114e-08, -1, 4.37114e-08, 0, -4.37114e-08, -1, 1, -4.37114e-08, 1.91069e-15, 75.006, 1, 4.686)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="laserturret2/w6_obj_laserturret" parent_id_path=PackedInt32Array(906272974, 423883641) index="0" unique_id=811605149]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.8)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="laserturret2/w6_obj_laserturret/StaticBody3D" unique_id=854312298]
+shape = SubResource("BoxShape3D_6eqhl")
+
+[node name="[Interactable] Laser" parent="laserturret2/w6_obj_laserturret/StaticBody3D/CollisionShape3D" unique_id=1994459961 instance=ExtResource("60_fac65")]
+transform = Transform3D(1, 3.55271e-15, 0, 3.55271e-15, -1, 8.74228e-08, 0, -8.74228e-08, -1, 0, 0.800003, 0.0500001)
+
+[node name="Tower" type="Node3D" parent="." unique_id=904645006]
+
+[node name="[Enemy] Motobug3" parent="Tower" unique_id=485407682 instance=ExtResource("61_1xi0r")]
+transform = Transform3D(1, 0, 1.74846e-07, 0, 1, 0, -1.74846e-07, 0, 1, -269.878, 30, 70.6783)
+
+[node name="[Enemy] Cop Speeder2" parent="Tower" unique_id=524208463 instance=ExtResource("59_mxf3s")]
+transform = Transform3D(1, 0, 1.74846e-07, 0, 1, 0, -1.74846e-07, 0, 1, -270.098, 89.5, 67.3638)
+
+[node name="[Enemy] Spinner" parent="Tower" unique_id=1491648974 instance=ExtResource("59_kwumx")]
+transform = Transform3D(1, 0, 1.74846e-07, 0, 1, 0, -1.74846e-07, 0, 1, -270.221, 155, 59.5365)
+
+[node name="[Enemy] Nebula" parent="Tower" unique_id=134190227 instance=ExtResource("59_oqs00")]
+transform = Transform3D(1, 0, 1.74846e-07, 0, 1, 0, -1.74846e-07, 0, 1, -269.475, 219.139, 61.0743)
+
+[node name="[Enemy] Egg Pawn Gun2" parent="Tower" unique_id=438939954 instance=ExtResource("62_pi0si")]
+transform = Transform3D(1, 0, 1.74846e-07, 0, 1, 0, -1.74846e-07, 0, 1, -270.106, 268, 56.3117)
+
+[node name="SpotLight3D" type="SpotLight3D" parent="Tower" unique_id=1606498674]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -270, 65, 60)
+layers = 7
+light_energy = 100.0
+spot_range = 55.0
+
+[node name="SpotLight3D2" type="SpotLight3D" parent="Tower" unique_id=1081277920]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -270, 125, 60)
+layers = 7
+light_energy = 100.0
+spot_range = 55.0
+
+[node name="SpotLight3D5" type="SpotLight3D" parent="Tower" unique_id=576144840]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -270, 185, 60)
+layers = 7
+light_energy = 100.0
+spot_range = 55.0
+
+[node name="SpotLight3D3" type="SpotLight3D" parent="Tower" unique_id=675552402]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -270, 245, 60)
+layers = 7
+light_energy = 100.0
+spot_range = 55.0
+
+[node name="SpotLight3D4" type="SpotLight3D" parent="Tower" unique_id=1644122478]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -270, 300, 60)
+layers = 7
+light_energy = 100.0
+spot_range = 55.0
+
+[node name="[Interactable] GrindRail3" parent="." unique_id=2012388745 instance=ExtResource("12_uj43x")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -23, 70.2694, -850.193)
+curve = SubResource("Curve3D_e1dhr")
+
+[node name="PathFollow3D" parent="[Interactable] GrindRail3" index="0" unique_id=1506879470]
+transform = Transform3D(-4.371139e-08, 0, -0.999998, 0, 0.999998, 0, 1, 0, -4.37113e-08, 0, 0, 0)
+
+[node name="CollisionShape3D" parent="[Interactable] GrindRail3/Area3D" parent_id_path=PackedInt32Array(2012388745, 1638566815) index="0" unique_id=609907478]
+shape = SubResource("ConcavePolygonShape3D_jg2ll")
+
+[node name="[Trigger] No2DTrigger" parent="[Interactable] GrindRail3" unique_id=577859168 instance=ExtResource("62_t3gf5")]
+transform = Transform3D(15, 0, 0, 0, 15, 0, 0, 0, 15, 50.0315, 5.78436, 0)
+
+[node name="CollisionShape3D" parent="[Interactable] GrindRail3/[Trigger] No2DTrigger/[Trigger] NoSplineTrigger" parent_id_path=PackedInt32Array(577859168, 2023145832) index="0" unique_id=1859701545]
+shape = SubResource("BoxShape3D_cx3m2")
+
+[node name="CollisionShape3D" parent="[Interactable] GrindRail3/[Trigger] No2DTrigger/Camera3DTrigger" parent_id_path=PackedInt32Array(577859168, 1422507286) index="0" unique_id=571122358]
+shape = SubResource("BoxShape3D_cx3m2")
+
+[node name="[Enemy] Egg Pawn Gun" parent="." unique_id=125628610 instance=ExtResource("62_pi0si")]
+transform = Transform3D(1, 0, 1.74846e-07, 0, 1, 0, -1.74846e-07, 0, 1, -302.327, 1, -147.142)
+
+[node name="[Interactable] GrindRail4" parent="." unique_id=1523455917 instance=ExtResource("12_uj43x")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -45.0524, 85.3506, -246.551)
+curve = SubResource("Curve3D_vw3je")
+
+[node name="Cylinder" type="MeshInstance3D" parent="." unique_id=1183378995]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 50.5412, 30.6853, 49.059)
+mesh = SubResource("CylinderMesh_u4apl")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Cylinder" unique_id=2096829593]
+collision_mask = 2097153
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Cylinder/StaticBody3D" unique_id=1658870154]
+shape = SubResource("CylinderShape3D_84nkg")
+
+[node name="[Interactable] Item Box 10 Rings" parent="." unique_id=960124432 instance=ExtResource("64_tspyj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -114.662, 1, -73.5567)
+
+[node name="[Interactable] Spring_Red" parent="." unique_id=1322340324 instance=ExtResource("65_itsfd")]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 79.0124, 1, -6.42946)
+
+[node name="[Interactable] Spring_Red_Wide" parent="." unique_id=145413378 instance=ExtResource("65_itsfd")]
+transform = Transform3D(2, 0, 0, 0, -8.74228e-08, -2, 0, 2, -8.74228e-08, -43.2749, 5.27273, -248.442)
+MinVelocity = 60.0
+MaxVelocity = 60.0
+Snap = true
+RelativeSnapPoint = Vector3(0, 0.5, 0)
+
+[node name="[Interactable] Item Box 10 Rings2" parent="." unique_id=1535589689 instance=ExtResource("64_tspyj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -112.73, 1, -82.0054)
+
+[node name="[Interactable] Item Box 10 Rings3" parent="." unique_id=543201766 instance=ExtResource("64_tspyj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -108.964, 1, -87.8029)
+
+[node name="[Interactable] Item Box 10 Rings4" parent="." unique_id=477331662 instance=ExtResource("64_tspyj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -96.4099, 1, -86.8708)
+
+[node name="[Interactable] Item Box 10 Rings5" parent="." unique_id=149793632 instance=ExtResource("64_tspyj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -80.5771, 1, -84.9971)
+
+[node name="Chaos Emeralds" type="Node3D" parent="." unique_id=33509838]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -37.263, 47.2727, -160.214)
+
+[node name="[Item] Chaos Emerald Red" parent="Chaos Emeralds" unique_id=602042558 instance=ExtResource("67_opu58")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
+
+[node name="[Item] Chaos Emerald Blue" parent="Chaos Emeralds" unique_id=1856720996 instance=ExtResource("68_x307c")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 0, 0)
+
+[node name="[Item] Chaos Emerald Yellow" parent="Chaos Emeralds" unique_id=1032880072 instance=ExtResource("69_rfsny")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6, 0, 0)
+
+[node name="[Item] Chaos Emerald Green" parent="Chaos Emeralds" unique_id=846031385 instance=ExtResource("70_7cys4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9, 0, 0)
+
+[node name="[Item] Chaos Emerald Gray" parent="Chaos Emeralds" unique_id=1812531401 instance=ExtResource("71_dhmce")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12, 0, 0)
+
+[node name="[Item] Chaos Emerald Cyan" parent="Chaos Emeralds" unique_id=512924803 instance=ExtResource("72_y8i2r")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 15, 0, 0)
+
+[node name="[Item] Chaos Emerald Magenta" parent="Chaos Emeralds" unique_id=2032860630 instance=ExtResource("73_w7yg5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 18, 0, 0)
+
+[node name="[Interactable] Special Stage Entrance" parent="." unique_id=429798067 instance=ExtResource("74_css6n")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -32.7739, 3.53085, -26.0568)
+
+[node name="[Interactable] Spring_Giant_Red" parent="." unique_id=645918892 instance=ExtResource("59_7ao4o")]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 0.999999, -4.37114e-08, 76.7796, 8.0635, -106.589)
+
+[node name="Water" type="MeshInstance3D" parent="." unique_id=84621007]
+process_mode = 3
+transform = Transform3D(400, 0, 0, 0, 100, 0, 0, 0, 90, 443.414, -31.9198, -399.807)
+mesh = SubResource("BoxMesh_cm40f")
+surface_material_override/0 = ExtResource("76_gcfb4")
+
+[node name="Area3D" type="Area3D" parent="Water" unique_id=1533319555]
+script = ExtResource("77_cr33u")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Water/Area3D" unique_id=499784791]
+shape = SubResource("BoxShape3D_ey6ct")
+
+[node name="[Interactable] Checkpoint_SV" parent="." unique_id=1461101768 instance=ExtResource("15_jub88")]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -112.675, 1, -13.5034)
+
+[node name="2DSectionLayer1" type="Node3D" parent="." unique_id=986782696]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -44.4874, 0, -192.756)
+
+[node name="[Trigger] 2D Path Trigger" parent="2DSectionLayer1" unique_id=1970271607 instance=ExtResource("78_02h0o")]
+curve = SubResource("Curve3D_kb3vi")
+
+[node name="CollisionShape3D_2D" parent="2DSectionLayer1/[Trigger] 2D Path Trigger/Area3D_2D" parent_id_path=PackedInt32Array(1970271607, 2006543561) index="0" unique_id=841436180]
+disabled = true
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="2DSectionLayer1/[Trigger] 2D Path Trigger/Area3D_2D" parent_id_path=PackedInt32Array(1970271607, 2006543561) index="1" unique_id=604952174]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 56.659, -126.511)
+shape = SubResource("BoxShape3D_20mfj")
+
+[node name="Area3D_Camera" parent="2DSectionLayer1/[Trigger] 2D Path Trigger" index="2" unique_id=136250708]
+Params = SubResource("Resource_5wlh0")
+EnterLerpTime = 0.5
+ExitLerpTime = 0.5
+
+[node name="CollisionShape3D_Camera" parent="2DSectionLayer1/[Trigger] 2D Path Trigger/Area3D_Camera" index="0" unique_id=1886216522]
+shape = SubResource("ConcavePolygonShape3D_64d0u")
+disabled = true
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="2DSectionLayer1/[Trigger] 2D Path Trigger/Area3D_Camera" index="1" unique_id=1684018541]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 56.659, -104.388)
+shape = SubResource("BoxShape3D_20mfj")
+
+[node name="CollissionShapeFromCSGPolygon2D" parent="2DSectionLayer1/[Trigger] 2D Path Trigger" index="3" unique_id=452271227]
+process_mode = 4
+
+[node name="CollissionShapeFromCSGPolygonCamera" parent="2DSectionLayer1/[Trigger] 2D Path Trigger" index="4" unique_id=687910539]
+process_mode = 4
+
+[node name="2DSectionLayer2" type="Node3D" parent="." unique_id=1665744693]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.7998, 48.71, -219.978)
+
+[node name="[Trigger] 2D Path Trigger" parent="2DSectionLayer2" unique_id=936146362 instance=ExtResource("78_02h0o")]
+curve = SubResource("Curve3D_kb3vi")
+
+[node name="Area3D_2D" parent="2DSectionLayer2/[Trigger] 2D Path Trigger" index="1" unique_id=2006543561]
+ReleaseOnExit = false
+
+[node name="CollisionShape3D_2D" parent="2DSectionLayer2/[Trigger] 2D Path Trigger/Area3D_2D" index="0" unique_id=841436180]
+disabled = true
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="2DSectionLayer2/[Trigger] 2D Path Trigger/Area3D_2D" index="1" unique_id=1761906496]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 18.0778, -269.592)
+shape = SubResource("BoxShape3D_8688x")
+
+[node name="Area3D_Camera" parent="2DSectionLayer2/[Trigger] 2D Path Trigger" index="2" unique_id=136250708]
+Params = SubResource("Resource_tghum")
+CameraDistance = 10.0
+FreeOnExit = false
+EnterLerpTime = 0.5
+
+[node name="CollisionShape3D_Camera" parent="2DSectionLayer2/[Trigger] 2D Path Trigger/Area3D_Camera" index="0" unique_id=1886216522]
+shape = SubResource("ConcavePolygonShape3D_5e5fr")
+disabled = true
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="2DSectionLayer2/[Trigger] 2D Path Trigger/Area3D_Camera" index="1" unique_id=1724310487]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 30.1328, -269.592)
+shape = SubResource("BoxShape3D_8688x")
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="2DSectionLayer2/[Trigger] 2D Path Trigger/Area3D_Camera" index="2" unique_id=1492023591]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -2.86724, -343.592)
+shape = SubResource("BoxShape3D_djmio")
+
+[node name="CollissionShapeFromCSGPolygon2D" parent="2DSectionLayer2/[Trigger] 2D Path Trigger" index="3" unique_id=452271227]
+process_mode = 4
+
+[node name="CollissionShapeFromCSGPolygonCamera" parent="2DSectionLayer2/[Trigger] 2D Path Trigger" index="4" unique_id=687910539]
+process_mode = 4
+
+[node name="[Trigger] No2DTrigger" parent="." unique_id=721809939 instance=ExtResource("62_t3gf5")]
+transform = Transform3D(10, 0, 0, 0, 10, 0, 0, 0, 10, -42.8339, 10.1722, -203.727)
+
+[node name="[Trigger] Point Camera Trigger" parent="." unique_id=649318972 instance=ExtResource("62_a2uub")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -19.9257, 89.7964, -243.031)
+Params = SubResource("Resource_gd8hc")
+EnterLerpTime = 0.5
+ExitLerpTime = 0.5
+
+[node name="CollisionShape3D" parent="[Trigger] Point Camera Trigger" index="0" unique_id=587286632]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, 4)
+shape = SubResource("BoxShape3D_ocmjp")
+debug_color = Color(0.95639, 0, 0.538182, 0.42)
+
+[node name="CameraPoint" type="Node3D" parent="[Trigger] Point Camera Trigger" unique_id=140636565]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 37.6046, -4.14893, 2.71365)
+
+[node name="[Enemy] Motobug3" parent="." unique_id=1144652020 instance=ExtResource("61_1xi0r")]
+transform = Transform3D(1, 0, 1.74846e-07, 0, 1, 0, -1.74846e-07, 0, 1, -11.5135, 62.0044, -851.086)
+
+[node name="[Interactable] Transport Pipe2" parent="." unique_id=820528900 instance=ExtResource("65_w4d8e")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -135.62, 7.59236, -4.77491)
+
+[node name="TestStageTutorial1_Welcome" parent="." unique_id=550021281 instance=ExtResource("59_nd2cx")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 88.3829, 3.25576, 53.4024)
+
+[node name="Label3D" parent="TestStageTutorial1_Welcome" index="0" unique_id=284775712]
+text = "Welcome to Badnik Framework test level!
+It was created mostly for testing, but it's also
+a showcase of its features.
+
+Get closer to display controls. It will
+autodetect your input scheme and joypad
+type (if applicable)"
+
+[node name="[Trigger] InputPrompt" parent="TestStageTutorial1_Welcome" unique_id=1109489813 instance=ExtResource("68_gljh1")]
+Text = "[input]actionjump[/input] - jump
+[input]actiondash[/input] - boost
+[input]actionhoming[/input] - attack
+[input]actionroll[/input] - rolling"
+
+[node name="CollisionShape3D" parent="TestStageTutorial1_Welcome/[Trigger] InputPrompt/Area3D" parent_id_path=PackedInt32Array(1109489813, 2062885543) index="0" unique_id=822586964]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 5.05377)
+shape = SubResource("BoxShape3D_1rfqw")
+
+[node name="TestStageTutorial3_Pulley" parent="." unique_id=1554139744 instance=ExtResource("59_nd2cx")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -190.594, 4.30542, -82.3102)
+
+[node name="Label3D" parent="TestStageTutorial3_Pulley" index="0" unique_id=284775712]
+text = "Pulleys follow the path defined
+by its Path3D. The line will be generated
+automatically.
+
+This pulley leads to fight against
+Dr. Eggman himself!
+"
+
+[node name="TestStageTutorial2_Enemies" parent="." unique_id=980460116 instance=ExtResource("59_nd2cx")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -230.967, 4, 179.584)
+
+[node name="Label3D" parent="TestStageTutorial2_Enemies" index="0" unique_id=284775712]
+text = "This is a tower with badniks.
+They are automatically culled at certain
+distance so you can just easily place
+them onto level without worrying about
+optimization too much. Same goes for
+items like rings."
+
+[node name="TestStageTutorial4_EndGoal" parent="." unique_id=424910449 instance=ExtResource("59_nd2cx")]
+transform = Transform3D(-1, 0, -5.96046e-08, 0, 1, 0, 5.96046e-08, 0, -1, -73.0123, 5.20323, -47.92)
+
+[node name="Label3D" parent="TestStageTutorial4_EndGoal" index="0" unique_id=284775712]
+text = "It all ends here. The end of the stage.
+Ranks are controlled through StageData,
+but each goal ring can lead into different
+stage.
+
+Ensure that StageData matches with
+stage data in the main menu!"
+
+[node name="TestStageTutorial5_SpecialStage" parent="." unique_id=2029008334 instance=ExtResource("59_nd2cx")]
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, -44.3965, 4.07733, -27.4821)
+
+[node name="Label3D" parent="TestStageTutorial5_SpecialStage" index="0" unique_id=284775712]
+text = "This is an entrance to the Special Stage.
+You can collect Chaos Emeralds there.
+Or 50 rings if you have them all.
+
+If you have them all,
+you can turn into Super Sonic!"
+
+[node name="TestStageTutorial6_MovingPlatform" parent="." unique_id=693828336 instance=ExtResource("59_nd2cx")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 42.9392, 4, -6.20334)
+
+[node name="Label3D" parent="TestStageTutorial6_MovingPlatform" index="0" unique_id=284775712]
+text = "Moving platform. It moves along Path3D.
+
+If you can't see it, look up."
+
+[node name="TestStageTutorial7_Automation" parent="." unique_id=378502173 instance=ExtResource("59_nd2cx")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 117.163, 4, -2.59974)
+
+[node name="Label3D" parent="TestStageTutorial7_Automation" index="0" unique_id=284775712]
+text = "This is an automated path. Its triggers are
+hidden in dash pads. Touch them to run
+along Path3D.
+If you lock input through dash panel,
+player won't have to press anything.
+Otherwise it will just limit the path of
+movement.
+
+Additionally, it's an example of how you
+can make roads using CSGPolygon3D."
+
+[node name="TestStageTutorial8_LostWorldGravity" parent="." unique_id=357065219 instance=ExtResource("59_nd2cx")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 197.349, 4.43417, 135.633)
+
+[node name="Label3D" parent="TestStageTutorial8_LostWorldGravity" index="0" unique_id=284775712]
+text = "This spring leads to place with Lost World gravity.
+Path3D controls the direction of gravity, so
+your gravity sasuages can be of any shape.
+
+Everything in Badnik Framework has
+been designed with any gravity in mind."
+
+[node name="TestStageTutorial9_FlatGround" parent="." unique_id=521854428 instance=ExtResource("59_nd2cx")]
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 27.793, 5, 201.79)
+
+[node name="Label3D" parent="TestStageTutorial9_FlatGround" index="0" unique_id=284775712]
+text = "This is flat terrain. It may not look like it's flat,
+but it's flat. Walk on it to sense its flatness.
+
+You can make a collider \"flat\" by setting it's
+layer to FlatGround."
+
+[node name="TestStageTutorial10_NoWalkGround" parent="." unique_id=1348230304 instance=ExtResource("59_nd2cx")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -59.9325, 5, 210.901)
+
+[node name="Label3D" parent="TestStageTutorial10_NoWalkGround" index="0" unique_id=284775712]
+text = "This is an unwalkable collider. You can use it
+to ensure player will never walk on it and will just
+slide off. It's good for invisible walls.
+
+It's controlled by layer NoWalkGround in the
+collider."
+
+[node name="TestStageTutorial11_2D" parent="." unique_id=280738318 instance=ExtResource("59_nd2cx")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -28.6829, 8.66174, -223.116)
+
+[node name="Label3D" parent="TestStageTutorial11_2D" index="0" unique_id=284775712]
+text = "2D section ahead!
+It's compromised of few elements:
+- Curve to define walking plane
+- Camera trigger
+- Trigger to set movement"
+
+[node name="TestStageTutorial12_EnemiesIn2D" parent="." unique_id=1680831083 instance=ExtResource("59_nd2cx")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -4.44865, 67.5826, -286.978)
+
+[node name="Label3D" parent="TestStageTutorial12_EnemiesIn2D" index="0" unique_id=284775712]
+text = "Enemies are affected by gravity triggers
+and 2D triggers just like player.
+
+There's no need to do anything special
+in order for them to work in 2D."
+
+[node name="TestStageTutorial13_Water" parent="." unique_id=100219904 instance=ExtResource("59_nd2cx")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 234.567, 24, -373.997)
+
+[node name="Label3D" parent="TestStageTutorial13_Water" index="0" unique_id=284775712]
+text = "You can run on water if you run into
+it fast enough and with proper angle.
+Or you can just drown."
+
+[node name="TestStageTutorial14_Switch2DLayers" parent="." unique_id=1051972616 instance=ExtResource("59_nd2cx")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0.279301, 92.6185, -246.999)
+
+[node name="Label3D" parent="TestStageTutorial14_Switch2DLayers" index="0" unique_id=284775712]
+text = "You can change 2D layers by
+placing a 2D section trigger.
+
+Grind rails and homing attacks ignore 2D.
+It's not a bug, it's a design decision
+to make background bosses easier to make."
+
+[node name="TestStageTutorial15_Curved2D" parent="." unique_id=427606544 instance=ExtResource("59_nd2cx")]
+transform = Transform3D(0, 0, 1, 0, 1, 0, -1, 0, 0, 21.0582, 62.3257, -888.496)
+
+[node name="Label3D" parent="TestStageTutorial15_Curved2D" index="0" unique_id=284775712]
+text = "2D sections can use 3D like
+in Sonic Generations.
+If your Path3D turns, the 2D section
+will turn too."
+
+[node name="TestStageTutorial16_MaxSpeed" parent="." unique_id=1315748364 instance=ExtResource("59_nd2cx")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 192.774, 4, 333.637)
+
+[node name="Label3D" parent="TestStageTutorial16_MaxSpeed" index="0" unique_id=284775712]
+text = "Above is the test of max speed.
+
+Don't forget to roll!"
+
+[node name="TestStageTutorial17_ChaosEmeralds" parent="." unique_id=1504414128 instance=ExtResource("59_nd2cx")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -23.1695, 49.2724, -167.904)
+
+[node name="Label3D" parent="TestStageTutorial17_ChaosEmeralds" index="0" unique_id=284775712]
+text = "Chaos Emeralds can be collected as items
+or through special stages.
+
+Once you have them all, Sonic and Shadow
+can enter Super form."
+
+[node name="TestStageTutorial18_GrindRails" parent="." unique_id=156109880 instance=ExtResource("59_nd2cx")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 62.457, 28.6438, -13.6056)
+
+[node name="Label3D" parent="TestStageTutorial18_GrindRails" index="0" unique_id=284775712]
+text = "Grind rails. You can swap rails, crouch by
+pressing roll button and dash.
+
+Grind rails are defined by Path3D. Mesh
+will be generated automatically."
+
+[node name="TestStageTutorial19_Boss" parent="." unique_id=223211919 instance=ExtResource("59_nd2cx")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -141.62, 9.5, -139.248)
+
+[node name="Label3D" parent="TestStageTutorial19_Boss" index="0" unique_id=284775712]
+text = "This is a basic boss fight
+with simple behaviors
+and support for multiple phases.
+Keep in mind that \"waiting\" and \"death\"
+is also a phase."
+
+[node name="TestStageTutorial20_Gimmicks" parent="." unique_id=1973351039 instance=ExtResource("59_nd2cx")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 90.3599, 4, 12.1781)
+
+[node name="Label3D" parent="TestStageTutorial20_Gimmicks" index="0" unique_id=284775712]
+text = "Basic gimmicks and obstacles
+are here."
+
+[node name="TestStageTutorial21_Pipe" parent="." unique_id=1867619767 instance=ExtResource("59_nd2cx")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -139.553, 4.92693, -10.3222)
+
+[node name="Label3D" parent="TestStageTutorial21_Pipe" index="0" unique_id=284775712]
+text = "It's a pipe that is basically
+an invisible pulley.
+
+In case you wanted to port Chemical Plant."
+
+[node name="[Interactable] Checkpoint_3D" parent="." unique_id=451068934 instance=ExtResource("60_82c8v")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -182.217, 1, 0)
+
+[node name="[Interactable] Checkpoint_3D2" parent="." unique_id=268385214 instance=ExtResource("60_82c8v")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -175.79, 1, 12.2467)
+
+[node name="[Interactable] Spring_Red2" parent="." unique_id=534760685 instance=ExtResource("2_s6x8v")]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 379.997, 3.80728, -618.737)
+MinVelocity = 500.0
+MaxVelocity = 500.0
+
+[node name="[Interactable] Skydiving section" parent="." unique_id=1938102064 instance=ExtResource("62_g3e0e")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 379.997, 158.771, -618.737)
+SlowSkydiveSpeed = 1.0
+
+[node name="CollisionShape3D" parent="[Interactable] Skydiving section" index="0" unique_id=1690313467]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 56.4281, 0)
+shape = SubResource("CylinderShape3D_8doys")
+
+[node name="[Interactable] Balloon" parent="." unique_id=992187001 instance=ExtResource("64_th5q8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -58.077, 12.2104, -95.7176)
+
+[node name="[Interactable] Balloon2" parent="." unique_id=1606764600 instance=ExtResource("64_th5q8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -68.6856, 12.2104, -95.7176)
+
+[node name="[Interactable] Balloon3" parent="." unique_id=344715785 instance=ExtResource("64_th5q8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -77.4859, 12.2104, -95.7176)
+
+[node name="[Interactable] Balloon4" parent="." unique_id=940189113 instance=ExtResource("64_th5q8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -58.077, 12.2104, -88.6079)
+
+[node name="[Interactable] Balloon5" parent="." unique_id=1589561705 instance=ExtResource("64_th5q8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -68.6856, 12.2104, -88.6079)
+
+[node name="[Interactable] Balloon6" parent="." unique_id=1982452769 instance=ExtResource("64_th5q8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -77.4859, 12.2104, -88.6079)
+
+[node name="[Interactable] Balloon7" parent="." unique_id=1784459393 instance=ExtResource("64_th5q8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -58.077, 12.2104, -81.688)
+
+[node name="[Interactable] Balloon8" parent="." unique_id=1539285889 instance=ExtResource("64_th5q8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -68.6856, 12.2104, -81.688)
+
+[node name="[Interactable] Balloon9" parent="." unique_id=1436577440 instance=ExtResource("64_th5q8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -77.4859, 12.2104, -81.688)
+
+[node name="[Interactable] Pole v2" parent="." unique_id=393986395 instance=ExtResource("66_ri0yi")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 74.458, 6.7299, -27.6033)
+
+[node name="[Item] Water Bubble" parent="." unique_id=2033395930 instance=ExtResource("67_msila")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 346.715, 14.1871, -394.466)
+
+[node name="[Interactable] Water Bubble Spawner" parent="." unique_id=236447628 instance=ExtResource("81_dj2s0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 362.715, 10.1871, -394.466)
+
+[node name="[Item] Water Bubble2" parent="." unique_id=1452367066 instance=ExtResource("67_msila")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 377.57, 14.1871, -394.466)
+
+[node name="[Trigger] No2DTrigger2" parent="." unique_id=1587785707 instance=ExtResource("62_t3gf5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.89289, 0.999999, -300.474)
+
+[node name="CollisionShape3D" parent="[Trigger] No2DTrigger2/[Trigger] NoSplineTrigger" parent_id_path=PackedInt32Array(1587785707, 2023145832) index="0" unique_id=1859701545]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -26.2679, 0, -258.555)
+shape = SubResource("BoxShape3D_tadk0")
+debug_color = Color(0.95862, 0, 0.526142, 0.42)
+
+[node name="CollisionShape3D" parent="[Trigger] No2DTrigger2/Camera3DTrigger" parent_id_path=PackedInt32Array(1587785707, 1422507286) index="0" unique_id=571122358]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -26.2679, 0, -258.555)
+shape = SubResource("BoxShape3D_tadk0")
+debug_color = Color(0.95862, 0, 0.526142, 0.42)
+
+[node name="SpringChain" type="Path3D" parent="." unique_id=608935065]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 39.5632, 1, -199.108)
+curve = SubResource("Curve3D_djmio")
+
+[node name="[Interactable] Spring_Red" parent="SpringChain" unique_id=528614348 instance=ExtResource("2_s6x8v")]
+transform = Transform3D(-0.684729, 0.413151, 0.600378, 0, 0.823791, -0.566893, -0.728798, -0.388168, -0.564073, 0, 0, 0)
+MinVelocity = 100.0
+MaxVelocity = 100.0
+KeepVelocityDistance = 71.241
+Snap = true
+
+[node name="@Node3D@40748" parent="SpringChain" unique_id=1372207943 instance=ExtResource("2_s6x8v")]
+transform = Transform3D(0.932156, -0.1054, -0.346375, 0, 0.956688, -0.291115, 0.362056, 0.271365, 0.891783, -42.7715, 40.3861, 40.1852)
+MinVelocity = 100.0
+MaxVelocity = 100.0
+KeepVelocityDistance = 58.681
+Snap = true
+
+[node name="@Node3D@40749" parent="SpringChain" unique_id=892477043 instance=ExtResource("2_s6x8v")]
+transform = Transform3D(0.290654, -0.0445611, -0.95579, 0, 0.998915, -0.0465717, 0.956828, 0.0135363, 0.290339, -22.4459, 57.469, -12.1455)
+MinVelocity = 100.0
+MaxVelocity = 100.0
+KeepVelocityDistance = 42.5425
+Snap = true
+
+[node name="@Node3D@40750" parent="SpringChain" unique_id=1015773299 instance=ExtResource("2_s6x8v")]
+transform = Transform3D(0.980644, 0.175648, 0.0865216, 0, 0.441883, -0.897073, -0.195802, 0.879708, 0.43333, 18.2157, 59.4502, -24.4973)
+MinVelocity = 100.0
+MaxVelocity = 100.0
+KeepVelocityDistance = 50.5526
+Snap = true
+
+[node name="TestStageTutorial22_SpringChain" parent="." unique_id=1456616808 instance=ExtResource("59_nd2cx")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 53.2396, 3.99354, -199.067)
+
+[node name="Label3D" parent="TestStageTutorial22_SpringChain" index="0" unique_id=284775712]
+text = "This spring is the start of the spring chain.
+It's pointed towards another spring.
+
+It was generated using Path3D and then
+selecting
+\"BF Curve Tools/Make spring chain\"
+which appears after selecting a curve.
+Each point will turn into spring
+except for the last which will be the point where
+velocity unlocks."
+
+[node name="[Interactable] Spring_Red5" parent="." unique_id=1383501731 instance=ExtResource("2_s6x8v")]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, -155.004, 1.13147, -930.745)
+MinVelocity = 200.0
+MaxVelocity = 200.0
+
+[node name="[Trigger] Camera Trigger - tunnel" parent="." unique_id=1899514665 instance=ExtResource("62_a2uub")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -197.079, 0.5, 314.804)
+Params = SubResource("Resource_utfrw")
+FreeOnExit = true
+
+[node name="CollisionShape3D" parent="[Trigger] Camera Trigger - tunnel" index="0" unique_id=587286632]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 51.6177, 2.41992, -11.1104)
+shape = SubResource("BoxShape3D_hllei")
+
+[node name="Path3D" type="Path3D" parent="[Trigger] Camera Trigger - tunnel" unique_id=1367387241]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.312491, 0)
+curve = SubResource("Curve3D_oxg3e")
+
+[node name="[Item] Skateboard Blue Star" parent="." unique_id=152975109 instance=ExtResource("66_i705k")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 697.564, 1.5, -8.60947)
+
+[node name="[Enemy] Clucker" parent="." unique_id=417196383 instance=ExtResource("84_dj2s0")]
+transform = Transform3D(1, 0, 1.74846e-07, 0, 1, 0, -1.74846e-07, 0, 1, -293.95993, 328.15018, 59.908672)
+
+[node name="[Enemy] Clucker2" parent="." unique_id=1604477606 instance=ExtResource("84_dj2s0")]
+transform = Transform3D(1, 0, 1.74846e-07, 0, 1, 0, -1.74846e-07, 0, 1, -276.95993, 328.15018, 59.908672)
+
+[node name="[Enemy] Clucker3" parent="." unique_id=1845599097 instance=ExtResource("84_dj2s0")]
+transform = Transform3D(1, 0, 1.74846e-07, 0, 1, 0, -1.74846e-07, 0, 1, -260.95993, 328.15018, 59.908672)
+
+[node name="[Enemy] Clucker4" parent="." unique_id=809608943 instance=ExtResource("84_dj2s0")]
+transform = Transform3D(1, 0, 1.74846e-07, 0, 1, 0, -1.74846e-07, 0, 1, -245.95993, 328.15018, 59.908672)
+
+[node name="[Enemy] Clucker5" parent="." unique_id=2013166113 instance=ExtResource("84_dj2s0")]
+transform = Transform3D(1, 0, 1.74846e-07, 0, 1, 0, -1.74846e-07, 0, 1, -252.95993, 328.15018, 49.908672)
+
+[node name="[Enemy] Clucker6" parent="." unique_id=1972836338 instance=ExtResource("84_dj2s0")]
+transform = Transform3D(1, 0, 1.74846e-07, 0, 1, 0, -1.74846e-07, 0, 1, -268.95993, 328.15018, 49.908672)
+
+[node name="[Enemy] Clucker7" parent="." unique_id=1190448739 instance=ExtResource("84_dj2s0")]
+transform = Transform3D(1, 0, 1.74846e-07, 0, 1, 0, -1.74846e-07, 0, 1, -287.95993, 328.15018, 48.908672)
+
+[node name="[Enemy] Clucker8" parent="." unique_id=1259942375 instance=ExtResource("84_dj2s0")]
+transform = Transform3D(1, 0, 1.74846e-07, 0, 1, 0, -1.74846e-07, 0, 1, -279.95993, 328.15018, 39.908672)
+
+[node name="[Enemy] Clucker9" parent="." unique_id=1589002380 instance=ExtResource("84_dj2s0")]
+transform = Transform3D(1, 0, 1.74846e-07, 0, 1, 0, -1.74846e-07, 0, 1, -259.95993, 328.15018, 38.908672)
+
+[node name="[Enemy] Clucker10" parent="." unique_id=640818534 instance=ExtResource("84_dj2s0")]
+transform = Transform3D(1, 0, 1.74846e-07, 0, 1, 0, -1.74846e-07, 0, 1, -269.95993, 328.15018, 26.908672)
+
+[node name="[Enemy] Clucker11" parent="." unique_id=1205981354 instance=ExtResource("84_dj2s0")]
+transform = Transform3D(1, 0, 1.74846e-07, 0, 1, 0, -1.74846e-07, 0, 1, -284.95993, 328.15018, 66.908676)
+
+[node name="[Enemy] Clucker12" parent="." unique_id=980584016 instance=ExtResource("84_dj2s0")]
+transform = Transform3D(1, 0, 1.74846e-07, 0, 1, 0, -1.74846e-07, 0, 1, -269.95993, 328.15018, 66.908676)
+
+[node name="[Enemy] Clucker13" parent="." unique_id=74582857 instance=ExtResource("84_dj2s0")]
+transform = Transform3D(1, 0, 1.74846e-07, 0, 1, 0, -1.74846e-07, 0, 1, -253.95993, 328.15018, 65.908676)
+
+[node name="[Enemy] Clucker14" parent="." unique_id=255643889 instance=ExtResource("84_dj2s0")]
+transform = Transform3D(1, 0, 1.74846e-07, 0, 1, 0, -1.74846e-07, 0, 1, -265.95993, 328.15018, 73.908676)
+
+[node name="[Enemy] Clucker15" parent="." unique_id=1352825324 instance=ExtResource("84_dj2s0")]
+transform = Transform3D(1, 0, 1.74846e-07, 0, 1, 0, -1.74846e-07, 0, 1, -277.95993, 328.15018, 72.908676)
+
+[node name="[Enemy] Clucker16" parent="." unique_id=619741907 instance=ExtResource("84_dj2s0")]
+transform = Transform3D(1, 0, 1.74846e-07, 0, 1, 0, -1.74846e-07, 0, 1, -271.95993, 328.15018, 79.908676)
+
+[node name="[Enemy] Egg Chaser" parent="." unique_id=864214425 instance=ExtResource("88_oenwu")]
+transform = Transform3D(-1, 0, -8.742322e-08, 0, 1, 0, 8.742322e-08, 0, -1, -269.72687, 396.89288, 55.25659)
+
+[node name="Laser_L" parent="[Enemy] Egg Chaser" index="13" unique_id=608571677]
+transform = Transform3D(-9.40312e-06, 0.009999969, -2.425492e-05, 8.951378e-06, 2.4262701e-05, 0.009999969, 0.009999995, 9.3807885e-06, -8.974102e-06, -268.93008, 398.2389, 55.588352)
+
+[node name="BeamMesh" parent="[Enemy] Egg Chaser/Laser_L/[Interactable] Laser" parent_id_path=PackedInt32Array(864214425, 2019842755) index="0" unique_id=1006862339]
+mesh = SubResource("CylinderMesh_vyr7x")
+
+[node name="BeamMesh2" parent="[Enemy] Egg Chaser/Laser_L/[Interactable] Laser" parent_id_path=PackedInt32Array(864214425, 2019842755) index="1" unique_id=909123986]
+mesh = SubResource("CylinderMesh_5slkl")
+
+[node name="CollisionShape3D" parent="[Enemy] Egg Chaser/Laser_L/[Interactable] Laser/Hitbox" parent_id_path=PackedInt32Array(864214425, 2019842755, 1065576655) index="0" unique_id=939656509]
+shape = SubResource("CylinderShape3D_t4cnx")
+
+[node name="Laser_R" parent="[Enemy] Egg Chaser" index="14" unique_id=110019703]
+transform = Transform3D(-9.365357e-06, -0.00999999, -6.8661557e-06, 8.9537625e-06, -6.8742033e-06, 0.009999994, -0.00999999, 9.358738e-06, 8.959824e-06, 0.79678345, 1.3460083, -0.33166122)
+
+[node name="BeamMesh" parent="[Enemy] Egg Chaser/Laser_R/[Interactable] Laser" parent_id_path=PackedInt32Array(864214425, 1140186521) index="0" unique_id=1006862339]
+mesh = SubResource("CylinderMesh_kgyni")
+
+[node name="BeamMesh2" parent="[Enemy] Egg Chaser/Laser_R/[Interactable] Laser" parent_id_path=PackedInt32Array(864214425, 1140186521) index="1" unique_id=909123986]
+mesh = SubResource("CylinderMesh_ibbm4")
+
+[node name="CollisionShape3D" parent="[Enemy] Egg Chaser/Laser_R/[Interactable] Laser/Hitbox" parent_id_path=PackedInt32Array(864214425, 1140186521, 1065576655) index="0" unique_id=939656509]
+shape = SubResource("CylinderShape3D_rugsk")
+
+[node name="PlayerDetector" type="Area3D" parent="[Enemy] Egg Chaser" unique_id=1997906948]
+collision_layer = 256
+collision_mask = 2
+script = ExtResource("89_xkren")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="[Enemy] Egg Chaser/PlayerDetector" unique_id=1346788412]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -9)
+shape = SubResource("BoxShape3D_sajgr")
+
+[node name="[Interactable] Portal pair" parent="." unique_id=46828803 instance=ExtResource("83_utfrw")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 194, 1.0000001, 190)
+
+[node name="[globalitem] Heart" parent="." unique_id=342757251 instance=ExtResource("92_mwder")]
+transform = Transform3D(-1, -8.742278e-08, 0, 8.742278e-08, -1, 0, 0, 0, 1, 200.09805, 149.74477, -280.9419)
+
+[node name="[globalitem] Heart2" parent="." unique_id=1499934975 instance=ExtResource("92_mwder")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 296.92688, 5911.991, 392.56702)
+
+[node name="[globalitem] Heart3" parent="." unique_id=1344406638 instance=ExtResource("92_mwder")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 226, 20.582426, -850)
+
+[node name="[globalitem] Heart4" parent="." unique_id=1409084088 instance=ExtResource("92_mwder")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 363.2518, 10.540012, -397.51443)
+
+[node name="[globalitem] Heart5" parent="." unique_id=1735118178 instance=ExtResource("92_mwder")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -269.47565, 448.4999, 56.167953)
+
+[node name="[globalitem] Heart6" parent="." unique_id=202377625 instance=ExtResource("92_mwder")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -179.23254, 8.000002, -150.70665)
+
+[node name="[globalitem] Heart7" parent="." unique_id=472159437 instance=ExtResource("92_mwder")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 376.6163, 149.02852, -638.1164)
+
+[node name="[globalitem] Heart8" parent="." unique_id=267060820 instance=ExtResource("92_mwder")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 689.22754, 3.7516823, 119.97705)
+
+[node name="[globalitem] Heart9" parent="." unique_id=391106217 instance=ExtResource("92_mwder")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 62.32127, 57.651356, -201.96474)
+
+[node name="[globalitem] Heart10" parent="." unique_id=1583164779 instance=ExtResource("92_mwder")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 520.22034, 10.640728, 108.59291)
+
+[node name="[Trigger] SkateRemover" parent="." unique_id=833825359 instance=ExtResource("94_vgpqo")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 645.9545, 1, -6.944229)
+
+[node name="CollisionShape3D" parent="[Trigger] SkateRemover" index="0" unique_id=1182135870]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
+shape = SubResource("BoxShape3D_nsxh1")
+
+[node name="Label3D" type="Label3D" parent="[Trigger] SkateRemover" unique_id=1199554101]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 0, 10.343618, 0)
+text = "BOARD REMOVER TRIGGER"
+font = ExtResource("95_mgq4a")
+font_size = 150
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="[Trigger] SkateRemover" unique_id=380351247]
+mesh = SubResource("BoxMesh_sajgr")
+
+[node name="[Interactable] Item Box 50" parent="." unique_id=604610917 instance=ExtResource("64_tspyj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -38.534065, 45.243774, -155.11081)
+
+[node name="ItemBoxBehavior" parent="[Interactable] Item Box 50" index="1" unique_id=1869190678]
+ItemsCount = 50
+
+[connection signal="OnAfterSpawningDone" from="PlayersManager" to="PlayersManager/ExtraSettingsApplicator" method="ApplySettings"]
+[connection signal="body_entered" from="Stage/Items/[Trigger] LostWorldGravityTriggerTowards2" to="Stage/Items/[Trigger] LostWorldGravityTriggerTowards2" method="OnAreaEnter"]
+[connection signal="body_exited" from="Stage/Items/[Trigger] LostWorldGravityTriggerTowards2" to="Stage/Items/[Trigger] LostWorldGravityTriggerTowards2" method="OnAreaExit"]
+[connection signal="body_entered" from="Stage/Items/[Trigger] LostWorldGravityTriggerAgainst2" to="Stage/Items/[Trigger] LostWorldGravityTriggerAgainst2" method="OnAreaEnter"]
+[connection signal="body_exited" from="Stage/Items/[Trigger] LostWorldGravityTriggerAgainst2" to="Stage/Items/[Trigger] LostWorldGravityTriggerAgainst2" method="OnAreaExit"]
+[connection signal="body_entered" from="Stage/Items/[Trigger] 2DSplineTrigger" to="Stage/Items/[Trigger] 2DSplineTrigger" method="OnBodyEnter"]
+[connection signal="body_entered" from="Stage/Items/[Trigger] 2DSplineTrigger2" to="Stage/Items/[Trigger] 2DSplineTrigger2" method="OnBodyEnter"]
+[connection signal="body_entered" from="Stage/Items/[Trigger] 2DSplineTrigger3" to="Stage/Items/[Trigger] 2DSplineTrigger3" method="OnBodyEnter"]
+[connection signal="body_entered" from="Stage/Items/[Trigger]2DSplineCameraTrigger" to="Stage/Items/[Trigger]2DSplineCameraTrigger" method="OnBodyEnter"]
+[connection signal="body_entered" from="Stage/AutorunRoad/PathFollow3D/Area3D" to="Stage/AutorunRoad/PathFollow3D/Area3D" method="OnBodyEnter"]
+[connection signal="body_entered" from="Stage/AutorunRoad/PathFollow3D2/Area3D" to="Stage/AutorunRoad/PathFollow3D2/Area3D" method="OnBodyEnter"]
+[connection signal="body_entered" from="Stage/AutorunRoad/PathFollow3D3/Area3D" to="Stage/AutorunRoad/PathFollow3D3/Area3D" method="OnBodyEnter"]
+[connection signal="body_entered" from="Stage/AutorunRoad/PathFollow3D4/Area3D" to="Stage/AutorunRoad/PathFollow3D4/Area3D" method="OnBodyEnter"]
+[connection signal="body_entered" from="Stage/AutorunRoad/PathFollow3D5/Area3D" to="Stage/AutorunRoad/PathFollow3D5/Area3D" method="OnBodyEnter"]
+[connection signal="body_entered" from="[Interactable] PulleyPath2/PathFollow3D/[Interactable] Pulley/Area3D" to="[Interactable] PulleyPath2/PathFollow3D/[Interactable] Pulley" method="OnCollissionEnter"]
+[connection signal="OnPlayerEnter" from="[Enemy] Egg Chaser/PlayerDetector" to="[Enemy] Egg Chaser/Behaviors/Phase0Alive/EggChaserBehavior" method="Fire"]
+
+[editable path="MapSystem"]
+[editable path="Stage/TestLevelFloor"]
+[editable path="Stage/TestLevelFloor/ChasePlatform/[Interactable] ChaseSection"]
+[editable path="Stage/TestLevelFloor/ChasePlatform/[Interactable] ChaseSection/ChasePath/ChaseStartFollow/ChaseStartTrigger/[Trigger] Camera Trigger"]
+[editable path="Stage/AutorunRoad/PathFollow3D3/[Trigger] Camera Trigger"]
+[editable path="Stage/AutorunRoad/PathFollow3D4/[Trigger] Camera Trigger"]
+[editable path="Stage/AutorunRoad/PathFollow3D5/[Trigger] Camera Trigger"]
+[editable path="Stage/AutorunRoad/[Trigger] Camera Trigger Free"]
+[editable path="Stage/AutorunRoad/[Trigger] Camera Trigger Free2"]
+[editable path="[Interactable] GrindRail/PathFollow3D3/[Trigger] InputPromptCenter_quickstep_r"]
+[editable path="[Interactable] GrindRail/PathFollow3D4/[Trigger] InputPromptCenter_quickstep_r"]
+[editable path="[Interactable] GrindRail2"]
+[editable path="laserturret2"]
+[editable path="[Interactable] GrindRail3"]
+[editable path="[Interactable] GrindRail3/[Trigger] No2DTrigger"]
+[editable path="[Interactable] Item Box 10 Rings2"]
+[editable path="[Interactable] Item Box 10 Rings2/Offset/item_box"]
+[editable path="2DSectionLayer1/[Trigger] 2D Path Trigger"]
+[editable path="2DSectionLayer2/[Trigger] 2D Path Trigger"]
+[editable path="[Trigger] Point Camera Trigger"]
+[editable path="TestStageTutorial1_Welcome"]
+[editable path="TestStageTutorial1_Welcome/[Trigger] InputPrompt"]
+[editable path="TestStageTutorial3_Pulley"]
+[editable path="TestStageTutorial2_Enemies"]
+[editable path="TestStageTutorial4_EndGoal"]
+[editable path="TestStageTutorial5_SpecialStage"]
+[editable path="TestStageTutorial6_MovingPlatform"]
+[editable path="TestStageTutorial7_Automation"]
+[editable path="TestStageTutorial8_LostWorldGravity"]
+[editable path="TestStageTutorial9_FlatGround"]
+[editable path="TestStageTutorial10_NoWalkGround"]
+[editable path="TestStageTutorial11_2D"]
+[editable path="TestStageTutorial12_EnemiesIn2D"]
+[editable path="TestStageTutorial13_Water"]
+[editable path="TestStageTutorial14_Switch2DLayers"]
+[editable path="TestStageTutorial15_Curved2D"]
+[editable path="TestStageTutorial16_MaxSpeed"]
+[editable path="TestStageTutorial17_ChaosEmeralds"]
+[editable path="TestStageTutorial18_GrindRails"]
+[editable path="TestStageTutorial19_Boss"]
+[editable path="TestStageTutorial20_Gimmicks"]
+[editable path="TestStageTutorial21_Pipe"]
+[editable path="[Interactable] Skydiving section"]
+[editable path="[Trigger] No2DTrigger2"]
+[editable path="TestStageTutorial22_SpringChain"]
+[editable path="[Trigger] Camera Trigger - tunnel"]
+[editable path="[Enemy] Egg Chaser"]
+[editable path="[Enemy] Egg Chaser/EnemyEggChaser"]
+[editable path="[Enemy] Egg Chaser/Laser_L/[Interactable] Laser"]
+[editable path="[Enemy] Egg Chaser/Laser_R/[Interactable] Laser"]
+[editable path="[Trigger] SkateRemover"]
+[editable path="[Interactable] Item Box 50"]
+[editable path="[Interactable] Item Box 50/Offset/item_box"]

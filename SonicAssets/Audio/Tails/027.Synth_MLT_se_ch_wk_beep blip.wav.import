@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://bgs6srm75i4w1"
+path="res://.godot/imported/027.Synth_MLT_se_ch_wk_beep blip.wav-bafa5a3d6ac3f337c5169c11bfe88c9c.sample"
+
+[deps]
+
+source_file="res://SonicAssets/Audio/Tails/027.Synth_MLT_se_ch_wk_beep blip.wav"
+dest_files=["res://.godot/imported/027.Synth_MLT_se_ch_wk_beep blip.wav-bafa5a3d6ac3f337c5169c11bfe88c9c.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

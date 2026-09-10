@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://bwa5uiwsw5xfj"
+path="res://.godot/imported/se_enemy_common#2 (enmsn_cmn_damage).wav-4fe2d6574fe4397fa896237edd5dd94b.sample"
+
+[deps]
+
+source_file="res://SonicAssets/Audio/Enemies/se_enemy_common#2 (enmsn_cmn_damage).wav"
+dest_files=["res://.godot/imported/se_enemy_common#2 (enmsn_cmn_damage).wav-4fe2d6574fe4397fa896237edd5dd94b.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

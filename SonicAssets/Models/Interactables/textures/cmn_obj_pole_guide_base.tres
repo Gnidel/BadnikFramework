@@ -1,0 +1,9 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://dcrucyggmt81x"]
+
+[ext_resource type="Texture2D" uid="uid://cmcl4ud6sbub4" path="res://SonicAssets/Models/Interactables/textures/cmn_obj_pole_guide_abd.dds" id="1_nvay0"]
+
+[resource]
+resource_name = "cmn_obj_pole_guide_base"
+cull_mode = 2
+albedo_texture = ExtResource("1_nvay0")
+roughness = 0.5

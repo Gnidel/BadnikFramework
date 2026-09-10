@@ -1,0 +1,10 @@
+[gd_resource type="Sky" format=3 uid="uid://vqwy34a1iaq2"]
+
+[ext_resource type="Texture2D" uid="uid://pts72y78c7o0" path="res://Games/Example game/Levels/DiscoHill/Textures/DiscoHill2MobileSky.png" id="1_4v45o"]
+
+[sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_1i58o"]
+panorama = ExtResource("1_4v45o")
+
+[resource]
+sky_material = SubResource("PanoramaSkyMaterial_1i58o")
+radiance_size = 0

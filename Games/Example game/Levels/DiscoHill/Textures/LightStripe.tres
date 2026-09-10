@@ -1,0 +1,19 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://ctfch6nn60fk0"]
+
+[ext_resource type="Texture2D" uid="uid://d1wjk7dkkghpn" path="res://Games/Example game/Levels/DiscoHill/Textures/LightStripe_a.png" id="1_vucvr"]
+[ext_resource type="Texture2D" uid="uid://bel6mmhx0ylpw" path="res://Games/Example game/Levels/DiscoHill/Textures/LightStripe_h.png" id="2_v506l"]
+[ext_resource type="Texture2D" uid="uid://dix4rfk2w828r" path="res://Games/Example game/Levels/DiscoHill/Textures/LightStripe_n.png" id="3_tnncr"]
+
+[resource]
+resource_name = "LightStripe"
+cull_mode = 2
+albedo_texture = ExtResource("1_vucvr")
+roughness = 0.5
+emission_enabled = true
+emission_energy_multiplier = 5.0
+emission_texture = ExtResource("1_vucvr")
+normal_enabled = true
+normal_texture = ExtResource("3_tnncr")
+heightmap_enabled = true
+heightmap_scale = 1.0
+heightmap_texture = ExtResource("2_v506l")

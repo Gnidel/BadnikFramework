@@ -1,0 +1,10 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://dfanbtpd13rf1"]
+
+[ext_resource type="Texture2D" uid="uid://d3wnp10t4lypj" path="res://SonicAssets/Models/Enemies/textures/enm_spina_light_dif_HD.dds" id="1_qomfk"]
+
+[resource]
+resource_name = "enm_spina_ball"
+cull_mode = 2
+vertex_color_use_as_albedo = true
+albedo_texture = ExtResource("1_qomfk")
+metallic = 1.0

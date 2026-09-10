@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://dm53apww8k7uk"
+path="res://.godot/imported/se_player_sonic#50 (sn_run_gras; sn_run_sand; sn_walk_gras; sn_walk_sand).wav-799b194349810698eb0494e332bfc1c2.sample"
+
+[deps]
+
+source_file="res://SonicAssets/Audio/Sonic/se_player_sonic#50 (sn_run_gras; sn_run_sand; sn_walk_gras; sn_walk_sand).wav"
+dest_files=["res://.godot/imported/se_player_sonic#50 (sn_run_gras; sn_run_sand; sn_walk_gras; sn_walk_sand).wav-799b194349810698eb0494e332bfc1c2.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2

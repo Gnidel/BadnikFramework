@@ -1,0 +1,56 @@
+[gd_scene format=3 uid="uid://drw7s3yh0m7c3"]
+
+[ext_resource type="Script" uid="uid://f3cxw7en1f5k" path="res://Scripts/Interactables/CollectableItem.cs" id="1_nur0p"]
+[ext_resource type="AudioStream" uid="uid://b282c3khishw7" path="res://SonicAssets/Audio/Sonic/se_player_sonic#77 (sn_water_breath).wav" id="2_2yybu"]
+[ext_resource type="Material" uid="uid://bf7517k627un3" path="res://Materials/WaterBubbleMaterial.tres" id="3_yc11v"]
+[ext_resource type="Script" uid="uid://di0x8fou4k1br" path="res://Scripts/Interactables/AirBubble.cs" id="4_ixdhn"]
+
+[sub_resource type="Curve" id="Curve_idv40"]
+_limits = [0.0, 100.0, 0.0, 1.0]
+bake_resolution = 10
+_data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(1, 100), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_6spl5"]
+radius = 2.0
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_648yg"]
+radius = 2.0
+
+[sub_resource type="SphereMesh" id="SphereMesh_oyor3"]
+material = ExtResource("3_yc11v")
+
+[node name="[Item] Water Bubble" type="Node3D" unique_id=525071135 node_paths=PackedStringArray("modelNode")]
+transform = Transform3D(0.01, 0, 0, 0, 0.01, 0, 0, 0, 0.01, 0, 0, 0)
+script = ExtResource("1_nur0p")
+AttractionSpeed = SubResource("Curve_idv40")
+maxAttractionTime = 2.0
+SoundEffect = ExtResource("2_2yybu")
+ItemName = "bubble"
+IsAdditive = false
+modelNode = NodePath("SphereModel")
+CanBeAttractedAfter = 0.0
+
+[node name="AttractTrigger" type="Area3D" parent="." unique_id=983392963]
+collision_mask = 2
+input_ray_pickable = false
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="AttractTrigger" unique_id=1581252297]
+shape = SubResource("SphereShape3D_6spl5")
+
+[node name="PickupTrigger" type="Area3D" parent="." unique_id=1823517595]
+collision_mask = 2
+input_ray_pickable = false
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="PickupTrigger" unique_id=786697038]
+shape = SubResource("SphereShape3D_648yg")
+
+[node name="SphereModel" type="MeshInstance3D" parent="." unique_id=542572364]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, 0, 0, 0)
+mesh = SubResource("SphereMesh_oyor3")
+
+[node name="BubbleBehavior" type="Node" parent="." unique_id=911442287]
+script = ExtResource("4_ixdhn")
+
+[connection signal="body_entered" from="AttractTrigger" to="." method="OnAttract"]
+[connection signal="body_entered" from="PickupTrigger" to="." method="OnPickup"]

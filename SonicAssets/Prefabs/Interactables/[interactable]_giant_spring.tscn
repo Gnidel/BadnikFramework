@@ -1,0 +1,81 @@
+[gd_scene format=3 uid="uid://16kx1j02l040"]
+
+[ext_resource type="Script" uid="uid://bge4hsg4hukce" path="res://Scripts/Interactables/DirectionalLauncher.cs" id="1_h52e7"]
+[ext_resource type="AudioStream" uid="uid://36v1y3061oye" path="res://SonicAssets/Audio/Items/se_object_common#22 (objsn_spring; objsn_spring3; objsn_spring_false).wav" id="2_bg3ww"]
+[ext_resource type="PackedScene" uid="uid://dodwa32y3km78" path="res://SonicAssets/Models/Interactables/GiantSpring.glb" id="3_4r6ok"]
+[ext_resource type="Script" uid="uid://bus1ja230judn" path="res://Scripts/Utils/Rotate.cs" id="4_ihnwn"]
+[ext_resource type="Material" uid="uid://csrhoebp6gef" path="res://Materials/Outline.tres" id="4_k3jin"]
+[ext_resource type="Shader" uid="uid://cjktp1yrki104" path="res://Shaders/UekawaShader.tres" id="5_iqul2"]
+[ext_resource type="Texture2D" uid="uid://vb0drelpyt4n" path="res://SonicAssets/Models/Interactables/GiantSpring_common_prop_atlas_01_diff.png" id="6_nq44p"]
+[ext_resource type="Texture2D" uid="uid://dwhd6oxhjfoni" path="res://SonicAssets/Models/Interactables/GiantSpring_common_prop_fan_diff @4482434256164112933.png" id="8_6wcpr"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_2xfj3"]
+render_priority = 0
+next_pass = ExtResource("4_k3jin")
+shader = ExtResource("5_iqul2")
+shader_parameter/Albedo = ExtResource("6_nq44p")
+shader_parameter/DarkenThreshold = -0.75
+shader_parameter/HighlightThreashold = 0.3
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_lxhy3"]
+render_priority = 0
+next_pass = ExtResource("4_k3jin")
+shader = ExtResource("5_iqul2")
+shader_parameter/Albedo = ExtResource("6_nq44p")
+shader_parameter/DarkenThreshold = -0.75
+shader_parameter/HighlightThreashold = 0.1
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_ydf61"]
+render_priority = 0
+next_pass = ExtResource("4_k3jin")
+shader = ExtResource("5_iqul2")
+shader_parameter/Albedo = ExtResource("8_6wcpr")
+shader_parameter/DarkenThreshold = -0.75
+shader_parameter/HighlightThreashold = 0.3
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_1eboy"]
+size = Vector3(16, 16, 3)
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_6a2u6"]
+height = 4.0
+radius = 8.0
+
+[node name="[Interactable] Spring_Giant_Red" type="Node3D" unique_id=1402357208]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0)
+script = ExtResource("1_h52e7")
+AddVelocity = 0.0
+MaxVelocity = 50.0
+KeepPerpendicularVelocity = true
+SoundEffect = ExtResource("2_bg3ww")
+Animation = "Fun Jump"
+
+[node name="GiantSpring" parent="." unique_id=945580474 instance=ExtResource("3_4r6ok")]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 2.62268e-07, 6)
+
+[node name="common_prop_bounce_pad_flying_blades" parent="GiantSpring" index="0" unique_id=1084416201]
+physics_interpolation_mode = 2
+surface_material_override/0 = SubResource("ShaderMaterial_2xfj3")
+script = ExtResource("4_ihnwn")
+RelativeAxis = Vector3(0, 1, 0)
+
+[node name="common_prop_bounce_pad_flying_body" parent="GiantSpring" index="1" unique_id=62932277]
+surface_material_override/0 = SubResource("ShaderMaterial_lxhy3")
+surface_material_override/1 = SubResource("ShaderMaterial_ydf61")
+
+[node name="Area3D" type="Area3D" parent="." unique_id=405709242]
+physics_interpolation_mode = 1
+collision_mask = 3
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D" unique_id=1388613838]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 1.5)
+shape = SubResource("BoxShape3D_1eboy")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="." unique_id=1213030636]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" unique_id=460274531]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0, 5)
+shape = SubResource("CylinderShape3D_6a2u6")
+
+[connection signal="body_entered" from="Area3D" to="." method="OnTriggerEnter"]
+
+[editable path="GiantSpring"]

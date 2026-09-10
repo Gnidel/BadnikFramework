@@ -1,0 +1,96 @@
+[gd_scene format=3 uid="uid://b7itdnugr4v64"]
+
+[ext_resource type="PackedScene" uid="uid://u7bdmxjdk8ih" path="res://Particles/SuperAura/superaura.blend" id="1_ji2jk"]
+[ext_resource type="Shader" uid="uid://dujrnd1g5rnev" path="res://Particles/SuperAura/SuperAuraShader.tres" id="2_kn8ek"]
+[ext_resource type="PackedScene" uid="uid://b5phasqupvnea" path="res://SonicAssets/Prefabs/Particles/GrindSpark/[Particles] run_trail.tscn" id="3_cikp1"]
+[ext_resource type="Texture2D" uid="uid://boy6pa0yygw0w" path="res://SonicAssets/Prefabs/Particles/GrindSpark/grind_spark.png" id="4_1ktfq"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_2r20d"]
+render_priority = 0
+shader = ExtResource("2_kn8ek")
+shader_parameter/TimeScale = 10.0
+
+[sub_resource type="Curve" id="Curve_gl0ky"]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(0.498169, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
+point_count = 3
+
+[sub_resource type="CurveTexture" id="CurveTexture_jdhv2"]
+curve = SubResource("Curve_gl0ky")
+
+[sub_resource type="Gradient" id="Gradient_00rgx"]
+offsets = PackedFloat32Array(0.12973, 0.583784, 1)
+colors = PackedColorArray(1, 1, 1, 0, 1, 1, 1, 0.501961, 1, 1, 1, 0)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_mhm6k"]
+gradient = SubResource("Gradient_00rgx")
+
+[sub_resource type="Curve" id="Curve_6g3j0"]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="Curve" id="Curve_r56na"]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(1, 1), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="Curve" id="Curve_w77o7"]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="CurveXYZTexture" id="CurveXYZTexture_lthnc"]
+curve_x = SubResource("Curve_6g3j0")
+curve_y = SubResource("Curve_r56na")
+curve_z = SubResource("Curve_w77o7")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_dbnde"]
+emission_shape = 1
+emission_sphere_radius = 1.0
+direction = Vector3(0, 1, 0)
+spread = 0.0
+flatness = 0.25
+initial_velocity_max = 10.0
+gravity = Vector3(0, 0, 0)
+scale_min = 0.0
+scale_curve = SubResource("CurveXYZTexture_lthnc")
+color = Color(1, 1, 0, 1)
+color_ramp = SubResource("GradientTexture1D_mhm6k")
+alpha_curve = SubResource("CurveTexture_jdhv2")
+
+[sub_resource type="Curve" id="Curve_vamds"]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_n1g2h"]
+transparency = 1
+cull_mode = 2
+vertex_color_use_as_albedo = true
+albedo_color = Color(1, 1, 1, 0.752941)
+albedo_texture = ExtResource("4_1ktfq")
+emission_enabled = true
+emission = Color(1, 1, 0, 1)
+billboard_keep_scale = true
+use_particle_trails = true
+
+[sub_resource type="RibbonTrailMesh" id="RibbonTrailMesh_33u5e"]
+material = SubResource("StandardMaterial3D_n1g2h")
+curve = SubResource("Curve_vamds")
+
+[node name="[particles]SuperAura" type="Node3D" unique_id=2039857655]
+
+[node name="superaura" parent="." unique_id=690161254 instance=ExtResource("1_ji2jk")]
+
+[node name="Sphere" parent="superaura" index="0" unique_id=15482136]
+surface_material_override/0 = SubResource("ShaderMaterial_2r20d")
+
+[node name="superaura2" parent="." unique_id=1925725891 instance=ExtResource("1_ji2jk")]
+transform = Transform3D(0.75, 0, 0, 0, 1.5, 0, 0, 0, 0.75, 0, 0.481816, 0)
+
+[node name="Sphere" parent="superaura2" index="0" unique_id=15482136]
+surface_material_override/0 = SubResource("ShaderMaterial_2r20d")
+
+[node name="RunTrail" parent="." unique_id=1511864776 instance=ExtResource("3_cikp1")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
+process_material = SubResource("ParticleProcessMaterial_dbnde")
+draw_pass_1 = SubResource("RibbonTrailMesh_33u5e")
+
+[editable path="superaura"]
+[editable path="superaura2"]

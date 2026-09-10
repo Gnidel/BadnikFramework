@@ -1,0 +1,11 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://c5gx7sr63ukoy"]
+
+[ext_resource type="Texture2D" uid="uid://bnhcmohy0dnfp" path="res://SonicAssets/Models/Enemies/EnemyClucker_enm_kokeko_body-0000-enm_kokeko_body-0000.png" id="1_34l4l"]
+
+[resource]
+resource_name = "enm_kokeko_body"
+transparency = 4
+cull_mode = 2
+vertex_color_use_as_albedo = true
+albedo_texture = ExtResource("1_34l4l")
+metallic = 1.0

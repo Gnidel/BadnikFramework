@@ -1,0 +1,676 @@
+[gd_scene format=3 uid="uid://l24eoqs0kxis"]
+
+[ext_resource type="Script" uid="uid://c2i7w0nkuie1u" path="res://Scripts/System/StageData.cs" id="1_ek56n"]
+[ext_resource type="Texture2D" uid="uid://dtn5xs4eajsqd" path="res://SonicAssets/Stages/Death Egg/Models/UnleashedSpace_wmap_space2.png" id="1_yyai7"]
+[ext_resource type="Script" uid="uid://c2iwclb013o1y" path="res://Scripts/System/ApplyWorldEnvironmentSettings.cs" id="2_7go16"]
+[ext_resource type="PackedScene" uid="uid://clt71rt2khju8" path="res://SonicAssets/Prefabs/Player/PlayersManager.tscn" id="2_ivdko"]
+[ext_resource type="AudioStream" uid="uid://gqmnku2jyhxg" path="res://SonicAssets/Music/Boss Big Arm - Sonic Generations 3DS.ogg" id="2_m6ohf"]
+[ext_resource type="Script" uid="uid://cjml20hkk1lmf" path="res://Games/Example game/Levels/Finale/Scripts/SuperBossFightStageProperties.cs" id="3_cpevj"]
+[ext_resource type="PackedScene" uid="uid://dhu1smr7ks2e5" path="res://SonicAssets/Prefabs/Interactables/[interactable]_goal_ring.tscn" id="3_o74es"]
+[ext_resource type="PackedScene" uid="uid://df6u4fk5rxt0m" path="res://SonicAssets/Stages/Death Egg/Models/DeathEgg.glb" id="6_m6ohf"]
+[ext_resource type="PackedScene" uid="uid://tc8f2l3mmr2b" path="res://Prefabs/Triggers/[trigger]_input_prompt_bottom.tscn" id="7_lxyl2"]
+[ext_resource type="Script" uid="uid://bcwiyc3m5bmni" path="res://Scripts/Enemies/HealthBarControl.cs" id="8_ruw8u"]
+[ext_resource type="Theme" uid="uid://di28qbb7lki3f" path="res://Misc/MenuTheme.tres" id="9_dskdg"]
+[ext_resource type="Script" uid="uid://y47n4ov38iw2" path="res://Scripts/Interactables/Hitbox.cs" id="9_f84ka"]
+[ext_resource type="PackedScene" uid="uid://2k2fgk7hcjlh" path="res://SonicAssets/Stages/Death Egg/Models/DeathEggBottom.glb" id="10_cwk2n"]
+[ext_resource type="Script" uid="uid://dat1yxewba6k8" path="res://Scripts/Enemies/EnemyControl.cs" id="11_kedod"]
+[ext_resource type="PackedScene" uid="uid://bchhaaonih3hs" path="res://SonicAssets/Stages/Death Egg/Models/DeathEggTop.glb" id="11_lxyl2"]
+[ext_resource type="AudioStream" uid="uid://bwa5uiwsw5xfj" path="res://SonicAssets/Audio/Enemies/se_enemy_common#2 (enmsn_cmn_damage).wav" id="12_qj2kj"]
+[ext_resource type="Script" uid="uid://df4xa0dyjdr6l" path="res://Games/Example game/Levels/Finale/Scripts/DeathEggControl.cs" id="13_tdo4r"]
+[ext_resource type="PackedScene" uid="uid://cb43f6y4uty30" path="res://Games/Example game/Levels/Finale/Prefabs/death_egg_weak_spot.tscn" id="14_2c78b"]
+[ext_resource type="PackedScene" uid="uid://dwnta381tomrj" path="res://SonicAssets/Prefabs/Interactables/Obstacles/Laser/[interactable]_stun_laser.tscn" id="14_n3xfv"]
+[ext_resource type="Script" uid="uid://n1dtm5k3gia" path="res://Scripts/Enemies/EnemyBehaviorManager.cs" id="16_6a2xn"]
+[ext_resource type="Script" uid="uid://dxt4q1t0r7whx" path="res://Scripts/Enemies/EnableDisableBehavior.cs" id="17_yyai7"]
+[ext_resource type="Script" uid="uid://cy0x2ury8cs8q" path="res://Scripts/Enemies/BossEndCamera.cs" id="18_tql61"]
+[ext_resource type="AudioStream" uid="uid://dmj6c8fml8b13" path="res://SonicAssets/Audio/Enemies/51BOS_BGA#21 (5511_bga_camera).wav" id="19_7go16"]
+[ext_resource type="PackedScene" uid="uid://3w26w448ku1y" path="res://SonicAssets/Stages/Death Egg/Models/UnleashedEarth.glb" id="20_18vt5"]
+[ext_resource type="AudioStream" uid="uid://c5pix7021l4mj" path="res://SonicAssets/Audio/Enemies/52BOS_BEE#16 (5542_bee_dead).wav" id="20_y4213"]
+[ext_resource type="Script" uid="uid://blalwn6hrp2jb" path="res://Scripts/Effects/MultiParticlePlayer.cs" id="22_c0oyv"]
+[ext_resource type="PackedScene" uid="uid://bjwtsjbuxhoo1" path="res://SonicAssets/Prefabs/Interactables/[interactable]_meteor_10_rings.tscn" id="22_yyai7"]
+[ext_resource type="Texture2D" uid="uid://dujgtuid48qan" path="res://SonicAssets/Prefabs/Particles/Explosion2/ef_w01_com_flash_yellow01.PNG" id="23_fukjv"]
+[ext_resource type="PackedScene" uid="uid://5lg0xudnecmb" path="res://SonicAssets/Prefabs/Interactables/[interactable]_meteor_0_rings.tscn" id="23_tql61"]
+[ext_resource type="Script" uid="uid://bus1ja230judn" path="res://Scripts/Utils/Rotate.cs" id="23_y4213"]
+[ext_resource type="Texture2D" uid="uid://dsfp2plcqodx4" path="res://SonicAssets/Prefabs/Particles/Explosion2/ef_i01_com_flash01.PNG" id="24_cwk2n"]
+[ext_resource type="Material" uid="uid://bebyi7hg0rijq" path="res://SonicAssets/Prefabs/Particles/Explosion2/ef_w01_com_flash_yellow_mat.tres" id="25_lxyl2"]
+[ext_resource type="Texture2D" uid="uid://cun6wa68uitav" path="res://SonicAssets/Prefabs/Particles/Explosion2/ef_n01_com_flame01.PNG" id="26_7vixy"]
+[ext_resource type="PackedScene" uid="uid://bisjbo4vs52y6" path="res://Games/Example game/Levels/Finale/Prefabs/big_arm.tscn" id="26_potea"]
+[ext_resource type="Texture2D" uid="uid://bjbb41mfnekhb" path="res://SonicAssets/Prefabs/Particles/Explosion2/ef_n01_com_explode01.PNG" id="27_hmfr6"]
+[ext_resource type="AudioStream" uid="uid://dlfv13uwe6han" path="res://SonicAssets/Audio/Enemies/se_enemy_common#1 (enmsn_cmn_explosion).wav" id="28_2x21n"]
+
+[sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_potea"]
+panorama = ExtResource("1_yyai7")
+
+[sub_resource type="Sky" id="Sky_y4213"]
+sky_material = SubResource("PanoramaSkyMaterial_potea")
+
+[sub_resource type="Environment" id="Environment_potea"]
+background_mode = 2
+sky = SubResource("Sky_y4213")
+ambient_light_source = 2
+ambient_light_color = Color(0.11858138, 0.11858138, 0.11858138, 1)
+glow_enabled = true
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_lxyl2"]
+resource_local_to_scene = true
+radius = 100000.0
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_fhrgg"]
+size = Vector3(10000, 1, 10000)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_6a2xn"]
+size = Vector3(10000, 10000, 10)
+
+[sub_resource type="Gradient" id="Gradient_rvsf2"]
+offsets = PackedFloat32Array(0, 0.778107, 1)
+colors = PackedColorArray(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_o0x4i"]
+gradient = SubResource("Gradient_rvsf2")
+
+[sub_resource type="Curve" id="Curve_bnjwj"]
+_limits = [0.0, 8.0, 0.0, 1.0]
+_data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(0.7, 4), 0.0, 0.0, 0, 0, Vector2(1, 8), 0.0, 0.0, 0, 0]
+point_count = 3
+
+[sub_resource type="CurveTexture" id="CurveTexture_ludco"]
+curve = SubResource("Curve_bnjwj")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_5nwc4"]
+particle_flag_rotate_y = true
+angular_velocity_min = 45.0
+angular_velocity_max = 45.0
+gravity = Vector3(0, 0, 0)
+scale_min = 15000.0
+scale_max = 15000.0
+scale_curve = SubResource("CurveTexture_ludco")
+color = Color(1, 1, 0, 0.501961)
+color_ramp = SubResource("GradientTexture1D_o0x4i")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_2b5rk"]
+transparency = 1
+shading_mode = 0
+vertex_color_use_as_albedo = true
+albedo_texture = ExtResource("23_fukjv")
+texture_filter = 1
+billboard_mode = 3
+billboard_keep_scale = true
+particles_anim_h_frames = 1
+particles_anim_v_frames = 1
+particles_anim_loop = false
+
+[sub_resource type="QuadMesh" id="QuadMesh_2ftiu"]
+material = SubResource("StandardMaterial3D_2b5rk")
+
+[sub_resource type="Curve" id="Curve_6iaf7"]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0]
+point_count = 1
+
+[sub_resource type="Curve" id="Curve_aekjj"]
+_limits = [0.0, 5.0, 0.0, 1.0]
+_data = [Vector2(0, 5), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="Curve" id="Curve_wlfbk"]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="CurveXYZTexture" id="CurveXYZTexture_3wpei"]
+curve_x = SubResource("Curve_6iaf7")
+curve_y = SubResource("Curve_aekjj")
+curve_z = SubResource("Curve_wlfbk")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_t0rgg"]
+particle_flag_align_y = true
+emission_shape = 1
+emission_sphere_radius = 0.2
+spread = 180.0
+initial_velocity_min = 20.0
+initial_velocity_max = 25.0
+gravity = Vector3(0, 0, 0)
+scale_min = 15000.0
+scale_max = 15000.0
+scale_curve = SubResource("CurveXYZTexture_3wpei")
+color = Color(5, 2, 1, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_7c0fl"]
+transparency = 1
+cull_mode = 2
+shading_mode = 0
+vertex_color_use_as_albedo = true
+albedo_texture = ExtResource("24_cwk2n")
+disable_receive_shadows = true
+
+[sub_resource type="QuadMesh" id="QuadMesh_1slg1"]
+material = SubResource("StandardMaterial3D_7c0fl")
+
+[sub_resource type="Curve" id="Curve_1027i"]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="CurveTexture" id="CurveTexture_wwven"]
+curve = SubResource("Curve_1027i")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_dcuog"]
+gravity = Vector3(0, 0, 0)
+scale_min = 4000.0
+scale_max = 4000.0
+scale_curve = SubResource("CurveTexture_wwven")
+color = Color(2.5, 1, 0.5, 1)
+
+[sub_resource type="QuadMesh" id="QuadMesh_sqgta"]
+material = ExtResource("25_lxyl2")
+
+[sub_resource type="Gradient" id="Gradient_1fj7c"]
+colors = PackedColorArray(1, 1, 1, 1, 5, 2, 1, 0)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_5hnsi"]
+gradient = SubResource("Gradient_1fj7c")
+
+[sub_resource type="Curve" id="Curve_kbsrf"]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), -2.62755, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="CurveTexture" id="CurveTexture_avbs2"]
+curve = SubResource("Curve_kbsrf")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_8hxbp"]
+lifetime_randomness = 1.0
+particle_flag_rotate_y = true
+emission_shape = 1
+emission_sphere_radius = 0.3
+angle_min = -180.0
+angle_max = 180.0
+spread = 180.0
+gravity = Vector3(0, -2, 0)
+scale_min = 15000.0
+scale_max = 15000.0
+scale_curve = SubResource("CurveTexture_avbs2")
+color_ramp = SubResource("GradientTexture1D_5hnsi")
+anim_speed_min = 1.0
+anim_speed_max = 1.0
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_nbcfk"]
+transparency = 1
+cull_mode = 2
+shading_mode = 0
+vertex_color_use_as_albedo = true
+albedo_color = Color(2.5, 1, 0.5, 1)
+albedo_texture = ExtResource("26_7vixy")
+billboard_mode = 3
+billboard_keep_scale = true
+particles_anim_h_frames = 8
+particles_anim_v_frames = 8
+particles_anim_loop = false
+
+[sub_resource type="QuadMesh" id="QuadMesh_6q3wu"]
+material = SubResource("StandardMaterial3D_nbcfk")
+
+[sub_resource type="Gradient" id="Gradient_gjfv3"]
+colors = PackedColorArray(1, 1, 1, 1, 1, 1, 1, 0)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_8g86b"]
+gradient = SubResource("Gradient_gjfv3")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_m4or1"]
+lifetime_randomness = 0.5
+particle_flag_rotate_y = true
+emission_shape = 1
+emission_sphere_radius = 0.4
+angle_min = -180.0
+angle_max = 180.0
+spread = 180.0
+initial_velocity_min = 0.5
+initial_velocity_max = 2.0
+gravity = Vector3(0, 0, 0)
+scale_min = 3000.0
+scale_max = 3000.0
+color_ramp = SubResource("GradientTexture1D_8g86b")
+anim_speed_min = 1.0
+anim_speed_max = 1.0
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_j2mxy"]
+transparency = 1
+shading_mode = 0
+vertex_color_use_as_albedo = true
+albedo_texture = ExtResource("27_hmfr6")
+billboard_mode = 3
+billboard_keep_scale = true
+particles_anim_h_frames = 8
+particles_anim_v_frames = 8
+particles_anim_loop = false
+
+[sub_resource type="QuadMesh" id="QuadMesh_6lcce"]
+material = SubResource("StandardMaterial3D_j2mxy")
+
+[node name="Death Egg Boss Fight Zone" type="Node3D" unique_id=220796014]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=1734752410]
+environment = SubResource("Environment_potea")
+script = ExtResource("2_7go16")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=1716383108]
+transform = Transform3D(-0.6090171, -0.19023642, 0.77000535, 0.63226306, 0.46972087, 0.61612153, -0.4788963, 0.8620745, -0.16578858, 0, 0, 0)
+
+[node name="StageData" type="Node" parent="." unique_id=791645848]
+script = ExtResource("1_ek56n")
+StageZoneName = "Death Egg"
+StageUniqueIdentifier = "WFB1"
+StageMusic = ExtResource("2_m6ohf")
+SRankRings = 50
+RankWeightTime = 1.0
+RankWeightRings = 0.0
+
+[node name="PlayersManager" parent="." unique_id=1706967680 instance=ExtResource("2_ivdko")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 2500)
+
+[node name="DeathEggStageProperties" type="Node" parent="PlayersManager" unique_id=409827392]
+script = ExtResource("3_cpevj")
+
+[node name="[Trigger] InputPrompt" parent="PlayersManager" unique_id=289787838 instance=ExtResource("7_lxyl2")]
+transform = Transform3D(100, 0, 0, 0, 100, 0, 0, 0, 100, 0, 0, 0)
+Text = "Hit the blue spots!
+
+[input]actionjump[/input] - Fly up
+[input]actionroll[/input] - Fly down
+[input]actiondash[/input] - Boost forward
+"
+
+[node name="[Interactable] Goal Ring" parent="." unique_id=259410780 instance=ExtResource("3_o74es")]
+process_mode = 4
+NextLevel = "res://Games/Example game/Cutscenes/Credits/Credits.tscn"
+Animation = "Skydiving"
+DisableSuper = false
+
+[node name="CollisionShape3D" parent="[Interactable] Goal Ring/Area3D" parent_id_path=PackedInt32Array(259410780, 1105704183) index="0" unique_id=582350562]
+shape = SubResource("SphereShape3D_lxyl2")
+
+[node name="Pit" type="Area3D" parent="." unique_id=1652095181]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1000, 0)
+collision_mask = 7
+script = ExtResource("9_f84ka")
+IsInstaKill = true
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Pit" unique_id=905589749]
+shape = SubResource("BoxShape3D_fhrgg")
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="Pit" unique_id=773835401]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 4114.9307)
+shape = SubResource("BoxShape3D_6a2xn")
+
+[node name="DeathEgg" type="Node3D" parent="." unique_id=1264141684]
+transform = Transform3D(10, 0, 0, 0, -4.371139e-07, -10, 0, 10, -4.371139e-07, 0, 0, 0)
+
+[node name="Models" type="Node3D" parent="DeathEgg" unique_id=1640787112]
+transform = Transform3D(1, 0, 0, 0, 1, -3.5527137e-15, 0, 3.5527137e-15, 1, -108.10674, -49.56397, -90.087395)
+
+[node name="DeathEgg" parent="DeathEgg/Models" unique_id=132302788 instance=ExtResource("6_m6ohf")]
+transform = Transform3D(1, 0, 0, 0, 1, 3.5527137e-15, 0, -3.5527137e-15, 1, 108.10674, 49.56397, 90.087395)
+
+[node name="DeathEggBottom" parent="DeathEgg/Models" unique_id=1201098532 instance=ExtResource("10_cwk2n")]
+process_mode = 4
+transform = Transform3D(0.9699672, 1.0632174e-08, 0.24323574, -1.0632175e-08, 0.99999994, -1.3127739e-09, -0.24323574, -1.3127845e-09, 0.9699672, 125.87779, 64.828926, 103.746796)
+visible = false
+
+[node name="DeathEggTop" parent="DeathEgg/Models" unique_id=879464859 instance=ExtResource("11_lxyl2")]
+process_mode = 4
+transform = Transform3D(0.9002158, 1.9033866e-08, 0.43544403, -1.9033866e-08, 1, -4.361702e-09, -0.43544403, -4.3617128e-09, 0.9002158, 102.37588, 63.37435, 89.02862)
+visible = false
+
+[node name="BossUI" type="Control" parent="DeathEgg" unique_id=1771451188]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="HealthBarControl" type="Node" parent="DeathEgg/BossUI" unique_id=293498075 node_paths=PackedStringArray("HpUiPointTemplate", "HpUiPointsContainer")]
+script = ExtResource("8_ruw8u")
+HP = 40
+MaxHP = 40
+HpUiPointTemplate = NodePath("../HPBar1")
+HpUiPointsContainer = NodePath("../Panel/VBoxContainer/HBoxContainer")
+
+[node name="HPBar1" type="ColorRect" parent="DeathEgg/BossUI" unique_id=51175215]
+custom_minimum_size = Vector2(0, 50)
+layout_mode = 0
+offset_left = 710.0
+offset_top = 120.0
+offset_right = 1210.0
+offset_bottom = 170.0
+size_flags_horizontal = 7
+size_flags_vertical = 4
+mouse_filter = 2
+
+[node name="Panel" type="Panel" parent="DeathEgg/BossUI" unique_id=1285335101]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -250.0
+offset_top = 50.0
+offset_right = 250.0
+offset_bottom = 175.0
+grow_horizontal = 2
+mouse_filter = 2
+theme = ExtResource("9_dskdg")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="DeathEgg/BossUI/Panel" unique_id=2104908606]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="BossName" type="RichTextLabel" parent="DeathEgg/BossUI/Panel/VBoxContainer" unique_id=1641523878]
+custom_minimum_size = Vector2(100, 50)
+layout_mode = 2
+size_flags_vertical = 6
+mouse_filter = 2
+theme = ExtResource("9_dskdg")
+theme_override_font_sizes/normal_font_size = 30
+theme_override_font_sizes/bold_font_size = 50
+bbcode_enabled = true
+text = "[center][b]DEATH EGG[/b][/center]"
+fit_content = true
+
+[node name="HBoxContainer" type="HBoxContainer" parent="DeathEgg/BossUI/Panel/VBoxContainer" unique_id=668382885]
+layout_mode = 2
+size_flags_vertical = 3
+mouse_filter = 2
+alignment = 1
+
+[node name="EnemyControl" type="Node" parent="DeathEgg" unique_id=144255422 node_paths=PackedStringArray("HealthBar", "AudioSource", "BehaviorManager", "DeathPhase")]
+script = ExtResource("11_kedod")
+HP = 40
+MaxHP = 40
+HealthBar = NodePath("../BossUI/HealthBarControl")
+DamageCooldown = 1.0
+DamageSoundEffect = ExtResource("12_qj2kj")
+AudioSource = NodePath("../AudioStreamPlayer3D")
+BehaviorManager = NodePath("../Behaviors")
+DeathPhase = NodePath("../Behaviors/Phase98PreDeath")
+DontCull = true
+DontExplodeWhenStageFinished = true
+DefaultDyingBehavior = false
+
+[node name="DeathEggControl" type="Node" parent="DeathEgg" unique_id=1421340827 node_paths=PackedStringArray("DeathEggRoot", "EnemyControl", "Lasers", "WeakPointContainer")]
+script = ExtResource("13_tdo4r")
+DeathEggRoot = NodePath("..")
+MaxHP = 40
+EnemyControl = NodePath("../EnemyControl")
+Lasers = [NodePath("../Lasers/Laser_R"), NodePath("../Lasers/Laser_L")]
+WeakPointPrefab = ExtResource("14_2c78b")
+CurrentTarget = Vector3(0, 1000, 0)
+WeakPointContainer = NodePath("../Hurtboxes")
+RotateAtDistanceFromPlayer = 1000.0
+RotationSpeed = 0.1
+
+[node name="Lasers" type="Node3D" parent="DeathEgg" unique_id=1330568060]
+transform = Transform3D(1, 0, 0, 0, 1, -3.5527137e-15, 0, 3.5527137e-15, 1, 0, 0, 0)
+
+[node name="Laser_R" type="Node3D" parent="DeathEgg/Lasers" unique_id=1170200033]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -13.89289, 45.886044, -30.4375)
+
+[node name="[Interactable] Stun Laser" parent="DeathEgg/Lasers/Laser_R" unique_id=2019842755 instance=ExtResource("14_n3xfv")]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, 0, 0, 0)
+
+[node name="Laser_L" type="Node3D" parent="DeathEgg/Lasers" unique_id=922749695]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 13.893, 45.886, -30.437)
+
+[node name="[Interactable] Stun Laser" parent="DeathEgg/Lasers/Laser_L" unique_id=485559759 instance=ExtResource("14_n3xfv")]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, 0, 0, 0)
+
+[node name="Hurtboxes" type="Node3D" parent="DeathEgg" unique_id=151728669]
+transform = Transform3D(1, 0, 0, 0, 1, -3.5527137e-15, 0, 3.5527137e-15, 1, 0, 0, 0)
+
+[node name="Behaviors" type="Node" parent="DeathEgg" unique_id=84958033 node_paths=PackedStringArray("CurrentPhase")]
+script = ExtResource("16_6a2xn")
+CurrentPhase = NodePath("Phase1Namecard")
+
+[node name="Phase0Waiting" type="Node" parent="DeathEgg/Behaviors" unique_id=1823209971]
+process_mode = 4
+
+[node name="EnableDisableList" type="Node" parent="DeathEgg/Behaviors/Phase0Waiting" unique_id=1199294225]
+script = ExtResource("17_yyai7")
+
+[node name="Phase1Namecard" type="Node" parent="DeathEgg/Behaviors" unique_id=1688608371]
+process_mode = 4
+
+[node name="Node" type="Node" parent="DeathEgg/Behaviors/Phase1Namecard" unique_id=492732618]
+
+[node name="Phase98PreDeath" type="Node" parent="DeathEgg/Behaviors" unique_id=510748774]
+process_mode = 4
+
+[node name="EnableDisableList" type="Node" parent="DeathEgg/Behaviors/Phase98PreDeath" unique_id=767454877 node_paths=PackedStringArray("NodesToEnable")]
+script = ExtResource("17_yyai7")
+NodesToEnable = [NodePath("../BossEndSequence"), NodePath("../../../../[Particles] Big Explosion")]
+
+[node name="BossEndSequence" type="Node" parent="DeathEgg/Behaviors/Phase98PreDeath" unique_id=1335196741 node_paths=PackedStringArray("EnemyControl", "NextPhase", "SoundPlayer", "CameraPoints")]
+process_mode = 4
+script = ExtResource("18_tql61")
+EnemyControl = NodePath("../../../EnemyControl")
+NextPhase = NodePath("../../Phase99Death")
+SoundPlayer = NodePath("../../../AudioStreamPlayer3D")
+CameraSound = ExtResource("19_7go16")
+BossExplosionSound = ExtResource("20_y4213")
+CameraPoints = [NodePath("../../../FinishCameraPoints/CameraPoint1"), NodePath("../../../FinishCameraPoints/CameraPoint2"), NodePath("../../../FinishCameraPoints/CameraPoint3")]
+
+[node name="Phase99Death" type="Node" parent="DeathEgg/Behaviors" unique_id=1821254287]
+process_mode = 4
+
+[node name="EnableDisableList" type="Node" parent="DeathEgg/Behaviors/Phase99Death" unique_id=165261004 node_paths=PackedStringArray("NodesToEnable", "NodesToDisable")]
+script = ExtResource("17_yyai7")
+NodesToEnable = [NodePath("../../../../[Interactable] Goal Ring"), NodePath("../../../Models/DeathEggTop"), NodePath("../../../Models/DeathEggBottom")]
+NodesToDisable = [NodePath("../../../Models/DeathEgg"), NodePath("../../../BossUI")]
+
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="DeathEgg" unique_id=1016936089]
+transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, 0, 0, 0)
+attenuation_model = 3
+bus = &"SFX"
+
+[node name="FinishCameraPoints" type="Node3D" parent="DeathEgg" unique_id=1021154089]
+transform = Transform3D(1, 0, 0, 0, 1, -3.5527137e-15, 0, 3.5527137e-15, 1, 0, 0, 0)
+
+[node name="CameraPoint1" type="Node3D" parent="DeathEgg/FinishCameraPoints" unique_id=72215377]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 0, 118.35764, -4.0000052)
+
+[node name="CameraPoint2" type="Node3D" parent="DeathEgg/FinishCameraPoints" unique_id=2140092419]
+transform = Transform3D(0.70710653, 0, 0.70710653, -0.70710653, -4.371139e-08, 0.70710653, 3.090861e-08, -1, -3.0908605e-08, 54.530396, 104.66207, -2.0000048)
+
+[node name="CameraPoint3" type="Node3D" parent="DeathEgg/FinishCameraPoints" unique_id=1259415075]
+transform = Transform3D(0.70710653, 0, -0.70710653, 0.70710653, -4.371139e-08, 0.70710653, -3.090861e-08, -1, -3.0908605e-08, -55.888702, 90.488945, -2.000004)
+
+[node name="[Particles] Big Explosion" type="Node3D" parent="." unique_id=89719693 node_paths=PackedStringArray("Particles", "AudioPlayer")]
+process_mode = 4
+transform = Transform3D(1000, 0, 0, 0, 1000, 0, 0, 0, 1000, 0, 0, 0)
+script = ExtResource("22_c0oyv")
+Particles = [NodePath("Sparks"), NodePath("Flash"), NodePath("Fire"), NodePath("Smoke")]
+AudioPlayer = NodePath("AudioStreamPlayer3D")
+
+[node name="AnticipationShine" type="GPUParticles3D" parent="[Particles] Big Explosion" unique_id=946501481]
+emitting = false
+amount = 1
+lifetime = 2.0
+one_shot = true
+explosiveness = 1.0
+process_material = SubResource("ParticleProcessMaterial_5nwc4")
+draw_pass_1 = SubResource("QuadMesh_2ftiu")
+
+[node name="Sparks" type="GPUParticles3D" parent="[Particles] Big Explosion" unique_id=1551769955]
+emitting = false
+amount = 20
+lifetime = 0.6
+one_shot = true
+explosiveness = 1.0
+process_material = SubResource("ParticleProcessMaterial_t0rgg")
+draw_pass_1 = SubResource("QuadMesh_1slg1")
+
+[node name="Flash" type="GPUParticles3D" parent="[Particles] Big Explosion" unique_id=1050762445]
+emitting = false
+amount = 1
+lifetime = 0.1
+one_shot = true
+explosiveness = 1.0
+process_material = SubResource("ParticleProcessMaterial_dcuog")
+draw_pass_1 = SubResource("QuadMesh_sqgta")
+
+[node name="Fire" type="GPUParticles3D" parent="[Particles] Big Explosion" unique_id=174162986]
+emitting = false
+amount = 4
+lifetime = 0.55
+one_shot = true
+explosiveness = 1.0
+process_material = SubResource("ParticleProcessMaterial_8hxbp")
+draw_pass_1 = SubResource("QuadMesh_6q3wu")
+
+[node name="Smoke" type="GPUParticles3D" parent="[Particles] Big Explosion" unique_id=1664932255]
+emitting = false
+lifetime = 0.8
+one_shot = true
+explosiveness = 1.0
+process_material = SubResource("ParticleProcessMaterial_m4or1")
+draw_pass_1 = SubResource("QuadMesh_6lcce")
+
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="[Particles] Big Explosion" unique_id=1690266584]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.11434, 0)
+stream = ExtResource("28_2x21n")
+unit_size = 100.0
+
+[node name="RingsContainer" type="Node3D" parent="." unique_id=1126635634]
+
+[node name="UnleashedEarth" parent="." unique_id=2004318524 instance=ExtResource("20_18vt5")]
+transform = Transform3D(1000, 0, 0, 0, 1000, 0, 0, 0, 1000, 0, -5000, 7500)
+script = ExtResource("23_y4213")
+RelativeAxis = Vector3(0, 1, 0)
+RadSpeedPerSecond = 0.001
+
+[node name="[Interactable] Meteor 10 Rings" parent="." unique_id=604610917 instance=ExtResource("22_yyai7")]
+transform = Transform3D(50, 0, 0, 0, 50, 0, 0, 0, 50, -361.35538, 0, 800.36536)
+
+[node name="[Interactable] Meteor 10 Rings30" parent="." unique_id=1144937873 instance=ExtResource("22_yyai7")]
+transform = Transform3D(50, 0, 0, 0, 50, 0, 0, 0, 50, -65.978226, 652.22437, 11.553894)
+
+[node name="[Interactable] Meteor 10 Rings31" parent="." unique_id=628991893 instance=ExtResource("22_yyai7")]
+transform = Transform3D(50, 0, 0, 0, 50, 0, 0, 0, 50, 12.256287, 652.22437, -92.31743)
+
+[node name="[Interactable] Meteor 10 Rings33" parent="." unique_id=1764834557 instance=ExtResource("22_yyai7")]
+transform = Transform3D(50, 0, 0, 0, 50, 0, 0, 0, 50, 12.256287, 652.22437, 116.146454)
+
+[node name="[Interactable] Meteor 10 Rings32" parent="." unique_id=1913920054 instance=ExtResource("22_yyai7")]
+transform = Transform3D(50, 0, 0, 0, 50, 0, 0, 0, 50, 83.45976, 652.22437, 11.553894)
+
+[node name="[Interactable] Meteor 10 Rings2" parent="." unique_id=1194927058 instance=ExtResource("22_yyai7")]
+transform = Transform3D(50, 0, 0, 0, 50, 0, 0, 0, 50, 214.64462, 0, 1121.3654)
+
+[node name="[Interactable] Meteor 10 Rings3" parent="." unique_id=1014419022 instance=ExtResource("22_yyai7")]
+transform = Transform3D(50, 0, 0, 0, 50, 0, 0, 0, 50, -345.35538, 0, 1529.3654)
+
+[node name="[Interactable] Meteor 10 Rings4" parent="." unique_id=690237547 instance=ExtResource("22_yyai7")]
+transform = Transform3D(50, 0, 0, 0, 50, 0, 0, 0, 50, 774.64465, 0, 663.36536)
+
+[node name="[Interactable] Meteor 10 Rings5" parent="." unique_id=1452386860 instance=ExtResource("22_yyai7")]
+transform = Transform3D(50, 0, 0, 0, 50, 0, 0, 0, 50, 900.64465, 0, -194.63464)
+
+[node name="[Interactable] Meteor 10 Rings6" parent="." unique_id=1601912278 instance=ExtResource("22_yyai7")]
+transform = Transform3D(50, 0, 0, 0, 50, 0, 0, 0, 50, 572.64465, 0, -981.63464)
+
+[node name="[Interactable] Meteor 10 Rings7" parent="." unique_id=1697241720 instance=ExtResource("22_yyai7")]
+transform = Transform3D(50, 0, 0, 0, 50, 0, 0, 0, 50, -337.35535, 0, -1336.6346)
+
+[node name="[Interactable] Meteor 10 Rings8" parent="." unique_id=808929342 instance=ExtResource("22_yyai7")]
+transform = Transform3D(50, 0, 0, 0, 50, 0, 0, 0, 50, -833.35535, 0, -789.63464)
+
+[node name="[Interactable] Meteor 10 Rings9" parent="." unique_id=737064620 instance=ExtResource("22_yyai7")]
+transform = Transform3D(50, 0, 0, 0, 50, 0, 0, 0, 50, -981.35535, 0, -219.63464)
+
+[node name="[Interactable] Meteor 10 Rings34" parent="." unique_id=228858472 instance=ExtResource("22_yyai7")]
+transform = Transform3D(50, 0, 0, 0, 50, 0, 0, 0, 50, -50.75763, -622.8977, -219.63464)
+
+[node name="[Interactable] Meteor 10 Rings35" parent="." unique_id=1741049081 instance=ExtResource("22_yyai7")]
+transform = Transform3D(50, 0, 0, 0, 50, 0, 0, 0, 50, -50.75763, -634.7788, 109.48822)
+
+[node name="[Interactable] Meteor 10 Rings36" parent="." unique_id=963801070 instance=ExtResource("22_yyai7")]
+transform = Transform3D(50, 0, 0, 0, 50, 0, 0, 0, 50, -50.75763, -766.9815, -80.940506)
+
+[node name="[Interactable] Meteor 10 Rings37" parent="." unique_id=1385988106 instance=ExtResource("22_yyai7")]
+transform = Transform3D(50, 0, 0, 0, 50, 0, 0, 0, 50, -50.75763, -651.1794, -80.940506)
+
+[node name="[Interactable] Meteor 10 Rings10" parent="." unique_id=380875854 instance=ExtResource("22_yyai7")]
+transform = Transform3D(50, 0, 0, 0, 50, 0, 0, 0, 50, -934.35535, 0, 411.36536)
+
+[node name="[Interactable] Meteor 10 Rings11" parent="." unique_id=794509905 instance=ExtResource("23_tql61")]
+transform = Transform3D(100, 0, 0, 0, 100, 0, 0, 0, 100, 392.74326, 0, 910.3337)
+
+[node name="[Interactable] Meteor 10 Rings38" parent="." unique_id=864869140 instance=ExtResource("23_tql61")]
+transform = Transform3D(100, 0, 0, 0, 100, 0, 0, 0, 100, 124.53146, 536.8788, 487.83075)
+
+[node name="[Interactable] Meteor 10 Rings40" parent="." unique_id=763805136 instance=ExtResource("23_tql61")]
+transform = Transform3D(100, 0, 0, 0, 100, 0, 0, 0, 100, -168.57242, 536.8788, 392.57422)
+
+[node name="[Interactable] Meteor 10 Rings39" parent="." unique_id=1560056011 instance=ExtResource("23_tql61")]
+transform = Transform3D(100, 0, 0, 0, 100, 0, 0, 0, 100, -59.20546, 536.8788, 558.2911)
+
+[node name="[Interactable] Meteor 10 Rings12" parent="." unique_id=1090779687 instance=ExtResource("23_tql61")]
+transform = Transform3D(100, 0, 0, 0, 100, 0, 0, 0, 100, 793.6622, 0, 890.4859)
+
+[node name="[Interactable] Meteor 10 Rings13" parent="." unique_id=1306615101 instance=ExtResource("23_tql61")]
+transform = Transform3D(100, 0, 0, 0, 100, 0, 0, 0, 100, 870.3162, 0, 425.33517)
+
+[node name="[Interactable] Meteor 10 Rings14" parent="." unique_id=1528535287 instance=ExtResource("23_tql61")]
+transform = Transform3D(100, 0, 0, 0, 100, 0, 0, 0, 100, 1028.8508, 0, 151.81955)
+
+[node name="[Interactable] Meteor 10 Rings15" parent="." unique_id=1839117488 instance=ExtResource("23_tql61")]
+transform = Transform3D(100, 0, 0, 0, 100, 0, 0, 0, 100, 748.36664, 0, -396.95383)
+
+[node name="[Interactable] Meteor 10 Rings16" parent="." unique_id=454842988 instance=ExtResource("23_tql61")]
+transform = Transform3D(100, 0, 0, 0, 100, 0, 0, 0, 100, 143.84479, 0, -910.8845)
+
+[node name="[Interactable] Meteor 10 Rings17" parent="." unique_id=1597941629 instance=ExtResource("23_tql61")]
+transform = Transform3D(100, 0, 0, 0, 100, 0, 0, 0, 100, 39.31671, 0, -1362.0983)
+
+[node name="[Interactable] Meteor 10 Rings18" parent="." unique_id=247992825 instance=ExtResource("23_tql61")]
+transform = Transform3D(100, 0, 0, 0, 100, 0, 0, 0, 100, -793.4251, 0, -1146.0732)
+
+[node name="[Interactable] Meteor 10 Rings19" parent="." unique_id=1339585003 instance=ExtResource("23_tql61")]
+transform = Transform3D(100, 0, 0, 0, 100, 0, 0, 0, 100, -788.19867, 0, -534.5829)
+
+[node name="[Interactable] Meteor 10 Rings20" parent="." unique_id=806536009 instance=ExtResource("23_tql61")]
+transform = Transform3D(100, 0, 0, 0, 100, 0, 0, 0, 100, -1282.9658, 0, -844.6835)
+
+[node name="[Interactable] Meteor 10 Rings21" parent="." unique_id=1077009113 instance=ExtResource("23_tql61")]
+transform = Transform3D(100, 0, 0, 0, 100, 0, 0, 0, 100, -1342.1985, 0, -377.79056)
+
+[node name="[Interactable] Meteor 10 Rings22" parent="." unique_id=1761258135 instance=ExtResource("23_tql61")]
+transform = Transform3D(100, 0, 0, 0, 100, 0, 0, 0, 100, -899.6957, 0, 62.970306)
+
+[node name="[Interactable] Meteor 10 Rings23" parent="." unique_id=1123977765 instance=ExtResource("23_tql61")]
+transform = Transform3D(100, 0, 0, 0, 100, 0, 0, 0, 100, -1328.2615, 0, 228.47342)
+
+[node name="[Interactable] Meteor 10 Rings24" parent="." unique_id=1096187663 instance=ExtResource("23_tql61")]
+transform = Transform3D(100, 0, 0, 0, 100, 0, 0, 0, 100, -852.6579, 0, 742.40405)
+
+[node name="[Interactable] Meteor 10 Rings25" parent="." unique_id=577889279 instance=ExtResource("23_tql61")]
+transform = Transform3D(100, 0, 0, 0, 100, 0, 0, 0, 100, -507.71466, 0, 1069.926)
+
+[node name="[Interactable] Meteor 10 Rings26" parent="." unique_id=458451855 instance=ExtResource("23_tql61")]
+transform = Transform3D(100, 0, 0, 0, 100, 0, 0, 0, 100, 419.1026, 0, 1386.9952)
+
+[node name="[Interactable] Meteor 10 Rings27" parent="." unique_id=423197162 instance=ExtResource("23_tql61")]
+transform = Transform3D(100, 0, 0, 0, 100, 0, 0, 0, 100, -204.58276, 0, 1272.0142)
+
+[node name="[Interactable] Meteor 10 Rings28" parent="." unique_id=219484847 instance=ExtResource("23_tql61")]
+transform = Transform3D(100, 0, 0, 0, 100, 0, 0, 0, 100, 159.52405, 0, 1810.3347)
+
+[node name="[Interactable] Meteor 10 Rings29" parent="." unique_id=778209467 instance=ExtResource("23_tql61")]
+transform = Transform3D(100, 0, 0, 0, 100, 0, 0, 0, 100, -241.16766, 0, 1817.3033)
+
+[node name="Big Arm" parent="." unique_id=1199781718 instance=ExtResource("26_potea")]
+transform = Transform3D(2.9802322e-08, 0, -1, 0, 1, 0, 1, 0, 2.9802322e-08, -25.594727, -1.6668949, 584.18243)
+
+[connection signal="OnAfterSpawningDone" from="PlayersManager" to="PlayersManager/DeathEggStageProperties" method="OnBattleStart"]
+
+[editable path="[Interactable] Goal Ring"]

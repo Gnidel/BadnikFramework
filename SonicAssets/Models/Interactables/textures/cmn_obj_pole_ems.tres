@@ -1,0 +1,6 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://b8qun8pn4fpsf"]
+
+[resource]
+resource_name = "cmn_obj_pole_ems"
+cull_mode = 2
+roughness = 0.5

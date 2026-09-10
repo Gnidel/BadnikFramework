@@ -1,0 +1,11 @@
+[gd_resource type="Theme" format=3 uid="uid://dfn1qo0bwoxuf"]
+
+[ext_resource type="FontFile" uid="uid://ysevmc4grcp5" path="res://SonicAssets/Fonts/vipnagorgialla bd.otf" id="1_508x3"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_4ynuq"]
+bg_color = Color(0, 0, 0.737255, 1)
+
+[resource]
+default_font = ExtResource("1_508x3")
+default_font_size = 20
+Button/styles/focus = SubResource("StyleBoxFlat_4ynuq")

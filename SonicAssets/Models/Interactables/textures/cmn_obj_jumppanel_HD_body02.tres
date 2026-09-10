@@ -1,0 +1,10 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://cmqhu6h53iw5l"]
+
+[ext_resource type="Texture2D" uid="uid://dak7swu4ytnlw" path="res://SonicAssets/Models/Interactables/textures/cmn_metal_ms_jumppanel2_dif.dds" id="1_8avcr"]
+
+[resource]
+resource_name = "cmn_obj_jumppanel_HD_body02"
+transparency = 4
+cull_mode = 2
+albedo_texture = ExtResource("1_8avcr")
+metallic = 1.0

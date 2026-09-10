@@ -1,0 +1,185 @@
+[remap]
+
+importer="scene"
+importer_version=1
+type="PackedScene"
+uid="uid://d0l71if36iysv"
+path="res://.godot/imported/TestLevelFloor.blend-829c41790be30d14e7f638ced914fee2.scn"
+
+[deps]
+
+source_file="res://Games/Example game/Levels/TestLevel/TestLevelFloor.blend"
+dest_files=["res://.godot/imported/TestLevelFloor.blend-829c41790be30d14e7f638ced914fee2.scn"]
+
+[params]
+
+nodes/root_type="Node3D"
+nodes/root_name="Scene Root"
+nodes/root_script=null
+mesh_library/use_node_names_as_mesh_names=false
+array_mesh/deduplicate_surfaces=true
+nodes/apply_root_scale=true
+nodes/root_scale=1.0
+nodes/import_as_skeleton_bones=false
+nodes/use_name_suffixes=true
+nodes/use_node_type_suffixes=true
+meshes/ensure_tangents=true
+meshes/generate_lods=true
+meshes/create_shadow_meshes=true
+meshes/light_baking=1
+meshes/lightmap_texel_size=0.2
+meshes/force_disable_compression=false
+skins/use_named_skins=true
+animation/import=true
+animation/fps=30
+animation/trimming=false
+animation/remove_immutable_tracks=true
+animation/import_rest_as_RESET=false
+import_script/path=""
+materials/extract=0
+materials/extract_format=0
+materials/extract_path=""
+_subresources={
+"materials": {
+"Edges": {
+"use_external/enabled": true,
+"use_external/fallback_path": "res://Games/Example game/Levels/TestLevel/Materials/Edges.tres",
+"use_external/path": "uid://d1o06uftgt8v0"
+},
+"Flat": {
+"use_external/enabled": true,
+"use_external/fallback_path": "",
+"use_external/path": "res://Games/Example game/Games/Example game/Levels/TestLevel/Materials/Flat.tres"
+},
+"Floor": {
+"use_external/enabled": true,
+"use_external/fallback_path": "res://Games/Example game/Levels/TestLevel/Materials/Floor.tres",
+"use_external/path": "uid://brtdstsykygt2"
+},
+"Nowalk": {
+"use_external/enabled": true,
+"use_external/fallback_path": "res://Games/Example game/Levels/TestLevel/Materials/Nowalk.tres",
+"use_external/path": "uid://dn7ibxmitldu4"
+},
+"Numbers": {
+"use_external/enabled": true,
+"use_external/fallback_path": "res://Games/Example game/Levels/TestLevel/Materials/Numbers.tres",
+"use_external/path": "uid://bqh8sx2pqf5aw"
+},
+"Transparent": {
+"use_external/enabled": true,
+"use_external/fallback_path": "res://Games/Example game/Levels/TestLevel/Materials/Transparent.tres",
+"use_external/path": "uid://7x8jio3tmq6w"
+},
+"Walls": {
+"use_external/enabled": true,
+"use_external/fallback_path": "res://Games/Example game/Levels/TestLevel/Materials/Walls.tres",
+"use_external/path": "uid://btlgdeq7b5723"
+}
+},
+"nodes": {
+"PATH:AutoscrollerPath": {
+"generate/physics": true,
+"physics/shape_type": 2
+},
+"PATH:Bowl": {
+"generate/physics": true,
+"physics/shape_type": 2
+},
+"PATH:Circle": {
+"generate/physics": true,
+"physics/shape_type": 2
+},
+"PATH:Cube": {
+"generate/physics": true,
+"physics/shape_type": 2
+},
+"PATH:EnemyArena": {
+"generate/physics": true,
+"physics/shape_type": 2
+},
+"PATH:EnemyTower": {
+"generate/physics": true,
+"physics/shape_type": 2
+},
+"PATH:Ground": {
+"generate/physics": true,
+"physics/shape_type": 2
+},
+"PATH:HalfpipePath": {
+"generate/physics": true,
+"physics/shape_type": 2
+},
+"PATH:Loop": {
+"generate/physics": true,
+"physics/shape_type": 2
+},
+"PATH:Loop2": {
+"generate/physics": true,
+"physics/shape_type": 2
+},
+"PATH:LostWorldAreaAgainst": {
+"generate/physics": true,
+"physics/shape_type": 2
+},
+"PATH:LostWorldAreaTowards": {
+"generate/physics": true,
+"physics/shape_type": 2
+},
+"PATH:Pipe": {
+"generate/physics": true,
+"physics/shape_type": 2
+},
+"PATH:Quarter": {
+"generate/physics": true,
+"physics/shape_type": 2
+},
+"PATH:SkydiveCylinder": {
+"generate/physics": true,
+"physics/shape_type": 2
+},
+"PATH:Special_Flat": {
+"generate/physics": true,
+"physics/layer": 9,
+"physics/shape_type": 2
+},
+"PATH:Special_Nowalk": {
+"generate/physics": true,
+"physics/layer": 33,
+"physics/shape_type": 2
+},
+"PATH:TightSpaceCameraTest": {
+"generate/physics": true,
+"physics/shape_type": 2
+},
+"PATH:VeryTallSlope": {
+"generate/physics": true,
+"physics/shape_type": 2
+},
+"PATH:WaterTank": {
+"generate/physics": true,
+"physics/shape_type": 2
+}
+}
+}
+blender/nodes/visible=0
+blender/nodes/active_collection_only=false
+blender/nodes/punctual_lights=false
+blender/nodes/cameras=false
+blender/nodes/custom_properties=false
+blender/nodes/modifiers=1
+blender/meshes/vertex_colors=2
+blender/meshes/uvs=true
+blender/meshes/normals=true
+blender/meshes/export_geometry_nodes_instances=false
+blender/meshes/gpu_instances=false
+blender/meshes/tangents=true
+blender/meshes/skins=2
+blender/meshes/export_bones_deforming_mesh_only=false
+blender/materials/unpack_enabled=true
+blender/materials/export_materials=1
+blender/animation/limit_playback=true
+blender/animation/always_sample=true
+blender/animation/group_tracks=true
+gltf/naming_version=2
+gltf/texture_map_mode=0

@@ -1,0 +1,11 @@
+[gd_resource type="ShaderMaterial" format=3 uid="uid://d35bbn1osk58j"]
+
+[ext_resource type="Shader" uid="uid://cjktp1yrki104" path="res://Shaders/UekawaShader.tres" id="1_4gknh"]
+[ext_resource type="Texture2D" uid="uid://dsfevke21t8bl" path="res://SonicAssets/Models/Tails/Textures/chr_tails_eye_abd.png" id="2_rqmdg"]
+
+[resource]
+render_priority = 0
+shader = ExtResource("1_4gknh")
+shader_parameter/Albedo = ExtResource("2_rqmdg")
+shader_parameter/DarkenThreshold = -0.2
+shader_parameter/HighlightThreashold = 0.5

@@ -1,0 +1,195 @@
+[gd_scene format=3 uid="uid://4lpb7voaefep"]
+
+[ext_resource type="PackedScene" uid="uid://bkt2qp7430moc" path="res://SonicAssets/Prefabs/Misc/homing_target.tscn" id="1_nv58e"]
+[ext_resource type="Script" uid="uid://n1dtm5k3gia" path="res://Scripts/Enemies/EnemyBehaviorManager.cs" id="2_4214a"]
+[ext_resource type="Script" uid="uid://b4mk85f6xpfis" path="res://Scripts/Enemies/WaitForAggroBehavior.cs" id="3_0ucq6"]
+[ext_resource type="Script" uid="uid://dxt4q1t0r7whx" path="res://Scripts/Enemies/EnableDisableBehavior.cs" id="5_4k8ee"]
+[ext_resource type="Script" uid="uid://bk2710vokv8b4" path="res://Scripts/Enemies/EnemyLookAtMode.cs" id="6_481qk"]
+[ext_resource type="Script" uid="uid://nnv8sq88b1f2" path="res://Scripts/Enemies/ChasePlayerBehavior.cs" id="7_4op7y"]
+[ext_resource type="Script" uid="uid://dat1yxewba6k8" path="res://Scripts/Enemies/EnemyControl.cs" id="9_0nc66"]
+[ext_resource type="AudioStream" uid="uid://bwa5uiwsw5xfj" path="res://SonicAssets/Audio/Enemies/se_enemy_common#2 (enmsn_cmn_damage).wav" id="10_38plc"]
+[ext_resource type="Script" uid="uid://y47n4ov38iw2" path="res://Scripts/Interactables/Hitbox.cs" id="12_0k30n"]
+[ext_resource type="AudioStream" uid="uid://cj1m5ddwne3iy" path="res://SonicAssets/Audio/Enemies/se_enemy_motora#1 (enm_mtr_move).ogg" id="12_xaqnk"]
+[ext_resource type="Script" uid="uid://d0rd6cimu685c" path="res://Scripts/Interactables/Hurtbox.cs" id="13_e1idf"]
+[ext_resource type="AudioStream" uid="uid://blnwl5ogc8alh" path="res://SonicAssets/Audio/Enemies/Synth_5000000_enemy_5061000_ENM_MTR_CL_5061_001_dash01_aif.wav" id="13_tisf8"]
+[ext_resource type="PackedScene" uid="uid://c0diwua11ay6e" path="res://SonicAssets/Prefabs/Particles/AttackShockwave/[particles] attack_shockwave_particles.tscn" id="15_72sd6"]
+[ext_resource type="PackedScene" uid="uid://dybkmc4n60ia0" path="res://SonicAssets/Models/Enemies/EnemyMotobug.blend" id="16_k1e7i"]
+[ext_resource type="Material" uid="uid://csrhoebp6gef" path="res://Materials/Outline.tres" id="17_1i543"]
+[ext_resource type="Script" uid="uid://pjstvdm845b" path="res://SonicAssets/Scripts/Enemies/MotobugAnimation.cs" id="17_3d485"]
+[ext_resource type="Shader" uid="uid://cjktp1yrki104" path="res://Shaders/UekawaShader.tres" id="17_3jd4p"]
+[ext_resource type="PackedScene" uid="uid://bkm2q3gcvplul" path="res://SonicAssets/Prefabs/Particles/StepSmoke/[particles]_step_smoke.tscn" id="17_m13m4"]
+[ext_resource type="Texture2D" uid="uid://bon64lckri3j8" path="res://SonicAssets/Models/Enemies/textures/enm_motora_body_dif_HD.dds" id="18_1i543"]
+[ext_resource type="Script" uid="uid://bw8224m0k2phx" path="res://Scripts/Interactables/NonPlayerSplineMovement.cs" id="19_4k2mn"]
+[ext_resource type="PackedScene" uid="uid://d0mild2vdixl1" path="res://SonicAssets/Prefabs/Particles/Explosion2/[Particles] Explosion2.tscn" id="19_e508j"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_ar2vf"]
+friction = 0.0
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_vfsj3"]
+radius = 1.0
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_4t4a2"]
+radius = 1.0
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_g877g"]
+radius = 1.5
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_fx3jg"]
+radius = 50.0
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_k53bu"]
+render_priority = 0
+next_pass = ExtResource("17_1i543")
+shader = ExtResource("17_3jd4p")
+shader_parameter/Albedo = ExtResource("18_1i543")
+shader_parameter/DarkenThreshold = -0.75
+shader_parameter/HighlightThreashold = 0.3
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_m6ec5"]
+render_priority = 0
+next_pass = ExtResource("17_1i543")
+shader = ExtResource("17_3jd4p")
+shader_parameter/Albedo = ExtResource("18_1i543")
+shader_parameter/DarkenThreshold = -0.75
+shader_parameter/HighlightThreashold = 0.3
+
+[node name="[Enemy] Motobug" type="RigidBody3D" unique_id=64723550]
+physics_interpolation_mode = 2
+transform = Transform3D(1, 0, 1.74846e-07, 0, 1, 0, -1.74846e-07, 0, 1, 0, 0, 0)
+collision_layer = 68
+axis_lock_angular_x = true
+axis_lock_angular_y = true
+axis_lock_angular_z = true
+physics_material_override = SubResource("PhysicsMaterial_ar2vf")
+gravity_scale = 0.0
+
+[node name="HomingTarget" parent="." unique_id=95950955 instance=ExtResource("1_nv58e")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+TargetableByGuns = true
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1754135885]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+shape = SubResource("SphereShape3D_vfsj3")
+
+[node name="Behaviors" type="Node" parent="." unique_id=345694357 node_paths=PackedStringArray("CurrentPhase")]
+script = ExtResource("2_4214a")
+CurrentPhase = NodePath("Phase0Waiting")
+
+[node name="Phase0Waiting" type="Node" parent="Behaviors" unique_id=994404829]
+
+[node name="WaitForAggroBehavior" type="Node" parent="Behaviors/Phase0Waiting" unique_id=630074325 node_paths=PackedStringArray("BehaviorManager", "NextPhase")]
+script = ExtResource("3_0ucq6")
+BehaviorManager = NodePath("../..")
+NextPhase = NodePath("../../Phase1")
+
+[node name="EnableDisableList" type="Node" parent="Behaviors/Phase0Waiting" unique_id=250729922]
+process_mode = 4
+script = ExtResource("5_4k8ee")
+
+[node name="Phase1" type="Node" parent="Behaviors" unique_id=237295980]
+
+[node name="LookAtModeBehavior" type="Node" parent="Behaviors/Phase1" unique_id=931959733 node_paths=PackedStringArray("EnemyControl", "ObjectToRotate", "LookReferencePoint")]
+script = ExtResource("6_481qk")
+EnemyControl = NodePath("../../../EnemyControl")
+ObjectToRotate = NodePath("../../..")
+LookReferencePoint = NodePath("../../..")
+LookMode = 2
+RotationSpeed = 3.0
+
+[node name="EnableDisableList" type="Node" parent="Behaviors/Phase1" unique_id=1370171983]
+process_mode = 4
+script = ExtResource("5_4k8ee")
+
+[node name="ChasePlayerBehavior" type="Node" parent="Behaviors/Phase1" unique_id=700280009 node_paths=PackedStringArray("EnemyControl", "Rigidbody")]
+script = ExtResource("7_4op7y")
+EnemyControl = NodePath("../../../EnemyControl")
+Speed = 30.0
+StopAtXZDistance = 0.0
+LimitToXZ = true
+LimitToYZ = true
+Rigidbody = NodePath("../../..")
+
+[node name="Phase99Death" type="Node" parent="Behaviors" unique_id=772863120]
+
+[node name="EnableDisableList" type="Node" parent="Behaviors/Phase99Death" unique_id=1784054848]
+process_mode = 4
+script = ExtResource("5_4k8ee")
+
+[node name="EnemyControl" type="Node" parent="." unique_id=74581109 node_paths=PackedStringArray("Hitbox", "Hurtbox", "HomingTarget", "RigidBody", "MeshInstance", "AudioSource", "DeathAnticipationParticle", "BehaviorManager", "DeathPhase")]
+script = ExtResource("9_0nc66")
+DamageCooldown = 1.0
+Hitbox = NodePath("../Hitbox")
+Hurtbox = NodePath("../Hurtbox")
+HomingTarget = NodePath("../HomingTarget")
+RigidBody = NodePath("..")
+MeshInstance = NodePath("../EnemyMotobug/enm_motora_HD/Skeleton3D/enm_motora_HD_001")
+DamageSoundEffect = ExtResource("10_38plc")
+AudioSource = NodePath("../AudioStreamPlayer3D")
+ExplosionParticles = ExtResource("19_e508j")
+DeathAnticipationParticle = NodePath("../[Particles] StepSmoke")
+BehaviorManager = NodePath("../Behaviors")
+DeathPhase = NodePath("../Behaviors/Phase99Death")
+GravityScale = 30.0
+
+[node name="MotobugAnimation" type="Node" parent="EnemyControl" unique_id=1719931931 node_paths=PackedStringArray("EnemyControl", "AnimationPlayer", "RigidBody", "Mesh", "SpeedParticles", "AggroAudioPlayer")]
+script = ExtResource("17_3d485")
+EnemyControl = NodePath("..")
+AnimationPlayer = NodePath("../../EnemyMotobug/AnimationPlayer")
+RigidBody = NodePath("../..")
+Mesh = NodePath("../../EnemyMotobug/enm_motora_HD/Skeleton3D/enm_motora_HD_001")
+TireSurfaceIdx = 4
+SpeedParticles = [NodePath("../../[Particles] StepSmoke")]
+AggroAudioPlayer = NodePath("../../AudioStreamPlayer3D_Aggro")
+
+[node name="Hitbox" type="Area3D" parent="." unique_id=185036930]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+collision_mask = 3
+script = ExtResource("12_0k30n")
+CanDamageRollingPlayer = false
+CanDamageEnemy = false
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Hitbox" unique_id=35011337]
+shape = SubResource("SphereShape3D_4t4a2")
+
+[node name="Hurtbox" type="Area3D" parent="." unique_id=1600284257]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+script = ExtResource("13_e1idf")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Hurtbox" unique_id=2015131204]
+shape = SubResource("SphereShape3D_g877g")
+
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="." unique_id=70251339]
+stream = ExtResource("12_xaqnk")
+autoplay = true
+bus = &"SFX"
+
+[node name="AudioStreamPlayer3D_Aggro" type="AudioStreamPlayer3D" parent="." unique_id=1613274112]
+stream = ExtResource("13_tisf8")
+bus = &"SFX"
+
+[node name="AggroArea" type="Area3D" parent="." unique_id=1649302484]
+collision_layer = 0
+collision_mask = 2
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="AggroArea" unique_id=2111399963]
+shape = SubResource("SphereShape3D_fx3jg")
+
+[node name="AttackShockwaveParticles" parent="." unique_id=911573802 instance=ExtResource("15_72sd6")]
+
+[node name="EnemyMotobug" parent="." unique_id=1410396764 instance=ExtResource("16_k1e7i")]
+transform = Transform3D(-1, -8.74228e-08, 3.82137e-15, 0, -4.37114e-08, -1, 8.74228e-08, -1, 4.37114e-08, 0, 0, 0)
+
+[node name="enm_motora_HD_001" parent="EnemyMotobug/enm_motora_HD/Skeleton3D" parent_id_path=PackedInt32Array(1410396764, 1518399606) index="0" unique_id=2124436556]
+surface_material_override/0 = SubResource("ShaderMaterial_k53bu")
+surface_material_override/1 = SubResource("ShaderMaterial_m6ec5")
+
+[node name="[Particles] StepSmoke" parent="." unique_id=440810478 instance=ExtResource("17_m13m4")]
+
+[node name="NonPlayerSplineMovement" type="Node" parent="." unique_id=137495010]
+script = ExtResource("19_4k2mn")
+
+[connection signal="OnHitboxEnter" from="Hurtbox" to="EnemyControl" method="OnHitboxEnter"]
+[connection signal="area_entered" from="Hurtbox" to="Hurtbox" method="OnAreaEnter"]
+[connection signal="body_entered" from="AggroArea" to="Behaviors/Phase0Waiting/WaitForAggroBehavior" method="OnTriggerEnter"]
+
+[editable path="EnemyMotobug"]

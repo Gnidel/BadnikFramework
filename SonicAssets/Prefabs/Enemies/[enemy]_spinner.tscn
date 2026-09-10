@@ -1,0 +1,180 @@
+[gd_scene format=3 uid="uid://glul7ke1mfjn"]
+
+[ext_resource type="PackedScene" uid="uid://bkt2qp7430moc" path="res://SonicAssets/Prefabs/Misc/homing_target.tscn" id="1_g45rx"]
+[ext_resource type="PackedScene" uid="uid://ct1n36nr22ung" path="res://SonicAssets/Models/Enemies/enemy_spinner_model.tscn" id="2_re1fg"]
+[ext_resource type="Script" uid="uid://n1dtm5k3gia" path="res://Scripts/Enemies/EnemyBehaviorManager.cs" id="2_v5aym"]
+[ext_resource type="Script" uid="uid://bk2710vokv8b4" path="res://Scripts/Enemies/EnemyLookAtMode.cs" id="5_6j7al"]
+[ext_resource type="PackedScene" uid="uid://d0mild2vdixl1" path="res://SonicAssets/Prefabs/Particles/Explosion2/[Particles] Explosion2.tscn" id="6_n3whn"]
+[ext_resource type="AudioStream" uid="uid://ceeyagoyhsj24" path="res://SonicAssets/Audio/Enemies/se_enemy_spinner#2 (enmsn_spnr_flight).ogg" id="6_xilbq"]
+[ext_resource type="Script" uid="uid://dat1yxewba6k8" path="res://Scripts/Enemies/EnemyControl.cs" id="7_e6eva"]
+[ext_resource type="AudioStream" uid="uid://bwa5uiwsw5xfj" path="res://SonicAssets/Audio/Enemies/se_enemy_common#2 (enmsn_cmn_damage).wav" id="8_wbgr4"]
+[ext_resource type="Script" uid="uid://y47n4ov38iw2" path="res://Scripts/Interactables/Hitbox.cs" id="10_7fstv"]
+[ext_resource type="Script" uid="uid://d0rd6cimu685c" path="res://Scripts/Interactables/Hurtbox.cs" id="11_q7j1l"]
+[ext_resource type="PackedScene" uid="uid://bkm2q3gcvplul" path="res://SonicAssets/Prefabs/Particles/StepSmoke/[particles]_step_smoke.tscn" id="13_ctv6b"]
+[ext_resource type="Texture2D" uid="uid://ctu5aul2bm0pe" path="res://SonicAssets/Prefabs/Particles/AttackShockwave/ef_ch_sng_yh1_hit.png" id="14_3va0m"]
+[ext_resource type="Script" uid="uid://bw8224m0k2phx" path="res://Scripts/Interactables/NonPlayerSplineMovement.cs" id="14_nw5uk"]
+[ext_resource type="Texture2D" uid="uid://ju7vp8xxw0gi" path="res://SonicAssets/Prefabs/Particles/AttackShockwave/ef_ch_sng_yh1_hit2.png" id="15_afnte"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_ar2vf"]
+friction = 0.0
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_vfsj3"]
+radius = 1.0
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_4t4a2"]
+radius = 1.0
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_g877g"]
+radius = 1.5
+
+[sub_resource type="Curve" id="Curve_8xqta"]
+_limits = [-360.0, 360.0, 0.0, 1.0]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(1, 1), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="CurveTexture" id="CurveTexture_sdvrw"]
+curve = SubResource("Curve_8xqta")
+
+[sub_resource type="Gradient" id="Gradient_frhhl"]
+offsets = PackedFloat32Array(0, 0.520833, 1)
+colors = PackedColorArray(0, 0, 0, 0, 0.521569, 0.521569, 0.521569, 1, 1, 1, 1, 0)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_veaka"]
+gradient = SubResource("Gradient_frhhl")
+
+[sub_resource type="Curve" id="Curve_ypdqp"]
+_data = [Vector2(0.00369003, 0), 0.0, 0.0, 0, 0, Vector2(1, 1), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="CurveTexture" id="CurveTexture_l3oey"]
+curve = SubResource("Curve_ypdqp")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_ols1o"]
+angle_max = 360.0
+angle_curve = SubResource("CurveTexture_sdvrw")
+gravity = Vector3(0, 0, 0)
+scale_max = 10.0
+scale_curve = SubResource("CurveTexture_l3oey")
+color_ramp = SubResource("GradientTexture1D_veaka")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_iprt8"]
+transparency = 1
+blend_mode = 1
+no_depth_test = true
+shading_mode = 0
+vertex_color_use_as_albedo = true
+albedo_texture = ExtResource("14_3va0m")
+disable_receive_shadows = true
+billboard_mode = 3
+particles_anim_h_frames = 1
+particles_anim_v_frames = 1
+particles_anim_loop = false
+grow_amount = 1.79
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_igbr8"]
+material = SubResource("StandardMaterial3D_iprt8")
+orientation = 2
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_12xi3"]
+transparency = 1
+blend_mode = 1
+shading_mode = 0
+albedo_texture = ExtResource("15_afnte")
+disable_receive_shadows = true
+billboard_mode = 3
+billboard_keep_scale = true
+particles_anim_h_frames = 1
+particles_anim_v_frames = 1
+particles_anim_loop = false
+
+[sub_resource type="QuadMesh" id="QuadMesh_fkmdg"]
+material = SubResource("StandardMaterial3D_12xi3")
+
+[node name="[Enemy] Spinner" type="RigidBody3D" unique_id=864214425]
+transform = Transform3D(1, 0, 1.74846e-07, 0, 1, 0, -1.74846e-07, 0, 1, 0, 0, 0)
+collision_layer = 4
+physics_material_override = SubResource("PhysicsMaterial_ar2vf")
+gravity_scale = 0.0
+continuous_cd = true
+
+[node name="HomingTarget" parent="." unique_id=1983031068 instance=ExtResource("1_g45rx")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+TargetableByGuns = true
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1989023497]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+shape = SubResource("SphereShape3D_vfsj3")
+
+[node name="Behaviors" type="Node" parent="." unique_id=270402003 node_paths=PackedStringArray("CurrentPhase")]
+script = ExtResource("2_v5aym")
+CurrentPhase = NodePath("Phase0Rotating")
+
+[node name="Phase0Rotating" type="Node" parent="Behaviors" unique_id=1158544557]
+
+[node name="LookAtModeBehavior" type="Node" parent="Behaviors/Phase0Rotating" unique_id=1826756688 node_paths=PackedStringArray("EnemyControl", "ObjectToRotate", "LookReferencePoint")]
+script = ExtResource("5_6j7al")
+EnemyControl = NodePath("../../../EnemyControl")
+ObjectToRotate = NodePath("../../..")
+LookReferencePoint = NodePath("../../../HomingTarget")
+LookMode = 2
+RotationSpeed = 3.0
+
+[node name="Phase99Death" type="Node" parent="Behaviors" unique_id=77534550]
+
+[node name="EnemyControl" type="Node" parent="." unique_id=270881859 node_paths=PackedStringArray("Hitbox", "Hurtbox", "HomingTarget", "RigidBody", "DamageParticles", "AudioSource", "DeathAnticipationParticle", "BehaviorManager", "DeathPhase")]
+script = ExtResource("7_e6eva")
+DamageCooldown = 1.0
+Hitbox = NodePath("../Hitbox")
+Hurtbox = NodePath("../Hurtbox")
+HomingTarget = NodePath("../HomingTarget")
+RigidBody = NodePath("..")
+DamageSoundEffect = ExtResource("8_wbgr4")
+DamageParticles = NodePath("../AttackShockwaveParticles")
+AudioSource = NodePath("../AudioStreamPlayer3D")
+ExplosionParticles = ExtResource("6_n3whn")
+DeathAnticipationParticle = NodePath("../[Particles] StepSmoke")
+BehaviorManager = NodePath("../Behaviors")
+DeathPhase = NodePath("../Behaviors/Phase99Death")
+
+[node name="Hitbox" type="Area3D" parent="." unique_id=469024198]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+collision_mask = 3
+script = ExtResource("10_7fstv")
+CanDamageRollingPlayer = false
+CanDamageEnemy = false
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Hitbox" unique_id=467358312]
+shape = SubResource("SphereShape3D_4t4a2")
+
+[node name="Hurtbox" type="Area3D" parent="." unique_id=645369151]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+script = ExtResource("11_q7j1l")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Hurtbox" unique_id=1903244482]
+shape = SubResource("SphereShape3D_g877g")
+
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="." unique_id=21330727]
+stream = ExtResource("6_xilbq")
+autoplay = true
+bus = &"SFX"
+
+[node name="AttackShockwaveParticles" type="GPUParticles3D" parent="." unique_id=1760583507]
+emitting = false
+amount = 1
+lifetime = 0.2
+one_shot = true
+process_material = SubResource("ParticleProcessMaterial_ols1o")
+draw_passes = 2
+draw_pass_1 = SubResource("PlaneMesh_igbr8")
+draw_pass_2 = SubResource("QuadMesh_fkmdg")
+
+[node name="EnemySpinner" parent="." unique_id=856690925 instance=ExtResource("2_re1fg")]
+transform = Transform3D(-3, -2.62268e-07, 1.14641e-14, 0, -1.31134e-07, -3, 2.62268e-07, -3, 1.31134e-07, 0, 0, 0)
+
+[node name="[Particles] StepSmoke" parent="." unique_id=418493151 instance=ExtResource("13_ctv6b")]
+
+[node name="NonPlayerSplineMovement" type="Node" parent="." unique_id=498106203]
+script = ExtResource("14_nw5uk")
+
+[connection signal="OnHitboxEnter" from="Hurtbox" to="EnemyControl" method="OnHitboxEnter"]
+[connection signal="area_entered" from="Hurtbox" to="Hurtbox" method="OnAreaEnter"]

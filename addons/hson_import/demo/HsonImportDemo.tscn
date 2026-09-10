@@ -1,0 +1,64 @@
+[gd_scene format=3 uid="uid://brkojawte57bb"]
+
+[ext_resource type="Script" uid="uid://btq8f5owpa3tp" path="res://addons/hson_import/HsonImportNode.cs" id="1_sqye1"]
+[ext_resource type="PackedScene" uid="uid://bsrb5fnxstm16" path="res://addons/hson_import/demo/w6d01_col.glb" id="14_r57tt"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_r57tt"]
+sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
+ground_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
+
+[sub_resource type="Sky" id="Sky_fs278"]
+sky_material = SubResource("ProceduralSkyMaterial_r57tt")
+
+[sub_resource type="Environment" id="Environment_xolah"]
+background_mode = 2
+sky = SubResource("Sky_fs278")
+glow_enabled = true
+
+[node name="HsonImportDemo" type="Node3D" unique_id=911875291]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=286209498]
+environment = SubResource("Environment_xolah")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=1369177032]
+transform = Transform3D(-0.8660254, -0.43301278, 0.25, 0, 0.49999997, 0.86602545, -0.50000006, 0.75, -0.43301266, 0, 0, 0)
+shadow_enabled = true
+
+[node name="This is 1-1 from Sonic Frontiers" type="Node" parent="." unique_id=1052713933]
+
+[node name="HSON Import demo" type="Node3D" parent="." unique_id=129035349]
+
+[node name="HsonImportNode" type="Node3D" parent="HSON Import demo" unique_id=777040098 node_paths=PackedStringArray("Output")]
+script = ExtResource("1_sqye1")
+SourceFilePaths = "addons\\hson_import\\demo\\w6d01_gr_path.hson
+addons\\hson_import\\demo\\w6d01_obj_area01.hson"
+Output = NodePath("../Output")
+Mapping = Dictionary[String, String]({
+"balloon": "res://SonicAssets/Prefabs/Interactables/[interactable]_balloon.tscn",
+"bouncepad": "res://SonicAssets/Prefabs/Interactables/[interactable]_giant_spring.tscn",
+"dashpanel": "res://SonicAssets/Prefabs/Interactables/[interactable]_speed_pad.tscn",
+"dashring": "res://SonicAssets/Prefabs/Interactables/[interactable]_dash_ring.tscn",
+"dashroller": "res://SonicAssets/Prefabs/Interactables/[interactable]_speed_pad.tscn",
+"eggrobo": "res://SonicAssets/Prefabs/Enemies/[enemy]_egg_pawn_gun.tscn",
+"goaltrigger": "res://SonicAssets/Prefabs/Interactables/[interactable]_goal_ring.tscn",
+"grindbooster": "res://SonicAssets/Prefabs/Interactables/[interactable]_grind_booster.tscn",
+"grindthorn": "res://SonicAssets/Prefabs/Interactables/Obstacles/[obstacle]_grind_thorns.tscn",
+"jumpboard": "res://SonicAssets/Prefabs/Interactables/[interactable]_jump_panel30.tscn",
+"motora": "res://SonicAssets/Prefabs/Enemies/[enemy]_motobug.tscn",
+"redring": "res://SonicAssets/Prefabs/Items/[item]_red_ring_1.tscn",
+"ring": "res://SonicAssets/Prefabs/Items/[item]_ring.tscn",
+"spring": "res://SonicAssets/Prefabs/Interactables/[interactable]_spring_red.tscn",
+"superring": "res://SonicAssets/Prefabs/Items/[item]_ring10.tscn",
+"thorn": "res://SonicAssets/Prefabs/Interactables/Obstacles/[obstacle]_thorns.tscn",
+"thorncylinder": "res://SonicAssets/Prefabs/Interactables/Obstacles/[obstacle]_thorn_cylinder.tscn",
+"upreel": "res://SonicAssets/Prefabs/Interactables/[interactable]_pulley_path.tscn",
+"widespring": "res://SonicAssets/Prefabs/Interactables/[interactable]_spring_red_wide.tscn"
+})
+PathMapping = Dictionary[String, String]({
+"gr_path": "res://Prefabs/Interactables/[interactable]_grind_rail.tscn",
+"obj_path": "res://Prefabs/Interactables/[interactable]_autorun_path.tscn"
+})
+
+[node name="Output" type="Node3D" parent="HSON Import demo" unique_id=329848810]
+
+[node name="w6d01_col" parent="." unique_id=1425337413 instance=ExtResource("14_r57tt")]

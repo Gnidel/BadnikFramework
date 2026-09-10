@@ -1,0 +1,10 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://boj8rnxndmumc"]
+
+[ext_resource type="Texture2D" uid="uid://dsfevke21t8bl" path="res://SonicAssets/Models/Tails/Textures/chr_tails_eye_abd.png" id="1_is4y7"]
+
+[resource]
+resource_name = "chr_tailsP_eyeR"
+diffuse_mode = 2
+vertex_color_use_as_albedo = true
+albedo_texture = ExtResource("1_is4y7")
+roughness = 0.5

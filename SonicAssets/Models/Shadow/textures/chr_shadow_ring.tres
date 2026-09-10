@@ -1,0 +1,10 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://bh4n8c5yejpv2"]
+
+[ext_resource type="Texture2D" uid="uid://mr58w8j0h1l5" path="res://SonicAssets/Models/Shadow/textures/chr_shadow_ring_e1.dds" id="1_xp2pb"]
+
+[resource]
+resource_name = "chr_shadow_ring"
+albedo_texture = ExtResource("1_xp2pb")
+metallic = 1.0
+metallic_specular = 1.0
+roughness = 0.5

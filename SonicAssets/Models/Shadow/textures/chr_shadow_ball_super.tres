@@ -1,0 +1,8 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://pof6oc0v1d2v"]
+
+[ext_resource type="Texture2D" uid="uid://b0uhosgvevdo1" path="res://SonicAssets/Models/Shadow/textures/chr_shadowspin_body_abd_withred_super.png" id="1_or4e4"]
+
+[resource]
+transparency = 1
+albedo_texture = ExtResource("1_or4e4")
+metallic = 0.5

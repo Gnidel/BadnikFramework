@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://chysp2ite1jfw"
+path="res://.godot/imported/se_wars_sys_common#6 (sys_result_b_to_a; sys_result_c_to_b).ogg-e10be4119d553f1c5efe887bfd1c837c.oggvorbisstr"
+
+[deps]
+
+source_file="res://SonicAssets/Audio/Game/se_wars_sys_common#6 (sys_result_b_to_a; sys_result_c_to_b).ogg"
+dest_files=["res://.godot/imported/se_wars_sys_common#6 (sys_result_b_to_a; sys_result_c_to_b).ogg-e10be4119d553f1c5efe887bfd1c837c.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

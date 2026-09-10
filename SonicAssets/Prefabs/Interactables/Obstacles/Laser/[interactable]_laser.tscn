@@ -1,0 +1,132 @@
+[gd_scene format=3 uid="uid://dre8xwwke4ya5"]
+
+[ext_resource type="Script" uid="uid://nuj2w13y5sy4" path="res://Scripts/Interactables/Laser.cs" id="1_wenq5"]
+[ext_resource type="Script" uid="uid://y47n4ov38iw2" path="res://Scripts/Interactables/Hitbox.cs" id="2_0cemb"]
+[ext_resource type="Texture2D" uid="uid://ctd8j3oa3kq7i" path="res://SonicAssets/Prefabs/Interactables/Obstacles/Laser/laser_e.png" id="2_ch5ca"]
+[ext_resource type="Texture2D" uid="uid://dvdvx04p73lpt" path="res://SonicAssets/Prefabs/Interactables/Obstacles/Laser/laser_flare.png" id="4_hbvok"]
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_q27ly"]
+resource_local_to_scene = true
+flip_faces = true
+top_radius = 0.4
+bottom_radius = 0.4
+height = 2.224
+radial_segments = 16
+cap_top = false
+cap_bottom = false
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_vdtn6"]
+transparency = 1
+albedo_color = Color(1, 0, 0, 0.752941)
+emission_enabled = true
+emission = Color(1, 0, 0, 1)
+emission_energy_multiplier = 16.0
+emission_operator = 1
+emission_texture = ExtResource("2_ch5ca")
+uv1_triplanar = true
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_ttjif"]
+resource_local_to_scene = true
+flip_faces = true
+height = 2.224
+radial_segments = 16
+cap_top = false
+cap_bottom = false
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_tvrmd"]
+transparency = 1
+albedo_color = Color(1, 0, 0, 0.501961)
+albedo_texture = ExtResource("2_ch5ca")
+emission_enabled = true
+emission = Color(1, 0, 0, 1)
+emission_energy_multiplier = 10.0
+emission_operator = 1
+emission_texture = ExtResource("2_ch5ca")
+uv1_triplanar = true
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_wgxdr"]
+resource_local_to_scene = true
+radius = 0.4
+
+[sub_resource type="Gradient" id="Gradient_q1tyd"]
+offsets = PackedFloat32Array(0, 0.528017, 1)
+colors = PackedColorArray(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_ucgpu"]
+gradient = SubResource("Gradient_q1tyd")
+
+[sub_resource type="Curve" id="Curve_exg1k"]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="CurveTexture" id="CurveTexture_ins60"]
+curve = SubResource("Curve_exg1k")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_d1n78"]
+direction = Vector3(0, 10, 0)
+spread = 90.0
+initial_velocity_max = 10.0
+gravity = Vector3(0, 0, 0)
+scale_max = 2.0
+scale_curve = SubResource("CurveTexture_ins60")
+color_ramp = SubResource("GradientTexture1D_ucgpu")
+turbulence_influence_min = 0.0
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_4qcy6"]
+transparency = 1
+vertex_color_use_as_albedo = true
+albedo_color = Color(1, 0, 0, 0.501961)
+albedo_texture = ExtResource("4_hbvok")
+emission_enabled = true
+emission = Color(1, 0, 0, 1)
+billboard_mode = 3
+billboard_keep_scale = true
+particles_anim_h_frames = 1
+particles_anim_v_frames = 1
+particles_anim_loop = false
+
+[sub_resource type="QuadMesh" id="QuadMesh_yo51u"]
+material = SubResource("StandardMaterial3D_4qcy6")
+
+[node name="[Interactable] Laser" type="RayCast3D" unique_id=2019842755 node_paths=PackedStringArray("BeamMeshes", "Hitbox", "CollissionExceptions", "HitboxShape", "StartParticles", "EndParticles")]
+target_position = Vector3(0, -500, 0)
+collision_mask = 3
+hit_back_faces = false
+script = ExtResource("1_wenq5")
+BeamMeshes = [NodePath("BeamMesh"), NodePath("BeamMesh2")]
+Hitbox = NodePath("Hitbox")
+CollissionExceptions = [NodePath("Hitbox")]
+HitboxShape = NodePath("Hitbox/CollisionShape3D")
+UvScroll = Vector3(10, 10, 0)
+StartParticles = NodePath("StartParticles")
+EndParticles = NodePath("EndParticles")
+
+[node name="BeamMesh" type="MeshInstance3D" parent="." unique_id=1006862339]
+sorting_offset = 2.0
+mesh = SubResource("CylinderMesh_q27ly")
+surface_material_override/0 = SubResource("StandardMaterial3D_vdtn6")
+
+[node name="BeamMesh2" type="MeshInstance3D" parent="." unique_id=909123986]
+sorting_offset = 2.0
+mesh = SubResource("CylinderMesh_ttjif")
+surface_material_override/0 = SubResource("StandardMaterial3D_tvrmd")
+
+[node name="Hitbox" type="Area3D" parent="." unique_id=1065576655]
+collision_mask = 3
+script = ExtResource("2_0cemb")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Hitbox" unique_id=939656509]
+shape = SubResource("CylinderShape3D_wgxdr")
+
+[node name="EndParticles" type="GPUParticles3D" parent="." unique_id=186442454]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1, 0)
+lifetime = 0.2
+local_coords = true
+process_material = SubResource("ParticleProcessMaterial_d1n78")
+draw_pass_1 = SubResource("QuadMesh_yo51u")
+
+[node name="StartParticles" type="GPUParticles3D" parent="." unique_id=609976439]
+lifetime = 0.2
+local_coords = true
+process_material = SubResource("ParticleProcessMaterial_d1n78")
+draw_pass_1 = SubResource("QuadMesh_yo51u")

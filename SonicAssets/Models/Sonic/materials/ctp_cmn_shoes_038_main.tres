@@ -1,0 +1,11 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://dd62u6t5j45fn"]
+
+[ext_resource type="Texture2D" uid="uid://4ntrbn2w6cxu" path="res://SonicAssets/Models/Sonic/textures/ctp_cmn_shoes_038a_main_abd.png" id="1_acdfl"]
+
+[resource]
+resource_name = "ctp_cmn_shoes_038_main"
+cull_mode = 2
+diffuse_mode = 2
+vertex_color_use_as_albedo = true
+albedo_texture = ExtResource("1_acdfl")
+metallic_specular = 0.0

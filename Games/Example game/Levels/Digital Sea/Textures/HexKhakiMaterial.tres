@@ -1,0 +1,20 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://nwm1o2s47wm"]
+
+[ext_resource type="Texture2D" uid="uid://pc50g8alg61j" path="res://Games/Example game/Levels/Digital Sea/Textures/hex_khaki_a.png" id="1_lk0sd"]
+[ext_resource type="Texture2D" uid="uid://duhau7l3bhsj6" path="res://Games/Example game/Levels/Digital Sea/Textures/hex_khaki_h.png" id="2_1n053"]
+[ext_resource type="Texture2D" uid="uid://cji4x0qrgg2j2" path="res://Games/Example game/Levels/Digital Sea/Textures/hex_khaki_e.png" id="2_aucey"]
+[ext_resource type="Texture2D" uid="uid://b6wyvrvb5aki4" path="res://Games/Example game/Levels/Digital Sea/Textures/hex_khaki_n.png" id="3_aucey"]
+
+[resource]
+albedo_texture = ExtResource("1_lk0sd")
+metallic = 0.75
+metallic_specular = 0.75
+emission_enabled = true
+emission_energy_multiplier = 16.0
+emission_texture = ExtResource("2_aucey")
+normal_enabled = true
+normal_texture = ExtResource("3_aucey")
+heightmap_enabled = true
+heightmap_scale = 1.0
+heightmap_texture = ExtResource("2_1n053")
+heightmap_flip_texture = true

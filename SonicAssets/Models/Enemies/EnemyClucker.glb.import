@@ -1,0 +1,73 @@
+[remap]
+
+importer="scene"
+importer_version=1
+type="PackedScene"
+uid="uid://njyrbcaowh80"
+path="res://.godot/imported/EnemyClucker.glb-6c137483cbcfbc2ff48e2a40ade7aeac.scn"
+
+[deps]
+
+source_file="res://SonicAssets/Models/Enemies/EnemyClucker.glb"
+dest_files=["res://.godot/imported/EnemyClucker.glb-6c137483cbcfbc2ff48e2a40ade7aeac.scn"]
+
+[params]
+
+nodes/root_type=""
+nodes/root_name=""
+nodes/root_script=null
+mesh_library/use_node_names_as_mesh_names=false
+array_mesh/deduplicate_surfaces=true
+nodes/apply_root_scale=true
+nodes/root_scale=1.0
+nodes/import_as_skeleton_bones=false
+nodes/use_name_suffixes=true
+nodes/use_node_type_suffixes=true
+meshes/ensure_tangents=true
+meshes/generate_lods=true
+meshes/create_shadow_meshes=true
+meshes/light_baking=1
+meshes/lightmap_texel_size=0.2
+meshes/force_disable_compression=false
+skins/use_named_skins=true
+animation/import=true
+animation/fps=30
+animation/trimming=false
+animation/remove_immutable_tracks=true
+animation/import_rest_as_RESET=false
+import_script/path=""
+materials/extract=0
+materials/extract_format=0
+materials/extract_path=""
+_subresources={
+"materials": {
+"enm_kokeko_body": {
+"use_external/enabled": true,
+"use_external/fallback_path": "res://SonicAssets/Models/Enemies/textures/enm_kokeko_body.tres",
+"use_external/path": "uid://c5gx7sr63ukoy"
+},
+"enm_kokeko_eye_l": {
+"use_external/enabled": true,
+"use_external/fallback_path": "res://SonicAssets/Models/Enemies/textures/enm_kokeko_eye_l.tres",
+"use_external/path": "uid://dfgrvhksmv7ig"
+},
+"enm_kokeko_eye_r": {
+"use_external/enabled": true,
+"use_external/fallback_path": "res://SonicAssets/Models/Enemies/textures/enm_kokeko_eye_r.tres",
+"use_external/path": "uid://bunxvetc2pgdf"
+},
+"enm_kokeko_main": {
+"use_external/enabled": true,
+"use_external/fallback_path": "res://SonicAssets/Models/Enemies/textures/enm_kokeko_main.tres",
+"use_external/path": "uid://cxf1qqnvkowo4"
+},
+"enm_kokeko_metal": {
+"use_external/enabled": true,
+"use_external/fallback_path": "res://SonicAssets/Models/Enemies/textures/enm_kokeko_metal.tres",
+"use_external/path": "uid://b0ndhh5vh3syn"
+}
+}
+}
+gltf/naming_version=2
+gltf/embedded_image_handling=1
+gltf/texture_map_mode=0

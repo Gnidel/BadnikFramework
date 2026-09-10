@@ -1,0 +1,8 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://dx0jskel7s32c"]
+
+[ext_resource type="Texture2D" uid="uid://bdjvu75g7ea1l" path="res://SonicAssets/Models/Enemies/EggPawnItems/textures/enm_eggpawn_weapon_dif_HD.dds" id="1_5uo73"]
+
+[resource]
+resource_name = "enm_eggpawn_weapon"
+albedo_texture = ExtResource("1_5uo73")
+metallic = 1.0

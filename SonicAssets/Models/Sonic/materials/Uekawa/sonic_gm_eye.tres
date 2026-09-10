@@ -1,0 +1,11 @@
+[gd_resource type="ShaderMaterial" format=3 uid="uid://cowa7kwbm4can"]
+
+[ext_resource type="Shader" uid="uid://cjktp1yrki104" path="res://Shaders/UekawaShader.tres" id="1_kdcjm"]
+[ext_resource type="Texture2D" uid="uid://e85d80n0hkfk" path="res://SonicAssets/Models/Sonic/textures/chr_sonic_eye_dif_HD.dds" id="2_vcj00"]
+
+[resource]
+render_priority = 0
+shader = ExtResource("1_kdcjm")
+shader_parameter/Albedo = ExtResource("2_vcj00")
+shader_parameter/DarkenThreshold = -0.2
+shader_parameter/HighlightThreashold = 0.2

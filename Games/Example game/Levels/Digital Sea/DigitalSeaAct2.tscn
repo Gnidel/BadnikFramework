@@ -1,0 +1,1300 @@
+[gd_scene format=3 uid="uid://cxrl520yg36ty"]
+
+[ext_resource type="Script" uid="uid://c2i7w0nkuie1u" path="res://Scripts/System/StageData.cs" id="1_eckjl"]
+[ext_resource type="AudioStream" uid="uid://bubvemafplpbx" path="res://Games/Example game/Levels/Digital Sea/Music/Digital Sea Act 2.mp3" id="2_2e68n"]
+[ext_resource type="PackedScene" uid="uid://clt71rt2khju8" path="res://SonicAssets/Prefabs/Player/PlayersManager.tscn" id="3_r5eb3"]
+[ext_resource type="PackedScene" uid="uid://dhu1smr7ks2e5" path="res://SonicAssets/Prefabs/Interactables/[interactable]_goal_ring.tscn" id="4_41gtx"]
+[ext_resource type="Script" uid="uid://pq5wwkgxhj7e" path="res://Scripts/Player/ExtraSettingsApplicator.cs" id="4_74b80"]
+[ext_resource type="PackedScene" uid="uid://ckuh7n0eskbd" path="res://SonicAssets/Prefabs/Items/[item]_red_ring_1.tscn" id="5_ckw77"]
+[ext_resource type="PackedScene" uid="uid://c4d6ef2j71sxf" path="res://SonicAssets/Prefabs/Items/[item]_red_ring_2.tscn" id="6_eb4m0"]
+[ext_resource type="PackedScene" uid="uid://dnulayoi0l3o8" path="res://SonicAssets/Prefabs/Items/[item]_red_ring_3.tscn" id="7_w36e5"]
+[ext_resource type="PackedScene" uid="uid://bpgng4r75cppe" path="res://SonicAssets/Prefabs/Items/[item]_red_ring_4.tscn" id="8_vueie"]
+[ext_resource type="PackedScene" uid="uid://bjg1gje70id88" path="res://SonicAssets/Prefabs/Items/[item]_red_ring_5.tscn" id="9_1n32h"]
+[ext_resource type="Script" uid="uid://y47n4ov38iw2" path="res://Scripts/Interactables/Hitbox.cs" id="10_0enk0"]
+[ext_resource type="Sky" uid="uid://bpkw77iyoa1cm" path="res://Games/Example game/Levels/Digital Sea/Textures/DigitalSea2Sky.tres" id="12_eb4m0"]
+[ext_resource type="Shader" uid="uid://lfvnidi4wq81" path="res://Games/Example game/Levels/Digital Sea/Textures/digital_sea_sky.gdshader" id="12_p8anx"]
+[ext_resource type="PackedScene" uid="uid://dmu3a1qdupxb7" path="res://Games/Example game/Levels/Digital Sea/DigitalSea2.glb" id="14_3nnob"]
+[ext_resource type="Script" uid="uid://ci2oh22k5mq5c" path="res://addons/sky_baker/SkyBaker.cs" id="14_eb4m0"]
+[ext_resource type="PackedScene" uid="uid://d17bym62436xd" path="res://Prefabs/Interactables/[interactable]_skydiving_section.tscn" id="15_adddv"]
+[ext_resource type="Script" uid="uid://bbh65sxbt16rg" path="res://Scripts/Ui/HideOnMobile.cs" id="15_eckjl"]
+[ext_resource type="Script" uid="uid://do8pllvqf2jj5" path="res://Scripts/Utils/SkyMaterialForMobile.cs" id="15_w36e5"]
+[ext_resource type="Script" uid="uid://c2iwclb013o1y" path="res://Scripts/System/ApplyWorldEnvironmentSettings.cs" id="17_r5eb3"]
+[ext_resource type="PackedScene" uid="uid://cksgb7nrtyqif" path="res://SonicAssets/Prefabs/Interactables/[interactable]_jump_panel30.tscn" id="18_ub1an"]
+[ext_resource type="PackedScene" uid="uid://df5r5gehhnovh" path="res://SonicAssets/Prefabs/Interactables/[interactable]_spring_red_wide.tscn" id="19_lllwf"]
+[ext_resource type="PackedScene" uid="uid://daw4tm8o4oxei" path="res://SonicAssets/Prefabs/Interactables/[interactable]_dash_ring.tscn" id="20_lllwf"]
+[ext_resource type="Script" uid="uid://vdgtusf5dt38" path="res://Scripts/Interactables/WaterTrigger.cs" id="21_2b6ks"]
+[ext_resource type="PackedScene" uid="uid://fh04wj45t0ot" path="res://Prefabs/Triggers/[trigger]_camera_trigger.tscn" id="21_2e68n"]
+[ext_resource type="Shader" uid="uid://3a4ysxiuiybs" path="res://Games/Example game/Levels/Digital Sea/Textures/digital_water_shader.gdshader" id="22_5rjf2"]
+[ext_resource type="Script" uid="uid://clwt567x2s1dw" path="res://Scripts/Player/Camera/ConstantCameraParams.cs" id="22_xqauq"]
+[ext_resource type="Script" uid="uid://pruwuii5643i" path="res://Scripts/Player/Camera/FreeCameraParams.cs" id="23_5yxk0"]
+[ext_resource type="Script" uid="uid://cd3cn8knmt25g" path="res://Scripts/Player/Camera/PointCameraParams.cs" id="24_75rcj"]
+[ext_resource type="PackedScene" uid="uid://btqvh6bandifd" path="res://SonicAssets/Prefabs/Interactables/[interactable]_spring_red.tscn" id="25_n8qbp"]
+[ext_resource type="PackedScene" uid="uid://16kx1j02l040" path="res://SonicAssets/Prefabs/Interactables/[interactable]_giant_spring.tscn" id="26_5jjwb"]
+[ext_resource type="PackedScene" uid="uid://d2gmh4mexcq3" path="res://SonicAssets/Prefabs/Enemies/[enemy]_egg_pawn_gun.tscn" id="26_crty5"]
+[ext_resource type="PackedScene" uid="uid://bbmhfwknyuj0q" path="res://SonicAssets/Prefabs/Items/[item]_skateboard_blue_star.tscn" id="27_1sjn5"]
+[ext_resource type="PackedScene" uid="uid://wydtmfu0lc7g" path="res://SonicAssets/Prefabs/Interactables/[interactable]_dash_ring_nosnap.tscn" id="27_461s6"]
+[ext_resource type="PackedScene" uid="uid://glul7ke1mfjn" path="res://SonicAssets/Prefabs/Enemies/[enemy]_spinner.tscn" id="28_461s6"]
+[ext_resource type="PackedScene" uid="uid://bv2cv2nejm2w" path="res://SonicAssets/Prefabs/Interactables/[interactable]_special_stage_entrance.tscn" id="29_rpv2g"]
+[ext_resource type="PackedScene" uid="uid://dpro47univr31" path="res://SonicAssets/Prefabs/Interactables/[interactable]_water_bubble_spawner.tscn" id="30_jssoy"]
+[ext_resource type="PackedScene" uid="uid://ctfovffra6gal" path="res://SonicAssets/Prefabs/Items/Formations/[Formation] Rings 1x10.tscn" id="31_ymq27"]
+[ext_resource type="PackedScene" uid="uid://c1lfp3e5bmdoj" path="res://SonicAssets/Prefabs/Interactables/[interactable]_checkpoint_3d.tscn" id="32_a68ay"]
+[ext_resource type="PackedScene" uid="uid://dvy6pbmwuo7st" path="res://Prefabs/Interactables/[interactable]_chase_section.tscn" id="33_22vcl"]
+[ext_resource type="PackedScene" uid="uid://benjgxkifq122" path="res://SonicAssets/Prefabs/Enemies/[enemy]_egg_chaser.tscn" id="34_3ek1y"]
+[ext_resource type="Script" uid="uid://b3dpdfwhls8c5" path="res://Scripts/Interactables/UniversalPlayerEnterTrigger.cs" id="35_3ek1y"]
+[ext_resource type="PackedScene" uid="uid://cqbir38llka4u" path="res://Prefabs/Triggers/[trigger]_skate_remover.tscn" id="42_eb4m0"]
+[ext_resource type="Script" uid="uid://gofmj6rwoyg" path="res://Scripts/Interactables/SpeedLimitTrigger.cs" id="43_w36e5"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_fhrgg"]
+size = Vector3(20000, 5, 20000)
+
+[sub_resource type="Environment" id="Environment_7woa3"]
+background_mode = 2
+background_color = Color(0, 0.12549, 0, 1)
+sky = ExtResource("12_eb4m0")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_hpp1n"]
+shader = ExtResource("12_p8anx")
+shader_parameter/time_scale = 0.0999999977648
+shader_parameter/sun_direction = Vector3(0, -1.115, -1)
+shader_parameter/sun_color = Color(1, 0.82, 0.35, 1)
+shader_parameter/sun_edge_color = Color(1, 0.28, 0.05, 1)
+shader_parameter/sun_radius = 0.20000000880148
+shader_parameter/sun_glow_radius = 0.7999999839810601
+shader_parameter/sun_glow_power = 2.2
+shader_parameter/scanline_count = 26.0
+shader_parameter/scanline_speed = 1.2
+shader_parameter/scanline_opacity = 0.22
+shader_parameter/color_zenith = Color(0.02, 0.04, 0.16, 1)
+shader_parameter/color_mid = Color(0.06, 0.32, 0.52, 1)
+shader_parameter/color_horizon = Color(0.2590381, 0.5539261, 1, 1)
+shader_parameter/color_sunset = Color(0.3242938, 0.72893316, 0.9999998, 1)
+shader_parameter/color_sunbase = Color(0, 0.6311488, 0.71650255, 1)
+shader_parameter/grid_opacity = 0.55
+shader_parameter/grid_cell_size = 0.07
+shader_parameter/grid_speed = 0.35
+shader_parameter/grid_color = Color(0, 1, 0.76, 1)
+shader_parameter/grid_horizon_y = 0.499999977648
+shader_parameter/rain_opacity = 0.45
+shader_parameter/rain_speed = 2.8
+shader_parameter/rain_columns = 28.0
+shader_parameter/rain_color = Color(0, 1, 0.72, 1)
+shader_parameter/cloud_opacity = 0.68
+shader_parameter/cloud_speed = 0.0999999977648
+shader_parameter/cloud_pixel_edge = 0.3
+shader_parameter/star_count = 0.75
+shader_parameter/star_twinkle = 0.55
+shader_parameter/vignette_strength = 0.0
+
+[sub_resource type="Sky" id="Sky_u7d0l"]
+sky_material = SubResource("ShaderMaterial_hpp1n")
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_sajgr"]
+size = Vector2(20000, 20000)
+subdivide_width = 100
+subdivide_depth = 100
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_482wa"]
+render_priority = 0
+shader = ExtResource("22_5rjf2")
+shader_parameter/depth_fade_enabled = true
+shader_parameter/depth_fade_start = 0.4
+shader_parameter/depth_fade_end = 30.0
+shader_parameter/shallow_color = Color(0.05, 0.45, 0.55, 0.55)
+shader_parameter/deep_color = Color(0.01, 0.1, 0.25, 0.97)
+shader_parameter/wave_speed = 0.9
+shader_parameter/wave_height = 0.55
+shader_parameter/wave_steepness = 0.45
+shader_parameter/wave_length = 12.0
+shader_parameter/shore_depth_min = 0.3
+shader_parameter/shore_depth_max = 2.5
+shader_parameter/scroll_direction = Vector2(0, 1)
+shader_parameter/scroll_speed = 0.0
+shader_parameter/scroll_offset = Vector2(0, 0)
+shader_parameter/ripple_scale = 6.0
+shader_parameter/ripple_strength = 0.35
+shader_parameter/ripple_speed = 0.5
+shader_parameter/foam_color = Color(0.92, 0.96, 1, 1)
+shader_parameter/foam_shore_depth = 0.6
+shader_parameter/foam_crest_thresh = 0.6
+shader_parameter/foam_softness = 0.25
+shader_parameter/sky_color = Color(0.45, 0.72, 0.9, 1)
+shader_parameter/fresnel_power = 4.5
+shader_parameter/reflectivity = 0.55
+shader_parameter/roughness = 0.06
+shader_parameter/specular = 0.9
+shader_parameter/sss_color = Color(0, 0.85, 0.65, 1)
+shader_parameter/sss_strength = 0.35
+shader_parameter/caustic_scale = 8.0
+shader_parameter/caustic_strength = 0.18
+shader_parameter/caustic_speed = 0.4
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_eckjl"]
+transparency = 1
+albedo_color = Color(0, 0.2527313, 0.2527313, 0.5019608)
+normal_enabled = true
+uv1_scale = Vector3(50, 50, 50)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_0csn8"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_ii771"]
+size = Vector3(100, 350, 100)
+
+[sub_resource type="Curve3D" id="Curve3D_5q01e"]
+_data = {
+"points": PackedVector3Array(0, 0, 0, 0, 0, 0, -5.227051, -8.542023, 0.40837023, 0, 0, 0, 0, 0, 0, 40.230286, 62.03157, -2.3477383, 0, 0, 0, 0, 0, 0, 1.0842285, 85.870445, -45.000015, 0, 0, 0, 0, 0, 0, -49.769775, 128.3945, -3.1482098, 0, 0, 0, 0, 0, 0, -5.461792, 174.88861, 44.999977, 0, 0, 0, 0, 0, 0, 40.230286, 241.45482, 0.40709892, 0, 0, 0, 0, 0, 0, -1.3557434, 281.35007, -45.000008, 0, 0, 0, 0, 0, 0, -49.77, 331.808, 0, 0, 0, 0, 0, 0, 0, 42.598785, 414.85748, 4.3522205e-06),
+"tilts": PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0)
+}
+point_count = 9
+
+[sub_resource type="Resource" id="Resource_lllwf"]
+script = ExtResource("22_xqauq")
+metadata/_custom_type_script = "uid://clwt567x2s1dw"
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_vueie"]
+resource_local_to_scene = true
+size = Vector3(100, 200, 100)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_1n32h"]
+resource_local_to_scene = true
+size = Vector3(200, 500, 10)
+
+[sub_resource type="Resource" id="Resource_ssvar"]
+script = ExtResource("23_5yxk0")
+metadata/_custom_type_script = "uid://pruwuii5643i"
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_0enk0"]
+resource_local_to_scene = true
+size = Vector3(200, 500, 10)
+
+[sub_resource type="Resource" id="Resource_mwm5e"]
+script = ExtResource("24_75rcj")
+CameraPoint = NodePath("CameraPoint")
+PointMode = 1
+metadata/_custom_type_script = "uid://cd3cn8knmt25g"
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_00mt2"]
+resource_local_to_scene = true
+size = Vector3(50, 25, 25)
+
+[sub_resource type="Curve3D" id="Curve3D_461s6"]
+_data = {
+"points": PackedVector3Array(0, 0, 0, 0, 0, 0, -3.7988281, -2.641056, 3.838623, 0, 0, 0, 0, 0, 0, 111.322266, 11.059647, 4.2736816),
+"tilts": PackedFloat32Array(0, 0)
+}
+point_count = 2
+
+[sub_resource type="Resource" id="Resource_crty5"]
+script = ExtResource("24_75rcj")
+CameraPoint = NodePath("Node3D")
+PointMode = 1
+metadata/_custom_type_script = "uid://cd3cn8knmt25g"
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_p8anx"]
+resource_local_to_scene = true
+size = Vector3(25, 100, 100)
+
+[sub_resource type="Curve3D" id="Curve3D_xy3wa"]
+resource_local_to_scene = true
+_data = {
+"points": PackedVector3Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1000, 0, 0),
+"tilts": PackedFloat32Array(0, 0)
+}
+point_count = 2
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_8hmfs"]
+resource_local_to_scene = true
+flip_faces = true
+top_radius = 0.4
+bottom_radius = 0.4
+height = 2.224
+radial_segments = 16
+cap_top = false
+cap_bottom = false
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_2ecbo"]
+resource_local_to_scene = true
+flip_faces = true
+height = 2.224
+radial_segments = 16
+cap_top = false
+cap_bottom = false
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_uq43y"]
+resource_local_to_scene = true
+radius = 0.8
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_d5cdh"]
+resource_local_to_scene = true
+flip_faces = true
+top_radius = 0.4
+bottom_radius = 0.4
+height = 2.224
+radial_segments = 16
+cap_top = false
+cap_bottom = false
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_03qbn"]
+resource_local_to_scene = true
+flip_faces = true
+height = 2.224
+radial_segments = 16
+cap_top = false
+cap_bottom = false
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_t054s"]
+resource_local_to_scene = true
+radius = 0.8
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_nhlhk"]
+size = Vector3(100, 50, 5)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_dwsd6"]
+size = Vector3(100, 50, 5)
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_plhhm"]
+resource_local_to_scene = true
+flip_faces = true
+top_radius = 0.4
+bottom_radius = 0.4
+height = 2.224
+radial_segments = 16
+cap_top = false
+cap_bottom = false
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_2b6ks"]
+resource_local_to_scene = true
+flip_faces = true
+height = 2.224
+radial_segments = 16
+cap_top = false
+cap_bottom = false
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_5rjf2"]
+resource_local_to_scene = true
+radius = 0.8
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_k77bl"]
+resource_local_to_scene = true
+flip_faces = true
+top_radius = 0.4
+bottom_radius = 0.4
+height = 2.224
+radial_segments = 16
+cap_top = false
+cap_bottom = false
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_ukxfh"]
+resource_local_to_scene = true
+flip_faces = true
+height = 2.224
+radial_segments = 16
+cap_top = false
+cap_bottom = false
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_n8qbp"]
+resource_local_to_scene = true
+radius = 0.8
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_5jjwb"]
+resource_local_to_scene = true
+flip_faces = true
+top_radius = 0.4
+bottom_radius = 0.4
+height = 2.224
+radial_segments = 16
+cap_top = false
+cap_bottom = false
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_hgvnl"]
+resource_local_to_scene = true
+flip_faces = true
+height = 2.224
+radial_segments = 16
+cap_top = false
+cap_bottom = false
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_m4lpg"]
+resource_local_to_scene = true
+radius = 0.8
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_x1e0j"]
+resource_local_to_scene = true
+flip_faces = true
+top_radius = 0.4
+bottom_radius = 0.4
+height = 2.224
+radial_segments = 16
+cap_top = false
+cap_bottom = false
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_72rgb"]
+resource_local_to_scene = true
+flip_faces = true
+height = 2.224
+radial_segments = 16
+cap_top = false
+cap_bottom = false
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_2nic7"]
+resource_local_to_scene = true
+radius = 0.8
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_swrqs"]
+resource_local_to_scene = true
+flip_faces = true
+top_radius = 0.4
+bottom_radius = 0.4
+height = 2.224
+radial_segments = 16
+cap_top = false
+cap_bottom = false
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_8lm5v"]
+resource_local_to_scene = true
+flip_faces = true
+height = 2.224
+radial_segments = 16
+cap_top = false
+cap_bottom = false
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_vjvnc"]
+resource_local_to_scene = true
+radius = 0.8
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_6g64t"]
+resource_local_to_scene = true
+flip_faces = true
+top_radius = 0.4
+bottom_radius = 0.4
+height = 2.224
+radial_segments = 16
+cap_top = false
+cap_bottom = false
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_o5urw"]
+resource_local_to_scene = true
+flip_faces = true
+height = 2.224
+radial_segments = 16
+cap_top = false
+cap_bottom = false
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_34dt8"]
+resource_local_to_scene = true
+radius = 0.8
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_24yyw"]
+resource_local_to_scene = true
+flip_faces = true
+top_radius = 0.4
+bottom_radius = 0.4
+height = 2.224
+radial_segments = 16
+cap_top = false
+cap_bottom = false
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_3dw5a"]
+resource_local_to_scene = true
+flip_faces = true
+height = 2.224
+radial_segments = 16
+cap_top = false
+cap_bottom = false
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_rqw0t"]
+resource_local_to_scene = true
+radius = 0.8
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_k5sak"]
+resource_local_to_scene = true
+flip_faces = true
+top_radius = 0.4
+bottom_radius = 0.4
+height = 2.224
+radial_segments = 16
+cap_top = false
+cap_bottom = false
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_ashri"]
+resource_local_to_scene = true
+flip_faces = true
+height = 2.224
+radial_segments = 16
+cap_top = false
+cap_bottom = false
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_16mnu"]
+resource_local_to_scene = true
+radius = 0.8
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_qt5uh"]
+resource_local_to_scene = true
+flip_faces = true
+top_radius = 0.4
+bottom_radius = 0.4
+height = 2.224
+radial_segments = 16
+cap_top = false
+cap_bottom = false
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_l608q"]
+resource_local_to_scene = true
+flip_faces = true
+height = 2.224
+radial_segments = 16
+cap_top = false
+cap_bottom = false
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_pfper"]
+resource_local_to_scene = true
+radius = 0.8
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_5lmnk"]
+resource_local_to_scene = true
+flip_faces = true
+top_radius = 0.4
+bottom_radius = 0.4
+height = 2.224
+radial_segments = 16
+cap_top = false
+cap_bottom = false
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_fy0qc"]
+resource_local_to_scene = true
+flip_faces = true
+height = 2.224
+radial_segments = 16
+cap_top = false
+cap_bottom = false
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_wiky8"]
+resource_local_to_scene = true
+radius = 0.8
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_qdy0n"]
+resource_local_to_scene = true
+flip_faces = true
+top_radius = 0.4
+bottom_radius = 0.4
+height = 2.224
+radial_segments = 16
+cap_top = false
+cap_bottom = false
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_rs6vo"]
+resource_local_to_scene = true
+flip_faces = true
+height = 2.224
+radial_segments = 16
+cap_top = false
+cap_bottom = false
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_hldtv"]
+resource_local_to_scene = true
+radius = 0.8
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_7vlev"]
+resource_local_to_scene = true
+flip_faces = true
+top_radius = 0.4
+bottom_radius = 0.4
+height = 2.224
+radial_segments = 16
+cap_top = false
+cap_bottom = false
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_pwyic"]
+resource_local_to_scene = true
+flip_faces = true
+height = 2.224
+radial_segments = 16
+cap_top = false
+cap_bottom = false
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_wbxd2"]
+resource_local_to_scene = true
+radius = 0.8
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_es27u"]
+resource_local_to_scene = true
+size = Vector3(10, 25, 25)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_482wa"]
+size = Vector3(25, 25, 25)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_sajgr"]
+size = Vector3(25, 25, 25)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_hxqaj"]
+resource_local_to_scene = true
+size = Vector3(1000, 50, 50)
+
+[node name="Digital Sea Act 2" type="Node3D" unique_id=138750853]
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=1691044391]
+transform = Transform3D(-0.866023, -0.433016, 0.250001, 0, 0.499998, 0.866027, -0.500003, 0.749999, -0.43301, 0, 0, 0)
+
+[node name="StageData" type="Node" parent="." unique_id=1250732636]
+script = ExtResource("1_eckjl")
+StageZoneName = "Digital Sea"
+StageActName = "Act 2"
+StageUniqueIdentifier = "Digital Sea 2"
+StageMusic = ExtResource("2_2e68n")
+HasRedRings = true
+SRankRings = 50
+
+[node name="PlayersManager" parent="." unique_id=1847194058 instance=ExtResource("3_r5eb3")]
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 0, 170, 0)
+
+[node name="ExtraSettingsApplicator" type="Node" parent="PlayersManager" unique_id=1446531612]
+script = ExtResource("4_74b80")
+
+[node name="[Interactable] Goal Ring" parent="." unique_id=206560450 instance=ExtResource("4_41gtx")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6184.3335, 25, 2327.655)
+NextLevel = "res://Games/Example game/Levels/Digital Sea/DigitalSeaActB1.tscn"
+StagesToUnlock = PackedStringArray("Digital Sea B1")
+
+[node name="[Item] RedRing1" parent="." unique_id=1994487900 instance=ExtResource("5_ckw77")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, -197.00003, 452.15955)
+
+[node name="[Item] RedRing2" parent="." unique_id=907853461 instance=ExtResource("6_eb4m0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.969591, 50.61879, 1874.5385)
+
+[node name="[Item] RedRing3" parent="." unique_id=706737085 instance=ExtResource("7_w36e5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 253.55579, 44.78091, 2322.6743)
+
+[node name="[Item] RedRing4" parent="." unique_id=647836517 instance=ExtResource("8_vueie")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1726.3448, 52.000027, 2325.1697)
+
+[node name="[Item] RedRing5" parent="." unique_id=489824932 instance=ExtResource("9_1n32h")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4509.7637, 137.10574, 2323.805)
+
+[node name="Pit" type="Area3D" parent="." unique_id=256654572]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -500, 0)
+collision_mask = 7
+script = ExtResource("10_0enk0")
+IsInstaKill = true
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Pit" unique_id=168468095]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -500, 0)
+shape = SubResource("BoxShape3D_fhrgg")
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=1520174136]
+environment = SubResource("Environment_7woa3")
+script = ExtResource("17_r5eb3")
+
+[node name="SkyBaker" type="Node3D" parent="WorldEnvironment" unique_id=967125366]
+script = ExtResource("14_eb4m0")
+SourceWorldEnvironmentPath = NodePath("..")
+CapturePosition = Vector3(-1000, 1, 0)
+CaptureFar = 10.0
+TextureOutputPath = "res://Games/Example game/Levels/Digital Sea/Textures/DigitalSea2Sky.png"
+MaterialOutputPath = "res://Games/Example game/Levels/Digital Sea/Textures/DigitalSea2SkyMaterial.tres"
+SkyOutputPath = "res://Games/Example game/Levels/Digital Sea/Textures/DigitalSea2Sky.tres"
+
+[node name="MobileSky" type="Node" parent="WorldEnvironment" unique_id=251618363 node_paths=PackedStringArray("WorldEnvironment")]
+script = ExtResource("15_w36e5")
+WorldEnvironment = NodePath("..")
+MobileSky = ExtResource("12_eb4m0")
+HqSky = SubResource("Sky_u7d0l")
+
+[node name="Water" type="Area3D" parent="." unique_id=2131216599]
+transform = Transform3D(20000, 0, 0, 0, 10000, 0, 0, 0, 20000, 1500, -5000, 1500)
+script = ExtResource("21_2b6ks")
+
+[node name="WaterPlane" type="MeshInstance3D" parent="Water" unique_id=791603696]
+transform = Transform3D(5e-05, 0, 0, 0, 0.0001, 0, 0, 0, 5e-05, -0.074999996, 0.5, -0.074999996)
+visible = false
+mesh = SubResource("PlaneMesh_sajgr")
+surface_material_override/0 = SubResource("ShaderMaterial_482wa")
+
+[node name="HideOnMobile" type="Node" parent="Water/WaterPlane" unique_id=454400797]
+script = ExtResource("15_eckjl")
+ShowOnMobile = false
+ShowOnNonMobile = true
+ApplyToParent = true
+Destroy = true
+
+[node name="WaterPlaneMobile" type="MeshInstance3D" parent="Water" unique_id=918652264]
+transform = Transform3D(5e-05, 0, 0, 0, 0.0001, 0, 0, 0, 5e-05, -0.074999996, 0.5, -0.074999996)
+mesh = SubResource("PlaneMesh_sajgr")
+surface_material_override/0 = SubResource("StandardMaterial3D_eckjl")
+
+[node name="HideOnNonMobile" type="Node" parent="Water/WaterPlaneMobile" unique_id=945846079]
+script = ExtResource("15_eckjl")
+ApplyToParent = true
+Destroy = true
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Water" unique_id=37876786]
+shape = SubResource("BoxShape3D_0csn8")
+
+[node name="DigitalSea2" parent="." unique_id=485340511 instance=ExtResource("14_3nnob")]
+
+[node name="[Interactable] Skydiving section" parent="." unique_id=1364095598 instance=ExtResource("15_adddv")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 0, 0, 0)
+
+[node name="CollisionShape3D" parent="[Interactable] Skydiving section" index="0" unique_id=1690313467]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 25.24945, 0)
+shape = SubResource("BoxShape3D_ii771")
+
+[node name="[Interactable] Spring_Giant_Red" parent="." unique_id=1402357208 instance=ExtResource("26_5jjwb")]
+transform = Transform3D(5, 0, 0, 0, -2.5000002, -4.330127, 0, 4.330127, -2.5000002, 0, -178, -2)
+
+[node name="SpringChain" type="Path3D" parent="." unique_id=1290750740]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 0, -190.45801, 437.93298)
+curve = SubResource("Curve3D_5q01e")
+
+[node name="[Interactable] Spring_Red" parent="SpringChain" unique_id=574615743 instance=ExtResource("25_n8qbp")]
+transform = Transform3D(0.18155845, -2.5161157, -1.6236374, 0, 1.6266191, -2.5207362, 2.994501, 0.15255365, 0.098442145, -5.227051, -8.542023, 0.40837017)
+MinVelocity = 300.0
+MaxVelocity = 300.0
+KeepVelocityDistance = 83.99165
+Snap = true
+
+[node name="@Node3D@51280" parent="SpringChain" unique_id=840328237 instance=ExtResource("25_n8qbp")]
+transform = Transform3D(2.2102194, 0.772375, 1.875731, 0, 2.7740264, -1.1422687, -2.028529, 0.84155476, 2.0437355, 40.230286, 62.03157, -2.3477387)
+MinVelocity = 300.0
+MaxVelocity = 300.0
+KeepVelocityDistance = 62.609283
+Snap = true
+
+[node name="@Node3D@51281" parent="SpringChain" unique_id=721714857 instance=ExtResource("25_n8qbp")]
+transform = Transform3D(-1.9063628, 1.2564782, 1.9460328, 0, 2.5203156, -1.6272705, -2.3164155, -1.034056, -1.6015452, 1.0842285, 85.870445, -45.000015)
+MinVelocity = 300.0
+MaxVelocity = 300.0
+KeepVelocityDistance = 78.396416
+Snap = true
+
+[node name="@Node3D@51282" parent="SpringChain" unique_id=2066945174 instance=ExtResource("25_n8qbp")]
+transform = Transform3D(-2.207527, -1.176676, -1.6559765, 0, 2.4454985, -1.7376814, 2.0314589, -1.2786595, -1.7995012, -49.769775, 128.3945, -3.1482098)
+MinVelocity = 300.0
+MaxVelocity = 300.0
+KeepVelocityDistance = 80.26922
+Snap = true
+
+[node name="@Node3D@51283" parent="SpringChain" unique_id=1543284858 instance=ExtResource("25_n8qbp")]
+transform = Transform3D(2.0953383, -1.5494809, -1.486158, 0, 2.0766182, -2.1650996, 2.146988, 1.5122055, 1.4504061, -5.461792, 174.88861, 44.999977)
+MinVelocity = 300.0
+MaxVelocity = 300.0
+KeepVelocityDistance = 92.2353
+Snap = true
+
+[node name="@Node3D@51284" parent="SpringChain" unique_id=2054304531 instance=ExtResource("25_n8qbp")]
+transform = Transform3D(2.2123637, 1.1017826, 1.7004476, 0, 2.5177019, -1.6313117, -2.0261903, 1.2030183, 1.8566906, 40.230286, 241.45482, 0.40709892)
+MinVelocity = 300.0
+MaxVelocity = 300.0
+KeepVelocityDistance = 73.3678
+Snap = true
+
+[node name="@Node3D@51285" parent="SpringChain" unique_id=552276863 instance=ExtResource("25_n8qbp")]
+transform = Transform3D(-2.0424237, 1.3333423, 1.7466266, 0, 2.3845966, -1.8203568, -2.1973863, -1.2393132, -1.6234522, -1.3557434, 281.35007, -45.000008)
+MinVelocity = 300.0
+MaxVelocity = 300.0
+KeepVelocityDistance = 83.15614
+Snap = true
+
+[node name="@Node3D@51286" parent="SpringChain" unique_id=1739549963 instance=ExtResource("25_n8qbp")]
+transform = Transform3D(-1.3113416e-07, -2.005794, -2.230872, 0, 2.230872, -2.005794, 3, -8.767605e-08, -9.751451e-08, -49.76999, 331.808, 0)
+MinVelocity = 100.0
+MaxVelocity = 100.0
+KeepVelocityDistance = 124.21435
+Snap = true
+
+[node name="[Interactable] JumpPanel30Degrees" parent="SpringChain" unique_id=1926212965 instance=ExtResource("18_ub1an")]
+transform = Transform3D(-8.742278e-08, 0, -2, 0, 2, 0, 2, 0, -8.742278e-08, 1440.067, 240.45801, -9.000063)
+
+[node name="[Interactable] JumpPanel30Degrees3" parent="SpringChain" unique_id=235612117 instance=ExtResource("18_ub1an")]
+transform = Transform3D(-8.742278e-08, 0, -2, 0, 2, 0, 2, 0, -8.742278e-08, 1440.067, 240.45801, -11.000063)
+
+[node name="[Interactable] JumpPanel30Degrees4" parent="SpringChain" unique_id=86810570 instance=ExtResource("18_ub1an")]
+transform = Transform3D(-8.742278e-08, 0, -2, 0, 2, 0, 2, 0, -8.742278e-08, 1440.067, 240.45801, -13.000063)
+
+[node name="[Interactable] JumpPanel30Degrees5" parent="SpringChain" unique_id=1961849960 instance=ExtResource("18_ub1an")]
+transform = Transform3D(-8.742278e-08, 0, -2, 0, 2, 0, 2, 0, -8.742278e-08, 1440.067, 240.45801, -7.0000634)
+
+[node name="[Interactable] JumpPanel30Degrees6" parent="SpringChain" unique_id=687355076 instance=ExtResource("18_ub1an")]
+transform = Transform3D(-8.742278e-08, 0, -2, 0, 2, 0, 2, 0, -8.742278e-08, 1440.067, 240.45801, -5.000064)
+
+[node name="[Interactable] Spring_Red_Wide" parent="SpringChain" unique_id=2146309494 instance=ExtResource("19_lllwf")]
+transform = Transform3D(-4.371139e-08, 1, -4.37114e-08, 0, -4.37114e-08, -1, -1, -4.371139e-08, 1.9106859e-15, 1861.067, 240.45801, 19.999918)
+MinVelocity = 100.0
+MaxVelocity = 100.0
+
+[node name="[Interactable] Spring_Red_Wide2" parent="SpringChain" unique_id=873920222 instance=ExtResource("19_lllwf")]
+transform = Transform3D(-4.371139e-08, 1, -4.37114e-08, 0, -4.37114e-08, -1, -1, -4.371139e-08, 1.9106859e-15, 1861.067, 240.45801, 49.99992)
+MinVelocity = 100.0
+MaxVelocity = 100.0
+
+[node name="[Interactable] Spring_Red_Wide3" parent="SpringChain" unique_id=1510378091 instance=ExtResource("19_lllwf")]
+transform = Transform3D(-4.371139e-08, 1, -4.37114e-08, 0, -4.37114e-08, -1, -1, -4.371139e-08, 1.9106859e-15, 1861.067, 240.45801, 75.99992)
+MinVelocity = 100.0
+MaxVelocity = 100.0
+
+[node name="[Interactable] JumpPanel30Degrees2" parent="SpringChain" unique_id=1315939144 instance=ExtResource("18_ub1an")]
+transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, 1887.0001, 294.458, -600.00006)
+MinVelocity = 100.0
+MaxVelocity = 100.0
+LockInputTime = 2.0
+SnapCamera = false
+
+[node name="[Interactable] Dash_Ring" parent="SpringChain" unique_id=988342406 instance=ExtResource("20_lllwf")]
+transform = Transform3D(-2.9281537e-08, 5, -1.0927821e-07, -2.5000002, -1.0927848e-07, -4.330127, -4.330127, 2.9280528e-08, 2.5000002, 1908.067, 236, -253.00005)
+MinVelocity = 120.0
+MaxVelocity = 120.0
+SnapCamera = true
+
+[node name="[Interactable] Dash_Ring2" parent="SpringChain" unique_id=1868506022 instance=ExtResource("20_lllwf")]
+transform = Transform3D(-2.9281537e-08, 5, -1.0927821e-07, -2.5000002, -1.0927848e-07, -4.330127, -4.330127, 2.9280528e-08, 2.5000002, 1896.067, 236, -253.00006)
+MinVelocity = 120.0
+MaxVelocity = 120.0
+SnapCamera = true
+
+[node name="[Interactable] Dash_Ring3" parent="SpringChain" unique_id=544250687 instance=ExtResource("20_lllwf")]
+transform = Transform3D(-2.9281537e-08, 5, -1.0927821e-07, -2.5000002, -1.0927848e-07, -4.330127, -4.330127, 2.9280528e-08, 2.5000002, 1884.067, 236, -253.00008)
+MinVelocity = 120.0
+MaxVelocity = 120.0
+SnapCamera = true
+
+[node name="[Interactable] Dash_Ring4" parent="SpringChain" unique_id=315212591 instance=ExtResource("20_lllwf")]
+transform = Transform3D(-2.9281537e-08, 5, -1.0927821e-07, -2.5000002, -1.0927848e-07, -4.330127, -4.330127, 2.9280528e-08, 2.5000002, 1872.067, 236, -253.00009)
+MinVelocity = 120.0
+MaxVelocity = 120.0
+SnapCamera = true
+
+[node name="[Interactable] Dash_Ring5" parent="SpringChain" unique_id=763195242 instance=ExtResource("20_lllwf")]
+transform = Transform3D(-2.9281537e-08, 5, -1.0927821e-07, -2.5000002, -1.0927848e-07, -4.330127, -4.330127, 2.9280528e-08, 2.5000002, 1861.067, 236, -253.0001)
+MinVelocity = 120.0
+MaxVelocity = 120.0
+SnapCamera = true
+
+[node name="[Trigger] Camera Trigger_Const_Chase" parent="SpringChain" unique_id=24665378 instance=ExtResource("21_2e68n")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1886.7506, 290.45807, -738.1588)
+Params = SubResource("Resource_lllwf")
+
+[node name="CollisionShape3D" parent="SpringChain/[Trigger] Camera Trigger_Const_Chase" index="0" unique_id=587286632]
+shape = SubResource("BoxShape3D_vueie")
+
+[node name="[Trigger] Camera Trigger_Quickstep1" parent="SpringChain" unique_id=1985609206 instance=ExtResource("21_2e68n")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 100.06702, 400.458, -4.3740674e-06)
+CardinalDirectionBias = true
+
+[node name="CollisionShape3D" parent="SpringChain/[Trigger] Camera Trigger_Quickstep1" index="0" unique_id=587286632]
+shape = SubResource("BoxShape3D_1n32h")
+
+[node name="[Trigger] Camera Trigger_Free_Nobias" parent="SpringChain" unique_id=1662311894 instance=ExtResource("21_2e68n")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 1471.8623, 240.45801, -13.08965)
+Params = SubResource("Resource_ssvar")
+
+[node name="CollisionShape3D" parent="SpringChain/[Trigger] Camera Trigger_Free_Nobias" index="0" unique_id=587286632]
+shape = SubResource("BoxShape3D_0enk0")
+
+[node name="[Trigger] Camera Trigger_Endchase" parent="SpringChain" unique_id=1816544162 instance=ExtResource("21_2e68n")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 1887.1432, 296.72058, -1714.9126)
+Params = SubResource("Resource_mwm5e")
+FreeOnExit = true
+EnterLerpTime = 0.2
+ExitLerpTime = 0.2
+
+[node name="CollisionShape3D" parent="SpringChain/[Trigger] Camera Trigger_Endchase" index="0" unique_id=587286632]
+shape = SubResource("BoxShape3D_00mt2")
+
+[node name="CameraPoint" type="Node3D" parent="SpringChain/[Trigger] Camera Trigger_Endchase" unique_id=1915823142]
+
+[node name="PreciseJumpWhereYouGetSkateboard" type="Path3D" parent="." unique_id=1211131585]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2001.9236, 52.641075, 2321.3804)
+curve = SubResource("Curve3D_461s6")
+
+[node name="[Interactable] Spring_Red" parent="PreciseJumpWhereYouGetSkateboard" unique_id=1159941878 instance=ExtResource("25_n8qbp")]
+transform = Transform3D(-0.011337265, -0.35452676, -2.9789567, 0, 2.978978, -0.3545293, 2.9999785, -0.0013397975, -0.011257821, -3.7988281, -2.641056, 3.838623)
+MinVelocity = 100.0
+MaxVelocity = 100.0
+KeepVelocityDistance = 115.93431
+Snap = true
+
+[node name="[Item] Skateboard Blue Star" parent="." unique_id=1950705901 instance=ExtResource("27_1sjn5")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 1998.8884, 50.500023, 2325.3083)
+
+[node name="[Enemy] Egg Pawn Gun" parent="." unique_id=1077388625 instance=ExtResource("26_crty5")]
+transform = Transform3D(1, 0, 1.74846e-07, 0, 1, 0, -1.74846e-07, 0, 1, 1.2034454, 100.406784, 2316.7556)
+
+[node name="[Enemy] Egg Pawn Gun2" parent="." unique_id=2096886769 instance=ExtResource("26_crty5")]
+transform = Transform3D(1, 0, 1.74846e-07, 0, 1, 0, -1.74846e-07, 0, 1, 23.203445, 100.406784, 2316.7556)
+
+[node name="[Enemy] Egg Pawn Gun3" parent="." unique_id=1835245395 instance=ExtResource("26_crty5")]
+transform = Transform3D(1, 0, 1.74846e-07, 0, 1, 0, -1.74846e-07, 0, 1, 39.203445, 100.406784, 2316.7556)
+
+[node name="[Trigger] Camera Trigger" parent="." unique_id=1778377477 instance=ExtResource("21_2e68n")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 643, 110.802956, 2319.2131)
+Params = SubResource("Resource_crty5")
+FreeOnExit = true
+EnterLerpTime = 0.5
+ExitLerpTime = 0.5
+
+[node name="CollisionShape3D" parent="[Trigger] Camera Trigger" index="0" unique_id=587286632]
+shape = SubResource("BoxShape3D_p8anx")
+
+[node name="Node3D" type="Node3D" parent="[Trigger] Camera Trigger" unique_id=1381314518]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 73.645874, -3.4849472, 0)
+
+[node name="[Interactable] Dash_Ring_Nosnap" parent="." unique_id=999598544 instance=ExtResource("27_461s6")]
+transform = Transform3D(-0.64704764, 0, -2.4148145, 0, 2.5, 0, 2.4148145, 0, -0.64704764, 2315, 67.23477, 2326)
+
+[node name="[Interactable] Dash_Ring_Nosnap2" parent="." unique_id=1842029920 instance=ExtResource("27_461s6")]
+transform = Transform3D(-0.64704764, 0, -2.4148145, 0, 2.5, 0, 2.4148145, 0, -0.64704764, 2552, 67.23477, 2326)
+
+[node name="[Interactable] Dash_Ring" parent="." unique_id=472254628 instance=ExtResource("20_lllwf")]
+transform = Transform3D(5, 0, 0, 0, -2.1855695e-07, -5, 0, 5, -2.1855695e-07, 6024, 4, 2335)
+
+[node name="[Interactable] Dash_Ring2" parent="." unique_id=300135163 instance=ExtResource("20_lllwf")]
+transform = Transform3D(5, 0, 0, 0, -2.1855695e-07, -5, 0, 5, -2.1855695e-07, 6024, 14, 2335)
+
+[node name="[Interactable] Dash_Ring3" parent="." unique_id=508787836 instance=ExtResource("20_lllwf")]
+transform = Transform3D(5, 0, 0, 0, -2.1855695e-07, -5, 0, 5, -2.1855695e-07, 6024, 23, 2335)
+
+[node name="[Interactable] Dash_Ring4" parent="." unique_id=639391856 instance=ExtResource("20_lllwf")]
+transform = Transform3D(5, 0, 0, 0, -2.1855695e-07, -5, 0, 5, -2.1855695e-07, 6024, 31, 2335)
+
+[node name="[Interactable] Dash_Ring5" parent="." unique_id=1308202575 instance=ExtResource("20_lllwf")]
+transform = Transform3D(5, 0, 0, 0, -2.1855695e-07, -5, 0, 5, -2.1855695e-07, 6024, 37, 2335)
+
+[node name="[Interactable] Dash_Ring6" parent="." unique_id=1414372355 instance=ExtResource("20_lllwf")]
+transform = Transform3D(5, 0, 0, 0, -2.1855695e-07, -5, 0, 5, -2.1855695e-07, 6024, 42, 2335)
+MinVelocity = 30.0
+MaxVelocity = 30.0
+
+[node name="[Enemy] Spinner" parent="." unique_id=864214425 instance=ExtResource("28_461s6")]
+transform = Transform3D(1, 0, 1.74846e-07, 0, 1, 0, -1.74846e-07, 0, 1, 6064.2285, 47.823, 2333.4202)
+
+[node name="[Enemy] Spinner2" parent="." unique_id=896637977 instance=ExtResource("28_461s6")]
+transform = Transform3D(1, 0, 1.74846e-07, 0, 1, 0, -1.74846e-07, 0, 1, 6088.7876, 47.823, 2333.4202)
+
+[node name="[Interactable] Special Stage Entrance" parent="." unique_id=1841242884 instance=ExtResource("29_rpv2g")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 213, 368)
+
+[node name="[Interactable] Special Stage Entrance2" parent="." unique_id=1029548004 instance=ExtResource("29_rpv2g")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -72, 1525)
+
+[node name="[Interactable] Water Bubble Spawner" parent="." unique_id=236447628 instance=ExtResource("30_jssoy")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.03277588, -74.999954, 1555.9038)
+
+[node name="[Interactable] Spring_Giant_Red3" parent="." unique_id=728089562 instance=ExtResource("26_5jjwb")]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, -4.1183395, -68.59657, 2017.9232)
+
+[node name="[Interactable] Spring_Giant_Red2" parent="." unique_id=1477911706 instance=ExtResource("26_5jjwb")]
+transform = Transform3D(-1.3113416e-07, 1.3113416e-07, 3, 3, 5.732056e-15, 1.3113416e-07, 0, 3, -1.3113416e-07, 291, -49, 2318)
+
+[node name="[Interactable] Special Stage Entrance3" parent="." unique_id=1436121076 instance=ExtResource("29_rpv2g")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 15, 203, 1481)
+
+[node name="[formation]Rings1x10" parent="." unique_id=2109557158 instance=ExtResource("31_ymq27")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -195, 315)
+
+[node name="[formation]Rings1x11" parent="." unique_id=1857929766 instance=ExtResource("31_ymq27")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 210, 651)
+
+[node name="[formation]Rings1x12" parent="." unique_id=581868786 instance=ExtResource("31_ymq27")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8, 50, 1047)
+
+[node name="[formation]Rings1x13" parent="." unique_id=780290923 instance=ExtResource("31_ymq27")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8, 50, 1049)
+
+[node name="[formation]Rings1x14" parent="." unique_id=318202450 instance=ExtResource("31_ymq27")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 50, 1375)
+
+[node name="[formation]Rings1x15" parent="." unique_id=707780850 instance=ExtResource("31_ymq27")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9, 50, 1589)
+
+[node name="[formation]Rings1x16" parent="." unique_id=1707409407 instance=ExtResource("31_ymq27")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 50, 1689)
+
+[node name="[formation]Rings1x17" parent="." unique_id=1582668061 instance=ExtResource("31_ymq27")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10, 50, 1790)
+
+[node name="[formation]Rings1x18" parent="." unique_id=1535108605 instance=ExtResource("31_ymq27")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 564, 104, 2326)
+
+[node name="[Interactable] Checkpoint_3D" parent="." unique_id=1863287748 instance=ExtResource("32_a68ay")]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, -1, 50, 1523)
+
+[node name="[Interactable] Checkpoint_3D2" parent="." unique_id=1070404047 instance=ExtResource("32_a68ay")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 552, 104, 2325)
+
+[node name="[Interactable] Checkpoint_3D3" parent="." unique_id=457692572 instance=ExtResource("32_a68ay")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 1848, 50, 2325)
+
+[node name="[formation]Rings1x19" parent="." unique_id=644880488 instance=ExtResource("31_ymq27")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 5918, -1, 2338)
+
+[node name="[formation]Rings1x20" parent="." unique_id=1295258440 instance=ExtResource("31_ymq27")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 5231.2554, 48.29146, 2299.0635)
+
+[node name="[formation]Rings1x21" parent="." unique_id=1684012760 instance=ExtResource("31_ymq27")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 4474.1797, 135.68024, 2325.0957)
+
+[node name="[formation]Rings1x22" parent="." unique_id=1614283101 instance=ExtResource("31_ymq27")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 3851.1797, 135.68024, 2325.0957)
+
+[node name="[formation]Rings1x23" parent="." unique_id=969846258 instance=ExtResource("31_ymq27")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 3526, 78, 2348)
+
+[node name="[formation]Rings1x24" parent="." unique_id=62571765 instance=ExtResource("31_ymq27")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 3526, 78, 2306)
+
+[node name="[formation]Rings1x25" parent="." unique_id=516775646 instance=ExtResource("31_ymq27")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 3028, 56, 2329)
+
+[node name="[formation]Rings1x26" parent="." unique_id=127136278 instance=ExtResource("31_ymq27")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 1908, 50, 2325)
+
+[node name="[formation]Rings1x27" parent="." unique_id=273020263 instance=ExtResource("31_ymq27")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 1243, 100, 2324)
+
+[node name="[formation]Rings1x28" parent="." unique_id=1402784267 instance=ExtResource("31_ymq27")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 1243, 100, 2335)
+
+[node name="[formation]Rings1x29" parent="." unique_id=42464664 instance=ExtResource("31_ymq27")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 1243, 100, 2330)
+
+[node name="[formation]Rings1x30" parent="." unique_id=1951919978 instance=ExtResource("31_ymq27")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 1243, 100, 2318)
+
+[node name="[formation]Rings1x31" parent="." unique_id=316696375 instance=ExtResource("31_ymq27")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 1243, 100, 2313)
+
+[node name="[Interactable] ChaseSection" parent="." unique_id=523813964 instance=ExtResource("33_22vcl")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 714.5831, 112.500046, 2325.1204)
+Distance = -20.0
+
+[node name="ChasePath" parent="[Interactable] ChaseSection" index="0" unique_id=1058885054]
+curve = SubResource("Curve3D_xy3wa")
+
+[node name="[Enemy] Egg Chaser_Mid" parent="[Interactable] ChaseSection/ChasePath/ChasingFollower" parent_id_path=PackedInt32Array(523813964, 1665256038) index="1" unique_id=1560769021 instance=ExtResource("34_3ek1y")]
+
+[node name="Laser_L" parent="[Interactable] ChaseSection/ChasePath/ChasingFollower/[Enemy] Egg Chaser_Mid" index="13" unique_id=608571677]
+transform = Transform3D(0.009999995, 9.380352e-06, -8.9741e-06, 8.951378e-06, 2.4262701e-05, 0.009999969, 9.402684e-06, -0.009999969, 2.425492e-05, 714.9149, 113.84605, 2324.3235)
+
+[node name="BeamMesh" parent="[Interactable] ChaseSection/ChasePath/ChasingFollower/[Enemy] Egg Chaser_Mid/Laser_L/[Interactable] Laser" parent_id_path=PackedInt32Array(1560769021, 2019842755) index="0" unique_id=1006862339]
+mesh = SubResource("CylinderMesh_8hmfs")
+
+[node name="BeamMesh2" parent="[Interactable] ChaseSection/ChasePath/ChasingFollower/[Enemy] Egg Chaser_Mid/Laser_L/[Interactable] Laser" parent_id_path=PackedInt32Array(1560769021, 2019842755) index="1" unique_id=909123986]
+mesh = SubResource("CylinderMesh_2ecbo")
+
+[node name="CollisionShape3D" parent="[Interactable] ChaseSection/ChasePath/ChasingFollower/[Enemy] Egg Chaser_Mid/Laser_L/[Interactable] Laser/Hitbox" parent_id_path=PackedInt32Array(1560769021, 2019842755, 1065576655) index="0" unique_id=939656509]
+shape = SubResource("CylinderShape3D_uq43y")
+
+[node name="Laser_R" parent="[Interactable] ChaseSection/ChasePath/ChasingFollower/[Enemy] Egg Chaser_Mid" index="14" unique_id=110019703]
+transform = Transform3D(-9.365356e-06, -0.00999999, -6.866156e-06, 8.9537625e-06, -6.8742033e-06, 0.009999994, -0.00999999, 9.358737e-06, 8.959824e-06, 0.796875, 1.3460159, -0.33166504)
+
+[node name="BeamMesh" parent="[Interactable] ChaseSection/ChasePath/ChasingFollower/[Enemy] Egg Chaser_Mid/Laser_R/[Interactable] Laser" parent_id_path=PackedInt32Array(1560769021, 1140186521) index="0" unique_id=1006862339]
+mesh = SubResource("CylinderMesh_d5cdh")
+
+[node name="BeamMesh2" parent="[Interactable] ChaseSection/ChasePath/ChasingFollower/[Enemy] Egg Chaser_Mid/Laser_R/[Interactable] Laser" parent_id_path=PackedInt32Array(1560769021, 1140186521) index="1" unique_id=909123986]
+mesh = SubResource("CylinderMesh_03qbn")
+
+[node name="CollisionShape3D" parent="[Interactable] ChaseSection/ChasePath/ChasingFollower/[Enemy] Egg Chaser_Mid/Laser_R/[Interactable] Laser/Hitbox" parent_id_path=PackedInt32Array(1560769021, 1140186521, 1065576655) index="0" unique_id=939656509]
+shape = SubResource("CylinderShape3D_t054s")
+
+[node name="InvisibleWall" type="AnimatableBody3D" parent="[Interactable] ChaseSection/ChasePath/ChasingFollower/[Enemy] Egg Chaser_Mid" unique_id=1498588975]
+transform = Transform3D(1, 0, -1.7484601e-07, 0, 1, 0, 1.7484601e-07, 0, 1, 0, 0, 0.9359131)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="[Interactable] ChaseSection/ChasePath/ChasingFollower/[Enemy] Egg Chaser_Mid/InvisibleWall" unique_id=2096940638]
+shape = SubResource("BoxShape3D_nhlhk")
+disabled = true
+
+[node name="InvisibleWallEnabler" type="Area3D" parent="[Interactable] ChaseSection/ChasePath/ChasingFollower/[Enemy] Egg Chaser_Mid" unique_id=1795935764]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -5.760498)
+collision_layer = 256
+collision_mask = 2
+script = ExtResource("35_3ek1y")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="[Interactable] ChaseSection/ChasePath/ChasingFollower/[Enemy] Egg Chaser_Mid/InvisibleWallEnabler" unique_id=1378424540]
+shape = SubResource("BoxShape3D_dwsd6")
+
+[node name="[Enemy] Egg Chaser_L1" parent="[Interactable] ChaseSection/ChasePath/ChasingFollower" parent_id_path=PackedInt32Array(523813964, 1665256038) index="2" unique_id=534911749 instance=ExtResource("34_3ek1y")]
+transform = Transform3D(1, 0, 1.7484601e-07, 0, 1, 0, -1.7484601e-07, 0, 1, 4, 0, 0)
+
+[node name="Laser_L" parent="[Interactable] ChaseSection/ChasePath/ChasingFollower/[Enemy] Egg Chaser_L1" index="13" unique_id=608571677]
+transform = Transform3D(0.009999995, 9.380352e-06, -8.9741e-06, 8.951378e-06, 2.4262701e-05, 0.009999969, 9.402684e-06, -0.009999969, 2.425492e-05, 714.9149, 113.84605, 2328.3235)
+
+[node name="BeamMesh" parent="[Interactable] ChaseSection/ChasePath/ChasingFollower/[Enemy] Egg Chaser_L1/Laser_L/[Interactable] Laser" parent_id_path=PackedInt32Array(534911749, 2019842755) index="0" unique_id=1006862339]
+mesh = SubResource("CylinderMesh_plhhm")
+
+[node name="BeamMesh2" parent="[Interactable] ChaseSection/ChasePath/ChasingFollower/[Enemy] Egg Chaser_L1/Laser_L/[Interactable] Laser" parent_id_path=PackedInt32Array(534911749, 2019842755) index="1" unique_id=909123986]
+mesh = SubResource("CylinderMesh_2b6ks")
+
+[node name="CollisionShape3D" parent="[Interactable] ChaseSection/ChasePath/ChasingFollower/[Enemy] Egg Chaser_L1/Laser_L/[Interactable] Laser/Hitbox" parent_id_path=PackedInt32Array(534911749, 2019842755, 1065576655) index="0" unique_id=939656509]
+shape = SubResource("CylinderShape3D_5rjf2")
+
+[node name="Laser_R" parent="[Interactable] ChaseSection/ChasePath/ChasingFollower/[Enemy] Egg Chaser_L1" index="14" unique_id=110019703]
+transform = Transform3D(-9.365356e-06, -0.00999999, -6.866156e-06, 8.9537625e-06, -6.8742033e-06, 0.009999994, -0.00999999, 9.358737e-06, 8.959824e-06, 0.796875, 1.3460159, -0.33166504)
+
+[node name="BeamMesh" parent="[Interactable] ChaseSection/ChasePath/ChasingFollower/[Enemy] Egg Chaser_L1/Laser_R/[Interactable] Laser" parent_id_path=PackedInt32Array(534911749, 1140186521) index="0" unique_id=1006862339]
+mesh = SubResource("CylinderMesh_k77bl")
+
+[node name="BeamMesh2" parent="[Interactable] ChaseSection/ChasePath/ChasingFollower/[Enemy] Egg Chaser_L1/Laser_R/[Interactable] Laser" parent_id_path=PackedInt32Array(534911749, 1140186521) index="1" unique_id=909123986]
+mesh = SubResource("CylinderMesh_ukxfh")
+
+[node name="CollisionShape3D" parent="[Interactable] ChaseSection/ChasePath/ChasingFollower/[Enemy] Egg Chaser_L1/Laser_R/[Interactable] Laser/Hitbox" parent_id_path=PackedInt32Array(534911749, 1140186521, 1065576655) index="0" unique_id=939656509]
+shape = SubResource("CylinderShape3D_n8qbp")
+
+[node name="[Enemy] Egg Chaser_L2" parent="[Interactable] ChaseSection/ChasePath/ChasingFollower" parent_id_path=PackedInt32Array(523813964, 1665256038) index="3" unique_id=1652093861 instance=ExtResource("34_3ek1y")]
+transform = Transform3D(1, 0, 1.74846e-07, 0, 1, 0, -1.74846e-07, 0, 1, 8, 0, 0)
+
+[node name="Laser_L" parent="[Interactable] ChaseSection/ChasePath/ChasingFollower/[Enemy] Egg Chaser_L2" index="13" unique_id=608571677]
+transform = Transform3D(0.009999995, 9.380352e-06, -8.9741e-06, 8.951378e-06, 2.4262701e-05, 0.009999969, 9.402684e-06, -0.009999969, 2.425492e-05, 714.9149, 113.84605, 2332.3235)
+
+[node name="BeamMesh" parent="[Interactable] ChaseSection/ChasePath/ChasingFollower/[Enemy] Egg Chaser_L2/Laser_L/[Interactable] Laser" parent_id_path=PackedInt32Array(1652093861, 2019842755) index="0" unique_id=1006862339]
+mesh = SubResource("CylinderMesh_5jjwb")
+
+[node name="BeamMesh2" parent="[Interactable] ChaseSection/ChasePath/ChasingFollower/[Enemy] Egg Chaser_L2/Laser_L/[Interactable] Laser" parent_id_path=PackedInt32Array(1652093861, 2019842755) index="1" unique_id=909123986]
+mesh = SubResource("CylinderMesh_hgvnl")
+
+[node name="CollisionShape3D" parent="[Interactable] ChaseSection/ChasePath/ChasingFollower/[Enemy] Egg Chaser_L2/Laser_L/[Interactable] Laser/Hitbox" parent_id_path=PackedInt32Array(1652093861, 2019842755, 1065576655) index="0" unique_id=939656509]
+shape = SubResource("CylinderShape3D_m4lpg")
+
+[node name="Laser_R" parent="[Interactable] ChaseSection/ChasePath/ChasingFollower/[Enemy] Egg Chaser_L2" index="14" unique_id=110019703]
+transform = Transform3D(-9.365356e-06, -0.00999999, -6.866156e-06, 8.9537625e-06, -6.8742033e-06, 0.009999994, -0.00999999, 9.358737e-06, 8.959824e-06, 0.796875, 1.3460159, -0.33166504)
+
+[node name="BeamMesh" parent="[Interactable] ChaseSection/ChasePath/ChasingFollower/[Enemy] Egg Chaser_L2/Laser_R/[Interactable] Laser" parent_id_path=PackedInt32Array(1652093861, 1140186521) index="0" unique_id=1006862339]
+mesh = SubResource("CylinderMesh_x1e0j")
+
+[node name="BeamMesh2" parent="[Interactable] ChaseSection/ChasePath/ChasingFollower/[Enemy] Egg Chaser_L2/Laser_R/[Interactable] Laser" parent_id_path=PackedInt32Array(1652093861, 1140186521) index="1" unique_id=909123986]
+mesh = SubResource("CylinderMesh_72rgb")
+
+[node name="CollisionShape3D" parent="[Interactable] ChaseSection/ChasePath/ChasingFollower/[Enemy] Egg Chaser_L2/Laser_R/[Interactable] Laser/Hitbox" parent_id_path=PackedInt32Array(1652093861, 1140186521, 1065576655) index="0" unique_id=939656509]
+shape = SubResource("CylinderShape3D_2nic7")
+
+[node name="[Enemy] Egg Chaser_L3" parent="[Interactable] ChaseSection/ChasePath/ChasingFollower" parent_id_path=PackedInt32Array(523813964, 1665256038) index="4" unique_id=301451790 instance=ExtResource("34_3ek1y")]
+transform = Transform3D(1, 0, 1.74846e-07, 0, 1, 0, -1.74846e-07, 0, 1, 12, 0, 0)
+
+[node name="Laser_L" parent="[Interactable] ChaseSection/ChasePath/ChasingFollower/[Enemy] Egg Chaser_L3" index="13" unique_id=608571677]
+transform = Transform3D(0.009999995, 9.380352e-06, -8.9741e-06, 8.951378e-06, 2.4262701e-05, 0.009999969, 9.402684e-06, -0.009999969, 2.425492e-05, 714.9149, 113.84605, 2336.3235)
+
+[node name="BeamMesh" parent="[Interactable] ChaseSection/ChasePath/ChasingFollower/[Enemy] Egg Chaser_L3/Laser_L/[Interactable] Laser" parent_id_path=PackedInt32Array(301451790, 2019842755) index="0" unique_id=1006862339]
+mesh = SubResource("CylinderMesh_swrqs")
+
+[node name="BeamMesh2" parent="[Interactable] ChaseSection/ChasePath/ChasingFollower/[Enemy] Egg Chaser_L3/Laser_L/[Interactable] Laser" parent_id_path=PackedInt32Array(301451790, 2019842755) index="1" unique_id=909123986]
+mesh = SubResource("CylinderMesh_8lm5v")
+
+[node name="CollisionShape3D" parent="[Interactable] ChaseSection/ChasePath/ChasingFollower/[Enemy] Egg Chaser_L3/Laser_L/[Interactable] Laser/Hitbox" parent_id_path=PackedInt32Array(301451790, 2019842755, 1065576655) index="0" unique_id=939656509]
+shape = SubResource("CylinderShape3D_vjvnc")
+
+[node name="Laser_R" parent="[Interactable] ChaseSection/ChasePath/ChasingFollower/[Enemy] Egg Chaser_L3" index="14" unique_id=110019703]
+transform = Transform3D(-9.365356e-06, -0.00999999, -6.866156e-06, 8.9537625e-06, -6.8742033e-06, 0.009999994, -0.00999999, 9.358737e-06, 8.959824e-06, 0.796875, 1.3460159, -0.33166504)
+
+[node name="BeamMesh" parent="[Interactable] ChaseSection/ChasePath/ChasingFollower/[Enemy] Egg Chaser_L3/Laser_R/[Interactable] Laser" parent_id_path=PackedInt32Array(301451790, 1140186521) index="0" unique_id=1006862339]
+mesh = SubResource("CylinderMesh_6g64t")
+
+[node name="BeamMesh2" parent="[Interactable] ChaseSection/ChasePath/ChasingFollower/[Enemy] Egg Chaser_L3/Laser_R/[Interactable] Laser" parent_id_path=PackedInt32Array(301451790, 1140186521) index="1" unique_id=909123986]
+mesh = SubResource("CylinderMesh_o5urw")
+
+[node name="CollisionShape3D" parent="[Interactable] ChaseSection/ChasePath/ChasingFollower/[Enemy] Egg Chaser_L3/Laser_R/[Interactable] Laser/Hitbox" parent_id_path=PackedInt32Array(301451790, 1140186521, 1065576655) index="0" unique_id=939656509]
+shape = SubResource("CylinderShape3D_34dt8")
+
+[node name="[Enemy] Egg Chaser_R1" parent="[Interactable] ChaseSection/ChasePath/ChasingFollower" parent_id_path=PackedInt32Array(523813964, 1665256038) index="5" unique_id=1392241527 instance=ExtResource("34_3ek1y")]
+transform = Transform3D(1, 0, 1.74846e-07, 0, 1, 0, -1.74846e-07, 0, 1, -4, 0, 0)
+
+[node name="Laser_L" parent="[Interactable] ChaseSection/ChasePath/ChasingFollower/[Enemy] Egg Chaser_R1" index="13" unique_id=608571677]
+transform = Transform3D(0.009999995, 9.380352e-06, -8.9741e-06, 8.951378e-06, 2.4262701e-05, 0.009999969, 9.402684e-06, -0.009999969, 2.425492e-05, 714.9149, 113.84605, 2320.3235)
+
+[node name="BeamMesh" parent="[Interactable] ChaseSection/ChasePath/ChasingFollower/[Enemy] Egg Chaser_R1/Laser_L/[Interactable] Laser" parent_id_path=PackedInt32Array(1392241527, 2019842755) index="0" unique_id=1006862339]
+mesh = SubResource("CylinderMesh_24yyw")
+
+[node name="BeamMesh2" parent="[Interactable] ChaseSection/ChasePath/ChasingFollower/[Enemy] Egg Chaser_R1/Laser_L/[Interactable] Laser" parent_id_path=PackedInt32Array(1392241527, 2019842755) index="1" unique_id=909123986]
+mesh = SubResource("CylinderMesh_3dw5a")
+
+[node name="CollisionShape3D" parent="[Interactable] ChaseSection/ChasePath/ChasingFollower/[Enemy] Egg Chaser_R1/Laser_L/[Interactable] Laser/Hitbox" parent_id_path=PackedInt32Array(1392241527, 2019842755, 1065576655) index="0" unique_id=939656509]
+shape = SubResource("CylinderShape3D_rqw0t")
+
+[node name="Laser_R" parent="[Interactable] ChaseSection/ChasePath/ChasingFollower/[Enemy] Egg Chaser_R1" index="14" unique_id=110019703]
+transform = Transform3D(-9.365356e-06, -0.00999999, -6.866156e-06, 8.9537625e-06, -6.8742033e-06, 0.009999994, -0.00999999, 9.358737e-06, 8.959824e-06, 0.796875, 1.3460159, -0.33166504)
+
+[node name="BeamMesh" parent="[Interactable] ChaseSection/ChasePath/ChasingFollower/[Enemy] Egg Chaser_R1/Laser_R/[Interactable] Laser" parent_id_path=PackedInt32Array(1392241527, 1140186521) index="0" unique_id=1006862339]
+mesh = SubResource("CylinderMesh_k5sak")
+
+[node name="BeamMesh2" parent="[Interactable] ChaseSection/ChasePath/ChasingFollower/[Enemy] Egg Chaser_R1/Laser_R/[Interactable] Laser" parent_id_path=PackedInt32Array(1392241527, 1140186521) index="1" unique_id=909123986]
+mesh = SubResource("CylinderMesh_ashri")
+
+[node name="CollisionShape3D" parent="[Interactable] ChaseSection/ChasePath/ChasingFollower/[Enemy] Egg Chaser_R1/Laser_R/[Interactable] Laser/Hitbox" parent_id_path=PackedInt32Array(1392241527, 1140186521, 1065576655) index="0" unique_id=939656509]
+shape = SubResource("CylinderShape3D_16mnu")
+
+[node name="[Enemy] Egg Chaser_R2" parent="[Interactable] ChaseSection/ChasePath/ChasingFollower" parent_id_path=PackedInt32Array(523813964, 1665256038) index="6" unique_id=1695644626 instance=ExtResource("34_3ek1y")]
+transform = Transform3D(1, 0, 1.74846e-07, 0, 1, 0, -1.74846e-07, 0, 1, -8, 0, 0)
+
+[node name="Laser_L" parent="[Interactable] ChaseSection/ChasePath/ChasingFollower/[Enemy] Egg Chaser_R2" index="13" unique_id=608571677]
+transform = Transform3D(0.009999995, 9.380352e-06, -8.9741e-06, 8.951378e-06, 2.4262701e-05, 0.009999969, 9.402684e-06, -0.009999969, 2.425492e-05, 714.9149, 113.84605, 2316.3235)
+
+[node name="BeamMesh" parent="[Interactable] ChaseSection/ChasePath/ChasingFollower/[Enemy] Egg Chaser_R2/Laser_L/[Interactable] Laser" parent_id_path=PackedInt32Array(1695644626, 2019842755) index="0" unique_id=1006862339]
+mesh = SubResource("CylinderMesh_qt5uh")
+
+[node name="BeamMesh2" parent="[Interactable] ChaseSection/ChasePath/ChasingFollower/[Enemy] Egg Chaser_R2/Laser_L/[Interactable] Laser" parent_id_path=PackedInt32Array(1695644626, 2019842755) index="1" unique_id=909123986]
+mesh = SubResource("CylinderMesh_l608q")
+
+[node name="CollisionShape3D" parent="[Interactable] ChaseSection/ChasePath/ChasingFollower/[Enemy] Egg Chaser_R2/Laser_L/[Interactable] Laser/Hitbox" parent_id_path=PackedInt32Array(1695644626, 2019842755, 1065576655) index="0" unique_id=939656509]
+shape = SubResource("CylinderShape3D_pfper")
+
+[node name="Laser_R" parent="[Interactable] ChaseSection/ChasePath/ChasingFollower/[Enemy] Egg Chaser_R2" index="14" unique_id=110019703]
+transform = Transform3D(-9.365356e-06, -0.00999999, -6.866156e-06, 8.9537625e-06, -6.8742033e-06, 0.009999994, -0.00999999, 9.358737e-06, 8.959824e-06, 0.796875, 1.3460159, -0.33166504)
+
+[node name="BeamMesh" parent="[Interactable] ChaseSection/ChasePath/ChasingFollower/[Enemy] Egg Chaser_R2/Laser_R/[Interactable] Laser" parent_id_path=PackedInt32Array(1695644626, 1140186521) index="0" unique_id=1006862339]
+mesh = SubResource("CylinderMesh_5lmnk")
+
+[node name="BeamMesh2" parent="[Interactable] ChaseSection/ChasePath/ChasingFollower/[Enemy] Egg Chaser_R2/Laser_R/[Interactable] Laser" parent_id_path=PackedInt32Array(1695644626, 1140186521) index="1" unique_id=909123986]
+mesh = SubResource("CylinderMesh_fy0qc")
+
+[node name="CollisionShape3D" parent="[Interactable] ChaseSection/ChasePath/ChasingFollower/[Enemy] Egg Chaser_R2/Laser_R/[Interactable] Laser/Hitbox" parent_id_path=PackedInt32Array(1695644626, 1140186521, 1065576655) index="0" unique_id=939656509]
+shape = SubResource("CylinderShape3D_wiky8")
+
+[node name="[Enemy] Egg Chaser_R3" parent="[Interactable] ChaseSection/ChasePath/ChasingFollower" parent_id_path=PackedInt32Array(523813964, 1665256038) index="7" unique_id=1926856842 instance=ExtResource("34_3ek1y")]
+transform = Transform3D(1, 0, 1.74846e-07, 0, 1, 0, -1.74846e-07, 0, 1, -12, 0, 0)
+
+[node name="Laser_L" parent="[Interactable] ChaseSection/ChasePath/ChasingFollower/[Enemy] Egg Chaser_R3" index="13" unique_id=608571677]
+transform = Transform3D(0.009999995, 9.380352e-06, -8.9741e-06, 8.951378e-06, 2.4262701e-05, 0.009999969, 9.402684e-06, -0.009999969, 2.425492e-05, 714.9149, 113.84605, 2312.3235)
+
+[node name="BeamMesh" parent="[Interactable] ChaseSection/ChasePath/ChasingFollower/[Enemy] Egg Chaser_R3/Laser_L/[Interactable] Laser" parent_id_path=PackedInt32Array(1926856842, 2019842755) index="0" unique_id=1006862339]
+mesh = SubResource("CylinderMesh_qdy0n")
+
+[node name="BeamMesh2" parent="[Interactable] ChaseSection/ChasePath/ChasingFollower/[Enemy] Egg Chaser_R3/Laser_L/[Interactable] Laser" parent_id_path=PackedInt32Array(1926856842, 2019842755) index="1" unique_id=909123986]
+mesh = SubResource("CylinderMesh_rs6vo")
+
+[node name="CollisionShape3D" parent="[Interactable] ChaseSection/ChasePath/ChasingFollower/[Enemy] Egg Chaser_R3/Laser_L/[Interactable] Laser/Hitbox" parent_id_path=PackedInt32Array(1926856842, 2019842755, 1065576655) index="0" unique_id=939656509]
+shape = SubResource("CylinderShape3D_hldtv")
+
+[node name="Laser_R" parent="[Interactable] ChaseSection/ChasePath/ChasingFollower/[Enemy] Egg Chaser_R3" index="14" unique_id=110019703]
+transform = Transform3D(-9.365356e-06, -0.00999999, -6.866156e-06, 8.9537625e-06, -6.8742033e-06, 0.009999994, -0.00999999, 9.358737e-06, 8.959824e-06, 0.796875, 1.3460159, -0.33166504)
+
+[node name="BeamMesh" parent="[Interactable] ChaseSection/ChasePath/ChasingFollower/[Enemy] Egg Chaser_R3/Laser_R/[Interactable] Laser" parent_id_path=PackedInt32Array(1926856842, 1140186521) index="0" unique_id=1006862339]
+mesh = SubResource("CylinderMesh_7vlev")
+
+[node name="BeamMesh2" parent="[Interactable] ChaseSection/ChasePath/ChasingFollower/[Enemy] Egg Chaser_R3/Laser_R/[Interactable] Laser" parent_id_path=PackedInt32Array(1926856842, 1140186521) index="1" unique_id=909123986]
+mesh = SubResource("CylinderMesh_pwyic")
+
+[node name="CollisionShape3D" parent="[Interactable] ChaseSection/ChasePath/ChasingFollower/[Enemy] Egg Chaser_R3/Laser_R/[Interactable] Laser/Hitbox" parent_id_path=PackedInt32Array(1926856842, 1140186521, 1065576655) index="0" unique_id=939656509]
+shape = SubResource("CylinderShape3D_wbxd2")
+
+[node name="CollisionShape3D" parent="[Interactable] ChaseSection/ChasePath/ChaseStartFollow/ChaseStartTrigger" parent_id_path=PackedInt32Array(523813964, 1382055412) index="0" unique_id=178184736]
+shape = SubResource("BoxShape3D_es27u")
+
+[node name="ChaseEndFollow" parent="[Interactable] ChaseSection/ChasePath" index="2" unique_id=1570250900]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 1000.0001, 0, 0)
+progress = 1000.0
+
+[node name="CollisionShape3D" parent="[Interactable] ChaseSection/ChasePath/ChaseEndFollow/ChaseEndTrigger" parent_id_path=PackedInt32Array(523813964, 885331311) index="0" unique_id=616462476]
+shape = SubResource("BoxShape3D_es27u")
+
+[node name="EnemyKillHitbox" type="Area3D" parent="[Interactable] ChaseSection/ChasePath/ChaseEndFollow" index="1" unique_id=190701195]
+collision_mask = 64
+script = ExtResource("10_0enk0")
+CanDamagePlayer = false
+CanDamageRollingPlayer = false
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="[Interactable] ChaseSection/ChasePath/ChaseEndFollow/EnemyKillHitbox" unique_id=640930282]
+shape = SubResource("BoxShape3D_482wa")
+
+[node name="LaserTrigger1" type="PathFollow3D" parent="[Interactable] ChaseSection/ChasePath" index="3" unique_id=293563933]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 99.99957, 0, 0)
+progress = 100.0
+
+[node name="Area3D" type="Area3D" parent="[Interactable] ChaseSection/ChasePath/LaserTrigger1" unique_id=552973853]
+collision_layer = 256
+collision_mask = 2
+script = ExtResource("35_3ek1y")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="[Interactable] ChaseSection/ChasePath/LaserTrigger1/Area3D" unique_id=1582066299]
+shape = SubResource("BoxShape3D_sajgr")
+
+[node name="LaserTrigger2" type="PathFollow3D" parent="[Interactable] ChaseSection/ChasePath" index="4" unique_id=1424757598]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 399.99994, 0, 0)
+progress = 400.0
+
+[node name="Area3D" type="Area3D" parent="[Interactable] ChaseSection/ChasePath/LaserTrigger2" unique_id=789153260]
+collision_layer = 256
+collision_mask = 2
+script = ExtResource("35_3ek1y")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="[Interactable] ChaseSection/ChasePath/LaserTrigger2/Area3D" unique_id=1517863911]
+shape = SubResource("BoxShape3D_sajgr")
+
+[node name="LaserTrigger3" type="PathFollow3D" parent="[Interactable] ChaseSection/ChasePath" index="5" unique_id=1371456146]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 700, 0, 0)
+progress = 700.0
+
+[node name="Area3D" type="Area3D" parent="[Interactable] ChaseSection/ChasePath/LaserTrigger3" unique_id=158443054]
+collision_layer = 256
+collision_mask = 2
+script = ExtResource("35_3ek1y")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="[Interactable] ChaseSection/ChasePath/LaserTrigger3/Area3D" unique_id=534088325]
+shape = SubResource("BoxShape3D_sajgr")
+
+[node name="[Interactable] Spring_Red_Wide" parent="." unique_id=156605279 instance=ExtResource("19_lllwf")]
+transform = Transform3D(-4.371139e-08, 1, -4.37114e-08, 0, -4.37114e-08, -1, -1, -4.371139e-08, 1.9106859e-15, 6271, -25, 2329)
+MinVelocity = 100.0
+MaxVelocity = 100.0
+
+[node name="[Interactable] Spring_Red_Wide2" parent="." unique_id=1707062679 instance=ExtResource("19_lllwf")]
+transform = Transform3D(-4.371139e-08, 1, -4.37114e-08, 0, -4.37114e-08, -1, -1, -4.371139e-08, 1.9106859e-15, 6250, 0, 2329)
+MinVelocity = 100.0
+MaxVelocity = 100.0
+
+[node name="[Trigger] SkateRemover" parent="." unique_id=833825359 instance=ExtResource("42_eb4m0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6062.743, 54.518158, 2327.811)
+
+[node name="[Trigger] Speed Limit" type="Area3D" parent="." unique_id=1027252796]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 736.5546, 110.99988, 2326.5762)
+collision_layer = 257
+collision_mask = 3
+script = ExtResource("43_w36e5")
+Axis = Vector3(1, 0, 0)
+MinSpeed = 100.0
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="[Trigger] Speed Limit" unique_id=1275091281]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 452.00006, 0, 0)
+shape = SubResource("BoxShape3D_hxqaj")
+
+[connection signal="OnAfterSpawningDone" from="PlayersManager" to="PlayersManager/ExtraSettingsApplicator" method="ApplySettings"]
+[connection signal="OnPlayerEnter" from="[Interactable] ChaseSection/ChasePath/ChasingFollower/[Enemy] Egg Chaser_Mid/InvisibleWallEnabler" to="[Interactable] ChaseSection/ChasePath/ChasingFollower/[Enemy] Egg Chaser_Mid/InvisibleWall/CollisionShape3D" method="set_disabled" flags=6 binds= [false]]
+[connection signal="OnPlayerEnter" from="[Interactable] ChaseSection/ChasePath/LaserTrigger1/Area3D" to="[Interactable] ChaseSection/ChasePath/ChasingFollower/[Enemy] Egg Chaser_Mid/Behaviors/Phase0Alive/EggChaserBehavior" method="Fire"]
+[connection signal="OnPlayerEnter" from="[Interactable] ChaseSection/ChasePath/LaserTrigger2/Area3D" to="[Interactable] ChaseSection/ChasePath/ChasingFollower/[Enemy] Egg Chaser_L1/Behaviors/Phase0Alive/EggChaserBehavior" method="Fire"]
+[connection signal="OnPlayerEnter" from="[Interactable] ChaseSection/ChasePath/LaserTrigger2/Area3D" to="[Interactable] ChaseSection/ChasePath/ChasingFollower/[Enemy] Egg Chaser_L2/Behaviors/Phase0Alive/EggChaserBehavior" method="Fire"]
+[connection signal="OnPlayerEnter" from="[Interactable] ChaseSection/ChasePath/LaserTrigger2/Area3D" to="[Interactable] ChaseSection/ChasePath/ChasingFollower/[Enemy] Egg Chaser_R1/Behaviors/Phase0Alive/EggChaserBehavior" method="Fire"]
+[connection signal="OnPlayerEnter" from="[Interactable] ChaseSection/ChasePath/LaserTrigger2/Area3D" to="[Interactable] ChaseSection/ChasePath/ChasingFollower/[Enemy] Egg Chaser_R2/Behaviors/Phase0Alive/EggChaserBehavior" method="Fire"]
+[connection signal="OnPlayerEnter" from="[Interactable] ChaseSection/ChasePath/LaserTrigger3/Area3D" to="[Interactable] ChaseSection/ChasePath/ChasingFollower/[Enemy] Egg Chaser_Mid/Behaviors/Phase0Alive/EggChaserBehavior" method="Fire"]
+[connection signal="OnPlayerEnter" from="[Interactable] ChaseSection/ChasePath/LaserTrigger3/Area3D" to="[Interactable] ChaseSection/ChasePath/ChasingFollower/[Enemy] Egg Chaser_L3/Behaviors/Phase0Alive/EggChaserBehavior" method="Fire"]
+[connection signal="OnPlayerEnter" from="[Interactable] ChaseSection/ChasePath/LaserTrigger3/Area3D" to="[Interactable] ChaseSection/ChasePath/ChasingFollower/[Enemy] Egg Chaser_R3/Behaviors/Phase0Alive/EggChaserBehavior" method="Fire"]
+
+[editable path="[Interactable] Skydiving section"]
+[editable path="SpringChain/[Trigger] Camera Trigger_Const_Chase"]
+[editable path="SpringChain/[Trigger] Camera Trigger_Quickstep1"]
+[editable path="SpringChain/[Trigger] Camera Trigger_Free_Nobias"]
+[editable path="SpringChain/[Trigger] Camera Trigger_Endchase"]
+[editable path="[Trigger] Camera Trigger"]
+[editable path="[Interactable] ChaseSection"]
+[editable path="[Interactable] ChaseSection/ChasePath/ChasingFollower/[Enemy] Egg Chaser_Mid"]
+[editable path="[Interactable] ChaseSection/ChasePath/ChasingFollower/[Enemy] Egg Chaser_Mid/EnemyEggChaser"]
+[editable path="[Interactable] ChaseSection/ChasePath/ChasingFollower/[Enemy] Egg Chaser_Mid/Laser_L/[Interactable] Laser"]
+[editable path="[Interactable] ChaseSection/ChasePath/ChasingFollower/[Enemy] Egg Chaser_Mid/Laser_R/[Interactable] Laser"]
+[editable path="[Interactable] ChaseSection/ChasePath/ChasingFollower/[Enemy] Egg Chaser_L1"]
+[editable path="[Interactable] ChaseSection/ChasePath/ChasingFollower/[Enemy] Egg Chaser_L1/EnemyEggChaser"]
+[editable path="[Interactable] ChaseSection/ChasePath/ChasingFollower/[Enemy] Egg Chaser_L1/Laser_L/[Interactable] Laser"]
+[editable path="[Interactable] ChaseSection/ChasePath/ChasingFollower/[Enemy] Egg Chaser_L1/Laser_R/[Interactable] Laser"]
+[editable path="[Interactable] ChaseSection/ChasePath/ChasingFollower/[Enemy] Egg Chaser_L2"]
+[editable path="[Interactable] ChaseSection/ChasePath/ChasingFollower/[Enemy] Egg Chaser_L2/EnemyEggChaser"]
+[editable path="[Interactable] ChaseSection/ChasePath/ChasingFollower/[Enemy] Egg Chaser_L2/Laser_L/[Interactable] Laser"]
+[editable path="[Interactable] ChaseSection/ChasePath/ChasingFollower/[Enemy] Egg Chaser_L2/Laser_R/[Interactable] Laser"]
+[editable path="[Interactable] ChaseSection/ChasePath/ChasingFollower/[Enemy] Egg Chaser_L3"]
+[editable path="[Interactable] ChaseSection/ChasePath/ChasingFollower/[Enemy] Egg Chaser_L3/EnemyEggChaser"]
+[editable path="[Interactable] ChaseSection/ChasePath/ChasingFollower/[Enemy] Egg Chaser_L3/Laser_L/[Interactable] Laser"]
+[editable path="[Interactable] ChaseSection/ChasePath/ChasingFollower/[Enemy] Egg Chaser_L3/Laser_R/[Interactable] Laser"]
+[editable path="[Interactable] ChaseSection/ChasePath/ChasingFollower/[Enemy] Egg Chaser_R1"]
+[editable path="[Interactable] ChaseSection/ChasePath/ChasingFollower/[Enemy] Egg Chaser_R1/EnemyEggChaser"]
+[editable path="[Interactable] ChaseSection/ChasePath/ChasingFollower/[Enemy] Egg Chaser_R1/Laser_L/[Interactable] Laser"]
+[editable path="[Interactable] ChaseSection/ChasePath/ChasingFollower/[Enemy] Egg Chaser_R1/Laser_R/[Interactable] Laser"]
+[editable path="[Interactable] ChaseSection/ChasePath/ChasingFollower/[Enemy] Egg Chaser_R2"]
+[editable path="[Interactable] ChaseSection/ChasePath/ChasingFollower/[Enemy] Egg Chaser_R2/EnemyEggChaser"]
+[editable path="[Interactable] ChaseSection/ChasePath/ChasingFollower/[Enemy] Egg Chaser_R2/Laser_L/[Interactable] Laser"]
+[editable path="[Interactable] ChaseSection/ChasePath/ChasingFollower/[Enemy] Egg Chaser_R2/Laser_R/[Interactable] Laser"]
+[editable path="[Interactable] ChaseSection/ChasePath/ChasingFollower/[Enemy] Egg Chaser_R3"]
+[editable path="[Interactable] ChaseSection/ChasePath/ChasingFollower/[Enemy] Egg Chaser_R3/EnemyEggChaser"]
+[editable path="[Interactable] ChaseSection/ChasePath/ChasingFollower/[Enemy] Egg Chaser_R3/Laser_L/[Interactable] Laser"]
+[editable path="[Interactable] ChaseSection/ChasePath/ChasingFollower/[Enemy] Egg Chaser_R3/Laser_R/[Interactable] Laser"]

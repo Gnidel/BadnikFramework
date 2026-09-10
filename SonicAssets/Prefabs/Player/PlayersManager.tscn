@@ -1,0 +1,771 @@
+[gd_scene format=3 uid="uid://clt71rt2khju8"]
+
+[ext_resource type="Script" uid="uid://cy1hpllpia03a" path="res://Scripts/Player/PlayersManager.cs" id="1_kcot3"]
+[ext_resource type="PackedScene" uid="uid://d8hhtv3xe6u6" path="res://SonicAssets/Prefabs/Player/player_sonic.tscn" id="2_1hgop"]
+[ext_resource type="PackedScene" uid="uid://drxsl3jdi408q" path="res://SonicAssets/Prefabs/Player/Common/subviewportcontainer.tscn" id="3_ku1br"]
+[ext_resource type="Script" uid="uid://bckphkdtxfhpr" path="res://Scripts/Ui/TouchJoystick.cs" id="3_opoa3"]
+[ext_resource type="Texture2D" uid="uid://l4v3ru4wv6xf" path="res://SonicAssets/Images/Mobile/TouchJoystick.png" id="4_ju8kh"]
+[ext_resource type="Texture2D" uid="uid://cpo14iw1wc5je" path="res://SonicAssets/Images/Mobile/TouchJoystick_Knob.png" id="5_7afkj"]
+[ext_resource type="Texture2D" uid="uid://d0eae3a5pdsu6" path="res://SonicAssets/Images/Mobile/TouchButton_Homing.png" id="6_7msiu"]
+[ext_resource type="Texture2D" uid="uid://x67yyd7jbept" path="res://SonicAssets/Images/Mobile/TouchButton_Quickstep_L.png" id="7_mad1f"]
+[ext_resource type="Texture2D" uid="uid://ig2hofd8qvf3" path="res://SonicAssets/Images/Mobile/TouchButton_Homing_Press.png" id="7_umpdk"]
+[ext_resource type="Texture2D" uid="uid://dgcdqebxlf7c" path="res://SonicAssets/Images/Mobile/TouchButton_Quickstep_L_Press.png" id="8_slgw6"]
+[ext_resource type="Texture2D" uid="uid://ccwjnkvclvfbv" path="res://SonicAssets/Images/Mobile/TouchButton_Jump.png" id="8_yidhc"]
+[ext_resource type="Texture2D" uid="uid://c2ol4ymirl21" path="res://SonicAssets/Images/Mobile/TouchButton_Quickstep_R.png" id="9_aogx6"]
+[ext_resource type="Texture2D" uid="uid://c3x1kiinfp1uk" path="res://SonicAssets/Images/Mobile/TouchButton_Jump_Press.png" id="9_gwjdj"]
+[ext_resource type="Texture2D" uid="uid://dige1tbfvb4oe" path="res://SonicAssets/Images/Mobile/TouchButton_Quickstep_R_Press.png" id="10_62kct"]
+[ext_resource type="Texture2D" uid="uid://0m6518ibs73q" path="res://SonicAssets/Images/Mobile/TouchButton_Dash.png" id="10_bh24g"]
+[ext_resource type="Texture2D" uid="uid://dhmhf0p23x206" path="res://SonicAssets/Images/Mobile/TouchButton_Dash_Press.png" id="11_j4d27"]
+[ext_resource type="Texture2D" uid="uid://1k2aft5xdxr7" path="res://SonicAssets/Images/Mobile/TouchButton_Roll.png" id="12_l6vni"]
+[ext_resource type="Texture2D" uid="uid://dl83bj445prqi" path="res://SonicAssets/Images/Mobile/TouchButton_Roll_Press.png" id="13_8k427"]
+[ext_resource type="Texture2D" uid="uid://brt2oso8e2jh0" path="res://SonicAssets/Images/Mobile/TouchButton_Pause.png" id="14_fobs7"]
+[ext_resource type="Texture2D" uid="uid://m4a0hi4xn35t" path="res://SonicAssets/Images/Mobile/TouchButton_Pause_Press.png" id="15_kidfl"]
+[ext_resource type="Texture2D" uid="uid://c1q8nra6brswh" path="res://SonicAssets/Images/Mobile/TouchButton_Stomp.png" id="15_ml0oj"]
+[ext_resource type="Texture2D" uid="uid://wv5o40t55sgx" path="res://SonicAssets/Images/Mobile/TouchButton_Super.png" id="16_irjbr"]
+[ext_resource type="Texture2D" uid="uid://d3ydah5nv7knk" path="res://SonicAssets/Images/Mobile/TouchButton_Stomp_Press.png" id="16_jvwqy"]
+[ext_resource type="Script" uid="uid://bp436wbpf1bk8" path="res://Scripts/Ui/TouchButtonsPositioning.cs" id="16_nouqf"]
+[ext_resource type="Texture2D" uid="uid://b42ufsdopy8kv" path="res://SonicAssets/Images/Mobile/TouchButton_Super_Press.png" id="17_wfbrn"]
+[ext_resource type="Script" uid="uid://bbh65sxbt16rg" path="res://Scripts/Ui/HideOnMobile.cs" id="17_xakny"]
+[ext_resource type="Texture2D" uid="uid://s1iaj8cofoj8" path="res://SonicAssets/Images/Mobile/TouchButton_Charaswap_L.png" id="25_bsoaf"]
+[ext_resource type="Texture2D" uid="uid://xnto7vo7ket" path="res://SonicAssets/Images/Mobile/TouchButton_Charaswap_L_Press.png" id="26_0a4k3"]
+[ext_resource type="Texture2D" uid="uid://ihuh1c2463sh" path="res://SonicAssets/Images/Mobile/TouchButton_Charaswap_R.png" id="27_8d5tr"]
+[ext_resource type="Texture2D" uid="uid://e5kfsbbpqan2" path="res://SonicAssets/Images/Mobile/TouchButton_Charaswap_R_Press.png" id="28_espkf"]
+[ext_resource type="Script" uid="uid://b1rlalqv8hu0x" path="res://Scripts/Ui/PlayerUI.cs" id="29_ebqca"]
+[ext_resource type="Texture2D" uid="uid://bqthtdn326ncw" path="res://SonicAssets/Images/UiRedRing_Yes.png" id="30_qjn5s"]
+[ext_resource type="Texture2D" uid="uid://bhsqifesoq5ue" path="res://SonicAssets/Images/UiRedRing_No.png" id="31_mnu4i"]
+[ext_resource type="Script" uid="uid://b0vcanq8ek7n0" path="res://Scripts/Player/FinishScreen.cs" id="32_wuv2y"]
+[ext_resource type="AudioStream" uid="uid://bju36a386k5sj" path="res://SonicAssets/Audio/Game/se_wars_sys_common#12 (sys_gadget_rank_count; sys_graph_count; sys_level_count; sys_result_count).ogg" id="33_46qbw"]
+[ext_resource type="AudioStream" uid="uid://y35wipika7o" path="res://SonicAssets/Audio/Game/se_wars_sys_common#7 (sys_result_a_to_s).ogg" id="34_2flb0"]
+[ext_resource type="PackedScene" uid="uid://hol4qkmcbhxw" path="res://Prefabs/UI/extra_item_tracker.tscn" id="35_8d5tr"]
+[ext_resource type="AudioStream" uid="uid://chysp2ite1jfw" path="res://SonicAssets/Audio/Game/se_wars_sys_common#6 (sys_result_b_to_a; sys_result_c_to_b).ogg" id="35_stjlu"]
+[ext_resource type="AudioStream" uid="uid://cbtt8gwin2i8a" path="res://SonicAssets/Audio/Game/se_wars_sys_common#3 (sys_menu_ng).ogg" id="36_p0glw"]
+[ext_resource type="AudioStream" uid="uid://wx53jxjcpwdl" path="res://SonicAssets/Music/[S rank] Speed Up - Sonic 3D Blast (Saturn).ogg" id="37_6ntme"]
+[ext_resource type="AudioStream" uid="uid://c8r5acx2wsedo" path="res://SonicAssets/Music/[A-D rank] Invincibility - Sonic 3D Blast (Saturn).ogg" id="38_vc0dr"]
+[ext_resource type="AudioStream" uid="uid://hfl1l6ug6fs2" path="res://SonicAssets/Music/[E rank] Game Over - Sonic 3D Blast (Saturn) .ogg" id="39_uqofc"]
+[ext_resource type="Theme" uid="uid://di28qbb7lki3f" path="res://Misc/MenuTheme.tres" id="40_57s6s"]
+[ext_resource type="FontFile" uid="uid://c00qbjbxkhiyv" path="res://SonicAssets/Fonts/vipnagorgialla rg.otf" id="41_8eodk"]
+[ext_resource type="FontFile" uid="uid://ysevmc4grcp5" path="res://SonicAssets/Fonts/vipnagorgialla bd.otf" id="42_ydhea"]
+[ext_resource type="Script" uid="uid://bvuef8rwgetm1" path="res://Scripts/Ui/DebugUI.cs" id="43_xitff"]
+[ext_resource type="Script" uid="uid://dfcpdxxkst310" path="res://Scripts/Player/PauseMenu.cs" id="44_jdc3j"]
+[ext_resource type="Theme" uid="uid://dfn1qo0bwoxuf" path="res://Misc/OptionsMenuTheme.tres" id="45_0a4k3"]
+[ext_resource type="PackedScene" uid="uid://dxybsh1bt5u07" path="res://Prefabs/Menus/options_menu.tscn" id="45_1v4vo"]
+[ext_resource type="PackedScene" uid="uid://dgkaqsfwflj56" path="res://Misc/Loading/Loading.tscn" id="46_bkrbp"]
+[ext_resource type="Script" uid="uid://xvoqugatd20a" path="res://Scripts/Utils/ErrorLog.cs" id="47_lmyy7"]
+[ext_resource type="Script" uid="uid://b0accithvvby7" path="res://Scripts/Player/MusicPlayerController.cs" id="48_aa5nt"]
+[ext_resource type="Script" uid="uid://d0vybjrlfhccw" path="res://Scripts/System/ApplyPlayerSettings.cs" id="49_q3rr1"]
+[ext_resource type="PackedScene" uid="uid://cm0nx703v3pg" path="res://Models/Gizmos/StartArrow.blend" id="52_px5rc"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_g77dx"]
+radius = 150.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_ftgo8"]
+radius = 25.0
+
+[node name="PlayersManager" type="Node3D" unique_id=829168100 node_paths=PackedStringArray("PlayerUI", "PlayersContainer", "SubviewportContainer", "StartPointMesh")]
+script = ExtResource("1_kcot3")
+DefaultPlayablePlayers = Array[PackedScene]([ExtResource("2_1hgop")])
+DefaultPlayerIdentifiers = Array[String](["any"])
+DefaultNpcPlayers = Array[PackedScene]([])
+PlayerUI = NodePath("PlayerUI")
+ViewportContainerPrefab = ExtResource("3_ku1br")
+PlayersContainer = NodePath("Players")
+SubviewportContainer = NodePath("SplitScreenDisplay/GridContainer")
+StartPointMesh = NodePath("StartArrow")
+
+[node name="MobileInput" type="Node2D" parent="." unique_id=940283152]
+process_mode = 3
+
+[node name="LeftJoystick" type="Node2D" parent="MobileInput" unique_id=678105387 node_paths=PackedStringArray("Knob", "Center", "TouchButton")]
+position = Vector2(0, 1071)
+script = ExtResource("3_opoa3")
+Knob = NodePath("Knob")
+Center = NodePath("Bg")
+TouchButton = NodePath("TouchScreenButton")
+
+[node name="Bg" type="Sprite2D" parent="MobileInput/LeftJoystick" unique_id=1241887969]
+modulate = Color(1, 1, 1, 0.501961)
+z_index = 10
+position = Vector2(255, -215)
+scale = Vector2(5, 5)
+texture = ExtResource("4_ju8kh")
+
+[node name="Knob" type="Sprite2D" parent="MobileInput/LeftJoystick" unique_id=1564414869]
+modulate = Color(1, 1, 1, 0.501961)
+z_index = 10
+position = Vector2(255, -215)
+scale = Vector2(5, 5)
+texture = ExtResource("5_7afkj")
+
+[node name="TouchScreenButton" type="TouchScreenButton" parent="MobileInput/LeftJoystick" unique_id=1952724765]
+z_index = 10
+position = Vector2(255, -215)
+shape = SubResource("CircleShape2D_g77dx")
+
+[node name="QuickstepL" type="TouchScreenButton" parent="MobileInput/LeftJoystick" unique_id=244071617]
+modulate = Color(1, 1, 1, 0.501961)
+z_index = 10
+position = Vector2(55, -499)
+scale = Vector2(2, 2)
+texture_normal = ExtResource("7_mad1f")
+texture_pressed = ExtResource("8_slgw6")
+shape = SubResource("CircleShape2D_ftgo8")
+action = "any_quickstep_l"
+
+[node name="QuickstepR" type="TouchScreenButton" parent="MobileInput/LeftJoystick" unique_id=924834952]
+modulate = Color(1, 1, 1, 0.501961)
+z_index = 10
+position = Vector2(355, -499)
+scale = Vector2(2, 2)
+texture_normal = ExtResource("9_aogx6")
+texture_pressed = ExtResource("10_62kct")
+shape = SubResource("CircleShape2D_ftgo8")
+action = "any_quickstep_r"
+
+[node name="Buttons" type="Node2D" parent="MobileInput" unique_id=753221924]
+position = Vector2(1920, 1080)
+
+[node name="Homing" type="TouchScreenButton" parent="MobileInput/Buttons" unique_id=1024057256]
+modulate = Color(1, 1, 1, 0.501961)
+z_index = 10
+position = Vector2(-569, -508)
+scale = Vector2(5, 5)
+texture_normal = ExtResource("6_7msiu")
+texture_pressed = ExtResource("7_umpdk")
+shape = SubResource("CircleShape2D_ftgo8")
+action = "any_actionhoming"
+
+[node name="Jump" type="TouchScreenButton" parent="MobileInput/Buttons" unique_id=320629206]
+modulate = Color(1, 1, 1, 0.501961)
+z_index = 10
+z_as_relative = false
+position = Vector2(-253, -255)
+scale = Vector2(5, 5)
+texture_normal = ExtResource("8_yidhc")
+texture_pressed = ExtResource("9_gwjdj")
+shape = SubResource("CircleShape2D_ftgo8")
+passby_press = true
+action = "any_actionjump"
+
+[node name="Dash" type="TouchScreenButton" parent="MobileInput/Buttons" unique_id=601030441]
+modulate = Color(1, 1, 1, 0.501961)
+z_index = 10
+z_as_relative = false
+position = Vector2(-569, -255)
+scale = Vector2(5, 5)
+texture_normal = ExtResource("10_bh24g")
+texture_pressed = ExtResource("11_j4d27")
+shape = SubResource("CircleShape2D_ftgo8")
+action = "any_actiondash"
+
+[node name="Roll" type="TouchScreenButton" parent="MobileInput/Buttons" unique_id=1263300434]
+modulate = Color(1, 1, 1, 0.501961)
+z_index = 10
+z_as_relative = false
+position = Vector2(-253, -508)
+scale = Vector2(5, 5)
+texture_normal = ExtResource("12_l6vni")
+texture_pressed = ExtResource("13_8k427")
+shape = SubResource("CircleShape2D_ftgo8")
+action = "any_actionroll"
+
+[node name="Stomp" type="TouchScreenButton" parent="MobileInput/Buttons" unique_id=912359841]
+modulate = Color(1, 1, 1, 0.501961)
+z_index = 10
+z_as_relative = false
+position = Vector2(-253, -763)
+scale = Vector2(5, 5)
+texture_normal = ExtResource("15_ml0oj")
+texture_pressed = ExtResource("16_jvwqy")
+shape = SubResource("CircleShape2D_ftgo8")
+action = "any_actionstomp"
+
+[node name="TopRight" type="Node2D" parent="MobileInput" unique_id=775265915]
+position = Vector2(1920, 0)
+
+[node name="Pause" type="TouchScreenButton" parent="MobileInput/TopRight" unique_id=1561703422]
+modulate = Color(1, 1, 1, 0.501961)
+z_index = 10
+z_as_relative = false
+position = Vector2(-107, 2)
+scale = Vector2(2, 2)
+texture_normal = ExtResource("14_fobs7")
+texture_pressed = ExtResource("15_kidfl")
+shape = SubResource("CircleShape2D_ftgo8")
+action = "any_pause"
+
+[node name="Super" type="TouchScreenButton" parent="MobileInput/TopRight" unique_id=776876425]
+modulate = Color(1, 1, 1, 0.501961)
+z_index = 10
+z_as_relative = false
+position = Vector2(-253, 2)
+scale = Vector2(2, 2)
+texture_normal = ExtResource("16_irjbr")
+texture_pressed = ExtResource("17_wfbrn")
+shape = SubResource("CircleShape2D_ftgo8")
+action = "any_actionsuper"
+
+[node name="Charaswap_L" type="TouchScreenButton" parent="MobileInput/TopRight" unique_id=1714423389]
+modulate = Color(1, 1, 1, 0.501961)
+z_index = 10
+z_as_relative = false
+position = Vector2(-253, 137)
+scale = Vector2(2, 2)
+texture_normal = ExtResource("25_bsoaf")
+texture_pressed = ExtResource("26_0a4k3")
+shape = SubResource("CircleShape2D_ftgo8")
+action = "any_actioncharaswap_l"
+
+[node name="Charaswap_R" type="TouchScreenButton" parent="MobileInput/TopRight" unique_id=1927673494]
+modulate = Color(1, 1, 1, 0.501961)
+z_index = 10
+z_as_relative = false
+position = Vector2(-107, 137)
+scale = Vector2(2, 2)
+texture_normal = ExtResource("27_8d5tr")
+texture_pressed = ExtResource("28_espkf")
+shape = SubResource("CircleShape2D_ftgo8")
+action = "any_actioncharaswap_r"
+
+[node name="TouchButtonsPositioning" type="Node" parent="MobileInput" unique_id=284247244 node_paths=PackedStringArray("BottomLeft", "BottomRight", "TopRight", "CharaSwapButtons", "SuperButton")]
+script = ExtResource("16_nouqf")
+BottomLeft = [NodePath("../LeftJoystick")]
+BottomRight = [NodePath("../Buttons")]
+TopRight = [NodePath("../TopRight")]
+CharaSwapButtons = [NodePath("../TopRight/Charaswap_L"), NodePath("../TopRight/Charaswap_R")]
+SuperButton = NodePath("../TopRight/Super")
+
+[node name="HideOnNonMobile" type="Node" parent="MobileInput" unique_id=919799717]
+script = ExtResource("17_xakny")
+ApplyToParent = true
+Destroy = true
+
+[node name="Players" type="Node3D" parent="." unique_id=378405053]
+
+[node name="SplitScreenDisplay" type="Control" parent="." unique_id=1935084583]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="GridContainer" type="GridContainer" parent="SplitScreenDisplay" unique_id=1393117592]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="PlayerUI" type="Control" parent="." unique_id=2118265082 node_paths=PackedStringArray("UiText", "RedRingsIcons", "MainUI", "FinishUI", "ItemInfoContainer")]
+process_mode = 3
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("40_57s6s")
+script = ExtResource("29_ebqca")
+UiText = NodePath("MainUI/StatusContainer/MarginContainer/VBoxContainer/PlayerUI")
+NoRingsColor = Color(1, 0, 0, 1)
+RedRingsIcons = [NodePath("MainUI/StatusContainer/MarginContainer/VBoxContainer/RedRings/RedRing1"), NodePath("MainUI/StatusContainer/MarginContainer/VBoxContainer/RedRings/RedRing2"), NodePath("MainUI/StatusContainer/MarginContainer/VBoxContainer/RedRings/RedRing3"), NodePath("MainUI/StatusContainer/MarginContainer/VBoxContainer/RedRings/RedRing4"), NodePath("MainUI/StatusContainer/MarginContainer/VBoxContainer/RedRings/RedRing5")]
+RedRingsIdentifiers = PackedStringArray("RedRing1", "RedRing2", "RedRing3", "RedRing4", "RedRing5")
+RedRingYesIcon = ExtResource("30_qjn5s")
+RedRingNoIcon = ExtResource("31_mnu4i")
+MainUI = NodePath("MainUI")
+FinishUI = NodePath("FinishScreen")
+ItemInfoContainer = NodePath("MainUI/StatusContainer/MarginContainer/VBoxContainer")
+ExtraItemTracker = ExtResource("35_8d5tr")
+
+[node name="FinishScreen" type="Control" parent="PlayerUI" unique_id=1506628314 node_paths=PackedStringArray("MessageLabel", "TimeLabel", "RingsLabel", "SpheresText", "SpheresLabel", "DeathsText", "DeathsLabel", "RankLabel", "ProgressBarS", "ProgressBarA", "ProgressBarB", "ProgressBarC", "AudioEffectPlayer")]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+script = ExtResource("32_wuv2y")
+MessageLabel = NodePath("ColorRect/Message")
+TimeLabel = NodePath("VBoxContainer/ColorRect/GridContainer/TimeCount")
+RingsLabel = NodePath("VBoxContainer/ColorRect/GridContainer/RingsCount")
+SpheresText = NodePath("VBoxContainer/ColorRect/GridContainer/BlueSpheresLabel")
+SpheresLabel = NodePath("VBoxContainer/ColorRect/GridContainer/BlueSpheresCount")
+DeathsText = NodePath("VBoxContainer/ColorRect/GridContainer/DeathsLabel")
+DeathsLabel = NodePath("VBoxContainer/ColorRect/GridContainer/DeathsCount")
+RankLabel = NodePath("VBoxContainer/ColorRect/GridContainer/RankCount")
+StageItems = PackedStringArray("RedRing1", "RedRing2", "RedRing3", "RedRing4", "RedRing5")
+GlobalItems = PackedStringArray("chaosemerald_red", "chaosemerald_blue", "chaosemerald_yellow", "chaosemerald_green", "chaosemerald_gray", "chaosemerald_cyan", "chaosemerald_magenta")
+ProgressBarS = NodePath("VBoxContainer/ColorRect/GridContainer/HBoxContainer/ProgressBarS")
+ProgressBarA = NodePath("VBoxContainer/ColorRect/GridContainer/HBoxContainer/ProgressBarA")
+ProgressBarB = NodePath("VBoxContainer/ColorRect/GridContainer/HBoxContainer/ProgressBarB")
+ProgressBarC = NodePath("VBoxContainer/ColorRect/GridContainer/HBoxContainer/ProgressBarC")
+AudioEffectPlayer = NodePath("../AudioStreamPlayer2D")
+CountdownSound = ExtResource("33_46qbw")
+SRankSound = ExtResource("34_2flb0")
+BadRankSound = ExtResource("35_stjlu")
+ERankSound = ExtResource("36_p0glw")
+SRankMusic = ExtResource("37_6ntme")
+BadRankMusic = ExtResource("38_vc0dr")
+ERankMusic = ExtResource("39_uqofc")
+
+[node name="ColorRect" type="ColorRect" parent="PlayerUI/FinishScreen" unique_id=1374894952]
+custom_minimum_size = Vector2(1000, 200)
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -500.0
+offset_top = 50.0
+offset_right = 500.0
+offset_bottom = 250.0
+grow_horizontal = 2
+color = Color(0, 0, 0, 0.501961)
+
+[node name="Message" type="Label" parent="PlayerUI/FinishScreen/ColorRect" unique_id=1566957431]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -500.0
+offset_top = -64.0
+offset_right = 498.0
+offset_bottom = 64.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Sonic got through ACT"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3
+
+[node name="VBoxContainer" type="VBoxContainer" parent="PlayerUI/FinishScreen" unique_id=904243131]
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -1190.0
+offset_top = -284.0
+offset_bottom = 284.0
+grow_horizontal = 0
+grow_vertical = 2
+
+[node name="ColorRect" type="ColorRect" parent="PlayerUI/FinishScreen/VBoxContainer" unique_id=280268528]
+custom_minimum_size = Vector2(800, 500)
+layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 3
+color = Color(0, 0, 0, 0.501961)
+
+[node name="GridContainer" type="GridContainer" parent="PlayerUI/FinishScreen/VBoxContainer/ColorRect" unique_id=1837577860]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -299.0
+offset_top = -134.0
+offset_right = 299.0
+offset_bottom = 134.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 8
+columns = 2
+
+[node name="TimeLabel" type="Label" parent="PlayerUI/FinishScreen/VBoxContainer/ColorRect/GridContainer" unique_id=864334353]
+layout_mode = 2
+text = "TIME:"
+horizontal_alignment = 2
+
+[node name="TimeCount" type="Label" parent="PlayerUI/FinishScreen/VBoxContainer/ColorRect/GridContainer" unique_id=442537475]
+custom_minimum_size = Vector2(400, 0)
+layout_mode = 2
+text = " 00:00:00"
+horizontal_alignment = 2
+
+[node name="RingsLabel" type="Label" parent="PlayerUI/FinishScreen/VBoxContainer/ColorRect/GridContainer" unique_id=1872155762]
+layout_mode = 2
+text = "RINGS:"
+horizontal_alignment = 2
+
+[node name="RingsCount" type="Label" parent="PlayerUI/FinishScreen/VBoxContainer/ColorRect/GridContainer" unique_id=492111798]
+custom_minimum_size = Vector2(400, 0)
+layout_mode = 2
+text = "0"
+horizontal_alignment = 2
+
+[node name="BlueSpheresLabel" type="Label" parent="PlayerUI/FinishScreen/VBoxContainer/ColorRect/GridContainer" unique_id=1385607420]
+layout_mode = 2
+text = "SPHERES:"
+horizontal_alignment = 2
+
+[node name="BlueSpheresCount" type="Label" parent="PlayerUI/FinishScreen/VBoxContainer/ColorRect/GridContainer" unique_id=1942515175]
+custom_minimum_size = Vector2(400, 0)
+layout_mode = 2
+text = "0"
+horizontal_alignment = 2
+
+[node name="DeathsLabel" type="Label" parent="PlayerUI/FinishScreen/VBoxContainer/ColorRect/GridContainer" unique_id=1321630499]
+layout_mode = 2
+text = "DEATHS:"
+horizontal_alignment = 2
+
+[node name="DeathsCount" type="Label" parent="PlayerUI/FinishScreen/VBoxContainer/ColorRect/GridContainer" unique_id=16606396]
+custom_minimum_size = Vector2(400, 0)
+layout_mode = 2
+text = "0"
+horizontal_alignment = 2
+
+[node name="Filler" type="Control" parent="PlayerUI/FinishScreen/VBoxContainer/ColorRect/GridContainer" unique_id=1036356074]
+layout_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="PlayerUI/FinishScreen/VBoxContainer/ColorRect/GridContainer" unique_id=1920845945]
+layout_mode = 2
+size_flags_vertical = 4
+
+[node name="ProgressBarC" type="ProgressBar" parent="PlayerUI/FinishScreen/VBoxContainer/ColorRect/GridContainer/HBoxContainer" unique_id=1009558179]
+custom_minimum_size = Vector2(0, 20)
+layout_mode = 2
+size_flags_horizontal = 3
+rounded = true
+allow_greater = true
+show_percentage = false
+
+[node name="LabelD" type="Label" parent="PlayerUI/FinishScreen/VBoxContainer/ColorRect/GridContainer/HBoxContainer/ProgressBarC" unique_id=793015575]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -21.0
+offset_top = -32.0
+offset_right = 21.0
+offset_bottom = 32.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "D"
+horizontal_alignment = 2
+
+[node name="ProgressBarB" type="ProgressBar" parent="PlayerUI/FinishScreen/VBoxContainer/ColorRect/GridContainer/HBoxContainer" unique_id=1583589331]
+custom_minimum_size = Vector2(0, 20)
+layout_mode = 2
+size_flags_horizontal = 3
+rounded = true
+allow_greater = true
+show_percentage = false
+
+[node name="LabelC" type="Label" parent="PlayerUI/FinishScreen/VBoxContainer/ColorRect/GridContainer/HBoxContainer/ProgressBarB" unique_id=1767439517]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -21.0
+offset_top = -32.0
+offset_right = 21.0
+offset_bottom = 32.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "C"
+horizontal_alignment = 2
+
+[node name="ProgressBarA" type="ProgressBar" parent="PlayerUI/FinishScreen/VBoxContainer/ColorRect/GridContainer/HBoxContainer" unique_id=815536621]
+custom_minimum_size = Vector2(0, 20)
+layout_mode = 2
+size_flags_horizontal = 3
+rounded = true
+allow_greater = true
+show_percentage = false
+
+[node name="LabelB" type="Label" parent="PlayerUI/FinishScreen/VBoxContainer/ColorRect/GridContainer/HBoxContainer/ProgressBarA" unique_id=1234905218]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -21.0
+offset_top = -32.0
+offset_right = 21.0
+offset_bottom = 32.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "B"
+horizontal_alignment = 2
+
+[node name="ProgressBarS" type="ProgressBar" parent="PlayerUI/FinishScreen/VBoxContainer/ColorRect/GridContainer/HBoxContainer" unique_id=1128172254]
+custom_minimum_size = Vector2(0, 20)
+layout_mode = 2
+size_flags_horizontal = 3
+rounded = true
+allow_greater = true
+show_percentage = false
+
+[node name="LabelA" type="Label" parent="PlayerUI/FinishScreen/VBoxContainer/ColorRect/GridContainer/HBoxContainer/ProgressBarS" unique_id=1256025629]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -21.0
+offset_top = -32.0
+offset_right = 21.0
+offset_bottom = 32.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "A"
+horizontal_alignment = 2
+
+[node name="RankLabel" type="Label" parent="PlayerUI/FinishScreen/VBoxContainer/ColorRect/GridContainer" unique_id=259645004]
+custom_minimum_size = Vector2(0, 200)
+layout_mode = 2
+text = "RANK:"
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="RankCount" type="Label" parent="PlayerUI/FinishScreen/VBoxContainer/ColorRect/GridContainer" unique_id=439792269]
+custom_minimum_size = Vector2(400, 0)
+layout_mode = 2
+theme_override_font_sizes/font_size = 150
+text = "S"
+horizontal_alignment = 1
+
+[node name="MainUI" type="Control" parent="PlayerUI" unique_id=1309545856]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 41.0
+offset_top = 32.0
+offset_right = -16.0
+offset_bottom = -9.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 1
+
+[node name="StatusContainer" type="Control" parent="PlayerUI/MainUI" unique_id=774857567]
+custom_minimum_size = Vector2(425, 200)
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+mouse_filter = 2
+
+[node name="ColorRect" type="ColorRect" parent="PlayerUI/MainUI/StatusContainer" unique_id=1588725186]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.501961)
+
+[node name="MarginContainer" type="MarginContainer" parent="PlayerUI/MainUI/StatusContainer" unique_id=1854993774]
+custom_minimum_size = Vector2(400, 200)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 20
+theme_override_constants/margin_top = 20
+theme_override_constants/margin_right = 20
+theme_override_constants/margin_bottom = 20
+
+[node name="VBoxContainer" type="VBoxContainer" parent="PlayerUI/MainUI/StatusContainer/MarginContainer" unique_id=2059752841]
+layout_mode = 2
+alignment = 1
+
+[node name="PlayerUI" type="RichTextLabel" parent="PlayerUI/MainUI/StatusContainer/MarginContainer/VBoxContainer" unique_id=464259370]
+layout_mode = 2
+theme_override_fonts/normal_font = ExtResource("41_8eodk")
+theme_override_fonts/bold_font = ExtResource("42_ydhea")
+theme_override_font_sizes/normal_font_size = 30
+theme_override_font_sizes/bold_font_size = 50
+bbcode_enabled = true
+text = "[b]Time[/b]: 0:00:00
+[b]Rings[/b]: [color=FF4500]0[/color]"
+fit_content = true
+
+[node name="RedRings" type="HBoxContainer" parent="PlayerUI/MainUI/StatusContainer/MarginContainer/VBoxContainer" unique_id=584262638]
+layout_mode = 2
+
+[node name="RedRing1" type="TextureRect" parent="PlayerUI/MainUI/StatusContainer/MarginContainer/VBoxContainer/RedRings" unique_id=2092607197]
+layout_mode = 2
+texture = ExtResource("31_mnu4i")
+stretch_mode = 5
+
+[node name="RedRing2" type="TextureRect" parent="PlayerUI/MainUI/StatusContainer/MarginContainer/VBoxContainer/RedRings" unique_id=662176886]
+layout_mode = 2
+texture = ExtResource("31_mnu4i")
+stretch_mode = 5
+
+[node name="RedRing3" type="TextureRect" parent="PlayerUI/MainUI/StatusContainer/MarginContainer/VBoxContainer/RedRings" unique_id=1521728220]
+layout_mode = 2
+texture = ExtResource("31_mnu4i")
+stretch_mode = 5
+
+[node name="RedRing4" type="TextureRect" parent="PlayerUI/MainUI/StatusContainer/MarginContainer/VBoxContainer/RedRings" unique_id=1283459946]
+layout_mode = 2
+texture = ExtResource("31_mnu4i")
+stretch_mode = 5
+
+[node name="RedRing5" type="TextureRect" parent="PlayerUI/MainUI/StatusContainer/MarginContainer/VBoxContainer/RedRings" unique_id=431707918]
+layout_mode = 2
+texture = ExtResource("31_mnu4i")
+stretch_mode = 5
+
+[node name="FpsText" type="RichTextLabel" parent="PlayerUI/MainUI" unique_id=1077428255]
+visible = false
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -486.0
+offset_bottom = 210.0
+grow_horizontal = 0
+mouse_filter = 1
+theme = ExtResource("45_0a4k3")
+text = "FPS"
+script = ExtResource("43_xitff")
+
+[node name="PauseMenu" type="Control" parent="PlayerUI" unique_id=285006986 node_paths=PackedStringArray("MenuContainer", "RestartMenuContainer", "RestartCheckpointButton", "RestartLevelButton", "OptionsMenuContainer", "RestartBackButton", "DefaultFocus", "RestartMenuButton", "MapButton")]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 1
+script = ExtResource("44_jdc3j")
+MenuContainer = NodePath("PauseMenu")
+RestartMenuContainer = NodePath("RestartMenu")
+RestartCheckpointButton = NodePath("RestartMenu/FromCheckpoint")
+RestartLevelButton = NodePath("RestartMenu/FromStart")
+OptionsMenuContainer = NodePath("OptionsMenu")
+RestartBackButton = NodePath("RestartMenu/No")
+DefaultFocus = NodePath("PauseMenu/Resume")
+RestartMenuButton = NodePath("PauseMenu/Restart")
+MapButton = NodePath("PauseMenu/Map")
+
+[node name="RestartMenu" type="VBoxContainer" parent="PlayerUI/PauseMenu" unique_id=279261180]
+visible = false
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_top = -131.0
+offset_right = 259.0
+offset_bottom = 131.0
+grow_vertical = 2
+
+[node name="FromCheckpoint" type="Button" parent="PlayerUI/PauseMenu/RestartMenu" unique_id=1194480146]
+layout_mode = 2
+text = "RESTART CHECKPOINT"
+
+[node name="FromStart" type="Button" parent="PlayerUI/PauseMenu/RestartMenu" unique_id=590311568]
+layout_mode = 2
+text = "RESTART LEVEL"
+
+[node name="No" type="Button" parent="PlayerUI/PauseMenu/RestartMenu" unique_id=1385965993]
+layout_mode = 2
+text = "BACK"
+
+[node name="PauseMenu" type="VBoxContainer" parent="PlayerUI/PauseMenu" unique_id=520699387]
+visible = false
+layout_mode = 0
+offset_top = 276.0
+offset_right = 578.0
+offset_bottom = 804.0
+grow_vertical = 2
+
+[node name="Resume" type="Button" parent="PlayerUI/PauseMenu/PauseMenu" unique_id=897990074]
+layout_mode = 2
+focus_neighbor_bottom = NodePath("../Map")
+focus_next = NodePath("../Map")
+text = "RESUME"
+
+[node name="Map" type="Button" parent="PlayerUI/PauseMenu/PauseMenu" unique_id=236632932]
+layout_mode = 2
+focus_neighbor_bottom = NodePath("../Restart")
+focus_next = NodePath("../Restart")
+text = "MAP"
+
+[node name="Restart" type="Button" parent="PlayerUI/PauseMenu/PauseMenu" unique_id=1196004622]
+layout_mode = 2
+focus_neighbor_bottom = NodePath("../Options")
+focus_next = NodePath("../Options")
+text = "RESTART"
+
+[node name="Options" type="Button" parent="PlayerUI/PauseMenu/PauseMenu" unique_id=1757789497]
+layout_mode = 2
+focus_neighbor_bottom = NodePath("../Exit")
+focus_next = NodePath("../Exit")
+text = "OPTIONS"
+
+[node name="Exit" type="Button" parent="PlayerUI/PauseMenu/PauseMenu" unique_id=34208972]
+layout_mode = 2
+focus_neighbor_top = NodePath("../Options")
+focus_previous = NodePath("../Options")
+text = "EXIT
+"
+
+[node name="OptionsMenu" parent="PlayerUI/PauseMenu" unique_id=887244426 instance=ExtResource("45_1v4vo")]
+visible = false
+layout_mode = 1
+offset_top = -270.0
+offset_right = 960.0
+offset_bottom = 270.0
+
+[node name="Loading" parent="PlayerUI" unique_id=923570747 instance=ExtResource("46_bkrbp")]
+visible = false
+layout_mode = 1
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="PlayerUI" unique_id=684130696]
+
+[node name="ErrorLog" type="RichTextLabel" parent="PlayerUI" unique_id=845709691]
+process_mode = 4
+visible = false
+z_index = 32
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+theme = ExtResource("40_57s6s")
+text = "ERROR"
+script = ExtResource("47_lmyy7")
+
+[node name="Music" type="AudioStreamPlayer" parent="." unique_id=1639566542]
+process_mode = 3
+autoplay = true
+bus = &"Music"
+script = ExtResource("48_aa5nt")
+
+[node name="ApplySettings" type="Node" parent="." unique_id=1673331735 node_paths=PackedStringArray("FpsDisplay")]
+script = ExtResource("49_q3rr1")
+FpsDisplay = NodePath("../PlayerUI/MainUI/FpsText")
+
+[node name="StartArrow" parent="." unique_id=1117935513 instance=ExtResource("52_px5rc")]
+
+[connection signal="pressed" from="MobileInput/LeftJoystick/TouchScreenButton" to="MobileInput/LeftJoystick" method="OnButtonDown"]
+[connection signal="released" from="MobileInput/LeftJoystick/TouchScreenButton" to="MobileInput/LeftJoystick" method="OnButtonUp"]
+[connection signal="pressed" from="PlayerUI/PauseMenu/RestartMenu/FromCheckpoint" to="PlayerUI/PauseMenu" method="RestartMenuCheckpoint"]
+[connection signal="pressed" from="PlayerUI/PauseMenu/RestartMenu/FromStart" to="PlayerUI/PauseMenu" method="RestartMenuYes"]
+[connection signal="pressed" from="PlayerUI/PauseMenu/RestartMenu/No" to="PlayerUI/PauseMenu" method="RestartMenuNo"]
+[connection signal="pressed" from="PlayerUI/PauseMenu/PauseMenu/Resume" to="PlayerUI/PauseMenu" method="Unpause"]
+[connection signal="pressed" from="PlayerUI/PauseMenu/PauseMenu/Map" to="PlayerUI/PauseMenu" method="OnMapButton"]
+[connection signal="pressed" from="PlayerUI/PauseMenu/PauseMenu/Restart" to="PlayerUI/PauseMenu" method="Restart"]
+[connection signal="pressed" from="PlayerUI/PauseMenu/PauseMenu/Options" to="PlayerUI/PauseMenu" method="Options"]
+[connection signal="pressed" from="PlayerUI/PauseMenu/PauseMenu/Exit" to="PlayerUI/PauseMenu" method="Exit"]

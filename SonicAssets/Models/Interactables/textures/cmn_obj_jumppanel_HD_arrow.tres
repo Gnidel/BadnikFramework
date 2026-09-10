@@ -1,0 +1,10 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://c7gjmk77gr27m"]
+
+[ext_resource type="Texture2D" uid="uid://dv0ted7myrg1j" path="res://SonicAssets/Models/Interactables/textures/cmn_obj_panelarrow01_dif_HD.dds" id="1_oei28"]
+
+[resource]
+resource_name = "cmn_obj_jumppanel_HD_arrow"
+transparency = 4
+cull_mode = 2
+albedo_texture = ExtResource("1_oei28")
+metallic = 1.0

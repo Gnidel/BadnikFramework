@@ -1,0 +1,75 @@
+[gd_scene format=3 uid="uid://dcjip7txdvwhi"]
+
+[ext_resource type="Script" uid="uid://cqq4c4pjm7i5e" path="res://Scripts/Interactables/FlamethrowerController.cs" id="1_3l3wa"]
+[ext_resource type="PackedScene" uid="uid://d1k7sc7xaorgs" path="res://SonicAssets/Models/Interactables/flamethrower.blend" id="2_eilt1"]
+[ext_resource type="Texture2D" uid="uid://b66w5vhdd5bxh" path="res://SonicAssets/Prefabs/Particles/Fire/ef_ch_sns_yh1_damagefire2.png" id="3_giwyb"]
+[ext_resource type="Script" uid="uid://y47n4ov38iw2" path="res://Scripts/Interactables/Hitbox.cs" id="4_hxunu"]
+[ext_resource type="AudioStream" uid="uid://c0hwuqdjtcy6h" path="res://SonicAssets/Audio/Items/se_object_common#70 (obj_flametrap).ogg" id="5_jr26y"]
+
+[sub_resource type="Curve" id="Curve_qqntv"]
+_data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(0.249071, 1), 0.0, 0.0, 0, 0, Vector2(0.754647, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
+point_count = 4
+
+[sub_resource type="CurveTexture" id="CurveTexture_0eldi"]
+curve = SubResource("Curve_qqntv")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_jhc7e"]
+angle_min = -180.0
+angle_max = 180.0
+direction = Vector3(0, 1, 0)
+spread = 10.0
+initial_velocity_min = 25.0
+initial_velocity_max = 25.0
+gravity = Vector3(0, 0, 0)
+scale_curve = SubResource("CurveTexture_0eldi")
+anim_speed_min = 1.0
+anim_speed_max = 2.0
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_csrvs"]
+transparency = 1
+shading_mode = 0
+albedo_texture = ExtResource("3_giwyb")
+disable_receive_shadows = true
+billboard_mode = 3
+billboard_keep_scale = true
+particles_anim_h_frames = 2
+particles_anim_v_frames = 2
+particles_anim_loop = true
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_gwotc"]
+material = SubResource("StandardMaterial3D_csrvs")
+orientation = 2
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_4xk7a"]
+height = 4.0
+
+[node name="[Interactable] Flamethrower" type="Node3D" unique_id=206215418 node_paths=PackedStringArray("Particles", "Hitbox", "AudioPlayer")]
+script = ExtResource("1_3l3wa")
+Particles = NodePath("[Particles] Fire")
+Hitbox = NodePath("Hitbox")
+AudioPlayer = NodePath("AudioStreamPlayer3D")
+
+[node name="flamethrower" parent="." unique_id=1945055815 instance=ExtResource("2_eilt1")]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0)
+
+[node name="[Particles] Fire" type="GPUParticles3D" parent="." unique_id=539875034]
+lifetime = 0.25
+speed_scale = 0.5
+local_coords = true
+process_material = SubResource("ParticleProcessMaterial_jhc7e")
+draw_pass_1 = SubResource("PlaneMesh_gwotc")
+
+[node name="Hitbox" type="Area3D" parent="." unique_id=381736901]
+collision_mask = 3
+monitoring = false
+script = ExtResource("4_hxunu")
+CanDamageEnemy = false
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Hitbox" unique_id=772309421]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, 0)
+shape = SubResource("CylinderShape3D_4xk7a")
+
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="." unique_id=324067215]
+stream = ExtResource("5_jr26y")
+autoplay = true
+max_distance = 50.0

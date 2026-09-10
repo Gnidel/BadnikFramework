@@ -1,0 +1,10 @@
+[gd_resource type="Environment" format=3 uid="uid://g87pqqchhv0h"]
+
+[ext_resource type="Material" uid="uid://dvqi7hsxc7eyf" path="res://SonicAssets/Stages/SpecialStage/SS7/SS7Sky.tres" id="1_lqiia"]
+
+[sub_resource type="Sky" id="Sky_o1sms"]
+sky_material = ExtResource("1_lqiia")
+
+[resource]
+background_mode = 2
+sky = SubResource("Sky_o1sms")

@@ -1,0 +1,22 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://cdjeoeg5d4qe0"]
+
+[ext_resource type="Texture2D" uid="uid://ckksju4d780d1" path="res://Games/Example game/Levels/Hub/Hub_hub_tiles_a.png" id="1_dqou8"]
+[ext_resource type="Texture2D" uid="uid://b3rp3nteq2dnb" path="res://Games/Example game/Levels/Hub/textures/hub_tiles_h.png" id="2_8eo8s"]
+[ext_resource type="Texture2D" uid="uid://c5tgob1ks6tj5" path="res://Games/Example game/Levels/Hub/Hub_hub_tiles_m.png" id="2_wyilu"]
+[ext_resource type="Texture2D" uid="uid://cw8uiacg2rlhe" path="res://Games/Example game/Levels/Hub/Hub_hub_tiles_h.png" id="3_8eo8s"]
+
+[resource]
+resource_name = "Ring3"
+cull_mode = 2
+albedo_texture = ExtResource("1_dqou8")
+metallic = 1.0
+metallic_texture = ExtResource("2_wyilu")
+metallic_texture_channel = 2
+roughness = 0.0
+roughness_texture = ExtResource("2_wyilu")
+roughness_texture_channel = 1
+normal_enabled = true
+normal_texture = ExtResource("3_8eo8s")
+heightmap_enabled = true
+heightmap_scale = 1.0
+heightmap_texture = ExtResource("2_8eo8s")

@@ -1,0 +1,11 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://tc4dj7acuffk"]
+
+[ext_resource type="Texture2D" uid="uid://cxvoflhj7atnc" path="res://SonicAssets/Models/Interactables/textures/cmn_obj_spring_body_abd.dds" id="1_q4iyu"]
+[ext_resource type="Texture2D" uid="uid://c1l5uoxwt4mf0" path="res://SonicAssets/Models/Interactables/textures/cmn_obj_spring_body_nrm.dds" id="2_1o50n"]
+
+[resource]
+resource_name = "cmn_obj_spring_red"
+albedo_texture = ExtResource("1_q4iyu")
+roughness = 0.5
+normal_enabled = true
+normal_texture = ExtResource("2_1o50n")

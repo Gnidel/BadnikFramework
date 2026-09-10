@@ -1,0 +1,10 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://cho3lmdsg64mo"]
+
+[ext_resource type="Texture2D" uid="uid://bl3l0u41aw025" path="res://SonicAssets/Models/Interactables/textures/cmn_metal_ms_pulleystand_dif.dds" id="1_u2apd"]
+
+[resource]
+resource_name = "cmn_obj_pulley_HD_pstand"
+cull_mode = 2
+vertex_color_use_as_albedo = true
+albedo_texture = ExtResource("1_u2apd")
+metallic = 1.0

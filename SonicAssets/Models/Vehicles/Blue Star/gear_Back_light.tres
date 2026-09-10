@@ -1,0 +1,9 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://h4g3cmnasv21"]
+
+[ext_resource type="Texture2D" uid="uid://bq5chug3sindt" path="res://SonicAssets/Models/Vehicles/Blue Star/Blue Star_gear_Back_light.png" id="1_0yrf2"]
+
+[resource]
+resource_name = "gear_Back_light"
+cull_mode = 2
+albedo_texture = ExtResource("1_0yrf2")
+roughness = 0.929289

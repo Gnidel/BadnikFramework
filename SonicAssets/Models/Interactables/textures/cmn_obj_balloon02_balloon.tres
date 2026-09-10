@@ -1,0 +1,16 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://be2sopr8d883e"]
+
+[ext_resource type="Texture2D" uid="uid://cbhotimqommnq" path="res://SonicAssets/Models/Interactables/textures/cmn_obj_balloon02_balloon_abd.dds" id="1_wxgm0"]
+[ext_resource type="Material" uid="uid://csrhoebp6gef" path="res://Materials/Outline.tres" id="2_4jtrb"]
+[ext_resource type="Texture2D" uid="uid://con0dvq4m7dl8" path="res://SonicAssets/Models/Interactables/textures/cmn_obj_balloon02_balloon_nrm.dds" id="2_mx142"]
+
+[resource]
+resource_local_to_scene = true
+resource_name = "cmn_obj_balloon02_balloon"
+next_pass = ExtResource("2_4jtrb")
+cull_mode = 2
+albedo_color = Color(0.91, 0.91, 0.91, 1)
+albedo_texture = ExtResource("1_wxgm0")
+roughness = 0.4
+normal_enabled = true
+normal_texture = ExtResource("2_mx142")

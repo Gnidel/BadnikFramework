@@ -1,0 +1,20 @@
+[gd_scene format=3 uid="uid://bu2rhr3b5kdrb"]
+
+[ext_resource type="PackedScene" uid="uid://r1ik7238xrn1" path="res://SonicAssets/Models/Interactables/grind_thorns.glb" id="1_f0fiw"]
+[ext_resource type="Script" uid="uid://y47n4ov38iw2" path="res://Scripts/Interactables/Hitbox.cs" id="2_mfvxw"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_28uv7"]
+
+[node name="[Obstacle] Thorns (PathFollow3D)" type="PathFollow3D" unique_id=123633550]
+
+[node name="[Obstacle] Thorns" type="Node3D" parent="." unique_id=1832644661]
+
+[node name="grind_thorns2" parent="[Obstacle] Thorns" unique_id=248849257 instance=ExtResource("1_f0fiw")]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0)
+
+[node name="Hitbox" type="Area3D" parent="[Obstacle] Thorns" unique_id=1096061401]
+script = ExtResource("2_mfvxw")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="[Obstacle] Thorns/Hitbox" unique_id=1207525921]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0)
+shape = SubResource("CapsuleShape3D_28uv7")

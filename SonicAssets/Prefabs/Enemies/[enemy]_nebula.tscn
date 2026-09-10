@@ -1,0 +1,250 @@
+[gd_scene format=3 uid="uid://cf0qstb6i7bk6"]
+
+[ext_resource type="PackedScene" uid="uid://bkt2qp7430moc" path="res://SonicAssets/Prefabs/Misc/homing_target.tscn" id="1_r7jvn"]
+[ext_resource type="Script" uid="uid://n1dtm5k3gia" path="res://Scripts/Enemies/EnemyBehaviorManager.cs" id="2_nkec7"]
+[ext_resource type="Script" uid="uid://bk2710vokv8b4" path="res://Scripts/Enemies/EnemyLookAtMode.cs" id="3_dssie"]
+[ext_resource type="Script" uid="uid://dat1yxewba6k8" path="res://Scripts/Enemies/EnemyControl.cs" id="4_g68bh"]
+[ext_resource type="AudioStream" uid="uid://bwa5uiwsw5xfj" path="res://SonicAssets/Audio/Enemies/se_enemy_common#2 (enmsn_cmn_damage).wav" id="5_eko2y"]
+[ext_resource type="PackedScene" uid="uid://d0mild2vdixl1" path="res://SonicAssets/Prefabs/Particles/Explosion2/[Particles] Explosion2.tscn" id="6_hna6q"]
+[ext_resource type="Script" uid="uid://y47n4ov38iw2" path="res://Scripts/Interactables/Hitbox.cs" id="7_wmsgh"]
+[ext_resource type="Script" uid="uid://d0rd6cimu685c" path="res://Scripts/Interactables/Hurtbox.cs" id="8_yr475"]
+[ext_resource type="AudioStream" uid="uid://1hcnufibkpr1" path="res://SonicAssets/Audio/Enemies/se_wars_enm_potos#3 (enm_potos_fly).ogg" id="9_tl2ic"]
+[ext_resource type="Texture2D" uid="uid://ctu5aul2bm0pe" path="res://SonicAssets/Prefabs/Particles/AttackShockwave/ef_ch_sng_yh1_hit.png" id="10_522q8"]
+[ext_resource type="Texture2D" uid="uid://ju7vp8xxw0gi" path="res://SonicAssets/Prefabs/Particles/AttackShockwave/ef_ch_sng_yh1_hit2.png" id="11_hgw01"]
+[ext_resource type="PackedScene" uid="uid://ct1n36nr22ung" path="res://SonicAssets/Models/Enemies/enemy_spinner_model.tscn" id="12_m71v2"]
+[ext_resource type="PackedScene" uid="uid://bkm2q3gcvplul" path="res://SonicAssets/Prefabs/Particles/StepSmoke/[particles]_step_smoke.tscn" id="13_cuelq"]
+[ext_resource type="PackedScene" uid="uid://cbdn00e200ati" path="res://SonicAssets/Models/Enemies/EnemyNebula.blend" id="14_reapo"]
+[ext_resource type="Script" uid="uid://cnq7ub0u0sa87" path="res://Scripts/Enemies/StuffSpawner.cs" id="15_aq5pj"]
+[ext_resource type="PackedScene" uid="uid://3tcut3gxx15h" path="res://SonicAssets/Prefabs/Interactables/Obstacles/EnemyAmmo/[obstacle]_potos_bomb.tscn" id="16_vi1lc"]
+[ext_resource type="AudioStream" uid="uid://dymw076t6mfef" path="res://SonicAssets/Audio/Enemies/se_wars_enm_potos#2 (enm_potos_bomb).wav" id="18_ruqkp"]
+[ext_resource type="Script" uid="uid://bw8224m0k2phx" path="res://Scripts/Interactables/NonPlayerSplineMovement.cs" id="19_2g4x3"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_ar2vf"]
+friction = 0.0
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_vfsj3"]
+radius = 1.0
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_u4au2"]
+radius = 1.0
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_g877g"]
+radius = 1.5
+
+[sub_resource type="Curve" id="Curve_8xqta"]
+_limits = [-360.0, 360.0, 0.0, 1.0]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(1, 1), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="CurveTexture" id="CurveTexture_sdvrw"]
+curve = SubResource("Curve_8xqta")
+
+[sub_resource type="Gradient" id="Gradient_frhhl"]
+offsets = PackedFloat32Array(0, 0.520833, 1)
+colors = PackedColorArray(0, 0, 0, 0, 0.521569, 0.521569, 0.521569, 1, 1, 1, 1, 0)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_veaka"]
+gradient = SubResource("Gradient_frhhl")
+
+[sub_resource type="Curve" id="Curve_ypdqp"]
+_data = [Vector2(0.00369003, 0), 0.0, 0.0, 0, 0, Vector2(1, 1), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="CurveTexture" id="CurveTexture_l3oey"]
+curve = SubResource("Curve_ypdqp")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_ols1o"]
+angle_max = 360.0
+angle_curve = SubResource("CurveTexture_sdvrw")
+gravity = Vector3(0, 0, 0)
+scale_max = 10.0
+scale_curve = SubResource("CurveTexture_l3oey")
+color_ramp = SubResource("GradientTexture1D_veaka")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_iprt8"]
+transparency = 1
+blend_mode = 1
+no_depth_test = true
+shading_mode = 0
+vertex_color_use_as_albedo = true
+albedo_texture = ExtResource("10_522q8")
+disable_receive_shadows = true
+billboard_mode = 3
+particles_anim_h_frames = 1
+particles_anim_v_frames = 1
+particles_anim_loop = false
+grow_amount = 1.79
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_igbr8"]
+material = SubResource("StandardMaterial3D_iprt8")
+orientation = 2
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_12xi3"]
+transparency = 1
+blend_mode = 1
+shading_mode = 0
+albedo_texture = ExtResource("11_hgw01")
+disable_receive_shadows = true
+billboard_mode = 3
+billboard_keep_scale = true
+particles_anim_h_frames = 1
+particles_anim_v_frames = 1
+particles_anim_loop = false
+
+[sub_resource type="QuadMesh" id="QuadMesh_fkmdg"]
+material = SubResource("StandardMaterial3D_12xi3")
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_a2fvs"]
+animation = &"pts_atk"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_6373f"]
+animation = &"pts_idle"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_70ba2"]
+switch_mode = 2
+advance_mode = 2
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_hncck"]
+advance_mode = 2
+
+[sub_resource type="AnimationNodeStateMachine" id="AnimationNodeStateMachine_m1ltk"]
+states/pts_atk/node = SubResource("AnimationNodeAnimation_a2fvs")
+states/pts_atk/position = Vector2(355, 147)
+states/pts_idle/node = SubResource("AnimationNodeAnimation_6373f")
+states/pts_idle/position = Vector2(355, 22)
+transitions = ["pts_atk", "pts_idle", SubResource("AnimationNodeStateMachineTransition_70ba2"), "Start", "pts_idle", SubResource("AnimationNodeStateMachineTransition_hncck")]
+
+[node name="[Enemy] Nebula" type="RigidBody3D" unique_id=1791867326]
+transform = Transform3D(1, 0, 1.74846e-07, 0, 1, 0, -1.74846e-07, 0, 1, 0, 0, 0)
+collision_layer = 4
+physics_material_override = SubResource("PhysicsMaterial_ar2vf")
+gravity_scale = 0.0
+continuous_cd = true
+
+[node name="HomingTarget" parent="." unique_id=915333203 instance=ExtResource("1_r7jvn")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+TargetableByGuns = true
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=755856314]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+shape = SubResource("SphereShape3D_vfsj3")
+
+[node name="Behaviors" type="Node" parent="." unique_id=716556650 node_paths=PackedStringArray("CurrentPhase")]
+script = ExtResource("2_nkec7")
+CurrentPhase = NodePath("Phase0Rotating")
+
+[node name="Phase0Rotating" type="Node" parent="Behaviors" unique_id=2014505354]
+
+[node name="LookAtModeBehavior" type="Node" parent="Behaviors/Phase0Rotating" unique_id=246410672 node_paths=PackedStringArray("EnemyControl", "ObjectToRotate", "LookReferencePoint")]
+script = ExtResource("3_dssie")
+EnemyControl = NodePath("../../../EnemyControl")
+ObjectToRotate = NodePath("../../..")
+LookReferencePoint = NodePath("../../../HomingTarget")
+LookMode = 2
+RotationSpeed = 3.0
+
+[node name="Timer" type="Timer" parent="Behaviors/Phase0Rotating" unique_id=791246168]
+process_callback = 0
+autostart = true
+
+[node name="Phase99Death" type="Node" parent="Behaviors" unique_id=1804689949]
+
+[node name="EnemyControl" type="Node" parent="." unique_id=1633460763 node_paths=PackedStringArray("Hitbox", "Hurtbox", "HomingTarget", "RigidBody", "DamageParticles", "AudioSource", "DeathAnticipationParticle", "BehaviorManager", "DeathPhase")]
+script = ExtResource("4_g68bh")
+DamageCooldown = 1.0
+Hitbox = NodePath("../Hitbox")
+Hurtbox = NodePath("../Hurtbox")
+HomingTarget = NodePath("../HomingTarget")
+RigidBody = NodePath("..")
+DamageSoundEffect = ExtResource("5_eko2y")
+DamageParticles = NodePath("../AttackShockwaveParticles")
+AudioSource = NodePath("../AudioStreamPlayer3D")
+ExplosionParticles = ExtResource("6_hna6q")
+DeathAnticipationParticle = NodePath("../[Particles] StepSmoke")
+BehaviorManager = NodePath("../Behaviors")
+DeathPhase = NodePath("../Behaviors/Phase99Death")
+IgnoreGravityTriggers = true
+DefaultGravityIsInitialDown = true
+
+[node name="Hitbox" type="Area3D" parent="." unique_id=1506216892]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+collision_mask = 3
+script = ExtResource("7_wmsgh")
+CanDamageRollingPlayer = false
+CanDamageEnemy = false
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Hitbox" unique_id=1672305922]
+shape = SubResource("SphereShape3D_u4au2")
+
+[node name="Hurtbox" type="Area3D" parent="." unique_id=1984409697]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+script = ExtResource("8_yr475")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Hurtbox" unique_id=810376822]
+shape = SubResource("SphereShape3D_g877g")
+
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="." unique_id=1820032636]
+stream = ExtResource("9_tl2ic")
+unit_size = 50.0
+autoplay = true
+bus = &"SFX"
+
+[node name="AttackShockwaveParticles" type="GPUParticles3D" parent="." unique_id=264877316]
+emitting = false
+amount = 1
+lifetime = 0.2
+one_shot = true
+process_material = SubResource("ParticleProcessMaterial_ols1o")
+draw_passes = 2
+draw_pass_1 = SubResource("PlaneMesh_igbr8")
+draw_pass_2 = SubResource("QuadMesh_fkmdg")
+
+[node name="EnemySpinner" parent="." unique_id=1840377430 instance=ExtResource("12_m71v2")]
+transform = Transform3D(-3, -2.62268e-07, 1.14641e-14, 0, -1.31134e-07, -3, 2.62268e-07, -3, 1.31134e-07, 0, 0, 0)
+visible = false
+
+[node name="[Particles] StepSmoke" parent="." unique_id=1268176371 instance=ExtResource("13_cuelq")]
+
+[node name="EnemyNebula" parent="." unique_id=1838986434 instance=ExtResource("14_reapo")]
+transform = Transform3D(-3, 0, -2.62268e-07, 0, 3, 0, 2.62268e-07, 0, -3, 0, 1, 0)
+
+[node name="Skeleton3D" parent="EnemyNebula/enm_potos01" parent_id_path=PackedInt32Array(1838986434, 1343570334) index="0" unique_id=874214535]
+bones/2/position = Vector3(1.06238e-09, -2.48389e-06, 0.0259277)
+bones/2/rotation = Quaternion(0.707107, 3.38617e-05, -0.707107, -3.38796e-05)
+bones/3/rotation = Quaternion(7.8036e-08, 3.24937e-08, 0.965913, -0.258865)
+bones/4/rotation = Quaternion(8.15949e-08, 1.92182e-08, 0.965913, -0.258865)
+bones/5/rotation = Quaternion(5.8044e-08, -5.66361e-08, 0.707141, 0.707073)
+bones/6/rotation = Quaternion(7.25849e-09, 7.24107e-09, 0.142725, 0.989762)
+bones/7/rotation = Quaternion(0.123604, 0.857175, 0.0713601, 0.494854)
+bones/8/rotation = Quaternion(-0.123604, -0.857175, 0.0713601, 0.494854)
+bones/9/rotation = Quaternion(1.06607e-07, 5.24361e-08, 0.707107, 0.707107)
+bones/11/position = Vector3(0.0494707, -0.0151627, -2.71475e-09)
+bones/11/rotation = Quaternion(-2.56237e-09, 1.35411e-09, -0.0150034, 0.999888)
+bones/12/rotation = Quaternion(0.106337, -0.061394, 0.26419, 0.956623)
+bones/13/rotation = Quaternion(-0.106337, 0.0613939, 0.26419, 0.956623)
+bones/14/rotation = Quaternion(-0.429468, -0.452974, -0.552937, 0.551936)
+
+[node name="AnimationTree" type="AnimationTree" parent="." unique_id=1384249223]
+root_node = NodePath("../EnemyNebula")
+tree_root = SubResource("AnimationNodeStateMachine_m1ltk")
+anim_player = NodePath("../EnemyNebula/AnimationPlayer")
+
+[node name="StuffSpawner" type="Node3D" parent="." unique_id=1941701651]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.5, 0)
+script = ExtResource("15_aq5pj")
+Template = ExtResource("16_vi1lc")
+
+[node name="AudioStreamPlayer3D2_Bombdrop" type="AudioStreamPlayer3D" parent="." unique_id=272741641]
+stream = ExtResource("18_ruqkp")
+
+[node name="NonPlayerSplineMovement" type="Node" parent="." unique_id=1940752203]
+script = ExtResource("19_2g4x3")
+
+[connection signal="timeout" from="Behaviors/Phase0Rotating/Timer" to="StuffSpawner" method="Spawn"]
+[connection signal="timeout" from="Behaviors/Phase0Rotating/Timer" to="AudioStreamPlayer3D2_Bombdrop" method="play"]
+[connection signal="timeout" from="Behaviors/Phase0Rotating/Timer" to="EnemyNebula/AnimationPlayer" method="set_current_animation" binds= ["pts_atk"]]
+[connection signal="timeout" from="Behaviors/Phase0Rotating/Timer" to="EnemyNebula/AnimationPlayer" method="animation_set_next" binds= ["pts_atk", "pts_idle"]]
+[connection signal="OnHitboxEnter" from="Hurtbox" to="EnemyControl" method="OnHitboxEnter"]
+[connection signal="area_entered" from="Hurtbox" to="Hurtbox" method="OnAreaEnter"]
+
+[editable path="EnemyNebula"]

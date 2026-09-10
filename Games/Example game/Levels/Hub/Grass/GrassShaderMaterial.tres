@@ -1,0 +1,13 @@
+[gd_resource type="ShaderMaterial" format=3 uid="uid://bmegwf6tgyyxk"]
+
+[ext_resource type="Shader" uid="uid://b6kqjllmhnrqx" path="res://Games/Example game/Levels/Hub/Grass/GrassShader.tres" id="1_nb06i"]
+
+[resource]
+render_priority = 0
+shader = ExtResource("1_nb06i")
+shader_parameter/PlayerPos = Vector3(0, 5, 0)
+shader_parameter/Strength = 1.0
+shader_parameter/Radius = 2.0
+shader_parameter/WindDir = Vector3(1, 0, 0)
+shader_parameter/WindTimeScale = 0.01
+shader_parameter/Color = Color(0, 1, 0, 1)

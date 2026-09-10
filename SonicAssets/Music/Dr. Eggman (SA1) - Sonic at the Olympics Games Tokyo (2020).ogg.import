@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://b57nsj8ld82mu"
+path="res://.godot/imported/Dr. Eggman (SA1) - Sonic at the Olympics Games Tokyo (2020).ogg-54010d1d0d5b8bc471aa5e0a16804089.oggvorbisstr"
+
+[deps]
+
+source_file="res://SonicAssets/Music/Dr. Eggman (SA1) - Sonic at the Olympics Games Tokyo (2020).ogg"
+dest_files=["res://.godot/imported/Dr. Eggman (SA1) - Sonic at the Olympics Games Tokyo (2020).ogg-54010d1d0d5b8bc471aa5e0a16804089.oggvorbisstr"]
+
+[params]
+
+loop=true
+loop_offset=0.0
+bpm=0.0
+beat_count=0
+bar_beats=4

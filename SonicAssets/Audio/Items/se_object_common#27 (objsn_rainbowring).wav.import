@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://cdwd21hrukdlx"
+path="res://.godot/imported/se_object_common#27 (objsn_rainbowring).wav-7f09ea71c3f0c603cec56c2153c22d85.sample"
+
+[deps]
+
+source_file="res://SonicAssets/Audio/Items/se_object_common#27 (objsn_rainbowring).wav"
+dest_files=["res://.godot/imported/se_object_common#27 (objsn_rainbowring).wav-7f09ea71c3f0c603cec56c2153c22d85.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

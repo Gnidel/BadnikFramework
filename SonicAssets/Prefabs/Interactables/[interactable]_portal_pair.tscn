@@ -1,0 +1,173 @@
+[gd_scene format=3 uid="uid://l453ra0lvwyi"]
+
+[ext_resource type="Script" uid="uid://byd3i86cqs0lt" path="res://Scripts/Interactables/PortalPair.cs" id="1_65v5p"]
+[ext_resource type="Script" uid="uid://b02lq4k75n6aw" path="res://Scripts/Interactables/Portal.cs" id="2_h4k5y"]
+[ext_resource type="Texture2D" uid="uid://dvdvx04p73lpt" path="res://SonicAssets/Prefabs/Interactables/Obstacles/Laser/laser_flare.png" id="3_h4k5y"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_65v5p"]
+resource_local_to_scene = true
+shading_mode = 0
+disable_receive_shadows = true
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_15ehd"]
+resource_local_to_scene = true
+material = SubResource("StandardMaterial3D_65v5p")
+size = Vector2(10, 10)
+orientation = 2
+
+[sub_resource type="Curve" id="Curve_6btpg"]
+_data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(0.026315793, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
+point_count = 3
+
+[sub_resource type="CurveTexture" id="CurveTexture_tn613"]
+curve = SubResource("Curve_6btpg")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_8cefd"]
+emission_shape_scale = Vector3(5, 5, 1)
+emission_shape = 3
+emission_box_extents = Vector3(1, 1, 1)
+gravity = Vector3(0, 0, 0)
+color = Color(1, 0.52156866, 0, 1)
+alpha_curve = SubResource("CurveTexture_tn613")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_lebg1"]
+transparency = 1
+cull_mode = 2
+shading_mode = 0
+vertex_color_use_as_albedo = true
+albedo_texture = ExtResource("3_h4k5y")
+disable_receive_shadows = true
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_gglyu"]
+material = SubResource("StandardMaterial3D_lebg1")
+orientation = 2
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_xkren"]
+albedo_color = Color(1, 0.5019608, 0, 1)
+emission_enabled = true
+emission = Color(1, 0.5019608, 0, 1)
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_h4k5y"]
+resource_local_to_scene = true
+material = SubResource("StandardMaterial3D_xkren")
+size = Vector2(11, 11)
+orientation = 2
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_oxg3e"]
+size = Vector3(10, 10, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_h4k5y"]
+resource_local_to_scene = true
+shading_mode = 0
+disable_receive_shadows = true
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_oenwu"]
+resource_local_to_scene = true
+material = SubResource("StandardMaterial3D_h4k5y")
+size = Vector2(10, 10)
+orientation = 2
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_h4k5y"]
+emission_shape_scale = Vector3(5, 5, 1)
+emission_shape = 3
+emission_box_extents = Vector3(1, 1, 1)
+gravity = Vector3(0, 0, 0)
+color = Color(0, 0, 1, 1)
+alpha_curve = SubResource("CurveTexture_tn613")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_6btpg"]
+albedo_color = Color(0, 0.5019608, 1, 1)
+emission_enabled = true
+emission = Color(0, 0.5019608, 1, 1)
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_tn613"]
+resource_local_to_scene = true
+material = SubResource("StandardMaterial3D_6btpg")
+size = Vector2(11, 11)
+orientation = 2
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_oenwu"]
+size = Vector3(10, 10, 1)
+
+[node name="[Interactable] Portal pair" type="Node3D" unique_id=46828803]
+script = ExtResource("1_65v5p")
+
+[node name="[Interactable] Portal_A" type="Node3D" parent="." unique_id=2070214121 node_paths=PackedStringArray("CameraLocation", "ConnectedPortal")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5, 0)
+script = ExtResource("2_h4k5y")
+CameraLocation = NodePath("RemoteTransform3D")
+ConnectedPortal = NodePath("../[Interactable] Portal_B")
+EnableRecursion = true
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="[Interactable] Portal_A" unique_id=2032778680]
+mesh = SubResource("PlaneMesh_15ehd")
+
+[node name="PortalParticles_Orange" type="GPUParticles3D" parent="[Interactable] Portal_A/MeshInstance3D" unique_id=1473109165]
+layers = 129
+amount = 32
+process_material = SubResource("ParticleProcessMaterial_8cefd")
+draw_pass_1 = SubResource("PlaneMesh_gglyu")
+
+[node name="MeshInstance_Fallback" type="MeshInstance3D" parent="[Interactable] Portal_A" unique_id=833094179]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.01)
+mesh = SubResource("PlaneMesh_h4k5y")
+
+[node name="RemoteTransform3D" type="RemoteTransform3D" parent="[Interactable] Portal_A" unique_id=794663513]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 0, 0, 0)
+remote_path = NodePath("../SubViewport/Camera3D")
+
+[node name="Area3D" type="Area3D" parent="[Interactable] Portal_A" unique_id=363869107]
+collision_layer = 0
+collision_mask = 2
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="[Interactable] Portal_A/Area3D" unique_id=1773723476]
+shape = SubResource("BoxShape3D_oxg3e")
+
+[node name="SubViewport" type="SubViewport" parent="[Interactable] Portal_A" unique_id=2059789856]
+gui_disable_input = true
+
+[node name="Camera3D" type="Camera3D" parent="[Interactable] Portal_A/SubViewport" unique_id=1592394348]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 0, 5, 0)
+size = 10.0
+
+[node name="[Interactable] Portal_B" type="Node3D" parent="." unique_id=1625977541 node_paths=PackedStringArray("CameraLocation", "ConnectedPortal")]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 0, 5, 18)
+script = ExtResource("2_h4k5y")
+CameraLocation = NodePath("RemoteTransform3D")
+ConnectedPortal = NodePath("../[Interactable] Portal_A")
+EnableRecursion = true
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="[Interactable] Portal_B" unique_id=1611181159]
+mesh = SubResource("PlaneMesh_oenwu")
+
+[node name="PortalParticles_Blue" type="GPUParticles3D" parent="[Interactable] Portal_B/MeshInstance3D" unique_id=853757245]
+layers = 129
+amount = 32
+process_material = SubResource("ParticleProcessMaterial_h4k5y")
+draw_pass_1 = SubResource("PlaneMesh_gglyu")
+
+[node name="MeshInstance_Fallback" type="MeshInstance3D" parent="[Interactable] Portal_B" unique_id=54702603]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.01)
+mesh = SubResource("PlaneMesh_tn613")
+
+[node name="RemoteTransform3D" type="RemoteTransform3D" parent="[Interactable] Portal_B" unique_id=1162963978]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 0, 0, 0)
+remote_path = NodePath("../SubViewport/Camera3D")
+
+[node name="Area3D" type="Area3D" parent="[Interactable] Portal_B" unique_id=133721284]
+collision_layer = 0
+collision_mask = 2
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="[Interactable] Portal_B/Area3D" unique_id=384992172]
+shape = SubResource("BoxShape3D_oenwu")
+
+[node name="SubViewport" type="SubViewport" parent="[Interactable] Portal_B" unique_id=1958680352]
+gui_disable_input = true
+
+[node name="Camera3D" type="Camera3D" parent="[Interactable] Portal_B/SubViewport" unique_id=19629801]
+transform = Transform3D(1, 0, 1.7484555e-07, 0, 1, 0, -1.7484555e-07, 0, 1, 0, 5, 18)
+
+[connection signal="body_entered" from="[Interactable] Portal_A/Area3D" to="[Interactable] Portal_A" method="OnBodyEntered"]
+[connection signal="body_exited" from="[Interactable] Portal_A/Area3D" to="[Interactable] Portal_A" method="OnBodyExit"]
+[connection signal="body_entered" from="[Interactable] Portal_B/Area3D" to="[Interactable] Portal_B" method="OnBodyEntered"]
+[connection signal="body_exited" from="[Interactable] Portal_B/Area3D" to="[Interactable] Portal_B" method="OnBodyExit"]

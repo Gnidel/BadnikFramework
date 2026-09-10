@@ -1,0 +1,14 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://dtnep6lvsij70"]
+
+[ext_resource type="Texture2D" uid="uid://dn0c6d8nqso6m" path="res://SonicAssets/Stages/Death Egg/Models/DeathEgg_ssz_metal_ym2_mplate08_dif.png" id="1_mt776"]
+[ext_resource type="Texture2D" uid="uid://c2hxndpryt731" path="res://SonicAssets/Stages/Death Egg/Models/DeathEgg_ssz_metal_ym2_mplate08_lum.png" id="2_h1qm0"]
+
+[resource]
+resource_name = "ssz_metal_ym2_mplate08"
+vertex_color_use_as_albedo = true
+albedo_texture = ExtResource("1_mt776")
+emission_enabled = true
+emission = Color(1, 1, 1, 1)
+emission_operator = 1
+emission_texture = ExtResource("2_h1qm0")
+metadata/_gltf_primary_texture_coord = 0

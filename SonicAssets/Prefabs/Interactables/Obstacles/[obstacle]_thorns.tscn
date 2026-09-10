@@ -1,0 +1,20 @@
+[gd_scene format=3 uid="uid://b2myq4ve7aw2x"]
+
+[ext_resource type="Script" uid="uid://y47n4ov38iw2" path="res://Scripts/Interactables/Hitbox.cs" id="2_n511y"]
+[ext_resource type="PackedScene" uid="uid://qs81og048yi" path="res://SonicAssets/Models/Interactables/thorns.glb" id="2_shbv2"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_0l1of"]
+size = Vector3(1, 0.5, 1)
+
+[node name="[Obstacle] Thorns" type="Node3D" unique_id=226717314]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 80.7516, 1, 19.042)
+
+[node name="Hitbox" type="Area3D" parent="." unique_id=681277666]
+script = ExtResource("2_n511y")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Hitbox" unique_id=262348306]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
+shape = SubResource("BoxShape3D_0l1of")
+
+[node name="thorns2" parent="." unique_id=179277476 instance=ExtResource("2_shbv2")]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0)

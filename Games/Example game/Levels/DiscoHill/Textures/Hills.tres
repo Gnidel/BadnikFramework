@@ -1,0 +1,9 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://usttlgw1ka1h"]
+
+[ext_resource type="Texture2D" uid="uid://otydnyvocleg" path="res://Games/Example game/Levels/DiscoHill/Textures/NoiseGrid_a.png" id="1_w3wgu"]
+
+[resource]
+resource_name = "Hills"
+cull_mode = 2
+albedo_texture = ExtResource("1_w3wgu")
+roughness = 0.0

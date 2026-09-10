@@ -1,0 +1,17 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://dxsaqm8iejq2e"]
+
+[ext_resource type="Texture2D" uid="uid://csofyhb5wwspp" path="res://SonicAssets/Models/Sonic/textures/chr_sonic_body01_dif_HD.dds" id="1_1acvn"]
+[ext_resource type="Texture2D" uid="uid://c6by58d5o2n1w" path="res://SonicAssets/Models/Sonic/textures/chr_sonic_body01_fal_HD.dds" id="2_llg27"]
+[ext_resource type="Texture2D" uid="uid://dpiubsbtt1py6" path="res://SonicAssets/Models/Sonic/textures/chr_sonic_body01_spc_HD.dds" id="3_ovigv"]
+
+[resource]
+resource_name = "sonic_gm_mouth"
+diffuse_mode = 2
+vertex_color_use_as_albedo = true
+albedo_texture = ExtResource("1_1acvn")
+metallic_texture = ExtResource("3_ovigv")
+emission_enabled = true
+heightmap_enabled = true
+heightmap_scale = 1.0
+heightmap_texture = ExtResource("2_llg27")
+heightmap_flip_texture = true

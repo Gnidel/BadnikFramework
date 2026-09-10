@@ -1,0 +1,14 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://cd1ccqubcfpui"]
+
+[ext_resource type="Texture2D" uid="uid://28g6ei210tw0" path="res://SonicAssets/Models/Items/RedRings/textures/cmn_obj_redring_collected_dif.dds" id="1_114pc"]
+[ext_resource type="Texture2D" uid="uid://dh7pnndmeelph" path="res://SonicAssets/Models/Items/RedRings/textures/cmn_obj_redring_dif.dds" id="1_fntw4"]
+
+[resource]
+resource_name = "cmn_obj_redring_star"
+transparency = 4
+cull_mode = 2
+albedo_color = Color(1, 1, 1, 0.752941)
+albedo_texture = ExtResource("1_114pc")
+metallic = 1.0
+roughness = 0.5
+emission_texture = ExtResource("1_fntw4")

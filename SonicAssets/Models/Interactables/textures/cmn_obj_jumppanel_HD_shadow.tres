@@ -1,0 +1,10 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://bpdpu0hbwwkwr"]
+
+[ext_resource type="Texture2D" uid="uid://tqlxl1w8r6fr" path="res://SonicAssets/Models/Interactables/textures/cmn_ms_shadow_dif.dds" id="1_aaod7"]
+
+[resource]
+resource_name = "cmn_obj_jumppanel_HD_shadow"
+transparency = 4
+cull_mode = 2
+albedo_texture = ExtResource("1_aaod7")
+metallic = 1.0

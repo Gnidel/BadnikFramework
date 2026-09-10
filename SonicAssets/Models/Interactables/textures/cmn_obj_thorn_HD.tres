@@ -1,0 +1,18 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://n50hidwv3jdd"]
+
+[ext_resource type="Texture2D" uid="uid://wwxgks2r1lc" path="res://SonicAssets/Models/Interactables/textures/cmn_metal_ms_thornparts_dif.dds" id="1_scvj1"]
+
+[resource]
+resource_name = "cmn_obj_thorn_HD"
+cull_mode = 2
+vertex_color_use_as_albedo = true
+albedo_texture = ExtResource("1_scvj1")
+metallic = 1.0
+metallic_specular = 1.0
+metallic_texture = ExtResource("1_scvj1")
+roughness = 0.5
+rim_enabled = true
+heightmap_scale = 1.0
+heightmap_deep_parallax = true
+heightmap_min_layers = 8
+heightmap_max_layers = 32

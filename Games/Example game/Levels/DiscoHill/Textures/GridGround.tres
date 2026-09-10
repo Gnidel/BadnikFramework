@@ -1,0 +1,10 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://hc43m6j4tqff"]
+
+[ext_resource type="Texture2D" uid="uid://ptbptb4v6n32" path="res://Games/Example game/Levels/DiscoHill/Textures/BackgroundGround_a.png" id="1_hfria"]
+
+[resource]
+resource_name = "GridGround"
+transparency = 4
+cull_mode = 2
+albedo_texture = ExtResource("1_hfria")
+roughness = 0.5

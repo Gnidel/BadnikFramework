@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://8y786f7utsig"
+path="res://.godot/imported/se_voice_system_E#4 (systemvoice_v006)_great.ogg-512aff644c9e2052f2cf080332604bcb.oggvorbisstr"
+
+[deps]
+
+source_file="res://SonicAssets/Audio/Voices/en/Announcer/se_voice_system_E#4 (systemvoice_v006)_great.ogg"
+dest_files=["res://.godot/imported/se_voice_system_E#4 (systemvoice_v006)_great.ogg-512aff644c9e2052f2cf080332604bcb.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

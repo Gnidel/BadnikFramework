@@ -1,0 +1,9 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://dux6jq7ajnxvk"]
+
+[ext_resource type="Texture2D" uid="uid://bs0gpchwimy0p" path="res://SonicAssets/Stages/Death Egg/Models/DeathEgg_ssz_metal_ym2_esnose01_dif.png" id="1_ucb6l"]
+
+[resource]
+resource_name = "ssz_metal_ym2_esnose01"
+vertex_color_use_as_albedo = true
+albedo_texture = ExtResource("1_ucb6l")
+metadata/_gltf_primary_texture_coord = 0

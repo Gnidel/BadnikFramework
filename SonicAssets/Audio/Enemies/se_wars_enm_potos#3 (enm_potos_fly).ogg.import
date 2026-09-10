@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://1hcnufibkpr1"
+path="res://.godot/imported/se_wars_enm_potos#3 (enm_potos_fly).ogg-c06a592b5cc125aa8ee5598e978e33fd.oggvorbisstr"
+
+[deps]
+
+source_file="res://SonicAssets/Audio/Enemies/se_wars_enm_potos#3 (enm_potos_fly).ogg"
+dest_files=["res://.godot/imported/se_wars_enm_potos#3 (enm_potos_fly).ogg-c06a592b5cc125aa8ee5598e978e33fd.oggvorbisstr"]
+
+[params]
+
+loop=true
+loop_offset=0.0
+bpm=0.0
+beat_count=0
+bar_beats=4

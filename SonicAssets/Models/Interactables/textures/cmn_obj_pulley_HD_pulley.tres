@@ -1,0 +1,10 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://bkqqijwyy3em4"]
+
+[ext_resource type="Texture2D" uid="uid://c1kq5djbvanv1" path="res://SonicAssets/Models/Interactables/textures/cmn_metal_ms_pulley_dif.dds" id="1_0bwyv"]
+
+[resource]
+resource_name = "cmn_obj_pulley_HD_pulley"
+cull_mode = 2
+vertex_color_use_as_albedo = true
+albedo_texture = ExtResource("1_0bwyv")
+metallic = 1.0

@@ -1,0 +1,22 @@
+[gd_scene format=3 uid="uid://dfy4ww77bq7of"]
+
+[ext_resource type="Script" uid="uid://b6g3m5wyx224a" path="res://Scripts/Ui/ComboTarget.cs" id="1_517sl"]
+[ext_resource type="Texture2D" uid="uid://bkfxnhldnb4yg" path="res://Prefabs/UI/ComboTarget/ComboTarget.png" id="2_k2y8g"]
+[ext_resource type="Theme" uid="uid://di28qbb7lki3f" path="res://Misc/MenuTheme.tres" id="3_nxuoj"]
+
+[node name="ComboTarget" type="Node3D" unique_id=1270639816 node_paths=PackedStringArray("Child2D", "ComboCounterLabel")]
+script = ExtResource("1_517sl")
+Child2D = NodePath("Node2D")
+ComboCounterLabel = NodePath("Node2D/ComboCount")
+
+[node name="Node2D" type="Node2D" parent="." unique_id=175355133]
+
+[node name="Sprite2D" type="Sprite2D" parent="Node2D" unique_id=109079837]
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("2_k2y8g")
+
+[node name="ComboCount" type="Label" parent="Node2D" unique_id=1269425196]
+offset_right = 61.0
+offset_bottom = 61.0
+theme = ExtResource("3_nxuoj")
+text = "x1"

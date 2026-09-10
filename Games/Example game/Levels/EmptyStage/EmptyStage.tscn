@@ -1,0 +1,72 @@
+[gd_scene format=3 uid="uid://bt40aht52871d"]
+
+[ext_resource type="Script" uid="uid://c2iwclb013o1y" path="res://Scripts/System/ApplyWorldEnvironmentSettings.cs" id="1_ev7t5"]
+[ext_resource type="Script" uid="uid://c2i7w0nkuie1u" path="res://Scripts/System/StageData.cs" id="1_im4ta"]
+[ext_resource type="PackedScene" uid="uid://dhu1smr7ks2e5" path="res://SonicAssets/Prefabs/Interactables/[interactable]_goal_ring.tscn" id="3_5d85y"]
+[ext_resource type="PackedScene" uid="uid://clt71rt2khju8" path="res://SonicAssets/Prefabs/Player/PlayersManager.tscn" id="3_46eka"]
+[ext_resource type="PackedScene" uid="uid://ckuh7n0eskbd" path="res://SonicAssets/Prefabs/Items/[item]_red_ring_1.tscn" id="4_vmafd"]
+[ext_resource type="PackedScene" uid="uid://c4d6ef2j71sxf" path="res://SonicAssets/Prefabs/Items/[item]_red_ring_2.tscn" id="5_hnsic"]
+[ext_resource type="PackedScene" uid="uid://dnulayoi0l3o8" path="res://SonicAssets/Prefabs/Items/[item]_red_ring_3.tscn" id="6_trmn7"]
+[ext_resource type="PackedScene" uid="uid://bpgng4r75cppe" path="res://SonicAssets/Prefabs/Items/[item]_red_ring_4.tscn" id="7_5sn0a"]
+[ext_resource type="PackedScene" uid="uid://bjg1gje70id88" path="res://SonicAssets/Prefabs/Items/[item]_red_ring_5.tscn" id="8_6qaup"]
+[ext_resource type="Script" uid="uid://y47n4ov38iw2" path="res://Scripts/Interactables/Hitbox.cs" id="9_oq5gr"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_qfjo4"]
+sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
+ground_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
+
+[sub_resource type="Sky" id="Sky_dsnjl"]
+sky_material = SubResource("ProceduralSkyMaterial_qfjo4")
+
+[sub_resource type="Environment" id="Environment_ejd0m"]
+background_mode = 2
+sky = SubResource("Sky_dsnjl")
+glow_enabled = true
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_fhrgg"]
+size = Vector3(10000, 1, 10000)
+
+[node name="EmptyStage" type="Node3D" unique_id=220796014]
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=1522892564]
+transform = Transform3D(-0.8660254, -0.43301278, 0.25, 0, 0.49999997, 0.86602545, -0.50000006, 0.75, -0.43301266, 0, 0, 0)
+shadow_enabled = true
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=100664143]
+environment = SubResource("Environment_ejd0m")
+script = ExtResource("1_ev7t5")
+
+[node name="StageData" type="Node" parent="." unique_id=791645848]
+script = ExtResource("1_im4ta")
+StageZoneName = "Empty Stage"
+StageActName = "Act Null"
+StageUniqueIdentifier = "EmptyStage"
+HasRedRings = true
+SRankRings = 50
+RankWeightTime = 1.0
+RankWeightRings = 0.0
+
+[node name="PlayersManager" parent="." unique_id=1706967680 instance=ExtResource("3_46eka")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 17.9963, 0, 194.054)
+
+[node name="[Interactable] Goal Ring" parent="." unique_id=259410780 instance=ExtResource("3_5d85y")]
+NextLevel = "res://Levels/EmptyStage/EmptyStage.tscn"
+
+[node name="[Item] RedRing1" parent="." unique_id=586307764 instance=ExtResource("4_vmafd")]
+
+[node name="[Item] RedRing2" parent="." unique_id=805942939 instance=ExtResource("5_hnsic")]
+
+[node name="[Item] RedRing3" parent="." unique_id=1565446255 instance=ExtResource("6_trmn7")]
+
+[node name="[Item] RedRing4" parent="." unique_id=1962888158 instance=ExtResource("7_5sn0a")]
+
+[node name="[Item] RedRing5" parent="." unique_id=1579381784 instance=ExtResource("8_6qaup")]
+
+[node name="Pit" type="Area3D" parent="." unique_id=1652095181]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -200, 0)
+collision_mask = 7
+script = ExtResource("9_oq5gr")
+IsInstaKill = true
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Pit" unique_id=905589749]
+shape = SubResource("BoxShape3D_fhrgg")

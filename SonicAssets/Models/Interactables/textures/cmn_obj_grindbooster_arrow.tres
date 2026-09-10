@@ -1,0 +1,10 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://oj8rtv8jhb38"]
+
+[ext_resource type="Texture2D" uid="uid://jnc2bsbmypyf" path="res://SonicAssets/Models/Interactables/textures/cmn_obj_grindbooster_arrow_ems.dds" id="1_scb5t"]
+
+[resource]
+resource_name = "cmn_obj_grindbooster_arrow"
+albedo_texture = ExtResource("1_scb5t")
+roughness = 0.5
+emission_enabled = true
+emission_texture = ExtResource("1_scb5t")

@@ -1,0 +1,28 @@
+[gd_scene format=3 uid="uid://cvls441klklh1"]
+
+[ext_resource type="Script" uid="uid://djdxqop8mup2u" path="res://Scripts/Interactables/Spline2DTrigger.cs" id="1_h3xlx"]
+[ext_resource type="Script" uid="uid://d32weomiu2q8n" path="res://Scripts/Interactables/CameraTrigger.cs" id="2_mheky"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_v648e"]
+resource_local_to_scene = true
+
+[node name="[Trigger] No2DTrigger" type="Node3D" unique_id=969657875]
+
+[node name="[Trigger] NoSplineTrigger" type="Area3D" parent="." unique_id=2023145832]
+collision_mask = 2
+script = ExtResource("1_h3xlx")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="[Trigger] NoSplineTrigger" unique_id=1859701545]
+shape = SubResource("BoxShape3D_v648e")
+
+[node name="Camera3DTrigger" type="Area3D" parent="." unique_id=1422507286]
+collision_mask = 2
+script = ExtResource("2_mheky")
+CameraDistance = 4.0
+FreeOnExit = true
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Camera3DTrigger" unique_id=571122358]
+shape = SubResource("BoxShape3D_v648e")
+
+[connection signal="body_entered" from="[Trigger] NoSplineTrigger" to="[Trigger] NoSplineTrigger" method="OnBodyEnter"]
+[connection signal="body_entered" from="Camera3DTrigger" to="Camera3DTrigger" method="OnBodyEnter"]

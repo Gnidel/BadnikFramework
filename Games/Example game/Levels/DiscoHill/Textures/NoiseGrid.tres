@@ -1,0 +1,21 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://c16u6om2ahvmw"]
+
+[ext_resource type="Texture2D" uid="uid://otydnyvocleg" path="res://Games/Example game/Levels/DiscoHill/Textures/NoiseGrid_a.png" id="1_h1vu7"]
+[ext_resource type="Texture2D" uid="uid://dlr27kfgllr3r" path="res://Games/Example game/Levels/DiscoHill/Textures/NoiseGrid_e.png" id="2_emkl2"]
+[ext_resource type="Texture2D" uid="uid://cucyhp38o8jce" path="res://Games/Example game/Levels/DiscoHill/Textures/NoiseGrid_n.png" id="2_m4fix"]
+[ext_resource type="Texture2D" uid="uid://b1dop4wfeqcbk" path="res://Games/Example game/Levels/DiscoHill/Textures/NoiseGrid_h.png" id="3_wexsw"]
+
+[resource]
+resource_name = "NoiseGrid"
+vertex_color_use_as_albedo = true
+albedo_texture = ExtResource("1_h1vu7")
+roughness = 0.5
+emission_enabled = true
+emission_energy_multiplier = 2.0
+emission_texture = ExtResource("2_emkl2")
+normal_enabled = true
+normal_scale = 16.0
+normal_texture = ExtResource("2_m4fix")
+heightmap_enabled = true
+heightmap_scale = 1.0
+heightmap_texture = ExtResource("3_wexsw")

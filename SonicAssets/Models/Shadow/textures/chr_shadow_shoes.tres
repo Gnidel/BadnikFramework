@@ -1,0 +1,16 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://bysrx5j4oajuk"]
+
+[ext_resource type="Texture2D" uid="uid://rwc5qsv405o4" path="res://SonicAssets/Models/Shadow/textures/chr_shadow_handfoot_abd.dds" id="1_7mwwn"]
+[ext_resource type="Texture2D" uid="uid://vscdhg2g2cum" path="res://SonicAssets/Models/Shadow/textures/chr_shadow_handfoot_prm.dds" id="2_0vold"]
+[ext_resource type="Texture2D" uid="uid://c44qmoin58sj" path="res://SonicAssets/Models/Shadow/textures/chr_shadow_handfoot_nrm.dds" id="3_50l24"]
+
+[resource]
+resource_name = "chr_shadow_shoes"
+albedo_texture = ExtResource("1_7mwwn")
+metallic = 1.0
+metallic_specular = 1.0
+metallic_texture = ExtResource("2_0vold")
+roughness_texture = ExtResource("2_0vold")
+roughness_texture_channel = 1
+normal_enabled = true
+normal_texture = ExtResource("3_50l24")

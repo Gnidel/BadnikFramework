@@ -1,0 +1,35 @@
+[gd_scene format=3 uid="uid://bcaqydwtikg31"]
+
+[ext_resource type="PackedScene" uid="uid://dpok2l1yi55wd" path="res://SonicAssets/Models/Vehicles/Blue Star/Blue Star.glb" id="1_8c0un"]
+[ext_resource type="Script" uid="uid://bp5u357iofl1t" path="res://addons/trail_3d/trail_3d.gd" id="2_hj1o6"]
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_hj1o6"]
+
+[sub_resource type="Curve" id="Curve_482wa"]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="Gradient" id="Gradient_s44hm"]
+offsets = PackedFloat32Array(0, 0.5378486, 1)
+colors = PackedColorArray(0, 1, 0.5019608, 1, 0.28235295, 1, 0.32941177, 1, 0, 1, 0.5019608, 1)
+
+[sub_resource type="Curve" id="Curve_3o1yf"]
+_data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(0.046931416, 0.903846), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
+point_count = 3
+
+[node name="BlueStarModel" type="Node3D" unique_id=1085389824]
+
+[node name="Blue Star2" parent="." unique_id=1446141162 instance=ExtResource("1_8c0un")]
+transform = Transform3D(-0.05, 0, -4.37114e-09, 0, 0.05, 0, 4.37114e-09, 0, -0.05, 0, -0.2, 0)
+
+[node name="StandingPoint" type="Node3D" parent="." unique_id=2115781057]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.25, 0)
+
+[node name="Trail" type="MeshInstance3D" parent="." unique_id=1103534126]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.7)
+mesh = SubResource("ArrayMesh_hj1o6")
+script = ExtResource("2_hj1o6")
+width_curve = SubResource("Curve_482wa")
+base_width = 0.2
+color_gradient = SubResource("Gradient_s44hm")
+alpha_curve = SubResource("Curve_3o1yf")

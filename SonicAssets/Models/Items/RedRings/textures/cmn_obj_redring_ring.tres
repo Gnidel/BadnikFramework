@@ -1,0 +1,13 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://brp2ntenx3irp"]
+
+[ext_resource type="Texture2D" uid="uid://dh7pnndmeelph" path="res://SonicAssets/Models/Items/RedRings/textures/cmn_obj_redring_dif.dds" id="1_56kmr"]
+
+[resource]
+resource_name = "cmn_obj_redring_ring"
+transparency = 4
+cull_mode = 2
+albedo_texture = ExtResource("1_56kmr")
+metallic = 1.0
+roughness = 0.5
+emission_enabled = true
+emission_texture = ExtResource("1_56kmr")

@@ -1,0 +1,14 @@
+[gd_resource type="ShaderMaterial" format=3 uid="uid://bsi237ttpv4ki"]
+
+[ext_resource type="Shader" uid="uid://dxhofrt5oq2uv" path="res://Games/Example game/Levels/Digital Sea/Textures/DigitalSeaCircuitShader.tres" id="1_wgbr1"]
+[ext_resource type="Texture2D" uid="uid://dgkoyrfpdsnh4" path="res://Games/Example game/Levels/Digital Sea/Textures/plasma.png" id="2_t2kfb"]
+[ext_resource type="Texture2D" uid="uid://dvxhep7ovqc7s" path="res://Games/Example game/Levels/Digital Sea/Textures/labyrinth.png" id="3_5fhsa"]
+[ext_resource type="Texture2D" uid="uid://orhjrpa23pii" path="res://Games/Example game/Levels/Digital Sea/Textures/labyrinth_n.png" id="4_kjkjm"]
+
+[resource]
+render_priority = 0
+shader = ExtResource("1_wgbr1")
+shader_parameter/Albedo = ExtResource("2_t2kfb")
+shader_parameter/Speed = 0.0
+shader_parameter/Mask = ExtResource("3_5fhsa")
+shader_parameter/Normal = ExtResource("4_kjkjm")

@@ -1,0 +1,8 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://blqsra8rfdcg0"]
+
+[ext_resource type="Texture2D" uid="uid://ccdnfh1bgt6s2" path="res://SonicAssets/Models/Sonic/textures/chr_supersonic_body01_dif_HD.dds" id="1_pbgn0"]
+
+[resource]
+resource_name = "super_sonic_gm_nose"
+albedo_texture = ExtResource("1_pbgn0")
+metallic = 1.0

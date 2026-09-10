@@ -1,0 +1,11 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://b0ucerdok36h4"]
+
+[ext_resource type="Texture2D" uid="uid://rwc5qsv405o4" path="res://SonicAssets/Models/Shadow/textures/chr_shadow_handfoot_abd.dds" id="1_160t6"]
+[ext_resource type="Texture2D" uid="uid://c44qmoin58sj" path="res://SonicAssets/Models/Shadow/textures/chr_shadow_handfoot_nrm.dds" id="2_mfy56"]
+
+[resource]
+resource_name = "chr_shadow_handparts"
+albedo_texture = ExtResource("1_160t6")
+roughness = 0.5
+normal_enabled = true
+normal_texture = ExtResource("2_mfy56")

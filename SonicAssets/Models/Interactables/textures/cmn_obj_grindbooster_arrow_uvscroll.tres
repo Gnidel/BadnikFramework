@@ -1,0 +1,13 @@
+[gd_resource type="ShaderMaterial" format=3 uid="uid://d2t3akty1d1r5"]
+
+[ext_resource type="Shader" uid="uid://cq4gpg3v8rw38" path="res://Shaders/StandardWithUvScroll.tres" id="1_whg34"]
+[ext_resource type="Texture2D" uid="uid://jnc2bsbmypyf" path="res://SonicAssets/Models/Interactables/textures/cmn_obj_grindbooster_arrow_ems.dds" id="2_ggkwu"]
+
+[resource]
+render_priority = 0
+shader = ExtResource("1_whg34")
+shader_parameter/ScrollSpeed = Vector2(-3, 0)
+shader_parameter/Albedo = ExtResource("2_ggkwu")
+shader_parameter/Metallic = 0.0
+shader_parameter/Roughness = 0.0
+shader_parameter/Specular = 0.0

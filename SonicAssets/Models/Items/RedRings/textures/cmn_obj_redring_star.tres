@@ -1,0 +1,13 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://bg2ji6pcd4pwj"]
+
+[ext_resource type="Texture2D" uid="uid://dh7pnndmeelph" path="res://SonicAssets/Models/Items/RedRings/textures/cmn_obj_redring_dif.dds" id="1_8ge51"]
+
+[resource]
+resource_name = "cmn_obj_redring_star"
+transparency = 4
+cull_mode = 2
+albedo_texture = ExtResource("1_8ge51")
+metallic = 1.0
+roughness = 0.5
+emission_enabled = true
+emission_texture = ExtResource("1_8ge51")

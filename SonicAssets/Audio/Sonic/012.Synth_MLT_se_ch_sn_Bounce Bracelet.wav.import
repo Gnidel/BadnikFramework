@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://c4i6msiki4l1r"
+path="res://.godot/imported/012.Synth_MLT_se_ch_sn_Bounce Bracelet.wav-3b3e93464bffa3177e174bb9c08e0681.sample"
+
+[deps]
+
+source_file="res://SonicAssets/Audio/Sonic/012.Synth_MLT_se_ch_sn_Bounce Bracelet.wav"
+dest_files=["res://.godot/imported/012.Synth_MLT_se_ch_sn_Bounce Bracelet.wav-3b3e93464bffa3177e174bb9c08e0681.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

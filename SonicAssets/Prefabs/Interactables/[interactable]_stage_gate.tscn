@@ -1,0 +1,165 @@
+[gd_scene format=3 uid="uid://wc1ll4yim1ps"]
+
+[ext_resource type="Script" uid="uid://bvsec2w7o6nxy" path="res://Scripts/Interactables/StageGate.cs" id="1_a7x0m"]
+[ext_resource type="FontFile" uid="uid://cjl04fxw4brt3" path="res://SonicAssets/Fonts/NiseSonic.TTF" id="2_iii6e"]
+[ext_resource type="Theme" uid="uid://di28qbb7lki3f" path="res://Misc/MenuTheme.tres" id="3_bpfde"]
+[ext_resource type="Script" uid="uid://d32weomiu2q8n" path="res://Scripts/Interactables/CameraTrigger.cs" id="6_8pi3l"]
+[ext_resource type="Script" uid="uid://cd3cn8knmt25g" path="res://Scripts/Player/Camera/PointCameraParams.cs" id="7_ihvqw"]
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_vjyiv"]
+height = 20.0
+radius = 10.0
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_vjyiv"]
+noise_type = 0
+seed = 19
+frequency = 1.0
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_q3et7"]
+noise = SubResource("FastNoiseLite_vjyiv")
+
+[sub_resource type="Resource" id="Resource_482wa"]
+script = ExtResource("7_ihvqw")
+CameraPoint = NodePath("CameraPoint")
+PointMode = 2
+metadata/_custom_type_script = "uid://cd3cn8knmt25g"
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_sajgr"]
+height = 20.0
+radius = 10.0
+
+[node name="[Interactable] StageGate" type="Node3D" unique_id=808181291 node_paths=PackedStringArray("StageEntryScreen", "StageLabel", "ActLabel", "StageNameLabel3D", "StageImage", "DefaultFocusOrder", "BestTimesLabel", "PlayButton", "UnlockButton")]
+script = ExtResource("1_a7x0m")
+StageName = "STAGE NAME"
+StageActName = "ACT 1"
+StageEntryScreen = NodePath("StageEntryScreen")
+StageLabel = NodePath("StageEntryScreen/CenterContainer/VBoxContainer/NamePanel/VBoxContainer/StageName")
+ActLabel = NodePath("StageEntryScreen/CenterContainer/VBoxContainer/NamePanel/VBoxContainer/ActName")
+StageNameLabel3D = NodePath("Label")
+StageImage = NodePath("StageEntryScreen/CenterContainer/VBoxContainer/StageDataPAnel/HBoxContainer/StageIcon")
+DefaultFocusOrder = [NodePath("StageEntryScreen/CenterContainer/VBoxContainer/ButtonsPanel/HBoxContainer/PlayButton"), NodePath("StageEntryScreen/CenterContainer/VBoxContainer/ButtonsPanel/HBoxContainer/UnlockButton"), NodePath("StageEntryScreen/CenterContainer/VBoxContainer/ButtonsPanel/HBoxContainer/ExitButton")]
+BestTimesLabel = NodePath("StageEntryScreen/CenterContainer/VBoxContainer/StageDataPAnel/HBoxContainer/VBoxContainer/BestTimes")
+PlayButton = NodePath("StageEntryScreen/CenterContainer/VBoxContainer/ButtonsPanel/HBoxContainer/PlayButton")
+UnlockButton = NodePath("StageEntryScreen/CenterContainer/VBoxContainer/ButtonsPanel/HBoxContainer/UnlockButton")
+
+[node name="Label" type="Label3D" parent="." unique_id=72198829]
+pixel_size = 0.05
+outline_modulate = Color(1, 0, 1, 1)
+text = "STAGE NAME ACT 1"
+font = ExtResource("2_iii6e")
+
+[node name="Area3D" type="Area3D" parent="." unique_id=234094776]
+collision_mask = 2
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D" unique_id=217134470]
+shape = SubResource("CylinderShape3D_vjyiv")
+
+[node name="StageEntryScreen" type="Control" parent="." unique_id=364420978]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("3_bpfde")
+
+[node name="CenterContainer" type="CenterContainer" parent="StageEntryScreen" unique_id=576414171]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="StageEntryScreen/CenterContainer" unique_id=1920955874]
+custom_minimum_size = Vector2(960, 540)
+layout_mode = 2
+
+[node name="NamePanel" type="PanelContainer" parent="StageEntryScreen/CenterContainer/VBoxContainer" unique_id=955444010]
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="StageEntryScreen/CenterContainer/VBoxContainer/NamePanel" unique_id=700755609]
+layout_mode = 2
+
+[node name="StageName" type="RichTextLabel" parent="StageEntryScreen/CenterContainer/VBoxContainer/NamePanel/VBoxContainer" unique_id=1535075171]
+layout_mode = 2
+text = "DISCO HILL"
+fit_content = true
+scroll_active = false
+
+[node name="ActName" type="RichTextLabel" parent="StageEntryScreen/CenterContainer/VBoxContainer/NamePanel/VBoxContainer" unique_id=1538772871]
+layout_mode = 2
+text = "ACT 1"
+fit_content = true
+scroll_active = false
+
+[node name="StageDataPAnel" type="PanelContainer" parent="StageEntryScreen/CenterContainer/VBoxContainer" unique_id=1088435716]
+layout_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="StageEntryScreen/CenterContainer/VBoxContainer/StageDataPAnel" unique_id=372873266]
+layout_mode = 2
+
+[node name="StageIcon" type="TextureRect" parent="StageEntryScreen/CenterContainer/VBoxContainer/StageDataPAnel/HBoxContainer" unique_id=1516944983]
+layout_mode = 2
+size_flags_horizontal = 3
+texture = SubResource("NoiseTexture2D_q3et7")
+expand_mode = 5
+stretch_mode = 5
+
+[node name="VBoxContainer" type="VBoxContainer" parent="StageEntryScreen/CenterContainer/VBoxContainer/StageDataPAnel/HBoxContainer" unique_id=1916069960]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="BestTimesLabel" type="RichTextLabel" parent="StageEntryScreen/CenterContainer/VBoxContainer/StageDataPAnel/HBoxContainer/VBoxContainer" unique_id=779372272]
+custom_minimum_size = Vector2(0, 75)
+layout_mode = 2
+text = " "
+scroll_active = false
+
+[node name="BestTimes" type="RichTextLabel" parent="StageEntryScreen/CenterContainer/VBoxContainer/StageDataPAnel/HBoxContainer/VBoxContainer" unique_id=817623176]
+layout_mode = 2
+size_flags_vertical = 3
+bbcode_enabled = true
+text = "? --:--:--"
+
+[node name="ButtonsPanel" type="PanelContainer" parent="StageEntryScreen/CenterContainer/VBoxContainer" unique_id=1000574184]
+layout_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="StageEntryScreen/CenterContainer/VBoxContainer/ButtonsPanel" unique_id=465176859]
+layout_mode = 2
+
+[node name="PlayButton" type="Button" parent="StageEntryScreen/CenterContainer/VBoxContainer/ButtonsPanel/HBoxContainer" unique_id=378494659]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "PLAY"
+
+[node name="UnlockButton" type="Button" parent="StageEntryScreen/CenterContainer/VBoxContainer/ButtonsPanel/HBoxContainer" unique_id=1244155345]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "UNLOCK"
+
+[node name="ExitButton" type="Button" parent="StageEntryScreen/CenterContainer/VBoxContainer/ButtonsPanel/HBoxContainer" unique_id=120734592]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "EXIT"
+
+[node name="CameraTrigger" type="Area3D" parent="." unique_id=2842775]
+collision_mask = 2
+script = ExtResource("6_8pi3l")
+Params = SubResource("Resource_482wa")
+FreeOnExit = true
+EnterLerpTime = 0.1
+ExitLerpTime = 0.1
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="CameraTrigger" unique_id=1362825851]
+shape = SubResource("CylinderShape3D_sajgr")
+
+[node name="CameraPoint" type="Node3D" parent="CameraTrigger" unique_id=1174065883]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -9, 0)
+
+[connection signal="body_entered" from="Area3D" to="." method="OnBodyEnter"]
+[connection signal="pressed" from="StageEntryScreen/CenterContainer/VBoxContainer/ButtonsPanel/HBoxContainer/PlayButton" to="." method="OnPlay"]
+[connection signal="pressed" from="StageEntryScreen/CenterContainer/VBoxContainer/ButtonsPanel/HBoxContainer/UnlockButton" to="." method="OnUnlock"]
+[connection signal="pressed" from="StageEntryScreen/CenterContainer/VBoxContainer/ButtonsPanel/HBoxContainer/ExitButton" to="." method="CloseStageMenu"]
+[connection signal="body_entered" from="CameraTrigger" to="CameraTrigger" method="OnBodyEnter"]
+[connection signal="body_exited" from="CameraTrigger" to="CameraTrigger" method="OnBodyExited"]

@@ -1,0 +1,82 @@
+[gd_scene format=3 uid="uid://8yace8ptej56"]
+
+[ext_resource type="Script" uid="uid://x55ivdqt8gnj" path="res://Scripts/Cutscenes/CutsceneController.cs" id="1_tmdna"]
+[ext_resource type="Theme" uid="uid://di28qbb7lki3f" path="res://Misc/MenuTheme.tres" id="2_nwocy"]
+[ext_resource type="Script" uid="uid://cownw4nk6himd" path="res://Scripts/Cutscenes/CutscenePauseOverlay.cs" id="3_8s6w1"]
+
+[node name="Base Cutscene" type="Control" unique_id=98525472 node_paths=PackedStringArray("PauseOverlay", "ResumeButton", "SkipButton")]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_tmdna")
+PauseOverlay = NodePath("PauseOverlay")
+ResumeButton = NodePath("PauseOverlay/Panel/Content/Buttons/ResumeButton")
+SkipButton = NodePath("PauseOverlay/Panel/Content/Buttons/SkipButton")
+
+[node name="PauseOverlay" type="Control" parent="." unique_id=799355220 node_paths=PackedStringArray("ResumeButton", "SkipButton")]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 1
+theme = ExtResource("2_nwocy")
+script = ExtResource("3_8s6w1")
+ResumeButton = NodePath("Panel/Content/Buttons/ResumeButton")
+SkipButton = NodePath("Panel/Content/Buttons/SkipButton")
+
+[node name="Dimmer" type="ColorRect" parent="PauseOverlay" unique_id=457970554]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+color = Color(0, 0, 0, 0.65)
+
+[node name="Panel" type="PanelContainer" parent="PauseOverlay" unique_id=1925164345]
+custom_minimum_size = Vector2(0, 125)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -227.5
+offset_top = -105.0
+offset_right = 227.5
+offset_bottom = 19.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Content" type="VBoxContainer" parent="PauseOverlay/Panel" unique_id=187971482]
+layout_mode = 2
+theme_override_constants/separation = 18
+
+[node name="Title" type="Label" parent="PauseOverlay/Panel/Content" unique_id=1503848456]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.92, 0.96, 1, 1)
+theme_override_font_sizes/font_size = 30
+text = "Paused"
+horizontal_alignment = 1
+
+[node name="Buttons" type="HBoxContainer" parent="PauseOverlay/Panel/Content" unique_id=622556528]
+layout_mode = 2
+theme_override_constants/separation = 14
+alignment = 1
+
+[node name="ResumeButton" type="Button" parent="PauseOverlay/Panel/Content/Buttons" unique_id=74881933]
+custom_minimum_size = Vector2(150, 48)
+layout_mode = 2
+text = "Resume"
+
+[node name="SkipButton" type="Button" parent="PauseOverlay/Panel/Content/Buttons" unique_id=664671219]
+custom_minimum_size = Vector2(150, 48)
+layout_mode = 2
+text = "Skip"

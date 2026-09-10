@@ -1,0 +1,11 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://bih3gobdtv1tj"]
+
+[ext_resource type="Texture2D" uid="uid://ckp4iiveepneo" path="res://SonicAssets/Models/Enemies/textures/enm_eggpawn_eye_ems_HD.dds" id="1_n6bfr"]
+
+[resource]
+resource_name = "enm_eggpawn_teeth"
+cull_mode = 2
+albedo_texture = ExtResource("1_n6bfr")
+metallic = 1.0
+emission_enabled = true
+emission_texture = ExtResource("1_n6bfr")

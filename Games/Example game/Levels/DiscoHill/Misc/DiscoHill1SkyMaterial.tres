@@ -1,0 +1,17 @@
+[gd_resource type="Sky" format=3 uid="uid://cbutx2vroqt8s"]
+
+[ext_resource type="Shader" uid="uid://c3o5aqajy5p0p" path="res://Games/Example game/Levels/DiscoHill/Misc/DiscoHillSkyMaterial.tres" id="1_ecm1a"]
+[ext_resource type="Texture2D" uid="uid://ptbptb4v6n32" path="res://Games/Example game/Levels/DiscoHill/Textures/BackgroundGround_a.png" id="2_qjr0x"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_ntssh"]
+shader = ExtResource("1_ecm1a")
+shader_parameter/Vector2Parameter = Vector2(0.001, 0)
+shader_parameter/SkyColor = Color(1, 0, 1, 1)
+shader_parameter/GroundColor = Color(0, 1, 1, 1)
+shader_parameter/UvScale = Vector3(10, 10, 10)
+shader_parameter/UvOffset = Vector3(0, 1, 0)
+shader_parameter/GridTexture = ExtResource("2_qjr0x")
+
+[resource]
+sky_material = SubResource("ShaderMaterial_ntssh")
+radiance_size = 0

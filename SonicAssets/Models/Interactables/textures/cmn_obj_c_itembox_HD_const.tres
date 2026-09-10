@@ -1,0 +1,8 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://ck0u4h27h6i3a"]
+
+[ext_resource type="Texture2D" uid="uid://b05s8roakre6g" path="res://SonicAssets/Models/Interactables/textures/cmn_obj_c_itembox01_dif_HD.dds" id="1_lonkn"]
+
+[resource]
+resource_name = "cmn_obj_c_itembox_HD_const"
+albedo_texture = ExtResource("1_lonkn")
+metallic = 1.0

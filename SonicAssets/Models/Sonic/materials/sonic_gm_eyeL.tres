@@ -1,0 +1,15 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://bmdvxqfx7a0mr"]
+
+[ext_resource type="Texture2D" uid="uid://e85d80n0hkfk" path="res://SonicAssets/Models/Sonic/textures/chr_sonic_eye_dif_HD.dds" id="1_oh7eb"]
+[ext_resource type="Texture2D" uid="uid://1x2gee5wnrdi" path="res://SonicAssets/Models/Sonic/textures/chr_sonic_eye_spc_HD.dds" id="2_78hgl"]
+[ext_resource type="Texture2D" uid="uid://dnw14jpvwxdwr" path="res://SonicAssets/Models/Sonic/textures/chr_sonic_eye_nrm_HD.dds" id="3_phb7x"]
+
+[resource]
+resource_name = "sonic_gm_eyeL"
+diffuse_mode = 2
+vertex_color_use_as_albedo = true
+albedo_texture = ExtResource("1_oh7eb")
+metallic_specular = 0.0
+metallic_texture = ExtResource("2_78hgl")
+normal_enabled = true
+normal_texture = ExtResource("3_phb7x")

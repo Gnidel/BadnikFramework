@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://cpsc1677foh7m"
+path="res://.godot/imported/019.Synth_MLT_se_ch_wk_mech shot 1.wav-6efa1c0fc4b2f2b5f0d503b4b5c1c829.sample"
+
+[deps]
+
+source_file="res://SonicAssets/Audio/Tails/019.Synth_MLT_se_ch_wk_mech shot 1.wav"
+dest_files=["res://.godot/imported/019.Synth_MLT_se_ch_wk_mech shot 1.wav-6efa1c0fc4b2f2b5f0d503b4b5c1c829.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

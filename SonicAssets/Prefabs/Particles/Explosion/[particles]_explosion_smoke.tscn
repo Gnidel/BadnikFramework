@@ -1,0 +1,60 @@
+[gd_scene format=3 uid="uid://bn0w1wfhke11m"]
+
+[ext_resource type="Texture2D" uid="uid://cqtonqbgsugeh" path="res://SonicAssets/Prefabs/Particles/Explosion/Nolse2.png" id="1_6k5bx"]
+
+[sub_resource type="Gradient" id="Gradient_2q7li"]
+colors = PackedColorArray(1, 1, 1, 0.25098, 1, 1, 1, 0.25098)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_prq5p"]
+gradient = SubResource("Gradient_2q7li")
+
+[sub_resource type="Curve" id="Curve_v2plj"]
+_data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(1, 1), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="CurveTexture" id="CurveTexture_h1hg1"]
+curve = SubResource("Curve_v2plj")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_vaucc"]
+emission_shape = 2
+emission_sphere_radius = 1.0
+angle_min = -360.0
+angle_max = 360.0
+direction = Vector3(0, 0, 0)
+spread = 180.0
+initial_velocity_max = 5.0
+angular_velocity_min = -30.0
+angular_velocity_max = 30.0
+gravity = Vector3(0, 0, 0)
+scale_max = 5.0
+scale_curve = SubResource("CurveTexture_h1hg1")
+color = Color(1, 0.87451, 0.568627, 1)
+color_ramp = SubResource("GradientTexture1D_prq5p")
+sub_emitter_mode = 1
+sub_emitter_frequency = 4.0
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_fk6gr"]
+transparency = 1
+blend_mode = 1
+shading_mode = 0
+vertex_color_use_as_albedo = true
+albedo_texture = ExtResource("1_6k5bx")
+disable_receive_shadows = true
+billboard_mode = 3
+billboard_keep_scale = true
+particles_anim_h_frames = 1
+particles_anim_v_frames = 1
+particles_anim_loop = false
+
+[sub_resource type="QuadMesh" id="QuadMesh_u4yqr"]
+material = SubResource("StandardMaterial3D_fk6gr")
+
+[node name="[Particles] ExplosionSmoke" type="GPUParticles3D" unique_id=2076434605]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 16.1392, 0)
+cast_shadow = 0
+emitting = false
+one_shot = true
+speed_scale = 2.0
+explosiveness = 0.5
+process_material = SubResource("ParticleProcessMaterial_vaucc")
+draw_pass_1 = SubResource("QuadMesh_u4yqr")

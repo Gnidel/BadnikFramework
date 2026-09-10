@@ -1,0 +1,12 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://dmklf1g0ansvj"]
+
+[ext_resource type="Texture2D" uid="uid://c5xhssjqim8y4" path="res://SonicAssets/Models/Vehicles/Blue Star/Blue Star_gear_sonic.png" id="1_1hsqo"]
+[ext_resource type="Texture2D" uid="uid://csadcq6h2m7yd" path="res://SonicAssets/Models/Vehicles/Blue Star/Blue Star_gear_sonic_NRM.png" id="2_8m6it"]
+
+[resource]
+resource_name = "gear_sonic"
+cull_mode = 2
+albedo_texture = ExtResource("1_1hsqo")
+roughness = 0.929289
+normal_enabled = true
+normal_texture = ExtResource("2_8m6it")

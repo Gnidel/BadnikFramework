@@ -1,0 +1,13 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://bvqs01goxt6dd"]
+
+[ext_resource type="Texture2D" uid="uid://cnfp0jaynol1i" path="res://SonicAssets/Models/Interactables/textures/cmn_obj_grindbooster_body_abd.dds" id="1_3y5e7"]
+[ext_resource type="Texture2D" uid="uid://bfgqd607gj2yn" path="res://SonicAssets/Models/Interactables/textures/cmn_obj_grindbooster_body_nrm.dds" id="2_yeb5i"]
+
+[resource]
+resource_name = "cmn_obj_grindbooster_body"
+cull_mode = 2
+albedo_texture = ExtResource("1_3y5e7")
+roughness = 0.5
+emission_enabled = true
+normal_enabled = true
+normal_texture = ExtResource("2_yeb5i")

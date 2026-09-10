@@ -1,0 +1,18 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://mq06lhi7pbdq"]
+
+[ext_resource type="Texture2D" uid="uid://otydnyvocleg" path="res://Games/Example game/Levels/DiscoHill/Textures/NoiseGrid_a.png" id="1_mtqnn"]
+[ext_resource type="Texture2D" uid="uid://doyebmlhbjno2" path="res://Games/Example game/Levels/DiscoHill/Textures/NoiseGrid_n2.png" id="2_dy8o5"]
+
+[resource]
+resource_name = "Walls"
+vertex_color_use_as_albedo = true
+albedo_color = Color(0.906332, 0.906332, 0.906332, 1)
+albedo_texture = ExtResource("1_mtqnn")
+metallic = 1.0
+roughness = 0.0
+normal_enabled = true
+normal_texture = ExtResource("2_dy8o5")
+heightmap_enabled = true
+heightmap_scale = 1.0
+heightmap_texture = ExtResource("1_mtqnn")
+texture_filter = 5

@@ -1,0 +1,9 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://bceu1vy0sxc6e"]
+
+[ext_resource type="Texture2D" uid="uid://c04yyls0drbcj" path="res://SonicAssets/Models/Vehicles/Blue Star/Blue Star_gear_sonic_light.png" id="1_pwum5"]
+
+[resource]
+resource_name = "gear_sonic_light"
+cull_mode = 2
+albedo_texture = ExtResource("1_pwum5")
+roughness = 0.929289

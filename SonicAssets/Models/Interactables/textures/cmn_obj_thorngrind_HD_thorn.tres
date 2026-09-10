@@ -1,0 +1,9 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://davtjumsqd2ne"]
+
+[ext_resource type="Texture2D" uid="uid://wwxgks2r1lc" path="res://SonicAssets/Models/Interactables/textures/cmn_metal_ms_thornparts_dif.dds" id="1_ln2g2"]
+
+[resource]
+resource_name = "cmn_obj_thorngrind_HD_thorn"
+albedo_texture = ExtResource("1_ln2g2")
+metallic = 1.0
+roughness = 0.5

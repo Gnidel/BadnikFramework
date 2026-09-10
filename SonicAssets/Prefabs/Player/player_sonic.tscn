@@ -1,0 +1,1117 @@
+[gd_scene format=4 uid="uid://d8hhtv3xe6u6"]
+
+[ext_resource type="Script" uid="uid://c7qh6w7if6scm" path="res://Scripts/Player/PlayerController.cs" id="1_dr35b"]
+[ext_resource type="PackedScene" uid="uid://bouf4l1axiwa" path="res://SonicAssets/Models/Sonic/sonic_model.tscn" id="2_ifp8b"]
+[ext_resource type="PackedScene" uid="uid://cctqkqj4m0itg" path="res://SonicAssets/Models/Sonic/sonic_super_model.tscn" id="3_lfcf0"]
+[ext_resource type="Script" uid="uid://des8errgg2rlm" path="res://Scripts/Player/ActionDash.cs" id="3_x7gvs"]
+[ext_resource type="AudioStream" uid="uid://dxlkeb710adri" path="res://SonicAssets/Audio/Sonic/Synth_2000000_player_2001000_PLY_SNC_CL_2001_050_stylechange_aif.wav" id="4_ajvwr"]
+[ext_resource type="Script" uid="uid://dt6h8005dk8b7" path="res://Scripts/Player/PlayerActions.cs" id="4_yrv08"]
+[ext_resource type="AudioStream" uid="uid://cd1aw5a6oohp4" path="res://SonicAssets/Audio/Sonic/Synth_2000000_player_2002000_PLY_SNC_GE_2002_029_homing_aif.wav" id="5_5mxhk"]
+[ext_resource type="Script" uid="uid://cl2i8ae6rr3e2" path="res://Scripts/Player/ActionJump.cs" id="6_grlnp"]
+[ext_resource type="AudioStream" uid="uid://d2mjacnm1woaf" path="res://SonicAssets/Audio/Sonic/Synth_2000000_player_2002000_PLY_SNC_GE_2002_027_jump_aif.wav" id="7_6s6jw"]
+[ext_resource type="Script" uid="uid://dqiuw2fchaget" path="res://Scripts/Player/ActionRoll.cs" id="8_i5755"]
+[ext_resource type="AudioStream" uid="uid://cny8w2g0qju4f" path="res://SonicAssets/Audio/Sonic/Synth_2000000_player_2001000_PLY_SNC_CL_2001_048_spin_lp_cl_AIF_1.wav" id="9_g351b"]
+[ext_resource type="Script" uid="uid://cuyhf8powgde2" path="res://Scripts/Player/ActionHoming.cs" id="10_2fur4"]
+[ext_resource type="AudioStream" uid="uid://d00unp7d787l7" path="res://SonicAssets/Audio/Sonic/Synth_2000000_player_2001000_PLY_SNC_CL_2001_049_spindash_cl_AIF.wav" id="10_nf6fd"]
+[ext_resource type="AudioStream" uid="uid://c8np4rw8ixlqf" path="res://SonicAssets/Audio/Items/se_object_common#21 (obj_lockon).wav" id="11_mui1q"]
+[ext_resource type="AudioStream" uid="uid://q1w0kvg8yrqm" path="res://SonicAssets/Audio/Sonic/DropDash.wav" id="12_8bj20"]
+[ext_resource type="Script" uid="uid://ce2smry30063w" path="res://Scripts/Player/ActionCombat.cs" id="12_ujxup"]
+[ext_resource type="Script" uid="uid://dkr4vbugd6dyt" path="res://Scripts/Player/ActionGrind.cs" id="13_g23ex"]
+[ext_resource type="AudioStream" uid="uid://2da3no4p5ndm" path="res://SonicAssets/Audio/Sonic/se_player_sonic#18 (sn_rail_contact).wav" id="14_720ts"]
+[ext_resource type="AudioStream" uid="uid://da7rfjgpxn6q4" path="res://SonicAssets/Audio/Sonic/se_wars_player_common#16 (sn_rail_glind).wav" id="15_xrj3r"]
+[ext_resource type="PackedScene" uid="uid://bkt2qp7430moc" path="res://SonicAssets/Prefabs/Misc/homing_target.tscn" id="16_t7sgb"]
+[ext_resource type="Script" uid="uid://dy7o1q8bisxi0" path="res://Scripts/Player/ActionAutoGimmick.cs" id="17_s4khx"]
+[ext_resource type="Script" uid="uid://bekb3no8jwhfy" path="res://Scripts/Player/PlayerInput.cs" id="18_yw2pr"]
+[ext_resource type="Script" uid="uid://jc4i8cbjfkkl" path="res://Scripts/Player/ActionSuperTransformation.cs" id="19_7n8sk"]
+[ext_resource type="Script" uid="uid://dsup1obwjuvyc" path="res://Scripts/Player/PlayerDamage.cs" id="19_ufiip"]
+[ext_resource type="PackedScene" uid="uid://dihc118cta0m7" path="res://SonicAssets/Prefabs/Items/[item]_physics_ring.tscn" id="20_mj8q3"]
+[ext_resource type="AudioStream" uid="uid://ckoaa6tsyx3r" path="res://SonicAssets/Audio/Sonic/Synth_2000000_player_2010000_PLY_SSN_2010_005_lightattack03_aif.wav" id="21_tox5f"]
+[ext_resource type="AudioStream" uid="uid://cm6vnvunmxtae" path="res://SonicAssets/Audio/Items/se_object_common#2 (obj_ringspread).wav" id="21_v6k1d"]
+[ext_resource type="AudioStream" uid="uid://cg427nmhlb20d" path="res://SonicAssets/Audio/Sonic/se_object_common#12 (obj_needle_panel_damage).wav" id="22_iw5ew"]
+[ext_resource type="Script" uid="uid://dc888dtq5pgwp" path="res://Scripts/Player/ActionBoost.cs" id="22_w3yvq"]
+[ext_resource type="AudioStream" uid="uid://cxicbcxcmfmh7" path="res://SonicAssets/Audio/Sonic/Synth_2000000_player_2002000_PLY_SNC_GE_2002_030_boost_1_aif.wav" id="23_j62rq"]
+[ext_resource type="Script" uid="uid://c0gyr3i0r782g" path="res://Scripts/Player/SplineMovement.cs" id="23_x3ioi"]
+[ext_resource type="AudioStream" uid="uid://t6rju43ggkd2" path="res://SonicAssets/Audio/Sonic/se_player_sonic#14 (sn_boost_loop).wav" id="24_1kt7o"]
+[ext_resource type="Script" uid="uid://dssuaink6meuf" path="res://Scripts/Player/CheckpointSystem.cs" id="24_nk2xp"]
+[ext_resource type="Script" uid="uid://bnaq6pwmn1fuc" path="res://Scripts/Player/ActionDrift.cs" id="24_sd35b"]
+[ext_resource type="Script" uid="uid://pavcjdh2ttls" path="res://Scripts/Player/NpcPartnerControl.cs" id="25_5mypi"]
+[ext_resource type="AudioStream" uid="uid://dwjax7uyttxrj" path="res://SonicAssets/Audio/Sonic/se_player_sonic#22 (sn_drift).ogg" id="25_8rspw"]
+[ext_resource type="Script" uid="uid://dnfmnsfqccsxv" path="res://Scripts/Player/PlayerInventory.cs" id="26_tu5p1"]
+[ext_resource type="Script" uid="uid://dcwxenrk7fyd" path="res://Scripts/Player/ActionQuickStep.cs" id="27_177ch"]
+[ext_resource type="AudioStream" uid="uid://7nfugjg5beod" path="res://SonicAssets/Audio/Sonic/se_player_sonic#13 (sn_boost_loop).ogg" id="27_a1s0c"]
+[ext_resource type="Script" uid="uid://y47n4ov38iw2" path="res://Scripts/Interactables/Hitbox.cs" id="28_5w2ao"]
+[ext_resource type="AudioStream" uid="uid://b6joowuw6j55n" path="res://SonicAssets/Audio/Sonic/se_wars_player_common#82 (sn_quickstep; tag_hand2_pull; tag_hand_pull).wav" id="28_oyo4s"]
+[ext_resource type="AudioStream" uid="uid://bvgdcc14fcwa8" path="res://SonicAssets/Audio/Sonic/se_wars_player_common#74 (sn_parkour_roll).wav" id="29_7kvyt"]
+[ext_resource type="Script" uid="uid://d0rd6cimu685c" path="res://Scripts/Interactables/Hurtbox.cs" id="29_fsl47"]
+[ext_resource type="Script" uid="uid://bguk6jru5k85x" path="res://Scripts/Player/WaterInteraction.cs" id="30_7fdmi"]
+[ext_resource type="PackedScene" uid="uid://svvx4vt7j1sl" path="res://SonicAssets/Prefabs/Particles/GrindSpark/[Particles] grind_trail.tscn" id="30_h588r"]
+[ext_resource type="Script" uid="uid://bqy4qk3rnj7ub" path="res://Scripts/Player/ActionStomp.cs" id="30_pfwjt"]
+[ext_resource type="Texture2D" uid="uid://djrgqr70cf83b" path="res://SonicAssets/Textures/ef_ch_snc_yh1_spinsmoke1.png" id="31_2pqlo"]
+[ext_resource type="AudioStream" uid="uid://coeq6f05okmtf" path="res://SonicAssets/Music/Drowning - Sonic the Hedgehog 4 Episode II.ogg" id="31_063a7"]
+[ext_resource type="AudioStream" uid="uid://cn3gbqm8v4pel" path="res://SonicAssets/Audio/Sonic/Synth_2000000_player_2002000_PLY_SNC_GE_2002_042_stomping_aif.wav" id="31_ddql1"]
+[ext_resource type="AudioStream" uid="uid://dkpge08nw2ejk" path="res://SonicAssets/Audio/Sonic/Synth_2000000_player_2010000_PLY_SSN_2010_000_boost02_aif.wav" id="31_r6t27"]
+[ext_resource type="AudioStream" uid="uid://wq078mqjuo68" path="res://SonicAssets/Audio/Sonic/Sonic Drowning (Sound Effect).ogg" id="32_085vm"]
+[ext_resource type="AudioStream" uid="uid://d28xhgo4u1sak" path="res://SonicAssets/Audio/Sonic/Synth_2000000_player_2002000_PLY_SNC_GE_2002_043_stomping_lnd_aif.wav" id="32_beedn"]
+[ext_resource type="Texture2D" uid="uid://2asdb5qjprcw" path="res://SonicAssets/Textures/ef_ch_sns_yh1_hitshock2.png" id="33_1b6g3"]
+[ext_resource type="AudioStream" uid="uid://c4i6msiki4l1r" path="res://SonicAssets/Audio/Sonic/012.Synth_MLT_se_ch_sn_Bounce Bracelet.wav" id="33_el3xq"]
+[ext_resource type="PackedScene" uid="uid://b5phasqupvnea" path="res://SonicAssets/Prefabs/Particles/GrindSpark/[Particles] run_trail.tscn" id="34_7a5y4"]
+[ext_resource type="PackedScene" uid="uid://cpdxjurn7catw" path="res://SonicAssets/Prefabs/Particles/GrindSpark/[particles]_grind_sparks.tscn" id="35_21svq"]
+[ext_resource type="Script" uid="uid://cd1u2x02mh5gp" path="res://Scripts/Player/HitboxControl.cs" id="35_jqdwv"]
+[ext_resource type="Script" uid="uid://dea1hbuwugf27" path="res://Scripts/Player/WaterDrowningTrigger.cs" id="36_8ictt"]
+[ext_resource type="Script" uid="uid://mny7pa15i1hk" path="res://Scripts/Player/ActionSkate.cs" id="36_lspq2"]
+[ext_resource type="PackedScene" uid="uid://bkm2q3gcvplul" path="res://SonicAssets/Prefabs/Particles/StepSmoke/[particles]_step_smoke.tscn" id="36_rrow3"]
+[ext_resource type="AudioStream" uid="uid://brib2ixubf8sx" path="res://SonicAssets/Audio/Voices/en/Announcer/se_voice_system_E#6 (systemvoice_v008)_good.ogg" id="37_vlka6"]
+[ext_resource type="Texture2D" uid="uid://kidwn2ta73ic" path="res://SonicAssets/Textures/DropShadow.png" id="37_w8u76"]
+[ext_resource type="AudioStream" uid="uid://8y786f7utsig" path="res://SonicAssets/Audio/Voices/en/Announcer/se_voice_system_E#4 (systemvoice_v006)_great.ogg" id="38_6dkl6"]
+[ext_resource type="Script" uid="uid://b2nhdcoxns06m" path="res://Scripts/Player/WaterRunTrigger.cs" id="39_6jkub"]
+[ext_resource type="AudioStream" uid="uid://bt56mqfl2koiw" path="res://SonicAssets/Audio/Voices/en/Announcer/se_voice_system_E#3 (systemvoice_v005)_awesome.ogg" id="39_pohqo"]
+[ext_resource type="PackedScene" uid="uid://q1juvm3cn2dw" path="res://SonicAssets/Prefabs/Particles/StepSplash/[particles]_step_splash.tscn" id="40_hhpkd"]
+[ext_resource type="AudioStream" uid="uid://o7krqf4ns7el" path="res://SonicAssets/Audio/Voices/en/Announcer/se_voice_system_E#2 (systemvoice_v004)_outstanding.ogg" id="40_sh2wi"]
+[ext_resource type="AudioStream" uid="uid://dytjs505cs3g1" path="res://SonicAssets/Audio/Voices/en/Announcer/se_voice_system_E#1 (systemvoice_v003)_amazing.ogg" id="41_ww57t"]
+[ext_resource type="AudioStream" uid="uid://dyt0omfakx6oy" path="res://SonicAssets/Audio/Sonic/se_object_common#29 (objsn_jumpslct_ok; objsn_trickjump_ok; objsn_trickjump_ok_02; objsn_trickjump_ok_03; objsn_trickjump_ok_04; objsn_trickjump_ok_05).wav" id="42_ymias"]
+[ext_resource type="AudioStream" uid="uid://b6xjjbfigjga0" path="res://SonicAssets/Audio/Sonic/se_object_common#30 (objsn_trickbjump_ng).wav" id="43_7mioh"]
+[ext_resource type="PackedScene" uid="uid://bbrnnm8q57hrr" path="res://SonicAssets/Prefabs/Particles/Numbers/[particles] num_5.tscn" id="48_16wch"]
+[ext_resource type="AudioStream" uid="uid://dfdughps8v31e" path="res://SonicAssets/Audio/Sonic/se_player_sonic#71 (sn_land_waterdeep).wav" id="48_uj8jc"]
+[ext_resource type="PackedScene" uid="uid://b32lws6vpetlk" path="res://SonicAssets/Prefabs/Particles/Numbers/[particles] num_4.tscn" id="49_gy4ob"]
+[ext_resource type="PackedScene" uid="uid://cm5frukhmsus3" path="res://SonicAssets/Prefabs/Particles/Numbers/[particles] num_3.tscn" id="50_dblp2"]
+[ext_resource type="PackedScene" uid="uid://bwa0bshjovs8a" path="res://SonicAssets/Prefabs/Particles/Numbers/[particles] num_2.tscn" id="51_3l31u"]
+[ext_resource type="PackedScene" uid="uid://4ivvbodptsm6" path="res://SonicAssets/Prefabs/Particles/Numbers/[particles] num_1.tscn" id="52_ovajg"]
+[ext_resource type="PackedScene" uid="uid://ba5tiufrfu2o7" path="res://SonicAssets/Prefabs/Particles/Numbers/[particles] num_0.tscn" id="53_q7vof"]
+[ext_resource type="Shader" uid="uid://b8vwfv2s8duv5" path="res://Shaders/SonicBoomShader.tres" id="56_ad3cf"]
+[ext_resource type="ArrayMesh" uid="uid://b7r77et2tpivf" path="res://SonicAssets/Prefabs/Particles/Shockwave/Shockwave.res" id="57_qdaao"]
+[ext_resource type="Script" uid="uid://bp5u357iofl1t" path="res://addons/trail_3d/trail_3d.gd" id="65_26ox2"]
+[ext_resource type="Texture2D" uid="uid://df74mrtae2drg" path="res://SonicAssets/Prefabs/Particles/LinesTrail/lines.png" id="69_sbh3i"]
+[ext_resource type="Texture2D" uid="uid://drx81jgp56afq" path="res://SonicAssets/Prefabs/Particles/StompShockwave/stomp_shockwave.png" id="74_wf1jn"]
+[ext_resource type="Texture2D" uid="uid://dbfp0yrjwhi6g" path="res://SonicAssets/Prefabs/Particles/Glitter/ef_ch_sns_yh1_glitter2.png" id="86_6dkl6"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_3fppr"]
+friction = 0.0
+rough = true
+absorbent = true
+
+[sub_resource type="Curve" id="Curve_4npxy"]
+_limits = [0.0, 50.0, 0.0, 1.0]
+_data = [Vector2(0, 50), 0.0, 0.0, 0, 0, Vector2(0.24, 50), 0.0, 0.0, 0, 0, Vector2(0.25, 10), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
+point_count = 4
+
+[sub_resource type="Curve" id="Curve_njqdl"]
+_limits = [0.0, 2.0, 0.0, 1.0]
+_data = [Vector2(0, 2), 0.0, 0.0, 0, 0, Vector2(0.503, 2), 0.0, 0.0, 0, 0, Vector2(0.75, 0), 0.0, 0.0, 0, 0]
+point_count = 3
+
+[sub_resource type="Curve" id="Curve_nkr8l"]
+_limits = [0.1, 10.0, 0.0, 1.0]
+_data = [Vector2(0, 0.1), 0.0, 0.0, 0, 0, Vector2(0.5, 5), 0.0, 0.0, 0, 0, Vector2(1, 10), 0.0, 0.0, 0, 0]
+point_count = 3
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_rjjsx"]
+radius = 0.2
+height = 0.8
+
+[sub_resource type="Curve" id="Curve_8gcvw"]
+_data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(0.501539, 1), 0.0, 0.0, 0, 0, Vector2(0.901538, 1), 0.0, 0.0, 0, 0]
+point_count = 3
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_p0f02"]
+radius = 1.0
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_41ysv"]
+radius = 1.0
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_d8cyr"]
+radius = 0.25
+height = 1.0
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_c3l4w"]
+height = 1.0
+radius = 5.0
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_iil7v"]
+size = Vector3(5, 1, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_wrk0d"]
+size = Vector3(5, 1, 1)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_4q8n6"]
+size = Vector3(0.1, 0.1, 0.1)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_7rbsh"]
+size = Vector3(0.5, 0.2, 0.5)
+
+[sub_resource type="Curve" id="Curve_08fg5"]
+_data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(1, 1), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="CurveTexture" id="CurveTexture_4j105"]
+curve = SubResource("Curve_08fg5")
+
+[sub_resource type="Gradient" id="Gradient_l4n7s"]
+offsets = PackedFloat32Array(0.0864865, 0.221622, 0.77027, 1)
+colors = PackedColorArray(0, 0, 0, 0, 0.847059, 0.847059, 0.847059, 1, 0.917647, 0.917647, 0.917647, 0, 1, 1, 1, 0)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_hipo4"]
+gradient = SubResource("Gradient_l4n7s")
+
+[sub_resource type="Curve" id="Curve_30edx"]
+_data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(1, 1), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="CurveTexture" id="CurveTexture_6eu1w"]
+curve = SubResource("Curve_30edx")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_wjr38"]
+particle_flag_align_y = true
+particle_flag_rotate_y = true
+angle_min = -360.0
+angle_max = 360.0
+angle_curve = SubResource("CurveTexture_4j105")
+spread = 0.0
+initial_velocity_min = 2.0
+initial_velocity_max = 6.0
+gravity = Vector3(0, 0, 0)
+tangential_accel_min = 2.0
+tangential_accel_max = 5.0
+scale_max = 3.0
+scale_curve = SubResource("CurveTexture_6eu1w")
+color_ramp = SubResource("GradientTexture1D_hipo4")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_amd6a"]
+transparency = 1
+blend_mode = 1
+shading_mode = 0
+vertex_color_use_as_albedo = true
+albedo_texture = ExtResource("31_2pqlo")
+disable_receive_shadows = true
+billboard_mode = 3
+billboard_keep_scale = true
+particles_anim_h_frames = 2
+particles_anim_v_frames = 2
+particles_anim_loop = false
+
+[sub_resource type="QuadMesh" id="QuadMesh_cdkly"]
+material = SubResource("StandardMaterial3D_amd6a")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_57tsf"]
+particle_flag_align_y = true
+particle_flag_rotate_y = true
+emission_shape = 6
+emission_ring_axis = Vector3(0, 0, 1)
+emission_ring_height = 0.1
+emission_ring_radius = 0.5
+emission_ring_inner_radius = 0.0
+emission_ring_cone_angle = 90.0
+angle_min = -360.0
+angle_max = 360.0
+angle_curve = SubResource("CurveTexture_4j105")
+spread = 0.0
+initial_velocity_min = 3.0
+initial_velocity_max = 9.0
+gravity = Vector3(0, 0, 0)
+tangential_accel_min = 2.0
+tangential_accel_max = 5.0
+attractor_interaction_enabled = false
+scale_max = 3.0
+scale_curve = SubResource("CurveTexture_6eu1w")
+color_ramp = SubResource("GradientTexture1D_hipo4")
+anim_speed_max = 1.0
+
+[sub_resource type="Gradient" id="Gradient_dn4r2"]
+offsets = PackedFloat32Array(0, 0.191892, 1)
+colors = PackedColorArray(1, 1, 1, 0, 1, 1, 1, 0.501961, 1, 1, 1, 0)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_wa27x"]
+gradient = SubResource("Gradient_dn4r2")
+
+[sub_resource type="Curve" id="Curve_0of24"]
+_data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(1, 1), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="CurveTexture" id="CurveTexture_ic2m4"]
+curve = SubResource("Curve_0of24")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_rhfmy"]
+angle_max = 122.3
+direction = Vector3(0, 0, 1)
+spread = 0.0
+initial_velocity_min = 5.0
+initial_velocity_max = 5.0
+gravity = Vector3(0, 0, 0)
+scale_curve = SubResource("CurveTexture_ic2m4")
+color_ramp = SubResource("GradientTexture1D_wa27x")
+
+[sub_resource type="Gradient" id="Gradient_l85uq"]
+offsets = PackedFloat32Array(0, 0.191892, 1)
+colors = PackedColorArray(1, 1, 1, 0, 1, 1, 1, 0.501961, 1, 1, 1, 0)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_c26el"]
+gradient = SubResource("Gradient_l85uq")
+
+[sub_resource type="Curve" id="Curve_5e3tx"]
+_data = [Vector2(0, 0.494737), 0.0, 0.0, 0, 0, Vector2(1, 1), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="CurveTexture" id="CurveTexture_ctp8v"]
+curve = SubResource("Curve_5e3tx")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_71tld"]
+angle_max = 122.3
+direction = Vector3(0, 0, 1)
+spread = 0.0
+initial_velocity_min = 5.0
+initial_velocity_max = 5.0
+gravity = Vector3(0, 0, 0)
+scale_curve = SubResource("CurveTexture_ctp8v")
+color_ramp = SubResource("GradientTexture1D_c26el")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_gnk6s"]
+resource_name = "Shockwave"
+transparency = 1
+blend_mode = 1
+cull_mode = 2
+shading_mode = 0
+vertex_color_use_as_albedo = true
+albedo_texture = ExtResource("33_1b6g3")
+disable_receive_shadows = true
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_qdq3s"]
+_surfaces = [{
+"aabb": AABB(-1.00112, -1, -1.19777, 2, 2, 2.00001),
+"format": 34359742465,
+"index_count": 1440,
+"index_data": PackedByteArray("AOAgPgAgUD4AwJA+AACAPwDgID4AIFA+AMCQPgAAgD8A4CA+ACBQPgDAkD4AAIA/AOAgPgAgUD4AwJA+AACAPwDgID4AIFA+AMCQPgAAgD8A4CA+ACBQPgDAkD4AAIA/AOAgPgAgUD4AwJA+AACAPwDgID4AIFA+AMCQPgAAgD8A4CA+ACBQPgDAkD4AAIA/AOAgPgAgUD4AwJA+AACAPwDgID4AIFA+AMCQPgAAgD8A4CA+ACBQPgDAkD4AAIA/AOAgPgAgUD4AwJA+AACAPwDgID4AIFA+AMCQPgAAgD8A4CA+ACBQPgDAkD4AAIA/AOAgPgAgUD4AwJA+AACAPwDgID4AIFA+AMCQPgAAgD8A4CA+ACBQPgDAkD4AAIA/AOAgPgAgUD4AwJA+AACAPwDgID4AIFA+AMCQPgAAgD8A4CA+ACBQPgDAkD4AAIA/AOAgPgAgUD4AwJA+AACAPwDgID4AIFA+AMCQPgAAgD8A4CA+ACBQPgDAkD4AAIA/AOAgPgAgUD4AwJA+AACAPwDgID4AIFA+AMCQPgAAgD8A4CA+ACBQPgDAkD4AAIA/AOAgPgAgUD4AwJA+AACAPwDgID4AIFA+AMCQPgAAgD8A4CA+ACBQPgDAkD4AAIA/AOAgPgAgUD4AwJA+AACAPwDgID4AIFA+AMCQPgAAgD8A4CA+ACBQPgDAkD4AAIA/AOAgPgAgUD4AwJA+AACAPwDgID4AIFA+AMCQPgAAgD8A4CA+ACBQPgDAkD4AAIA/AOAgPgAgUD4AwJA+AACAPwDgID4AIFA+AMCQPgAAgD8A4CA+ACBQPgDAkD4AAIA/AOAgPgAgUD4AwJA+AACAPwDgID4AIFA+AMCQPgAAgD8A4CA+ACBQPgDAkD4AAIA/AOAgPgAgUD4AwJA+AACAPwDgID4AIFA+AMCQPgAAgD8A4CA+ACBQPgDAkD4AAIA/AOAgPgAgUD4AwJA+AACAPwDgID4AIFA+AMCQPgAAgD8A4CA+ACBQPgDAkD4AAIA/AOAgPgAgUD4AwJA+AACAPwDgID4AIFA+AMCQPgAAgD8A4CA+ACBQPgDAkD4AAIA/AOAgPgAgUD4AwJA+AACAPwDgID4AIFA+AMCQPgAAgD8A4CA+ACBQPgDAkD4AAIA/AOAgPgAgUD4AwJA+AACAPwDgID4AIFA+AMCQPgAAgD8A4CA+ACBQPgDAkD4AAIA/AOAgPgAgUD4AwJA+AACAPwDgID4AIFA+AMCQPgAAgD8A4CA+ACBQPgDAkD4AAIA/AOAgPgAgUD4AwJA+AACAPwDgID4AIFA+AMCQPgAAgD8A4CA+ACBQPgDAkD4AAIA/AOAgPgAgUD4AwJA+AACAPwDgID4AIFA+AMCQPgAAgD8A4CA+ACBQPgDAkD4AAIA/AOAgPgAgUD4AwJA+AACAPwDgID4AIFA+AMCQPgAAgD8A4CA+ACBQPgDAkD4AAIA/AOAgPgAgUD4AwJA+AACAPwDgID4AIFA+AMCQPgAAgD8A4CA+ACBQPgDAkD4AAIA/AOAgPgAgUD4AwJA+AACAPwDgID4AIFA+AMCQPgAAgD8A4CA+ACBQPgDAkD4AAIA/AOAgPgAgUD4AwJA+AACAPwDgID4AIFA+AMCQPgAAgD8A4CA+ACBQPgDAkD4AAIA/AOAgPgAgUD4AwJA+AACAPwDgID4AIFA+AMCQPgAAgD8A4CA+ACBQPgDAkD4AAIA/AOAgPgAgUD4AwJA+AACAPwDgID4AIFA+AMCQPgAAgD8A4CA+ACBQPgDAkD4AAIA/AOAgPgAgUD4AwJA+AACAPwDgID4AIFA+AMCQPgAAgD8A4CA+ACBQPgDAkD4AAIA/AOAgPgAgUD4AwJA+AACAPwDgID4AIFA+AMCQPgAAgD8A4CA+ACBQPgDAkD4AAIA/AOAgPgAgUD4AwJA+AACAPwDgID4AIFA+AMCQPgAAgD8A4CA+ACBQPgDAkD4AAIA/AOAgPgAgUD4AwJA+AACAPwDgID4AIFA+AMCQPgAAgD8A4CA+ACBQPgDAkD4AAIA/AOAgPgAgUD4AwJA+AACAPwDgID4AIFA+AMCQPgAAgD8A4CA+ACBQPgDAkD4AAIA/AOAgPgAgUD4AwJA+AACAPwDgID4AIFA+AMCQPgAAgD8A4CA+ACBQPgDAkD4AAIA/AOAgPgAgUD4AwJA+AACAPwDgID4AIFA+AMCQPgAAgD8A4CA+ACBQPgDAkD4AAIA/AOAgPgAgUD4AwJA+AACAPwDgID4AIFA+AMCQPgAAgD8A4CA+ACBQPgDAkD4AAIA/AOAgPgAgUD4AwJA+AACAPwDgID4AIFA+AMCQPgAAgD8A4CA+ACBQPgDAkD4AAIA/AOAgPgAgUD4AwJA+AACAPwDgID4AIFA+AMCQPgAAgD8A4CA+ACBQPgDAkD4AAIA/AOAgPgAgUD4AwJA+AACAPwDgID4AIFA+AMCQPgAAgD8A4CA+ACBQPgDAkD4AAIA/AOAgPgAgUD4AwJA+AACAPwDgID4AIFA+AMCQPgAAgD8A4CA+ACBQPgDAkD4AAIA/AOAgPgAgUD4AwJA+AACAPwDgID4AIFA+AMCQPgAAgD8A4CA+ACBQPgDAkD4AAIA/AOAgPgAgUD4AwJA+AACAPwDgID4AIFA+AMCQPgAAgD8A4CA+ACBQPgDAkD4AAIA/AOAgPgAgUD4AwJA+AACAPwDgID4AIFA+AMCQPgAAgD8A4CA+AEBQPgDgkD4AAIA/AOAgPgBAUD4A4JA+AACAPwDgID4AQFA+AOCQPgAAgD8A4CA+AEBQPgDgkD4AAIA/AOAgPgBAUD4AwJA+AACAPwDgID4AQFA+AMCQPgAAgD8A4CA+AEBQPgDAkD4AAIA/AOAgPgBAUD4AwJA+AACAPwDgID4AIFA+AMCQPgAAgD8A4CA+ACBQPgDAkD4AAIA/AOAgPgAgUD4AwJA+AACAPwDgID4AIFA+AMCQPgAAgD8A4CA+ACBQPgDAkD4AAIA/AOAgPgAgUD4AwJA+AACAPwDgID4AQFA+AMCQPgAAgD8A4CA+AEBQPgDAkD4AAIA/AOAgPgBAUD4AwJA+AACAPwDgID4AQFA+AMCQPgAAgD8A4CA+AEBQPgDgkD4AAIA/AOAgPgBAUD4A4JA+AACAPwDgID4AQFA+AOCQPgAAgD8A4CA+AEBQPgDgkD4AAIA/AOAgPgAgUD4AwJA+AACAPwDgID4AIFA+AMCQPgAAgD8A4CA+ACBQPgDAkD4AAIA/AOAgPgBAUD4AwJA+AACAPwDgID4AQFA+AOCQPgAAgD8A4CA+AEBQPgDgkD4AAIA/AOAgPgBAUD4A4JA+AACAPwDgID4AQFA+AOCQPgAAgD8A4CA+AEBQPgDgkD4AAIA/AOAgPgBAUD4A4JA+AACAPwDgID4AIFA+AOCQPgAAgD8A4CA+ACBQPgDAkD4AAIA/AOAgPgAgUD4AwJA+AACAPwDgID4AIFA+AMCQPgAAgD8A4CA+AEBQPgDAkD4AAIA/AOAgPgBAUD4AwJA+AACAPwDgID4AQFA+AOCQPgAAgD8A4CA+AEBQPgDgkD4AAIA/AOAgPgAgUD4A4JA+AACAPwDgID4AIFA+AOCQPgAAgD8A4CA+ACBQPgDgkD4AAIA/AOAgPgBAUD4A4JA+AACAPwDgID4AQFA+AOCQPgAAgD8A4CA+AEBQPgDgkD4AAIA/AOAgPgBAUD4A4JA+AACAPwDgID4AQFA+AOCQPgAAgD8A4CA+AEBQPgDgkD4AAIA/AOAgPgBAUD4A4JA+AACAPwDgID4AQFA+AOCQPgAAgD8A4CA+AEBQPgDgkD4AAIA/"),
+"lods": [0.0395953, PackedByteArray("AOAgPgAgUD4AwJA+AACAPwDgID4AIFA+AMCQPgAAgD8A4CA+ACBQPgDAkD4AAIA/AOAgPgAgUD4AwJA+AACAPwDgID4AIFA+AMCQPgAAgD8A4CA+ACBQPgDAkD4AAIA/AOAgPgAgUD4AwJA+AACAPwDgID4AIFA+AMCQPgAAgD8A4CA+ACBQPgDAkD4AAIA/AOAgPgAgUD4AwJA+AACAPwDgID4AIFA+AMCQPgAAgD8A4CA+ACBQPgDAkD4AAIA/AOAgPgAgUD4AwJA+AACAPwDgID4AIFA+AMCQPgAAgD8A4CA+ACBQPgDAkD4AAIA/AOAgPgAgUD4AwJA+AACAPwDgID4AIFA+AMCQPgAAgD8A4CA+ACBQPgDAkD4AAIA/AOAgPgAgUD4AwJA+AACAPwDgID4AIFA+AMCQPgAAgD8A4CA+ACBQPgDAkD4AAIA/AOAgPgAgUD4AwJA+AACAPwDgID4AIFA+AMCQPgAAgD8A4CA+ACBQPgDAkD4AAIA/AOAgPgAgUD4AwJA+AACAPwDgID4AIFA+AMCQPgAAgD8A4CA+ACBQPgDAkD4AAIA/AOAgPgAgUD4AwJA+AACAPwDgID4AIFA+AMCQPgAAgD8A4CA+ACBQPgDAkD4AAIA/AOAgPgAgUD4AwJA+AACAPwDgID4AIFA+AMCQPgAAgD8A4CA+ACBQPgDAkD4AAIA/AOAgPgAgUD4AwJA+AACAPwDgID4AIFA+AMCQPgAAgD8A4CA+ACBQPgDAkD4AAIA/AOAgPgAgUD4AwJA+AACAPwDgID4AIFA+AMCQPgAAgD8A4CA+ACBQPgDAkD4AAIA/AOAgPgAgUD4AwJA+AACAPwDgID4AIFA+AMCQPgAAgD8A4CA+ACBQPgDAkD4AAIA/AOAgPgAgUD4AwJA+AACAPwDgID4AIFA+AMCQPgAAgD8A4CA+ACBQPgDAkD4AAIA/AOAgPgAgUD4AwJA+AACAPwDgID4AIFA+AMCQPgAAgD8A4CA+ACBQPgDAkD4AAIA/AOAgPgAgUD4AwJA+AACAPwDgID4AIFA+AMCQPgAAgD8A4CA+ACBQPgDAkD4AAIA/AOAgPgAgUD4AwJA+AACAPwDgID4AIFA+AMCQPgAAgD8A4CA+ACBQPgDAkD4AAIA/AOAgPgAgUD4AwJA+AACAPwDgID4AIFA+AMCQPgAAgD8A4CA+ACBQPgDAkD4AAIA/AOAgPgAgUD4AwJA+AACAPwDgID4AIFA+AMCQPgAAgD8A4CA+ACBQPgDAkD4AAIA/AOAgPgAgUD4AwJA+AACAPwDgID4AIFA+AMCQPgAAgD8A4CA+ACBQPgDAkD4AAIA/AOAgPgAgUD4AwJA+AACAPwDgID4AIFA+AMCQPgAAgD8A4CA+ACBQPgDAkD4AAIA/AOAgPgAgUD4AwJA+AACAPwDgID4AIFA+AMCQPgAAgD8A4CA+ACBQPgDAkD4AAIA/AOAgPgAgUD4AwJA+AACAPwDgID4AIFA+AMCQPgAAgD8A4CA+ACBQPgDAkD4AAIA/AOAgPgAgUD4AwJA+AACAPwDgID4AIFA+AMCQPgAAgD8A4CA+ACBQPgDAkD4AAIA/AOAgPgAgUD4AwJA+AACAPwDgID4AIFA+AMCQPgAAgD8A4CA+ACBQPgDAkD4AAIA/AOAgPgAgUD4AwJA+AACAPwDgID4AIFA+AMCQPgAAgD8A4CA+ACBQPgDAkD4AAIA/AOAgPgAgUD4AwJA+AACAPwDgID4AIFA+AMCQPgAAgD8A4CA+ACBQPgDAkD4AAIA/AOAgPgAgUD4AwJA+AACAPwDgID4AIFA+AMCQPgAAgD8A4CA+ACBQPgDAkD4AAIA/AOAgPgAgUD4AwJA+AACAPwDgID4AIFA+AMCQPgAAgD8A4CA+ACBQPgDAkD4AAIA/"), 0.0724664, PackedByteArray("AOAgPgAgUD4AwJA+AACAPwDgID4AIFA+AMCQPgAAgD8A4CA+ACBQPgDAkD4AAIA/AOAgPgAgUD4AwJA+AACAPwDgID4AIFA+AMCQPgAAgD8A4CA+ACBQPgDAkD4AAIA/AOAgPgAgUD4AwJA+AACAPwDgID4AIFA+AMCQPgAAgD8A4CA+ACBQPgDAkD4AAIA/AOAgPgAgUD4AwJA+AACAPwDgID4AIFA+AMCQPgAAgD8A4CA+ACBQPgDAkD4AAIA/AOAgPgAgUD4AwJA+AACAPwDgID4AIFA+AMCQPgAAgD8A4CA+ACBQPgDAkD4AAIA/AOAgPgAgUD4AwJA+AACAPwDgID4AIFA+AMCQPgAAgD8A4CA+ACBQPgDAkD4AAIA/AOAgPgAgUD4AwJA+AACAPwDgID4AIFA+AMCQPgAAgD8A4CA+ACBQPgDAkD4AAIA/AOAgPgAgUD4AwJA+AACAPwDgID4AIFA+AMCQPgAAgD8A4CA+ACBQPgDAkD4AAIA/AOAgPgAgUD4AwJA+AACAPwDgID4AIFA+AMCQPgAAgD8A4CA+ACBQPgDAkD4AAIA/AOAgPgAgUD4AwJA+AACAPwDgID4AIFA+AMCQPgAAgD8A4CA+ACBQPgDAkD4AAIA/AOAgPgAgUD4AwJA+AACAPwDgID4AIFA+AMCQPgAAgD8A4CA+ACBQPgDAkD4AAIA/AOAgPgAgUD4AwJA+AACAPwDgID4AIFA+AMCQPgAAgD8A4CA+ACBQPgDAkD4AAIA/AOAgPgAgUD4AwJA+AACAPwDgID4AIFA+AMCQPgAAgD8A4CA+ACBQPgDAkD4AAIA/AOAgPgAgUD4AwJA+AACAPwDgID4AIFA+AMCQPgAAgD8A4CA+ACBQPgDAkD4AAIA/AOAgPgAgUD4AwJA+AACAPwDgID4AIFA+AMCQPgAAgD8A4CA+ACBQPgDAkD4AAIA/"), 0.125811, PackedByteArray("AOAgPgAgUD4AwJA+AACAPwDgID4AIFA+AMCQPgAAgD8A4CA+ACBQPgDAkD4AAIA/AOAgPgAgUD4AwJA+AACAPwDgID4AIFA+AMCQPgAAgD8A4CA+ACBQPgDAkD4AAIA/AOAgPgAgUD4AwJA+AACAPwDgID4AIFA+AMCQPgAAgD8A4CA+ACBQPgDAkD4AAIA/AOAgPgAgUD4AwJA+AACAPwDgID4AIFA+AMCQPgAAgD8A4CA+ACBQPgDAkD4AAIA/AOAgPgAgUD4AwJA+AACAPwDgID4AIFA+AMCQPgAAgD8A4CA+ACBQPgDAkD4AAIA/AOAgPgAgUD4AwJA+AACAPwDgID4AIFA+AMCQPgAAgD8A4CA+ACBQPgDAkD4AAIA/AOAgPgAgUD4AwJA+AACAPwDgID4AIFA+AMCQPgAAgD8A4CA+ACBQPgDAkD4AAIA/AOAgPgAgUD4AwJA+AACAPwDgID4AIFA+"), 0.89577, PackedByteArray("AOAgPgAgUD4AwJA+AACAPwDgID4AIFA+AMCQPgAAgD8A4CA+ACBQPgDAkD4AAIA/AOAgPgAgUD4AwJA+AACAPwDgID4AIFA+AMCQPgAAgD8A4CA+ACBQPgDAkD4AAIA/AOAgPgAgUD4AwJA+AACAPwDgID4AIFA+AMCQPgAAgD8A4CA+ACBQPgDAkD4AAIA/AOAgPgAgUD4AwJA+AACAPwDgID4AIFA+AMCQPgAAgD8A4CA+")],
+"name": "Shockwave",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 257,
+"vertex_data": PackedByteArray("AOAgPgAgUD4AwJA+AACAPwDgID4AIFA+AMCQPgAAgD8A4CA+ACBQPgDAkD4AAIA/AOAgPgAgUD4AwJA+AACAPwDgID4AIFA+AMCQPgAAgD8A4CA+ACBQPgDAkD4AAIA/AOAgPgAgUD4AwJA+AACAPwDgID4AIFA+AMCQPgAAgD8A4CA+ACBQPgDAkD4AAIA/AOAgPgAgUD4AwJA+AACAPwDgID4AIFA+AMCQPgAAgD8A4CA+ACBQPgDAkD4AAIA/AOAgPgAgUD4AwJA+AACAPwDgID4AIFA+AMCQPgAAgD8A4CA+ACBQPgDAkD4AAIA/AOAgPgAgUD4AwJA+AACAPwDgID4AIFA+AMCQPgAAgD8A4CA+ACBQPgDAkD4AAIA/AOAgPgAgUD4AwJA+AACAPwDgID4AIFA+AMCQPgAAgD8A4CA+ACBQPgDAkD4AAIA/AOAgPgAgUD4AwJA+AACAPwDgID4AIFA+AMCQPgAAgD8A4CA+ACBQPgDAkD4AAIA/AOAgPgAgUD4AwJA+AACAPwDgID4AIFA+AMCQPgAAgD8A4CA+ACBQPgDAkD4AAIA/AOAgPgAgUD4AwJA+AACAPwDgID4AIFA+AMCQPgAAgD8A4CA+ACBQPgDAkD4AAIA/AOAgPgAgUD4AwJA+AACAPwDgID4AIFA+AMCQPgAAgD8A4CA+ACBQPgDAkD4AAIA/AOAgPgAgUD4AwJA+AACAPwDgID4AIFA+AMCQPgAAgD8A4CA+ACBQPgDAkD4AAIA/AOAgPgAgUD4AwJA+AACAPwDgID4AIFA+AMCQPgAAgD8A4CA+ACBQPgDAkD4AAIA/AOAgPgAgUD4AwJA+AACAPwDgID4AIFA+AMCQPgAAgD8A4CA+ACBQPgDAkD4AAIA/AOAgPgAgUD4AwJA+AACAPwDgID4AIFA+AMCQPgAAgD8A4CA+ACBQPgDAkD4AAIA/AOAgPgAgUD4AwJA+AACAPwDgID4AIFA+AMCQPgAAgD8A4CA+ACBQPgDAkD4AAIA/AOAgPgAgUD4AwJA+AACAPwDgID4AIFA+AMCQPgAAgD8A4CA+ACBQPgDAkD4AAIA/AOAgPgAgUD4AwJA+AACAPwDgID4AIFA+AMCQPgAAgD8A4CA+ACBQPgDAkD4AAIA/AOAgPgAgUD4AwJA+AACAPwDgID4AIFA+AMCQPgAAgD8A4CA+ACBQPgDAkD4AAIA/AOAgPgAgUD4AwJA+AACAPwDgID4AIFA+AMCQPgAAgD8A4CA+ACBQPgDAkD4AAIA/AOAgPgAgUD4AwJA+AACAPwDgID4AIFA+AMCQPgAAgD8A4CA+ACBQPgDAkD4AAIA/AOAgPgAgUD4AwJA+AACAPwDgID4AIFA+AMCQPgAAgD8A4CA+ACBQPgDAkD4AAIA/AOAgPgAgUD4AwJA+AACAPwDgID4AIFA+AMCQPgAAgD8A4CA+ACBQPgDAkD4AAIA/AOAgPgAgUD4AwJA+AACAPwDgID4AIFA+AMCQPgAAgD8A4CA+ACBQPgDAkD4AAIA/AOAgPgAgUD4AwJA+AACAPwDgID4AIFA+AMCQPgAAgD8A4CA+ACBQPgDAkD4AAIA/AOAgPgAgUD4AwJA+AACAPwDgID4AIFA+AMCQPgAAgD8A4CA+ACBQPgDAkD4AAIA/AOAgPgAgUD4AwJA+AACAPwDgID4AIFA+AMCQPgAAgD8A4CA+ACBQPgDAkD4AAIA/AOAgPgAgUD4AwJA+AACAPwDgID4AIFA+AMCQPgAAgD8A4CA+ACBQPgDAkD4AAIA/AOAgPgAgUD4AwJA+AACAPwDgID4AIFA+AMCQPgAAgD8A4CA+ACBQPgDAkD4AAIA/AOAgPgAgUD4AwJA+AACAPwDgID4AIFA+AMCQPgAAgD8A4CA+ACBQPgDAkD4AAIA/AOAgPgAgUD4AwJA+AACAPwDgID4AIFA+AMCQPgAAgD8A4CA+ACBQPgDAkD4AAIA/AOAgPgAgUD4AwJA+AACAPwDgID4AIFA+AMCQPgAAgD8A4CA+ACBQPgDAkD4AAIA/AOAgPgAgUD4AwJA+AACAPwDgID4AIFA+AMCQPgAAgD8A4CA+ACBQPgDAkD4AAIA/AOAgPgAgUD4AwJA+AACAPwDgID4AIFA+AMCQPgAAgD8A4CA+ACBQPgDAkD4AAIA/AOAgPgAgUD4AwJA+AACAPwDgID4AIFA+AMCQPgAAgD8A4CA+ACBQPgDAkD4AAIA/AOAgPgAgUD4AwJA+AACAPwDgID4AIFA+AMCQPgAAgD8A4CA+ACBQPgDAkD4AAIA/AOAgPgAgUD4AwJA+AACAPwDgID4AIFA+AMCQPgAAgD8A4CA+ACBQPgDAkD4AAIA/AOAgPgAgUD4AwJA+AACAPwDgID4AIFA+AMCQPgAAgD8A4CA+ACBQPgDAkD4AAIA/AOAgPgAgUD4AwJA+AACAPwDgID4AIFA+AMCQPgAAgD8A4CA+ACBQPgDAkD4AAIA/AOAgPgAgUD4AwJA+AACAPwDgID4AIFA+AMCQPgAAgD8A4CA+ACBQPgDAkD4AAIA/AOAgPgAgUD4AwJA+AACAPwDgID4AIFA+AMCQPgAAgD8A4CA+ACBQPgDAkD4AAIA/AOAgPgAgUD4AwJA+AACAPwDgID4AIFA+AMCQPgAAgD8A4CA+ACBQPgDAkD4AAIA/AOAgPgAgUD4AwJA+AACAPwDgID4AIFA+AMCQPgAAgD8A4CA+AEBQPgDgkD4AAIA/AOAgPgBAUD4A4JA+AACAPwDgID4AQFA+AOCQPgAAgD8A4CA+AEBQPgDgkD4AAIA/AOAgPgBAUD4AwJA+AACAPwDgID4AQFA+AMCQPgAAgD8A4CA+AEBQPgDAkD4AAIA/AOAgPgBAUD4AwJA+AACAPwDgID4AIFA+AMCQPgAAgD8A4CA+ACBQPgDAkD4AAIA/AOAgPgAgUD4AwJA+AACAPwDgID4AIFA+AMCQPgAAgD8A4CA+ACBQPgDAkD4AAIA/AOAgPgAgUD4AwJA+AACAPwDgID4AQFA+AMCQPgAAgD8A4CA+AEBQPgDAkD4AAIA/AOAgPgBAUD4AwJA+AACAPwDgID4AQFA+AMCQPgAAgD8A4CA+AEBQPgDgkD4AAIA/AOAgPgBAUD4A4JA+AACAPwDgID4AQFA+AOCQPgAAgD8A4CA+AEBQPgDgkD4AAIA/AOAgPgAgUD4AwJA+AACAPwDgID4AIFA+AMCQPgAAgD8A4CA+ACBQPgDAkD4AAIA/AOAgPgBAUD4AwJA+AACAPwDgID4AQFA+AOCQPgAAgD8A4CA+AEBQPgDgkD4AAIA/AOAgPgBAUD4A4JA+AACAPwDgID4AQFA+AOCQPgAAgD8A4CA+AEBQPgDgkD4AAIA/AOAgPgBAUD4A4JA+AACAPwDgID4AIFA+AOCQPgAAgD8A4CA+ACBQPgDAkD4AAIA/AOAgPgAgUD4AwJA+AACAPwDgID4AIFA+AMCQPgAAgD8A4CA+AEBQPgDAkD4AAIA/AOAgPgBAUD4AwJA+AACAPwDgID4AQFA+AOCQPgAAgD8A4CA+AEBQPgDgkD4AAIA/AOAgPgAgUD4A4JA+AACAPwDgID4AIFA+AOCQPgAAgD8A4CA+ACBQPgDgkD4AAIA/AOAgPgBAUD4A4JA+AACAPwDgID4AQFA+AOCQPgAAgD8A4CA+AEBQPgDgkD4AAIA/AOAgPgBAUD4A4JA+AACAPwDgID4AQFA+AOCQPgAAgD8A4CA+AEBQPgDgkD4AAIA/AOAgPgBAUD4A4JA+AACAPwDgID4AQFA+AOCQPgAAgD8A4CA+AEBQPgDgkD4AAIA/AOAgPgBAUD4A4JA+AACAPwDgID4AQFA+AOCQPgAAgD8A4CA+AEBQPgDgkD4AAIA/AOAgPgBAUD4A4JA+AACAPwDgID4AQFA+AOCQPgAAgD8A4CA+AEBQPgDgkD4AAIA/AOAgPgBAUD4A4JA+AACAPwDgID4AQFA+AOCQPgAAgD8A4CA+AEBQPgDgkD4AAIA/AOAgPgBAUD4A4JA+AACAPwDgID4AQFA+AOCQPgAAgD8A4CA+AEBQPgDgkD4AAIA/AOAgPgBAUD4A4JA+")
+}]
+blend_shape_mode = 0
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_y0824"]
+resource_name = "Shockwave-803f35bb53305bd2cad314507deb80ac_Sphere"
+_surfaces = [{
+"aabb": AABB(-1.00112, -1, -1.19777, 2, 2, 2.00001),
+"attribute_data": PackedByteArray("AOAgPgAgUD4AwJA+AACAPwDgID4AIFA+AMCQPgAAgD8A4CA+ACBQPgDAkD4AAIA/AOAgPgAgUD4AwJA+AACAPwDgID4AIFA+AMCQPgAAgD8A4CA+ACBQPgDAkD4AAIA/AOAgPgAgUD4AwJA+AACAPwDgID4AIFA+AMCQPgAAgD8A4CA+ACBQPgDAkD4AAIA/AOAgPgAgUD4AwJA+AACAPwDgID4AIFA+AMCQPgAAgD8A4CA+ACBQPgDAkD4AAIA/AOAgPgAgUD4AwJA+AACAPwDgID4AIFA+AMCQPgAAgD8A4CA+ACBQPgDAkD4AAIA/AOAgPgAgUD4AwJA+AACAPwDgID4AIFA+AMCQPgAAgD8A4CA+ACBQPgDAkD4AAIA/AOAgPgAgUD4AwJA+AACAPwDgID4AIFA+AMCQPgAAgD8A4CA+ACBQPgDAkD4AAIA/AOAgPgAgUD4AwJA+AACAPwDgID4AIFA+AMCQPgAAgD8A4CA+ACBQPgDAkD4AAIA/AOAgPgAgUD4AwJA+AACAPwDgID4AIFA+AMCQPgAAgD8A4CA+ACBQPgDAkD4AAIA/AOAgPgAgUD4AwJA+AACAPwDgID4AIFA+AMCQPgAAgD8A4CA+ACBQPgDAkD4AAIA/AOAgPgAgUD4AwJA+AACAPwDgID4AIFA+AMCQPgAAgD8A4CA+ACBQPgDAkD4AAIA/AOAgPgAgUD4AwJA+AACAPwDgID4AIFA+AMCQPgAAgD8A4CA+ACBQPgDAkD4AAIA/AOAgPgAgUD4AwJA+AACAPwDgID4AIFA+AMCQPgAAgD8A4CA+ACBQPgDAkD4AAIA/AOAgPgAgUD4AwJA+AACAPwDgID4AIFA+AMCQPgAAgD8A4CA+ACBQPgDAkD4AAIA/AOAgPgAgUD4AwJA+AACAPwDgID4AIFA+AMCQPgAAgD8A4CA+ACBQPgDAkD4AAIA/AOAgPgAgUD4AwJA+AACAPwDgID4AIFA+AMCQPgAAgD8A4CA+ACBQPgDAkD4AAIA/AOAgPgAgUD4AwJA+AACAPwDgID4AIFA+AMCQPgAAgD8A4CA+ACBQPgDAkD4AAIA/AOAgPgAgUD4AwJA+AACAPwDgID4AIFA+AMCQPgAAgD8A4CA+ACBQPgDAkD4AAIA/AOAgPgAgUD4AwJA+AACAPwDgID4AIFA+AMCQPgAAgD8A4CA+ACBQPgDAkD4AAIA/AOAgPgAgUD4AwJA+AACAPwDgID4AIFA+AMCQPgAAgD8A4CA+ACBQPgDAkD4AAIA/AOAgPgAgUD4AwJA+AACAPwDgID4AIFA+AMCQPgAAgD8A4CA+ACBQPgDAkD4AAIA/AOAgPgAgUD4AwJA+AACAPwDgID4AIFA+AMCQPgAAgD8A4CA+ACBQPgDAkD4AAIA/AOAgPgAgUD4AwJA+AACAPwDgID4AIFA+AMCQPgAAgD8A4CA+ACBQPgDAkD4AAIA/AOAgPgAgUD4AwJA+AACAPwDgID4AIFA+AMCQPgAAgD8A4CA+ACBQPgDAkD4AAIA/AOAgPgAgUD4AwJA+AACAPwDgID4AIFA+AMCQPgAAgD8A4CA+ACBQPgDAkD4AAIA/AOAgPgAgUD4AwJA+AACAPwDgID4AIFA+AMCQPgAAgD8A4CA+ACBQPgDAkD4AAIA/AOAgPgAgUD4AwJA+AACAPwDgID4AIFA+AMCQPgAAgD8A4CA+ACBQPgDAkD4AAIA/AOAgPgAgUD4AwJA+AACAPwDgID4AIFA+AMCQPgAAgD8A4CA+ACBQPgDAkD4AAIA/AOAgPgAgUD4AwJA+AACAPwDgID4AIFA+AMCQPgAAgD8A4CA+ACBQPgDAkD4AAIA/AOAgPgAgUD4AwJA+AACAPwDgID4AIFA+AMCQPgAAgD8A4CA+ACBQPgDAkD4AAIA/AOAgPgAgUD4AwJA+AACAPwDgID4AIFA+AMCQPgAAgD8A4CA+ACBQPgDAkD4AAIA/AOAgPgAgUD4AwJA+AACAPwDgID4AIFA+AMCQPgAAgD8A4CA+ACBQPgDAkD4AAIA/AOAgPgAgUD4AwJA+AACAPwDgID4AIFA+AMCQPgAAgD8A4CA+ACBQPgDAkD4AAIA/AOAgPgAgUD4AwJA+AACAPwDgID4AIFA+AMCQPgAAgD8A4CA+ACBQPgDAkD4AAIA/AOAgPgAgUD4AwJA+AACAPwDgID4AIFA+AMCQPgAAgD8A4CA+ACBQPgDAkD4AAIA/AOAgPgAgUD4AwJA+AACAPwDgID4AIFA+AMCQPgAAgD8A4CA+ACBQPgDAkD4AAIA/AOAgPgAgUD4AwJA+AACAPwDgID4AIFA+AMCQPgAAgD8A4CA+ACBQPgDAkD4AAIA/AOAgPgAgUD4AwJA+AACAPwDgID4AIFA+AMCQPgAAgD8A4CA+ACBQPgDAkD4AAIA/AOAgPgAgUD4AwJA+AACAPwDgID4AIFA+AMCQPgAAgD8A4CA+ACBQPgDAkD4AAIA/AOAgPgAgUD4AwJA+AACAPwDgID4AIFA+AMCQPgAAgD8A4CA+ACBQPgDAkD4AAIA/AOAgPgAgUD4AwJA+AACAPwDgID4AIFA+AMCQPgAAgD8A4CA+ACBQPgDAkD4AAIA/AOAgPgAgUD4AwJA+AACAPwDgID4AIFA+AMCQPgAAgD8A4CA+ACBQPgDAkD4AAIA/AOAgPgAgUD4AwJA+AACAPwDgID4AIFA+AMCQPgAAgD8A4CA+AEBQPgDgkD4AAIA/AOAgPgBAUD4A4JA+AACAPwDgID4AQFA+AOCQPgAAgD8A4CA+AEBQPgDgkD4AAIA/AOAgPgBAUD4AwJA+AACAPwDgID4AQFA+AMCQPgAAgD8A4CA+AEBQPg=="),
+"format": 34359742487,
+"index_count": 1440,
+"index_data": PackedByteArray("AOAgPgAgUD4AwJA+AACAPwDgID4AIFA+AMCQPgAAgD8A4CA+ACBQPgDAkD4AAIA/AOAgPgAgUD4AwJA+AACAPwDgID4AIFA+AMCQPgAAgD8A4CA+ACBQPgDAkD4AAIA/AOAgPgAgUD4AwJA+AACAPwDgID4AIFA+AMCQPgAAgD8A4CA+ACBQPgDAkD4AAIA/AOAgPgAgUD4AwJA+AACAPwDgID4AIFA+AMCQPgAAgD8A4CA+ACBQPgDAkD4AAIA/AOAgPgAgUD4AwJA+AACAPwDgID4AIFA+AMCQPgAAgD8A4CA+ACBQPgDAkD4AAIA/AOAgPgAgUD4AwJA+AACAPwDgID4AIFA+AMCQPgAAgD8A4CA+ACBQPgDAkD4AAIA/AOAgPgAgUD4AwJA+AACAPwDgID4AIFA+AMCQPgAAgD8A4CA+ACBQPgDAkD4AAIA/AOAgPgAgUD4AwJA+AACAPwDgID4AIFA+AMCQPgAAgD8A4CA+ACBQPgDAkD4AAIA/AOAgPgAgUD4AwJA+AACAPwDgID4AIFA+AMCQPgAAgD8A4CA+ACBQPgDAkD4AAIA/AOAgPgAgUD4AwJA+AACAPwDgID4AIFA+AMCQPgAAgD8A4CA+ACBQPgDAkD4AAIA/AOAgPgAgUD4AwJA+AACAPwDgID4AIFA+AMCQPgAAgD8A4CA+ACBQPgDAkD4AAIA/AOAgPgAgUD4AwJA+AACAPwDgID4AIFA+AMCQPgAAgD8A4CA+ACBQPgDAkD4AAIA/AOAgPgAgUD4AwJA+AACAPwDgID4AIFA+AMCQPgAAgD8A4CA+ACBQPgDAkD4AAIA/AOAgPgAgUD4AwJA+AACAPwDgID4AIFA+AMCQPgAAgD8A4CA+ACBQPgDAkD4AAIA/AOAgPgAgUD4AwJA+AACAPwDgID4AIFA+AMCQPgAAgD8A4CA+ACBQPgDAkD4AAIA/AOAgPgAgUD4AwJA+AACAPwDgID4AIFA+AMCQPgAAgD8A4CA+ACBQPgDAkD4AAIA/AOAgPgAgUD4AwJA+AACAPwDgID4AIFA+AMCQPgAAgD8A4CA+ACBQPgDAkD4AAIA/AOAgPgAgUD4AwJA+AACAPwDgID4AIFA+AMCQPgAAgD8A4CA+ACBQPgDAkD4AAIA/AOAgPgAgUD4AwJA+AACAPwDgID4AIFA+AMCQPgAAgD8A4CA+ACBQPgDAkD4AAIA/AOAgPgAgUD4AwJA+AACAPwDgID4AIFA+AMCQPgAAgD8A4CA+ACBQPgDAkD4AAIA/AOAgPgAgUD4AwJA+AACAPwDgID4AIFA+AMCQPgAAgD8A4CA+ACBQPgDAkD4AAIA/AOAgPgAgUD4AwJA+AACAPwDgID4AIFA+AMCQPgAAgD8A4CA+ACBQPgDAkD4AAIA/AOAgPgAgUD4AwJA+AACAPwDgID4AIFA+AMCQPgAAgD8A4CA+ACBQPgDAkD4AAIA/AOAgPgAgUD4AwJA+AACAPwDgID4AIFA+AMCQPgAAgD8A4CA+ACBQPgDAkD4AAIA/AOAgPgAgUD4AwJA+AACAPwDgID4AIFA+AMCQPgAAgD8A4CA+ACBQPgDAkD4AAIA/AOAgPgAgUD4AwJA+AACAPwDgID4AIFA+AMCQPgAAgD8A4CA+ACBQPgDAkD4AAIA/AOAgPgAgUD4AwJA+AACAPwDgID4AIFA+AMCQPgAAgD8A4CA+ACBQPgDAkD4AAIA/AOAgPgAgUD4AwJA+AACAPwDgID4AIFA+AMCQPgAAgD8A4CA+ACBQPgDAkD4AAIA/AOAgPgAgUD4AwJA+AACAPwDgID4AIFA+AMCQPgAAgD8A4CA+ACBQPgDAkD4AAIA/AOAgPgAgUD4AwJA+AACAPwDgID4AIFA+AMCQPgAAgD8A4CA+ACBQPgDAkD4AAIA/AOAgPgAgUD4AwJA+AACAPwDgID4AIFA+AMCQPgAAgD8A4CA+ACBQPgDAkD4AAIA/AOAgPgAgUD4AwJA+AACAPwDgID4AIFA+AMCQPgAAgD8A4CA+ACBQPgDAkD4AAIA/AOAgPgAgUD4AwJA+AACAPwDgID4AIFA+AMCQPgAAgD8A4CA+ACBQPgDAkD4AAIA/AOAgPgAgUD4AwJA+AACAPwDgID4AIFA+AMCQPgAAgD8A4CA+ACBQPgDAkD4AAIA/AOAgPgAgUD4AwJA+AACAPwDgID4AIFA+AMCQPgAAgD8A4CA+ACBQPgDAkD4AAIA/AOAgPgAgUD4AwJA+AACAPwDgID4AIFA+AMCQPgAAgD8A4CA+ACBQPgDAkD4AAIA/AOAgPgAgUD4AwJA+AACAPwDgID4AIFA+AMCQPgAAgD8A4CA+ACBQPgDAkD4AAIA/AOAgPgAgUD4AwJA+AACAPwDgID4AIFA+AMCQPgAAgD8A4CA+ACBQPgDAkD4AAIA/AOAgPgAgUD4AwJA+AACAPwDgID4AIFA+AMCQPgAAgD8A4CA+ACBQPgDAkD4AAIA/AOAgPgAgUD4AwJA+AACAPwDgID4AIFA+AMCQPgAAgD8A4CA+ACBQPgDAkD4AAIA/AOAgPgAgUD4AwJA+AACAPwDgID4AIFA+AMCQPgAAgD8A4CA+ACBQPgDAkD4AAIA/AOAgPgAgUD4AwJA+AACAPwDgID4AIFA+AMCQPgAAgD8A4CA+ACBQPgDAkD4AAIA/AOAgPgAgUD4AwJA+AACAPwDgID4AIFA+AMCQPgAAgD8A4CA+AEBQPgDgkD4AAIA/AOAgPgBAUD4A4JA+AACAPwDgID4AQFA+AOCQPgAAgD8A4CA+AEBQPgDgkD4AAIA/AOAgPgBAUD4AwJA+AACAPwDgID4AQFA+AMCQPgAAgD8A4CA+AEBQPgDAkD4AAIA/AOAgPgBAUD4AwJA+AACAPwDgID4AIFA+AMCQPgAAgD8A4CA+ACBQPgDAkD4AAIA/AOAgPgAgUD4AwJA+AACAPwDgID4AIFA+AMCQPgAAgD8A4CA+ACBQPgDAkD4AAIA/AOAgPgAgUD4AwJA+AACAPwDgID4AQFA+AMCQPgAAgD8A4CA+AEBQPgDAkD4AAIA/AOAgPgBAUD4AwJA+AACAPwDgID4AQFA+AMCQPgAAgD8A4CA+AEBQPgDgkD4AAIA/AOAgPgBAUD4A4JA+AACAPwDgID4AQFA+AOCQPgAAgD8A4CA+AEBQPgDgkD4AAIA/AOAgPgAgUD4AwJA+AACAPwDgID4AIFA+AMCQPgAAgD8A4CA+ACBQPgDAkD4AAIA/AOAgPgBAUD4AwJA+AACAPwDgID4AQFA+AOCQPgAAgD8A4CA+AEBQPgDgkD4AAIA/AOAgPgBAUD4A4JA+AACAPwDgID4AQFA+AOCQPgAAgD8A4CA+AEBQPgDgkD4AAIA/AOAgPgBAUD4A4JA+AACAPwDgID4AIFA+AOCQPgAAgD8A4CA+ACBQPgDAkD4AAIA/AOAgPgAgUD4AwJA+AACAPwDgID4AIFA+AMCQPgAAgD8A4CA+AEBQPgDAkD4AAIA/AOAgPgBAUD4AwJA+AACAPwDgID4AQFA+AOCQPgAAgD8A4CA+AEBQPgDgkD4AAIA/AOAgPgAgUD4A4JA+AACAPwDgID4AIFA+AOCQPgAAgD8A4CA+ACBQPgDgkD4AAIA/AOAgPgBAUD4A4JA+AACAPwDgID4AQFA+AOCQPgAAgD8A4CA+AEBQPgDgkD4AAIA/AOAgPgBAUD4A4JA+AACAPwDgID4AQFA+AOCQPgAAgD8A4CA+AEBQPgDgkD4AAIA/AOAgPgBAUD4A4JA+AACAPwDgID4AQFA+AOCQPgAAgD8A4CA+AEBQPgDgkD4AAIA/"),
+"lods": [0.0395953, PackedByteArray("AOAgPgAgUD4AwJA+AACAPwDgID4AIFA+AMCQPgAAgD8A4CA+ACBQPgDAkD4AAIA/AOAgPgAgUD4AwJA+AACAPwDgID4AIFA+AMCQPgAAgD8A4CA+ACBQPgDAkD4AAIA/AOAgPgAgUD4AwJA+AACAPwDgID4AIFA+AMCQPgAAgD8A4CA+ACBQPgDAkD4AAIA/AOAgPgAgUD4AwJA+AACAPwDgID4AIFA+AMCQPgAAgD8A4CA+ACBQPgDAkD4AAIA/AOAgPgAgUD4AwJA+AACAPwDgID4AIFA+AMCQPgAAgD8A4CA+ACBQPgDAkD4AAIA/AOAgPgAgUD4AwJA+AACAPwDgID4AIFA+AMCQPgAAgD8A4CA+ACBQPgDAkD4AAIA/AOAgPgAgUD4AwJA+AACAPwDgID4AIFA+AMCQPgAAgD8A4CA+ACBQPgDAkD4AAIA/AOAgPgAgUD4AwJA+AACAPwDgID4AIFA+AMCQPgAAgD8A4CA+ACBQPgDAkD4AAIA/AOAgPgAgUD4AwJA+AACAPwDgID4AIFA+AMCQPgAAgD8A4CA+ACBQPgDAkD4AAIA/AOAgPgAgUD4AwJA+AACAPwDgID4AIFA+AMCQPgAAgD8A4CA+ACBQPgDAkD4AAIA/AOAgPgAgUD4AwJA+AACAPwDgID4AIFA+AMCQPgAAgD8A4CA+ACBQPgDAkD4AAIA/AOAgPgAgUD4AwJA+AACAPwDgID4AIFA+AMCQPgAAgD8A4CA+ACBQPgDAkD4AAIA/AOAgPgAgUD4AwJA+AACAPwDgID4AIFA+AMCQPgAAgD8A4CA+ACBQPgDAkD4AAIA/AOAgPgAgUD4AwJA+AACAPwDgID4AIFA+AMCQPgAAgD8A4CA+ACBQPgDAkD4AAIA/AOAgPgAgUD4AwJA+AACAPwDgID4AIFA+AMCQPgAAgD8A4CA+ACBQPgDAkD4AAIA/AOAgPgAgUD4AwJA+AACAPwDgID4AIFA+AMCQPgAAgD8A4CA+ACBQPgDAkD4AAIA/AOAgPgAgUD4AwJA+AACAPwDgID4AIFA+AMCQPgAAgD8A4CA+ACBQPgDAkD4AAIA/AOAgPgAgUD4AwJA+AACAPwDgID4AIFA+AMCQPgAAgD8A4CA+ACBQPgDAkD4AAIA/AOAgPgAgUD4AwJA+AACAPwDgID4AIFA+AMCQPgAAgD8A4CA+ACBQPgDAkD4AAIA/AOAgPgAgUD4AwJA+AACAPwDgID4AIFA+AMCQPgAAgD8A4CA+ACBQPgDAkD4AAIA/AOAgPgAgUD4AwJA+AACAPwDgID4AIFA+AMCQPgAAgD8A4CA+ACBQPgDAkD4AAIA/AOAgPgAgUD4AwJA+AACAPwDgID4AIFA+AMCQPgAAgD8A4CA+ACBQPgDAkD4AAIA/AOAgPgAgUD4AwJA+AACAPwDgID4AIFA+AMCQPgAAgD8A4CA+ACBQPgDAkD4AAIA/AOAgPgAgUD4AwJA+AACAPwDgID4AIFA+AMCQPgAAgD8A4CA+ACBQPgDAkD4AAIA/AOAgPgAgUD4AwJA+AACAPwDgID4AIFA+AMCQPgAAgD8A4CA+ACBQPgDAkD4AAIA/AOAgPgAgUD4AwJA+AACAPwDgID4AIFA+AMCQPgAAgD8A4CA+ACBQPgDAkD4AAIA/AOAgPgAgUD4AwJA+AACAPwDgID4AIFA+AMCQPgAAgD8A4CA+ACBQPgDAkD4AAIA/AOAgPgAgUD4AwJA+AACAPwDgID4AIFA+AMCQPgAAgD8A4CA+ACBQPgDAkD4AAIA/AOAgPgAgUD4AwJA+AACAPwDgID4AIFA+AMCQPgAAgD8A4CA+ACBQPgDAkD4AAIA/AOAgPgAgUD4AwJA+AACAPwDgID4AIFA+AMCQPgAAgD8A4CA+ACBQPgDAkD4AAIA/"), 0.0724664, PackedByteArray("AOAgPgAgUD4AwJA+AACAPwDgID4AIFA+AMCQPgAAgD8A4CA+ACBQPgDAkD4AAIA/AOAgPgAgUD4AwJA+AACAPwDgID4AIFA+AMCQPgAAgD8A4CA+ACBQPgDAkD4AAIA/AOAgPgAgUD4AwJA+AACAPwDgID4AIFA+AMCQPgAAgD8A4CA+ACBQPgDAkD4AAIA/AOAgPgAgUD4AwJA+AACAPwDgID4AIFA+AMCQPgAAgD8A4CA+ACBQPgDAkD4AAIA/AOAgPgAgUD4AwJA+AACAPwDgID4AIFA+AMCQPgAAgD8A4CA+ACBQPgDAkD4AAIA/AOAgPgAgUD4AwJA+AACAPwDgID4AIFA+AMCQPgAAgD8A4CA+ACBQPgDAkD4AAIA/AOAgPgAgUD4AwJA+AACAPwDgID4AIFA+AMCQPgAAgD8A4CA+ACBQPgDAkD4AAIA/AOAgPgAgUD4AwJA+AACAPwDgID4AIFA+AMCQPgAAgD8A4CA+ACBQPgDAkD4AAIA/AOAgPgAgUD4AwJA+AACAPwDgID4AIFA+AMCQPgAAgD8A4CA+ACBQPgDAkD4AAIA/AOAgPgAgUD4AwJA+AACAPwDgID4AIFA+AMCQPgAAgD8A4CA+ACBQPgDAkD4AAIA/AOAgPgAgUD4AwJA+AACAPwDgID4AIFA+AMCQPgAAgD8A4CA+ACBQPgDAkD4AAIA/AOAgPgAgUD4AwJA+AACAPwDgID4AIFA+AMCQPgAAgD8A4CA+ACBQPgDAkD4AAIA/AOAgPgAgUD4AwJA+AACAPwDgID4AIFA+AMCQPgAAgD8A4CA+ACBQPgDAkD4AAIA/AOAgPgAgUD4AwJA+AACAPwDgID4AIFA+AMCQPgAAgD8A4CA+ACBQPgDAkD4AAIA/AOAgPgAgUD4AwJA+AACAPwDgID4AIFA+AMCQPgAAgD8A4CA+ACBQPgDAkD4AAIA/"), 0.125811, PackedByteArray("AOAgPgAgUD4AwJA+AACAPwDgID4AIFA+AMCQPgAAgD8A4CA+ACBQPgDAkD4AAIA/AOAgPgAgUD4AwJA+AACAPwDgID4AIFA+AMCQPgAAgD8A4CA+ACBQPgDAkD4AAIA/AOAgPgAgUD4AwJA+AACAPwDgID4AIFA+AMCQPgAAgD8A4CA+ACBQPgDAkD4AAIA/AOAgPgAgUD4AwJA+AACAPwDgID4AIFA+AMCQPgAAgD8A4CA+ACBQPgDAkD4AAIA/AOAgPgAgUD4AwJA+AACAPwDgID4AIFA+AMCQPgAAgD8A4CA+ACBQPgDAkD4AAIA/AOAgPgAgUD4AwJA+AACAPwDgID4AIFA+AMCQPgAAgD8A4CA+ACBQPgDAkD4AAIA/AOAgPgAgUD4AwJA+AACAPwDgID4AIFA+AMCQPgAAgD8A4CA+ACBQPgDAkD4AAIA/AOAgPgAgUD4AwJA+AACAPwDgID4AIFA+"), 0.89577, PackedByteArray("AOAgPgAgUD4AwJA+AACAPwDgID4AIFA+AMCQPgAAgD8A4CA+ACBQPgDAkD4AAIA/AOAgPgAgUD4AwJA+AACAPwDgID4AIFA+AMCQPgAAgD8A4CA+ACBQPgDAkD4AAIA/AOAgPgAgUD4AwJA+AACAPwDgID4AIFA+AMCQPgAAgD8A4CA+ACBQPgDAkD4AAIA/AOAgPgAgUD4AwJA+AACAPwDgID4AIFA+AMCQPgAAgD8A4CA+")],
+"material": SubResource("StandardMaterial3D_gnk6s"),
+"name": "Shockwave",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 269,
+"vertex_data": PackedByteArray("AOAgPgAgUD4AwJA+AACAPwDgID4AIFA+AMCQPgAAgD8A4CA+ACBQPgDAkD4AAIA/AOAgPgAgUD4AwJA+AACAPwDgID4AIFA+AMCQPgAAgD8A4CA+ACBQPgDAkD4AAIA/AOAgPgAgUD4AwJA+AACAPwDgID4AIFA+AMCQPgAAgD8A4CA+ACBQPgDAkD4AAIA/AOAgPgAgUD4AwJA+AACAPwDgID4AIFA+AMCQPgAAgD8A4CA+ACBQPgDAkD4AAIA/AOAgPgAgUD4AwJA+AACAPwDgID4AIFA+AMCQPgAAgD8A4CA+ACBQPgDAkD4AAIA/AOAgPgAgUD4AwJA+AACAPwDgID4AIFA+AMCQPgAAgD8A4CA+ACBQPgDAkD4AAIA/AOAgPgAgUD4AwJA+AACAPwDgID4AIFA+AMCQPgAAgD8A4CA+ACBQPgDAkD4AAIA/AOAgPgAgUD4AwJA+AACAPwDgID4AIFA+AMCQPgAAgD8A4CA+ACBQPgDAkD4AAIA/AOAgPgAgUD4AwJA+AACAPwDgID4AIFA+AMCQPgAAgD8A4CA+ACBQPgDAkD4AAIA/AOAgPgAgUD4AwJA+AACAPwDgID4AIFA+AMCQPgAAgD8A4CA+ACBQPgDAkD4AAIA/AOAgPgAgUD4AwJA+AACAPwDgID4AIFA+AMCQPgAAgD8A4CA+ACBQPgDAkD4AAIA/AOAgPgAgUD4AwJA+AACAPwDgID4AIFA+AMCQPgAAgD8A4CA+ACBQPgDAkD4AAIA/AOAgPgAgUD4AwJA+AACAPwDgID4AIFA+AMCQPgAAgD8A4CA+ACBQPgDAkD4AAIA/AOAgPgAgUD4AwJA+AACAPwDgID4AIFA+AMCQPgAAgD8A4CA+ACBQPgDAkD4AAIA/AOAgPgAgUD4AwJA+AACAPwDgID4AIFA+AMCQPgAAgD8A4CA+ACBQPgDAkD4AAIA/AOAgPgAgUD4AwJA+AACAPwDgID4AIFA+AMCQPgAAgD8A4CA+ACBQPgDAkD4AAIA/AOAgPgAgUD4AwJA+AACAPwDgID4AIFA+AMCQPgAAgD8A4CA+ACBQPgDAkD4AAIA/AOAgPgAgUD4AwJA+AACAPwDgID4AIFA+AMCQPgAAgD8A4CA+ACBQPgDAkD4AAIA/AOAgPgAgUD4AwJA+AACAPwDgID4AIFA+AMCQPgAAgD8A4CA+ACBQPgDAkD4AAIA/AOAgPgAgUD4AwJA+AACAPwDgID4AIFA+AMCQPgAAgD8A4CA+ACBQPgDAkD4AAIA/AOAgPgAgUD4AwJA+AACAPwDgID4AIFA+AMCQPgAAgD8A4CA+ACBQPgDAkD4AAIA/AOAgPgAgUD4AwJA+AACAPwDgID4AIFA+AMCQPgAAgD8A4CA+ACBQPgDAkD4AAIA/AOAgPgAgUD4AwJA+AACAPwDgID4AIFA+AMCQPgAAgD8A4CA+ACBQPgDAkD4AAIA/AOAgPgAgUD4AwJA+AACAPwDgID4AIFA+AMCQPgAAgD8A4CA+ACBQPgDAkD4AAIA/AOAgPgAgUD4AwJA+AACAPwDgID4AIFA+AMCQPgAAgD8A4CA+ACBQPgDAkD4AAIA/AOAgPgAgUD4AwJA+AACAPwDgID4AIFA+AMCQPgAAgD8A4CA+ACBQPgDAkD4AAIA/AOAgPgAgUD4AwJA+AACAPwDgID4AIFA+AMCQPgAAgD8A4CA+ACBQPgDAkD4AAIA/AOAgPgAgUD4AwJA+AACAPwDgID4AIFA+AMCQPgAAgD8A4CA+ACBQPgDAkD4AAIA/AOAgPgAgUD4AwJA+AACAPwDgID4AIFA+AMCQPgAAgD8A4CA+ACBQPgDAkD4AAIA/AOAgPgAgUD4AwJA+AACAPwDgID4AIFA+AMCQPgAAgD8A4CA+ACBQPgDAkD4AAIA/AOAgPgAgUD4AwJA+AACAPwDgID4AIFA+AMCQPgAAgD8A4CA+ACBQPgDAkD4AAIA/AOAgPgAgUD4AwJA+AACAPwDgID4AIFA+AMCQPgAAgD8A4CA+ACBQPgDAkD4AAIA/AOAgPgAgUD4AwJA+AACAPwDgID4AIFA+AMCQPgAAgD8A4CA+ACBQPgDAkD4AAIA/AOAgPgAgUD4AwJA+AACAPwDgID4AIFA+AMCQPgAAgD8A4CA+ACBQPgDAkD4AAIA/AOAgPgAgUD4AwJA+AACAPwDgID4AIFA+AMCQPgAAgD8A4CA+ACBQPgDAkD4AAIA/AOAgPgAgUD4AwJA+AACAPwDgID4AIFA+AMCQPgAAgD8A4CA+ACBQPgDAkD4AAIA/AOAgPgAgUD4AwJA+AACAPwDgID4AIFA+AMCQPgAAgD8A4CA+ACBQPgDAkD4AAIA/AOAgPgAgUD4AwJA+AACAPwDgID4AIFA+AMCQPgAAgD8A4CA+ACBQPgDAkD4AAIA/AOAgPgAgUD4AwJA+AACAPwDgID4AIFA+AMCQPgAAgD8A4CA+ACBQPgDAkD4AAIA/AOAgPgAgUD4AwJA+AACAPwDgID4AIFA+AMCQPgAAgD8A4CA+ACBQPgDAkD4AAIA/AOAgPgAgUD4AwJA+AACAPwDgID4AIFA+AMCQPgAAgD8A4CA+ACBQPgDAkD4AAIA/AOAgPgAgUD4AwJA+AACAPwDgID4AIFA+AMCQPgAAgD8A4CA+ACBQPgDAkD4AAIA/AOAgPgAgUD4AwJA+AACAPwDgID4AIFA+AMCQPgAAgD8A4CA+AEBQPgDgkD4AAIA/AOAgPgBAUD4A4JA+AACAPwDgID4AQFA+AOCQPgAAgD8A4CA+AEBQPgDgkD4AAIA/AOAgPgBAUD4AwJA+AACAPwDgID4AQFA+AMCQPgAAgD8A4CA+AEBQPgDAkD4AAIA/AOAgPgBAUD4AwJA+AACAPwDgID4AIFA+AMCQPgAAgD8A4CA+ACBQPgDAkD4AAIA/AOAgPgAgUD4AwJA+AACAPwDgID4AIFA+AMCQPgAAgD8A4CA+ACBQPgDAkD4AAIA/AOAgPgAgUD4AwJA+AACAPwDgID4AQFA+AMCQPgAAgD8A4CA+AEBQPgDAkD4AAIA/AOAgPgBAUD4AwJA+AACAPwDgID4AQFA+AMCQPgAAgD8A4CA+AEBQPgDgkD4AAIA/AOAgPgBAUD4A4JA+AACAPwDgID4AQFA+AOCQPgAAgD8A4CA+AEBQPgDgkD4AAIA/AOAgPgAgUD4AwJA+AACAPwDgID4AIFA+AMCQPgAAgD8A4CA+ACBQPgDAkD4AAIA/AOAgPgBAUD4AwJA+AACAPwDgID4AQFA+AOCQPgAAgD8A4CA+AEBQPgDgkD4AAIA/AOAgPgBAUD4A4JA+AACAPwDgID4AQFA+AOCQPgAAgD8A4CA+AEBQPgDgkD4AAIA/AOAgPgBAUD4A4JA+AACAPwDgID4AIFA+AOCQPgAAgD8A4CA+ACBQPgDAkD4AAIA/AOAgPgAgUD4AwJA+AACAPwDgID4AIFA+AMCQPgAAgD8A4CA+AEBQPgDAkD4AAIA/AOAgPgBAUD4AwJA+AACAPwDgID4AQFA+AOCQPgAAgD8A4CA+AEBQPgDgkD4AAIA/AOAgPgAgUD4A4JA+AACAPwDgID4AIFA+AOCQPgAAgD8A4CA+ACBQPgDgkD4AAIA/AOAgPgBAUD4A4JA+AACAPwDgID4AQFA+AOCQPgAAgD8A4CA+AEBQPgDgkD4AAIA/AOAgPgBAUD4A4JA+AACAPwDgID4AQFA+AOCQPgAAgD8A4CA+AEBQPgDgkD4AAIA/AOAgPgBAUD4A4JA+AACAPwDgID4AQFA+AOCQPgAAgD8A4CA+AEBQPgDgkD4AAIA/AOAgPgBAUD4A4JA+AACAPwDgID4AQFA+AOCQPgAAgD8A4CA+AEBQPgDgkD4AAIA/AOAgPgBAUD4A4JA+AACAPwDgID4AQFA+AOCQPgAAgD8A4CA+AEBQPgDgkD4AAIA/AOAgPgBAUD4A4JA+AACAPwDgID4AQFA+AOCQPgAAgD8A4CA+AEBQPgDgkD4AAIA/AOAgPgBAUD4A4JA+AACAPwDgID4AQFA+AOCQPgAAgD8A4CA+AEBQPgDgkD4AAIA/AOAgPgBAUD4A4JA+AACAPwDgID4AQFA+AOCQPgAAgD8A4CA+AEBQPgDgkD4AAIA/AOAgPgBAUD4A4JA+AACAPwDgID4AQFA+AOCQPgAAgD8A4CA+AEBQPgDgkD4AAIA/AOAgPgBAUD4A4JA+AACAPwDgID4AQFA+AOCQPgAAgD8A4CA+AEBQPgDgkD4AAIA/AOAgPgBAUD4A4JA+AACAPwDgID4AQFA+AOCQPgAAgD8A4CA+AEBQPgDgkD4AAIA/AOAgPgBAUD4A4JA+AACAPwDgID4AQFA+AOCQPgAAgD8A4CA+AEBQPgDgkD4AAIA/AOAgPgBAUD4A4JA+AACAPwDgID4AQFA+AOCQPgAAgD8A4CA+AEBQPgDgkD4AAIA/AOAgPgBAUD4A4JA+AACAPwDgID4AQFA+AOCQPgAAgD8A4CA+AEBQPgDAkD4AAIA/AOAgPgBAUD4AwJA+AACAPwDgID4AQFA+AOCQPgAAgD8A4CA+AEBQPgDgkD4AAIA/AOAgPgBAUD4A4JA+AACAPwAAIT4AQFA+AOCQPgAAgD8AACE+AEBQPgDgkD4AAIA/AAAhPgBAUD4A4JA+AACAPwAAIT4AQFA+AOCQPgAAgD8AACE+AEBQPgDgkD4AAIA/AAAhPgBAUD4A4JA+AACAPwAAIT4AQFA+AOCQPgAAgD8AACE+AEBQPgDgkD4AAIA/AAAhPgBAUD4A4JA+AACAPwAAIT4AQFA+AOCQPgAAgD8AACE+AEBQPgDgkD4AAIA/AAAhPgBAUD4A4JA+AACAPwAAIT4AQFA+AOCQPgAAgD8A4CA+AEBQPgDgkD4AAIA/AOAgPgBAUD4A4JA+AACAPwDgID4AQFA+AOCQPgAAgD8A4CA+AEBQPgDgkD4AAIA/AOAgPgBAUD4A4JA+AACAPwDgID4AQFA+AOCQPgAAgD8A4CA+AEBQPgDgkD4AAIA/AOAgPgBAUD4A4JA+AACAPwAAIT4AQFA+AOCQPgAAgD8AACE+AEBQPgDgkD4AAIA/AAAhPgBAUD4A4JA+AACAPwAAIT4AQFA+AOCQPgAAgD8A4CA+AEBQPgDgkD4AAIA/AOAgPgBAUD4A4JA+AACAPwDgID4AQFA+AOCQPgAAgD8A4CA+AEBQPgDgkD4AAIA/AOAgPgBAUD4AwJA+AACAPwDgID4AQFA+AMCQPgAAgD8A4CA+AEBQPgDAkD4AAIA/AOAgPgBAUD4AwJA+AACAPwDgID4AQFA+AMCQPgAAgD8A4CA+AEBQPgDAkD4AAIA/AOAgPgBAUD4AwJA+AACAPwDgID4AQFA+AOCQPgAAgD8A4CA+AEBQPgDgkD4AAIA/AOAgPgBAUD4A4JA+AACAPwAAIT4AYFA+AOCQPgAAgD8AACE+AEBQPgDgkD4AAIA/AAAhPgBgUD4A4JA+AACAPwAAIT4AYFA+AOCQPgAAgD8AACE+AGBQPgDgkD4AAIA/AAAhPgBgUD4A4JA+AACAPwAAIT4AYFA+AOCQPgAAgD8AACE+AGBQPgDgkD4AAIA/AAAhPgBgUD4A4JA+AACAPwAAIT4AYFA+AOCQPgAAgD8AACE+AEBQPgDgkD4AAIA/AAAhPgBAUD4A4JA+AACAPwAAIT4AQFA+AOCQPgAAgD8AACE+AEBQPgDgkD4AAIA/AOAgPgBAUD4A4JA+AACAPwDgID4AQFA+AMCQPgAAgD8AACE+AEBQPgDgkD4AAIA/AAAhPgBAUD4A4JA+AACAPwDgID4AQFA+AOCQPgAAgD8A4CA+AEBQPgDgkD4AAIA/AOAgPgBAUD4A4JA+AACAPwDgID4AQFA+AOCQPgAAgD8A4CA+AEBQPgDgkD4AAIA/AOAgPgBAUD4A4JA+AACAPwDgID4AQFA+AMCQPgAAgD8A4CA+AEBQPgDAkD4AAIA/AOAgPgBAUD4AwJA+AACAPwDgID4AQFA+AOCQPgAAgD8A4CA+AEBQPgDgkD4AAIA/AOAgPgBAUD4A4JA+AACAPwDgID4AQFA+AOCQPgAAgD8A4CA+AEBQPgDAkD4AAIA/AOAgPgBAUD4AwJA+AACAPwDgID4AQFA+AMCQPgAAgD8A4CA+ACBQPgDAkD4AAIA/AOAgPgAgUD4AwJA+AACAPwDgID4AQFA+AMCQPgAAgD8A4CA+AEBQPgDgkD4AAIA/AOAgPgBAUD4A4JA+AACAPwDgID4AQFA+AOCQPgAAgD8A4CA+AEBQPgDgkD4AAIA/AOAgPgBAUD4A4JA+AACAPwDgID4AQFA+AOCQPgAAgD8A4CA+AEBQPgDgkD4AAIA/AOAgPgBAUD4A4JA+AACAPwDgID4AQFA+AOCQPgAAgD8A4CA+AEBQPgDgkD4AAIA/AAAhPgBAUD4A4JA+AACAPwAAIT4AQFA+AOCQPgAAgD8AACE+AEBQPgDgkD4AAIA/AAAhPgBAUD4A4JA+AACAPwAAIT4AQFA+AOCQPgAAgD8AACE+AEBQPgDgkD4AAIA/AAAhPgBAUD4A4JA+AACAPwAAIT4AQFA+AOCQPgAAgD8AACE+AEBQPgDgkD4AAIA/AAAhPgBAUD4A4JA+AACAPwAAIT4AQFA+AOCQPgAAgD8AACE+AEBQPgDgkD4AAIA/AAAhPgBAUD4A4JA+AACAPwAAIT4AQFA+AOCQPgAAgD8AACE+AEBQPgDgkD4AAIA/AAAhPgBAUD4A4JA+AACAPwAAIT4AQFA+AOCQPgAAgD8AACE+AGBQPgDgkD4AAIA/AAAhPgBgUD4A4JA+AACAPwAAIT4AQFA+AOCQPgAAgD8AACE+AEBQPgDgkD4AAIA/AAAhPgBgUD4A4JA+AACAPwAAIT4AYFA+AOCQPgAAgD8AICE+AGBQPgDgkD4AAIA/AAAhPgBgUD4A4JA+AACAPwAAIT4AYFA+AOCQPgAAgD8AACE+AGBQPgDgkD4AAIA/AAAhPgBgUD4A4JA+AACAPwAAIT4AYFA+AOCQPgAAgD8AICE+AGBQPgDgkD4AAIA/ACAhPgBgUD4A4JA+AACAPwAgIT4AYFA+AOCQPgAAgD8AICE+AGBQPgDgkD4AAIA/ACAhPg==")
+}]
+blend_shape_mode = 0
+shadow_mesh = SubResource("ArrayMesh_qdq3s")
+
+[sub_resource type="Gradient" id="Gradient_lu3ad"]
+offsets = PackedFloat32Array(0, 0.12628, 0.658703, 1)
+colors = PackedColorArray(1, 1, 1, 0, 1, 1, 1, 0, 1, 1, 1, 0.501961, 1, 1, 1, 0)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_h0udy"]
+gradient = SubResource("Gradient_lu3ad")
+
+[sub_resource type="Curve" id="Curve_akolj"]
+_data = [Vector2(0, 0), 0.0, 2.0, 0, 0, Vector2(0.504673, 1), 0.0, 0.0, 0, 0, Vector2(1, 1), 0.0, 0.0, 0, 0]
+point_count = 3
+
+[sub_resource type="CurveTexture" id="CurveTexture_f844w"]
+curve = SubResource("Curve_akolj")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_df3e1"]
+angle_min = 1.07288e-05
+angle_max = 1.07288e-05
+direction = Vector3(0, 0, 1)
+spread = 0.0
+initial_velocity_min = 10.0
+initial_velocity_max = 10.0
+angular_velocity_min = -1.60933e-05
+angular_velocity_max = -1.60933e-05
+gravity = Vector3(0, 0, 0)
+scale_curve = SubResource("CurveTexture_f844w")
+color = Color(0.501961, 0.501961, 1, 1)
+color_ramp = SubResource("GradientTexture1D_h0udy")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_7q5tg"]
+angle_min = 1.07288e-05
+angle_max = 1.07288e-05
+direction = Vector3(0, 0, 1)
+spread = 0.0
+initial_velocity_min = 10.0
+initial_velocity_max = 10.0
+angular_velocity_min = -1.60933e-05
+angular_velocity_max = -1.60933e-05
+gravity = Vector3(0, 0, 0)
+scale_curve = SubResource("CurveTexture_f844w")
+color = Color(1, 1, 0, 1)
+color_ramp = SubResource("GradientTexture1D_h0udy")
+
+[sub_resource type="Curve" id="Curve_rpdq2"]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(0.250996, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
+point_count = 3
+
+[sub_resource type="CurveTexture" id="CurveTexture_3vx6l"]
+curve = SubResource("Curve_rpdq2")
+
+[sub_resource type="Curve" id="Curve_5xpxu"]
+_data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(1, 1), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="CurveTexture" id="CurveTexture_jyrod"]
+curve = SubResource("Curve_5xpxu")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_wfr1m"]
+gravity = Vector3(0, 0, 0)
+scale_min = 50.0
+scale_max = 50.0
+scale_curve = SubResource("CurveTexture_jyrod")
+alpha_curve = SubResource("CurveTexture_3vx6l")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_p5w88"]
+render_priority = 0
+shader = ExtResource("56_ad3cf")
+shader_parameter/DistortScale = 1.0
+
+[sub_resource type="QuadMesh" id="QuadMesh_vs2fh"]
+material = SubResource("ShaderMaterial_p5w88")
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_w2i3l"]
+
+[sub_resource type="Curve" id="Curve_TrailBoost"]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(1, 0.1), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="Gradient" id="Gradient_6dkl6"]
+colors = PackedColorArray(0, 0, 1, 1, 0, 0, 1, 0)
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_rfscu"]
+
+[sub_resource type="Gradient" id="Gradient_TrailBoostSuper"]
+colors = PackedColorArray(1, 1, 0, 1, 1, 1, 0, 0)
+
+[sub_resource type="Curve" id="Curve_sfm8q"]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="CurveTexture" id="CurveTexture_y6o8a"]
+curve = SubResource("Curve_sfm8q")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_xfi8d"]
+spread = 0.0
+initial_velocity_min = 30.0
+initial_velocity_max = 30.0
+gravity = Vector3(0, 0, 0)
+scale_min = 2.0
+scale_max = 2.0
+alpha_curve = SubResource("CurveTexture_y6o8a")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_h45sc"]
+transparency = 1
+cull_mode = 2
+shading_mode = 0
+disable_ambient_light = true
+vertex_color_use_as_albedo = true
+albedo_texture = ExtResource("69_sbh3i")
+disable_receive_shadows = true
+billboard_keep_scale = true
+
+[sub_resource type="QuadMesh" id="QuadMesh_ruv8i"]
+material = SubResource("StandardMaterial3D_h45sc")
+
+[sub_resource type="Curve" id="Curve_8mkqw"]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="CurveTexture" id="CurveTexture_8u42l"]
+curve = SubResource("Curve_8mkqw")
+
+[sub_resource type="Curve" id="Curve_eanc7"]
+_data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(1, 1), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="Curve" id="Curve_g1imc"]
+_data = [Vector2(0, 0.198973), 0.0, 0.0, 0, 0, Vector2(1, 0.198973), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="Curve" id="Curve_ck2y1"]
+_data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(1, 1), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="CurveXYZTexture" id="CurveXYZTexture_gq83i"]
+curve_x = SubResource("Curve_eanc7")
+curve_y = SubResource("Curve_g1imc")
+curve_z = SubResource("Curve_ck2y1")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_xw14s"]
+gravity = Vector3(0, 0, 0)
+scale_min = 5.0
+scale_max = 5.0
+scale_curve = SubResource("CurveXYZTexture_gq83i")
+alpha_curve = SubResource("CurveTexture_8u42l")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ed2og"]
+transparency = 1
+cull_mode = 2
+vertex_color_use_as_albedo = true
+albedo_texture = ExtResource("74_wf1jn")
+disable_receive_shadows = true
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_c2vbl"]
+material = SubResource("StandardMaterial3D_ed2og")
+top_radius = 2.0
+bottom_radius = 0.1
+height = 1.0
+cap_top = false
+cap_bottom = false
+
+[sub_resource type="Curve" id="Curve_ymias"]
+_data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(1, 0.24888885), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="CurveTexture" id="CurveTexture_ww57t"]
+curve = SubResource("Curve_ymias")
+
+[sub_resource type="Curve" id="Curve_pohqo"]
+_data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(1, 1), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="CurveTexture" id="CurveTexture_sh2wi"]
+curve = SubResource("Curve_pohqo")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_vlka6"]
+angle_min = 1.0728835e-05
+angle_max = 360.00003
+spread = 180.0
+initial_velocity_min = 10.0
+initial_velocity_max = 10.0
+gravity = Vector3(0, 0, 0)
+scale_curve = SubResource("CurveTexture_sh2wi")
+alpha_curve = SubResource("CurveTexture_ww57t")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_pohqo"]
+transparency = 1
+shading_mode = 0
+vertex_color_use_as_albedo = true
+albedo_texture = ExtResource("86_6dkl6")
+disable_receive_shadows = true
+billboard_mode = 3
+billboard_keep_scale = true
+particles_anim_h_frames = 1
+particles_anim_v_frames = 1
+particles_anim_loop = false
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_6dkl6"]
+material = SubResource("StandardMaterial3D_pohqo")
+orientation = 2
+
+[sub_resource type="Curve3D" id="Curve3D_i3hf6"]
+_data = {
+"points": PackedVector3Array(0, 0, 0, 0, 0, -0.1, 0.1, 0, 0, 0.1, 0, 0, -0.1, 0, 0, 0.2, 0.1, -0.2, 0.1, 0, 0, 0, 0, 0, 0.2, 0.2, -0.1),
+"tilts": PackedFloat32Array(0, 0, 0)
+}
+point_count = 3
+up_vector_enabled = false
+
+[node name="PlayerSonic" type="RigidBody3D" unique_id=1334333257 node_paths=PackedStringArray("PlayerInput", "PlayerInventory", "PlayerDamage", "NpcPartnerControl", "PlayerSkinController", "RayCast")]
+collision_layer = 2
+collision_mask = 257
+physics_material_override = SubResource("PhysicsMaterial_3fppr")
+gravity_scale = 0.0
+lock_rotation = true
+continuous_cd = true
+contact_monitor = true
+max_contacts_reported = 1
+script = ExtResource("1_dr35b")
+CharacterName = "Sonic"
+CharacterThemeColor = Color(0, 0.501961, 1, 1)
+PlayerInput = NodePath("PlayerControl/Input")
+PlayerInventory = NodePath("Inventory")
+PlayerDamage = NodePath("PlayerControl/Damage")
+NpcPartnerControl = NodePath("PlayerControl/NpcControl")
+PlayerSkinController = NodePath("SonicModels/Sonic_model")
+Acceleration = SubResource("Curve_4npxy")
+NoInputDecceleration = SubResource("Curve_njqdl")
+Gravity = Vector3(0, -60, 0)
+MinWallrunVelocityXZ = 10.0
+WallrunGravityDot = 0.0
+SlopeGravityFactor = 0.3
+SlopeRunFactor = SubResource("Curve_nkr8l")
+RayCast = NodePath("RayCast3D")
+
+[node name="SonicModels" type="Node3D" parent="." unique_id=874196431]
+
+[node name="Sonic_model" parent="SonicModels" unique_id=576298575 node_paths=PackedStringArray("PlayerController", "ActionRoll", "ActionGrind", "ActionDrift", "RunWindParticles", "RunDustParticles", "RunSplashParticles", "RunWind") instance=ExtResource("2_ifp8b")]
+PlayerController = NodePath("../..")
+ActionRoll = NodePath("../../PlayerControl/Actions/ActionRoll")
+ActionGrind = NodePath("../../PlayerControl/Actions/ActionGrind")
+ActionDrift = NodePath("../../PlayerControl/Actions/ActionDrift")
+RunWindParticles = NodePath("../../Effects/RunTrail")
+RunDustParticles = NodePath("../../Effects/[Particles] StepSmoke")
+RunSplashParticles = NodePath("../../Effects/[Particles] StepSplash")
+RunWind = NodePath("../../Audio/FastRunWindPlayer")
+
+[node name="SonicSuper_model" parent="SonicModels" unique_id=764225766 node_paths=PackedStringArray("PlayerController", "ActionRoll", "ActionGrind", "RunWindParticles", "RunDustParticles", "RunSplashParticles", "RunWind") instance=ExtResource("3_lfcf0")]
+process_mode = 4
+visible = false
+PlayerController = NodePath("../..")
+ActionRoll = NodePath("../../PlayerControl/Actions/ActionRoll")
+ActionGrind = NodePath("../../PlayerControl/Actions/ActionGrind")
+RunWindParticles = NodePath("../../Effects/RunTrail")
+RunDustParticles = NodePath("../../Effects/[Particles] StepSmoke")
+RunSplashParticles = NodePath("../../Effects/[Particles] StepSplash")
+RunWind = NodePath("../../Audio/FastRunWindPlayer")
+
+[node name="RayCast3D" type="RayCast3D" parent="." unique_id=2106000191]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
+hit_back_faces = false
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1197000794]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.6, 0)
+shape = SubResource("CapsuleShape3D_rjjsx")
+
+[node name="PlayerControl" type="Node" parent="." unique_id=1531960274]
+
+[node name="Actions" type="Node" parent="PlayerControl" unique_id=1325937844]
+script = ExtResource("4_yrv08")
+
+[node name="ActionDash" type="Node" parent="PlayerControl/Actions" unique_id=77697946 node_paths=PackedStringArray("Player", "PlayerInput", "ActionRoll", "ActionHoming", "ActionGrind", "ActionJump", "ActionBoost", "Particles", "audioPlayer")]
+script = ExtResource("3_x7gvs")
+Player = NodePath("../../..")
+PlayerInput = NodePath("../../Input")
+ActionRoll = NodePath("../ActionRoll")
+ActionHoming = NodePath("../ActionHoming")
+ActionGrind = NodePath("../ActionGrind")
+ActionJump = NodePath("../ActionJump")
+ActionBoost = NodePath("../ActionBoost")
+Particles = NodePath("../../../Effects/DashParticles")
+groundDashSoundEffect = ExtResource("4_ajvwr")
+airDashSoundEffect = ExtResource("5_5mxhk")
+audioPlayer = NodePath("../../../Audio/PlayerSoundEffectsPlayer")
+
+[node name="ActionDashOnJump" type="Node" parent="PlayerControl/Actions" unique_id=794516953 node_paths=PackedStringArray("Player", "PlayerInput", "ActionRoll", "ActionHoming", "ActionGrind", "ActionJump", "ActionBoost", "Particles", "audioPlayer")]
+process_mode = 4
+script = ExtResource("3_x7gvs")
+Player = NodePath("../../..")
+PlayerInput = NodePath("../../Input")
+ActionRoll = NodePath("../ActionRoll")
+ActionHoming = NodePath("../ActionHoming")
+ActionGrind = NodePath("../ActionGrind")
+ActionJump = NodePath("../ActionJump")
+ActionBoost = NodePath("../ActionBoost")
+Particles = NodePath("../../../Effects/DashParticles")
+groundDashSoundEffect = ExtResource("4_ajvwr")
+airDashSoundEffect = ExtResource("5_5mxhk")
+audioPlayer = NodePath("../../../Audio/PlayerSoundEffectsPlayer")
+DashAction = "actionjump"
+ExecutedByJump = true
+TriggersBoost = false
+
+[node name="ActionJump" type="Node" parent="PlayerControl/Actions" unique_id=106450687 node_paths=PackedStringArray("Player", "ActionRoll", "audioStreamPlayer")]
+script = ExtResource("6_grlnp")
+Player = NodePath("../../..")
+ActionRoll = NodePath("../ActionRoll")
+JumpVelocity = 15.0
+MinJumpRiseTime = 0.1
+MaxJumpRiseTime = 0.3
+audioStreamPlayer = NodePath("../../../Audio/PlayerSoundEffectsPlayer")
+audioStream = ExtResource("7_6s6jw")
+
+[node name="ActionRoll" type="Node" parent="PlayerControl/Actions" unique_id=1200990923 node_paths=PackedStringArray("Player", "PlayerInput", "ActionGrind", "ActionBoost", "ActionDrift", "audioPlayer", "SpinDashParticles", "SpinDashChargeParticles")]
+script = ExtResource("8_i5755")
+Player = NodePath("../../..")
+PlayerInput = NodePath("../../Input")
+ActionGrind = NodePath("../ActionGrind")
+ActionBoost = NodePath("../ActionBoost")
+ActionDrift = NodePath("../ActionDrift")
+rollSoundEffect = ExtResource("9_g351b")
+spinDashReleaseSoundEffect = ExtResource("10_nf6fd")
+dropDashChargeSoundEffect = ExtResource("12_8bj20")
+audioPlayer = NodePath("../../../Audio/PlayerSoundEffectsPlayer")
+LockRollTimer = 0.3
+SpinDashParticles = NodePath("../../../Effects/SpinDashSmoke")
+SpinDashChargeParticles = NodePath("../../../Effects/SpinDashSmokeCharge")
+
+[node name="ActionHoming" type="Node" parent="PlayerControl/Actions" unique_id=1241702077 node_paths=PackedStringArray("Player", "ActionRoll", "ActionJump", "ActionDash", "AudioPlayer")]
+script = ExtResource("10_2fur4")
+Player = NodePath("../../..")
+ActionRoll = NodePath("../ActionRoll")
+ActionJump = NodePath("../ActionJump")
+ActionDash = NodePath("../ActionDash")
+TargetBeep = ExtResource("11_mui1q")
+HomingSound = ExtResource("5_5mxhk")
+AudioPlayer = NodePath("../../../Audio/PlayerSoundEffectsPlayer")
+
+[node name="HomingTarget" parent="PlayerControl/Actions/ActionHoming" unique_id=1370984880 instance=ExtResource("16_t7sgb")]
+top_level = true
+
+[node name="ActionCombat" type="Node" parent="PlayerControl/Actions" unique_id=985292957 node_paths=PackedStringArray("Player", "ActionHoming", "ActionBoost")]
+script = ExtResource("12_ujxup")
+Player = NodePath("../../..")
+ActionHoming = NodePath("../ActionHoming")
+ActionBoost = NodePath("../ActionBoost")
+PostHomingAttackBounceStrength = 30.0
+PostHomingAttackAnimations = PackedStringArray("homing_act00", "homing_act01", "homing_act02", "homing_act03", "homing_act04", "homing_act05")
+
+[node name="ActionGrind" type="Node" parent="PlayerControl/Actions" unique_id=917257286 node_paths=PackedStringArray("Player", "PlayerInput", "ActionRoll", "ActionHoming", "AudioPlayer", "ContinousAudioPlayer", "GrindTrail", "GrindParticles", "HomingTarget")]
+script = ExtResource("13_g23ex")
+Player = NodePath("../../..")
+PlayerInput = NodePath("../../Input")
+ActionRoll = NodePath("../ActionRoll")
+ActionHoming = NodePath("../ActionHoming")
+GrindStartSoundEffect = ExtResource("14_720ts")
+GrindSoundEffect = ExtResource("15_xrj3r")
+AudioPlayer = NodePath("../../../Audio/PlayerSoundEffectsPlayer")
+ContinousAudioPlayer = NodePath("../../../Audio/ContinousStreamPlayer3D")
+GrindTrail = NodePath("../../../Effects/GrindTrail")
+GrindParticles = [NodePath("../../../Effects/[Particles] GrindSparks1"), NodePath("../../../Effects/[Particles] GrindSparks2")]
+HomingTarget = NodePath("../ActionHoming/HomingTarget")
+
+[node name="ActionAutoGimmick" type="Node" parent="PlayerControl/Actions" unique_id=765222428 node_paths=PackedStringArray("Player")]
+script = ExtResource("17_s4khx")
+Player = NodePath("../../..")
+
+[node name="ActionSuperTransformation" type="Node" parent="PlayerControl/Actions" unique_id=1565703945 node_paths=PackedStringArray("NormalSkin", "SuperSkin", "PlayerSoundEffectsPlayer", "SuperPlayer", "TransformationCameraPathFollow", "TransformationCameraPoint", "TransformationCameraLookAt")]
+script = ExtResource("19_7n8sk")
+NormalSkin = NodePath("../../../SonicModels/Sonic_model")
+SuperSkin = NodePath("../../../SonicModels/SonicSuper_model")
+Flying = false
+TransformationSoundEffect = ExtResource("21_tox5f")
+PlayerSoundEffectsPlayer = NodePath("../../../Audio/PlayerSoundEffectsPlayer")
+SuperPlayer = NodePath("../../../Audio/SuperPlayer")
+TransformationDuration = 0.85
+SwitchModelsAtTransformationTime = 0.33
+TransformationCameraMovement = SubResource("Curve_8gcvw")
+TransformationCameraPathFollow = NodePath("../../../SkillCameras/SuperTransformation/SuperTransformationCameraPath/PathFollow3D")
+TransformationCameraPoint = NodePath("../../../SkillCameras/SuperTransformation/SuperTransformationCameraPath/PathFollow3D/SuperTransformationCameraPointOffset")
+TransformationCameraLookAt = NodePath("../../../SkillCameras/SuperTransformation/SuperTransformationLookAt")
+
+[node name="ActionBoost" type="Node" parent="PlayerControl/Actions" unique_id=826319732 node_paths=PackedStringArray("Player", "ActionDash", "ActionSuperTransformation", "Particles", "SuperParticles", "ShockwaveParticles", "AudioStreamPlayer", "ContinousAudioStreamPlayer")]
+script = ExtResource("22_w3yvq")
+Player = NodePath("../../..")
+ActionDash = NodePath("../ActionDash")
+ActionSuperTransformation = NodePath("../ActionSuperTransformation")
+Particles = NodePath("../../../Effects/BoostParticles")
+SuperParticles = NodePath("../../../Effects/BoostParticlesSuper")
+ShockwaveParticles = NodePath("../../../Effects/BoostShockwaveParticles")
+RequireSuperTransformation = false
+AudioStreamPlayer = NodePath("../../../Audio/InteractionsSoundEffectsPlayer")
+SoundEffect = ExtResource("23_j62rq")
+ContinousAudioStreamPlayer = NodePath("../../../Audio/ContinousBoostStreamPlayer3D")
+ContinousSoundEffect = ExtResource("24_1kt7o")
+
+[node name="ActionDrift" type="Node" parent="PlayerControl/Actions" unique_id=1120955681 node_paths=PackedStringArray("Player", "ActionBoost", "ActionGrind", "ActionRoll", "DriftSoundEffectPlayer")]
+script = ExtResource("24_sd35b")
+Player = NodePath("../../..")
+ActionBoost = NodePath("../ActionBoost")
+ActionGrind = NodePath("../ActionGrind")
+ActionRoll = NodePath("../ActionRoll")
+DriftSoundEffect = ExtResource("25_8rspw")
+DriftSoundEffectPlayer = NodePath("../../../Audio/ContinousStreamPlayer3D")
+BoostAtEndOfDrift = false
+
+[node name="ActionQuickStep" type="Node" parent="PlayerControl/Actions" unique_id=1338315616 node_paths=PackedStringArray("Player", "AudioPlayer", "ParticlesL", "ParticlesR")]
+script = ExtResource("27_177ch")
+Player = NodePath("../../..")
+AudioPlayer = NodePath("../../../Audio/PlayerSoundEffectsPlayer")
+RunQuickStepSound = ExtResource("28_oyo4s")
+IdleQuickStepSound = ExtResource("29_7kvyt")
+ParticlesL = NodePath("../../../Effects/SideStepParticlesL")
+ParticlesR = NodePath("../../../Effects/SideStepParticlesR")
+
+[node name="ActionStomp" type="Node" parent="PlayerControl/Actions" unique_id=831903580 node_paths=PackedStringArray("Player", "ActionRoll", "AudioPlayer", "ShockwaveHitbox", "ShockwaveParticles")]
+script = ExtResource("30_pfwjt")
+Player = NodePath("../../..")
+ActionRoll = NodePath("../ActionRoll")
+AudioPlayer = NodePath("../../../Audio/PlayerSoundEffectsPlayer")
+StompStartSound = ExtResource("31_ddql1")
+StompImpactSound = ExtResource("32_beedn")
+BounceSound = ExtResource("33_el3xq")
+ShockwaveHitbox = NodePath("../../../Triggers/StompShockwaveHitbox")
+ShockwaveParticles = NodePath("../../../Effects/StompShockwave")
+
+[node name="ActionSkate" type="Node" parent="PlayerControl/Actions" unique_id=1190418337 node_paths=PackedStringArray("Player", "AnnouncerAudioPlayer", "TrickAudioPlayer", "TrickParticle", "TrickLandParticle")]
+script = ExtResource("36_lspq2")
+Player = NodePath("../../..")
+TrickAnims = PackedStringArray("Skate Trick 00", "Skate Trick 01", "Skate Trick 02", "Skate Trick 03", "Skate Trick 04", "Skate Trick 05", "Skate Trick 06", "Skate Trick 07", "Skate Trick 08")
+TrickUp = "Skate Trick 04"
+TrickDown = "Skate Trick 05"
+TrickLeft = "Skate Trick 06"
+TrickRight = "Skate Trick 07"
+AnnouncerAudioPlayer = NodePath("../../../Audio/VoicePlayer")
+TrickAudioPlayer = NodePath("../../../Audio/InteractionsSoundEffectsPlayer")
+ComboAnnouncerVoices = [ExtResource("37_vlka6"), ExtResource("38_6dkl6"), ExtResource("39_pohqo"), ExtResource("40_sh2wi"), ExtResource("41_ww57t")]
+TrickSuccessSound = ExtResource("42_ymias")
+TrickFailSound = ExtResource("43_7mioh")
+TrickParticle = NodePath("../../../Effects/SkateEffects/SkateTrickCombo1Particles")
+TrickLandParticle = NodePath("../../../Effects/SkateEffects/SkateTrickCombo1Particles")
+
+[node name="Input" type="Node" parent="PlayerControl" unique_id=1171202810 node_paths=PackedStringArray("Player")]
+script = ExtResource("18_yw2pr")
+Player = NodePath("../..")
+TwodimensionalMode = false
+Assist4Directions = true
+
+[node name="Damage" type="Node" parent="PlayerControl" unique_id=1461895750 node_paths=PackedStringArray("Player", "PlayerInventory", "ActionHoming", "ActionRoll", "AudioPlayer")]
+script = ExtResource("19_ufiip")
+Player = NodePath("../..")
+PlayerInventory = NodePath("../../Inventory")
+ActionHoming = NodePath("../Actions/ActionHoming")
+ActionRoll = NodePath("../Actions/ActionRoll")
+RingsPrefab = ExtResource("20_mj8q3")
+Radius = 2.0
+EjectVelocity = 3.0
+RingsSpreadSound = ExtResource("21_v6k1d")
+DeathSound = ExtResource("22_iw5ew")
+AudioPlayer = NodePath("../../Audio/PlayerSoundEffectsPlayer")
+
+[node name="SplineMovement" type="Node" parent="PlayerControl" unique_id=1284694309 node_paths=PackedStringArray("Player", "ActionGrind", "ActionHoming")]
+script = ExtResource("23_x3ioi")
+Player = NodePath("../..")
+ActionGrind = NodePath("../Actions/ActionGrind")
+ActionHoming = NodePath("../Actions/ActionHoming")
+
+[node name="CheckpointSystem" type="Node" parent="PlayerControl" unique_id=1744454408 node_paths=PackedStringArray("Player")]
+script = ExtResource("24_nk2xp")
+Player = NodePath("../..")
+
+[node name="NpcControl" type="Node" parent="PlayerControl" unique_id=159485912 node_paths=PackedStringArray("Player", "PlayerInput", "Target")]
+script = ExtResource("25_5mypi")
+Player = NodePath("../..")
+PlayerInput = NodePath("../Input")
+Target = NodePath("../Actions/ActionHoming/HomingTarget")
+
+[node name="PlayerPhysics" type="Node" parent="PlayerControl" unique_id=1500001342]
+
+[node name="WaterInteraction" type="Node" parent="PlayerControl" unique_id=1732902392 node_paths=PackedStringArray("AudioPlayer", "CountdownParticles")]
+script = ExtResource("30_7fdmi")
+DrowningWarningMusic = ExtResource("31_063a7")
+DrowningSoundEffect = ExtResource("32_085vm")
+SplashSoundEffect = ExtResource("48_uj8jc")
+AudioPlayer = NodePath("../../Audio/PlayerSoundEffectsPlayer")
+MinWaterRunVelocityXZ = 30.0
+CountdownParticles = [NodePath("../../Effects/DrownCountdown/[Particles] Num0"), NodePath("../../Effects/DrownCountdown/[Particles] Num1"), NodePath("../../Effects/DrownCountdown/[Particles] Num2"), NodePath("../../Effects/DrownCountdown/[Particles] Num3"), NodePath("../../Effects/DrownCountdown/[Particles] Num4"), NodePath("../../Effects/DrownCountdown/[Particles] Num5")]
+
+[node name="HitboxControl" type="Node" parent="PlayerControl" unique_id=908150928 node_paths=PackedStringArray("Hitbox", "ActionsUsingHitbox")]
+script = ExtResource("35_jqdwv")
+Hitbox = NodePath("../../Triggers/Hitbox")
+ActionsUsingHitbox = [NodePath("../Actions/ActionRoll"), NodePath("../Actions/ActionSuperTransformation"), NodePath("../Actions/ActionBoost"), NodePath("../Actions/ActionStomp")]
+
+[node name="Inventory" type="Node" parent="." unique_id=1055609546]
+script = ExtResource("26_tu5p1")
+
+[node name="Audio" type="Node3D" parent="." unique_id=868540526]
+
+[node name="PlayerSoundEffectsPlayer" type="AudioStreamPlayer3D" parent="Audio" unique_id=1749230106]
+attenuation_model = 3
+bus = &"SFX"
+
+[node name="VoicePlayer" type="AudioStreamPlayer3D" parent="Audio" unique_id=1634990937]
+attenuation_model = 3
+bus = &"SFX"
+
+[node name="InteractionsSoundEffectsPlayer" type="AudioStreamPlayer3D" parent="Audio" unique_id=737163678]
+attenuation_model = 3
+bus = &"SFX"
+
+[node name="GroundSoundEffectsPlayer" type="AudioStreamPlayer3D" parent="Audio" unique_id=1318789611]
+attenuation_model = 3
+bus = &"SFX"
+
+[node name="ContinousStreamPlayer3D" type="AudioStreamPlayer3D" parent="Audio" unique_id=140106661]
+attenuation_model = 3
+bus = &"SFX"
+
+[node name="ContinousBoostStreamPlayer3D" type="AudioStreamPlayer3D" parent="Audio" unique_id=1450171708]
+attenuation_model = 3
+bus = &"SFX"
+
+[node name="FastRunWindPlayer" type="AudioStreamPlayer3D" parent="Audio" unique_id=395050198]
+stream = ExtResource("27_a1s0c")
+attenuation_model = 3
+bus = &"SFX"
+
+[node name="SuperPlayer" type="AudioStreamPlayer3D" parent="Audio" unique_id=752251677]
+stream = ExtResource("31_r6t27")
+attenuation_model = 3
+bus = &"SFX"
+
+[node name="Triggers" type="Node3D" parent="." unique_id=1434645980]
+
+[node name="HomingRange" type="Area3D" parent="Triggers" unique_id=1237845832]
+physics_interpolation_mode = 2
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Triggers/HomingRange" unique_id=1432651328]
+shape = SubResource("SphereShape3D_p0f02")
+
+[node name="Hitbox" type="Area3D" parent="Triggers" unique_id=1090607844]
+script = ExtResource("28_5w2ao")
+CanDamagePlayer = false
+CanDamageRollingPlayer = false
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Triggers/Hitbox" unique_id=671715608]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
+shape = SubResource("SphereShape3D_41ysv")
+
+[node name="Hurtbox" type="Area3D" parent="Triggers" unique_id=1851053910]
+physics_interpolation_mode = 2
+collision_mask = 257
+script = ExtResource("29_fsl47")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Triggers/Hurtbox" unique_id=296472291]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
+shape = SubResource("CapsuleShape3D_d8cyr")
+
+[node name="StompShockwaveHitbox" type="Area3D" parent="Triggers" unique_id=722658589]
+physics_interpolation_mode = 2
+script = ExtResource("28_5w2ao")
+CanDamagePlayer = false
+CanDamageRollingPlayer = false
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Triggers/StompShockwaveHitbox" unique_id=2055544503]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
+shape = SubResource("CylinderShape3D_c3l4w")
+
+[node name="RailSwapRange" type="Area3D" parent="Triggers" unique_id=1307818186]
+physics_interpolation_mode = 2
+collision_mask = 256
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Triggers/RailSwapRange" unique_id=853566166]
+shape = SubResource("BoxShape3D_iil7v")
+
+[node name="DebugPreview" type="MeshInstance3D" parent="Triggers/RailSwapRange" unique_id=480421258]
+process_mode = 4
+visible = false
+mesh = SubResource("BoxMesh_wrk0d")
+
+[node name="WaterDrowningTrigger" type="Area3D" parent="Triggers" unique_id=669502005 node_paths=PackedStringArray("WaterInteraction")]
+process_mode = 3
+physics_interpolation_mode = 2
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.75, 0)
+script = ExtResource("36_8ictt")
+WaterInteraction = NodePath("../../PlayerControl/WaterInteraction")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Triggers/WaterDrowningTrigger" unique_id=847095233]
+shape = SubResource("BoxShape3D_4q8n6")
+
+[node name="WaterRunTrigger" type="Area3D" parent="Triggers" unique_id=554169256 node_paths=PackedStringArray("WaterInteraction")]
+process_mode = 3
+physics_interpolation_mode = 2
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.1, 0)
+script = ExtResource("39_6jkub")
+WaterInteraction = NodePath("../../PlayerControl/WaterInteraction")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Triggers/WaterRunTrigger" unique_id=92591161]
+shape = SubResource("BoxShape3D_7rbsh")
+
+[node name="Effects" type="Node3D" parent="." unique_id=1792794898]
+
+[node name="GrindTrail" parent="Effects" unique_id=1143495971 instance=ExtResource("30_h588r")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 0, 0, -0.3)
+
+[node name="SpinDashSmokeCharge" type="GPUParticles3D" parent="Effects" unique_id=1189878261]
+transform = Transform3D(-4.37114e-08, -1, 4.37114e-08, 0, -4.37114e-08, -1, 1, -4.37114e-08, 1.91069e-15, -0.2, 0.4, -0.2)
+emitting = false
+amount = 10
+lifetime = 0.7
+one_shot = true
+preprocess = 0.5
+explosiveness = 0.2
+randomness = 1.0
+local_coords = true
+process_material = SubResource("ParticleProcessMaterial_wjr38")
+draw_pass_1 = SubResource("QuadMesh_cdkly")
+
+[node name="SpinDashSmoke" type="GPUParticles3D" parent="Effects" unique_id=15483027]
+transform = Transform3D(-4.37114e-08, -1, 4.37114e-08, 0, -4.37114e-08, -1, 1, -4.37114e-08, 1.91069e-15, 0, 0.2, -0.2)
+emitting = false
+amount = 40
+lifetime = 0.7
+preprocess = 0.5
+explosiveness = 0.2
+randomness = 1.0
+process_material = SubResource("ParticleProcessMaterial_57tsf")
+draw_pass_1 = SubResource("QuadMesh_cdkly")
+
+[node name="DashParticles" type="GPUParticles3D" parent="Effects" unique_id=1472573660]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.75, -0.5)
+emitting = false
+amount = 1
+lifetime = 0.25
+one_shot = true
+local_coords = true
+process_material = SubResource("ParticleProcessMaterial_rhfmy")
+draw_pass_1 = ExtResource("57_qdaao")
+
+[node name="ShockwaveParticles" type="GPUParticles3D" parent="Effects" unique_id=844471835]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, -0.5)
+emitting = false
+amount = 1
+lifetime = 0.25
+one_shot = true
+local_coords = true
+process_material = SubResource("ParticleProcessMaterial_71tld")
+draw_pass_1 = SubResource("ArrayMesh_y0824")
+
+[node name="RunTrail" parent="Effects" unique_id=6825316 instance=ExtResource("34_7a5y4")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 0, 0.5, 0)
+
+[node name="[Particles] GrindSparks1" parent="Effects" unique_id=368283777 instance=ExtResource("35_21svq")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.247388)
+
+[node name="[Particles] GrindSparks2" parent="Effects" unique_id=478888289 instance=ExtResource("35_21svq")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.378301)
+
+[node name="[Particles] StepSmoke" parent="Effects" unique_id=2049844635 instance=ExtResource("36_rrow3")]
+
+[node name="[Particles] StepSplash" parent="Effects" unique_id=376728361 instance=ExtResource("40_hhpkd")]
+visible = false
+
+[node name="DrownCountdown" type="Node3D" parent="Effects" unique_id=768093360]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+
+[node name="[Particles] Num5" parent="Effects/DrownCountdown" unique_id=704124853 instance=ExtResource("48_16wch")]
+
+[node name="[Particles] Num4" parent="Effects/DrownCountdown" unique_id=1699379762 instance=ExtResource("49_gy4ob")]
+
+[node name="[Particles] Num3" parent="Effects/DrownCountdown" unique_id=918376328 instance=ExtResource("50_dblp2")]
+
+[node name="[Particles] Num2" parent="Effects/DrownCountdown" unique_id=268463488 instance=ExtResource("51_3l31u")]
+
+[node name="[Particles] Num1" parent="Effects/DrownCountdown" unique_id=1335375723 instance=ExtResource("52_ovajg")]
+
+[node name="[Particles] Num0" parent="Effects/DrownCountdown" unique_id=332206806 instance=ExtResource("53_q7vof")]
+
+[node name="BoostParticles" type="GPUParticles3D" parent="Effects" unique_id=210312357]
+transform = Transform3D(0.6, 0, 0, 0, 0.6, 0, 0, 0, 0.6, 0, 0.6, -1)
+emitting = false
+lifetime = 0.3
+interpolate = false
+fract_delta = false
+local_coords = true
+process_material = SubResource("ParticleProcessMaterial_df3e1")
+draw_pass_1 = ExtResource("57_qdaao")
+
+[node name="BoostParticlesSuper" type="GPUParticles3D" parent="Effects" unique_id=1170631525]
+transform = Transform3D(0.6, 0, 0, 0, 0.6, 0, 0, 0, 0.6, 0, 0.6, -1)
+emitting = false
+lifetime = 0.3
+interpolate = false
+fract_delta = false
+local_coords = true
+process_material = SubResource("ParticleProcessMaterial_7q5tg")
+draw_pass_1 = ExtResource("57_qdaao")
+
+[node name="BoostShockwaveParticles" type="GPUParticles3D" parent="Effects" unique_id=1562972988]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
+emitting = false
+amount = 1
+lifetime = 0.5
+one_shot = true
+local_coords = true
+process_material = SubResource("ParticleProcessMaterial_wfr1m")
+draw_pass_1 = SubResource("QuadMesh_vs2fh")
+
+[node name="BoostTrail" type="MeshInstance3D" parent="Effects" unique_id=1739000243]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
+visible = false
+mesh = SubResource("ArrayMesh_w2i3l")
+script = ExtResource("65_26ox2")
+lifetime = 1.6666666666666667
+width_curve = SubResource("Curve_TrailBoost")
+base_width = 1.0
+color_gradient = SubResource("Gradient_6dkl6")
+
+[node name="BoostTrailSuper" type="MeshInstance3D" parent="Effects" unique_id=1757659197]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
+visible = false
+mesh = SubResource("ArrayMesh_rfscu")
+script = ExtResource("65_26ox2")
+lifetime = 1.6666666666666667
+width_curve = SubResource("Curve_TrailBoost")
+base_width = 1.0
+color_gradient = SubResource("Gradient_TrailBoostSuper")
+
+[node name="SideStepParticlesL" type="GPUParticles3D" parent="Effects" unique_id=64340938]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
+emitting = false
+amount = 1
+lifetime = 0.1
+one_shot = true
+interpolate = false
+fract_delta = false
+local_coords = true
+process_material = SubResource("ParticleProcessMaterial_xfi8d")
+draw_pass_1 = SubResource("QuadMesh_ruv8i")
+
+[node name="SideStepParticlesR" type="GPUParticles3D" parent="Effects" unique_id=476703215]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, 0.5, 0)
+emitting = false
+amount = 1
+lifetime = 0.1
+one_shot = true
+interpolate = false
+fract_delta = false
+local_coords = true
+process_material = SubResource("ParticleProcessMaterial_xfi8d")
+draw_pass_1 = SubResource("QuadMesh_ruv8i")
+
+[node name="StompShockwave" type="GPUParticles3D" parent="Effects" unique_id=1932981980]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
+emitting = false
+amount = 1
+lifetime = 0.2
+one_shot = true
+process_material = SubResource("ParticleProcessMaterial_xw14s")
+draw_pass_1 = SubResource("CylinderMesh_c2vbl")
+
+[node name="SkateEffects" type="Node3D" parent="Effects" unique_id=1974850777]
+
+[node name="SkateTrickCombo1Particles" type="GPUParticles3D" parent="Effects/SkateEffects" unique_id=548119203]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
+emitting = false
+amount = 32
+lifetime = 0.2
+one_shot = true
+explosiveness = 0.5
+randomness = 1.0
+local_coords = true
+process_material = SubResource("ParticleProcessMaterial_vlka6")
+draw_pass_1 = SubResource("PlaneMesh_6dkl6")
+
+[node name="SkillCameras" type="Node3D" parent="." unique_id=560944260]
+
+[node name="SuperTransformation" type="Node3D" parent="SkillCameras" unique_id=1717186159]
+
+[node name="SuperTransformationLookAt" type="Node3D" parent="SkillCameras/SuperTransformation" unique_id=284866378]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.820536, -0.00620034)
+
+[node name="SuperTransformationCameraPath" type="Path3D" parent="SkillCameras/SuperTransformation" unique_id=814828651]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.473566, -0.243011)
+curve = SubResource("Curve3D_i3hf6")
+
+[node name="PathFollow3D" type="PathFollow3D" parent="SkillCameras/SuperTransformation/SuperTransformationCameraPath" unique_id=1992712523]
+transform = Transform3D(0.999989, 0, 0, 0, 0.999988, 0, 0, 0, 0.99999, 0.1, 0, 0)
+tilt_enabled = false
+
+[node name="SuperTransformationCameraPointOffset" type="Node3D" parent="SkillCameras/SuperTransformation/SuperTransformationCameraPath/PathFollow3D" unique_id=630209480]
+transform = Transform3D(1.91069e-15, -4.37114e-08, 1, -1, -4.37114e-08, 0, 4.37114e-08, -1, -4.37114e-08, 0, 0, 0)
+
+[node name="DropShadow" type="Decal" parent="." unique_id=1679458615]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -9, 0)
+size = Vector3(1, 20, 1)
+texture_albedo = ExtResource("37_w8u76")
+texture_orm = ExtResource("37_w8u76")
+emission_energy = 0.0
+modulate = Color(0, 0, 0, 1)
+cull_mask = 1
+
+[connection signal="area_entered" from="Triggers/HomingRange" to="PlayerControl/Actions/ActionHoming" method="OnHomingTargetEnter"]
+[connection signal="area_exited" from="Triggers/HomingRange" to="PlayerControl/Actions/ActionHoming" method="OnHomingTargetExit"]
+[connection signal="OnSuccessfulHit" from="Triggers/Hitbox" to="PlayerControl/Actions/ActionCombat" method="OnSuccessfulHit"]
+[connection signal="OnHitboxEnter" from="Triggers/Hurtbox" to="PlayerControl/Damage" method="OnHitboxEnter"]
+[connection signal="area_entered" from="Triggers/Hurtbox" to="Triggers/Hurtbox" method="OnAreaEnter"]
+[connection signal="area_entered" from="Triggers/RailSwapRange" to="PlayerControl/Actions/ActionGrind" method="OnSwapRailEnter"]
+[connection signal="area_exited" from="Triggers/RailSwapRange" to="PlayerControl/Actions/ActionGrind" method="OnSwapRailExit"]

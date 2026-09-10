@@ -1,0 +1,83 @@
+[gd_scene format=3 uid="uid://bq514nf1hehl5"]
+
+[ext_resource type="Script" uid="uid://bge4hsg4hukce" path="res://Scripts/Interactables/DirectionalLauncher.cs" id="1_30wq4"]
+[ext_resource type="AudioStream" uid="uid://56e2oecde858" path="res://SonicAssets/Audio/Items/se_object_common#28 (objsn_jumpboard; objsn_trickjumpboard).wav" id="2_f26r4"]
+[ext_resource type="PackedScene" uid="uid://cako0in7xxqp3" path="res://SonicAssets/Models/Interactables/cmn_obj_jumppanel15S.blend" id="3_52esp"]
+[ext_resource type="Material" uid="uid://csrhoebp6gef" path="res://Materials/Outline.tres" id="4_h81wd"]
+[ext_resource type="Shader" uid="uid://cq4gpg3v8rw38" path="res://Shaders/StandardWithUvScroll.tres" id="4_qb3cb"]
+[ext_resource type="Shader" uid="uid://cjktp1yrki104" path="res://Shaders/UekawaShader.tres" id="5_5x8dv"]
+[ext_resource type="Texture2D" uid="uid://cxwo51kj8psej" path="res://SonicAssets/Models/Interactables/textures/cmn_metal_ms_panelbelt_dif.dds" id="5_8jr8u"]
+[ext_resource type="PackedScene" uid="uid://bq7p16fpdqnv0" path="res://SonicAssets/Prefabs/Particles/[particles] dir_launcher_particles.tscn" id="6_8aqg2"]
+[ext_resource type="Texture2D" uid="uid://dak7swu4ytnlw" path="res://SonicAssets/Models/Interactables/textures/cmn_metal_ms_jumppanel2_dif.dds" id="6_a3blv"]
+[ext_resource type="Texture2D" uid="uid://cx7tlhrgbntys" path="res://SonicAssets/Models/Interactables/textures/cmn_obj_jumpall_dif_HD.dds" id="7_rjvmo"]
+[ext_resource type="Texture2D" uid="uid://tqlxl1w8r6fr" path="res://SonicAssets/Models/Interactables/textures/cmn_ms_shadow_dif.dds" id="8_5vuj0"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_xh3nu"]
+render_priority = 0
+next_pass = ExtResource("4_h81wd")
+shader = ExtResource("5_5x8dv")
+shader_parameter/Albedo = ExtResource("6_a3blv")
+shader_parameter/DarkenThreshold = -0.75
+shader_parameter/HighlightThreashold = 0.3
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_hmqrw"]
+render_priority = 0
+next_pass = ExtResource("4_h81wd")
+shader = ExtResource("5_5x8dv")
+shader_parameter/Albedo = ExtResource("7_rjvmo")
+shader_parameter/DarkenThreshold = -0.75
+shader_parameter/HighlightThreashold = 0.3
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_of6bh"]
+render_priority = 0
+next_pass = ExtResource("4_h81wd")
+shader = ExtResource("5_5x8dv")
+shader_parameter/Albedo = ExtResource("8_5vuj0")
+shader_parameter/DarkenThreshold = -0.75
+shader_parameter/HighlightThreashold = 0.3
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_6yfgo"]
+render_priority = 0
+shader = ExtResource("4_qb3cb")
+shader_parameter/ScrollSpeed = Vector2(0, 5)
+shader_parameter/Albedo = ExtResource("5_8jr8u")
+shader_parameter/Metallic = 1.0
+shader_parameter/Roughness = 0.5
+shader_parameter/Specular = 1.0
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_kthcl"]
+size = Vector3(1, 0.5, 2)
+
+[node name="[Interactable] JumpPanel15Degrees" type="Node3D" unique_id=1342456170]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0, 0, 0)
+script = ExtResource("1_30wq4")
+RelativeVelocityDir = Vector3(0, 14, -50)
+LockInputTime = 0.5
+Snap = true
+RelativeSnapPoint = Vector3(0, 0, 1)
+SnapCamera = true
+SoundEffect = ExtResource("2_f26r4")
+
+[node name="cmn_obj_jumppanel15S" parent="." unique_id=18317724 instance=ExtResource("3_52esp")]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0)
+
+[node name="cmn_obj_jumppanel15S_HD" parent="cmn_obj_jumppanel15S" index="0" unique_id=2009165419]
+surface_material_override/0 = SubResource("ShaderMaterial_xh3nu")
+surface_material_override/1 = SubResource("ShaderMaterial_hmqrw")
+surface_material_override/2 = SubResource("ShaderMaterial_of6bh")
+surface_material_override/3 = SubResource("ShaderMaterial_6yfgo")
+
+[node name="Area3D" type="Area3D" parent="." unique_id=184519198]
+collision_mask = 3
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D" unique_id=1024683127]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.25, 0)
+shape = SubResource("BoxShape3D_kthcl")
+
+[node name="DirLauncherParticles" parent="." unique_id=1123737496 instance=ExtResource("6_8aqg2")]
+transform = Transform3D(1, 0, 0, 0, 0.965926, -0.258819, 0, 0.258819, 0.965926, 0, 0, 0)
+
+[connection signal="OnLaunching" from="." to="DirLauncherParticles" method="set_emitting" binds= [true]]
+[connection signal="body_entered" from="Area3D" to="." method="OnTriggerEnter"]
+
+[editable path="cmn_obj_jumppanel15S"]

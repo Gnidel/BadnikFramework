@@ -1,0 +1,16 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://deoahnc52cj47"]
+
+[ext_resource type="Texture2D" uid="uid://n5h1ld7hja3y" path="res://SonicAssets/Prefabs/Interactables/Meteor/meteor_gold_a.png" id="1_jxl3s"]
+[ext_resource type="Texture2D" uid="uid://baxws3xrjohes" path="res://SonicAssets/Prefabs/Interactables/Meteor/meteor_h.png" id="2_m8vk5"]
+[ext_resource type="Texture2D" uid="uid://3885s620ys2f" path="res://SonicAssets/Prefabs/Interactables/Meteor/meteor_n.png" id="3_00g3i"]
+
+[resource]
+resource_name = "MeteorMaterial"
+albedo_texture = ExtResource("1_jxl3s")
+metallic = 0.5
+roughness = 0.5
+normal_enabled = true
+normal_texture = ExtResource("3_00g3i")
+heightmap_enabled = true
+heightmap_texture = ExtResource("2_m8vk5")
+metadata/_gltf_primary_texture_coord = 0

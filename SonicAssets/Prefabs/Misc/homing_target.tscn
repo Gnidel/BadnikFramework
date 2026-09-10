@@ -1,0 +1,16 @@
+[gd_scene format=3 uid="uid://bkt2qp7430moc"]
+
+[ext_resource type="Script" uid="uid://dw5ygd0ug5jn1" path="res://Scripts/Interactables/HomingTarget.cs" id="1_h3ahu"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_i3j5j"]
+resource_local_to_scene = true
+radius = 50.0
+
+[node name="HomingTarget" type="Node3D" unique_id=1422831814]
+script = ExtResource("1_h3ahu")
+TargetableByGuns = false
+
+[node name="Area3D" type="Area3D" parent="." unique_id=1107946495]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D" unique_id=807005290]
+shape = SubResource("SphereShape3D_i3j5j")

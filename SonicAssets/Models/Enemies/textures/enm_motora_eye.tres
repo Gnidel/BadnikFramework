@@ -1,0 +1,10 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://capmieq6swdgg"]
+
+[ext_resource type="Texture2D" uid="uid://bon64lckri3j8" path="res://SonicAssets/Models/Enemies/textures/enm_motora_body_dif_HD.dds" id="1_jma5a"]
+
+[resource]
+resource_name = "enm_motora_eye"
+cull_mode = 2
+vertex_color_use_as_albedo = true
+albedo_texture = ExtResource("1_jma5a")
+metallic = 1.0

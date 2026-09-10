@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://ll6cbdulcfne"
+path="res://.godot/imported/se_player_sonic#9 (sn_spin; sn_start_wait00_sv).wav-41716804e4051082f1435474cff3f627.sample"
+
+[deps]
+
+source_file="res://SonicAssets/Audio/Tails/se_player_sonic#9 (sn_spin; sn_start_wait00_sv).wav"
+dest_files=["res://.godot/imported/se_player_sonic#9 (sn_spin; sn_start_wait00_sv).wav-41716804e4051082f1435474cff3f627.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

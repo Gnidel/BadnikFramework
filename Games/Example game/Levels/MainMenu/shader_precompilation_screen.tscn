@@ -1,0 +1,89 @@
+[gd_scene format=3 uid="uid://bkq1f8wm3d04v"]
+
+[ext_resource type="Theme" uid="uid://dfn1qo0bwoxuf" path="res://Misc/OptionsMenuTheme.tres" id="1_ocx14"]
+[ext_resource type="Script" uid="uid://hx8mpv0w4gy3" path="res://Scripts/System/ShaderPrecompilator.cs" id="2_ocx14"]
+
+[sub_resource type="QuadMesh" id="QuadMesh_ocx14"]
+
+[node name="ShaderPrecompilationScreen" type="Control" unique_id=854601211]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Black" type="ColorRect" parent="." unique_id=174045011]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
+
+[node name="RichTextLabel" type="RichTextLabel" parent="." unique_id=1234054543]
+custom_minimum_size = Vector2(1080, 200)
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -1607.0
+offset_top = -200.0
+offset_right = -82.0
+grow_horizontal = 0
+grow_vertical = 0
+theme = ExtResource("1_ocx14")
+bbcode_enabled = true
+text = "[center]Shader compilation.[/center]"
+fit_content = true
+scroll_active = false
+horizontal_alignment = 2
+vertical_alignment = 2
+justification_flags = 0
+
+[node name="ShaderPrecompilator" type="Node" parent="." unique_id=977678440 node_paths=PackedStringArray("TextLabel", "MeshInstances")]
+script = ExtResource("2_ocx14")
+TextLabel = NodePath("../RichTextLabel")
+MeshInstances = [NodePath("../Camera3D/MeshInstance3D"), NodePath("../Camera3D/MeshInstance3D2"), NodePath("../Camera3D/MeshInstance3D3"), NodePath("../Camera3D/MeshInstance3D4"), NodePath("../Camera3D/MeshInstance3D5"), NodePath("../Camera3D/MeshInstance3D6"), NodePath("../Camera3D/MeshInstance3D7"), NodePath("../Camera3D/MeshInstance3D8"), NodePath("../Camera3D/MeshInstance3D9")]
+NextScene = "res://Games/Example game/Levels/MainMenu/main_menu.tscn"
+
+[node name="Camera3D" type="Camera3D" parent="." unique_id=516772529]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Camera3D" unique_id=1369295278]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 1, -2.9738345)
+mesh = SubResource("QuadMesh_ocx14")
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="Camera3D" unique_id=813062663]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, -2.9738345)
+mesh = SubResource("QuadMesh_ocx14")
+
+[node name="MeshInstance3D3" type="MeshInstance3D" parent="Camera3D" unique_id=929856300]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 1, -2.9738345)
+mesh = SubResource("QuadMesh_ocx14")
+
+[node name="MeshInstance3D4" type="MeshInstance3D" parent="Camera3D" unique_id=1826599523]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 0, -2.9738345)
+mesh = SubResource("QuadMesh_ocx14")
+
+[node name="MeshInstance3D5" type="MeshInstance3D" parent="Camera3D" unique_id=981051437]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -2.9738345)
+mesh = SubResource("QuadMesh_ocx14")
+
+[node name="MeshInstance3D6" type="MeshInstance3D" parent="Camera3D" unique_id=610107630]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, -2.9738345)
+mesh = SubResource("QuadMesh_ocx14")
+
+[node name="MeshInstance3D7" type="MeshInstance3D" parent="Camera3D" unique_id=372292587]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, -1, -2.9738345)
+mesh = SubResource("QuadMesh_ocx14")
+
+[node name="MeshInstance3D8" type="MeshInstance3D" parent="Camera3D" unique_id=634362148]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1, -2.9738345)
+mesh = SubResource("QuadMesh_ocx14")
+
+[node name="MeshInstance3D9" type="MeshInstance3D" parent="Camera3D" unique_id=690472084]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, -1, -2.9738345)
+mesh = SubResource("QuadMesh_ocx14")

@@ -1,0 +1,17 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://dr0bvpyhd7ccj"]
+
+[ext_resource type="Texture2D" uid="uid://che7yku7qrmvj" path="res://SonicAssets/Models/Interactables/textures/cmn_obj_dashring_dif_HD.dds" id="1_b6ykg"]
+[ext_resource type="Texture2D" uid="uid://cbmp1e7upjatr" path="res://SonicAssets/Models/Interactables/textures/cmn_obj_dashring_ref_HD.dds" id="2_u8q20"]
+
+[resource]
+resource_name = "cmn_obj_dashring_HD"
+cull_mode = 2
+vertex_color_use_as_albedo = true
+albedo_texture = ExtResource("1_b6ykg")
+metallic = 1.0
+metallic_texture = ExtResource("2_u8q20")
+emission_enabled = true
+emission_on_uv2 = true
+emission_texture = ExtResource("2_u8q20")
+rim_texture = ExtResource("2_u8q20")
+refraction_texture = ExtResource("2_u8q20")

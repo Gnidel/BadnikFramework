@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://c4hhvs5n6pwkl"
+path="res://.godot/imported/se_object_common#4 (obj_superring).wav-a4e3642732e4fe0f75c22fe7651b4e16.sample"
+
+[deps]
+
+source_file="res://SonicAssets/Audio/Items/se_object_common#4 (obj_superring).wav"
+dest_files=["res://.godot/imported/se_object_common#4 (obj_superring).wav-a4e3642732e4fe0f75c22fe7651b4e16.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

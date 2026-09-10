@@ -1,0 +1,404 @@
+[gd_scene format=3 uid="uid://vwjoljvwo0fw"]
+
+[ext_resource type="PackedScene" uid="uid://bkt2qp7430moc" path="res://SonicAssets/Prefabs/Misc/homing_target.tscn" id="1_eop0s"]
+[ext_resource type="PackedScene" uid="uid://utj184wk42iu" path="res://SonicAssets/Models/Eggman/Eggman.tscn" id="2_23qqe"]
+[ext_resource type="Script" uid="uid://bq4hl2ml1if0n" path="res://Scripts/Interactables/MusicTrigger.cs" id="3_qo1g1"]
+[ext_resource type="AudioStream" uid="uid://bpsrgntyxjd4u" path="res://SonicAssets/Music/Boss - Sonic 3D Blast Saturn.ogg" id="4_fbv43"]
+[ext_resource type="Script" uid="uid://n1dtm5k3gia" path="res://Scripts/Enemies/EnemyBehaviorManager.cs" id="5_75h7n"]
+[ext_resource type="Script" uid="uid://b4mk85f6xpfis" path="res://Scripts/Enemies/WaitForAggroBehavior.cs" id="6_j8wmq"]
+[ext_resource type="Script" uid="uid://dxt4q1t0r7whx" path="res://Scripts/Enemies/EnableDisableBehavior.cs" id="7_gku3v"]
+[ext_resource type="Script" uid="uid://bk2710vokv8b4" path="res://Scripts/Enemies/EnemyLookAtMode.cs" id="8_bict5"]
+[ext_resource type="Script" uid="uid://dt76vrm02ejb0" path="res://Scripts/Interactables/AdvanceSplineMovement.cs" id="9_purhl"]
+[ext_resource type="Script" uid="uid://cy0x2ury8cs8q" path="res://Scripts/Enemies/BossEndCamera.cs" id="10_e23iv"]
+[ext_resource type="Script" uid="uid://8rtsikvw33gy" path="res://Scripts/Enemies/RunawayPathBehavior.cs" id="10_xmd4c"]
+[ext_resource type="Script" uid="uid://dat1yxewba6k8" path="res://Scripts/Enemies/EnemyControl.cs" id="11_4b0by"]
+[ext_resource type="AudioStream" uid="uid://dmj6c8fml8b13" path="res://SonicAssets/Audio/Enemies/51BOS_BGA#21 (5511_bga_camera).wav" id="11_7d0cf"]
+[ext_resource type="AudioStream" uid="uid://c5pix7021l4mj" path="res://SonicAssets/Audio/Enemies/52BOS_BEE#16 (5542_bee_dead).wav" id="12_krurx"]
+[ext_resource type="AudioStream" uid="uid://bwa5uiwsw5xfj" path="res://SonicAssets/Audio/Enemies/se_enemy_common#2 (enmsn_cmn_damage).wav" id="12_um7hn"]
+[ext_resource type="Script" uid="uid://y47n4ov38iw2" path="res://Scripts/Interactables/Hitbox.cs" id="13_u1m0f"]
+[ext_resource type="Script" uid="uid://d0rd6cimu685c" path="res://Scripts/Interactables/Hurtbox.cs" id="14_h3tgh"]
+[ext_resource type="Script" uid="uid://bkqnuew3u8w76" path="res://Scripts/Enemies/BossEnd.cs" id="14_lhs67"]
+[ext_resource type="Texture2D" uid="uid://ctu5aul2bm0pe" path="res://SonicAssets/Prefabs/Particles/AttackShockwave/ef_ch_sng_yh1_hit.png" id="15_bgrba"]
+[ext_resource type="Texture2D" uid="uid://ju7vp8xxw0gi" path="res://SonicAssets/Prefabs/Particles/AttackShockwave/ef_ch_sng_yh1_hit2.png" id="16_1b3yx"]
+[ext_resource type="Script" uid="uid://bcwiyc3m5bmni" path="res://Scripts/Enemies/HealthBarControl.cs" id="17_hjv3f"]
+[ext_resource type="Theme" uid="uid://di28qbb7lki3f" path="res://Misc/MenuTheme.tres" id="18_0ymgl"]
+[ext_resource type="PackedScene" uid="uid://dcjip7txdvwhi" path="res://SonicAssets/Prefabs/Interactables/Obstacles/[obstacle]_flamethrower.tscn" id="19_64kk1"]
+[ext_resource type="PackedScene" uid="uid://bkm2q3gcvplul" path="res://SonicAssets/Prefabs/Particles/StepSmoke/[particles]_step_smoke.tscn" id="24_ps3y6"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_uv0q3"]
+friction = 0.0
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_vfsj3"]
+radius = 1.5
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_3cqpq"]
+radius = 50.0
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_4t4a2"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_g877g"]
+radius = 1.5
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_fx3jg"]
+radius = 50.0
+
+[sub_resource type="Curve" id="Curve_8xqta"]
+_limits = [-360.0, 360.0, 0.0, 1.0]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(1, 1), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="CurveTexture" id="CurveTexture_p87io"]
+curve = SubResource("Curve_8xqta")
+
+[sub_resource type="Gradient" id="Gradient_frhhl"]
+offsets = PackedFloat32Array(0, 0.520833, 1)
+colors = PackedColorArray(0, 0, 0, 0, 0.521569, 0.521569, 0.521569, 1, 1, 1, 1, 0)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_3cwtb"]
+gradient = SubResource("Gradient_frhhl")
+
+[sub_resource type="Curve" id="Curve_ypdqp"]
+_data = [Vector2(0.00369003, 0), 0.0, 0.0, 0, 0, Vector2(1, 1), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="CurveTexture" id="CurveTexture_sg8n3"]
+curve = SubResource("Curve_ypdqp")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_ols1o"]
+angle_max = 360.0
+angle_curve = SubResource("CurveTexture_p87io")
+gravity = Vector3(0, 0, 0)
+scale_max = 10.0
+scale_curve = SubResource("CurveTexture_sg8n3")
+color_ramp = SubResource("GradientTexture1D_3cwtb")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_4xoaw"]
+transparency = 1
+blend_mode = 1
+no_depth_test = true
+shading_mode = 0
+vertex_color_use_as_albedo = true
+albedo_texture = ExtResource("15_bgrba")
+disable_receive_shadows = true
+billboard_mode = 3
+particles_anim_h_frames = 1
+particles_anim_v_frames = 1
+particles_anim_loop = false
+grow_amount = 1.79
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_igbr8"]
+material = SubResource("StandardMaterial3D_4xoaw")
+orientation = 2
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ywaqt"]
+transparency = 1
+blend_mode = 1
+shading_mode = 0
+albedo_texture = ExtResource("16_1b3yx")
+disable_receive_shadows = true
+billboard_mode = 3
+billboard_keep_scale = true
+particles_anim_h_frames = 1
+particles_anim_v_frames = 1
+particles_anim_loop = false
+
+[sub_resource type="QuadMesh" id="QuadMesh_fkmdg"]
+material = SubResource("StandardMaterial3D_ywaqt")
+
+[sub_resource type="Curve3D" id="Curve3D_qf5lg"]
+_data = {
+"points": PackedVector3Array(0, 0, 0, 0, 0, 5, 5, 0, 0, 0, 0, 0, -5, 0, 0, 0, 0, 5, 0, 0, 0, 0, 0, -5, -5, 0, 0, 0, 0, 0, 5, 0, 0, 0, 0, -5, 0, 0, 0, 0, 0, 0, 5, 0, 0),
+"tilts": PackedFloat32Array(0, 0, 0, 0, 0)
+}
+point_count = 5
+
+[sub_resource type="Curve3D" id="Curve3D_lc0s8"]
+_data = {
+"points": PackedVector3Array(0, 0, 0, 0, 10, 0, 0, 0, 0, 0, -10, 0, 0, 0, 0, 0, 100, 0),
+"tilts": PackedFloat32Array(0, 0)
+}
+point_count = 2
+
+[node name="[Boss arena] Egg Flamethrower Arena" type="Node3D" unique_id=23809574]
+
+[node name="[Enemy] Eggman Boss" type="RigidBody3D" parent="." unique_id=1104430992]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 5, 0, 0)
+collision_layer = 2
+physics_material_override = SubResource("PhysicsMaterial_uv0q3")
+gravity_scale = 0.0
+continuous_cd = true
+
+[node name="HomingTarget" parent="[Enemy] Eggman Boss" unique_id=290910742 instance=ExtResource("1_eop0s")]
+TargetableByGuns = true
+
+[node name="Eggman" parent="[Enemy] Eggman Boss" unique_id=862270296 instance=ExtResource("2_23qqe")]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="[Enemy] Eggman Boss" unique_id=1594473419]
+shape = SubResource("SphereShape3D_vfsj3")
+
+[node name="MusicTriggerBoss" type="Area3D" parent="[Enemy] Eggman Boss" unique_id=335098081]
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 5, 0, 0)
+collision_mask = 2
+script = ExtResource("3_qo1g1")
+Music = ExtResource("4_fbv43")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="[Enemy] Eggman Boss/MusicTriggerBoss" unique_id=284397104]
+shape = SubResource("SphereShape3D_3cqpq")
+
+[node name="MusicTriggerStage" type="Area3D" parent="[Enemy] Eggman Boss" unique_id=1187835656]
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 5, 0, 0)
+collision_mask = 2
+script = ExtResource("3_qo1g1")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="[Enemy] Eggman Boss/MusicTriggerStage" unique_id=528736364]
+shape = SubResource("SphereShape3D_3cqpq")
+
+[node name="Behaviors" type="Node" parent="[Enemy] Eggman Boss" unique_id=126376814 node_paths=PackedStringArray("CurrentPhase")]
+script = ExtResource("5_75h7n")
+CurrentPhase = NodePath("Phase0Waiting")
+
+[node name="Phase0Waiting" type="Node" parent="[Enemy] Eggman Boss/Behaviors" unique_id=1508068552]
+
+[node name="WaitForAggroBehavior" type="Node" parent="[Enemy] Eggman Boss/Behaviors/Phase0Waiting" unique_id=1848764253 node_paths=PackedStringArray("BehaviorManager", "NextPhase")]
+script = ExtResource("6_j8wmq")
+BehaviorManager = NodePath("../..")
+NextPhase = NodePath("../../Phase2")
+AddTarget = true
+
+[node name="EnableDisableList" type="Node" parent="[Enemy] Eggman Boss/Behaviors/Phase0Waiting" unique_id=1472695927 node_paths=PackedStringArray("NodesToDisable")]
+script = ExtResource("7_gku3v")
+NodesToDisable = [NodePath("../../../BossUI"), NodePath("../../../[Interactable] Flamethrower"), NodePath("../../../MusicTriggerStage"), NodePath("../../../MusicTriggerBoss")]
+
+[node name="Phase1Namecard" type="Node" parent="[Enemy] Eggman Boss/Behaviors" unique_id=1620581015]
+process_mode = 4
+
+[node name="Node" type="Node" parent="[Enemy] Eggman Boss/Behaviors/Phase1Namecard" unique_id=769461934]
+
+[node name="Phase2" type="Node" parent="[Enemy] Eggman Boss/Behaviors" unique_id=6865865]
+process_mode = 4
+
+[node name="LookAtModeBehavior" type="Node" parent="[Enemy] Eggman Boss/Behaviors/Phase2" unique_id=1403985235 node_paths=PackedStringArray("EnemyControl", "ObjectToRotate", "LookReferencePoint")]
+script = ExtResource("8_bict5")
+EnemyControl = NodePath("../../../EnemyControl")
+ObjectToRotate = NodePath("../../..")
+LookReferencePoint = NodePath("../../..")
+LookMode = 2
+RotationSpeed = 3.0
+
+[node name="AdvanceSplineMovementBehavior" type="Node" parent="[Enemy] Eggman Boss/Behaviors/Phase2" unique_id=1264501707 node_paths=PackedStringArray("PathFollow")]
+script = ExtResource("9_purhl")
+PathFollow = NodePath("../../../../Phase1Path/PathFollow3D")
+Speed = 5.0
+
+[node name="EnableDisableList" type="Node" parent="[Enemy] Eggman Boss/Behaviors/Phase2" unique_id=1130148800 node_paths=PackedStringArray("NodesToEnable", "NodesToDisable")]
+script = ExtResource("7_gku3v")
+NodesToEnable = [NodePath("../../../MusicTriggerBoss"), NodePath("../../../[Interactable] Flamethrower"), NodePath("../../../BossUI")]
+NodesToDisable = [NodePath("../../../AggroArea")]
+
+[node name="Timer" type="Timer" parent="[Enemy] Eggman Boss/Behaviors/Phase2" unique_id=971183344]
+wait_time = 2.0
+autostart = true
+
+[node name="Phase98PreDeath" type="Node" parent="[Enemy] Eggman Boss/Behaviors" unique_id=817467753]
+process_mode = 4
+
+[node name="EnableDisableList" type="Node" parent="[Enemy] Eggman Boss/Behaviors/Phase98PreDeath" unique_id=1596973191 node_paths=PackedStringArray("NodesToEnable", "NodesToDisable")]
+script = ExtResource("7_gku3v")
+NodesToEnable = [NodePath("../BossEndSequence")]
+NodesToDisable = [NodePath("../../../[Interactable] Flamethrower"), NodePath("../../../Hitbox"), NodePath("../../../Hurtbox"), NodePath("../../../BossUI"), NodePath("../../../../Phase1Path/PathFollow3D/RemoteTransform3D")]
+
+[node name="BossEndSequence" type="Node" parent="[Enemy] Eggman Boss/Behaviors/Phase98PreDeath" unique_id=1748300055 node_paths=PackedStringArray("EnemyControl", "NextPhase", "SoundPlayer", "CameraPoints")]
+process_mode = 4
+script = ExtResource("10_e23iv")
+EnemyControl = NodePath("../../../EnemyControl")
+NextPhase = NodePath("../../Phase99Death")
+SoundPlayer = NodePath("../../../AudioStreamPlayer3D")
+CameraSound = ExtResource("11_7d0cf")
+BossExplosionSound = ExtResource("12_krurx")
+CameraPoints = [NodePath("../../../FinishCameraPoints/CameraPoint1"), NodePath("../../../FinishCameraPoints/CameraPoint2"), NodePath("../../../FinishCameraPoints/CameraPoint3")]
+
+[node name="Phase99Death" type="Node" parent="[Enemy] Eggman Boss/Behaviors" unique_id=1377833853]
+process_mode = 4
+
+[node name="EnableDisableList" type="Node" parent="[Enemy] Eggman Boss/Behaviors/Phase99Death" unique_id=352213589 node_paths=PackedStringArray("NodesToEnable", "NodesToDisable")]
+script = ExtResource("7_gku3v")
+NodesToEnable = [NodePath("../../../MusicTriggerStage")]
+NodesToDisable = [NodePath("../../../[Interactable] Flamethrower"), NodePath("../../../Hitbox"), NodePath("../../../Hurtbox"), NodePath("../../../BossUI"), NodePath("../../../../Phase1Path/PathFollow3D/RemoteTransform3D"), NodePath("../../../AggroArea")]
+
+[node name="RunawayPathBehavior" type="Node" parent="[Enemy] Eggman Boss/Behaviors/Phase99Death" unique_id=359296233 node_paths=PackedStringArray("RigidBody", "PathFollow")]
+script = ExtResource("10_xmd4c")
+RigidBody = NodePath("../../..")
+PathFollow = NodePath("../../../../RunawayPath/PathFollow3D")
+ProgressSpeed = 20.0
+CatchupSpeed = 1.0
+
+[node name="BossEnd" type="Node" parent="[Enemy] Eggman Boss/Behaviors/Phase99Death" unique_id=1162449956 node_paths=PackedStringArray("EnemyControl")]
+script = ExtResource("14_lhs67")
+EnemyControl = NodePath("../../../EnemyControl")
+
+[node name="EnemyControl" type="Node" parent="[Enemy] Eggman Boss" unique_id=1303542058 node_paths=PackedStringArray("HealthBar", "Hitbox", "Hurtbox", "HomingTarget", "RigidBody", "DamageParticles", "AudioSource", "DeathAnticipationParticle", "BehaviorManager", "DeathPhase")]
+script = ExtResource("11_4b0by")
+HP = 8
+MaxHP = 8
+HealthBar = NodePath("../BossUI/HealthBarControl")
+DamageCooldown = 1.0
+Hitbox = NodePath("../Hitbox")
+Hurtbox = NodePath("../Hurtbox")
+HomingTarget = NodePath("../HomingTarget")
+RigidBody = NodePath("..")
+DamageSoundEffect = ExtResource("12_um7hn")
+DamageParticles = NodePath("../AttackShockwaveParticles")
+AudioSource = NodePath("../AudioStreamPlayer3D")
+DeathAnticipationParticle = NodePath("../[Particles] StepSmoke")
+BehaviorManager = NodePath("../Behaviors")
+DeathPhase = NodePath("../Behaviors/Phase98PreDeath")
+DefaultDyingBehavior = false
+
+[node name="Hitbox" type="Area3D" parent="[Enemy] Eggman Boss" unique_id=176087561]
+collision_mask = 3
+script = ExtResource("13_u1m0f")
+CanDamageRollingPlayer = false
+CanDamageEnemy = false
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="[Enemy] Eggman Boss/Hitbox" unique_id=728660471]
+shape = SubResource("SphereShape3D_4t4a2")
+
+[node name="Hurtbox" type="Area3D" parent="[Enemy] Eggman Boss" unique_id=15287909]
+collision_mask = 3
+script = ExtResource("14_h3tgh")
+BounceStyle = 1
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="[Enemy] Eggman Boss/Hurtbox" unique_id=1182524996]
+shape = SubResource("SphereShape3D_g877g")
+
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="[Enemy] Eggman Boss" unique_id=1138987569]
+
+[node name="AggroArea" type="Area3D" parent="[Enemy] Eggman Boss" unique_id=295676082]
+collision_mask = 2
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="[Enemy] Eggman Boss/AggroArea" unique_id=1728082471]
+shape = SubResource("SphereShape3D_fx3jg")
+
+[node name="AttackShockwaveParticles" type="GPUParticles3D" parent="[Enemy] Eggman Boss" unique_id=288036286]
+emitting = false
+amount = 1
+lifetime = 0.2
+one_shot = true
+process_material = SubResource("ParticleProcessMaterial_ols1o")
+draw_passes = 2
+draw_pass_1 = SubResource("PlaneMesh_igbr8")
+draw_pass_2 = SubResource("QuadMesh_fkmdg")
+
+[node name="BossUI" type="Control" parent="[Enemy] Eggman Boss" unique_id=1058564600]
+visible = false
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="HealthBarControl" type="Node" parent="[Enemy] Eggman Boss/BossUI" unique_id=2017687785 node_paths=PackedStringArray("HpUiPointTemplate", "HpUiPointsContainer")]
+script = ExtResource("17_hjv3f")
+HpUiPointTemplate = NodePath("../HPBar1")
+HpUiPointsContainer = NodePath("../Panel/VBoxContainer/HBoxContainer")
+
+[node name="HPBar1" type="ColorRect" parent="[Enemy] Eggman Boss/BossUI" unique_id=240085445]
+visible = false
+custom_minimum_size = Vector2(0, 50)
+layout_mode = 0
+offset_left = 710.0
+offset_top = 120.0
+offset_right = 1210.0
+offset_bottom = 170.0
+size_flags_horizontal = 7
+size_flags_vertical = 4
+mouse_filter = 2
+
+[node name="Panel" type="Panel" parent="[Enemy] Eggman Boss/BossUI" unique_id=976669171]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -250.0
+offset_top = 50.0
+offset_right = 250.0
+offset_bottom = 175.0
+grow_horizontal = 2
+mouse_filter = 2
+theme = ExtResource("18_0ymgl")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="[Enemy] Eggman Boss/BossUI/Panel" unique_id=350223533]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="BossName" type="RichTextLabel" parent="[Enemy] Eggman Boss/BossUI/Panel/VBoxContainer" unique_id=225397909]
+custom_minimum_size = Vector2(100, 50)
+layout_mode = 2
+size_flags_vertical = 6
+mouse_filter = 2
+theme = ExtResource("18_0ymgl")
+theme_override_font_sizes/normal_font_size = 30
+theme_override_font_sizes/bold_font_size = 50
+bbcode_enabled = true
+text = "[center][b]Dr. EGGMAN[/b][/center]"
+fit_content = true
+
+[node name="HBoxContainer" type="HBoxContainer" parent="[Enemy] Eggman Boss/BossUI/Panel/VBoxContainer" unique_id=882635721]
+layout_mode = 2
+size_flags_vertical = 3
+mouse_filter = 2
+alignment = 1
+
+[node name="[Interactable] Flamethrower" parent="[Enemy] Eggman Boss" unique_id=495019135 instance=ExtResource("19_64kk1")]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0, -1.39664)
+IsActive = false
+
+[node name="FinishCameraPoints" type="Node3D" parent="[Enemy] Eggman Boss" unique_id=898682556]
+
+[node name="CameraPoint1" type="Node3D" parent="[Enemy] Eggman Boss/FinishCameraPoints" unique_id=2121584299]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, 1, -4)
+
+[node name="CameraPoint2" type="Node3D" parent="[Enemy] Eggman Boss/FinishCameraPoints" unique_id=1180792048]
+transform = Transform3D(-0.866025, 0, -0.5, 0, 1, 0, 0.5, 0, -0.866025, -1, 1, -2)
+
+[node name="CameraPoint3" type="Node3D" parent="[Enemy] Eggman Boss/FinishCameraPoints" unique_id=43736494]
+transform = Transform3D(-0.866025, 0, 0.5, 0, 1, 0, -0.5, 0, -0.866025, 1, 1, -2)
+
+[node name="[Particles] StepSmoke" parent="[Enemy] Eggman Boss" unique_id=244200887 instance=ExtResource("24_ps3y6")]
+
+[node name="Phase1Path" type="Path3D" parent="." unique_id=1866654742]
+curve = SubResource("Curve3D_qf5lg")
+
+[node name="PathFollow3D" type="PathFollow3D" parent="Phase1Path" unique_id=767256766]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 5, 0, 0)
+cubic_interp = false
+tilt_enabled = false
+
+[node name="RemoteTransform3D" type="RemoteTransform3D" parent="Phase1Path/PathFollow3D" unique_id=873556960]
+remote_path = NodePath("../../../[Enemy] Eggman Boss")
+update_rotation = false
+update_scale = false
+
+[node name="RunawayPath" type="Path3D" parent="." unique_id=1268645364]
+curve = SubResource("Curve3D_lc0s8")
+
+[node name="PathFollow3D" type="PathFollow3D" parent="RunawayPath" unique_id=193896221]
+transform = Transform3D(-4.371139e-08, 1, -4.371139e-08, 0, -4.371139e-08, -1, -1, -4.371139e-08, 1.9106855e-15, 0, 0, 0)
+cubic_interp = false
+tilt_enabled = false
+
+[connection signal="body_entered" from="[Enemy] Eggman Boss/MusicTriggerBoss" to="[Enemy] Eggman Boss/MusicTriggerBoss" method="OnBodyEntered"]
+[connection signal="body_entered" from="[Enemy] Eggman Boss/MusicTriggerStage" to="[Enemy] Eggman Boss/MusicTriggerStage" method="OnBodyEntered"]
+[connection signal="timeout" from="[Enemy] Eggman Boss/Behaviors/Phase2/Timer" to="[Enemy] Eggman Boss/[Interactable] Flamethrower" method="Switch"]
+[connection signal="OnDamage" from="[Enemy] Eggman Boss/EnemyControl" to="[Enemy] Eggman Boss/Eggman" method="OnDamage"]
+[connection signal="OnDeath" from="[Enemy] Eggman Boss/EnemyControl" to="[Enemy] Eggman Boss/Eggman" method="OnDeath"]
+[connection signal="OnHitboxEnter" from="[Enemy] Eggman Boss/Hurtbox" to="[Enemy] Eggman Boss/EnemyControl" method="OnHitboxEnter"]
+[connection signal="area_entered" from="[Enemy] Eggman Boss/Hurtbox" to="[Enemy] Eggman Boss/Hurtbox" method="OnAreaEnter"]
+[connection signal="body_entered" from="[Enemy] Eggman Boss/AggroArea" to="[Enemy] Eggman Boss/Behaviors/Phase0Waiting/WaitForAggroBehavior" method="OnTriggerEnter"]

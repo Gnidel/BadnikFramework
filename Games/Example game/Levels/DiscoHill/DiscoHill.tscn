@@ -1,0 +1,926 @@
+[gd_scene format=3 uid="uid://c5ftd3xclydeu"]
+
+[ext_resource type="Script" uid="uid://c2i7w0nkuie1u" path="res://Scripts/System/StageData.cs" id="1_h57o6"]
+[ext_resource type="AudioStream" uid="uid://cnrhcjfn26imi" path="res://Games/Example game/Levels/DiscoHill/Music/Disco Hill Act 1.ogg" id="2_cdewb"]
+[ext_resource type="PackedScene" uid="uid://clt71rt2khju8" path="res://SonicAssets/Prefabs/Player/PlayersManager.tscn" id="2_rkejj"]
+[ext_resource type="Sky" uid="uid://cbutx2vroqt8s" path="res://Games/Example game/Levels/DiscoHill/Misc/DiscoHill1SkyMaterial.tres" id="3_fuptj"]
+[ext_resource type="Sky" uid="uid://7mfho6wm5cpy" path="res://Games/Example game/Levels/DiscoHill/Textures/DiscoHill1MobileSky.tres" id="3_t7osu"]
+[ext_resource type="Script" uid="uid://c2iwclb013o1y" path="res://Scripts/System/ApplyWorldEnvironmentSettings.cs" id="4_0mnx4"]
+[ext_resource type="PackedScene" uid="uid://cgtrksgey4846" path="res://Games/Example game/Levels/DiscoHill/Models/DiscoHill1.blend" id="4_spguk"]
+[ext_resource type="PackedScene" uid="uid://btqvh6bandifd" path="res://SonicAssets/Prefabs/Interactables/[interactable]_spring_red.tscn" id="5_42uyk"]
+[ext_resource type="Shader" uid="uid://bbwj4l7cgrtd8" path="res://Games/Example game/Levels/DiscoHill/Misc/SynthwaveSunShader.tres" id="5_je7d2"]
+[ext_resource type="Script" uid="uid://do8pllvqf2jj5" path="res://Scripts/Utils/SkyMaterialForMobile.cs" id="5_t7osu"]
+[ext_resource type="Script" uid="uid://pq5wwkgxhj7e" path="res://Scripts/Player/ExtraSettingsApplicator.cs" id="6_eue3s"]
+[ext_resource type="Texture2D" uid="uid://cp1tll18m2kt5" path="res://Games/Example game/Levels/DiscoHill/Textures/SunMaskAdd.png" id="6_ts5kg"]
+[ext_resource type="Texture2D" uid="uid://oofpldvxr0tx" path="res://Games/Example game/Levels/DiscoHill/Textures/SunMask.png" id="6_xm2iq"]
+[ext_resource type="Texture2D" uid="uid://jw1p6x1rbtpv" path="res://Games/Example game/Levels/DiscoHill/Textures/Sun.png" id="7_tm58j"]
+[ext_resource type="PackedScene" uid="uid://bp1fwwogqqkfy" path="res://SonicAssets/Prefabs/Interactables/[interactable]_speed_pad.tscn" id="8_d5hqt"]
+[ext_resource type="Texture2D" uid="uid://cbj3igd3o1ow7" path="res://Games/Example game/Levels/DiscoHill/Textures/SunMaskScale.png" id="8_el3rn"]
+[ext_resource type="PackedScene" uid="uid://daw4tm8o4oxei" path="res://SonicAssets/Prefabs/Interactables/[interactable]_dash_ring.tscn" id="9_mm686"]
+[ext_resource type="PackedScene" uid="uid://dhu1smr7ks2e5" path="res://SonicAssets/Prefabs/Interactables/[interactable]_goal_ring.tscn" id="11_16fuc"]
+[ext_resource type="PackedScene" uid="uid://4lpb7voaefep" path="res://SonicAssets/Prefabs/Enemies/[enemy]_motobug.tscn" id="12_0hoag"]
+[ext_resource type="Script" uid="uid://bbh65sxbt16rg" path="res://Scripts/Ui/HideOnMobile.cs" id="12_gxsgs"]
+[ext_resource type="Script" uid="uid://y47n4ov38iw2" path="res://Scripts/Interactables/Hitbox.cs" id="13_da2wp"]
+[ext_resource type="PackedScene" uid="uid://cksgb7nrtyqif" path="res://SonicAssets/Prefabs/Interactables/[interactable]_jump_panel30.tscn" id="14_xfmb3"]
+[ext_resource type="PackedScene" uid="uid://glul7ke1mfjn" path="res://SonicAssets/Prefabs/Enemies/[enemy]_spinner.tscn" id="15_k2bmn"]
+[ext_resource type="PackedScene" uid="uid://bq514nf1hehl5" path="res://SonicAssets/Prefabs/Interactables/[interactable]_jump_panel15.tscn" id="15_ulr7f"]
+[ext_resource type="Material" uid="uid://bgyoitulolct" path="res://Games/Example game/Levels/DiscoHill/Textures/DiscoHillCloudMaterial.tres" id="16_nhfjj"]
+[ext_resource type="Shader" uid="uid://jvyfvpup428c" path="res://Games/Example game/Levels/DiscoHill/Misc/DiscoHillGroundShader.tres" id="21_yanwd"]
+[ext_resource type="Texture2D" uid="uid://ptbptb4v6n32" path="res://Games/Example game/Levels/DiscoHill/Textures/BackgroundGround_a.png" id="22_l5x81"]
+[ext_resource type="PackedScene" uid="uid://ckuh7n0eskbd" path="res://SonicAssets/Prefabs/Items/[item]_red_ring_1.tscn" id="23_iejec"]
+[ext_resource type="PackedScene" uid="uid://c4d6ef2j71sxf" path="res://SonicAssets/Prefabs/Items/[item]_red_ring_2.tscn" id="24_0g3im"]
+[ext_resource type="PackedScene" uid="uid://dnulayoi0l3o8" path="res://SonicAssets/Prefabs/Items/[item]_red_ring_3.tscn" id="25_dgj10"]
+[ext_resource type="PackedScene" uid="uid://bpgng4r75cppe" path="res://SonicAssets/Prefabs/Items/[item]_red_ring_4.tscn" id="26_j44it"]
+[ext_resource type="PackedScene" uid="uid://bjg1gje70id88" path="res://SonicAssets/Prefabs/Items/[item]_red_ring_5.tscn" id="27_w83h2"]
+[ext_resource type="PackedScene" uid="uid://c32v53appugpt" path="res://SonicAssets/Prefabs/Interactables/[interactable]_item_box_10_rings.tscn" id="29_6rifk"]
+[ext_resource type="PackedScene" uid="uid://bv2cv2nejm2w" path="res://SonicAssets/Prefabs/Interactables/[interactable]_special_stage_entrance.tscn" id="30_efmtc"]
+[ext_resource type="PackedScene" uid="uid://cf0qstb6i7bk6" path="res://SonicAssets/Prefabs/Enemies/[enemy]_nebula.tscn" id="31_m2df3"]
+[ext_resource type="PackedScene" uid="uid://dr10g3b66dkj1" path="res://Games/Example game/Levels/DiscoHill/Models/Arrow.blend" id="32_b61q2"]
+[ext_resource type="PackedScene" uid="uid://drle2degnxh5e" path="res://Games/Example game/Levels/DiscoHill/Models/GetDashy.blend" id="33_18o3u"]
+[ext_resource type="PackedScene" uid="uid://c43k5rjvwi01l" path="res://Games/Example game/Levels/DiscoHill/Models/GetRolly.blend" id="34_vaxtj"]
+[ext_resource type="PackedScene" uid="uid://df5r5gehhnovh" path="res://SonicAssets/Prefabs/Interactables/[interactable]_spring_red_wide.tscn" id="35_dbrtg"]
+[ext_resource type="PackedScene" uid="uid://ctfovffra6gal" path="res://SonicAssets/Prefabs/Items/Formations/[Formation] Rings 1x10.tscn" id="35_e65ae"]
+[ext_resource type="PackedScene" uid="uid://c1lfp3e5bmdoj" path="res://SonicAssets/Prefabs/Interactables/[interactable]_checkpoint_3d.tscn" id="37_gnr37"]
+[ext_resource type="PackedScene" uid="uid://rhb0y8rs74i1" path="res://SonicAssets/Prefabs/Interactables/[interactable]_pole.tscn" id="37_ygadb"]
+[ext_resource type="PackedScene" uid="uid://tc8f2l3mmr2b" path="res://Prefabs/Triggers/[trigger]_input_prompt_bottom.tscn" id="38_yflmd"]
+[ext_resource type="PackedScene" uid="uid://fh04wj45t0ot" path="res://Prefabs/Triggers/[trigger]_camera_trigger.tscn" id="39_kpb5c"]
+[ext_resource type="Script" uid="uid://cd3cn8knmt25g" path="res://Scripts/Player/Camera/PointCameraParams.cs" id="40_kpb5c"]
+[ext_resource type="Script" uid="uid://clwt567x2s1dw" path="res://Scripts/Player/Camera/ConstantCameraParams.cs" id="40_yt582"]
+[ext_resource type="PackedScene" uid="uid://dhsikdm7k21nu" path="res://Prefabs/Interactables/[interactable]_autorun_path.tscn" id="42_eg4i3"]
+[ext_resource type="Script" uid="uid://ci2oh22k5mq5c" path="res://addons/sky_baker/SkyBaker.cs" id="45_fuptj"]
+
+[sub_resource type="Environment" id="Environment_fdbn0"]
+background_mode = 2
+sky = ExtResource("3_t7osu")
+ambient_light_color = Color(1, 1, 1, 1)
+ambient_light_energy = 3.0
+tonemap_mode = 2
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_gpil4"]
+render_priority = 0
+shader = ExtResource("5_je7d2")
+shader_parameter/SunTexture = ExtResource("7_tm58j")
+shader_parameter/PatternScaleTexture = ExtResource("8_el3rn")
+shader_parameter/PatternScale = Vector2(1, 10)
+shader_parameter/TimeScale = 0.25
+shader_parameter/PatternOffset = Vector2(0, 0)
+shader_parameter/Pattern = ExtResource("6_xm2iq")
+shader_parameter/AlphaAdd = ExtResource("6_ts5kg")
+
+[sub_resource type="QuadMesh" id="QuadMesh_8f7n3"]
+material = SubResource("ShaderMaterial_gpil4")
+size = Vector2(5000, 5000)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_piim0"]
+size = Vector3(10000, 1, 10000)
+
+[sub_resource type="QuadMesh" id="QuadMesh_6reic"]
+material = ExtResource("16_nhfjj")
+size = Vector2(10000, 10000)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_y1gjk"]
+render_priority = 0
+shader = ExtResource("21_yanwd")
+shader_parameter/DistanceScale = 0.2
+shader_parameter/TimeScale = 0.1
+shader_parameter/MoveScale = 500.0
+shader_parameter/UvScale = Vector2(10, 10)
+shader_parameter/Albedo = ExtResource("22_l5x81")
+
+[sub_resource type="QuadMesh" id="QuadMesh_2w3kh"]
+material = SubResource("ShaderMaterial_y1gjk")
+size = Vector2(10000, 10000)
+subdivide_width = 10
+subdivide_depth = 10
+
+[sub_resource type="Resource" id="Resource_eg4i3"]
+script = ExtResource("40_yt582")
+Snap = true
+metadata/_custom_type_script = "uid://clwt567x2s1dw"
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_t7osu"]
+resource_local_to_scene = true
+size = Vector3(10, 10, 25)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_5m61i"]
+resource_local_to_scene = true
+size = Vector3(100, 50, 50)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_hf5g1"]
+resource_local_to_scene = true
+size = Vector3(100, 200, 500)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_8yjaj"]
+resource_local_to_scene = true
+size = Vector3(50, 100, 50)
+
+[sub_resource type="Resource" id="Resource_yt582"]
+script = ExtResource("40_kpb5c")
+CameraPoint = NodePath("CameraPoint")
+PointMode = 1
+metadata/_custom_type_script = "uid://cd3cn8knmt25g"
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_1uyll"]
+resource_local_to_scene = true
+size = Vector3(50, 200, 111.232)
+
+[sub_resource type="Curve3D" id="Curve3D_2ch70"]
+resource_local_to_scene = true
+_data = {
+"points": PackedVector3Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, -50),
+"tilts": PackedFloat32Array(3.14, 3.14)
+}
+point_count = 2
+
+[node name="DiscoHillAct1" type="Node3D" unique_id=1199842771]
+
+[node name="StageData" type="Node" parent="." unique_id=277473085]
+script = ExtResource("1_h57o6")
+StageZoneName = "Disco Hill"
+StageActName = "Act 1"
+StageUniqueIdentifier = "DiscoHill1"
+StageMusic = ExtResource("2_cdewb")
+HasRedRings = true
+SRankRings = 50
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=1180018275]
+environment = SubResource("Environment_fdbn0")
+script = ExtResource("4_0mnx4")
+
+[node name="MobileSky" type="Node" parent="WorldEnvironment" unique_id=70581776 node_paths=PackedStringArray("WorldEnvironment")]
+script = ExtResource("5_t7osu")
+WorldEnvironment = NodePath("..")
+MobileSky = ExtResource("3_t7osu")
+HqSky = ExtResource("3_fuptj")
+
+[node name="SkyBaker" type="Node3D" parent="WorldEnvironment" unique_id=733325]
+script = ExtResource("45_fuptj")
+SourceWorldEnvironmentPath = NodePath("..")
+CapturePosition = Vector3(-1000, 1, 0)
+CaptureFar = 10.0
+TextureOutputPath = "res://Games/Example game/Levels/DiscoHill/Textures/DiscoHill1MobileSky.png"
+MaterialOutputPath = "res://Games/Example game/Levels/DiscoHill/Textures/DiscoHill1MobileSkyMaterial.tres"
+SkyOutputPath = "res://Games/Example game/Levels/DiscoHill/Textures/DiscoHill1MobileSky.tres"
+
+[node name="PlayersManager" parent="." unique_id=2116328721 instance=ExtResource("2_rkejj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.217562, 4.18616, -8.16227)
+
+[node name="ExtraSettingsApplicator" type="Node" parent="PlayersManager" unique_id=1962919273]
+script = ExtResource("6_eue3s")
+
+[node name="SunQuad" type="MeshInstance3D" parent="." unique_id=591067872]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 672.544, -3.05176e-05, -2864.03)
+cast_shadow = 0
+mesh = SubResource("QuadMesh_8f7n3")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="SunQuad" unique_id=989004865]
+transform = Transform3D(1, 0, 0, 0, -1, 8.74228e-08, 0, -8.74228e-08, -1, 0, 5.59042, 0)
+layers = 3
+shadow_enabled = true
+directional_shadow_mode = 0
+directional_shadow_max_distance = 1000.0
+
+[node name="HideOnMobile" type="Node" parent="SunQuad" unique_id=1002770936]
+script = ExtResource("12_gxsgs")
+ShowOnMobile = false
+ShowOnNonMobile = true
+ApplyToParent = true
+Destroy = true
+
+[node name="DiscoHill1" parent="." unique_id=679437189 instance=ExtResource("4_spguk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -2.89416)
+
+[node name="[Interactable] Spring_Red" parent="." unique_id=432521284 instance=ExtResource("5_42uyk")]
+transform = Transform3D(2.12132, -3.84083e-08, -2.12132, -2.12132, -9.27258e-08, -2.12132, -3.84083e-08, 3, -9.27258e-08, -494.957, 5, -375)
+MinVelocity = 150.0
+MaxVelocity = 150.0
+LockInputTime = 3.0
+SnapCamera = true
+
+[node name="[Interactable] Speed_Pad" parent="." unique_id=445757125 instance=ExtResource("8_d5hqt")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1085, 75, -975)
+AddVelocity = 0.0
+MinVelocity = 100.0
+
+[node name="[Interactable] Speed_Pad2" parent="." unique_id=160536281 instance=ExtResource("8_d5hqt")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1085, 75, -972.5)
+AddVelocity = 0.0
+MinVelocity = 100.0
+
+[node name="[Interactable] Speed_Pad3" parent="." unique_id=1655493049 instance=ExtResource("8_d5hqt")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1085, 75, -970)
+AddVelocity = 0.0
+MinVelocity = 100.0
+
+[node name="[Interactable] Speed_Pad4" parent="." unique_id=1617303561 instance=ExtResource("8_d5hqt")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1085, 75, -967.5)
+AddVelocity = 0.0
+MinVelocity = 100.0
+
+[node name="[Interactable] Speed_Pad5" parent="." unique_id=2049462997 instance=ExtResource("8_d5hqt")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1085, 75, -965)
+AddVelocity = 0.0
+MinVelocity = 100.0
+
+[node name="[Interactable] Speed_Pad6" parent="." unique_id=468128047 instance=ExtResource("8_d5hqt")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1085, 75, -962)
+AddVelocity = 0.0
+MinVelocity = 100.0
+
+[node name="[Interactable] Speed_Pad7" parent="." unique_id=1542686541 instance=ExtResource("8_d5hqt")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1085, 75, -959.5)
+AddVelocity = 0.0
+MinVelocity = 100.0
+
+[node name="[Interactable] Speed_Pad8" parent="." unique_id=2105866607 instance=ExtResource("8_d5hqt")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1085, 75, -957)
+AddVelocity = 0.0
+MinVelocity = 100.0
+
+[node name="[Interactable] Speed_Pad9" parent="." unique_id=1922883765 instance=ExtResource("8_d5hqt")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1085, 75, -954.5)
+AddVelocity = 0.0
+MinVelocity = 100.0
+
+[node name="[Interactable] Speed_Pad10" parent="." unique_id=1510269446 instance=ExtResource("8_d5hqt")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1085, 75, -952)
+AddVelocity = 0.0
+MinVelocity = 100.0
+
+[node name="[Interactable] Speed_Pad11" parent="." unique_id=1542798708 instance=ExtResource("8_d5hqt")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 625, 10, -378.36)
+
+[node name="[Interactable] Spring_Red2" parent="." unique_id=1000358849 instance=ExtResource("5_42uyk")]
+transform = Transform3D(-1, -8.74228e-08, -3.82137e-15, 0, -4.37114e-08, 1, -8.74228e-08, 1, 4.37114e-08, 1000, 65.2331, -1630)
+
+[node name="[Interactable] Speed_Pad12" parent="." unique_id=101659481 instance=ExtResource("8_d5hqt")]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 1000, 52.798, -1630)
+MinVelocity = 150.0
+MaxVelocity = 150.0
+
+[node name="[Interactable] Spring_Red3" parent="." unique_id=496210946 instance=ExtResource("5_42uyk")]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 1027, 41, -1625)
+
+[node name="[Interactable] Spring_Red5" parent="." unique_id=1415899062 instance=ExtResource("5_42uyk")]
+transform = Transform3D(1, 0, -4.37114e-08, -4.37114e-08, 1.91069e-15, -1, 0, 1, 1.91069e-15, 973.695, 47.4117, -1622.71)
+MinVelocity = 150.0
+MaxVelocity = 150.0
+LockInputTime = 2.0
+SnapCamera = true
+SnapCameraRelativeDirection = Vector3(-1, 0, 0)
+
+[node name="[Interactable] Speed_Pad13" parent="." unique_id=2109250008 instance=ExtResource("8_d5hqt")]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 885, 175, -1622.71)
+
+[node name="[Interactable] Dash_Ring" parent="." unique_id=1942047519 instance=ExtResource("9_mm686")]
+transform = Transform3D(4.37114e-08, 3.82137e-15, 1, 8.74228e-08, -1, 0, 1, 8.74228e-08, -4.37114e-08, 973.695, 198.238, -1622.71)
+MinVelocity = 100.0
+MaxVelocity = 100.0
+LockInputTime = 1.0
+SnapCamera = true
+
+[node name="[Interactable] Dash_Ring2" parent="." unique_id=843248842 instance=ExtResource("9_mm686")]
+transform = Transform3D(1.31134e-07, -1, -4.37114e-08, -3.82137e-15, 4.37114e-08, -1, 1, 1.31134e-07, 1.91069e-15, 973.695, 115.385, -1622.71)
+MinVelocity = 150.0
+MaxVelocity = 150.0
+LockInputTime = 1.0
+
+[node name="[Interactable] Spring_Red4" parent="." unique_id=526706243 instance=ExtResource("5_42uyk")]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 3810.26, -76.9999, -1432.56)
+MinVelocity = 60.0
+MaxVelocity = 60.0
+
+[node name="[Interactable] Spring_Red6" parent="." unique_id=1917078496 instance=ExtResource("5_42uyk")]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 3908.36, -57, -1431.73)
+MinVelocity = 75.0
+MaxVelocity = 75.0
+
+[node name="[Interactable] Spring_Red7" parent="." unique_id=165977805 instance=ExtResource("5_42uyk")]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 4109.09, -35.0001, -1510.48)
+MinVelocity = 100.0
+MaxVelocity = 100.0
+
+[node name="[Interactable] Spring_Red8" parent="." unique_id=146514176 instance=ExtResource("5_42uyk")]
+transform = Transform3D(-4.37114e-08, 1, -4.37114e-08, 0, -4.37114e-08, -1, -1, -4.37114e-08, 1.91069e-15, 4136.52, 3, -1487.55)
+MinVelocity = 100.0
+MaxVelocity = 100.0
+LockInputTime = 1.0
+
+[node name="[Interactable] Dash_Ring5" parent="." unique_id=1995494410 instance=ExtResource("9_mm686")]
+transform = Transform3D(-1, -6.18172e-08, -6.18172e-08, -8.74228e-08, 0.707107, 0.707107, -3.82137e-15, 0.707107, -0.707107, 4136.52, 56.7181, -1487.55)
+MinVelocity = 100.0
+LockInputTime = 0.2
+SnapCamera = true
+
+[node name="[Interactable] Speed_Pad14" parent="." unique_id=240306539 instance=ExtResource("8_d5hqt")]
+transform = Transform3D(-1, 0, -1.50996e-07, 0, 1, 0, 1.50996e-07, 0, -1, 4136.52, 42.9999, -1454.83)
+MinVelocity = 100.0
+
+[node name="[Interactable] Speed_Pad15" parent="." unique_id=1513888805 instance=ExtResource("8_d5hqt")]
+transform = Transform3D(-1, 0, -1.50996e-07, 0, 1, 0, 1.50996e-07, 0, -1, 4136.52, 42.9999, -1350.83)
+MinVelocity = 100.0
+LockInputTime = 0.25
+
+[node name="[Interactable] Speed_Pad16" parent="." unique_id=1594123990 instance=ExtResource("8_d5hqt")]
+transform = Transform3D(-1, 0, -1.50996e-07, 0, 1, 0, 1.50996e-07, 0, -1, 4136.52, 42.9999, -1399.83)
+MinVelocity = 100.0
+LockInputTime = 0.25
+
+[node name="[Interactable] Goal Ring" parent="." unique_id=533349585 instance=ExtResource("11_16fuc")]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 4138.76, 63, -291.848)
+NextLevel = "res://Games/Example game/Levels/DiscoHill/DiscoHill2.tscn"
+StagesToUnlock = PackedStringArray("DiscoHill2")
+
+[node name="[Interactable] Spring_Red9" parent="." unique_id=1394948791 instance=ExtResource("5_42uyk")]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, -239.122, -30, -106.51)
+MinVelocity = 100.0
+MaxVelocity = 100.0
+
+[node name="[Enemy] Motobug" parent="." unique_id=144822444 instance=ExtResource("12_0hoag")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 110.25, 59.9999, -378.465)
+
+[node name="[Enemy] Motobug2" parent="." unique_id=800009386 instance=ExtResource("12_0hoag")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 232.92, 60.0001, -380.781)
+
+[node name="[Enemy] Motobug3" parent="." unique_id=1626217226 instance=ExtResource("12_0hoag")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 336.792, 60.0001, -425.198)
+
+[node name="[Enemy] Motobug4" parent="." unique_id=2048058665 instance=ExtResource("12_0hoag")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 409.496, 60.0001, -427.704)
+
+[node name="[Enemy] Motobug5" parent="." unique_id=688049222 instance=ExtResource("12_0hoag")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 1112.83, 9.99995, -786.59)
+
+[node name="[Enemy] Motobug6" parent="." unique_id=1232993183 instance=ExtResource("12_0hoag")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 1152.25, 9.99996, -844.33)
+
+[node name="[Enemy] Motobug9" parent="." unique_id=1189741857 instance=ExtResource("12_0hoag")]
+transform = Transform3D(1, 0, 1.74846e-07, 0, 1, 0, -1.74846e-07, 0, 1, 3857.8, -57, -1432.07)
+
+[node name="[Enemy] Motobug16" parent="." unique_id=1119539416 instance=ExtResource("12_0hoag")]
+transform = Transform3D(1, 0, 1.74846e-07, 0, 1, 0, -1.74846e-07, 0, 1, 3891.04, -57, -1432.07)
+
+[node name="[Enemy] Motobug10" parent="." unique_id=1531210803 instance=ExtResource("12_0hoag")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 3965.35, -35.0001, -1431.12)
+
+[node name="[Enemy] Motobug15" parent="." unique_id=537726256 instance=ExtResource("12_0hoag")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 3965.35, -35.0001, -1431.12)
+
+[node name="[Enemy] Motobug11" parent="." unique_id=467445670 instance=ExtResource("12_0hoag")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 4039.38, -35.0001, -1436.96)
+
+[node name="[Enemy] Motobug12" parent="." unique_id=1479338593 instance=ExtResource("12_0hoag")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 4067.22, -35.0001, -1486.85)
+
+[node name="[Enemy] Motobug13" parent="." unique_id=2077967906 instance=ExtResource("12_0hoag")]
+transform = Transform3D(1, 0, 1.74846e-07, 0, 1, 0, -1.74846e-07, 0, 1, 4136.73, 63, -561.612)
+
+[node name="Pit" type="Area3D" parent="." unique_id=940573380]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -200, 0)
+collision_mask = 7
+script = ExtResource("13_da2wp")
+IsInstaKill = true
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Pit" unique_id=1785098686]
+shape = SubResource("BoxShape3D_piim0")
+
+[node name="[Interactable] JumpPanel30Degrees" parent="." unique_id=1330693270 instance=ExtResource("14_xfmb3")]
+transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, 1085.1, 70.0003, -1248.81)
+MinVelocity = 100.0
+
+[node name="[Interactable] JumpPanel30Degrees2" parent="." unique_id=1049137619 instance=ExtResource("14_xfmb3")]
+transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, 924.907, 50.0001, -1098.69)
+MinVelocity = 200.0
+
+[node name="[Enemy] Motobug14" parent="." unique_id=408872529 instance=ExtResource("12_0hoag")]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -468.912, 5.00002, -327.032)
+
+[node name="[Interactable] Spring_Red10" parent="." unique_id=1573035337 instance=ExtResource("5_42uyk")]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 1977.61, 19.0251, -1442)
+MinVelocity = 75.0
+MaxVelocity = 75.0
+
+[node name="[Interactable] Spring_Red12" parent="." unique_id=1428687522 instance=ExtResource("5_42uyk")]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 2479.48, -0.14512, -1400.03)
+MinVelocity = 75.0
+MaxVelocity = 75.0
+
+[node name="[Interactable] Spring_Red13" parent="." unique_id=2048250555 instance=ExtResource("5_42uyk")]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 2608.99, 13, -1394.58)
+
+[node name="[Interactable] JumpPanel15Degrees" parent="." unique_id=141743376 instance=ExtResource("15_ulr7f")]
+transform = Transform3D(-8.74228e-08, 0, -2, 0, 2, 0, 2, 0, -8.74228e-08, 2708.87, 33.0001, -1396.74)
+
+[node name="[Interactable] JumpPanel30Degrees3" parent="." unique_id=1926367467 instance=ExtResource("14_xfmb3")]
+transform = Transform3D(-2.18557e-07, 0, -5, 0, 5, 0, 5, 0, -2.18557e-07, 996.319, 175, -1376.15)
+MinVelocity = 150.0
+MaxVelocity = 150.0
+
+[node name="[Interactable] Dash_Ring3" parent="." unique_id=1387892137 instance=ExtResource("9_mm686")]
+transform = Transform3D(-9.05293e-08, -3.53553, 3.53553, -3.09086e-07, -3.53553, -3.53553, 5, -2.82571e-07, -1.54543e-07, 1155.4, 274.317, -1375.89)
+MinVelocity = 100.0
+MaxVelocity = 100.0
+LockInputTime = 1.0
+SnapCamera = true
+
+[node name="[Enemy] Spinner" parent="." unique_id=927235995 instance=ExtResource("15_k2bmn")]
+transform = Transform3D(1, 0, 1.74846e-07, 1.74846e-07, -4.37114e-08, -1, 7.64276e-15, 1, -4.37114e-08, 1147.91, 274.317, -1375.89)
+
+[node name="[Interactable] Spring_Red14" parent="." unique_id=1765639943 instance=ExtResource("5_42uyk")]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 1123.14, 206.158, -1375.89)
+MinVelocity = 100.0
+MaxVelocity = 100.0
+LockInputTime = 1.0
+
+[node name="[Interactable] Spring_Red15" parent="." unique_id=446414702 instance=ExtResource("5_42uyk")]
+transform = Transform3D(-4.37114e-08, -1, 4.37114e-08, 0, -4.37114e-08, -1, 1, -4.37114e-08, 1.91069e-15, 990.187, 290.007, -1376.7)
+MinVelocity = 150.0
+MaxVelocity = 150.0
+LockInputTime = 1.0
+
+[node name="[Interactable] Dash_Ring4" parent="." unique_id=842645549 instance=ExtResource("9_mm686")]
+transform = Transform3D(-3, -2.62268e-07, 0, 2.62268e-07, -3, 0, 0, 0, 3, 990.187, 409.311, -1376.7)
+MinVelocity = 100.0
+MaxVelocity = 100.0
+SnapCamera = true
+
+[node name="[Interactable] JumpPanel15Degrees2" parent="." unique_id=1679727540 instance=ExtResource("15_ulr7f")]
+transform = Transform3D(0.0872619, 0, -4.99924, 0, 5, 0, 4.99924, 0, 0.0872619, 2727.3, 93, -1423.84)
+MinVelocity = 125.0
+
+[node name="[Interactable] JumpPanel15Degrees3" parent="." unique_id=1192411223 instance=ExtResource("15_ulr7f")]
+transform = Transform3D(-5, 0, -4.37114e-07, 0, 5, 0, 4.37114e-07, 0, -5, 4135.49, 42.9999, -1105.88)
+MinVelocity = 200.0
+MaxVelocity = 200.0
+
+[node name="[Interactable] Spring_Red16" parent="." unique_id=1036968465 instance=ExtResource("5_42uyk")]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 2550.02, 73.0001, -1426.3)
+
+[node name="[Interactable] JumpPanel15Degrees4" parent="." unique_id=260006946 instance=ExtResource("15_ulr7f")]
+transform = Transform3D(-2.18557e-07, 0, -5, 0, 5, 0, 5, 0, -2.18557e-07, 2967.82, 42.9999, -1392.9)
+MinVelocity = 150.0
+MaxVelocity = 1000.0
+
+[node name="[Interactable] Spring_Red17" parent="." unique_id=1296200046 instance=ExtResource("5_42uyk")]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 1086.75, 157, -1614.68)
+MinVelocity = 150.0
+MaxVelocity = 150.0
+LockInputTime = 1.0
+
+[node name="[Enemy] Spinner2" parent="." unique_id=69012665 instance=ExtResource("15_k2bmn")]
+transform = Transform3D(1, 0, 1.74846e-07, 0, 1, 0, -1.74846e-07, 0, 1, 1064.9, 304.572, -1633.96)
+
+[node name="[Interactable] Dash_Ring6" parent="." unique_id=2099161462 instance=ExtResource("9_mm686")]
+transform = Transform3D(2.12132, 0, 2.12132, 0, 3, 0, -2.12132, 0, 2.12132, 1062.17, 307.233, -1636.83)
+MinVelocity = 100.0
+MaxVelocity = 100.0
+SnapCamera = true
+
+[node name="[Interactable] Speed_Pad17" parent="." unique_id=466468480 instance=ExtResource("8_d5hqt")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 924.907, 50, -884.239)
+MinVelocity = 75.0
+
+[node name="[Interactable] Speed_Pad19" parent="." unique_id=671656630 instance=ExtResource("8_d5hqt")]
+transform = Transform3D(-3.01992e-07, -3.49691e-07, -4, -3.49691e-07, -4, 3.49691e-07, -4, 3.49691e-07, 3.01992e-07, 1871.57, 56.5252, -1432.01)
+
+[node name="[Interactable] Speed_Pad22" parent="." unique_id=12259947 instance=ExtResource("8_d5hqt")]
+transform = Transform3D(-3.01992e-07, -3.49691e-07, -4, -3.49691e-07, -4, 3.49691e-07, -4, 3.49691e-07, 3.01992e-07, 1881.57, 56.5252, -1432.01)
+
+[node name="[Interactable] Speed_Pad23" parent="." unique_id=400023634 instance=ExtResource("8_d5hqt")]
+transform = Transform3D(-3.01992e-07, -3.49691e-07, -4, -3.49691e-07, -4, 3.49691e-07, -4, 3.49691e-07, 3.01992e-07, 1891.57, 56.5252, -1432.01)
+
+[node name="[Interactable] Speed_Pad20" parent="." unique_id=370309054 instance=ExtResource("8_d5hqt")]
+transform = Transform3D(-3.01992e-07, -3.49691e-07, -4, -3.49691e-07, -4, 3.49691e-07, -4, 3.49691e-07, 3.01992e-07, 1863.57, 56.5252, -1426.01)
+
+[node name="[Interactable] Speed_Pad21" parent="." unique_id=2119227715 instance=ExtResource("8_d5hqt")]
+transform = Transform3D(-3.01992e-07, -3.49691e-07, -4, -3.49691e-07, -4, 3.49691e-07, -4, 3.49691e-07, 3.01992e-07, 1855.57, 56.5252, -1420.01)
+
+[node name="[Interactable] JumpPanel15Degrees5" parent="." unique_id=871560485 instance=ExtResource("15_ulr7f")]
+transform = Transform3D(-2.18557e-07, 0, -5, 0, 5, 0, 5, 0, -2.18557e-07, 1999.67, 42.9999, -1433.14)
+MinVelocity = 150.0
+
+[node name="[Interactable] Spring_Red18" parent="." unique_id=1669039813 instance=ExtResource("5_42uyk")]
+transform = Transform3D(1.74854, 1.06557e-07, -2.43775, 2.43775, -7.64311e-08, 1.74854, 0, -3, -1.31134e-07, 1979.26, 56.024, -1433.99)
+SnapCamera = true
+
+[node name="CloudQuad" type="MeshInstance3D" parent="." unique_id=1983190724]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, -105.178, 1543.76, 0)
+visible = false
+mesh = SubResource("QuadMesh_6reic")
+
+[node name="GroundQuad" type="MeshInstance3D" parent="." unique_id=827970716]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 2574.75, -1071, 0)
+visible = false
+mesh = SubResource("QuadMesh_2w3kh")
+
+[node name="[Interactable] Spring_Red19" parent="." unique_id=32824106 instance=ExtResource("5_42uyk")]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 804.483, 9.99996, -700.655)
+MinVelocity = 75.0
+MaxVelocity = 75.0
+
+[node name="[Interactable] Spring_Red20" parent="." unique_id=1876239093 instance=ExtResource("5_42uyk")]
+transform = Transform3D(0.577102, -0.569805, -0.585043, 0, 0.716375, -0.697716, 0.816672, 0.402653, 0.413422, 828.418, -4.3869e-05, -700.439)
+MinVelocity = 100.0
+MaxVelocity = 100.0
+LockInputTime = 0.5
+SnapCamera = true
+
+[node name="[Interactable] Dash_Ring7" parent="." unique_id=194804218 instance=ExtResource("9_mm686")]
+transform = Transform3D(3.27278, -0.649513, -3.72385, -1.08688e-07, 4.92564, -0.85913, 3.78007, 0.562349, 3.22411, 823.285, 158.698, -541.54)
+MinVelocity = 150.0
+MaxVelocity = 150.0
+LockInputTime = 0.5
+
+[node name="[Interactable] Spring_Red21" parent="." unique_id=1551222784 instance=ExtResource("5_42uyk")]
+transform = Transform3D(0.721139, 0.391197, -0.571773, -0.621285, -3.42516e-08, -0.783585, -0.306536, 0.920307, 0.243045, 803.632, 49.9367, -711.531)
+MinVelocity = 90.0
+MaxVelocity = 90.0
+LockInputTime = 0.2
+SnapCamera = true
+
+[node name="[Interactable] Spring_Red22" parent="." unique_id=616691237 instance=ExtResource("5_42uyk")]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 4137.44, 2.9999, -797.527)
+MinVelocity = 150.0
+MaxVelocity = 150.0
+
+[node name="[Interactable] Dash_Ring12" parent="." unique_id=730200218 instance=ExtResource("9_mm686")]
+transform = Transform3D(1, 0, 0, 0, -1, 1.50996e-07, 0, -1.50996e-07, -1, 4137.44, 101.403, -797.527)
+
+[node name="[Interactable] Speed_Pad29" parent="." unique_id=272950675 instance=ExtResource("8_d5hqt")]
+transform = Transform3D(5.73206e-15, -1.31134e-07, -3, -3, -1.31134e-07, 0, -1.31134e-07, 3, -1.31134e-07, 2020.39, 36.9908, -1454.89)
+
+[node name="[Interactable] Speed_Pad30" parent="." unique_id=1541582767 instance=ExtResource("8_d5hqt")]
+transform = Transform3D(5.73206e-15, -1.31134e-07, -3, -3, -1.31134e-07, 0, -1.31134e-07, 3, -1.31134e-07, 2027.39, 36.9908, -1454.89)
+
+[node name="[Interactable] Speed_Pad31" parent="." unique_id=1579929170 instance=ExtResource("8_d5hqt")]
+transform = Transform3D(5.73206e-15, -1.31134e-07, -3, -3, -1.31134e-07, 0, -1.31134e-07, 3, -1.31134e-07, 2034.39, 36.9908, -1454.89)
+
+[node name="[Interactable] Dash_Ring8" parent="." unique_id=633321543 instance=ExtResource("9_mm686")]
+transform = Transform3D(9.55343e-15, -2.18557e-07, -5, -5, -2.18557e-07, 0, -2.18557e-07, 5, -2.18557e-07, 2048.86, 36.334, -1454.89)
+
+[node name="[Interactable] Dash_Ring9" parent="." unique_id=719266780 instance=ExtResource("9_mm686")]
+transform = Transform3D(9.55343e-15, -2.18557e-07, -5, -5, -2.18557e-07, 0, -2.18557e-07, 5, -2.18557e-07, 2064.93, 36.334, -1454.89)
+
+[node name="[Interactable] Dash_Ring10" parent="." unique_id=188742953 instance=ExtResource("9_mm686")]
+transform = Transform3D(9.55343e-15, -2.18557e-07, -5, -5, -2.18557e-07, 0, -2.18557e-07, 5, -2.18557e-07, 2081.56, 36.334, -1454.89)
+
+[node name="[Interactable] Dash_Ring11" parent="." unique_id=870061315 instance=ExtResource("9_mm686")]
+transform = Transform3D(2.71442, -1.15025, -4.03842, -4.14972, -3.03311e-07, -2.78923, 0.641662, 4.86589, -0.954642, 2099.65, 36.334, -1454.89)
+
+[node name="[Item] RedRing1" parent="." unique_id=1877882609 instance=ExtResource("23_iejec")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0772381, 16.0203, -46.5001)
+
+[node name="[Item] RedRing2" parent="." unique_id=1912219899 instance=ExtResource("24_0g3im")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 924.767, 51.2821, -887.796)
+
+[node name="[Item] RedRing3" parent="." unique_id=1860301110 instance=ExtResource("25_dgj10")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 996.426, 401.251, -1487.62)
+
+[node name="[Item] RedRing4" parent="." unique_id=58566650 instance=ExtResource("26_j44it")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3866.64, -23.9652, -1484.89)
+
+[node name="[Interactable] Spring_Red23" parent="." unique_id=499642209 instance=ExtResource("5_42uyk")]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 4010.59, -107, -1467.41)
+MinVelocity = 100.0
+MaxVelocity = 100.0
+
+[node name="[Item] RedRing5" parent="." unique_id=339773033 instance=ExtResource("27_w83h2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4135.25, 44.0161, -1117.58)
+
+[node name="[Interactable] Item Box 10 Rings" parent="." unique_id=1707177233 instance=ExtResource("29_6rifk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -304.735, 20.0001, -107.469)
+
+[node name="[Interactable] Item Box 10 Rings2" parent="." unique_id=1356421883 instance=ExtResource("29_6rifk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -460.172, 5.00008, -281.399)
+
+[node name="[Interactable] Item Box 10 Rings3" parent="." unique_id=1684561237 instance=ExtResource("29_6rifk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 727.866, 150, -428.45)
+
+[node name="[Interactable] Item Box 10 Rings5" parent="." unique_id=784214702 instance=ExtResource("29_6rifk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 895.402, 175, -1458.83)
+
+[node name="[Interactable] Item Box 10 Rings6" parent="." unique_id=154324118 instance=ExtResource("29_6rifk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2025.82, -17, -1399.2)
+
+[node name="[Interactable] Item Box 10 Rings7" parent="." unique_id=1246123447 instance=ExtResource("29_6rifk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3395.57, -87.0008, -1472.28)
+
+[node name="[Interactable] Item Box 10 Rings8" parent="." unique_id=1145635849 instance=ExtResource("29_6rifk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3395.57, -86.999, -1387.24)
+
+[node name="[Interactable] Item Box 10 Rings9" parent="." unique_id=1347408496 instance=ExtResource("29_6rifk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3550.11, -87.0214, -1431.48)
+
+[node name="[Interactable] Item Box 10 Rings4" parent="." unique_id=1351953498 instance=ExtResource("29_6rifk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1117.84, 34.9999, -930.973)
+
+[node name="[Interactable] Special Stage Entrance" parent="." unique_id=1636551061 instance=ExtResource("30_efmtc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1041, 279, -977)
+
+[node name="[Interactable] Special Stage Entrance2" parent="." unique_id=1110122566 instance=ExtResource("30_efmtc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2720, -8, -1392)
+
+[node name="[Interactable] Special Stage Entrance3" parent="." unique_id=1538057184 instance=ExtResource("30_efmtc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3834, 16, -1501)
+
+[node name="[Interactable] Item Box 10 Rings10" parent="." unique_id=410154893 instance=ExtResource("29_6rifk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4137, 313, -794)
+
+[node name="[Enemy] Nebula" parent="." unique_id=1011564178 instance=ExtResource("31_m2df3")]
+transform = Transform3D(1, 0, 1.74846e-07, 0, 1, 0, -1.74846e-07, 0, 1, 4137, 275, -1020)
+
+[node name="[Enemy] Spinner3" parent="." unique_id=1656064221 instance=ExtResource("15_k2bmn")]
+transform = Transform3D(1, 0, 1.74846e-07, 0, 1, 0, -1.74846e-07, 0, 1, 4137, 289, -976)
+
+[node name="[Enemy] Spinner4" parent="." unique_id=2033637014 instance=ExtResource("15_k2bmn")]
+transform = Transform3D(1, 0, 1.74846e-07, 0, 1, 0, -1.74846e-07, 0, 1, 4137, 301, -936)
+
+[node name="[Interactable] Item Box 10 Rings11" parent="." unique_id=609683523 instance=ExtResource("29_6rifk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4137, 313, -882)
+
+[node name="Decorations" type="Node3D" parent="." unique_id=882041675]
+
+[node name="Arrow" parent="Decorations" unique_id=1207732569 instance=ExtResource("32_b61q2")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 1163, 22, -980)
+
+[node name="Arrow2" parent="Decorations" unique_id=1333466577 instance=ExtResource("32_b61q2")]
+transform = Transform3D(-0.5, 0, -7.54979e-08, 0, 0.5, 0, 7.54979e-08, 0, -0.5, 1190, 17, -800)
+
+[node name="Arrow3" parent="Decorations" unique_id=457923839 instance=ExtResource("32_b61q2")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -34, 18, -111)
+
+[node name="Arrow4" parent="Decorations" unique_id=2068146614 instance=ExtResource("32_b61q2")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 1010, 17, -802)
+
+[node name="Arrow23" parent="Decorations" unique_id=2002572633 instance=ExtResource("32_b61q2")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 3798, 17, -1502)
+
+[node name="Arrow5" parent="Decorations" unique_id=1590606653 instance=ExtResource("32_b61q2")]
+transform = Transform3D(-0.75, 0, -1.13247e-07, 0, 0.75, 0, 1.13247e-07, 0, -0.75, -400, 17, -190)
+
+[node name="Arrow6" parent="Decorations" unique_id=1033348395 instance=ExtResource("32_b61q2")]
+transform = Transform3D(-3.27835e-08, 0, -0.75, 0, 0.75, 0, 0.75, 0, -3.27835e-08, -388, 17, -203)
+
+[node name="Arrow7" parent="Decorations" unique_id=115381922 instance=ExtResource("32_b61q2")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -477, 17, -387)
+
+[node name="Arrow8" parent="Decorations" unique_id=536598775 instance=ExtResource("32_b61q2")]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -500, 17, -355)
+
+[node name="Arrow9" parent="Decorations" unique_id=1253352252 instance=ExtResource("32_b61q2")]
+transform = Transform3D(-0.5, 0, -7.54979e-08, 0, 0.5, 0, 7.54979e-08, 0, -0.5, 648, 12, -382)
+
+[node name="Arrow10" parent="Decorations" unique_id=634220285 instance=ExtResource("32_b61q2")]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 850, 161, -435.065)
+
+[node name="Arrow11" parent="Decorations" unique_id=1533062988 instance=ExtResource("32_b61q2")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 627, 2, -553)
+
+[node name="Arrow12" parent="Decorations" unique_id=347770790 instance=ExtResource("32_b61q2")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 627, 2, -533)
+
+[node name="Arrow13" parent="Decorations" unique_id=299744537 instance=ExtResource("32_b61q2")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 627, 2, -603)
+
+[node name="Arrow14" parent="Decorations" unique_id=2141776822 instance=ExtResource("32_b61q2")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 627, 2, -583)
+
+[node name="Arrow15" parent="Decorations" unique_id=1092346319 instance=ExtResource("32_b61q2")]
+transform = Transform3D(-4.37114e-08, -1, -4.37114e-08, 0, -4.37114e-08, 1, -1, 4.37114e-08, 1.91069e-15, 805, 39, -703)
+
+[node name="Arrow16" parent="Decorations" unique_id=1790267281 instance=ExtResource("32_b61q2")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 1072, 72, -1247)
+
+[node name="Arrow17" parent="Decorations" unique_id=1595913455 instance=ExtResource("32_b61q2")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 1097, 72, -1247)
+
+[node name="Arrow18" parent="Decorations" unique_id=315583899 instance=ExtResource("32_b61q2")]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 4112, -10, -1500)
+
+[node name="Arrow19" parent="Decorations" unique_id=1685692348 instance=ExtResource("32_b61q2")]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 4112, -10, -1520)
+
+[node name="Arrow20" parent="Decorations" unique_id=1061907801 instance=ExtResource("32_b61q2")]
+transform = Transform3D(-4.37114e-08, -1, -4.37114e-08, 0, -4.37114e-08, 1, -1, 4.37114e-08, 1.91069e-15, 4147, 29, -1486)
+
+[node name="Arrow21" parent="Decorations" unique_id=1393338076 instance=ExtResource("32_b61q2")]
+transform = Transform3D(-4.37114e-08, -1, -4.37114e-08, 0, -4.37114e-08, 1, -1, 4.37114e-08, 1.91069e-15, 4128, 29, -1486)
+
+[node name="Arrow22" parent="Decorations" unique_id=630863193 instance=ExtResource("32_b61q2")]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 1074, 241, -877)
+
+[node name="GetDashy" parent="Decorations" unique_id=813529404 instance=ExtResource("33_18o3u")]
+transform = Transform3D(1.91069e-15, 4.37114e-08, -1, 1, -4.37114e-08, 0, -4.37114e-08, -1, -4.37114e-08, 1034, 33, -950)
+
+[node name="GetDashy2" parent="Decorations" unique_id=841115694 instance=ExtResource("33_18o3u")]
+transform = Transform3D(1.91069e-15, -4.37114e-08, -1, -1, -4.37114e-08, 0, -4.37114e-08, 1, -4.37114e-08, 1034, 54, -980)
+
+[node name="GetDashy3" parent="Decorations" unique_id=877160157 instance=ExtResource("33_18o3u")]
+transform = Transform3D(-1.31134e-07, -3, 0, 3, -1.31134e-07, 0, 0, 0, 3, 1027, 162, -1504)
+
+[node name="GetDashy4" parent="Decorations" unique_id=585802945 instance=ExtResource("33_18o3u")]
+transform = Transform3D(-1.31134e-07, 3, 0, -3, -1.31134e-07, 0, 0, 0, 3, 973, 224, -1504)
+
+[node name="GetRolly" parent="Decorations" unique_id=1232041301 instance=ExtResource("34_vaxtj")]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 976, 329.573, -1813)
+
+[node name="GetRolly2" parent="Decorations" unique_id=1880418754 instance=ExtResource("34_vaxtj")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 2938, -83, -1415)
+
+[node name="GetRolly3" parent="Decorations" unique_id=1740019277 instance=ExtResource("34_vaxtj")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 2938, -83, -1467)
+
+[node name="[Interactable] Spring_Red_Wide" parent="Decorations" unique_id=197938135 instance=ExtResource("35_dbrtg")]
+transform = Transform3D(1, 0, 0, 0, 0.866025, 0.5, 0, -0.5, 0.866025, 1001.13, 349.986, -1601.23)
+AddVelocity = 50.0
+MaxVelocity = 300.0
+KeepPerpendicularVelocity = true
+LockInputTime = 0.5
+SnapCamera = true
+
+[node name="[Trigger] Camera Trigger" parent="Decorations/[Interactable] Spring_Red_Wide" unique_id=414260735 instance=ExtResource("39_kpb5c")]
+Params = SubResource("Resource_eg4i3")
+FreeOnExit = true
+ExitLerpTime = 0.5
+
+[node name="CollisionShape3D" parent="Decorations/[Interactable] Spring_Red_Wide/[Trigger] Camera Trigger" index="0" unique_id=587286632]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -7.50012)
+shape = SubResource("BoxShape3D_t7osu")
+
+[node name="CameraPoint" type="Node3D" parent="Decorations/[Interactable] Spring_Red_Wide/[Trigger] Camera Trigger" unique_id=1566317307]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.966064, -37.2062)
+
+[node name="[formation]Rings1x10" parent="." unique_id=550894982 instance=ExtResource("35_e65ae")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -4.94136, 5, -99.3834)
+
+[node name="[formation]Rings1x11" parent="." unique_id=562362945 instance=ExtResource("35_e65ae")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 133.918, 60, -379.042)
+
+[node name="[formation]Rings1x12" parent="." unique_id=1073779068 instance=ExtResource("35_e65ae")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 354.41, 59.9966, -426.004)
+
+[node name="[formation]Rings1x13" parent="." unique_id=1798261990 instance=ExtResource("35_e65ae")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 253.29, 40, -397.124)
+
+[node name="[formation]Rings1x14" parent="." unique_id=1428762968 instance=ExtResource("35_e65ae")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 266.602, 40, -357.926)
+
+[node name="[formation]Rings1x15" parent="." unique_id=261847402 instance=ExtResource("35_e65ae")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 989.947, 9.99996, -778.301)
+
+[node name="[formation]Rings1x16" parent="." unique_id=1171726222 instance=ExtResource("35_e65ae")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1085.38, 75.0001, -1028.67)
+
+[node name="[formation]Rings1x17" parent="." unique_id=2004936240 instance=ExtResource("35_e65ae")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 999.943, 52.4999, -1622.53)
+
+[node name="[formation]Rings1x18" parent="." unique_id=978937788 instance=ExtResource("35_e65ae")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 1118.93, 157, -1613.97)
+
+[node name="[formation]Rings1x20" parent="." unique_id=1301341705 instance=ExtResource("35_e65ae")]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 4136, 43, -1422.53)
+
+[node name="[formation]Rings1x19" parent="." unique_id=1120475365 instance=ExtResource("35_e65ae")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 2795.31, -12, -1393.09)
+
+[node name="[formation]Rings1x21" parent="." unique_id=901901930 instance=ExtResource("35_e65ae")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4135.96, 263, -1150.93)
+
+[node name="[formation]Rings1x22" parent="." unique_id=162151705 instance=ExtResource("35_e65ae")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4136.68, 62.9999, -518.443)
+
+[node name="[Interactable] Dash_Ring13" parent="." unique_id=1777092147 instance=ExtResource("9_mm686")]
+transform = Transform3D(2.12132, 1.06066, 1.83712, 0, 2.59808, -1.5, -2.12132, 1.06066, 1.83712, -311.821, 25, -108.007)
+LockInputTime = 0.3
+SnapCamera = true
+
+[node name="[Interactable] Item Box 10 Rings12" parent="." unique_id=769764994 instance=ExtResource("29_6rifk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -305.559, 0.999989, -69.0757)
+
+[node name="[Interactable] Item Box 10 Rings13" parent="." unique_id=906770021 instance=ExtResource("29_6rifk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -345.047, 0.999988, -98.376)
+
+[node name="[Enemy] Spinner5" parent="." unique_id=840607385 instance=ExtResource("15_k2bmn")]
+transform = Transform3D(1, 0, 1.74846e-07, 0, 1, 0, -1.74846e-07, 0, 1, 3356.34, -73.4593, -1418.93)
+
+[node name="[Enemy] Spinner6" parent="." unique_id=1889600277 instance=ExtResource("15_k2bmn")]
+transform = Transform3D(1, 0, 1.74846e-07, 0, 1, 0, -1.74846e-07, 0, 1, 3422.89, -74.6233, -1439.13)
+
+[node name="[Enemy] Spinner7" parent="." unique_id=976627184 instance=ExtResource("15_k2bmn")]
+transform = Transform3D(1, 0, 1.74846e-07, 0, 1, 0, -1.74846e-07, 0, 1, 3489.39, -80.0736, -1416.46)
+
+[node name="[Interactable] Checkpoint_3D" parent="." unique_id=554894843 instance=ExtResource("37_gnr37")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -211.465, 39.6746, -379.797)
+
+[node name="[Interactable] Checkpoint_3D2" parent="." unique_id=18382396 instance=ExtResource("37_gnr37")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 624.742, 24.962, -448.151)
+
+[node name="[Interactable] Checkpoint_3D3" parent="." unique_id=1419794624 instance=ExtResource("37_gnr37")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1084.72, 69.9928, -1238.49)
+
+[node name="[Interactable] Checkpoint_3D4" parent="." unique_id=1715600 instance=ExtResource("37_gnr37")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 924.629, 49.9999, -1089.68)
+
+[node name="[Interactable] Checkpoint_3D5" parent="." unique_id=1988945393 instance=ExtResource("37_gnr37")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 983.654, 300, -1718.27)
+
+[node name="[Interactable] Checkpoint_3D6" parent="." unique_id=601014341 instance=ExtResource("37_gnr37")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 988.971, 358.051, -1738.11)
+
+[node name="[Interactable] Checkpoint_3D7" parent="." unique_id=872404176 instance=ExtResource("37_gnr37")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 2467.06, -2.00004, -1400.61)
+
+[node name="[Interactable] Checkpoint_3D8" parent="." unique_id=1385984428 instance=ExtResource("37_gnr37")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 2691.6, 93, -1425.93)
+
+[node name="[Interactable] Checkpoint_3D9" parent="." unique_id=645409645 instance=ExtResource("37_gnr37")]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 4136.39, 43, -1458.3)
+
+[node name="[Interactable] Spring_Red11" parent="." unique_id=885413573 instance=ExtResource("5_42uyk")]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 4136.85, 303.684, -888.942)
+
+[node name="[Interactable] Pole v5" parent="." unique_id=865325861 instance=ExtResource("37_ygadb")]
+transform = Transform3D(8.9407e-08, 0, 1, 0, 1, 0, -1, 0, 8.9407e-08, 1177.67, 18, -942.912)
+SuccessEjectVelocity = Vector3(50, 30, 0)
+
+[node name="[Interactable] Dash_Ring14" parent="." unique_id=1791587962 instance=ExtResource("9_mm686")]
+transform = Transform3D(-1.31134e-07, 1.31134e-07, 3, 3, 5.73205e-15, 1.31134e-07, 0, 3, -1.31134e-07, 1179.31, 24.156, -965.451)
+KeepVelocityDistance = 30.0
+SnapCamera = true
+
+[node name="[Trigger] InputPrompt_Jump" parent="." unique_id=2005193966 instance=ExtResource("38_yflmd")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.10584, -69.5591)
+Text = "[center]Press [input]actionjump[/input] to jump![/center]"
+
+[node name="[Trigger] InputPrompt_Attack" parent="." unique_id=585215731 instance=ExtResource("38_yflmd")]
+transform = Transform3D(0.707107, 0, 0.707107, 0, 1, 0, -0.707107, 0, 0.707107, -456.742, 0, -283.179)
+Text = "[center]Press [input]actionhoming[/input] to attack.[/center]"
+
+[node name="RichTextLabel" parent="[Trigger] InputPrompt_Attack" index="0" unique_id=222752485]
+text = "[center]Press [input]actionhoming[/input] to attack![/center]"
+
+[node name="CollisionShape3D" parent="[Trigger] InputPrompt_Attack/Area3D" parent_id_path=PackedInt32Array(585215731, 2062885543) index="0" unique_id=822586964]
+shape = SubResource("BoxShape3D_5m61i")
+
+[node name="[Trigger] InputPrompt_Roll" parent="." unique_id=594367064 instance=ExtResource("38_yflmd")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 981.724, 307.288, -1852.68)
+Text = "[center]Hold [input]actionroll[/input] to get rolly.[/center]"
+
+[node name="RichTextLabel" parent="[Trigger] InputPrompt_Roll" index="0" unique_id=222752485]
+text = "[center]Press [input]actionroll[/input] to get rolly![/center]"
+
+[node name="CollisionShape3D" parent="[Trigger] InputPrompt_Roll/Area3D" parent_id_path=PackedInt32Array(594367064, 2062885543) index="0" unique_id=822586964]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -140.601)
+shape = SubResource("BoxShape3D_hf5g1")
+
+[node name="[Trigger] InputPrompt_Dash" parent="." unique_id=863105663 instance=ExtResource("38_yflmd")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1001.13, 54.9745, -1622.91)
+Text = "[center]Press [input]actiondash[/input] to get dashy![/center]"
+
+[node name="RichTextLabel" parent="[Trigger] InputPrompt_Dash" index="0" unique_id=222752485]
+text = "[center]Press [input]actiondash[/input] to get dashy![/center]"
+
+[node name="CollisionShape3D" parent="[Trigger] InputPrompt_Dash/Area3D" parent_id_path=PackedInt32Array(863105663, 2062885543) index="0" unique_id=822586964]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 144.38, 105.163)
+shape = SubResource("BoxShape3D_8yjaj")
+
+[node name="[Trigger] Camera Trigger" parent="." unique_id=1667088675 instance=ExtResource("39_kpb5c")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -367.049, 58.7996, -364.911)
+Params = SubResource("Resource_yt582")
+FreeOnExit = true
+EnterLerpTime = 0.1
+ExitLerpTime = 0.5
+
+[node name="CollisionShape3D" parent="[Trigger] Camera Trigger" index="0" unique_id=587286632]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.160217)
+shape = SubResource("BoxShape3D_1uyll")
+
+[node name="CameraPoint" type="Node3D" parent="[Trigger] Camera Trigger" unique_id=1323986585]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 39.5847, -5.14441)
+
+[node name="[Interactable] Autorun_Path" parent="." unique_id=933608063 instance=ExtResource("42_eg4i3")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1000, 347.288, -1550)
+curve = SubResource("Curve3D_2ch70")
+
+[node name="CSGPolygon3DHitbox" parent="[Interactable] Autorun_Path" index="0" unique_id=1544861406]
+polygon = PackedVector2Array(-50, -10, -50, 10, 50, 10, 50, -10)
+
+[node name="Area3D" parent="[Interactable] Autorun_Path" index="2" unique_id=419231955]
+ReleaseOnJump = true
+ReleaseOnDistanceFromPath = -1.0
+MaxSpeedLimit = 150.0
+
+[node name="SkyBaker" type="Node3D" parent="." unique_id=1243324782]
+script = ExtResource("45_fuptj")
+SourceWorldEnvironmentPath = NodePath("../WorldEnvironment")
+TextureOutputPath = "res://Games/Example game/Levels/DiscoHill/Misc/DiscoHill1sky.png"
+MaterialOutputPath = "res://Games/Example game/Levels/DiscoHill/Misc/DiscoHill1sky.tres"
+
+[connection signal="OnAfterSpawningDone" from="PlayersManager" to="PlayersManager/ExtraSettingsApplicator" method="ApplySettings"]
+
+[editable path="Decorations/[Interactable] Spring_Red_Wide/[Trigger] Camera Trigger"]
+[editable path="[Trigger] InputPrompt_Attack"]
+[editable path="[Trigger] InputPrompt_Roll"]
+[editable path="[Trigger] InputPrompt_Dash"]
+[editable path="[Trigger] Camera Trigger"]
+[editable path="[Interactable] Autorun_Path"]

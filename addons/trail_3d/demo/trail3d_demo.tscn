@@ -1,0 +1,56 @@
+[gd_scene format=3 uid="uid://ghh8o3c42gg2"]
+
+[ext_resource type="Script" uid="uid://vufj37egaq6e" path="res://addons/trail_3d/demo/demo_mover.gd" id="1_qwp1j"]
+[ext_resource type="Script" uid="uid://bp5u357iofl1t" path="res://addons/trail_3d/trail_3d.gd" id="2_25fxt"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_qwp1j"]
+sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
+ground_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
+
+[sub_resource type="Sky" id="Sky_25fxt"]
+sky_material = SubResource("ProceduralSkyMaterial_qwp1j")
+
+[sub_resource type="Environment" id="Environment_pabee"]
+background_mode = 2
+sky = SubResource("Sky_25fxt")
+glow_enabled = true
+
+[sub_resource type="SphereMesh" id="SphereMesh_sajgr"]
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_qwp1j"]
+custom_aabb = AABB(-4096, -4096, -4096, 8192, 8192, 8192)
+
+[sub_resource type="Curve" id="Curve_qwp1j"]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(1, 0.79807687), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="Gradient" id="Gradient_pabee"]
+
+[sub_resource type="Curve" id="Curve_25fxt"]
+_data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(0.10108304, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
+point_count = 3
+
+[node name="Trail3dDemo" type="Node3D" unique_id=2135144847]
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=1944179226]
+transform = Transform3D(-0.8660254, -0.43301278, 0.25, 0, 0.49999997, 0.86602545, -0.50000006, 0.75, -0.43301266, 0, 0, 0)
+shadow_enabled = true
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=1869687668]
+environment = SubResource("Environment_pabee")
+
+[node name="Camera3D" type="Camera3D" parent="." unique_id=635985320]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 0, 5, 0)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=1954888573]
+mesh = SubResource("SphereMesh_sajgr")
+script = ExtResource("1_qwp1j")
+
+[node name="Trail" type="MeshInstance3D" parent="MeshInstance3D" unique_id=1597837914]
+mesh = SubResource("ArrayMesh_qwp1j")
+script = ExtResource("2_25fxt")
+lifetime = 0.2
+width_curve = SubResource("Curve_qwp1j")
+base_width = 1.0
+color_gradient = SubResource("Gradient_pabee")
+alpha_curve = SubResource("Curve_25fxt")

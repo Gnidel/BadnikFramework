@@ -1,0 +1,14 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://c5i8lbl65l3di"]
+
+[ext_resource type="Texture2D" uid="uid://cmxfq5dniu0gx" path="res://SonicAssets/Models/Shadow/textures/chr_shadow_body_super_abd.png" id="1_kiruf"]
+[ext_resource type="Texture2D" uid="uid://dls7sqju8mpxq" path="res://SonicAssets/Models/Shadow/textures/chr_shadow_body_super_ems.png" id="2_qt078"]
+
+[resource]
+resource_name = "chr_shadow_fur"
+albedo_texture = ExtResource("1_kiruf")
+metallic_specular = 0.0
+roughness = 0.5
+emission_enabled = true
+emission_energy_multiplier = 0.1
+emission_texture = ExtResource("2_qt078")
+normal_enabled = true

@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://wx53jxjcpwdl"
+path="res://.godot/imported/[S rank] Speed Up - Sonic 3D Blast (Saturn).ogg-fd9b5bfc27e30ed67b953c75d713cd12.oggvorbisstr"
+
+[deps]
+
+source_file="res://SonicAssets/Music/[S rank] Speed Up - Sonic 3D Blast (Saturn).ogg"
+dest_files=["res://.godot/imported/[S rank] Speed Up - Sonic 3D Blast (Saturn).ogg-fd9b5bfc27e30ed67b953c75d713cd12.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

@@ -1,0 +1,28 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://f02nkm4iphod"]
+
+[ext_resource type="Texture2D" uid="uid://75tekv04qoyy" path="res://Games/Example game/Levels/DiscoHill/Textures/DiscoPanelRoad1_a.png" id="1_73eg4"]
+[ext_resource type="Texture2D" uid="uid://flno1vkfonft" path="res://Games/Example game/Levels/DiscoHill/Textures/DiscoPanelRoad1_e.png" id="2_5w220"]
+[ext_resource type="Texture2D" uid="uid://daj0vsbbg6xx" path="res://Games/Example game/Levels/DiscoHill/Textures/DiscoPanelRoad1_h.png" id="3_nhb7x"]
+[ext_resource type="Texture2D" uid="uid://85oa2foim6yj" path="res://Games/Example game/Levels/DiscoHill/Textures/DiscoPanelRoad1_n.png" id="4_a7gq3"]
+
+[resource]
+resource_name = "Material.001"
+vertex_color_use_as_albedo = true
+albedo_texture = ExtResource("1_73eg4")
+metallic = 1.0
+metallic_specular = 1.0
+roughness = 0.5
+emission_enabled = true
+emission = Color(1, 1, 1, 1)
+emission_energy_multiplier = 0.3
+emission_operator = 1
+emission_texture = ExtResource("2_5w220")
+normal_enabled = true
+normal_texture = ExtResource("4_a7gq3")
+heightmap_enabled = true
+heightmap_scale = 10.0
+heightmap_deep_parallax = true
+heightmap_min_layers = 8
+heightmap_max_layers = 32
+heightmap_flip_tangent = true
+heightmap_texture = ExtResource("3_nhb7x")

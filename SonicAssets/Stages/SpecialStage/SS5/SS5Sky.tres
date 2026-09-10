@@ -1,0 +1,14 @@
+[gd_resource type="ShaderMaterial" format=3 uid="uid://cc2ttqdqgrrao"]
+
+[ext_resource type="Shader" uid="uid://bhjosi8sbh6je" path="res://Shaders/ParallaxSky.tres" id="1_dv72v"]
+[ext_resource type="Texture2D" uid="uid://bihj0ohtyris6" path="res://SonicAssets/Stages/SpecialStage/SS5/Background 1.png" id="2_nxlen"]
+[ext_resource type="Texture2D" uid="uid://bu1mynh37x6j3" path="res://SonicAssets/Stages/SpecialStage/SS5/Background 2.png" id="3_p7d8b"]
+
+[resource]
+shader = ExtResource("1_dv72v")
+shader_parameter/Layer2TextureScale = Vector2(1, 1)
+shader_parameter/Layer2ScrollSpeed = Vector2(1, 0)
+shader_parameter/Layer2 = ExtResource("3_p7d8b")
+shader_parameter/Layer1TextureScale = Vector2(1, 1)
+shader_parameter/Layer1ScrollSpeed = Vector2(1, 0)
+shader_parameter/Layer1 = ExtResource("2_nxlen")

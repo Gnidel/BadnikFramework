@@ -1,0 +1,98 @@
+[gd_scene format=3 uid="uid://4sfnun4udt5s"]
+
+[ext_resource type="Script" uid="uid://f3cxw7en1f5k" path="res://Scripts/Interactables/CollectableItem.cs" id="1_bphxf"]
+[ext_resource type="AudioStream" uid="uid://dajkauir46hyu" path="res://SonicAssets/Audio/Items/BlueSphere.wav" id="2_pevpf"]
+[ext_resource type="Texture2D" uid="uid://cjyqftshxj8i4" path="res://SonicAssets/Textures/RingParticle.png" id="5_mgt61"]
+
+[sub_resource type="Curve" id="Curve_v4elu"]
+_limits = [0.0, 100.0, 0.0, 1.0]
+bake_resolution = 10
+_data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(1, 100), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_6spl5"]
+radius = 2.0
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_648yg"]
+radius = 0.25
+
+[sub_resource type="Curve" id="Curve_f3mti"]
+_data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(0.127182, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
+point_count = 3
+
+[sub_resource type="CurveTexture" id="CurveTexture_tgj3w"]
+curve = SubResource("Curve_f3mti")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_bsup1"]
+spread = 180.0
+initial_velocity_min = 1.0
+initial_velocity_max = 2.0
+gravity = Vector3(0, 0, 0)
+scale_min = 0.25
+scale_curve = SubResource("CurveTexture_tgj3w")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_xe6we"]
+transparency = 1
+shading_mode = 0
+albedo_color = Color(0, 0, 1, 1)
+albedo_texture = ExtResource("5_mgt61")
+billboard_mode = 3
+billboard_keep_scale = true
+particles_anim_h_frames = 1
+particles_anim_v_frames = 1
+particles_anim_loop = false
+
+[sub_resource type="QuadMesh" id="QuadMesh_bdqvj"]
+material = SubResource("StandardMaterial3D_xe6we")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ta4ie"]
+albedo_color = Color(0, 0, 1, 1)
+metallic = 0.5
+roughness = 0.5
+
+[sub_resource type="SphereMesh" id="SphereMesh_8wtik"]
+material = SubResource("StandardMaterial3D_ta4ie")
+
+[node name="[Item] Blue sphere" type="Node3D" unique_id=2142259672 node_paths=PackedStringArray("particles", "modelNode")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 6.97132, 0)
+script = ExtResource("1_bphxf")
+AttractionSpeed = SubResource("Curve_v4elu")
+maxAttractionTime = 2.0
+SoundEffect = ExtResource("2_pevpf")
+ItemName = "bluesphere"
+ItemCount = 1
+particles = NodePath("RingParticles")
+modelNode = NodePath("MeshInstance3D")
+CanBeAttractedAfter = 0.0
+
+[node name="AttractTrigger" type="Area3D" parent="." unique_id=670613830]
+collision_mask = 2
+input_ray_pickable = false
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="AttractTrigger" unique_id=2129647191]
+shape = SubResource("SphereShape3D_6spl5")
+
+[node name="PickupTrigger" type="Area3D" parent="." unique_id=1692273115]
+collision_mask = 2
+input_ray_pickable = false
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="PickupTrigger" unique_id=1599031635]
+shape = SubResource("SphereShape3D_648yg")
+
+[node name="RingParticles" type="GPUParticles3D" parent="." unique_id=58678350]
+emitting = false
+amount = 4
+lifetime = 0.5
+one_shot = true
+explosiveness = 1.0
+process_material = SubResource("ParticleProcessMaterial_bsup1")
+draw_pass_1 = SubResource("QuadMesh_bdqvj")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=748220000]
+cast_shadow = 0
+visibility_range_end = 200.0
+visibility_range_fade_mode = 1
+mesh = SubResource("SphereMesh_8wtik")
+
+[connection signal="body_entered" from="AttractTrigger" to="." method="OnAttract"]
+[connection signal="body_entered" from="PickupTrigger" to="." method="OnPickup"]

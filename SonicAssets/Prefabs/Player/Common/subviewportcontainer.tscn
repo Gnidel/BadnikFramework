@@ -1,0 +1,312 @@
+[gd_scene format=3 uid="uid://drxsl3jdi408q"]
+
+[ext_resource type="PackedScene" uid="uid://cqg33kdpxjtb7" path="res://SonicAssets/Prefabs/Player/Common/player_camera.tscn" id="1_nqvvt"]
+[ext_resource type="Script" uid="uid://dvordr1254mnj" path="res://Scripts/Player/OnePlayerUI.cs" id="4_j2y3s"]
+[ext_resource type="Texture2D" uid="uid://cqofbakde8t6f" path="res://SonicAssets/Images/HomingIcon.png" id="5_66nqt"]
+[ext_resource type="Texture2D" uid="uid://dl3ly6w48io1y" path="res://SonicAssets/Images/HomingOffscreenIcon.png" id="6_nvr76"]
+[ext_resource type="Theme" uid="uid://di28qbb7lki3f" path="res://Misc/MenuTheme.tres" id="7_bdpbj"]
+[ext_resource type="Script" uid="uid://bfioxkj6i5m5h" path="res://Scripts/Effects/Filters.cs" id="8_b1jtx"]
+[ext_resource type="Shader" uid="uid://cwjveml70gxig" path="res://Shaders/WaterFilter.tres" id="9_cjxnj"]
+[ext_resource type="Shader" uid="uid://bclbs78tdhap8" path="res://Shaders/ImpactFrameFilter.tres" id="10_5nsvw"]
+[ext_resource type="Shader" uid="uid://f66grdn2riri" path="res://Shaders/RetroFilter.tres" id="11_bvgdo"]
+[ext_resource type="Shader" uid="uid://cnkq8qiscg0sj" path="res://Shaders/ChromaticAberrationFilter.tres" id="12_0egqd"]
+[ext_resource type="Script" uid="uid://0whoaqpk27hh" path="res://Scripts/Ui/CharacterSwapUi.cs" id="13_24uhv"]
+[ext_resource type="Script" uid="uid://d4i3rx4kyhwbs" path="res://Scripts/Ui/ButtonPromptTextLabel.cs" id="13_ocke2"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_2gmh8"]
+shader = ExtResource("9_cjxnj")
+shader_parameter/DeformTimeScale2 = Vector2(-0.2, -0.2)
+shader_parameter/DeformTimeScale1 = Vector2(0.1, 0.1)
+shader_parameter/Color1 = Color(0, 0.67429, 0.67429, 1)
+shader_parameter/Scroll1 = Vector2(0.01, 0.01)
+shader_parameter/Scroll2 = Vector2(-0.02, -0.02)
+shader_parameter/Color2 = Color(0, 0.307502, 0.800272, 1)
+shader_parameter/Opacity = 0.1
+
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_0odu6"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_v4cul"]
+shader = ExtResource("11_bvgdo")
+shader_parameter/Resolution = Vector2(320, 244)
+shader_parameter/RedOffset = Vector2(-0.001, 0)
+shader_parameter/GreenOffset = Vector2(0.001, 0)
+shader_parameter/BlueOffset = Vector2(0.001, 0)
+shader_parameter/Strength = 0.5
+shader_parameter/ColorsCountPerChannel = 8.0
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_uyn3e"]
+shader = ExtResource("12_0egqd")
+shader_parameter/RedOffset = Vector2(-0.001, 0)
+shader_parameter/GreenOffset = Vector2(0.001, 0)
+shader_parameter/BlueOffset = Vector2(0.001, 0)
+shader_parameter/Strength = 0.5
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_l2hb8"]
+shader = ExtResource("10_5nsvw")
+shader_parameter/Color = Color(1, 1, 1, 1)
+shader_parameter/Multiplier = 100.0
+
+[node name="SubViewportContainer" type="SubViewportContainer" unique_id=286016059]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+mouse_filter = 2
+stretch = true
+
+[node name="SubViewport" type="SubViewport" parent="." unique_id=249270464]
+handle_input_locally = false
+msaa_3d = 1
+screen_space_aa = 1
+audio_listener_enable_2d = true
+audio_listener_enable_3d = true
+gui_disable_input = true
+size = Vector2i(1920, 1080)
+render_target_update_mode = 4
+
+[node name="Camera3D" parent="SubViewport" unique_id=156361321 node_paths=PackedStringArray("Filters") instance=ExtResource("1_nqvvt")]
+transform = Transform3D(-1, 0, -1.509958e-07, 0, 1, 0, 1.509958e-07, 0, -1, -15.7276, -1.39648, -2.093)
+Filters = NodePath("../Filters")
+
+[node name="Filters" type="CanvasLayer" parent="SubViewport" unique_id=559348817 node_paths=PackedStringArray("ImpactFrameFilter", "WaterFilter")]
+script = ExtResource("8_b1jtx")
+ImpactFrameFilter = NodePath("ImpactFrame")
+WaterFilter = NodePath("WaterFilter")
+
+[node name="WaterFilter" type="ColorRect" parent="SubViewport/Filters" unique_id=1889985107]
+visible = false
+material = SubResource("ShaderMaterial_2gmh8")
+custom_minimum_size = Vector2(20, 20)
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_vertical = 3
+mouse_filter = 2
+
+[node name="WhiteoutFilter" type="ColorRect" parent="SubViewport/Filters" unique_id=954777371]
+visible = false
+material = SubResource("CanvasItemMaterial_0odu6")
+custom_minimum_size = Vector2(20, 20)
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_vertical = 3
+mouse_filter = 2
+
+[node name="RetroFilter" type="ColorRect" parent="SubViewport/Filters" unique_id=1989132862]
+visible = false
+material = SubResource("ShaderMaterial_v4cul")
+custom_minimum_size = Vector2(20, 20)
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_vertical = 3
+mouse_filter = 2
+
+[node name="ChromaticAberrationFilter" type="ColorRect" parent="SubViewport/Filters" unique_id=1515796966]
+visible = false
+material = SubResource("ShaderMaterial_uyn3e")
+custom_minimum_size = Vector2(20, 20)
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_vertical = 3
+mouse_filter = 2
+
+[node name="ImpactFrame" type="ColorRect" parent="SubViewport/Filters" unique_id=916268325]
+visible = false
+material = SubResource("ShaderMaterial_l2hb8")
+custom_minimum_size = Vector2(20, 20)
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -9.0
+offset_top = -9.0
+offset_right = 9.0
+offset_bottom = 9.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_vertical = 3
+mouse_filter = 2
+
+[node name="PlayerUI" type="Control" parent="SubViewport" unique_id=1429118263 node_paths=PackedStringArray("HomingIcon", "HomingOffscreenIcon", "BoostUIContainer", "BoostMeter")]
+z_index = 1
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("7_bdpbj")
+script = ExtResource("4_j2y3s")
+HomingIcon = NodePath("HomingIcon")
+HomingOffscreenIcon = NodePath("HomingOffscreenIcon")
+BoostUIContainer = NodePath("BoostMeter")
+BoostMeter = NodePath("BoostMeter/MarginContainer/VBoxContainer/ProgressBar")
+
+[node name="HomingIcon" type="Sprite2D" parent="SubViewport/PlayerUI" unique_id=1257124488]
+position = Vector2(-453, -173)
+scale = Vector2(0.768293, 0.768293)
+texture = ExtResource("5_66nqt")
+offset = Vector2(0.59, -3.79)
+
+[node name="HomingOffscreenIcon" type="Sprite2D" parent="SubViewport/PlayerUI" unique_id=1142412137]
+position = Vector2(-453, -173)
+scale = Vector2(0.768293, 0.768293)
+texture = ExtResource("6_nvr76")
+offset = Vector2(0.59, -3.79)
+
+[node name="BoostMeter" type="ColorRect" parent="SubViewport/PlayerUI" unique_id=946486379]
+custom_minimum_size = Vector2(500, 150)
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 50.0
+offset_top = -200.0
+offset_right = 550.0
+offset_bottom = -50.0
+grow_vertical = 0
+color = Color(0, 0, 0, 0.501961)
+
+[node name="MarginContainer" type="MarginContainer" parent="SubViewport/PlayerUI/BoostMeter" unique_id=561041205]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -10.0
+offset_bottom = 10.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 20
+theme_override_constants/margin_top = 20
+theme_override_constants/margin_right = 20
+theme_override_constants/margin_bottom = 20
+
+[node name="VBoxContainer" type="VBoxContainer" parent="SubViewport/PlayerUI/BoostMeter/MarginContainer" unique_id=1952237452]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="SubViewport/PlayerUI/BoostMeter/MarginContainer/VBoxContainer" unique_id=845377632]
+layout_mode = 2
+text = "BOOST"
+
+[node name="ProgressBar" type="ProgressBar" parent="SubViewport/PlayerUI/BoostMeter/MarginContainer/VBoxContainer" unique_id=1375701803]
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 2
+value = 100.0
+
+[node name="CharacterSwapUI" type="ColorRect" parent="SubViewport/PlayerUI" unique_id=266290883 node_paths=PackedStringArray("OnePlayerUI", "CurrentCharacterLabel", "PrevButtonLabel", "NextButtonLabel")]
+custom_minimum_size = Vector2(500, 100)
+clip_contents = true
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -525.0
+offset_top = 50.0
+offset_right = -25.0
+offset_bottom = 175.0
+grow_horizontal = 0
+mouse_filter = 2
+color = Color(0, 0, 0, 0.501961)
+script = ExtResource("13_24uhv")
+OnePlayerUI = NodePath("..")
+PrevCharacterButtonLabel = "[input]actioncharaswap_l[/input]"
+NextCharacterButtonLabel = "[input]actioncharaswap_r[/input]"
+CurrentCharacterLabel = NodePath("MarginContainer/VBoxContainer/CurrentChar")
+PrevButtonLabel = NodePath("MarginContainer/VBoxContainer/HBoxContainer/PrevChar/ButtonPromptTextLabel")
+NextButtonLabel = NodePath("MarginContainer/VBoxContainer/HBoxContainer/NextChar/ButtonPromptTextLabel2")
+
+[node name="MarginContainer" type="MarginContainer" parent="SubViewport/PlayerUI/CharacterSwapUI" unique_id=1998819823]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -10.0
+offset_bottom = 10.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+theme_override_constants/margin_left = 20
+theme_override_constants/margin_top = 20
+theme_override_constants/margin_right = 20
+theme_override_constants/margin_bottom = 20
+
+[node name="VBoxContainer" type="VBoxContainer" parent="SubViewport/PlayerUI/CharacterSwapUI/MarginContainer" unique_id=726137820]
+layout_mode = 2
+mouse_filter = 2
+
+[node name="CurrentChar" type="Label" parent="SubViewport/PlayerUI/CharacterSwapUI/MarginContainer/VBoxContainer" unique_id=1346223085]
+layout_mode = 2
+text = "CurrentChar"
+
+[node name="HBoxContainer" type="HBoxContainer" parent="SubViewport/PlayerUI/CharacterSwapUI/MarginContainer/VBoxContainer" unique_id=323682213]
+custom_minimum_size = Vector2(0, 50)
+layout_mode = 2
+size_flags_vertical = 3
+mouse_filter = 2
+
+[node name="PrevChar" type="RichTextLabel" parent="SubViewport/PlayerUI/CharacterSwapUI/MarginContainer/VBoxContainer/HBoxContainer" unique_id=1316686714]
+layout_mode = 2
+size_flags_horizontal = 3
+mouse_filter = 2
+theme_override_font_sizes/normal_font_size = 20
+bbcode_enabled = true
+text = "PrevChar"
+
+[node name="ButtonPromptTextLabel" type="Node" parent="SubViewport/PlayerUI/CharacterSwapUI/MarginContainer/VBoxContainer/HBoxContainer/PrevChar" unique_id=1806269996 node_paths=PackedStringArray("RichTextLabel", "PlayerUI")]
+script = ExtResource("13_ocke2")
+Text = "[input]actionjump[/input] PrevChar"
+RichTextLabel = NodePath("..")
+PlayerUI = NodePath("../../../../../..")
+ControllerButtonToImageMapping = Dictionary[String, String]({
+"touch_actioncharaswap_l": "res://SonicAssets/Images/Mobile/TouchButton_Charaswap_L.png",
+"touch_actioncharaswap_r": "res://SonicAssets/Images/Mobile/TouchButton_Charaswap_R.png",
+"touch_actiondash": "res://SonicAssets/Images/Mobile/TouchButton_Dash.png",
+"touch_actionhoming": "res://SonicAssets/Images/Mobile/TouchButton_Homing.png",
+"touch_actionjump": "res://SonicAssets/Images/Mobile/TouchButton_Jump.png",
+"touch_actionpause": "res://SonicAssets/Images/Mobile/TouchButton_Pause.png",
+"touch_actionroll": "res://SonicAssets/Images/Mobile/TouchButton_Roll.png",
+"touch_actionstomp": "res://SonicAssets/Images/Mobile/TouchButton_Stomp.png",
+"touch_actionsuper": "res://SonicAssets/Images/Mobile/TouchButton_Super.png",
+"touch_quickstep_l": "res://SonicAssets/Images/Mobile/TouchButton_Quickstep_L.png",
+"touch_quickstep_r": "res://SonicAssets/Images/Mobile/TouchButton_Quickstep_R.png"
+})
+
+[node name="NextChar" type="RichTextLabel" parent="SubViewport/PlayerUI/CharacterSwapUI/MarginContainer/VBoxContainer/HBoxContainer" unique_id=1913099780]
+layout_mode = 2
+size_flags_horizontal = 3
+mouse_filter = 2
+theme_override_font_sizes/normal_font_size = 20
+bbcode_enabled = true
+text = "NextChar"
+
+[node name="ButtonPromptTextLabel2" type="Node" parent="SubViewport/PlayerUI/CharacterSwapUI/MarginContainer/VBoxContainer/HBoxContainer/NextChar" unique_id=1365205269 node_paths=PackedStringArray("RichTextLabel", "PlayerUI")]
+script = ExtResource("13_ocke2")
+Text = "[input]actionjump[/input] NextChar"
+RichTextLabel = NodePath("..")
+PlayerUI = NodePath("../../../../../..")
+ControllerButtonToImageMapping = Dictionary[String, String]({
+"touch_actioncharaswap_l": "res://SonicAssets/Images/Mobile/TouchButton_Charaswap_L.png",
+"touch_actioncharaswap_r": "res://SonicAssets/Images/Mobile/TouchButton_Charaswap_R.png",
+"touch_actiondash": "res://SonicAssets/Images/Mobile/TouchButton_Dash.png",
+"touch_actionhoming": "res://SonicAssets/Images/Mobile/TouchButton_Homing.png",
+"touch_actionjump": "res://SonicAssets/Images/Mobile/TouchButton_Jump.png",
+"touch_actionpause": "res://SonicAssets/Images/Mobile/TouchButton_Pause.png",
+"touch_actionroll": "res://SonicAssets/Images/Mobile/TouchButton_Roll.png",
+"touch_actionstomp": "res://SonicAssets/Images/Mobile/TouchButton_Stomp.png",
+"touch_actionsuper": "res://SonicAssets/Images/Mobile/TouchButton_Super.png",
+"touch_quickstep_l": "res://SonicAssets/Images/Mobile/TouchButton_Quickstep_L.png",
+"touch_quickstep_r": "res://SonicAssets/Images/Mobile/TouchButton_Quickstep_R.png"
+})

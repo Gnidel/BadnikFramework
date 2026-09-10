@@ -1,0 +1,57 @@
+[gd_scene format=3 uid="uid://5lg0xudnecmb"]
+
+[ext_resource type="Script" uid="uid://d0rd6cimu685c" path="res://Scripts/Interactables/Hurtbox.cs" id="1_es8yj"]
+[ext_resource type="PackedScene" uid="uid://cqkke6ii4on2s" path="res://SonicAssets/Models/Items/Rings/Ring.blend" id="2_v4prh"]
+[ext_resource type="PackedScene" uid="uid://b674k3a2pkfr6" path="res://SonicAssets/Prefabs/Interactables/Meteor/Meteor.glb" id="3_fkfte"]
+[ext_resource type="Script" uid="uid://dkowuij67ni5s" path="res://Scripts/Interactables/ItemBox.cs" id="5_ibanf"]
+[ext_resource type="PackedScene" uid="uid://crxq2s1vls3rc" path="res://SonicAssets/Prefabs/Items/[item]_ring.tscn" id="6_imwkf"]
+[ext_resource type="PackedScene" uid="uid://d3nfvof6wd606" path="res://SonicAssets/Prefabs/Particles/[particles]_item_box_destroy_smoke.tscn" id="7_5a14t"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_00g3i"]
+radius = 0.6714454
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_m8vk5"]
+
+[node name="[Interactable] Meteor 10 Rings" type="Node3D" unique_id=604610917]
+
+[node name="Offset" type="Node3D" parent="." unique_id=354459028]
+transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, 0, -1.4, 0)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Offset" unique_id=142497147]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 0.5, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Offset/StaticBody3D" unique_id=1070261065]
+shape = SubResource("SphereShape3D_00g3i")
+
+[node name="Hurtbox" type="Area3D" parent="Offset" unique_id=910420099]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
+collision_mask = 3
+script = ExtResource("1_es8yj")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Offset/Hurtbox" unique_id=411908325]
+shape = SubResource("SphereShape3D_m8vk5")
+
+[node name="Ring" parent="Offset" unique_id=1036055031 instance=ExtResource("2_v4prh")]
+transform = Transform3D(0.2, 0, 0, 0, -8.74228e-09, -0.2, 0, 0.2, -8.74228e-09, 0, 0.5, 0)
+
+[node name="Meteor2" parent="Offset" unique_id=1579674257 instance=ExtResource("3_fkfte")]
+transform = Transform3D(0.3333333, 0, 0, 0, 0.3333333, 0, 0, 0, 0.3333333, 0, 0.4776666, 0)
+
+[node name="ItemBoxBehavior" type="Node" parent="." unique_id=1869190678 node_paths=PackedStringArray("Box", "ThingInside", "SpawnCenter")]
+script = ExtResource("5_ibanf")
+Box = NodePath("../Offset")
+ThingInside = NodePath("../Offset/Ring")
+RotationAxisOfThingInside = Vector3(0, 1, 0)
+SpawnCenter = NodePath("../SpawnCenter")
+ItemToRelease = ExtResource("6_imwkf")
+ItemsCount = 0
+SpawnRadius = 10.0
+ExplosionParticles = ExtResource("7_5a14t")
+LookAtPlayer = false
+
+[node name="SpawnCenter" type="Node3D" parent="." unique_id=1417732497]
+transform = Transform3D(0.99999994, 0, 0, 0, 0.99999994, 0, 0, 0, 0.99999994, 0, 0.099999905, 0)
+
+[connection signal="OnHitboxEnter" from="Offset/Hurtbox" to="ItemBoxBehavior" method="OnHitboxEnter"]
+
+[editable path="Offset/Meteor2"]

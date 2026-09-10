@@ -1,0 +1,11 @@
+[gd_scene format=3 uid="uid://cribrhlmjp54e"]
+
+[ext_resource type="Script" uid="uid://cceurnqlbjy0v" path="res://Scripts/Ui/MapUIIconTrackedObject.cs" id="1_cagiq"]
+[ext_resource type="Texture2D" uid="uid://bfju8egoankkc" path="res://Prefabs/Menus/Map/Icons/map_stage.png" id="2_uysj6"]
+
+[node name="MapUIIcon" type="Node3D" unique_id=1125245409 node_paths=PackedStringArray("FastTravelPoint")]
+script = ExtResource("1_cagiq")
+Texture = ExtResource("2_uysj6")
+FastTravelPoint = NodePath("TeleportPoint")
+
+[node name="TeleportPoint" type="Node3D" parent="." unique_id=991174022]

@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://c41kluwy3my8x"
+path="res://.godot/imported/100m - Sonic at the Olympic Games ~ Tokyo 2020.ogg-92ef898f52ecbe6e760b29a5f93ee88c.oggvorbisstr"
+
+[deps]
+
+source_file="res://SonicAssets/Music/100m - Sonic at the Olympic Games ~ Tokyo 2020.ogg"
+dest_files=["res://.godot/imported/100m - Sonic at the Olympic Games ~ Tokyo 2020.ogg-92ef898f52ecbe6e760b29a5f93ee88c.oggvorbisstr"]
+
+[params]
+
+loop=true
+loop_offset=0.339
+bpm=0.0
+beat_count=0
+bar_beats=4

@@ -1,0 +1,9 @@
+[gd_resource type="ShaderMaterial" format=3 uid="uid://cxfgwshdmysic"]
+
+[ext_resource type="Shader" uid="uid://ddrxn7jjql56c" path="res://Misc/Loading/LoadingGridShader.tres" id="1_lc8yr"]
+[ext_resource type="Texture2D" uid="uid://unp56rhij8t0" path="res://Misc/Loading/LoadingGrid1.png" id="2_ctis8"]
+
+[resource]
+shader = ExtResource("1_lc8yr")
+shader_parameter/ScrollSpeed = Vector2(0, -1)
+shader_parameter/Texture2DParameter = ExtResource("2_ctis8")

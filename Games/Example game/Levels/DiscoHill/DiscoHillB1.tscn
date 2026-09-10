@@ -1,0 +1,487 @@
+[gd_scene format=3 uid="uid://bsw6tnn71mjwb"]
+
+[ext_resource type="Script" uid="uid://c2i7w0nkuie1u" path="res://Scripts/System/StageData.cs" id="2_0gvlj"]
+[ext_resource type="AudioStream" uid="uid://b57nsj8ld82mu" path="res://SonicAssets/Music/Dr. Eggman (SA1) - Sonic at the Olympics Games Tokyo (2020).ogg" id="2_c323j"]
+[ext_resource type="Sky" uid="uid://dpn01fphqa8ue" path="res://Games/Example game/Levels/DiscoHill/Textures/DiscoHillB1MobileSky.tres" id="3_6hhii"]
+[ext_resource type="Shader" uid="uid://dcsfhbdnm5iqq" path="res://Games/Example game/Levels/DiscoHill/Misc/DiscoHill2SkyMaterial.tres" id="4_8tvyf"]
+[ext_resource type="Texture2D" uid="uid://ptbptb4v6n32" path="res://Games/Example game/Levels/DiscoHill/Textures/BackgroundGround_a.png" id="5_bl52s"]
+[ext_resource type="Script" uid="uid://c2iwclb013o1y" path="res://Scripts/System/ApplyWorldEnvironmentSettings.cs" id="5_wuf8i"]
+[ext_resource type="Script" uid="uid://pq5wwkgxhj7e" path="res://Scripts/Player/ExtraSettingsApplicator.cs" id="6_3ost0"]
+[ext_resource type="Script" uid="uid://ci2oh22k5mq5c" path="res://addons/sky_baker/SkyBaker.cs" id="6_6hhii"]
+[ext_resource type="Script" uid="uid://cj8rss3tliogb" path="res://Scripts/Utils/ConstantMove.cs" id="6_ppgku"]
+[ext_resource type="Script" uid="uid://b02j5q21h57h8" path="res://Scripts/Interactables/LostWorldGravityTrigger.cs" id="6_ruevq"]
+[ext_resource type="PackedScene" uid="uid://clt71rt2khju8" path="res://SonicAssets/Prefabs/Player/PlayersManager.tscn" id="7_6qes0"]
+[ext_resource type="PackedScene" uid="uid://cogr0kyjd7nh8" path="res://Games/Example game/Levels/DiscoHill/Models/DiscoHillB1.blend" id="7_kxa6b"]
+[ext_resource type="Script" uid="uid://do8pllvqf2jj5" path="res://Scripts/Utils/SkyMaterialForMobile.cs" id="7_mdh4b"]
+[ext_resource type="Texture2D" uid="uid://dj7sc3cpgy8or" path="res://Games/Example game/Levels/TestLevel/gridTexture_h.png" id="8_fekoc"]
+[ext_resource type="PackedScene" uid="uid://bkt2qp7430moc" path="res://SonicAssets/Prefabs/Misc/homing_target.tscn" id="8_k0htb"]
+[ext_resource type="Texture2D" uid="uid://dvwutourkmypy" path="res://Games/Example game/Levels/TestLevel/gridTexture_n.png" id="8_tgccj"]
+[ext_resource type="PackedScene" uid="uid://utj184wk42iu" path="res://SonicAssets/Models/Eggman/Eggman.tscn" id="9_5o13f"]
+[ext_resource type="PackedScene" uid="uid://bgiqlhih3ose2" path="res://Games/Example game/Levels/DiscoHill/Models/Egg Nero/DiscDrive.blend" id="10_2a7st"]
+[ext_resource type="Script" uid="uid://n1dtm5k3gia" path="res://Scripts/Enemies/EnemyBehaviorManager.cs" id="10_ceqmm"]
+[ext_resource type="Script" uid="uid://dxt4q1t0r7whx" path="res://Scripts/Enemies/EnableDisableBehavior.cs" id="12_8ox2q"]
+[ext_resource type="Script" uid="uid://dat1yxewba6k8" path="res://Scripts/Enemies/EnemyControl.cs" id="14_hvy3c"]
+[ext_resource type="Script" uid="uid://cfgegokcbft8r" path="res://Games/Example game/Levels/DiscoHill/Scripts/EggNeroBehavior.cs" id="14_lb5sf"]
+[ext_resource type="AudioStream" uid="uid://bwa5uiwsw5xfj" path="res://SonicAssets/Audio/Enemies/se_enemy_common#2 (enmsn_cmn_damage).wav" id="15_fwdvm"]
+[ext_resource type="Script" uid="uid://d32weomiu2q8n" path="res://Scripts/Interactables/CameraTrigger.cs" id="15_tg1su"]
+[ext_resource type="PackedScene" uid="uid://dudu2fct3yddw" path="res://SonicAssets/Prefabs/Enemies/Bosses/Egg Nero/egg_nero_disc.tscn" id="15_ure24"]
+[ext_resource type="PackedScene" uid="uid://brxijfg67lfx2" path="res://SonicAssets/Prefabs/Enemies/Bosses/Egg Nero/egg nero disc fire.tscn" id="16_td3yc"]
+[ext_resource type="Script" uid="uid://d0rd6cimu685c" path="res://Scripts/Interactables/Hurtbox.cs" id="17_atrgg"]
+[ext_resource type="PackedScene" uid="uid://bxa7b0sepx7ic" path="res://SonicAssets/Prefabs/Enemies/Bosses/Egg Nero/egg_nero_disc_hitbox.tscn" id="17_x4n5s"]
+[ext_resource type="Texture2D" uid="uid://ctu5aul2bm0pe" path="res://SonicAssets/Prefabs/Particles/AttackShockwave/ef_ch_sng_yh1_hit.png" id="18_3kw8m"]
+[ext_resource type="Script" uid="uid://c3v1g3hph4sfa" path="res://Scripts/Enemies/RemoteVictoryEnable.cs" id="18_dko07"]
+[ext_resource type="Texture2D" uid="uid://ju7vp8xxw0gi" path="res://SonicAssets/Prefabs/Particles/AttackShockwave/ef_ch_sng_yh1_hit2.png" id="19_3pb7r"]
+[ext_resource type="Script" uid="uid://bcwiyc3m5bmni" path="res://Scripts/Enemies/HealthBarControl.cs" id="20_3aohp"]
+[ext_resource type="AudioStream" uid="uid://t1j5npwyoe87" path="res://SonicAssets/Prefabs/Enemies/Bosses/Egg Nero/audio/disc_eject.ogg" id="20_nnjjh"]
+[ext_resource type="Theme" uid="uid://di28qbb7lki3f" path="res://Misc/MenuTheme.tres" id="21_h7bqw"]
+[ext_resource type="AudioStream" uid="uid://bcpr8mkokgbgg" path="res://SonicAssets/Prefabs/Enemies/Bosses/Egg Nero/audio/disc2.ogg" id="21_tvcyu"]
+[ext_resource type="Script" uid="uid://cy0x2ury8cs8q" path="res://Scripts/Enemies/BossEndCamera.cs" id="22_64tuh"]
+[ext_resource type="AudioStream" uid="uid://dmj6c8fml8b13" path="res://SonicAssets/Audio/Enemies/51BOS_BGA#21 (5511_bga_camera).wav" id="23_3ost0"]
+[ext_resource type="Script" uid="uid://y47n4ov38iw2" path="res://Scripts/Interactables/Hitbox.cs" id="24_r3ji4"]
+[ext_resource type="AudioStream" uid="uid://c5pix7021l4mj" path="res://SonicAssets/Audio/Enemies/52BOS_BEE#16 (5542_bee_dead).wav" id="24_wuf8i"]
+[ext_resource type="PackedScene" uid="uid://dhu1smr7ks2e5" path="res://SonicAssets/Prefabs/Interactables/[interactable]_goal_ring.tscn" id="27_50mrr"]
+[ext_resource type="PackedScene" uid="uid://mwwlnd3pk6vc" path="res://SonicAssets/Prefabs/Items/[item]_ring10.tscn" id="28_tvnlx"]
+[ext_resource type="Script" uid="uid://clwt567x2s1dw" path="res://Scripts/Player/Camera/ConstantCameraParams.cs" id="30_hn7iy"]
+
+[sub_resource type="Environment" id="Environment_xlofk"]
+background_mode = 2
+sky = ExtResource("3_6hhii")
+ambient_light_color = Color(1, 1, 1, 1)
+ambient_light_energy = 3.0
+tonemap_mode = 2
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_d3hvj"]
+shader = ExtResource("4_8tvyf")
+shader_parameter/Vector2Parameter = Vector2(0.001, 0)
+shader_parameter/SkyColor = Color(0.752941, 0, 0.752941, 1)
+shader_parameter/GroundColor = Color(0, 0.752941, 0.752941, 1)
+shader_parameter/UvScale = Vector3(10, 10, 10)
+shader_parameter/UvOffset = Vector3(0, 1, 0)
+shader_parameter/GridTexture = ExtResource("5_bl52s")
+
+[sub_resource type="Sky" id="Sky_m3dad"]
+sky_material = SubResource("ShaderMaterial_d3hvj")
+radiance_size = 0
+
+[sub_resource type="Curve3D" id="Curve3D_wyfvg"]
+_data = {
+"points": PackedVector3Array(0, 0, 0, 10, 0, 0, 0, 0, 0, 10, 0, 0, 0, 0, 0, 500, 0, 0),
+"tilts": PackedFloat32Array(0, 0)
+}
+point_count = 2
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_116e7"]
+transparency = 1
+albedo_color = Color(1, 1, 1, 0.501961)
+albedo_texture = ExtResource("8_fekoc")
+normal_enabled = true
+normal_texture = ExtResource("8_tgccj")
+uv1_scale = Vector3(0.01, 0.01, 0.01)
+uv1_triplanar = true
+uv1_world_triplanar = true
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_usaqs"]
+friction = 0.0
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_t8mus"]
+radius = 1.5
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_akwk0"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_25pc3"]
+radius = 1.5
+
+[sub_resource type="Curve" id="Curve_aj0bx"]
+_limits = [-360.0, 360.0, 0.0, 1.0]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(1, 1), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="CurveTexture" id="CurveTexture_sdvrw"]
+curve = SubResource("Curve_aj0bx")
+
+[sub_resource type="Gradient" id="Gradient_ixuqg"]
+offsets = PackedFloat32Array(0, 0.520833, 1)
+colors = PackedColorArray(0, 0, 0, 0, 0.521569, 0.521569, 0.521569, 1, 1, 1, 1, 0)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_veaka"]
+gradient = SubResource("Gradient_ixuqg")
+
+[sub_resource type="Curve" id="Curve_olp86"]
+_data = [Vector2(0.00369003, 0), 0.0, 0.0, 0, 0, Vector2(1, 1), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="CurveTexture" id="CurveTexture_l3oey"]
+curve = SubResource("Curve_olp86")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_cow46"]
+angle_max = 360.0
+angle_curve = SubResource("CurveTexture_sdvrw")
+gravity = Vector3(0, 0, 0)
+scale_max = 10.0
+scale_curve = SubResource("CurveTexture_l3oey")
+color_ramp = SubResource("GradientTexture1D_veaka")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_iprt8"]
+transparency = 1
+blend_mode = 1
+no_depth_test = true
+shading_mode = 0
+vertex_color_use_as_albedo = true
+albedo_texture = ExtResource("18_3kw8m")
+disable_receive_shadows = true
+billboard_mode = 3
+particles_anim_h_frames = 1
+particles_anim_v_frames = 1
+particles_anim_loop = false
+grow_amount = 1.79
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_f2dmv"]
+material = SubResource("StandardMaterial3D_iprt8")
+orientation = 2
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_12xi3"]
+transparency = 1
+blend_mode = 1
+shading_mode = 0
+albedo_texture = ExtResource("19_3pb7r")
+disable_receive_shadows = true
+billboard_mode = 3
+billboard_keep_scale = true
+particles_anim_h_frames = 1
+particles_anim_v_frames = 1
+particles_anim_loop = false
+
+[sub_resource type="QuadMesh" id="QuadMesh_jnks4"]
+material = SubResource("StandardMaterial3D_12xi3")
+
+[sub_resource type="Resource" id="Resource_0da7q"]
+script = ExtResource("30_hn7iy")
+ConstantCameraRotation = Quaternion(0, -0.707, 0, 0.707)
+metadata/_custom_type_script = "uid://clwt567x2s1dw"
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_l8jjy"]
+resource_local_to_scene = true
+size = Vector3(1000, 1000, 1000)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_xl8k6"]
+size = Vector3(50, 100, 100)
+
+[node name="DiscoHillB1" type="Node3D" unique_id=552716637]
+
+[node name="StageData" type="Node" parent="." unique_id=495577499]
+script = ExtResource("2_0gvlj")
+StageZoneName = "Disco Hill"
+StageActName = "Egg Nero"
+StageUniqueIdentifier = "DiscoHillB1"
+StageMusic = ExtResource("2_c323j")
+SRankTime = 30.0
+SRankRings = 50
+RankWeightTime = 0.5
+RankWeightRings = 0.5
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=277893850]
+environment = SubResource("Environment_xlofk")
+script = ExtResource("5_wuf8i")
+
+[node name="SkyBaker" type="Node3D" parent="WorldEnvironment" unique_id=1578570870]
+script = ExtResource("6_6hhii")
+SourceWorldEnvironmentPath = NodePath("..")
+CapturePosition = Vector3(-1000, 1, 0)
+CaptureFar = 10.0
+TextureOutputPath = "res://Games/Example game/Levels/DiscoHill/Textures/DiscoHillB1MobileSky.png"
+MaterialOutputPath = "res://Games/Example game/Levels/DiscoHill/Textures/DiscoHillB1MobileSkyMaterial.tres"
+SkyOutputPath = "res://Games/Example game/Levels/DiscoHill/Textures/DiscoHillB1MobileSky.tres"
+
+[node name="MobileSky" type="Node" parent="WorldEnvironment" unique_id=400079065 node_paths=PackedStringArray("WorldEnvironment")]
+script = ExtResource("7_mdh4b")
+WorldEnvironment = NodePath("..")
+MobileSky = ExtResource("3_6hhii")
+HqSky = SubResource("Sky_m3dad")
+
+[node name="PlayersManager" parent="." unique_id=319376282 instance=ExtResource("7_6qes0")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 137, -11.4425, 0.0974737)
+
+[node name="ExtraSettingsApplicator" type="Node" parent="PlayersManager" unique_id=1785580313]
+script = ExtResource("6_3ost0")
+
+[node name="[Interactable] Goal Ring" parent="." unique_id=1752401187 instance=ExtResource("27_50mrr")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -300, 0)
+NextLevel = "res://Games/Example game/Levels/Digital Sea/DigitalSeaAct1.tscn"
+StagesToUnlock = PackedStringArray("Digital Sea 1")
+
+[node name="EggNeroBossFight" type="Node3D" parent="." unique_id=792604273]
+script = ExtResource("6_ppgku")
+LinearVelocity = Vector3(-30, 0, 0)
+
+[node name="BossArena" type="Node3D" parent="EggNeroBossFight" unique_id=1227319597]
+
+[node name="ArenaPath" type="Path3D" parent="EggNeroBossFight/BossArena" unique_id=910110836]
+curve = SubResource("Curve3D_wyfvg")
+
+[node name="DiscoHillB1" parent="EggNeroBossFight/BossArena" unique_id=1599251063 instance=ExtResource("7_kxa6b")]
+
+[node name="Cylinder" parent="EggNeroBossFight/BossArena/DiscoHillB1" index="0" unique_id=1796412304]
+surface_material_override/0 = SubResource("StandardMaterial3D_116e7")
+
+[node name="Offset" type="Node3D" parent="EggNeroBossFight" unique_id=1134442652]
+transform = Transform3D(-4.37113e-08, 0, -0.999999, 0, 1, 0, 0.999999, 0, -4.37113e-08, 5, 0, 0)
+
+[node name="[Enemy] Eggman Boss" type="RigidBody3D" parent="EggNeroBossFight/Offset" unique_id=1955620622]
+collision_mask = 2
+physics_material_override = SubResource("PhysicsMaterial_usaqs")
+gravity_scale = 0.0
+lock_rotation = true
+freeze = true
+
+[node name="HomingTarget" parent="EggNeroBossFight/Offset/[Enemy] Eggman Boss" unique_id=1896474587 instance=ExtResource("8_k0htb")]
+TargetableByGuns = true
+
+[node name="Eggman" parent="EggNeroBossFight/Offset/[Enemy] Eggman Boss" unique_id=130252566 instance=ExtResource("9_5o13f")]
+transform = Transform3D(1, 0, 7.10543e-15, 0, 1, 0, -7.10543e-15, 0, 1, 0, 0, 0.457573)
+
+[node name="DiscDrive" parent="EggNeroBossFight/Offset/[Enemy] Eggman Boss" unique_id=1681899090 instance=ExtResource("10_2a7st")]
+transform = Transform3D(-4.37113e-08, -8.74228e-08, -0.999998, -6.77626e-21, -1, 8.74227e-08, -0.999998, 3.82137e-15, 4.37113e-08, 0, -1.90393, -5.50394)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="EggNeroBossFight/Offset/[Enemy] Eggman Boss" unique_id=2013725053]
+shape = SubResource("SphereShape3D_t8mus")
+
+[node name="Behaviors" type="Node" parent="EggNeroBossFight/Offset/[Enemy] Eggman Boss" unique_id=1513348124 node_paths=PackedStringArray("CurrentPhase")]
+script = ExtResource("10_ceqmm")
+CurrentPhase = NodePath("Phase1 - Escape and fire")
+
+[node name="Phase1 - Escape and fire" type="Node" parent="EggNeroBossFight/Offset/[Enemy] Eggman Boss/Behaviors" unique_id=1865798284]
+
+[node name="EnableDisableList" type="Node" parent="EggNeroBossFight/Offset/[Enemy] Eggman Boss/Behaviors/Phase1 - Escape and fire" unique_id=282749609 node_paths=PackedStringArray("NodesToDisable")]
+script = ExtResource("12_8ox2q")
+NodesToDisable = [NodePath("../../../../../../[Interactable] Goal Ring")]
+
+[node name="EggNeroBehavior" type="Node" parent="EggNeroBossFight/Offset/[Enemy] Eggman Boss/Behaviors/Phase1 - Escape and fire" unique_id=551696580 node_paths=PackedStringArray("BossTransform", "DiscSpawnPoint", "DiscOutsidePoint", "AudioPlayer", "FiredDiscsContainer")]
+script = ExtResource("14_lb5sf")
+BossTransform = NodePath("../../..")
+DiscSpawnPoint = NodePath("../../../DiscSpawnPoint")
+DiscOutsidePoint = NodePath("../../../DiscMoveOutPoint")
+DiscTemplate = ExtResource("15_ure24")
+FireParticleTemplate = ExtResource("16_td3yc")
+DiscHitboxTemplate = ExtResource("17_x4n5s")
+AudioPlayer = NodePath("../../../AudioStreamPlayer3D")
+DiscSoundEject = ExtResource("20_nnjjh")
+DiscSoundSpin = ExtResource("21_tvcyu")
+DiscVelocity = Vector3(0, 0, -50)
+FiredDiscsContainer = NodePath("../../../../../../FiredDiscsContainer")
+
+[node name="Phase98PreDeath" type="Node" parent="EggNeroBossFight/Offset/[Enemy] Eggman Boss/Behaviors" unique_id=951986005]
+process_mode = 4
+
+[node name="EnableDisableList" type="Node" parent="EggNeroBossFight/Offset/[Enemy] Eggman Boss/Behaviors/Phase98PreDeath" unique_id=926301012 node_paths=PackedStringArray("NodesToEnable")]
+script = ExtResource("12_8ox2q")
+NodesToEnable = [NodePath("../BossEndSequence")]
+
+[node name="BossEndSequence" type="Node" parent="EggNeroBossFight/Offset/[Enemy] Eggman Boss/Behaviors/Phase98PreDeath" unique_id=597616259 node_paths=PackedStringArray("EnemyControl", "NextPhase", "SoundPlayer", "CameraPoints")]
+process_mode = 4
+script = ExtResource("22_64tuh")
+EnemyControl = NodePath("../../../EnemyControl")
+NextPhase = NodePath("../../Phase99Death")
+SoundPlayer = NodePath("../../../AudioStreamPlayer3D")
+CameraSound = ExtResource("23_3ost0")
+BossExplosionSound = ExtResource("24_wuf8i")
+CameraPoints = [NodePath("../../../FinishCameraPoints/CameraPoint1"), NodePath("../../../FinishCameraPoints/CameraPoint2"), NodePath("../../../FinishCameraPoints/CameraPoint3")]
+TimeScale = 0.01
+
+[node name="Phase99Death" type="Node" parent="EggNeroBossFight/Offset/[Enemy] Eggman Boss/Behaviors" unique_id=1243721363]
+process_mode = 4
+
+[node name="EnableDisableList" type="Node" parent="EggNeroBossFight/Offset/[Enemy] Eggman Boss/Behaviors/Phase99Death" unique_id=1017140178 node_paths=PackedStringArray("NodesToEnable", "NodesToDisable")]
+script = ExtResource("12_8ox2q")
+NodesToEnable = [NodePath("../../../../../../[Interactable] Goal Ring")]
+NodesToDisable = [NodePath("../../../Hitbox"), NodePath("../../../Hurtbox"), NodePath("../../../DiscSpawnPoint")]
+
+[node name="RemoteVictoryEnable" type="Node" parent="EggNeroBossFight/Offset/[Enemy] Eggman Boss/Behaviors/Phase99Death" unique_id=192696815 node_paths=PackedStringArray("GoalRing")]
+script = ExtResource("18_dko07")
+GoalRing = NodePath("../../../../../../[Interactable] Goal Ring")
+
+[node name="EnemyControl" type="Node" parent="EggNeroBossFight/Offset/[Enemy] Eggman Boss" unique_id=127521886 node_paths=PackedStringArray("HealthBar", "Hitbox", "Hurtbox", "HomingTarget", "RigidBody", "DamageParticles", "AudioSource", "BehaviorManager", "DeathPhase")]
+script = ExtResource("14_hvy3c")
+HP = 8
+MaxHP = 8
+HealthBar = NodePath("../BossUI/HealthBarControl")
+DamageCooldown = 1.0
+Hitbox = NodePath("../Hitbox")
+Hurtbox = NodePath("../Hurtbox")
+HomingTarget = NodePath("../HomingTarget")
+RigidBody = NodePath("..")
+DamageSoundEffect = ExtResource("15_fwdvm")
+DamageParticles = NodePath("../AttackShockwaveParticles")
+AudioSource = NodePath("../AudioStreamPlayer3D")
+BehaviorManager = NodePath("../Behaviors")
+DeathPhase = NodePath("../Behaviors/Phase98PreDeath")
+IgnoreGravityTriggers = true
+DontCull = true
+DontExplodeWhenStageFinished = true
+
+[node name="Hitbox" type="Area3D" parent="EggNeroBossFight/Offset/[Enemy] Eggman Boss" unique_id=1640847150]
+collision_mask = 3
+script = ExtResource("24_r3ji4")
+CanDamageRollingPlayer = false
+CanDamageEnemy = false
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="EggNeroBossFight/Offset/[Enemy] Eggman Boss/Hitbox" unique_id=1319752975]
+shape = SubResource("SphereShape3D_akwk0")
+
+[node name="Hurtbox" type="Area3D" parent="EggNeroBossFight/Offset/[Enemy] Eggman Boss" unique_id=64506756]
+collision_mask = 3
+script = ExtResource("17_atrgg")
+BounceStyle = 1
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="EggNeroBossFight/Offset/[Enemy] Eggman Boss/Hurtbox" unique_id=1699164747]
+shape = SubResource("SphereShape3D_25pc3")
+
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="EggNeroBossFight/Offset/[Enemy] Eggman Boss" unique_id=642365403]
+attenuation_model = 3
+volume_db = 5.0
+max_db = 6.0
+bus = &"SFX"
+
+[node name="AttackShockwaveParticles" type="GPUParticles3D" parent="EggNeroBossFight/Offset/[Enemy] Eggman Boss" unique_id=1730974428]
+emitting = false
+amount = 1
+lifetime = 0.2
+one_shot = true
+process_material = SubResource("ParticleProcessMaterial_cow46")
+draw_passes = 2
+draw_pass_1 = SubResource("PlaneMesh_f2dmv")
+draw_pass_2 = SubResource("QuadMesh_jnks4")
+
+[node name="BossUI" type="Control" parent="EggNeroBossFight/Offset/[Enemy] Eggman Boss" unique_id=512796526]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="HealthBarControl" type="Node" parent="EggNeroBossFight/Offset/[Enemy] Eggman Boss/BossUI" unique_id=1204556509 node_paths=PackedStringArray("HpUiPointTemplate", "HpUiPointsContainer")]
+script = ExtResource("20_3aohp")
+HpUiPointTemplate = NodePath("../HPBar1")
+HpUiPointsContainer = NodePath("../Panel/VBoxContainer/HBoxContainer")
+
+[node name="HPBar1" type="ColorRect" parent="EggNeroBossFight/Offset/[Enemy] Eggman Boss/BossUI" unique_id=735473388]
+visible = false
+custom_minimum_size = Vector2(0, 50)
+layout_mode = 0
+offset_left = 710.0
+offset_top = 120.0
+offset_right = 1210.0
+offset_bottom = 170.0
+size_flags_horizontal = 7
+size_flags_vertical = 4
+mouse_filter = 2
+
+[node name="Panel" type="Panel" parent="EggNeroBossFight/Offset/[Enemy] Eggman Boss/BossUI" unique_id=1824237135]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -250.0
+offset_top = 50.0
+offset_right = 250.0
+offset_bottom = 175.0
+grow_horizontal = 2
+mouse_filter = 2
+theme = ExtResource("21_h7bqw")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="EggNeroBossFight/Offset/[Enemy] Eggman Boss/BossUI/Panel" unique_id=302380845]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="BossName" type="RichTextLabel" parent="EggNeroBossFight/Offset/[Enemy] Eggman Boss/BossUI/Panel/VBoxContainer" unique_id=1361724738]
+custom_minimum_size = Vector2(100, 50)
+layout_mode = 2
+size_flags_vertical = 6
+mouse_filter = 2
+theme = ExtResource("21_h7bqw")
+theme_override_font_sizes/normal_font_size = 30
+theme_override_font_sizes/bold_font_size = 50
+bbcode_enabled = true
+text = "[center][b]EGG NERO[/b][/center]"
+fit_content = true
+
+[node name="HBoxContainer" type="HBoxContainer" parent="EggNeroBossFight/Offset/[Enemy] Eggman Boss/BossUI/Panel/VBoxContainer" unique_id=1573293141]
+layout_mode = 2
+size_flags_vertical = 3
+mouse_filter = 2
+alignment = 1
+
+[node name="DiscSpawnPoint" type="Node3D" parent="EggNeroBossFight/Offset/[Enemy] Eggman Boss" unique_id=264063222]
+transform = Transform3D(0.999999, -3.34076e-22, 8.74228e-08, 0, 1, 3.82138e-15, -8.74228e-08, -3.82138e-15, 0.999999, 0, -2.10615, 0.999969)
+
+[node name="DiscMoveOutPoint" type="Node3D" parent="EggNeroBossFight/Offset/[Enemy] Eggman Boss" unique_id=1966109798]
+transform = Transform3D(0.999999, -3.34077e-22, 8.74228e-08, 0, 1, 3.82138e-15, -8.74228e-08, -3.82139e-15, 0.999999, 0, -2.10615, -5.00004)
+
+[node name="FinishCameraPoints" type="Node3D" parent="EggNeroBossFight/Offset/[Enemy] Eggman Boss" unique_id=1907617910]
+
+[node name="CameraPoint1" type="Node3D" parent="EggNeroBossFight/Offset/[Enemy] Eggman Boss/FinishCameraPoints" unique_id=405848566]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, 1, -4)
+
+[node name="CameraPoint2" type="Node3D" parent="EggNeroBossFight/Offset/[Enemy] Eggman Boss/FinishCameraPoints" unique_id=90880394]
+transform = Transform3D(-0.866025, 0, -0.5, 0, 1, 0, 0.5, 0, -0.866025, -1, 1, -2)
+
+[node name="CameraPoint3" type="Node3D" parent="EggNeroBossFight/Offset/[Enemy] Eggman Boss/FinishCameraPoints" unique_id=1903368867]
+transform = Transform3D(-0.866025, 0, 0.5, 0, 1, 0, -0.5, 0, -0.866025, 1, 1, -2)
+
+[node name="[Trigger] CameraTrigger" type="Area3D" parent="EggNeroBossFight" unique_id=2111078965]
+collision_mask = 2
+script = ExtResource("15_tg1su")
+Params = SubResource("Resource_0da7q")
+DisableRaycast = true
+CameraDistance = 10.0
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="EggNeroBossFight/[Trigger] CameraTrigger" unique_id=790766824]
+shape = SubResource("BoxShape3D_l8jjy")
+
+[node name="[Trigger] LostWorldGravityTrigger" type="Area3D" parent="EggNeroBossFight" unique_id=1108893703 node_paths=PackedStringArray("Path")]
+collision_mask = 2
+script = ExtResource("6_ruevq")
+Path = NodePath("../BossArena/ArenaPath")
+Mode = 1
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="EggNeroBossFight/[Trigger] LostWorldGravityTrigger" unique_id=806163800]
+shape = SubResource("BoxShape3D_l8jjy")
+
+[node name="Pit" type="Area3D" parent="EggNeroBossFight" unique_id=1775985040]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 987.884, 0, 0)
+collision_mask = 3
+script = ExtResource("24_r3ji4")
+CanDamageEnemy = false
+IsInstaKill = true
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="EggNeroBossFight/Pit" unique_id=2126738943]
+shape = SubResource("BoxShape3D_xl8k6")
+
+[node name="FiredDiscsContainer" type="Node3D" parent="." unique_id=202181691]
+
+[node name="[Item] Rings10" parent="." unique_id=141925339 instance=ExtResource("28_tvnlx")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 124.404, -12.2174, -0.130134)
+
+[node name="[Item] Rings11" parent="." unique_id=755366369 instance=ExtResource("28_tvnlx")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 122.015, -12.2174, -0.130134)
+
+[node name="[Item] Rings12" parent="." unique_id=382898553 instance=ExtResource("28_tvnlx")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 118.635, -12.2174, -0.130134)
+
+[node name="[Item] Rings13" parent="." unique_id=274560443 instance=ExtResource("28_tvnlx")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 115.925, -12.6537, -0.355834)
+
+[node name="[Item] Rings14" parent="." unique_id=477096558 instance=ExtResource("28_tvnlx")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 113.335, -12.6785, -0.489539)
+
+[connection signal="OnAfterSpawningDone" from="PlayersManager" to="PlayersManager/ExtraSettingsApplicator" method="ApplySettings"]
+[connection signal="OnHitboxEnter" from="EggNeroBossFight/Offset/[Enemy] Eggman Boss/Hurtbox" to="EggNeroBossFight/Offset/[Enemy] Eggman Boss/EnemyControl" method="OnHitboxEnter"]
+[connection signal="area_entered" from="EggNeroBossFight/Offset/[Enemy] Eggman Boss/Hurtbox" to="EggNeroBossFight/Offset/[Enemy] Eggman Boss/Hurtbox" method="OnAreaEnter"]
+
+[editable path="EggNeroBossFight/BossArena/DiscoHillB1"]

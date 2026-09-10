@@ -1,0 +1,91 @@
+[gd_scene format=3 uid="uid://bbn8dw6qgb42j"]
+
+[ext_resource type="Script" uid="uid://djdxqop8mup2u" path="res://Scripts/Interactables/Spline2DTrigger.cs" id="1_y6d3t"]
+[ext_resource type="Script" uid="uid://d32weomiu2q8n" path="res://Scripts/Interactables/CameraTrigger.cs" id="2_3rbed"]
+[ext_resource type="Script" uid="uid://b8gi46ok5gj61" path="res://Scripts/Utils/CollissionShapeFromCSGPolygon.cs" id="2_6uck3"]
+[ext_resource type="Script" uid="uid://clwt567x2s1dw" path="res://Scripts/Player/Camera/ConstantCameraParams.cs" id="3_6pki3"]
+
+[sub_resource type="Curve3D" id="Curve3D_jrubx"]
+resource_local_to_scene = true
+_data = {
+"points": PackedVector3Array(0, 0, 0, 0, 0, 5, 0, 0, 0, 0, 0, -5, 0, 0, -23.785, 0, 0, 50),
+"tilts": PackedFloat32Array(0, 0)
+}
+point_count = 2
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_qbxhl"]
+transparency = 1
+albedo_color = Color(0.172549, 0, 0.631373, 0.32549)
+
+[sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_6pki3"]
+data = PackedVector3Array(-10, 0, -19, -10, 0, -20, -10, 50, -20, -10, 0, -18, -10, 0, -19, -10, 50, -19, -10, 0, -17, -10, 0, -18, -10, 50, -18, -10, 0, -16, -10, 0, -17, -10, 50, -17, -10, 0, -15, -10, 0, -16, -10, 50, -16, -10, 0, -14, -10, 0, -15, -10, 50, -15, -10, 0, -13, -10, 0, -14, -10, 50, -14, -10, 0, -12, -10, 0, -13, -10, 50, -13, -10, 0, -11, -10, 0, -12, -10, 50, -12, -10, 0, -10, -10, 0, -11, -10, 50, -11, -10, 0, -20, -10, 0, -19, 10, 0, -19, -10, 0, -19, -10, 0, -18, 10, 0, -18, -10, 0, -18, -10, 0, -17, 10, 0, -17, -10, 0, -17, -10, 0, -16, 10, 0, -16, -10, 0, -16, -10, 0, -15, 10, 0, -15, -10, 0, -15, -10, 0, -14, 10, 0, -14, -10, 0, -14, -10, 0, -13, 10, 0, -13, -10, 0, -13, -10, 0, -12, 10, 0, -12, -10, 0, -12, -10, 0, -11, 10, 0, -11, -10, 0, -11, -10, 0, -10, 10, 0, -10, -10, 0, -9, -10, 0, -10, -10, 50, -10, -10, 0, -8, -10, 0, -9, -10, 50, -9, -10, 0, -7, -10, 0, -8, -10, 50, -8, -10, 0, -6, -10, 0, -7, -10, 50, -7, -10, 0, -5, -10, 0, -6, -10, 50, -6, -10, 0, -4, -10, 0, -5, -10, 50, -5, -10, 0, -3, -10, 0, -4, -10, 50, -4, -10, 0, -2, -10, 0, -3, -10, 50, -3, -10, 0, -1, -10, 0, -2, -10, 50, -2, -10, 0, 0, -10, 0, -1, -10, 50, -1, -10, 0, -10, -10, 0, -9, 10, 0, -9, -10, 0, -9, -10, 0, -8, 10, 0, -8, -10, 0, -8, -10, 0, -7, 10, 0, -7, -10, 0, -7, -10, 0, -6, 10, 0, -6, -10, 0, -6, -10, 0, -5, 10, 0, -5, -10, 0, -5, -10, 0, -4, 10, 0, -4, -10, 0, -4, -10, 0, -3, 10, 0, -3, -10, 0, -3, -10, 0, -2, 10, 0, -2, -10, 0, -2, -10, 0, -1, 10, 0, -1, -10, 0, -1, -10, 0, 0, 10, 0, 0, -10, 50, -20, -10, 50, -19, -10, 0, -19, -10, 50, -19, -10, 50, -18, -10, 0, -18, -10, 50, -18, -10, 50, -17, -10, 0, -17, -10, 50, -17, -10, 50, -16, -10, 0, -16, -10, 50, -16, -10, 50, -15, -10, 0, -15, -10, 50, -15, -10, 50, -14, -10, 0, -14, -10, 50, -14, -10, 50, -13, -10, 0, -13, -10, 50, -13, -10, 50, -12, -10, 0, -12, -10, 50, -12, -10, 50, -11, -10, 0, -11, -10, 50, -11, -10, 50, -10, -10, 0, -10, 10, 50, -20, -10, 50, -20, -10, 0, -20, -10, 50, -19, -10, 50, -20, 10, 50, -20, -10, 50, -18, -10, 50, -19, 10, 50, -19, -10, 50, -17, -10, 50, -18, 10, 50, -18, -10, 50, -16, -10, 50, -17, 10, 50, -17, -10, 50, -15, -10, 50, -16, 10, 50, -16, -10, 50, -14, -10, 50, -15, 10, 50, -15, -10, 50, -13, -10, 50, -14, 10, 50, -14, -10, 50, -12, -10, 50, -13, 10, 50, -13, -10, 50, -11, -10, 50, -12, 10, 50, -12, -10, 50, -10, -10, 50, -11, 10, 50, -11, -10, 50, -10, -10, 50, -9, -10, 0, -9, -10, 50, -9, -10, 50, -8, -10, 0, -8, -10, 50, -8, -10, 50, -7, -10, 0, -7, -10, 50, -7, -10, 50, -6, -10, 0, -6, -10, 50, -6, -10, 50, -5, -10, 0, -5, -10, 50, -5, -10, 50, -4, -10, 0, -4, -10, 50, -4, -10, 50, -3, -10, 0, -3, -10, 50, -3, -10, 50, -2, -10, 0, -2, -10, 50, -2, -10, 50, -1, -10, 0, -1, -10, 50, -1, -10, 50, 0, -10, 0, 0, -10, 0, 0, -10, 50, 0, 10, 50, 0, -10, 50, -9, -10, 50, -10, 10, 50, -10, -10, 50, -8, -10, 50, -9, 10, 50, -9, -10, 50, -7, -10, 50, -8, 10, 50, -8, -10, 50, -6, -10, 50, -7, 10, 50, -7, -10, 50, -5, -10, 50, -6, 10, 50, -6, -10, 50, -4, -10, 50, -5, 10, 50, -5, -10, 50, -3, -10, 50, -4, 10, 50, -4, -10, 50, -2, -10, 50, -3, 10, 50, -3, -10, 50, -1, -10, 50, -2, 10, 50, -2, -10, 50, 0, -10, 50, -1, 10, 50, -1, 10, 0, -19, 10, 0, -20, -10, 0, -20, 10, 0, -18, 10, 0, -19, -10, 0, -19, 10, 0, -17, 10, 0, -18, -10, 0, -18, 10, 0, -16, 10, 0, -17, -10, 0, -17, 10, 0, -15, 10, 0, -16, -10, 0, -16, 10, 0, -14, 10, 0, -15, -10, 0, -15, 10, 0, -13, 10, 0, -14, -10, 0, -14, 10, 0, -12, 10, 0, -13, -10, 0, -13, 10, 0, -11, 10, 0, -12, -10, 0, -12, 10, 0, -10, 10, 0, -11, -10, 0, -11, -10, 0, -20, 10, 0, -20, 10, 50, -20, 10, 0, -20, 10, 0, -19, 10, 50, -19, 10, 0, -19, 10, 0, -18, 10, 50, -18, 10, 0, -18, 10, 0, -17, 10, 50, -17, 10, 0, -17, 10, 0, -16, 10, 50, -16, 10, 0, -16, 10, 0, -15, 10, 50, -15, 10, 0, -15, 10, 0, -14, 10, 50, -14, 10, 0, -14, 10, 0, -13, 10, 50, -13, 10, 0, -13, 10, 0, -12, 10, 50, -12, 10, 0, -12, 10, 0, -11, 10, 50, -11, 10, 0, -11, 10, 0, -10, 10, 50, -10, 10, 0, -9, 10, 0, -10, -10, 0, -10, 10, 0, -8, 10, 0, -9, -10, 0, -9, 10, 0, -7, 10, 0, -8, -10, 0, -8, 10, 0, -6, 10, 0, -7, -10, 0, -7, 10, 0, -5, 10, 0, -6, -10, 0, -6, 10, 0, -4, 10, 0, -5, -10, 0, -5, 10, 0, -3, 10, 0, -4, -10, 0, -4, 10, 0, -2, 10, 0, -3, -10, 0, -3, 10, 0, -1, 10, 0, -2, -10, 0, -2, 10, 0, 0, 10, 0, -1, -10, 0, -1, 10, 50, 0, 10, 0, 0, -10, 0, 0, 10, 0, -10, 10, 0, -9, 10, 50, -9, 10, 0, -9, 10, 0, -8, 10, 50, -8, 10, 0, -8, 10, 0, -7, 10, 50, -7, 10, 0, -7, 10, 0, -6, 10, 50, -6, 10, 0, -6, 10, 0, -5, 10, 50, -5, 10, 0, -5, 10, 0, -4, 10, 50, -4, 10, 0, -4, 10, 0, -3, 10, 50, -3, 10, 0, -3, 10, 0, -2, 10, 50, -2, 10, 0, -2, 10, 0, -1, 10, 50, -1, 10, 0, -1, 10, 0, 0, 10, 50, 0, 10, 50, -20, 10, 50, -19, -10, 50, -19, 10, 50, -19, 10, 50, -18, -10, 50, -18, 10, 50, -18, 10, 50, -17, -10, 50, -17, 10, 50, -17, 10, 50, -16, -10, 50, -16, 10, 50, -16, 10, 50, -15, -10, 50, -15, 10, 50, -15, 10, 50, -14, -10, 50, -14, 10, 50, -14, 10, 50, -13, -10, 50, -13, 10, 50, -13, 10, 50, -12, -10, 50, -12, 10, 50, -12, 10, 50, -11, -10, 50, -11, 10, 50, -11, 10, 50, -10, -10, 50, -10, 10, 50, -19, 10, 50, -20, 10, 0, -20, 10, 50, -18, 10, 50, -19, 10, 0, -19, 10, 50, -17, 10, 50, -18, 10, 0, -18, 10, 50, -16, 10, 50, -17, 10, 0, -17, 10, 50, -15, 10, 50, -16, 10, 0, -16, 10, 50, -14, 10, 50, -15, 10, 0, -15, 10, 50, -13, 10, 50, -14, 10, 0, -14, 10, 50, -12, 10, 50, -13, 10, 0, -13, 10, 50, -11, 10, 50, -12, 10, 0, -12, 10, 50, -10, 10, 50, -11, 10, 0, -11, 10, 50, -10, 10, 50, -9, -10, 50, -9, 10, 50, -9, 10, 50, -8, -10, 50, -8, 10, 50, -8, 10, 50, -7, -10, 50, -7, 10, 50, -7, 10, 50, -6, -10, 50, -6, 10, 50, -6, 10, 50, -5, -10, 50, -5, 10, 50, -5, 10, 50, -4, -10, 50, -4, 10, 50, -4, 10, 50, -3, -10, 50, -3, 10, 50, -3, 10, 50, -2, -10, 50, -2, 10, 50, -2, 10, 50, -1, -10, 50, -1, 10, 50, -1, 10, 50, 0, -10, 50, 0, 10, 50, -9, 10, 50, -10, 10, 0, -10, 10, 50, -8, 10, 50, -9, 10, 0, -9, 10, 50, -7, 10, 50, -8, 10, 0, -8, 10, 50, -6, 10, 50, -7, 10, 0, -7, 10, 50, -5, 10, 50, -6, 10, 0, -6, 10, 50, -4, 10, 50, -5, 10, 0, -5, 10, 50, -3, 10, 50, -4, 10, 0, -4, 10, 50, -2, 10, 50, -3, 10, 0, -3, 10, 50, -1, 10, 50, -2, 10, 0, -2, 10, 50, 0, 10, 50, -1, 10, 0, -1)
+
+[sub_resource type="Resource" id="Resource_cu80p"]
+resource_local_to_scene = true
+script = ExtResource("3_6pki3")
+ConstantCameraRotation = Quaternion(0, -0.707, 0, 0.707)
+ConstantDirectionModifiedBySpeed = true
+metadata/_custom_type_script = "uid://clwt567x2s1dw"
+
+[sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_s3u0h"]
+resource_local_to_scene = true
+backface_collision = true
+
+[node name="[Trigger] 2D Path Trigger" type="Path3D" unique_id=1797475654]
+curve = SubResource("Curve3D_jrubx")
+
+[node name="CSGPolygon3DHitbox" type="CSGPolygon3D" parent="." unique_id=1728992185]
+process_mode = 4
+visible = false
+polygon = PackedVector2Array(-10, 0, -10, 50, 10, 50, 10, 0)
+mode = 2
+path_node = NodePath("..")
+path_interval_type = 0
+path_interval = 1.0
+path_simplify_angle = 0.0
+path_rotation = 2
+path_rotation_accurate = false
+path_local = true
+path_continuous_u = true
+path_u_distance = 1.0
+path_joined = false
+smooth_faces = true
+material = SubResource("StandardMaterial3D_qbxhl")
+
+[node name="Area3D_2D" type="Area3D" parent="." unique_id=2006543561 node_paths=PackedStringArray("Path")]
+collision_mask = 7
+script = ExtResource("1_y6d3t")
+Path = NodePath("..")
+TwoDimensionalMode = true
+ReleaseOnExit = true
+AggressiveDepthCorrection = true
+
+[node name="CollisionShape3D_2D" type="CollisionShape3D" parent="Area3D_2D" unique_id=841436180]
+shape = SubResource("ConcavePolygonShape3D_6pki3")
+
+[node name="Area3D_Camera" type="Area3D" parent="." unique_id=136250708]
+collision_mask = 2
+script = ExtResource("2_3rbed")
+Params = SubResource("Resource_cu80p")
+DisableRaycast = true
+CameraDistance = 20.0
+FreeOnExit = true
+EnterLerpTime = 0.1
+ExitLerpTime = 0.1
+
+[node name="CollisionShape3D_Camera" type="CollisionShape3D" parent="Area3D_Camera" unique_id=1886216522]
+shape = SubResource("ConcavePolygonShape3D_s3u0h")
+
+[node name="CollissionShapeFromCSGPolygon2D" type="Node" parent="." unique_id=452271227 node_paths=PackedStringArray("Shape", "CsgMesh")]
+script = ExtResource("2_6uck3")
+Shape = NodePath("../Area3D_2D/CollisionShape3D_2D")
+CsgMesh = NodePath("../CSGPolygon3DHitbox")
+
+[node name="CollissionShapeFromCSGPolygonCamera" type="Node" parent="." unique_id=687910539 node_paths=PackedStringArray("Shape", "CsgMesh")]
+script = ExtResource("2_6uck3")
+Shape = NodePath("../Area3D_Camera/CollisionShape3D_Camera")
+CsgMesh = NodePath("../CSGPolygon3DHitbox")
+
+[connection signal="curve_changed" from="." to="CollissionShapeFromCSGPolygon2D" method="OnCurveChanged"]
+[connection signal="body_entered" from="Area3D_2D" to="Area3D_2D" method="OnBodyEnter"]
+[connection signal="body_entered" from="Area3D_Camera" to="Area3D_Camera" method="OnBodyEnter"]

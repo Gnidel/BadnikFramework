@@ -1,0 +1,9 @@
+[gd_resource type="Sky" format=3 uid="uid://doxxqfohnqfas"]
+
+[ext_resource type="Texture2D" uid="uid://byn3gr1jpfnrk" path="res://Games/Example game/Levels/Digital Sea/Textures/DigitalSea1Sky.png" id="1_qglfp"]
+
+[sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_qglfp"]
+panorama = ExtResource("1_qglfp")
+
+[resource]
+sky_material = SubResource("PanoramaSkyMaterial_qglfp")

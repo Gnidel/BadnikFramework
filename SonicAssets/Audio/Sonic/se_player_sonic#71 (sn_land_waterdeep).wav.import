@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://dfdughps8v31e"
+path="res://.godot/imported/se_player_sonic#71 (sn_land_waterdeep).wav-7bdb9f895db8a1b139e5a2bd29d56914.sample"
+
+[deps]
+
+source_file="res://SonicAssets/Audio/Sonic/se_player_sonic#71 (sn_land_waterdeep).wav"
+dest_files=["res://.godot/imported/se_player_sonic#71 (sn_land_waterdeep).wav-7bdb9f895db8a1b139e5a2bd29d56914.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2

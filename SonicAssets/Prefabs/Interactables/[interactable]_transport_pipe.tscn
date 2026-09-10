@@ -1,0 +1,83 @@
+[gd_scene format=3 uid="uid://2l7w0rd542kc"]
+
+[ext_resource type="Script" uid="uid://tty417yl4b3x" path="res://Scripts/Interactables/Grabbable.cs" id="1_k6fmg"]
+[ext_resource type="PackedScene" uid="uid://bkt2qp7430moc" path="res://SonicAssets/Prefabs/Misc/homing_target.tscn" id="3_jwohr"]
+
+[sub_resource type="Curve3D" id="Curve3D_yaa04"]
+_data = {
+"points": PackedVector3Array(0, 0, 0, 0, 0, -10, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, -50),
+"tilts": PackedFloat32Array(0, 0)
+}
+point_count = 2
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_8exno"]
+transparency = 1
+cull_mode = 2
+albedo_color = Color(0, 0.501961, 0.501961, 0.25098)
+metallic = 0.5
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_epbnn"]
+radius = 2.0
+
+[node name="[Interactable] Transport Pipe" type="Path3D" unique_id=933420757]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -141.322, 7, 0.258864)
+curve = SubResource("Curve3D_yaa04")
+
+[node name="CSGPolygon3D" type="CSGPolygon3D" parent="." unique_id=9995254]
+use_collision = true
+collision_layer = 9
+collision_mask = 3
+polygon = PackedVector2Array(-1, -1, 0, -1.5, 1, -1, 1.5, 0, 1, 1, 0, 1.5, -1, 1, -1.5, 0)
+mode = 2
+path_node = NodePath("..")
+path_interval_type = 0
+path_interval = 1.0
+path_simplify_angle = 0.1
+path_rotation = 2
+path_rotation_accurate = false
+path_local = true
+path_continuous_u = true
+path_u_distance = 1.0
+path_joined = false
+smooth_faces = true
+material = SubResource("StandardMaterial3D_8exno")
+
+[node name="PathFollow3D" type="PathFollow3D" parent="." unique_id=688309865]
+rotation_mode = 0
+cubic_interp = false
+loop = false
+tilt_enabled = false
+
+[node name="[Interactable] Secret invisible pulley" type="Node3D" parent="PathFollow3D" unique_id=888544228 node_paths=PackedStringArray("PathFollow3D", "PlayerLockPosition", "HomingTarget", "AudioPlayer", "RemoteTransform3D")]
+script = ExtResource("1_k6fmg")
+Animation = "RollingNotransition"
+PathFollow3D = NodePath("..")
+Speed = 50.0
+CanJumpOff = false
+PlayerLockPosition = NodePath("PlayerLockPosition")
+HomingTarget = NodePath("HomingTarget")
+RelativeEjectVelocity = Vector3(0, 0, -50)
+AudioPlayer = NodePath("AudioStreamPlayer3D")
+RemoteTransform3D = NodePath("PlayerLockPosition/RemoteTransform3D")
+
+[node name="Area3D" type="Area3D" parent="PathFollow3D/[Interactable] Secret invisible pulley" unique_id=1971008903]
+collision_mask = 2
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="PathFollow3D/[Interactable] Secret invisible pulley/Area3D" unique_id=350723109]
+shape = SubResource("SphereShape3D_epbnn")
+
+[node name="HomingTarget" parent="PathFollow3D/[Interactable] Secret invisible pulley" unique_id=738885016 instance=ExtResource("3_jwohr")]
+
+[node name="PlayerLockPosition" type="Node3D" parent="PathFollow3D/[Interactable] Secret invisible pulley" unique_id=1995454178]
+
+[node name="RemoteTransform3D" type="RemoteTransform3D" parent="PathFollow3D/[Interactable] Secret invisible pulley/PlayerLockPosition" unique_id=708657775]
+
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="PathFollow3D/[Interactable] Secret invisible pulley" unique_id=1596458943]
+
+[node name="PathFollow3D2" type="PathFollow3D" parent="." unique_id=1001917745]
+
+[node name="PathFollow3D3" type="PathFollow3D" parent="." unique_id=765132679]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -50)
+progress = 50.0
+
+[connection signal="body_entered" from="PathFollow3D/[Interactable] Secret invisible pulley/Area3D" to="PathFollow3D/[Interactable] Secret invisible pulley" method="OnCollissionEnter"]

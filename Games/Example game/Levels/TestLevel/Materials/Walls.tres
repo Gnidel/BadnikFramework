@@ -1,0 +1,17 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://btlgdeq7b5723"]
+
+[ext_resource type="Texture2D" uid="uid://dj7sc3cpgy8or" path="res://Games/Example game/Levels/TestLevel/gridTexture_h.png" id="1_tskac"]
+[ext_resource type="Texture2D" uid="uid://dvwutourkmypy" path="res://Games/Example game/Levels/TestLevel/gridTexture_n.png" id="2_t38m6"]
+
+[resource]
+resource_name = "Walls"
+cull_mode = 2
+vertex_color_use_as_albedo = true
+albedo_color = Color(0.906332, 0.0166419, 0, 1)
+roughness = 0.5
+normal_enabled = true
+normal_scale = 5.0
+normal_texture = ExtResource("2_t38m6")
+heightmap_enabled = true
+heightmap_scale = 0.2
+heightmap_texture = ExtResource("1_tskac")

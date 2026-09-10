@@ -1,0 +1,168 @@
+[gd_scene format=3 uid="uid://bisjbo4vs52y6"]
+
+[ext_resource type="Script" uid="uid://c7ap51dlbi1e8" path="res://Games/Example game/Levels/Finale/Scripts/BigArmControl.cs" id="1_ixyit"]
+[ext_resource type="PackedScene" uid="uid://2odtn2uxuln8" path="res://SonicAssets/Models/Eggman/BigArm.glb" id="1_ryx1v"]
+[ext_resource type="PackedScene" uid="uid://utj184wk42iu" path="res://SonicAssets/Models/Eggman/Eggman.tscn" id="2_ixyit"]
+[ext_resource type="Script" uid="uid://bp5u357iofl1t" path="res://addons/trail_3d/trail_3d.gd" id="4_rjh4q"]
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_ixyit"]
+animation = &"Catch"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_guv4o"]
+animation = &"PrepareThrow"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_68l62"]
+animation = &"Rest"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_rjh4q"]
+animation = &"Throw"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_q6jwf"]
+animation = &"TryCatch"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_2aa1j"]
+animation = &"UglyGesture"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_68l62"]
+xfade_time = 0.1
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_2aa1j"]
+xfade_time = 0.5
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_h863g"]
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_o135j"]
+xfade_time = 0.5
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_y0nhk"]
+xfade_time = 0.5
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_y34a0"]
+xfade_time = 0.5
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_ixyit"]
+xfade_time = 0.5
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_rjh4q"]
+advance_mode = 2
+
+[sub_resource type="AnimationNodeStateMachine" id="AnimationNodeStateMachine_482wa"]
+states/Catch/node = SubResource("AnimationNodeAnimation_ixyit")
+states/Catch/position = Vector2(528, 43)
+states/End/position = Vector2(1019, 85)
+states/PrepareThrow/node = SubResource("AnimationNodeAnimation_guv4o")
+states/PrepareThrow/position = Vector2(749, 43)
+states/Rest/node = SubResource("AnimationNodeAnimation_68l62")
+states/Rest/position = Vector2(326, 188)
+states/Throw/node = SubResource("AnimationNodeAnimation_rjh4q")
+states/Throw/position = Vector2(749, 188)
+states/TryCatch/node = SubResource("AnimationNodeAnimation_q6jwf")
+states/TryCatch/position = Vector2(326, 49)
+states/UglyGesture/node = SubResource("AnimationNodeAnimation_2aa1j")
+states/UglyGesture/position = Vector2(520, 188)
+transitions = ["TryCatch", "Catch", SubResource("AnimationNodeStateMachineTransition_68l62"), "Catch", "PrepareThrow", SubResource("AnimationNodeStateMachineTransition_2aa1j"), "PrepareThrow", "Throw", SubResource("AnimationNodeStateMachineTransition_h863g"), "Throw", "UglyGesture", SubResource("AnimationNodeStateMachineTransition_o135j"), "UglyGesture", "Rest", SubResource("AnimationNodeStateMachineTransition_y0nhk"), "Rest", "TryCatch", SubResource("AnimationNodeStateMachineTransition_y34a0"), "TryCatch", "Rest", SubResource("AnimationNodeStateMachineTransition_ixyit"), "Start", "TryCatch", SubResource("AnimationNodeStateMachineTransition_rjh4q")]
+graph_offset = Vector2(23, 4)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_sajgr"]
+size = Vector3(50, 10, 15)
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_guv4o"]
+
+[sub_resource type="Curve" id="Curve_sajgr"]
+_data = [Vector2(1e-05, 0), 0.0, 0.0, 0, 0, Vector2(0.14971751, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
+point_count = 3
+
+[sub_resource type="Gradient" id="Gradient_482wa"]
+colors = PackedColorArray(1, 0, 0, 1, 1, 1, 1, 1)
+
+[sub_resource type="Curve" id="Curve_dwsd6"]
+_data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(0.14689267, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
+point_count = 3
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_q6jwf"]
+
+[node name="Big Arm" type="Node3D" unique_id=1199781718 node_paths=PackedStringArray("GrabArea", "AnimationTree", "PlayerCatchPos")]
+script = ExtResource("1_ixyit")
+GrabArea = NodePath("GrabArea")
+AnimationTree = NodePath("BigArm/AnimationTree")
+PlayerCatchPos = NodePath("BigArmArm/PlayerGrabPoint")
+
+[node name="BigArm" parent="." unique_id=1628656884 instance=ExtResource("1_ryx1v")]
+transform = Transform3D(-0.5, 0, -4.371139e-08, 0, 0.5, 0, 4.371139e-08, 0, -0.5, 0, 0, 0)
+
+[node name="Skeleton3D" parent="BigArm/Big-Arm_skeleton" parent_id_path=PackedInt32Array(1628656884, 614834625) index="0" unique_id=1017380952]
+bones/4/rotation = Quaternion(0.7071068, 0.7071068, -5.9604645e-08, 5.9604645e-08)
+bones/19/rotation = Quaternion(0.7071068, 0.7071068, 2.247624e-08, -5.3385072e-08)
+bones/29/rotation = Quaternion(0.7071068, 0.7071068, 2.2476236e-08, -5.3385076e-08)
+bones/31/rotation = Quaternion(-5.9604638e-08, 6.325238e-08, 0.70710677, 0.7071068)
+bones/33/rotation = Quaternion(0, -2.1316282e-14, 0, 1)
+bones/34/rotation = Quaternion(0, 7.1054274e-15, 0, 1)
+bones/37/rotation = Quaternion(0.5, -0.49999997, -0.5, 0.50000006)
+bones/40/rotation = Quaternion(0, -7.1054274e-15, 0, 1)
+bones/48/rotation = Quaternion(0, -7.1054274e-15, 0, 1)
+
+[node name="AnimationTree" type="AnimationTree" parent="BigArm" unique_id=1427981588]
+tree_root = SubResource("AnimationNodeStateMachine_482wa")
+anim_player = NodePath("../AnimationPlayer")
+
+[node name="Eggman" parent="." unique_id=883058449 instance=ExtResource("2_ixyit")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5.186898, 1.076829)
+
+[node name="GrabArea" type="Area3D" parent="." unique_id=915420212]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5, -10)
+collision_layer = 256
+collision_mask = 2
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="GrabArea" unique_id=933905213]
+shape = SubResource("BoxShape3D_sajgr")
+
+[node name="OmniLight3D" type="OmniLight3D" parent="." unique_id=281331188]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 6, 0)
+
+[node name="OmniLight3D2" type="OmniLight3D" parent="." unique_id=1185725486]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3, -5)
+light_color = Color(1, 1, 0, 1)
+
+[node name="BigArmArm" type="BoneAttachment3D" parent="." unique_id=1596461792]
+transform = Transform3D(1.3909066e-08, 0.5, -2.5793274e-09, -1.9718163e-07, 2.579331e-09, 0.5, 0.5, -1.3909066e-08, 1.9718163e-07, 14.655, 3.77424, -9.474809e-08)
+bone_name = "hand_R"
+bone_idx = 34
+use_external_skeleton = true
+external_skeleton = NodePath("../BigArm/Big-Arm_skeleton/Skeleton3D")
+
+[node name="PlayerGrabPoint" type="Node3D" parent="BigArmArm" unique_id=1469405261]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -6, 0, -2.3841858e-06)
+
+[node name="Jet00" type="BoneAttachment3D" parent="." unique_id=1492970847]
+transform = Transform3D(0.5, 7.7813026e-16, -1.5099582e-07, -3.4660554e-15, 0.5, -8.900656e-09, 1.5099582e-07, 8.900656e-09, 0.5, -1.7371045, 4.9517107, 4.503616)
+bone_name = "jet_00_end"
+bone_idx = 61
+use_external_skeleton = true
+external_skeleton = NodePath("../BigArm/Big-Arm_skeleton/Skeleton3D")
+
+[node name="Trail3D" type="MeshInstance3D" parent="Jet00" unique_id=1059817437]
+mesh = SubResource("ArrayMesh_guv4o")
+script = ExtResource("4_rjh4q")
+width_curve = SubResource("Curve_sajgr")
+color_gradient = SubResource("Gradient_482wa")
+alpha_curve = SubResource("Curve_dwsd6")
+metadata/_custom_type_script = "uid://bp5u357iofl1t"
+
+[node name="Jet01" type="BoneAttachment3D" parent="." unique_id=1707198066]
+transform = Transform3D(0.5, 7.7813026e-16, -1.5099582e-07, -3.4660554e-15, 0.5, -8.900656e-09, 1.5099582e-07, 8.900656e-09, 0.5, 1.7370998, 4.9517107, 4.5036154)
+bone_name = "jet_01_end"
+bone_idx = 63
+use_external_skeleton = true
+external_skeleton = NodePath("../BigArm/Big-Arm_skeleton/Skeleton3D")
+
+[node name="Trail3D" type="MeshInstance3D" parent="Jet01" unique_id=1399456409]
+mesh = SubResource("ArrayMesh_q6jwf")
+script = ExtResource("4_rjh4q")
+width_curve = SubResource("Curve_sajgr")
+color_gradient = SubResource("Gradient_482wa")
+alpha_curve = SubResource("Curve_dwsd6")
+metadata/_custom_type_script = "uid://bp5u357iofl1t"
+
+[connection signal="body_entered" from="GrabArea" to="." method="OnGrabAreaEnter"]
+
+[editable path="BigArm"]

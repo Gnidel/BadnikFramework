@@ -1,0 +1,10 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://cgkxui15fm32q"]
+
+[ext_resource type="Texture2D" uid="uid://btjrr2t0g240t" path="res://SonicAssets/Models/Sonic/textures/chr_sonic_shoes_dif_HD.dds" id="1_owdgk"]
+
+[resource]
+resource_name = "super_sonic_gm_shoes_ring"
+transparency = 4
+cull_mode = 2
+albedo_texture = ExtResource("1_owdgk")
+metallic = 1.0

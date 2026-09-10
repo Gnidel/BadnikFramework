@@ -1,0 +1,10 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://cq3va7hjua3vx"]
+
+[ext_resource type="Texture2D" uid="uid://vphf0u2m5v7g" path="res://SonicAssets/Models/Interactables/textures/cmn_obj_c_itembox01_line_dif.dds" id="1_xlhso"]
+
+[resource]
+resource_name = "cmn_obj_c_itembox_line"
+transparency = 1
+albedo_color = Color(1, 1, 1, 0.501961)
+albedo_texture = ExtResource("1_xlhso")
+metallic = 1.0

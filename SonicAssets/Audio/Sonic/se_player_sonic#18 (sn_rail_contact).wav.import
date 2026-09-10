@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://2da3no4p5ndm"
+path="res://.godot/imported/se_player_sonic#18 (sn_rail_contact).wav-dd1596835bab0b7adc363046ce633b44.sample"
+
+[deps]
+
+source_file="res://SonicAssets/Audio/Sonic/se_player_sonic#18 (sn_rail_contact).wav"
+dest_files=["res://.godot/imported/se_player_sonic#18 (sn_rail_contact).wav-dd1596835bab0b7adc363046ce633b44.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

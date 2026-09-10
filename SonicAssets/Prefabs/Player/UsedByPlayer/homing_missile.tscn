@@ -1,0 +1,74 @@
+[gd_scene format=3 uid="uid://fot6p61vd7nx"]
+
+[ext_resource type="Script" uid="uid://b10jnho56y1wi" path="res://Scripts/Player/HomingMissile.cs" id="1_bca8d"]
+[ext_resource type="PackedScene" uid="uid://d4m34mebvbwar" path="res://SonicAssets/Prefabs/Particles/Explosion2/[Particles] Explosion2_Damaging_Onlyenemies.tscn" id="2_2ro4x"]
+[ext_resource type="PackedScene" uid="uid://bpwhp16hkdeej" path="res://SonicAssets/Models/Guns/Missile/missile.glb" id="2_gaksf"]
+[ext_resource type="Texture2D" uid="uid://b66w5vhdd5bxh" path="res://SonicAssets/Prefabs/Particles/Fire/ef_ch_sns_yh1_damagefire2.png" id="4_ft178"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_an737"]
+radius = 0.1
+
+[sub_resource type="Curve" id="Curve_gwnmh"]
+_data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(0.249071, 1), 0.0, 0.0, 0, 0, Vector2(0.754647, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
+point_count = 4
+
+[sub_resource type="CurveTexture" id="CurveTexture_pfuc6"]
+curve = SubResource("Curve_gwnmh")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_8es5e"]
+emission_shape = 6
+emission_ring_axis = Vector3(0, 0, 1)
+emission_ring_height = 1.0
+emission_ring_radius = 5.0
+emission_ring_inner_radius = 0.0
+emission_ring_cone_angle = 90.0
+angle_min = -180.0
+angle_max = 180.0
+direction = Vector3(0, 1, 0)
+spread = 10.0
+initial_velocity_min = 50.0
+initial_velocity_max = 50.0
+gravity = Vector3(0, 0, 0)
+scale_curve = SubResource("CurveTexture_pfuc6")
+anim_speed_min = 1.0
+anim_speed_max = 2.0
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_2pfrs"]
+transparency = 1
+shading_mode = 0
+albedo_texture = ExtResource("4_ft178")
+disable_receive_shadows = true
+billboard_mode = 3
+billboard_keep_scale = true
+particles_anim_h_frames = 2
+particles_anim_v_frames = 2
+particles_anim_loop = true
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_2yhjh"]
+material = SubResource("StandardMaterial3D_2pfrs")
+orientation = 2
+
+[node name="Homing Missile" type="RigidBody3D" unique_id=1363912587]
+collision_layer = 0
+gravity_scale = 0.0
+continuous_cd = true
+max_contacts_reported = 1
+script = ExtResource("1_bca8d")
+ExplosionPrefab = ExtResource("2_2ro4x")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=849093387]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0)
+shape = SubResource("SphereShape3D_an737")
+
+[node name="missile" parent="." unique_id=1499361489 instance=ExtResource("2_gaksf")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0, 0, 0)
+
+[node name="[Particles] Fire" type="GPUParticles3D" parent="missile" unique_id=613572964]
+transform = Transform3D(-4.37114e-09, -0.1, 0, 0.1, -4.37114e-09, 0, 0, 0, 0.1, -0.713953, 0, 0)
+amount = 64
+lifetime = 0.25
+speed_scale = 0.5
+process_material = SubResource("ParticleProcessMaterial_8es5e")
+draw_pass_1 = SubResource("PlaneMesh_2yhjh")
+
+[connection signal="body_entered" from="." to="." method="OnBodyEntered"]

@@ -1,0 +1,30 @@
+[gd_scene format=3 uid="uid://daw4tm8o4oxei"]
+
+[ext_resource type="Script" uid="uid://bge4hsg4hukce" path="res://Scripts/Interactables/DirectionalLauncher.cs" id="1_mpux5"]
+[ext_resource type="AudioStream" uid="uid://dbv48ce1yc8hp" path="res://SonicAssets/Audio/Items/se_object_common#26 (objsn_ringbooster).wav" id="2_cd2ch"]
+[ext_resource type="PackedScene" uid="uid://dli5ri5k4r7oh" path="res://SonicAssets/Models/Interactables/dash_ring.blend" id="3_4nk4u"]
+[ext_resource type="PackedScene" uid="uid://bq7p16fpdqnv0" path="res://SonicAssets/Prefabs/Particles/[particles] dir_launcher_particles.tscn" id="4_w547l"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_5ku78"]
+margin = 0.0
+radius = 1.0
+
+[node name="[Interactable] Dash_Ring" type="Node3D" unique_id=988342406]
+transform = Transform3D(3, 0, 0, 0, -1.31134e-07, -3, 0, 3, -1.31134e-07, 0, 0, 0)
+script = ExtResource("1_mpux5")
+Snap = true
+SoundEffect = ExtResource("2_cd2ch")
+
+[node name="dash_ring" parent="." unique_id=1068324593 instance=ExtResource("3_4nk4u")]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0)
+
+[node name="Area3D" type="Area3D" parent="." unique_id=1276402051]
+collision_mask = 3
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D" unique_id=238973339]
+shape = SubResource("SphereShape3D_5ku78")
+
+[node name="DirLauncherParticles" parent="." unique_id=1039123218 instance=ExtResource("4_w547l")]
+
+[connection signal="OnLaunching" from="." to="DirLauncherParticles" method="set_emitting" binds= [true]]
+[connection signal="body_entered" from="Area3D" to="." method="OnTriggerEnter"]

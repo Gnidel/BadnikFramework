@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://ccaxakjn8bfs4"
+path="res://.godot/imported/Cosmic Zone - Sonic Jump (2012).ogg-0b64433094063f4d511a629b68948a5e.oggvorbisstr"
+
+[deps]
+
+source_file="res://SonicAssets/Music/Cosmic Zone - Sonic Jump (2012).ogg"
+dest_files=["res://.godot/imported/Cosmic Zone - Sonic Jump (2012).ogg-0b64433094063f4d511a629b68948a5e.oggvorbisstr"]
+
+[params]
+
+loop=true
+loop_offset=0.0
+bpm=0.0
+beat_count=0
+bar_beats=4

@@ -1,0 +1,100 @@
+[gd_scene format=3 uid="uid://mwwlnd3pk6vc"]
+
+[ext_resource type="Script" uid="uid://f3cxw7en1f5k" path="res://Scripts/Interactables/CollectableItem.cs" id="1_govj5"]
+[ext_resource type="AudioStream" uid="uid://c4hhvs5n6pwkl" path="res://SonicAssets/Audio/Items/se_object_common#4 (obj_superring).wav" id="2_w3mu6"]
+[ext_resource type="Script" uid="uid://bus1ja230judn" path="res://Scripts/Utils/Rotate.cs" id="4_ectc1"]
+[ext_resource type="Texture2D" uid="uid://cjyqftshxj8i4" path="res://SonicAssets/Textures/RingParticle.png" id="5_gq4ml"]
+[ext_resource type="PackedScene" uid="uid://csf4ltst8ihef" path="res://SonicAssets/Models/Items/Rings10/rings10.blend" id="6_b3t6p"]
+[ext_resource type="Material" uid="uid://b631mt7ngby1r" path="res://SonicAssets/Models/Items/Rings10/textures/cmn_obj_superring_HD_number.tres" id="6_wklec"]
+
+[sub_resource type="Curve" id="Curve_idv40"]
+_limits = [0.0, 100.0, 0.0, 1.0]
+bake_resolution = 10
+_data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(1, 100), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_6spl5"]
+radius = 2.0
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_648yg"]
+radius = 0.25
+
+[sub_resource type="Curve" id="Curve_f3mti"]
+_data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(0.127182, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
+point_count = 3
+
+[sub_resource type="CurveTexture" id="CurveTexture_tgj3w"]
+curve = SubResource("Curve_f3mti")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_bsup1"]
+spread = 180.0
+initial_velocity_min = 1.0
+initial_velocity_max = 2.0
+gravity = Vector3(0, 0, 0)
+scale_min = 0.25
+scale_curve = SubResource("CurveTexture_tgj3w")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_xe6we"]
+transparency = 1
+shading_mode = 0
+albedo_texture = ExtResource("5_gq4ml")
+billboard_mode = 3
+billboard_keep_scale = true
+particles_anim_h_frames = 1
+particles_anim_v_frames = 1
+particles_anim_loop = false
+
+[sub_resource type="QuadMesh" id="QuadMesh_gutdc"]
+material = SubResource("StandardMaterial3D_xe6we")
+
+[sub_resource type="QuadMesh" id="QuadMesh_hgku1"]
+material = ExtResource("6_wklec")
+size = Vector2(0.5, 0.5)
+
+[node name="[Item] Rings10" type="Node3D" unique_id=762880246 node_paths=PackedStringArray("particles", "modelNode")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
+script = ExtResource("1_govj5")
+AttractionSpeed = SubResource("Curve_idv40")
+maxAttractionTime = 2.0
+SoundEffect = ExtResource("2_w3mu6")
+ItemName = "rings"
+ItemCount = 10
+particles = NodePath("RingParticles")
+modelNode = NodePath("Meshes")
+CanBeAttractedAfter = 0.0
+
+[node name="AttractTrigger" type="Area3D" parent="." unique_id=1649048926]
+collision_mask = 2
+input_ray_pickable = false
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="AttractTrigger" unique_id=608607422]
+shape = SubResource("SphereShape3D_6spl5")
+
+[node name="PickupTrigger" type="Area3D" parent="." unique_id=108107051]
+collision_mask = 2
+input_ray_pickable = false
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="PickupTrigger" unique_id=36821834]
+shape = SubResource("SphereShape3D_648yg")
+
+[node name="RingParticles" type="GPUParticles3D" parent="." unique_id=694898396]
+emitting = false
+amount = 4
+lifetime = 0.5
+one_shot = true
+explosiveness = 1.0
+process_material = SubResource("ParticleProcessMaterial_bsup1")
+draw_pass_1 = SubResource("QuadMesh_gutdc")
+
+[node name="Meshes" type="Node3D" parent="." unique_id=849362657]
+
+[node name="rings10" parent="Meshes" unique_id=648267069 instance=ExtResource("6_b3t6p")]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0)
+script = ExtResource("4_ectc1")
+
+[node name="numer" type="MeshInstance3D" parent="Meshes" unique_id=826130881]
+mesh = SubResource("QuadMesh_hgku1")
+skeleton = NodePath("../..")
+
+[connection signal="body_entered" from="AttractTrigger" to="." method="OnAttract"]
+[connection signal="body_entered" from="PickupTrigger" to="." method="OnPickup"]

@@ -1,0 +1,12 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://dn16d2jsd2wb"]
+
+[ext_resource type="Texture2D" uid="uid://okmywmk3m2u7" path="res://SonicAssets/Models/Enemies/textures/enm_potos01_eye_ems.PNG" id="1_t56as"]
+
+[resource]
+resource_name = "enm_potos01_glass"
+vertex_color_use_as_albedo = true
+albedo_texture = ExtResource("1_t56as")
+metallic = 1.0
+metallic_specular = 1.0
+emission_enabled = true
+emission_texture = ExtResource("1_t56as")

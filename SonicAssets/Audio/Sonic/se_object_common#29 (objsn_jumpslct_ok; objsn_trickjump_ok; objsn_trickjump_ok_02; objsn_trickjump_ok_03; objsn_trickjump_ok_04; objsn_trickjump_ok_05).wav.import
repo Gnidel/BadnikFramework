@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://dyt0omfakx6oy"
+path="res://.godot/imported/se_object_common#29 (objsn_jumpslct_ok; objsn_trickjump_ok; objsn_trickjump_ok_02; objsn_trickjump_ok_03; objsn_trickjump_ok_04; objsn_trickjump_ok_05).wav-d622257f0c6db3ce633cb7c694ed2439.sample"
+
+[deps]
+
+source_file="res://SonicAssets/Audio/Sonic/se_object_common#29 (objsn_jumpslct_ok; objsn_trickjump_ok; objsn_trickjump_ok_02; objsn_trickjump_ok_03; objsn_trickjump_ok_04; objsn_trickjump_ok_05).wav"
+dest_files=["res://.godot/imported/se_object_common#29 (objsn_jumpslct_ok; objsn_trickjump_ok; objsn_trickjump_ok_02; objsn_trickjump_ok_03; objsn_trickjump_ok_04; objsn_trickjump_ok_05).wav-d622257f0c6db3ce633cb7c694ed2439.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2

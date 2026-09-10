@@ -1,0 +1,182 @@
+[remap]
+
+importer="scene"
+importer_version=1
+type="PackedScene"
+uid="uid://cgtrksgey4846"
+path="res://.godot/imported/DiscoHill1.blend-9528d7d571f51f87294a2ce3f34391a5.scn"
+
+[deps]
+
+source_file="res://Games/Example game/Levels/DiscoHill/Models/DiscoHill1.blend"
+dest_files=["res://.godot/imported/DiscoHill1.blend-9528d7d571f51f87294a2ce3f34391a5.scn"]
+
+[params]
+
+nodes/root_type="Node3D"
+nodes/root_name="Scene Root"
+nodes/root_script=null
+mesh_library/use_node_names_as_mesh_names=false
+array_mesh/deduplicate_surfaces=true
+nodes/apply_root_scale=true
+nodes/root_scale=1.0
+nodes/import_as_skeleton_bones=false
+nodes/use_name_suffixes=true
+nodes/use_node_type_suffixes=true
+meshes/ensure_tangents=true
+meshes/generate_lods=true
+meshes/create_shadow_meshes=true
+meshes/light_baking=2
+meshes/lightmap_texel_size=0.2
+meshes/force_disable_compression=false
+skins/use_named_skins=true
+animation/import=true
+animation/fps=30
+animation/trimming=false
+animation/remove_immutable_tracks=true
+animation/import_rest_as_RESET=false
+import_script/path=""
+materials/extract=0
+materials/extract_format=0
+materials/extract_path=""
+_subresources={
+"materials": {
+"Borders": {
+"use_external/enabled": true,
+"use_external/fallback_path": "res://Games/Example game/Levels/DiscoHill/Textures/Borders.tres",
+"use_external/path": "uid://whb1p20jxcnu"
+},
+"LightStripe": {
+"use_external/enabled": true,
+"use_external/fallback_path": "res://Games/Example game/Levels/DiscoHill/Textures/LightStripe.tres",
+"use_external/path": "uid://ctfch6nn60fk0"
+},
+"NoiseGrid": {
+"use_external/enabled": true,
+"use_external/fallback_path": "res://Games/Example game/Levels/DiscoHill/Textures/NoiseGrid.tres",
+"use_external/path": "uid://c16u6om2ahvmw"
+},
+"PinkLight": {
+"use_external/enabled": true,
+"use_external/fallback_path": "res://Games/Example game/Levels/DiscoHill/Textures/PinkLight.tres",
+"use_external/path": "uid://6c3r4idp2oyr"
+},
+"Road": {
+"use_external/enabled": true,
+"use_external/fallback_path": "res://Games/Example game/Levels/DiscoHill/Textures/Road.tres",
+"use_external/path": "uid://hhkfwvdibava"
+},
+"Walls": {
+"use_external/enabled": true,
+"use_external/fallback_path": "res://Games/Example game/Levels/DiscoHill/Textures/Walls.tres",
+"use_external/path": "uid://mq06lhi7pbdq"
+}
+},
+"nodes": {
+"PATH:Road1/Road": {
+"generate/physics": true,
+"physics/shape_type": 2
+},
+"PATH:Road1_001/Road_001": {
+"generate/physics": true,
+"physics/shape_type": 2
+},
+"PATH:Road1_002/Road_002": {
+"generate/physics": true,
+"physics/shape_type": 2
+},
+"PATH:S1_Streets_001": {
+"generate/physics": true,
+"physics/shape_type": 2
+},
+"PATH:S1_Streets_002": {
+"generate/physics": true,
+"physics/shape_type": 2
+},
+"PATH:S1_Streets_003": {
+"generate/physics": true,
+"physics/shape_type": 2
+},
+"PATH:S1_Streets_004": {
+"generate/physics": true,
+"physics/shape_type": 2
+},
+"PATH:S1_Streets_005": {
+"generate/physics": true,
+"physics/shape_type": 2
+},
+"PATH:S1_Streets_006": {
+"generate/physics": true,
+"physics/shape_type": 2
+},
+"PATH:S1_Streets_007": {
+"generate/physics": true,
+"physics/shape_type": 2
+},
+"PATH:S1_Streets_008": {
+"generate/physics": true,
+"physics/shape_type": 2
+},
+"PATH:S2_Tower": {
+"generate/physics": true,
+"physics/shape_type": 2
+},
+"PATH:S4_FastTurn": {
+"generate/physics": true,
+"physics/shape_type": 2
+},
+"PATH:S4_FastTurn_001": {
+"generate/physics": true,
+"physics/shape_type": 2
+},
+"PATH:S4_FastTurn_002": {
+"generate/physics": true,
+"physics/shape_type": 2
+},
+"PATH:S4_FastTurn_003": {
+"generate/physics": true,
+"physics/shape_type": 2
+},
+"PATH:S4_FastTurn_004": {
+"generate/physics": true,
+"physics/shape_type": 2
+},
+"PATH:S4_FastTurn_005": {
+"generate/physics": true,
+"physics/shape_type": 2
+},
+"PATH:S4_FastTurn_006": {
+"generate/physics": true,
+"physics/shape_type": 2
+},
+"PATH:S4_FastTurn_007": {
+"generate/physics": true,
+"physics/shape_type": 2
+},
+"PATH:S4_FastTurn_008": {
+"generate/physics": true,
+"physics/shape_type": 2
+}
+}
+}
+blender/nodes/visible=1
+blender/nodes/active_collection_only=false
+blender/nodes/punctual_lights=true
+blender/nodes/cameras=true
+blender/nodes/custom_properties=true
+blender/nodes/modifiers=1
+blender/meshes/vertex_colors=0
+blender/meshes/uvs=true
+blender/meshes/normals=true
+blender/meshes/export_geometry_nodes_instances=false
+blender/meshes/gpu_instances=false
+blender/meshes/tangents=true
+blender/meshes/skins=2
+blender/meshes/export_bones_deforming_mesh_only=false
+blender/materials/unpack_enabled=true
+blender/materials/export_materials=1
+blender/animation/limit_playback=true
+blender/animation/always_sample=true
+blender/animation/group_tracks=true
+gltf/naming_version=2
+gltf/texture_map_mode=0

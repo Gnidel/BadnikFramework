@@ -1,0 +1,22 @@
+[gd_scene format=3 uid="uid://hol4qkmcbhxw"]
+
+[ext_resource type="Script" uid="uid://ctcdfedvo6pn2" path="res://Scripts/Ui/ExtraItemTracker.cs" id="1_1vrag"]
+[ext_resource type="Texture2D" uid="uid://dngm06vsafimm" path="res://Prefabs/UI/UiHeart.png" id="1_gcpby"]
+[ext_resource type="Theme" uid="uid://dfn1qo0bwoxuf" path="res://Misc/OptionsMenuTheme.tres" id="2_1vrag"]
+
+[node name="ExtraItemTracker" type="HBoxContainer" unique_id=1899919813 node_paths=PackedStringArray("Icon", "TextLabel")]
+script = ExtResource("1_1vrag")
+Icon = NodePath("Heart")
+TextLabel = NodePath("RichTextLabel")
+
+[node name="Heart" type="TextureRect" parent="." unique_id=1103983134]
+layout_mode = 2
+texture = ExtResource("1_gcpby")
+stretch_mode = 5
+
+[node name="RichTextLabel" type="RichTextLabel" parent="." unique_id=1408722949]
+layout_mode = 2
+size_flags_horizontal = 3
+theme = ExtResource("2_1vrag")
+text = "12345"
+vertical_alignment = 1

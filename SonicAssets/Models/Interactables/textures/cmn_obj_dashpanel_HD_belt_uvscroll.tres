@@ -1,0 +1,13 @@
+[gd_resource type="ShaderMaterial" format=3 uid="uid://bt8gdfrmau7kj"]
+
+[ext_resource type="Shader" uid="uid://cq4gpg3v8rw38" path="res://Shaders/StandardWithUvScroll.tres" id="1_w4uap"]
+[ext_resource type="Texture2D" uid="uid://cxwo51kj8psej" path="res://SonicAssets/Models/Interactables/textures/cmn_metal_ms_panelbelt_dif.dds" id="2_vql7j"]
+
+[resource]
+render_priority = 0
+shader = ExtResource("1_w4uap")
+shader_parameter/ScrollSpeed = Vector2(0, 5)
+shader_parameter/Albedo = ExtResource("2_vql7j")
+shader_parameter/Metallic = 1.0
+shader_parameter/Roughness = 0.5
+shader_parameter/Specular = 0.5

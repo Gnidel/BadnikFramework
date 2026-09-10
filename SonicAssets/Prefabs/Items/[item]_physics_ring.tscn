@@ -1,0 +1,24 @@
+[gd_scene format=3 uid="uid://dihc118cta0m7"]
+
+[ext_resource type="PackedScene" uid="uid://crxq2s1vls3rc" path="res://SonicAssets/Prefabs/Items/[item]_ring.tscn" id="1_h3hjl"]
+[ext_resource type="Script" uid="uid://bw8224m0k2phx" path="res://Scripts/Interactables/NonPlayerSplineMovement.cs" id="2_6wuin"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_7jpy8"]
+radius = 0.3
+
+[node name="[Item] PhysicsRing" type="RigidBody3D" unique_id=150911394]
+physics_interpolation_mode = 2
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.83009, 7.038, 0)
+collision_layer = 4
+
+[node name="[Item] Ring" parent="." unique_id=1822596897 instance=ExtResource("1_h3hjl")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
+DestroyParentOnDestroy = true
+CanBeAttractedAfter = 1.0
+TemporaryExistenceTime = 5.0
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1469626943]
+shape = SubResource("SphereShape3D_7jpy8")
+
+[node name="NonPlayerSplineMovement" type="Node" parent="." unique_id=1768940265]
+script = ExtResource("2_6wuin")

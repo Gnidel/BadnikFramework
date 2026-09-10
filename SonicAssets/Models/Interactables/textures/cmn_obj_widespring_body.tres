@@ -1,0 +1,12 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://jvoxhrr7wf1i"]
+
+[ext_resource type="Texture2D" uid="uid://c0vic1isdyaax" path="res://SonicAssets/Models/Interactables/textures/cmn_obj_widespring_body_abd.dds" id="1_aqkob"]
+[ext_resource type="Texture2D" uid="uid://dggse22jeujdu" path="res://SonicAssets/Models/Interactables/textures/cmn_obj_widespring_body_nrm.dds" id="2_wqkvb"]
+
+[resource]
+resource_name = "cmn_obj_widespring_body"
+albedo_texture = ExtResource("1_aqkob")
+metallic = 1.0
+roughness = 0.5
+normal_enabled = true
+normal_texture = ExtResource("2_wqkvb")

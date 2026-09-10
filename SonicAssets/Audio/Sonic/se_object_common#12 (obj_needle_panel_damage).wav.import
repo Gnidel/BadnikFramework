@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://cg427nmhlb20d"
+path="res://.godot/imported/se_object_common#12 (obj_needle_panel_damage).wav-8e1ae6ba33f3fe224f181351e9392581.sample"
+
+[deps]
+
+source_file="res://SonicAssets/Audio/Sonic/se_object_common#12 (obj_needle_panel_damage).wav"
+dest_files=["res://.godot/imported/se_object_common#12 (obj_needle_panel_damage).wav-8e1ae6ba33f3fe224f181351e9392581.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

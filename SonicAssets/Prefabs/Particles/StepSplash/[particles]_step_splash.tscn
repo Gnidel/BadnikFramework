@@ -1,0 +1,68 @@
+[gd_scene format=3 uid="uid://q1juvm3cn2dw"]
+
+[ext_resource type="Texture2D" uid="uid://cf3exb1stkmak" path="res://SonicAssets/Prefabs/Particles/StepSplash/ef_ch_sns_yh1_water_splash4.png" id="1_i8wol"]
+
+[sub_resource type="Gradient" id="Gradient_twm7g"]
+offsets = PackedFloat32Array(0, 0.0373832, 0.264798, 1)
+colors = PackedColorArray(1, 1, 1, 0, 0.996078, 0.996078, 0.996078, 1, 0.92549, 0.92549, 0.92549, 0.25098, 1, 1, 1, 0)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_3jjc3"]
+gradient = SubResource("Gradient_twm7g")
+width = 128
+
+[sub_resource type="Curve" id="Curve_0iqgk"]
+
+[sub_resource type="Curve" id="Curve_u30y6"]
+_data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(1, 1), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="Curve" id="Curve_fbvem"]
+
+[sub_resource type="CurveXYZTexture" id="CurveXYZTexture_ymmn2"]
+curve_x = SubResource("Curve_0iqgk")
+curve_y = SubResource("Curve_u30y6")
+curve_z = SubResource("Curve_fbvem")
+
+[sub_resource type="Curve" id="Curve_cvmfl"]
+_data = [Vector2(0, 0.2), 0.0, 0.0, 0, 0, Vector2(0.13467, 1), 0.0, 0.0, 0, 0, Vector2(1, 1), 0.0, 0.0, 0, 0]
+point_count = 3
+
+[sub_resource type="CurveTexture" id="CurveTexture_h2yoo"]
+curve = SubResource("Curve_cvmfl")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_hfnjc"]
+angle_min = -180.0
+angle_max = 180.0
+direction = Vector3(0, 1, 0)
+spread = 0.0
+initial_velocity_min = 1.0
+initial_velocity_max = 2.0
+directional_velocity_min = 1.0
+directional_velocity_max = 1.0
+directional_velocity_curve = SubResource("CurveXYZTexture_ymmn2")
+gravity = Vector3(0, 0, 0)
+scale_min = 0.5
+scale_max = 2.0
+scale_curve = SubResource("CurveTexture_h2yoo")
+color_ramp = SubResource("GradientTexture1D_3jjc3")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_yuqnd"]
+transparency = 1
+shading_mode = 0
+vertex_color_use_as_albedo = true
+albedo_texture = ExtResource("1_i8wol")
+billboard_mode = 3
+billboard_keep_scale = true
+particles_anim_h_frames = 2
+particles_anim_v_frames = 2
+particles_anim_loop = true
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_t88n5"]
+material = SubResource("StandardMaterial3D_yuqnd")
+orientation = 2
+
+[node name="[Particles] StepSplash" type="GPUParticles3D" unique_id=1256528790]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.1, 0)
+amount = 16
+process_material = SubResource("ParticleProcessMaterial_hfnjc")
+draw_pass_1 = SubResource("PlaneMesh_t88n5")

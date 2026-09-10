@@ -1,0 +1,52 @@
+[gd_scene format=3 uid="uid://c3hav3cxv3e3u"]
+
+[ext_resource type="Script" uid="uid://bjrhv863gyb2r" path="res://Scripts/Interactables/Bomb.cs" id="1_07qwo"]
+[ext_resource type="Script" uid="uid://y47n4ov38iw2" path="res://Scripts/Interactables/Hitbox.cs" id="2_t2ytw"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_nhhas"]
+radius = 0.1
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_png1r"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_cbqua"]
+transparency = 1
+albedo_color = Color(1, 1, 1, 0.25098)
+emission_enabled = true
+emission = Color(1, 0.933333, 0, 1)
+emission_energy_multiplier = 5.0
+
+[sub_resource type="SphereMesh" id="SphereMesh_27rxv"]
+material = SubResource("StandardMaterial3D_cbqua")
+radius = 0.1
+height = 0.2
+radial_segments = 8
+rings = 4
+
+[node name="[Obstacle] EggPawnBullet" type="RigidBody3D" unique_id=1544123624]
+top_level = true
+gravity_scale = 0.0
+contact_monitor = true
+max_contacts_reported = 1
+script = ExtResource("1_07qwo")
+MinTimeToExplode = 0.1
+MaxTimeToExplode = 10.0
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=781926683]
+shape = SubResource("SphereShape3D_nhhas")
+
+[node name="Hitbox" type="Area3D" parent="." unique_id=455365601]
+script = ExtResource("2_t2ytw")
+CanDamageEnemy = false
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Hitbox" unique_id=29705338]
+shape = SubResource("SphereShape3D_png1r")
+
+[node name="OmniLight3D" type="OmniLight3D" parent="." unique_id=1893290737]
+light_color = Color(1, 1, 0, 1)
+light_bake_mode = 0
+omni_range = 1.0
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=1691027253]
+mesh = SubResource("SphereMesh_27rxv")
+
+[connection signal="OnSuccessfulHit" from="Hitbox" to="." method="Explode"]

@@ -1,0 +1,69 @@
+[gd_resource type="VisualShader" format=3 uid="uid://beav5fdqdy2rq"]
+
+[sub_resource type="VisualShaderNodeColorParameter" id="VisualShaderNodeColorParameter_eqw43"]
+parameter_name = "Color"
+
+[sub_resource type="VisualShaderNodeFloatParameter" id="VisualShaderNodeFloatParameter_lg57f"]
+parameter_name = "Metalic"
+hint = 1
+
+[sub_resource type="VisualShaderNodeVectorDecompose" id="VisualShaderNodeVectorDecompose_c630i"]
+default_input_values = [0, Quaternion(0, 0, 0, 0)]
+op_type = 2
+
+[sub_resource type="VisualShaderNodeFloatParameter" id="VisualShaderNodeFloatParameter_g8fub"]
+parameter_name = "Roughness"
+hint = 1
+
+[sub_resource type="VisualShaderNodeColorParameter" id="VisualShaderNodeColorParameter_lg57f"]
+parameter_name = "Emission"
+
+[sub_resource type="VisualShaderNodeRotationByAxis" id="VisualShaderNodeRotationByAxis_0525v"]
+default_input_values = [0, Vector3(0, 0, 0), 1, 1.0, 2, Vector3(0, 0, 1)]
+
+[sub_resource type="VisualShaderNodeInput" id="VisualShaderNodeInput_v4q3y"]
+input_name = "vertex"
+
+[sub_resource type="VisualShaderNodeInput" id="VisualShaderNodeInput_65xwg"]
+input_name = "time"
+
+[sub_resource type="VisualShaderNodeFloatOp" id="VisualShaderNodeFloatOp_eqw43"]
+default_input_values = [0, 0.0, 1, 6.28]
+operator = 2
+
+[sub_resource type="VisualShaderNodeVec3Parameter" id="VisualShaderNodeVec3Parameter_eqw43"]
+parameter_name = "RotationAxis"
+default_value_enabled = true
+default_value = Vector3(0, 0, 1)
+
+[resource]
+modes/depth_draw = 1
+modes/diffuse = 3
+modes/specular = 1
+flags/depth_prepass_alpha = true
+flags/shadows_disabled = true
+nodes/vertex/0/position = Vector2(420, 200)
+nodes/vertex/2/node = SubResource("VisualShaderNodeRotationByAxis_0525v")
+nodes/vertex/2/position = Vector2(40, 200)
+nodes/vertex/3/node = SubResource("VisualShaderNodeInput_v4q3y")
+nodes/vertex/3/position = Vector2(-380, 200)
+nodes/vertex/4/node = SubResource("VisualShaderNodeInput_65xwg")
+nodes/vertex/4/position = Vector2(-580, 520)
+nodes/vertex/5/node = SubResource("VisualShaderNodeFloatOp_eqw43")
+nodes/vertex/5/position = Vector2(-160, 500)
+nodes/vertex/6/node = SubResource("VisualShaderNodeVec3Parameter_eqw43")
+nodes/vertex/6/position = Vector2(-420, 280)
+nodes/vertex/connections = PackedInt32Array(3, 0, 2, 0, 2, 0, 0, 0, 4, 0, 5, 0, 5, 0, 2, 1, 6, 0, 2, 2)
+nodes/fragment/0/position = Vector2(920, 280)
+nodes/fragment/2/node = SubResource("VisualShaderNodeColorParameter_eqw43")
+nodes/fragment/2/position = Vector2(-580, 20)
+nodes/fragment/3/node = SubResource("VisualShaderNodeFloatParameter_lg57f")
+nodes/fragment/3/position = Vector2(-340, 580)
+nodes/fragment/4/node = SubResource("VisualShaderNodeVectorDecompose_c630i")
+nodes/fragment/4/position = Vector2(-220, 300)
+nodes/fragment/5/node = SubResource("VisualShaderNodeFloatParameter_g8fub")
+nodes/fragment/5/position = Vector2(-340, 840)
+nodes/fragment/6/node = SubResource("VisualShaderNodeColorParameter_lg57f")
+nodes/fragment/6/position = Vector2(580, 560)
+nodes/fragment/connections = PackedInt32Array(3, 0, 0, 2, 2, 0, 4, 0, 2, 0, 0, 0, 4, 3, 0, 1, 5, 0, 0, 3, 6, 0, 0, 5)
+nodes/light/0/position = Vector2(560, 140)

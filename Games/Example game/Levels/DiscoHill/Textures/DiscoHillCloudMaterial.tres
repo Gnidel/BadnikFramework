@@ -1,0 +1,8 @@
+[gd_resource type="ShaderMaterial" format=3 uid="uid://bgyoitulolct"]
+
+[ext_resource type="Shader" uid="uid://cg54lw3188i7m" path="res://Games/Example game/Levels/DiscoHill/Misc/DiscoHillCloudsShader.tres" id="1_qneat"]
+
+[resource]
+render_priority = 0
+shader = ExtResource("1_qneat")
+shader_parameter/ScrollSpeed = Vector2(1, 1)

@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://o7krqf4ns7el"
+path="res://.godot/imported/se_voice_system_E#2 (systemvoice_v004)_outstanding.ogg-81e297b3bad6bce1674f10b28ddbc6b9.oggvorbisstr"
+
+[deps]
+
+source_file="res://SonicAssets/Audio/Voices/en/Announcer/se_voice_system_E#2 (systemvoice_v004)_outstanding.ogg"
+dest_files=["res://.godot/imported/se_voice_system_E#2 (systemvoice_v004)_outstanding.ogg-81e297b3bad6bce1674f10b28ddbc6b9.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

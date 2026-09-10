@@ -1,0 +1,9 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://mqt522hfm214"]
+
+[ext_resource type="Texture2D" uid="uid://cxvoflhj7atnc" path="res://SonicAssets/Models/Interactables/textures/cmn_obj_spring_body_abd.dds" id="1_qts23"]
+
+[resource]
+resource_name = "cmn_obj_spring_body"
+cull_mode = 2
+albedo_texture = ExtResource("1_qts23")
+roughness = 0.5

@@ -1,0 +1,6 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://k08k5an6di8w"]
+
+[resource]
+resource_name = "event_rock_km_emeraldw01_ref"
+cull_mode = 2
+roughness = 0.000980854

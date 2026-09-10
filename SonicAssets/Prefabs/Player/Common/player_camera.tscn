@@ -1,0 +1,40 @@
+[gd_scene format=3 uid="uid://cqg33kdpxjtb7"]
+
+[ext_resource type="Script" uid="uid://dg44uk2g7cjga" path="res://Scripts/Player/PlayerCamera.cs" id="1_gmcom"]
+[ext_resource type="PackedScene" uid="uid://yqt1g36ql8oc" path="res://Particles/AnimeSpeedLines/anime_speed_lines_ui.tscn" id="2_s0kcq"]
+[ext_resource type="Shader" uid="uid://c7it00f2e2w28" path="res://Particles/AnimeSpeedLines/AnimeSpeedLinesShader.tres" id="3_4thc6"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_wrdia"]
+shader = ExtResource("3_4thc6")
+shader_parameter/Color = Color(1, 1, 1, 1)
+shader_parameter/CenterScale = 0.7
+shader_parameter/Sharpness = 10.0
+shader_parameter/Spacing = 0.95
+shader_parameter/Opacity = 0.1
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_234o8"]
+radius = 0.1
+
+[node name="Camera3D" type="Camera3D" unique_id=156361321 node_paths=PackedStringArray("AnimeSpeedLinesRect", "Filters")]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, 0, 0)
+current = true
+near = 0.001
+script = ExtResource("1_gmcom")
+UpRepositionSpeed = 10.0
+ConstantDirectionRepositionSpeed = 80.0
+CameraLimitsY = Vector2(-0.2, 0.7)
+ConstantCameraDirection = Quaternion(0, -0.707, 0, 0.707)
+CameraOffset = Vector3(0, 1.5, 0)
+AnimeSpeedLinesRect = NodePath("AnimeSpeedLinesUI")
+Filters = NodePath("")
+
+[node name="AudioListener3D" type="AudioListener3D" parent="." unique_id=1930842208]
+current = true
+
+[node name="AnimeSpeedLinesUI" parent="." unique_id=2063520535 instance=ExtResource("2_s0kcq")]
+material = SubResource("ShaderMaterial_wrdia")
+
+[node name="Area3D" type="Area3D" parent="." unique_id=1634494714]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D" unique_id=1439455242]
+shape = SubResource("SphereShape3D_234o8")

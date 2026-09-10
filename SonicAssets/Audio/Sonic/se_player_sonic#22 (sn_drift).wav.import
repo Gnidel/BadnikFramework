@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://fyagfg2evs5y"
+path="res://.godot/imported/se_player_sonic#22 (sn_drift).wav-a1091e411e97e51248fe0ec06717b207.sample"
+
+[deps]
+
+source_file="res://SonicAssets/Audio/Sonic/se_player_sonic#22 (sn_drift).wav"
+dest_files=["res://.godot/imported/se_player_sonic#22 (sn_drift).wav-a1091e411e97e51248fe0ec06717b207.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

@@ -1,0 +1,11 @@
+[gd_resource type="ShaderMaterial" format=3 uid="uid://bvd1rxiubm6xo"]
+
+[ext_resource type="Shader" uid="uid://cjktp1yrki104" path="res://Shaders/UekawaShader.tres" id="1_tcsq5"]
+[ext_resource type="Texture2D" uid="uid://dsublys70cjt8" path="res://SonicAssets/Models/Sonic/textures/chr_sonic_cloth_dif_HD.dds" id="2_vcqoq"]
+
+[resource]
+render_priority = 0
+shader = ExtResource("1_tcsq5")
+shader_parameter/Albedo = ExtResource("2_vcqoq")
+shader_parameter/DarkenThreshold = -0.2
+shader_parameter/HighlightThreashold = 0.2

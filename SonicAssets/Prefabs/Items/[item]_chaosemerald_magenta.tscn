@@ -1,0 +1,123 @@
+[gd_scene format=3 uid="uid://blny1e7u71001"]
+
+[ext_resource type="Script" uid="uid://f3cxw7en1f5k" path="res://Scripts/Interactables/CollectableItem.cs" id="1_oua3o"]
+[ext_resource type="AudioStream" uid="uid://bn5ferowpdy0u" path="res://SonicAssets/Audio/Items/Emerald.wav" id="2_rinas"]
+[ext_resource type="PackedScene" uid="uid://dot1ncn2su2kb" path="res://SonicAssets/Models/Items/ChaosEmeralds/ChaosEmerald.blend" id="3_evv3v"]
+[ext_resource type="Texture2D" uid="uid://ud2fre1gnct" path="res://SonicAssets/Models/Items/ChaosEmeralds/event_rock_km_emeraldbl_nrm.png" id="4_kniss"]
+[ext_resource type="Texture2D" uid="uid://cjyqftshxj8i4" path="res://SonicAssets/Textures/RingParticle.png" id="5_qsjt7"]
+[ext_resource type="PackedScene" uid="uid://bkt2qp7430moc" path="res://SonicAssets/Prefabs/Misc/homing_target.tscn" id="6_mxiyt"]
+[ext_resource type="Script" uid="uid://cm5hcnl8r6bgu" path="res://Scripts/Interactables/UnlockSpecialStageOnCollect.cs" id="7_2sxjl"]
+
+[sub_resource type="Curve" id="Curve_idv40"]
+_limits = [0.0, 100.0, 0.0, 1.0]
+bake_resolution = 10
+_data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(1, 100), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_jm62x"]
+transparency = 1
+albedo_color = Color(1, 1, 1, 0.501961)
+normal_enabled = true
+normal_texture = ExtResource("4_kniss")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_pgmdu"]
+transparency = 1
+albedo_color = Color(1, 0, 1, 0.752941)
+emission_enabled = true
+emission = Color(1, 0, 1, 1)
+emission_energy_multiplier = 16.0
+normal_enabled = true
+normal_texture = ExtResource("4_kniss")
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_6spl5"]
+radius = 2.0
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_648yg"]
+radius = 0.25
+
+[sub_resource type="Curve" id="Curve_f3mti"]
+_data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(0.127182, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
+point_count = 3
+
+[sub_resource type="CurveTexture" id="CurveTexture_tgj3w"]
+curve = SubResource("Curve_f3mti")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_bsup1"]
+spread = 180.0
+initial_velocity_min = 1.0
+initial_velocity_max = 2.0
+gravity = Vector3(0, 0, 0)
+scale_min = 0.25
+scale_curve = SubResource("CurveTexture_tgj3w")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_xe6we"]
+transparency = 1
+shading_mode = 0
+albedo_texture = ExtResource("5_qsjt7")
+billboard_mode = 3
+billboard_keep_scale = true
+particles_anim_h_frames = 1
+particles_anim_v_frames = 1
+particles_anim_loop = false
+
+[sub_resource type="QuadMesh" id="QuadMesh_gutdc"]
+material = SubResource("StandardMaterial3D_xe6we")
+
+[node name="[Item] Chaos Emerald Magenta" type="Node3D" unique_id=1245375854 node_paths=PackedStringArray("particles", "modelNode")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 6.97132, 0)
+script = ExtResource("1_oua3o")
+AttractionSpeed = SubResource("Curve_idv40")
+maxAttractionTime = 2.0
+SoundEffect = ExtResource("2_rinas")
+ItemName = "chaosemerald_magenta"
+ItemCount = 1
+IsAdditive = false
+particles = NodePath("RingParticles")
+modelNode = NodePath("ChaosEmerald")
+DontCull = true
+CanBeAttractedAfter = 5.0
+
+[node name="ChaosEmerald" parent="." unique_id=776646511 instance=ExtResource("3_evv3v")]
+transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, 0, 0, 0)
+
+[node name="rdmobj00" parent="ChaosEmerald" index="0" unique_id=536122034]
+surface_material_override/0 = SubResource("StandardMaterial3D_jm62x")
+
+[node name="rdmobj01" parent="ChaosEmerald" index="1" unique_id=1129558344]
+surface_material_override/0 = SubResource("StandardMaterial3D_pgmdu")
+
+[node name="AttractTrigger" type="Area3D" parent="." unique_id=609359745]
+collision_mask = 2
+input_ray_pickable = false
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="AttractTrigger" unique_id=1560540198]
+shape = SubResource("SphereShape3D_6spl5")
+
+[node name="PickupTrigger" type="Area3D" parent="." unique_id=1483739768]
+collision_mask = 2
+input_ray_pickable = false
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="PickupTrigger" unique_id=13150551]
+shape = SubResource("SphereShape3D_648yg")
+
+[node name="RingParticles" type="GPUParticles3D" parent="." unique_id=1240962939]
+emitting = false
+amount = 4
+lifetime = 0.5
+one_shot = true
+explosiveness = 1.0
+process_material = SubResource("ParticleProcessMaterial_bsup1")
+draw_pass_1 = SubResource("QuadMesh_gutdc")
+
+[node name="HomingTarget" parent="." unique_id=1182865027 instance=ExtResource("6_mxiyt")]
+visible = false
+
+[node name="UnlockSpecialStageOnCollect" type="Node" parent="." unique_id=24125566]
+script = ExtResource("7_2sxjl")
+StageToUnlock = "SpecialStage7"
+
+[connection signal="OnItemCollected" from="." to="UnlockSpecialStageOnCollect" method="OnItemCollected"]
+[connection signal="body_entered" from="AttractTrigger" to="." method="OnAttract"]
+[connection signal="body_entered" from="PickupTrigger" to="." method="OnPickup"]
+
+[editable path="ChaosEmerald"]

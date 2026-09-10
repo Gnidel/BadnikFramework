@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://dw1vnu16qr4ig"
+path="res://.godot/imported/se_enemy_airchaser#2 (enm_ach_fly).ogg-ca735897ed09503a6cbab9cffdb1803a.oggvorbisstr"
+
+[deps]
+
+source_file="res://SonicAssets/Audio/Enemies/se_enemy_airchaser#2 (enm_ach_fly).ogg"
+dest_files=["res://.godot/imported/se_enemy_airchaser#2 (enm_ach_fly).ogg-ca735897ed09503a6cbab9cffdb1803a.oggvorbisstr"]
+
+[params]
+
+loop=true
+loop_offset=0.0
+bpm=0.0
+beat_count=0
+bar_beats=4

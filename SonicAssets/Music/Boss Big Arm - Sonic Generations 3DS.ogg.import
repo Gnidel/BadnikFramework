@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://gqmnku2jyhxg"
+path="res://.godot/imported/Boss Big Arm - Sonic Generations 3DS.ogg-47843f5eca1a7b5b0cec7c3d47026a7c.oggvorbisstr"
+
+[deps]
+
+source_file="res://SonicAssets/Music/Boss Big Arm - Sonic Generations 3DS.ogg"
+dest_files=["res://.godot/imported/Boss Big Arm - Sonic Generations 3DS.ogg-47843f5eca1a7b5b0cec7c3d47026a7c.oggvorbisstr"]
+
+[params]
+
+loop=true
+loop_offset=0.0
+bpm=0.0
+beat_count=0
+bar_beats=4

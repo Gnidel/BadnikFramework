@@ -1,0 +1,89 @@
+[gd_resource type="VisualShader" format=3 uid="uid://c7jpf6sath5j3"]
+
+[sub_resource type="VisualShaderNodeTexture2DParameter" id="VisualShaderNodeTexture2DParameter_km83m"]
+parameter_name = "FadeoutThresholdMap"
+
+[sub_resource type="VisualShaderNodeTexture" id="VisualShaderNodeTexture_6jld1"]
+source = 5
+
+[sub_resource type="VisualShaderNodeFloatParameter" id="VisualShaderNodeFloatParameter_7yx0g"]
+parameter_name = "Fading"
+hint = 1
+default_value_enabled = true
+default_value = 1.0
+
+[sub_resource type="VisualShaderNodeIf" id="VisualShaderNodeIf_c0d34"]
+default_input_values = [0, 0.0, 1, 0.5, 2, 1e-05, 3, Vector3(0, 0, 0), 4, Vector3(1, 1, 1), 5, Vector3(0, 0, 0)]
+
+[sub_resource type="VisualShaderNodeFloatOp" id="VisualShaderNodeFloatOp_or4wd"]
+default_input_values = [0, 0.0, 1, 0.1]
+
+[sub_resource type="VisualShaderNodeIf" id="VisualShaderNodeIf_msuf0"]
+
+[sub_resource type="VisualShaderNodeColorParameter" id="VisualShaderNodeColorParameter_h8l0i"]
+parameter_name = "InBetweenColor"
+default_value_enabled = true
+default_value = Color(0, 1, 1, 1)
+
+[sub_resource type="VisualShaderNodeFloatParameter" id="VisualShaderNodeFloatParameter_e7mos"]
+parameter_name = "InBetwenRange"
+hint = 1
+default_value_enabled = true
+default_value = 0.1
+
+[sub_resource type="VisualShaderNodeTexture2DParameter" id="VisualShaderNodeTexture2DParameter_dw6ka"]
+parameter_name = "Albedo"
+
+[sub_resource type="VisualShaderNodeTexture" id="VisualShaderNodeTexture_7n71j"]
+source = 5
+
+[sub_resource type="VisualShaderNodeTexture2DParameter" id="VisualShaderNodeTexture2DParameter_qy8uk"]
+parameter_name = "ParamMap"
+
+[sub_resource type="VisualShaderNodeTexture" id="VisualShaderNodeTexture_q0blu"]
+source = 5
+
+[sub_resource type="VisualShaderNodeVectorDecompose" id="VisualShaderNodeVectorDecompose_fvhl5"]
+default_input_values = [0, Quaternion(0, 0, 0, 0)]
+op_type = 2
+
+[sub_resource type="VisualShaderNodeTexture2DParameter" id="VisualShaderNodeTexture2DParameter_1fb02"]
+parameter_name = "Normal"
+
+[sub_resource type="VisualShaderNodeTexture" id="VisualShaderNodeTexture_ksc2p"]
+source = 5
+
+[resource]
+modes/depth_draw = 1
+nodes/fragment/0/position = Vector2(2600, 260)
+nodes/fragment/2/node = SubResource("VisualShaderNodeTexture2DParameter_dw6ka")
+nodes/fragment/2/position = Vector2(-340, 140)
+nodes/fragment/3/node = SubResource("VisualShaderNodeTexture_7n71j")
+nodes/fragment/3/position = Vector2(40, 220)
+nodes/fragment/5/node = SubResource("VisualShaderNodeTexture2DParameter_qy8uk")
+nodes/fragment/5/position = Vector2(-340, 480)
+nodes/fragment/6/node = SubResource("VisualShaderNodeTexture_q0blu")
+nodes/fragment/6/position = Vector2(-12.36, 669.33)
+nodes/fragment/7/node = SubResource("VisualShaderNodeVectorDecompose_fvhl5")
+nodes/fragment/7/position = Vector2(320, 680)
+nodes/fragment/8/node = SubResource("VisualShaderNodeTexture2DParameter_1fb02")
+nodes/fragment/8/position = Vector2(208.325, 934.531)
+nodes/fragment/9/node = SubResource("VisualShaderNodeTexture_ksc2p")
+nodes/fragment/9/position = Vector2(560, 960)
+nodes/fragment/10/node = SubResource("VisualShaderNodeTexture2DParameter_km83m")
+nodes/fragment/10/position = Vector2(760, 1360)
+nodes/fragment/11/node = SubResource("VisualShaderNodeTexture_6jld1")
+nodes/fragment/11/position = Vector2(1240, 1620)
+nodes/fragment/12/node = SubResource("VisualShaderNodeFloatParameter_7yx0g")
+nodes/fragment/12/position = Vector2(1160, 1020)
+nodes/fragment/13/node = SubResource("VisualShaderNodeIf_c0d34")
+nodes/fragment/13/position = Vector2(2180, 1240)
+nodes/fragment/14/node = SubResource("VisualShaderNodeFloatOp_or4wd")
+nodes/fragment/14/position = Vector2(1500, 1220)
+nodes/fragment/15/node = SubResource("VisualShaderNodeIf_msuf0")
+nodes/fragment/15/position = Vector2(2180, 780)
+nodes/fragment/16/node = SubResource("VisualShaderNodeColorParameter_h8l0i")
+nodes/fragment/16/position = Vector2(1900, 1100)
+nodes/fragment/17/node = SubResource("VisualShaderNodeFloatParameter_e7mos")
+nodes/fragment/17/position = Vector2(1120, 1320)
+nodes/fragment/connections = PackedInt32Array(2, 0, 3, 2, 5, 0, 6, 2, 6, 0, 7, 0, 7, 0, 0, 4, 7, 2, 0, 2, 7, 3, 0, 6, 7, 1, 0, 3, 8, 0, 9, 2, 9, 0, 0, 9, 10, 0, 11, 2, 13, 0, 0, 1, 12, 0, 13, 0, 11, 0, 13, 1, 11, 0, 14, 0, 14, 0, 15, 1, 12, 0, 15, 0, 15, 0, 0, 0, 3, 0, 15, 4, 16, 0, 15, 5, 17, 0, 14, 1, 3, 0, 15, 3)

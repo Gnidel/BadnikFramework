@@ -1,0 +1,11 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://codwhjbdlsm3k"]
+
+[ext_resource type="Texture2D" uid="uid://cnfvn3sdqws2k" path="res://SonicAssets/Stages/Death Egg/Models/UnleashedEarth_wmap_cloud2_dif.png" id="1_wgbik"]
+
+[resource]
+resource_name = "cloud2.005"
+transparency = 1
+cull_mode = 2
+vertex_color_use_as_albedo = true
+albedo_texture = ExtResource("1_wgbik")
+metadata/_gltf_primary_texture_coord = 0

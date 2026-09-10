@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://d0mmd4rqqysiy"
+path="res://.godot/imported/Yakuza 0 OST - 82 Koi No Disco Queen [music].mp3-153f02845df1de1aa12e878be9586338.mp3str"
+
+[deps]
+
+source_file="res://SonicAssets/Music/Yakuza 0 OST - 82 Koi No Disco Queen [music].mp3"
+dest_files=["res://.godot/imported/Yakuza 0 OST - 82 Koi No Disco Queen [music].mp3-153f02845df1de1aa12e878be9586338.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

@@ -1,0 +1,10 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://bnvg6lhv1wqjf"]
+
+[ext_resource type="Texture2D" uid="uid://dw3v2dwn7by1f" path="res://SonicAssets/Models/Tails/Textures/chr_tails_cloth_abd.png" id="1_upfhn"]
+
+[resource]
+resource_name = "chr_tailsP_cloth"
+diffuse_mode = 2
+vertex_color_use_as_albedo = true
+albedo_texture = ExtResource("1_upfhn")
+roughness = 0.5

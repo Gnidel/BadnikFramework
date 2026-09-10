@@ -1,0 +1,331 @@
+[gd_scene format=3 uid="uid://benjgxkifq122"]
+
+[ext_resource type="PackedScene" uid="uid://bkt2qp7430moc" path="res://SonicAssets/Prefabs/Misc/homing_target.tscn" id="1_p1mkx"]
+[ext_resource type="Script" uid="uid://n1dtm5k3gia" path="res://Scripts/Enemies/EnemyBehaviorManager.cs" id="2_m4h8r"]
+[ext_resource type="Script" uid="uid://cjs3vyydjbo1x" path="res://Scripts/Enemies/EnemyChaserBehavior.cs" id="3_m4h8r"]
+[ext_resource type="Script" uid="uid://dat1yxewba6k8" path="res://Scripts/Enemies/EnemyControl.cs" id="4_fae53"]
+[ext_resource type="AudioStream" uid="uid://bwa5uiwsw5xfj" path="res://SonicAssets/Audio/Enemies/se_enemy_common#2 (enmsn_cmn_damage).wav" id="5_im0rx"]
+[ext_resource type="PackedScene" uid="uid://d0mild2vdixl1" path="res://SonicAssets/Prefabs/Particles/Explosion2/[Particles] Explosion2.tscn" id="6_pdk0e"]
+[ext_resource type="Script" uid="uid://y47n4ov38iw2" path="res://Scripts/Interactables/Hitbox.cs" id="7_5bkkq"]
+[ext_resource type="Script" uid="uid://d0rd6cimu685c" path="res://Scripts/Interactables/Hurtbox.cs" id="8_lso1f"]
+[ext_resource type="AudioStream" uid="uid://dw1vnu16qr4ig" path="res://SonicAssets/Audio/Enemies/se_enemy_airchaser#2 (enm_ach_fly).ogg" id="9_n7iml"]
+[ext_resource type="Texture2D" uid="uid://ctu5aul2bm0pe" path="res://SonicAssets/Prefabs/Particles/AttackShockwave/ef_ch_sng_yh1_hit.png" id="10_wfbby"]
+[ext_resource type="Texture2D" uid="uid://ju7vp8xxw0gi" path="res://SonicAssets/Prefabs/Particles/AttackShockwave/ef_ch_sng_yh1_hit2.png" id="11_wiulb"]
+[ext_resource type="PackedScene" uid="uid://ct1n36nr22ung" path="res://SonicAssets/Models/Enemies/enemy_spinner_model.tscn" id="12_4k18q"]
+[ext_resource type="PackedScene" uid="uid://bkm2q3gcvplul" path="res://SonicAssets/Prefabs/Particles/StepSmoke/[particles]_step_smoke.tscn" id="13_h11c5"]
+[ext_resource type="Script" uid="uid://bw8224m0k2phx" path="res://Scripts/Interactables/NonPlayerSplineMovement.cs" id="14_b7snj"]
+[ext_resource type="PackedScene" uid="uid://bqtdgtf0nke30" path="res://SonicAssets/Models/Enemies/EnemyEggChaser.glb" id="14_p1mkx"]
+[ext_resource type="PackedScene" uid="uid://dre8xwwke4ya5" path="res://SonicAssets/Prefabs/Interactables/Obstacles/Laser/[interactable]_laser.tscn" id="16_n7iml"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_ar2vf"]
+friction = 0.0
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_vfsj3"]
+radius = 1.0
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_4t4a2"]
+radius = 1.0
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_g877g"]
+radius = 1.5
+
+[sub_resource type="Curve" id="Curve_8xqta"]
+_limits = [-360.0, 360.0, 0.0, 1.0]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(1, 1), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="CurveTexture" id="CurveTexture_sdvrw"]
+curve = SubResource("Curve_8xqta")
+
+[sub_resource type="Gradient" id="Gradient_frhhl"]
+offsets = PackedFloat32Array(0, 0.520833, 1)
+colors = PackedColorArray(0, 0, 0, 0, 0.521569, 0.521569, 0.521569, 1, 1, 1, 1, 0)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_veaka"]
+gradient = SubResource("Gradient_frhhl")
+
+[sub_resource type="Curve" id="Curve_ypdqp"]
+_data = [Vector2(0.00369003, 0), 0.0, 0.0, 0, 0, Vector2(1, 1), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="CurveTexture" id="CurveTexture_l3oey"]
+curve = SubResource("Curve_ypdqp")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_ols1o"]
+angle_max = 360.0
+angle_curve = SubResource("CurveTexture_sdvrw")
+gravity = Vector3(0, 0, 0)
+scale_max = 10.0
+scale_curve = SubResource("CurveTexture_l3oey")
+color_ramp = SubResource("GradientTexture1D_veaka")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_iprt8"]
+transparency = 1
+blend_mode = 1
+no_depth_test = true
+shading_mode = 0
+vertex_color_use_as_albedo = true
+albedo_texture = ExtResource("10_wfbby")
+disable_receive_shadows = true
+billboard_mode = 3
+particles_anim_h_frames = 1
+particles_anim_v_frames = 1
+particles_anim_loop = false
+grow_amount = 1.79
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_igbr8"]
+material = SubResource("StandardMaterial3D_iprt8")
+orientation = 2
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_12xi3"]
+transparency = 1
+blend_mode = 1
+shading_mode = 0
+albedo_texture = ExtResource("11_wiulb")
+disable_receive_shadows = true
+billboard_mode = 3
+billboard_keep_scale = true
+particles_anim_h_frames = 1
+particles_anim_v_frames = 1
+particles_anim_loop = false
+
+[sub_resource type="QuadMesh" id="QuadMesh_fkmdg"]
+material = SubResource("StandardMaterial3D_12xi3")
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_pdk0e"]
+animation = &"AS_ene_eggchaser_attack_charge"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_n7iml"]
+animation = &"AS_ene_eggchaser_attack_shot"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_fae53"]
+animation = &"AS_ene_eggchaser_move_fly"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_im0rx"]
+animation = &"AS_ene_eggchaser_wait_fly"
+
+[sub_resource type="AnimationNodeBlend2" id="AnimationNodeBlend2_pdk0e"]
+
+[sub_resource type="AnimationNodeBlendTree" id="AnimationNodeBlendTree_5bkkq"]
+graph_offset = Vector2(-270, 42)
+nodes/Velocity/node = SubResource("AnimationNodeBlend2_pdk0e")
+nodes/Velocity/position = Vector2(100, 160)
+nodes/Animation/node = SubResource("AnimationNodeAnimation_im0rx")
+nodes/Animation/position = Vector2(-180, 120)
+"nodes/Animation 2/node" = SubResource("AnimationNodeAnimation_fae53")
+"nodes/Animation 2/position" = Vector2(-180, 300)
+node_connections = [&"output", 0, &"Velocity", &"Velocity", 0, &"Animation", &"Velocity", 1, &"Animation 2"]
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_l8bgc"]
+switch_mode = 2
+advance_mode = 2
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_n7iml"]
+advance_mode = 2
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_lso1f"]
+xfade_time = 0.1
+
+[sub_resource type="AnimationNodeStateMachine" id="AnimationNodeStateMachine_sajgr"]
+states/Charge/node = SubResource("AnimationNodeAnimation_pdk0e")
+states/Charge/position = Vector2(313, 161)
+states/Fire/node = SubResource("AnimationNodeAnimation_n7iml")
+states/Fire/position = Vector2(461, 161)
+states/Idle/node = SubResource("AnimationNodeBlendTree_5bkkq")
+states/Idle/position = Vector2(371, 35)
+transitions = ["Fire", "Idle", SubResource("AnimationNodeStateMachineTransition_l8bgc"), "Start", "Idle", SubResource("AnimationNodeStateMachineTransition_n7iml"), "Idle", "Fire", SubResource("AnimationNodeStateMachineTransition_lso1f")]
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_n7iml"]
+resource_local_to_scene = true
+flip_faces = true
+top_radius = 0.4
+bottom_radius = 0.4
+height = 2.224
+radial_segments = 16
+cap_top = false
+cap_bottom = false
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_fae53"]
+resource_local_to_scene = true
+flip_faces = true
+height = 2.224
+radial_segments = 16
+cap_top = false
+cap_bottom = false
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_im0rx"]
+resource_local_to_scene = true
+radius = 0.8
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_pdk0e"]
+resource_local_to_scene = true
+flip_faces = true
+top_radius = 0.4
+bottom_radius = 0.4
+height = 2.224
+radial_segments = 16
+cap_top = false
+cap_bottom = false
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_5bkkq"]
+resource_local_to_scene = true
+flip_faces = true
+height = 2.224
+radial_segments = 16
+cap_top = false
+cap_bottom = false
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_lso1f"]
+resource_local_to_scene = true
+radius = 0.8
+
+[node name="[Enemy] Egg Chaser" type="RigidBody3D" unique_id=864214425]
+transform = Transform3D(1, 0, 1.74846e-07, 0, 1, 0, -1.74846e-07, 0, 1, 0, 0, 0)
+collision_layer = 4
+physics_material_override = SubResource("PhysicsMaterial_ar2vf")
+gravity_scale = 0.0
+continuous_cd = true
+
+[node name="HomingTarget" parent="." unique_id=1983031068 instance=ExtResource("1_p1mkx")]
+process_mode = 4
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+visible = false
+TargetableByHomingAttack = false
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1989023497]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+shape = SubResource("SphereShape3D_vfsj3")
+
+[node name="Behaviors" type="Node" parent="." unique_id=270402003 node_paths=PackedStringArray("CurrentPhase")]
+script = ExtResource("2_m4h8r")
+CurrentPhase = NodePath("Phase0Alive")
+
+[node name="Phase0Alive" type="Node" parent="Behaviors" unique_id=1158544557]
+
+[node name="EggChaserBehavior" type="Node" parent="Behaviors/Phase0Alive" unique_id=216660791 node_paths=PackedStringArray("EnemyControl", "AnimationTree", "Lasers")]
+script = ExtResource("3_m4h8r")
+EnemyControl = NodePath("../../../EnemyControl")
+AnimationTree = NodePath("../../../EnemyEggChaser/AnimationTree")
+Lasers = [NodePath("../../../Laser_L/[Interactable] Laser"), NodePath("../../../Laser_R/[Interactable] Laser")]
+
+[node name="Phase99Death" type="Node" parent="Behaviors" unique_id=77534550]
+
+[node name="EnemyControl" type="Node" parent="." unique_id=270881859 node_paths=PackedStringArray("Hitbox", "Hurtbox", "HomingTarget", "RigidBody", "DamageParticles", "AudioSource", "DeathAnticipationParticle", "BehaviorManager", "DeathPhase")]
+script = ExtResource("4_fae53")
+DamageCooldown = 1.0
+Hitbox = NodePath("../Hitbox")
+Hurtbox = NodePath("../Hurtbox")
+HomingTarget = NodePath("../HomingTarget")
+RigidBody = NodePath("..")
+DamageSoundEffect = ExtResource("5_im0rx")
+DamageParticles = NodePath("../AttackShockwaveParticles")
+AudioSource = NodePath("../AudioStreamPlayer3D_Jet")
+ExplosionParticles = ExtResource("6_pdk0e")
+DeathAnticipationParticle = NodePath("../[Particles] StepSmoke")
+BehaviorManager = NodePath("../Behaviors")
+DeathPhase = NodePath("../Behaviors/Phase99Death")
+
+[node name="Hitbox" type="Area3D" parent="." unique_id=469024198]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, 0)
+collision_mask = 3
+script = ExtResource("7_5bkkq")
+CanDamageRollingPlayer = false
+CanDamageEnemy = false
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Hitbox" unique_id=467358312]
+shape = SubResource("SphereShape3D_4t4a2")
+
+[node name="Hurtbox" type="Area3D" parent="." unique_id=645369151]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, 0)
+script = ExtResource("8_lso1f")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Hurtbox" unique_id=1903244482]
+shape = SubResource("SphereShape3D_g877g")
+
+[node name="AudioStreamPlayer3D_Jet" type="AudioStreamPlayer3D" parent="." unique_id=21330727]
+stream = ExtResource("9_n7iml")
+autoplay = true
+bus = &"SFX"
+
+[node name="AudioStreamPlayer3D_Laser" type="AudioStreamPlayer3D" parent="." unique_id=1114781923]
+unit_size = 100.0
+bus = &"SFX"
+
+[node name="AttackShockwaveParticles" type="GPUParticles3D" parent="." unique_id=1760583507]
+emitting = false
+amount = 1
+lifetime = 0.2
+one_shot = true
+process_material = SubResource("ParticleProcessMaterial_ols1o")
+draw_passes = 2
+draw_pass_1 = SubResource("PlaneMesh_igbr8")
+draw_pass_2 = SubResource("QuadMesh_fkmdg")
+
+[node name="EnemySpinner" parent="." unique_id=856690925 instance=ExtResource("12_4k18q")]
+transform = Transform3D(-3, -2.62268e-07, 1.14641e-14, 0, -1.31134e-07, -3, 2.62268e-07, -3, 1.31134e-07, 0, 0, 0)
+visible = false
+
+[node name="[Particles] StepSmoke" parent="." unique_id=418493151 instance=ExtResource("13_h11c5")]
+
+[node name="NonPlayerSplineMovement" type="Node" parent="." unique_id=498106203]
+script = ExtResource("14_b7snj")
+
+[node name="EnemyEggChaser" parent="." unique_id=1290478480 instance=ExtResource("14_p1mkx")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 0, 0, 0)
+
+[node name="AnimationTree" type="AnimationTree" parent="EnemyEggChaser" unique_id=1883412859]
+tree_root = SubResource("AnimationNodeStateMachine_sajgr")
+anim_player = NodePath("../AnimationPlayer")
+parameters/Idle/Velocity/blend_amount = 0.0
+
+[node name="Laser_L" type="BoneAttachment3D" parent="." unique_id=608571677]
+transform = Transform3D(9.402246e-06, -0.009999969, 2.425492e-05, 8.951378e-06, 2.4262701e-05, 0.009999969, -0.009999995, -9.379914e-06, 8.974099e-06, -0.7967882, 1.345997, -0.33176062)
+top_level = true
+bone_name = "LeftArm2"
+bone_idx = 12
+use_external_skeleton = true
+external_skeleton = NodePath("../EnemyEggChaser/SK_EggChaser/Skeleton3D")
+
+[node name="[Interactable] Laser" parent="Laser_L" unique_id=2019842755 instance=ExtResource("16_n7iml")]
+transform = Transform3D(-1.0927847e-06, -25, 0, 25, -1.0927847e-06, 0, 0, 0, 25, 0, 0, 0)
+
+[node name="BeamMesh" parent="Laser_L/[Interactable] Laser" index="0" unique_id=1006862339]
+mesh = SubResource("CylinderMesh_n7iml")
+
+[node name="BeamMesh2" parent="Laser_L/[Interactable] Laser" index="1" unique_id=909123986]
+mesh = SubResource("CylinderMesh_fae53")
+
+[node name="Hitbox" parent="Laser_L/[Interactable] Laser" index="2" unique_id=1065576655]
+CanDamageEnemy = false
+
+[node name="CollisionShape3D" parent="Laser_L/[Interactable] Laser/Hitbox" index="0" unique_id=939656509]
+shape = SubResource("CylinderShape3D_im0rx")
+
+[node name="Laser_R" type="BoneAttachment3D" parent="." unique_id=110019703]
+transform = Transform3D(-9.365357e-06, -0.00999999, -6.8661557e-06, 8.9537625e-06, -6.8742033e-06, 0.009999994, -0.00999999, 9.358738e-06, 8.959825e-06, 0.7967881, 1.3460144, -0.3316622)
+bone_name = "RightArm2"
+bone_idx = 7
+use_external_skeleton = true
+external_skeleton = NodePath("../EnemyEggChaser/SK_EggChaser/Skeleton3D")
+
+[node name="[Interactable] Laser" parent="Laser_R" unique_id=1140186521 instance=ExtResource("16_n7iml")]
+transform = Transform3D(-1.0927847e-06, -25, 0, 25, -1.0927847e-06, 0, 0, 0, 25, 0, 0, 0)
+
+[node name="BeamMesh" parent="Laser_R/[Interactable] Laser" index="0" unique_id=1006862339]
+mesh = SubResource("CylinderMesh_pdk0e")
+
+[node name="BeamMesh2" parent="Laser_R/[Interactable] Laser" index="1" unique_id=909123986]
+mesh = SubResource("CylinderMesh_5bkkq")
+
+[node name="Hitbox" parent="Laser_R/[Interactable] Laser" index="2" unique_id=1065576655]
+CanDamageEnemy = false
+
+[node name="CollisionShape3D" parent="Laser_R/[Interactable] Laser/Hitbox" index="0" unique_id=939656509]
+shape = SubResource("CylinderShape3D_lso1f")
+
+[connection signal="OnHitboxEnter" from="Hurtbox" to="EnemyControl" method="OnHitboxEnter"]
+[connection signal="area_entered" from="Hurtbox" to="Hurtbox" method="OnAreaEnter"]
+
+[editable path="EnemyEggChaser"]
+[editable path="Laser_L/[Interactable] Laser"]
+[editable path="Laser_R/[Interactable] Laser"]

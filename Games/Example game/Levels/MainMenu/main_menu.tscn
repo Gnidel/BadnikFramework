@@ -1,0 +1,650 @@
+[gd_scene format=3 uid="uid://cyn25ql0yjt3s"]
+
+[ext_resource type="Theme" uid="uid://di28qbb7lki3f" path="res://Misc/MenuTheme.tres" id="1_boxas"]
+[ext_resource type="Script" uid="uid://bm1bqunmir500" path="res://Scripts/Ui/MainMenuController.cs" id="1_yf0g6"]
+[ext_resource type="Texture2D" uid="uid://bqthtdn326ncw" path="res://SonicAssets/Images/UiRedRing_Yes.png" id="3_48eb3"]
+[ext_resource type="AudioStream" uid="uid://ccaxakjn8bfs4" path="res://SonicAssets/Music/Cosmic Zone - Sonic Jump (2012).ogg" id="4_bc74y"]
+[ext_resource type="VideoStream" uid="uid://u4s8bt7eixqr" path="res://SonicAssets/Videos/Bunnies to Badniks.ogv" id="4_wgwbk"]
+[ext_resource type="PackedScene" uid="uid://dgkaqsfwflj56" path="res://Misc/Loading/Loading.tscn" id="5_r5636"]
+[ext_resource type="Texture2D" uid="uid://bhsqifesoq5ue" path="res://SonicAssets/Images/UiRedRing_No.png" id="6_027u0"]
+[ext_resource type="Script" uid="uid://doadtyckhvwkf" path="res://Scripts/Ui/CharacterSelector.cs" id="7_270l6"]
+[ext_resource type="PackedScene" uid="uid://dxybsh1bt5u07" path="res://Prefabs/Menus/options_menu.tscn" id="8_gk3ib"]
+[ext_resource type="Script" uid="uid://x6eaxxt5wbx6" path="res://Scripts/Ui/ExtrasMenu.cs" id="8_h0fo1"]
+[ext_resource type="PackedScene" uid="uid://d8hhtv3xe6u6" path="res://SonicAssets/Prefabs/Player/player_sonic.tscn" id="8_jnms0"]
+[ext_resource type="Texture2D" uid="uid://b3r0e4nhha2nw" path="res://Prefabs/UI/Noise737x737.png" id="8_n2w6x"]
+[ext_resource type="PackedScene" uid="uid://c4cjggc0fxfim" path="res://SonicAssets/Prefabs/Player/player_tails.tscn" id="9_fm1yc"]
+[ext_resource type="Theme" uid="uid://dfn1qo0bwoxuf" path="res://Misc/OptionsMenuTheme.tres" id="9_rqxls"]
+[ext_resource type="Script" uid="uid://dt28n8jfsj2xh" path="res://Scripts/Ui/FixScrollInTabsFocus.cs" id="10_h3fc6"]
+[ext_resource type="Script" uid="uid://bknlo4t86qnyk" path="res://Scripts/Ui/MainMenuStagesData.cs" id="11_jyobf"]
+[ext_resource type="PackedScene" uid="uid://dph66v4hrgccw" path="res://SonicAssets/Prefabs/Player/player_shadow.tscn" id="13_jdjp1"]
+[ext_resource type="Script" uid="uid://xvoqugatd20a" path="res://Scripts/Utils/ErrorLog.cs" id="14_df5f0"]
+[ext_resource type="Script" uid="uid://c5yswc7rd0hw7" path="res://Scripts/Ui/SaveSelector.cs" id="15_saveselector"]
+[ext_resource type="Texture2D" uid="uid://do46i47y1wcvw" path="res://SonicAssets/Images/CharacterMenuIcons/MenuSonic.png" id="16_sonicicon"]
+[ext_resource type="Texture2D" uid="uid://cy867fel8y1pr" path="res://SonicAssets/Images/CharacterMenuIcons/MenuTails.png" id="17_tailsicon"]
+[ext_resource type="Texture2D" uid="uid://cklyxb110x45e" path="res://SonicAssets/Images/CharacterMenuIcons/MenuShadow.png" id="18_shadowicon"]
+[ext_resource type="Texture2D" uid="uid://cdtcad2hb00wy" path="res://Games/Example game/Levels/Hub/hub_map_baked.png" id="22_4i1oq"]
+[ext_resource type="Texture2D" uid="uid://b37ugq4myog35" path="res://Games/Example game/Levels/DiscoHill/Icons/StageIconDiscoHill1.png" id="22_fvthl"]
+[ext_resource type="Texture2D" uid="uid://bha340lqasd61" path="res://Games/Example game/Levels/DiscoHill/Icons/StageIconDiscoHill2.png" id="23_4i1oq"]
+[ext_resource type="Texture2D" uid="uid://c12yy6qbhstai" path="res://Games/Example game/Levels/DiscoHill/Icons/StageIconDiscoHillB1.png" id="24_ox047"]
+[ext_resource type="Texture2D" uid="uid://bl2my8jfufuve" path="res://Games/Example game/Levels/Digital Sea/Icons/StageIconDigitalSea1.png" id="25_2aoei"]
+[ext_resource type="Texture2D" uid="uid://b74xfad0xng8p" path="res://Games/Example game/Levels/Digital Sea/Icons/StageIconDigitalSea2.png" id="26_d41g2"]
+[ext_resource type="Texture2D" uid="uid://b0o2r6uvjo5gm" path="res://Games/Example game/Levels/Digital Sea/Icons/StageIconDigitalSeaB1.png" id="27_h3om3"]
+[ext_resource type="Texture2D" uid="uid://c4m2p4icd0pe3" path="res://SonicAssets/Stages/Death Egg/Icons/StageIconDeathEgg.png" id="28_momtp"]
+[ext_resource type="Texture2D" uid="uid://dsup1vwg61lia" path="res://Games/Example game/Levels/TestLevel/gridTexture.png" id="29_fgsb6"]
+[ext_resource type="Texture2D" uid="uid://dsnpdm22xalvi" path="res://SonicAssets/Images/Chaos Emeralds/chaosemerald_red.png" id="30_e7npx"]
+[ext_resource type="Texture2D" uid="uid://bclhmktycvtoo" path="res://SonicAssets/Images/Chaos Emeralds/chaosemerald_blue.png" id="31_xqlyq"]
+[ext_resource type="Texture2D" uid="uid://bhln1h0f7yux2" path="res://SonicAssets/Images/Chaos Emeralds/chaosemerald_yellow.png" id="32_g2o0x"]
+[ext_resource type="Texture2D" uid="uid://bjunr1k21yhx7" path="res://SonicAssets/Images/Chaos Emeralds/chaosemerald_green.png" id="33_j8rvc"]
+[ext_resource type="Texture2D" uid="uid://dek0vvk5pf3if" path="res://SonicAssets/Images/Chaos Emeralds/chaosemerald_gray.png" id="34_n3cgg"]
+[ext_resource type="Texture2D" uid="uid://b5fr2ieacp5cm" path="res://SonicAssets/Images/Chaos Emeralds/chaosemerald_cyan.png" id="35_qfd3j"]
+[ext_resource type="Texture2D" uid="uid://d352jnpld48pp" path="res://SonicAssets/Images/Chaos Emeralds/chaosemerald_magenta.png" id="36_dafvb"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_nw8di"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+border_width_right = 100
+border_color = Color(0.8, 0.8, 0.8, 0)
+border_blend = true
+
+[node name="MainMenu" type="Control" unique_id=1199430971 node_paths=PackedStringArray("MainMenuContainer", "DefaultMainMenuButton", "LevelSelectContainer", "CharacterSelector", "DefaultCharacterSelectorButton", "OptionsMenuContainer", "ExtrasMenuContainer", "LoadingScreen", "SaveSelector", "SaveSelectorBackground", "StagesData", "StageTemplateButton")]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_yf0g6")
+MainMenuContainer = NodePath("MainMenuContainer")
+DefaultMainMenuButton = NodePath("MainMenuContainer/Stage select")
+LevelSelectContainer = NodePath("LevelSelectContainer")
+CharacterSelector = NodePath("CharacterSelectContainer")
+DefaultCharacterSelectorButton = NodePath("CharacterSelectContainer/MenuLayout/MenuActions/PlayButton")
+OptionsMenuContainer = NodePath("OptionsMenu")
+ExtrasMenuContainer = NodePath("ExtrasMenu")
+LoadingScreen = NodePath("Loading")
+SaveSelector = NodePath("SaveSelector")
+SaveSelectorBackground = NodePath("SaveSelectorBackground")
+RedRingYesIcon = ExtResource("3_48eb3")
+RedRingNoIcon = ExtResource("6_027u0")
+StagesData = NodePath("StagesData")
+StageTemplateButton = NodePath("LevelSelectContainer/VBoxContainer/Template")
+
+[node name="Loading" parent="." unique_id=494924361 instance=ExtResource("5_r5636")]
+visible = false
+layout_mode = 1
+
+[node name="VideoStreamPlayer" type="VideoStreamPlayer" parent="." unique_id=608887238]
+z_index = -500
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+stream = ExtResource("4_wgwbk")
+autoplay = true
+expand = true
+loop = true
+bus = &"SFX"
+
+[node name="SaveSelectorBackground" type="ColorRect" parent="." unique_id=932001005]
+z_index = -1
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+color = Color(0, 0, 0, 0.5)
+
+[node name="SaveSelector" type="VBoxContainer" parent="." unique_id=932001001 node_paths=PackedStringArray("SaveFilesContainer", "SaveFilesScrollContainer", "NewSaveColumn", "NewSaveButton")]
+custom_minimum_size = Vector2(700, 400)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -350.0
+offset_top = -200.0
+offset_right = 350.0
+offset_bottom = 200.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_boxas")
+alignment = 1
+script = ExtResource("15_saveselector")
+SaveFilesContainer = NodePath("SaveFiles/SaveFilesContainer")
+SaveFilesScrollContainer = NodePath("SaveFiles")
+NewSaveColumn = NodePath("SaveFiles/SaveFilesContainer/NewSaveColumn")
+NewSaveButton = NodePath("SaveFiles/SaveFilesContainer/NewSaveColumn/NewSave")
+
+[node name="Title" type="Label" parent="SaveSelector" unique_id=932001002]
+layout_mode = 2
+size_flags_vertical = 6
+theme_override_font_sizes/font_size = 42
+text = "SAVE DATA"
+horizontal_alignment = 1
+
+[node name="SaveFiles" type="ScrollContainer" parent="SaveSelector" unique_id=932001003]
+custom_minimum_size = Vector2(1800, 500)
+layout_mode = 2
+size_flags_vertical = 3
+follow_focus = true
+vertical_scroll_mode = 3
+
+[node name="SaveFilesContainer" type="HBoxContainer" parent="SaveSelector/SaveFiles" unique_id=932001006]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="NewSaveColumn" type="VBoxContainer" parent="SaveSelector/SaveFiles/SaveFilesContainer" unique_id=932001007]
+custom_minimum_size = Vector2(220, 0)
+layout_mode = 2
+alignment = 1
+
+[node name="NewSave" type="Button" parent="SaveSelector/SaveFiles/SaveFilesContainer/NewSaveColumn" unique_id=932001004]
+layout_mode = 2
+size_flags_vertical = 3
+theme = ExtResource("1_boxas")
+text = "NEW SAVE"
+
+[node name="MainMenuContainer" type="VBoxContainer" parent="." unique_id=466904195]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_top = -395.0
+offset_right = 565.0
+grow_vertical = 0
+
+[node name="Story mode" type="Button" parent="MainMenuContainer" unique_id=586411445]
+visible = false
+layout_mode = 2
+theme = ExtResource("1_boxas")
+text = "STORY MODE"
+
+[node name="Stage select" type="Button" parent="MainMenuContainer" unique_id=1769653706]
+layout_mode = 2
+theme = ExtResource("1_boxas")
+text = "STAGE SELECT"
+
+[node name="Options" type="Button" parent="MainMenuContainer" unique_id=1973148509]
+layout_mode = 2
+theme = ExtResource("1_boxas")
+text = "OPTIONS"
+
+[node name="Extras" type="Button" parent="MainMenuContainer" unique_id=657581619]
+layout_mode = 2
+theme = ExtResource("1_boxas")
+text = "EXTRAS"
+
+[node name="Label" type="Label" parent="MainMenuContainer/Extras" unique_id=1533847827]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 15
+text = "Enable/disable
+boost here"
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="SaveData" type="Button" parent="MainMenuContainer" unique_id=1205995341]
+layout_mode = 2
+theme = ExtResource("1_boxas")
+text = "SAVE DATA"
+
+[node name="Exit" type="Button" parent="MainMenuContainer" unique_id=1205995340]
+layout_mode = 2
+theme = ExtResource("1_boxas")
+text = "EXIT"
+
+[node name="LevelSelectContainer" type="ScrollContainer" parent="." unique_id=975178796]
+custom_minimum_size = Vector2(1500, 0)
+custom_maximum_size = Vector2(1500, -1)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -750.0
+offset_top = -450.0
+offset_right = 750.0
+offset_bottom = 350.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_boxas")
+theme_override_styles/panel = SubResource("StyleBoxFlat_nw8di")
+follow_focus = true
+horizontal_scroll_mode = 0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="LevelSelectContainer" unique_id=938156476]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Template" type="Button" parent="LevelSelectContainer/VBoxContainer" unique_id=1245865641]
+custom_minimum_size = Vector2(0, 150)
+layout_mode = 2
+theme = ExtResource("1_boxas")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="LevelSelectContainer/VBoxContainer/Template" unique_id=520963622]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="StageIcon" type="TextureRect" parent="LevelSelectContainer/VBoxContainer/Template/HBoxContainer" unique_id=1526142734]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+texture = ExtResource("8_n2w6x")
+expand_mode = 3
+
+[node name="StageName" type="Label" parent="LevelSelectContainer/VBoxContainer/Template/HBoxContainer" unique_id=1248186251]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Template
+Zone Act"
+horizontal_alignment = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="LevelSelectContainer/VBoxContainer/Template/HBoxContainer" unique_id=219753050]
+layout_mode = 2
+size_flags_horizontal = 3
+alignment = 1
+
+[node name="BestTime" type="Label" parent="LevelSelectContainer/VBoxContainer/Template/HBoxContainer/VBoxContainer" unique_id=1432605196]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_font_sizes/font_size = 30
+text = "BEST TIME:  --:--:--"
+
+[node name="BestRank" type="Label" parent="LevelSelectContainer/VBoxContainer/Template/HBoxContainer/VBoxContainer" unique_id=1225242485]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_font_sizes/font_size = 30
+text = "BEST RANK: -"
+
+[node name="RedRings" type="HBoxContainer" parent="LevelSelectContainer/VBoxContainer/Template/HBoxContainer/VBoxContainer" unique_id=1406281378]
+layout_mode = 2
+
+[node name="RedRing1" type="TextureRect" parent="LevelSelectContainer/VBoxContainer/Template/HBoxContainer/VBoxContainer/RedRings" unique_id=1046691932]
+layout_mode = 2
+texture = ExtResource("6_027u0")
+stretch_mode = 5
+
+[node name="RedRing2" type="TextureRect" parent="LevelSelectContainer/VBoxContainer/Template/HBoxContainer/VBoxContainer/RedRings" unique_id=947054887]
+layout_mode = 2
+texture = ExtResource("6_027u0")
+stretch_mode = 5
+
+[node name="RedRing3" type="TextureRect" parent="LevelSelectContainer/VBoxContainer/Template/HBoxContainer/VBoxContainer/RedRings" unique_id=1778720571]
+layout_mode = 2
+texture = ExtResource("6_027u0")
+stretch_mode = 5
+
+[node name="RedRing4" type="TextureRect" parent="LevelSelectContainer/VBoxContainer/Template/HBoxContainer/VBoxContainer/RedRings" unique_id=1524956431]
+layout_mode = 2
+texture = ExtResource("6_027u0")
+stretch_mode = 5
+
+[node name="RedRing5" type="TextureRect" parent="LevelSelectContainer/VBoxContainer/Template/HBoxContainer/VBoxContainer/RedRings" unique_id=800397064]
+layout_mode = 2
+texture = ExtResource("6_027u0")
+stretch_mode = 5
+
+[node name="Back" type="Button" parent="LevelSelectContainer/VBoxContainer" unique_id=1183557155]
+layout_mode = 2
+theme = ExtResource("1_boxas")
+text = "BACK"
+
+[node name="OptionsMenu" parent="." unique_id=827762391 instance=ExtResource("8_gk3ib")]
+visible = false
+layout_mode = 1
+offset_top = -270.0
+offset_right = 960.0
+offset_bottom = 270.0
+
+[node name="ExtrasMenu" type="VBoxContainer" parent="." unique_id=621060190 node_paths=PackedStringArray("DefaultFocus", "BoostEnabledButton", "SuperFlyButton", "HeroesSwapButton")]
+custom_minimum_size = Vector2(960, 540)
+layout_mode = 0
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_top = -270.0
+offset_right = 960.0
+offset_bottom = 270.0
+grow_vertical = 2
+script = ExtResource("8_h0fo1")
+DefaultFocus = NodePath("Tabs/Extras/GridContainer/BoostCheckButton")
+BoostEnabledButton = NodePath("Tabs/Extras/GridContainer/BoostCheckButton")
+SuperFlyButton = NodePath("Tabs/Extras/GridContainer/FlyCheckButton")
+HeroesSwapButton = NodePath("Tabs/Extras/GridContainer/SwapCheckButton")
+
+[node name="Tabs" type="TabContainer" parent="ExtrasMenu" unique_id=1168922395]
+layout_mode = 2
+size_flags_vertical = 3
+theme = ExtResource("9_rqxls")
+current_tab = 0
+
+[node name="Extras" type="ScrollContainer" parent="ExtrasMenu/Tabs" unique_id=1664428854]
+layout_mode = 2
+follow_focus = true
+metadata/_tab_index = 0
+
+[node name="GridContainer" type="GridContainer" parent="ExtrasMenu/Tabs/Extras" unique_id=677938342]
+layout_mode = 2
+columns = 2
+
+[node name="BoostLabel" type="Label" parent="ExtrasMenu/Tabs/Extras/GridContainer" unique_id=621654378]
+layout_mode = 2
+text = "Boost for Sonic and Shadow"
+
+[node name="BoostCheckButton" type="CheckButton" parent="ExtrasMenu/Tabs/Extras/GridContainer" unique_id=82422627]
+layout_mode = 2
+
+[node name="FlyLabel" type="Label" parent="ExtrasMenu/Tabs/Extras/GridContainer" unique_id=1294852922]
+layout_mode = 2
+text = "Super Sonic and Shadow can fly"
+
+[node name="FlyCheckButton" type="CheckButton" parent="ExtrasMenu/Tabs/Extras/GridContainer" unique_id=1091400932]
+layout_mode = 2
+
+[node name="SwapLabel" type="Label" parent="ExtrasMenu/Tabs/Extras/GridContainer" unique_id=1991656829]
+layout_mode = 2
+text = "Character swapping"
+
+[node name="SwapCheckButton" type="CheckButton" parent="ExtrasMenu/Tabs/Extras/GridContainer" unique_id=1028831049]
+layout_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="ExtrasMenu" unique_id=1495777298]
+layout_mode = 2
+
+[node name="Back" type="Button" parent="ExtrasMenu/HBoxContainer" unique_id=320303622]
+layout_mode = 2
+size_flags_horizontal = 3
+theme = ExtResource("1_boxas")
+text = "BACK"
+
+[node name="Apply" type="Button" parent="ExtrasMenu/HBoxContainer" unique_id=2040331143]
+layout_mode = 2
+size_flags_horizontal = 3
+theme = ExtResource("1_boxas")
+text = "APPLY"
+
+[node name="FixScrollInTabsFocus" type="Node" parent="ExtrasMenu" unique_id=1722702419 node_paths=PackedStringArray("TabContainer")]
+editor_description = "There is a bug where tabs container steals focus from the scroll container inside, resulting in inability to scroll all the way up. This script is meant to disable the focus of the tabs if scroll container is not scrolled up to the max."
+script = ExtResource("10_h3fc6")
+TabContainer = NodePath("../Tabs")
+
+[node name="Music" type="AudioStreamPlayer" parent="." unique_id=2058848963]
+stream = ExtResource("4_bc74y")
+autoplay = true
+bus = &"Music"
+
+[node name="CharacterSelectContainer" type="ScrollContainer" parent="." unique_id=70447532 node_paths=PackedStringArray("Container", "MenuActions", "PreviousMenu", "NextMenu")]
+custom_minimum_size = Vector2(1440, 810)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -720.0
+offset_top = -405.0
+offset_right = 720.0
+offset_bottom = 405.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_boxas")
+follow_focus = true
+horizontal_scroll_mode = 4
+vertical_scroll_mode = 0
+script = ExtResource("7_270l6")
+NpcCount = 3
+Container = NodePath("MenuLayout/OptionsContainer")
+MenuActions = NodePath("MenuLayout/MenuActions")
+CharacterNames = PackedStringArray("Sonic", "Tails", "Shadow")
+CharacterPrefabs = [ExtResource("8_jnms0"), ExtResource("9_fm1yc"), ExtResource("13_jdjp1")]
+CharacterIcons = [ExtResource("16_sonicicon"), ExtResource("17_tailsicon"), ExtResource("18_shadowicon")]
+CharacterThemeColors = PackedColorArray(0, 0, 1, 1, 1, 1, 0, 1, 0.5019608, 0, 0, 1)
+PreviousMenu = NodePath("../MainMenuContainer")
+NextMenu = NodePath("../LevelSelectContainer")
+
+[node name="MenuLayout" type="HBoxContainer" parent="CharacterSelectContainer" unique_id=363391079]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_constants/separation = 12
+
+[node name="OptionsContainer" type="HBoxContainer" parent="CharacterSelectContainer/MenuLayout" unique_id=757612109]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="MenuActions" type="VBoxContainer" parent="CharacterSelectContainer/MenuLayout" unique_id=1975834781]
+custom_minimum_size = Vector2(180, 0)
+layout_mode = 2
+size_flags_vertical = 4
+theme_override_constants/separation = 12
+alignment = 1
+
+[node name="PlayButton" type="Button" parent="CharacterSelectContainer/MenuLayout/MenuActions" unique_id=949497263]
+custom_minimum_size = Vector2(180, 44)
+layout_mode = 2
+theme = ExtResource("1_boxas")
+text = "PLAY"
+
+[node name="BackButton" type="Button" parent="CharacterSelectContainer/MenuLayout/MenuActions" unique_id=1305040474]
+custom_minimum_size = Vector2(180, 44)
+layout_mode = 2
+theme = ExtResource("1_boxas")
+text = "BACK"
+
+[node name="RemovePlayer" type="Button" parent="CharacterSelectContainer/MenuLayout/MenuActions" unique_id=613642973]
+custom_minimum_size = Vector2(180, 44)
+layout_mode = 2
+theme = ExtResource("1_boxas")
+text = "Players -"
+
+[node name="AddPlayer" type="Button" parent="CharacterSelectContainer/MenuLayout/MenuActions" unique_id=2144495668]
+custom_minimum_size = Vector2(180, 44)
+layout_mode = 2
+theme = ExtResource("1_boxas")
+text = "Players +"
+
+[node name="StagesData" type="Node" parent="." unique_id=1440990604]
+
+[node name="Hub" type="Node" parent="StagesData" unique_id=899303196]
+script = ExtResource("11_jyobf")
+StageUniqueIdentifier = "TestStageHub"
+Icon = ExtResource("22_4i1oq")
+StageName = "Hub"
+ScenePath = "res://Games/Example game/Levels/Hub/HubStage.tscn"
+UnlockedByDefault = true
+HasRanking = false
+StageStyle = 1
+
+[node name="DiscoHill1" type="Node" parent="StagesData" unique_id=1412386296]
+script = ExtResource("11_jyobf")
+StageUniqueIdentifier = "DiscoHill1"
+Icon = ExtResource("22_fvthl")
+StageName = "Disco Hill"
+ActName = "Act 1"
+ScenePath = "res://Games/Example game/Levels/DiscoHill/DiscoHill.tscn"
+UnlockedByDefault = true
+HasRedRings = true
+
+[node name="DiscoHill2" type="Node" parent="StagesData" unique_id=1196521868]
+script = ExtResource("11_jyobf")
+StageUniqueIdentifier = "DiscoHill2"
+Icon = ExtResource("23_4i1oq")
+StageName = "Disco Hill"
+ActName = "Act 2"
+ScenePath = "res://Games/Example game/Levels/DiscoHill/DiscoHill2.tscn"
+HasRedRings = true
+
+[node name="DiscoHillBoss" type="Node" parent="StagesData" unique_id=1647665437]
+script = ExtResource("11_jyobf")
+StageUniqueIdentifier = "DiscoHillB1"
+Icon = ExtResource("24_ox047")
+StageName = "Disco Hill"
+ActName = "Egg Nero"
+ScenePath = "res://Games/Example game/Levels/DiscoHill/DiscoHillB1.tscn"
+
+[node name="DigitalSea1" type="Node" parent="StagesData" unique_id=1130985823]
+script = ExtResource("11_jyobf")
+StageUniqueIdentifier = "Digital Sea 1"
+Icon = ExtResource("25_2aoei")
+StageName = "Digital Sea"
+ActName = "Act 1"
+ScenePath = "res://Games/Example game/Levels/Digital Sea/DigitalSeaAct1.tscn"
+UnlockedByDefault = true
+HasRedRings = true
+
+[node name="DigitalSea2" type="Node" parent="StagesData" unique_id=1414578932]
+script = ExtResource("11_jyobf")
+StageUniqueIdentifier = "Digital Sea 2"
+Icon = ExtResource("26_d41g2")
+StageName = "Digital Sea"
+ActName = "Act 2"
+ScenePath = "res://Games/Example game/Levels/Digital Sea/DigitalSeaAct2.tscn"
+HasRedRings = true
+
+[node name="DigitalSeaBoss" type="Node" parent="StagesData" unique_id=405838290]
+script = ExtResource("11_jyobf")
+StageUniqueIdentifier = "DiscoHillB1"
+Icon = ExtResource("27_h3om3")
+StageName = "Digital Sea"
+ActName = "Egg Firewall"
+ScenePath = "res://Games/Example game/Levels/Digital Sea/DigitalSeaActB1.tscn"
+
+[node name="DeathEgg" type="Node" parent="StagesData" unique_id=1869881765]
+script = ExtResource("11_jyobf")
+StageUniqueIdentifier = "WFB1"
+Icon = ExtResource("28_momtp")
+StageName = "Death Egg"
+ScenePath = "res://Games/Example game/Levels/Finale/WFB1.tscn"
+
+[node name="TestStage" type="Node" parent="StagesData" unique_id=504864615]
+script = ExtResource("11_jyobf")
+StageUniqueIdentifier = "TestStage"
+Icon = ExtResource("29_fgsb6")
+StageName = "Test Stage"
+ScenePath = "res://Games/Example game/Levels/TestLevel/TestStage.tscn"
+UnlockedByDefault = true
+HasRedRings = true
+
+[node name="SpecialStage1" type="Node" parent="StagesData" unique_id=924021248]
+script = ExtResource("11_jyobf")
+StageUniqueIdentifier = "SpecialStage1"
+Icon = ExtResource("30_e7npx")
+StageName = "Special Stage	"
+ActName = "Act 1"
+ScenePath = "res://Games/Example game/Levels/SpecialStage/SpecialStageMania1.tscn"
+StageStyle = 2
+
+[node name="SpecialStage2" type="Node" parent="StagesData" unique_id=1097947259]
+script = ExtResource("11_jyobf")
+StageUniqueIdentifier = "SpecialStage2"
+Icon = ExtResource("31_xqlyq")
+StageName = "Special Stage	"
+ActName = "Act 2"
+ScenePath = "res://Games/Example game/Levels/SpecialStage/SpecialStageMania2.tscn"
+StageStyle = 2
+
+[node name="SpecialStage3" type="Node" parent="StagesData" unique_id=1223981615]
+script = ExtResource("11_jyobf")
+StageUniqueIdentifier = "SpecialStage3"
+Icon = ExtResource("32_g2o0x")
+StageName = "Special Stage	"
+ActName = "Act 3"
+ScenePath = "res://Games/Example game/Levels/SpecialStage/SpecialStageMania3.tscn"
+StageStyle = 2
+
+[node name="SpecialStage4" type="Node" parent="StagesData" unique_id=485969102]
+script = ExtResource("11_jyobf")
+StageUniqueIdentifier = "SpecialStage4"
+Icon = ExtResource("33_j8rvc")
+StageName = "Special Stage	"
+ActName = "Act 4"
+ScenePath = "res://Games/Example game/Levels/SpecialStage/SpecialStageMania4.tscn"
+StageStyle = 2
+
+[node name="SpecialStage5" type="Node" parent="StagesData" unique_id=1823059656]
+script = ExtResource("11_jyobf")
+StageUniqueIdentifier = "SpecialStage5"
+Icon = ExtResource("34_n3cgg")
+StageName = "Special Stage	"
+ActName = "Act 5"
+ScenePath = "res://Games/Example game/Levels/SpecialStage/SpecialStageMania5.tscn"
+StageStyle = 2
+
+[node name="SpecialStage6" type="Node" parent="StagesData" unique_id=393337891]
+script = ExtResource("11_jyobf")
+StageUniqueIdentifier = "SpecialStage6"
+Icon = ExtResource("35_qfd3j")
+StageName = "Special Stage	"
+ActName = "Act 6"
+ScenePath = "res://Games/Example game/Levels/SpecialStage/SpecialStageMania6.tscn"
+StageStyle = 2
+
+[node name="SpecialStage7" type="Node" parent="StagesData" unique_id=365686886]
+script = ExtResource("11_jyobf")
+StageUniqueIdentifier = "SpecialStage7"
+Icon = ExtResource("36_dafvb")
+StageName = "Special Stage	"
+ActName = "Act 7"
+ScenePath = "res://Games/Example game/Levels/SpecialStage/SpecialStageMania7.tscn"
+StageStyle = 2
+
+[node name="ErrorLog" type="RichTextLabel" parent="." unique_id=1547517333]
+visible = false
+z_index = 32
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+theme = ExtResource("1_boxas")
+theme_override_font_sizes/normal_font_size = 10
+theme_override_font_sizes/bold_font_size = 10
+theme_override_font_sizes/bold_italics_font_size = 10
+theme_override_font_sizes/italics_font_size = 10
+theme_override_font_sizes/mono_font_size = 10
+script = ExtResource("14_df5f0")
+
+[node name="Copyright" type="RichTextLabel" parent="." unique_id=1539376113]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -720.0
+offset_top = -122.0
+offset_right = -17.0
+grow_horizontal = 0
+grow_vertical = 0
+mouse_filter = 2
+theme = ExtResource("1_boxas")
+bbcode_enabled = true
+text = "[right]BF v1.0.0
+by Gnidel[/right]"
+
+[connection signal="pressed" from="MainMenuContainer/Story mode" to="." method="ToLevelSelectMenu"]
+[connection signal="pressed" from="MainMenuContainer/Stage select" to="." method="ToLevelSelectMenu"]
+[connection signal="pressed" from="MainMenuContainer/Options" to="." method="OnOptions"]
+[connection signal="pressed" from="MainMenuContainer/Extras" to="." method="OnExtras"]
+[connection signal="pressed" from="MainMenuContainer/SaveData" to="." method="OnSaveData"]
+[connection signal="pressed" from="MainMenuContainer/Exit" to="." method="OnQuit"]
+[connection signal="pressed" from="LevelSelectContainer/VBoxContainer/Back" to="." method="ToMainMenu"]
+[connection signal="pressed" from="ExtrasMenu/HBoxContainer/Back" to="ExtrasMenu" method="OnBack"]
+[connection signal="pressed" from="ExtrasMenu/HBoxContainer/Apply" to="ExtrasMenu" method="OnApply"]
+[connection signal="pressed" from="CharacterSelectContainer/MenuLayout/MenuActions/PlayButton" to="CharacterSelectContainer" method="OnPlay"]
+[connection signal="pressed" from="CharacterSelectContainer/MenuLayout/MenuActions/BackButton" to="CharacterSelectContainer" method="OnBack"]
+[connection signal="pressed" from="CharacterSelectContainer/MenuLayout/MenuActions/RemovePlayer" to="CharacterSelectContainer" method="ChangePlayers" binds= [-1]]
+[connection signal="pressed" from="CharacterSelectContainer/MenuLayout/MenuActions/AddPlayer" to="CharacterSelectContainer" method="ChangePlayers" binds= [1]]

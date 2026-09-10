@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://ceeyagoyhsj24"
+path="res://.godot/imported/se_enemy_spinner#2 (enmsn_spnr_flight).ogg-1a9f6840f6bc59831fa4763b42c7f65f.oggvorbisstr"
+
+[deps]
+
+source_file="res://SonicAssets/Audio/Enemies/se_enemy_spinner#2 (enmsn_spnr_flight).ogg"
+dest_files=["res://.godot/imported/se_enemy_spinner#2 (enmsn_spnr_flight).ogg-1a9f6840f6bc59831fa4763b42c7f65f.oggvorbisstr"]
+
+[params]
+
+loop=true
+loop_offset=0.0
+bpm=0.0
+beat_count=0
+bar_beats=4

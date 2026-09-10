@@ -1,0 +1,440 @@
+[gd_scene format=3 uid="uid://d2gmh4mexcq3"]
+
+[ext_resource type="PackedScene" uid="uid://bkt2qp7430moc" path="res://SonicAssets/Prefabs/Misc/homing_target.tscn" id="1_i3g65"]
+[ext_resource type="Script" uid="uid://n1dtm5k3gia" path="res://Scripts/Enemies/EnemyBehaviorManager.cs" id="2_y6wtv"]
+[ext_resource type="Script" uid="uid://b4mk85f6xpfis" path="res://Scripts/Enemies/WaitForAggroBehavior.cs" id="3_urack"]
+[ext_resource type="Script" uid="uid://dxt4q1t0r7whx" path="res://Scripts/Enemies/EnableDisableBehavior.cs" id="4_thi7b"]
+[ext_resource type="AudioStream" uid="uid://kmwjtk42u830" path="res://SonicAssets/Audio/Enemies/Synth_5000000_enemy_5102000_ENM_ERO_GE_5102_002_laser_charge_aif.wav" id="6_vbiqg"]
+[ext_resource type="Script" uid="uid://dat1yxewba6k8" path="res://Scripts/Enemies/EnemyControl.cs" id="7_2nrf7"]
+[ext_resource type="AudioStream" uid="uid://dpi7ew0gqilk8" path="res://SonicAssets/Audio/Enemies/Synth_5000000_enemy_5142000_ENM_EPN_CL_5141_005_gun_shot_aif.wav" id="7_vvjgy"]
+[ext_resource type="AudioStream" uid="uid://bwa5uiwsw5xfj" path="res://SonicAssets/Audio/Enemies/se_enemy_common#2 (enmsn_cmn_damage).wav" id="8_ho644"]
+[ext_resource type="PackedScene" uid="uid://d0mild2vdixl1" path="res://SonicAssets/Prefabs/Particles/Explosion2/[Particles] Explosion2.tscn" id="9_6cneo"]
+[ext_resource type="Script" uid="uid://y47n4ov38iw2" path="res://Scripts/Interactables/Hitbox.cs" id="10_17cvw"]
+[ext_resource type="Script" uid="uid://d0rd6cimu685c" path="res://Scripts/Interactables/Hurtbox.cs" id="11_3yp11"]
+[ext_resource type="AudioStream" uid="uid://dkccuy5y641h3" path="res://SonicAssets/Audio/Enemies/Synth_5000000_enemy_5142000_ENM_EPN_GE_5142_000_beep_aif.wav" id="13_w452m"]
+[ext_resource type="Texture2D" uid="uid://ctu5aul2bm0pe" path="res://SonicAssets/Prefabs/Particles/AttackShockwave/ef_ch_sng_yh1_hit.png" id="14_rwysy"]
+[ext_resource type="Texture2D" uid="uid://ju7vp8xxw0gi" path="res://SonicAssets/Prefabs/Particles/AttackShockwave/ef_ch_sng_yh1_hit2.png" id="15_4xuvu"]
+[ext_resource type="Script" uid="uid://bdhbgssyfipkl" path="res://Scripts/Enemies/EggPawnAnimation.cs" id="17_cjw3r"]
+[ext_resource type="PackedScene" uid="uid://bkjcvrhgneg6b" path="res://SonicAssets/Models/Enemies/EnemyEggPawn.blend" id="18_2gbsp"]
+[ext_resource type="PackedScene" uid="uid://bkm2q3gcvplul" path="res://SonicAssets/Prefabs/Particles/StepSmoke/[particles]_step_smoke.tscn" id="18_c7vo4"]
+[ext_resource type="Material" uid="uid://csrhoebp6gef" path="res://Materials/Outline.tres" id="18_h3fgv"]
+[ext_resource type="Texture2D" uid="uid://dvdvx04p73lpt" path="res://SonicAssets/Prefabs/Interactables/Obstacles/Laser/laser_flare.png" id="18_my0vx"]
+[ext_resource type="Shader" uid="uid://cjktp1yrki104" path="res://Shaders/UekawaShader.tres" id="19_40gdu"]
+[ext_resource type="PackedScene" uid="uid://ce0tsqtfyvydf" path="res://SonicAssets/Models/Enemies/EggPawnItems/EggPawnGun.blend" id="19_b6hv0"]
+[ext_resource type="Script" uid="uid://cnq7ub0u0sa87" path="res://Scripts/Enemies/StuffSpawner.cs" id="19_hixjv"]
+[ext_resource type="Texture2D" uid="uid://cv1cy4mh2xmxu" path="res://SonicAssets/Models/Enemies/textures/enm_eggpawn_body_dif_HD.dds" id="20_4w1fc"]
+[ext_resource type="PackedScene" uid="uid://c3hav3cxv3e3u" path="res://SonicAssets/Prefabs/Interactables/Obstacles/EnemyAmmo/[obstacle]_egg_pawn_bullet.tscn" id="21_iymg3"]
+[ext_resource type="Script" uid="uid://bw8224m0k2phx" path="res://Scripts/Interactables/NonPlayerSplineMovement.cs" id="22_bciaa"]
+[ext_resource type="Texture2D" uid="uid://theb18umn6d4" path="res://SonicAssets/Models/Enemies/textures/enm_eggpawn_weapon_dif_HD.dds" id="22_ssd77"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_ar2vf"]
+friction = 0.0
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_vfsj3"]
+radius = 1.0
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_4t4a2"]
+radius = 1.0
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_g877g"]
+radius = 1.5
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_fx3jg"]
+radius = 50.0
+
+[sub_resource type="Curve" id="Curve_8xqta"]
+_limits = [-360.0, 360.0, 0.0, 1.0]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(1, 1), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="CurveTexture" id="CurveTexture_sdvrw"]
+curve = SubResource("Curve_8xqta")
+
+[sub_resource type="Gradient" id="Gradient_frhhl"]
+offsets = PackedFloat32Array(0, 0.520833, 1)
+colors = PackedColorArray(0, 0, 0, 0, 0.521569, 0.521569, 0.521569, 1, 1, 1, 1, 0)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_veaka"]
+gradient = SubResource("Gradient_frhhl")
+
+[sub_resource type="Curve" id="Curve_ypdqp"]
+_data = [Vector2(0.00369003, 0), 0.0, 0.0, 0, 0, Vector2(1, 1), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="CurveTexture" id="CurveTexture_l3oey"]
+curve = SubResource("Curve_ypdqp")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_ols1o"]
+angle_max = 360.0
+angle_curve = SubResource("CurveTexture_sdvrw")
+gravity = Vector3(0, 0, 0)
+scale_max = 10.0
+scale_curve = SubResource("CurveTexture_l3oey")
+color_ramp = SubResource("GradientTexture1D_veaka")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_iprt8"]
+transparency = 1
+blend_mode = 1
+no_depth_test = true
+shading_mode = 0
+vertex_color_use_as_albedo = true
+albedo_texture = ExtResource("14_rwysy")
+disable_receive_shadows = true
+billboard_mode = 3
+particles_anim_h_frames = 1
+particles_anim_v_frames = 1
+particles_anim_loop = false
+grow_amount = 1.79
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_igbr8"]
+material = SubResource("StandardMaterial3D_iprt8")
+orientation = 2
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_12xi3"]
+transparency = 1
+blend_mode = 1
+shading_mode = 0
+albedo_texture = ExtResource("15_4xuvu")
+disable_receive_shadows = true
+billboard_mode = 3
+billboard_keep_scale = true
+particles_anim_h_frames = 1
+particles_anim_v_frames = 1
+particles_anim_loop = false
+
+[sub_resource type="QuadMesh" id="QuadMesh_fkmdg"]
+material = SubResource("StandardMaterial3D_12xi3")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_s43f4"]
+render_priority = 0
+next_pass = ExtResource("18_h3fgv")
+shader = ExtResource("19_40gdu")
+shader_parameter/Albedo = ExtResource("20_4w1fc")
+shader_parameter/DarkenThreshold = -0.75
+shader_parameter/HighlightThreashold = 0.3
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_ya3wi"]
+render_priority = 0
+next_pass = ExtResource("18_h3fgv")
+shader = ExtResource("19_40gdu")
+shader_parameter/Albedo = ExtResource("20_4w1fc")
+shader_parameter/DarkenThreshold = -0.75
+shader_parameter/HighlightThreashold = 0.3
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_eoxd4"]
+render_priority = 0
+next_pass = ExtResource("18_h3fgv")
+shader = ExtResource("19_40gdu")
+shader_parameter/Albedo = ExtResource("22_ssd77")
+shader_parameter/DarkenThreshold = -0.75
+shader_parameter/HighlightThreashold = 0.3
+
+[sub_resource type="Curve" id="Curve_a5bmc"]
+_data = [Vector2(0, 0.02), 0.0, 0.0, 0, 0, Vector2(1, 0.02), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="Curve" id="Curve_ptrjw"]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(0.496528, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
+point_count = 3
+
+[sub_resource type="Curve" id="Curve_8a6a5"]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(0.503472, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
+point_count = 3
+
+[sub_resource type="CurveXYZTexture" id="CurveXYZTexture_c7lfe"]
+curve_x = SubResource("Curve_a5bmc")
+curve_y = SubResource("Curve_ptrjw")
+curve_z = SubResource("Curve_8a6a5")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_8hxqw"]
+particle_flag_align_y = true
+emission_shape_scale = Vector3(5, 5, 5)
+emission_shape = 1
+emission_sphere_radius = 1.0
+angle_max = 180.0
+direction = Vector3(0, 0, 1)
+gravity = Vector3(0, 0, 0)
+scale_min = 5.0
+scale_max = 5.0
+scale_curve = SubResource("CurveXYZTexture_c7lfe")
+color = Color(1, 1, 1, 0.501961)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_85tq6"]
+transparency = 1
+cull_mode = 2
+vertex_color_use_as_albedo = true
+albedo_texture = ExtResource("18_my0vx")
+emission_enabled = true
+emission = Color(1, 0.713726, 0, 1)
+disable_receive_shadows = true
+billboard_keep_scale = true
+
+[sub_resource type="QuadMesh" id="QuadMesh_f020w"]
+material = SubResource("StandardMaterial3D_85tq6")
+
+[sub_resource type="Curve" id="Curve_8hmva"]
+_data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(0.0868056, 0.496479), 0.0, 0.0, 0, 0, Vector2(0.9375, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
+point_count = 4
+
+[sub_resource type="CurveTexture" id="CurveTexture_po8lt"]
+curve = SubResource("Curve_8hmva")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_x0rn0"]
+gravity = Vector3(0, 0, 0)
+attractor_interaction_enabled = false
+scale_min = 0.25
+scale_max = 0.25
+scale_curve = SubResource("CurveTexture_po8lt")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_1qv52"]
+transparency = 1
+cull_mode = 2
+albedo_texture = ExtResource("18_my0vx")
+emission_enabled = true
+emission = Color(1, 0.713726, 0, 1)
+billboard_mode = 3
+billboard_keep_scale = true
+particles_anim_h_frames = 1
+particles_anim_v_frames = 1
+particles_anim_loop = false
+
+[sub_resource type="QuadMesh" id="QuadMesh_jmngm"]
+material = SubResource("StandardMaterial3D_1qv52")
+
+[node name="[Enemy] Egg Pawn Gun" type="RigidBody3D" unique_id=1077388625]
+transform = Transform3D(1, 0, 1.74846e-07, 0, 1, 0, -1.74846e-07, 0, 1, 0, 0, 0)
+collision_layer = 4
+axis_lock_angular_x = true
+axis_lock_angular_y = true
+axis_lock_angular_z = true
+physics_material_override = SubResource("PhysicsMaterial_ar2vf")
+gravity_scale = 0.0
+continuous_cd = true
+
+[node name="HomingTarget" parent="." unique_id=1639814259 instance=ExtResource("1_i3g65")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+TargetableByGuns = true
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=819504347]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+shape = SubResource("SphereShape3D_vfsj3")
+
+[node name="Behaviors" type="Node" parent="." unique_id=1632348153]
+script = ExtResource("2_y6wtv")
+
+[node name="Phase0Waiting" type="Node" parent="Behaviors" unique_id=919280933]
+
+[node name="WaitForAggroBehavior" type="Node" parent="Behaviors/Phase0Waiting" unique_id=1872116164 node_paths=PackedStringArray("BehaviorManager", "NextPhase")]
+script = ExtResource("3_urack")
+BehaviorManager = NodePath("../..")
+NextPhase = NodePath("../../Phase1")
+
+[node name="EnableDisableList" type="Node" parent="Behaviors/Phase0Waiting" unique_id=1443085000]
+script = ExtResource("4_thi7b")
+
+[node name="Phase1" type="Node" parent="Behaviors" unique_id=648063045]
+
+[node name="EnableDisableList" type="Node" parent="Behaviors/Phase1" unique_id=404175273]
+script = ExtResource("4_thi7b")
+
+[node name="EggPawnBehavior" type="Node" parent="Behaviors/Phase1" unique_id=2094334348]
+
+[node name="Phase99Death" type="Node" parent="Behaviors" unique_id=1537503596]
+
+[node name="EnableDisableList" type="Node" parent="Behaviors/Phase99Death" unique_id=1379156964]
+script = ExtResource("4_thi7b")
+
+[node name="EnemyControl" type="Node" parent="." unique_id=988712893 node_paths=PackedStringArray("Hitbox", "Hurtbox", "HomingTarget", "RigidBody", "DamageParticles", "AudioSource", "DeathAnticipationParticle", "BehaviorManager", "DeathPhase")]
+script = ExtResource("7_2nrf7")
+DamageCooldown = 1.0
+Hitbox = NodePath("../Hitbox")
+Hurtbox = NodePath("../Hurtbox")
+HomingTarget = NodePath("../HomingTarget")
+RigidBody = NodePath("..")
+DamageSoundEffect = ExtResource("8_ho644")
+DamageParticles = NodePath("../AttackShockwaveParticles")
+AudioSource = NodePath("../AudioStreamPlayer3D_Move")
+ExplosionParticles = ExtResource("9_6cneo")
+DeathAnticipationParticle = NodePath("../[Particles] StepSmoke")
+BehaviorManager = NodePath("../Behaviors")
+DeathPhase = NodePath("../Behaviors/Phase99Death")
+GravityScale = 30.0
+
+[node name="EggPawnAnimation" type="Node" parent="." unique_id=1438006415 node_paths=PackedStringArray("EnemyControl", "AnimationPlayer", "RigidBody", "ChargeParticles", "ChargeBall", "BulletSpawner", "GunAudio")]
+script = ExtResource("17_cjw3r")
+EnemyControl = NodePath("../EnemyControl")
+AnimationPlayer = NodePath("../EnemyEggPawn/AnimationPlayer")
+RigidBody = NodePath("..")
+MinChaseDistance = 50.0
+ChargeParticles = NodePath("../EnemyEggPawn/Root/Skeleton3D/BoneAttachment3D/EggPawnGun/Muzzle/ChargeParticles")
+ChargeBall = NodePath("../EnemyEggPawn/Root/Skeleton3D/BoneAttachment3D/EggPawnGun/Muzzle/ChargeBall")
+BulletSpawner = NodePath("../EnemyEggPawn/Root/Skeleton3D/BoneAttachment3D/EggPawnGun/Muzzle/StuffSpawner")
+GunAudio = NodePath("../EnemyEggPawn/Root/Skeleton3D/BoneAttachment3D/GunAudioPlayer")
+ChargeSoundEffect = ExtResource("6_vbiqg")
+FireSoundEffect = ExtResource("7_vvjgy")
+
+[node name="Hitbox" type="Area3D" parent="." unique_id=1918430031]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+collision_mask = 3
+script = ExtResource("10_17cvw")
+CanDamageRollingPlayer = false
+CanDamageEnemy = false
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Hitbox" unique_id=746276166]
+shape = SubResource("SphereShape3D_4t4a2")
+
+[node name="Hurtbox" type="Area3D" parent="." unique_id=1984648651]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+script = ExtResource("11_3yp11")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Hurtbox" unique_id=565011515]
+shape = SubResource("SphereShape3D_g877g")
+
+[node name="AudioStreamPlayer3D_Move" type="AudioStreamPlayer3D" parent="." unique_id=582527875]
+unit_size = 50.0
+autoplay = true
+bus = &"SFX"
+
+[node name="AudioStreamPlayer3D_Aggro" type="AudioStreamPlayer3D" parent="." unique_id=1968068793]
+stream = ExtResource("13_w452m")
+unit_size = 50.0
+bus = &"SFX"
+
+[node name="AggroArea" type="Area3D" parent="." unique_id=1452744969]
+collision_mask = 2
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="AggroArea" unique_id=2145386759]
+shape = SubResource("SphereShape3D_fx3jg")
+
+[node name="AttackShockwaveParticles" type="GPUParticles3D" parent="." unique_id=1355966133]
+emitting = false
+amount = 1
+lifetime = 0.2
+one_shot = true
+process_material = SubResource("ParticleProcessMaterial_ols1o")
+draw_passes = 2
+draw_pass_1 = SubResource("PlaneMesh_igbr8")
+draw_pass_2 = SubResource("QuadMesh_fkmdg")
+
+[node name="[Particles] StepSmoke" parent="." unique_id=1783930146 instance=ExtResource("18_c7vo4")]
+
+[node name="EnemyEggPawn" parent="." unique_id=1118733868 instance=ExtResource("18_2gbsp")]
+transform = Transform3D(-1, -8.74228e-08, 3.82137e-15, 0, -4.37114e-08, -1, 8.74228e-08, -1, 4.37114e-08, 0, 0, 0)
+
+[node name="Skeleton3D" parent="EnemyEggPawn/Root" parent_id_path=PackedInt32Array(1118733868, 2047698668) index="0" unique_id=2093984209]
+bones/0/rotation = Quaternion(-0.707107, 0, 0, 0.707107)
+bones/1/rotation = Quaternion(-0.707107, 0, 0, 0.707107)
+bones/2/position = Vector3(-0.0477252, 0.81884, 0.10327)
+bones/2/rotation = Quaternion(0.105358, 0.494664, 0.0604512, 0.860554)
+bones/3/position = Vector3(5.58794e-09, 0.135391, 3.72529e-09)
+bones/3/rotation = Quaternion(0.0359253, 1.58731e-08, 0.061833, 0.99744)
+bones/4/position = Vector3(-6.93806e-08, 0.233342, 0.041)
+bones/4/rotation = Quaternion(-0.0624448, -0.496869, -0.0358742, 0.864832)
+bones/5/position = Vector3(0.52226, 0.200295, -9.57516e-09)
+bones/5/rotation = Quaternion(0.357529, 0.88065, 0.16019, -0.266397)
+bones/6/position = Vector3(0.0863282, 0.136212, 5.36093e-08)
+bones/6/rotation = Quaternion(-8.06701e-08, -2.81723e-08, 0.603733, 0.797187)
+bones/7/position = Vector3(0.061795, 0.0816628, 1.51049e-08)
+bones/7/rotation = Quaternion(-6.11715e-10, -0.261103, -1.70384e-10, 0.965311)
+bones/8/position = Vector3(-7.44913e-08, 0.406551, 2.5364e-08)
+bones/8/rotation = Quaternion(-0.488366, 7.33734e-10, 1.86769e-09, 0.872639)
+bones/9/position = Vector3(5.40167e-08, 0.72123, -7.03585e-08)
+bones/9/rotation = Quaternion(-0.00704214, 0.041083, -0.173927, 0.983876)
+bones/10/rotation = Quaternion(-0.000609095, -0.199124, 0.169497, 0.965205)
+bones/11/rotation = Quaternion(-0.104322, 0.0711597, -0.205189, 0.970542)
+bones/12/position = Vector3(-1.0521e-07, 0.121025, -0.0147257)
+bones/12/rotation = Quaternion(-3.85417e-09, 1.34896e-08, 0.256439, 0.96656)
+bones/13/rotation = Quaternion(0.0977583, -0.0977583, -0.128157, 0.982071)
+bones/14/position = Vector3(-1.48488e-07, 0.121025, -0.0147257)
+bones/14/rotation = Quaternion(6.68476e-09, 5.01357e-09, 0.221136, 0.975243)
+bones/15/rotation = Quaternion(0.270476, -0.225915, -0.19828, 0.914598)
+bones/16/position = Vector3(5.7189e-08, 0.121025, -0.0147256)
+bones/16/rotation = Quaternion(2.69561e-08, -4.14708e-09, 0.439401, 0.898291)
+bones/18/position = Vector3(-0.52226, 0.200296, -2.12458e-09)
+bones/18/rotation = Quaternion(0.132776, 0.191534, 0.425826, 0.874275)
+bones/19/position = Vector3(0.0863282, 0.136212, -2.76195e-08)
+bones/19/rotation = Quaternion(0.71635, -0.697741, 5.11138e-08, 5.53178e-08)
+bones/20/position = Vector3(-0.0617949, 0.0816627, -4.5482e-08)
+bones/20/rotation = Quaternion(1.87149e-09, 0.588277, -8.58367e-09, 0.80866)
+bones/21/position = Vector3(-2.97878e-08, 0.406551, 6.08416e-08)
+bones/21/rotation = Quaternion(-0.502263, -1.07703e-09, 2.15406e-09, 0.864715)
+bones/22/position = Vector3(-8.94069e-08, 0.721001, -6.00558e-08)
+bones/22/rotation = Quaternion(-0.148537, 0.0974129, 0.124357, 0.976208)
+bones/23/rotation = Quaternion(-0.0183081, 0.0525062, -0.235587, 0.970261)
+bones/24/rotation = Quaternion(-0.0411068, 0.0680508, -0.0314347, 0.996339)
+bones/25/position = Vector3(6.24277e-08, 0.121025, -0.0147258)
+bones/25/rotation = Quaternion(2.46106e-09, -3.28141e-09, -0.11503, 0.993362)
+bones/26/rotation = Quaternion(-0.00241805, 0.0169263, -0.153373, 0.98802)
+bones/27/position = Vector3(-1.25146e-08, 0.121025, -0.0147257)
+bones/27/rotation = Quaternion(3.60575e-10, -5.55885e-10, -0.248714, 0.968577)
+bones/28/rotation = Quaternion(0.01589, 0.125048, -0.0262531, 0.991676)
+bones/29/position = Vector3(-1.4843e-09, 0.121025, -0.0147256)
+bones/29/rotation = Quaternion(4.26167e-09, 4.07369e-10, -0.370652, 0.928772)
+bones/31/rotation = Quaternion(0.754589, 0.209334, -0.480501, 0.394833)
+bones/32/position = Vector3(-2.13258e-08, 0.247499, 9.50822e-08)
+bones/32/rotation = Quaternion(0.45563, -2.46336e-08, -7.48797e-09, 0.890169)
+bones/33/rotation = Quaternion(0.0576034, -0.0421015, 0.068226, 0.995115)
+bones/34/rotation = Quaternion(0.418323, -0.546996, 0.523335, 0.501918)
+bones/35/position = Vector3(-2.50511e-08, 0.247225, -5.52973e-10)
+bones/35/rotation = Quaternion(0.650801, 4.0788e-09, 2.61299e-08, 0.759249)
+bones/36/rotation = Quaternion(0.0188229, -0.269941, -0.0486527, 0.961463)
+
+[node name="enm_eggpawn_HD" parent="EnemyEggPawn/Root/Skeleton3D" index="0" unique_id=2098860325]
+surface_material_override/0 = SubResource("ShaderMaterial_s43f4")
+surface_material_override/1 = SubResource("ShaderMaterial_ya3wi")
+
+[node name="BoneAttachment3D" type="BoneAttachment3D" parent="EnemyEggPawn/Root/Skeleton3D" index="1" unique_id=519745655]
+transform = Transform3D(0.9999992, -0.0014259517, -0.00032292306, 0.001426693, 0.9999969, 0.0020363182, 0.00032010674, -0.0020368993, 0.9999979, -0.19598168, 1.5786858, -0.39954922)
+bone_name = "Hand_R"
+bone_idx = 22
+
+[node name="GunAudioPlayer" type="AudioStreamPlayer3D" parent="EnemyEggPawn/Root/Skeleton3D/BoneAttachment3D" unique_id=462674249]
+transform = Transform3D(1, -2.34395e-08, 3.50701e-08, 0, -4.84288e-08, 1, 4.18368e-11, -1, 9.68575e-08, 1.49012e-08, 0.222, 0)
+attenuation_model = 3
+unit_size = 50.0
+
+[node name="EggPawnGun" parent="EnemyEggPawn/Root/Skeleton3D/BoneAttachment3D" unique_id=1608165487 instance=ExtResource("19_b6hv0")]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0.222, 0)
+
+[node name="Gun" parent="EnemyEggPawn/Root/Skeleton3D/BoneAttachment3D/EggPawnGun" index="0" unique_id=1858125298]
+surface_material_override/0 = SubResource("ShaderMaterial_eoxd4")
+
+[node name="Muzzle" type="Node3D" parent="EnemyEggPawn/Root/Skeleton3D/BoneAttachment3D/EggPawnGun" unique_id=1338639476]
+transform = Transform3D(1, 0.000282231, 0.000671819, -0.000294198, 0.999841, 0.0178335, -0.000666918, -0.0178338, 0.999841, -0.0153972, 0.39396, 1.03798)
+
+[node name="ChargeParticles" type="GPUParticles3D" parent="EnemyEggPawn/Root/Skeleton3D/BoneAttachment3D/EggPawnGun/Muzzle" unique_id=67331813]
+transform = Transform3D(1, -3.27418e-11, -2.91038e-10, -6.27551e-11, 1, -1.86265e-09, 2.91038e-11, 0, 1, -1.49012e-08, 0, -2.38419e-07)
+emitting = false
+amount = 16
+one_shot = true
+explosiveness = 0.5
+local_coords = true
+process_material = SubResource("ParticleProcessMaterial_8hxqw")
+draw_pass_1 = SubResource("QuadMesh_f020w")
+
+[node name="GPUParticlesAttractorSphere3D" type="GPUParticlesAttractorSphere3D" parent="EnemyEggPawn/Root/Skeleton3D/BoneAttachment3D/EggPawnGun/Muzzle/ChargeParticles" unique_id=1458110538]
+strength = 10.0
+radius = 10.0
+
+[node name="ChargeBall" type="GPUParticles3D" parent="EnemyEggPawn/Root/Skeleton3D/BoneAttachment3D/EggPawnGun/Muzzle" unique_id=16386673]
+emitting = false
+amount = 16
+one_shot = true
+local_coords = true
+process_material = SubResource("ParticleProcessMaterial_x0rn0")
+draw_pass_1 = SubResource("QuadMesh_jmngm")
+
+[node name="StuffSpawner" type="Node3D" parent="EnemyEggPawn/Root/Skeleton3D/BoneAttachment3D/EggPawnGun/Muzzle" unique_id=2120978825]
+script = ExtResource("19_hixjv")
+Template = ExtResource("21_iymg3")
+InitialRelativeVelocity = Vector3(0, 0, 20)
+
+[node name="NonPlayerSplineMovement" type="Node" parent="." unique_id=1693027801]
+script = ExtResource("22_bciaa")
+
+[connection signal="OnHitboxEnter" from="Hurtbox" to="EnemyControl" method="OnHitboxEnter"]
+[connection signal="area_entered" from="Hurtbox" to="Hurtbox" method="OnAreaEnter"]
+[connection signal="body_entered" from="AggroArea" to="Behaviors/Phase0Waiting/WaitForAggroBehavior" method="OnTriggerEnter"]
+
+[editable path="EnemyEggPawn"]
+[editable path="EnemyEggPawn/Root/Skeleton3D/BoneAttachment3D/EggPawnGun"]

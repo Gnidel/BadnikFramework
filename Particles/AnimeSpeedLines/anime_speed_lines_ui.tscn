@@ -1,0 +1,19 @@
+[gd_scene format=3 uid="uid://yqt1g36ql8oc"]
+
+[ext_resource type="Shader" uid="uid://c7it00f2e2w28" path="res://Particles/AnimeSpeedLines/AnimeSpeedLinesShader.tres" id="1_ridcm"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_6jdxc"]
+shader = ExtResource("1_ridcm")
+shader_parameter/Color = Color(1, 1, 1, 1)
+shader_parameter/CenterScale = 0.9
+shader_parameter/Sharpness = 10.0
+shader_parameter/Spacing = 0.95
+shader_parameter/Opacity = 0.1
+
+[node name="AnimeSpeedLinesUI" type="ColorRect" unique_id=2063520535]
+material = SubResource("ShaderMaterial_6jdxc")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2

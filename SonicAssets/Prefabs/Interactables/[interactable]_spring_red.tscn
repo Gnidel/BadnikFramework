@@ -1,0 +1,60 @@
+[gd_scene format=3 uid="uid://btqvh6bandifd"]
+
+[ext_resource type="Script" uid="uid://bge4hsg4hukce" path="res://Scripts/Interactables/DirectionalLauncher.cs" id="1_q0x6j"]
+[ext_resource type="AudioStream" uid="uid://36v1y3061oye" path="res://SonicAssets/Audio/Items/se_object_common#22 (objsn_spring; objsn_spring3; objsn_spring_false).wav" id="2_jwa7v"]
+[ext_resource type="PackedScene" uid="uid://0wwuoi26cslf" path="res://SonicAssets/Models/Interactables/spring_red.blend" id="3_c007p"]
+[ext_resource type="Material" uid="uid://csrhoebp6gef" path="res://Materials/Outline.tres" id="4_hts66"]
+[ext_resource type="PackedScene" uid="uid://bkt2qp7430moc" path="res://SonicAssets/Prefabs/Misc/homing_target.tscn" id="4_j321p"]
+[ext_resource type="Shader" uid="uid://cjktp1yrki104" path="res://Shaders/UekawaShader.tres" id="5_355n0"]
+[ext_resource type="Texture2D" uid="uid://cxvoflhj7atnc" path="res://SonicAssets/Models/Interactables/textures/cmn_obj_spring_body_abd.dds" id="6_b6i1e"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_xngud"]
+render_priority = 0
+next_pass = ExtResource("4_hts66")
+shader = ExtResource("5_355n0")
+shader_parameter/Albedo = ExtResource("6_b6i1e")
+shader_parameter/DarkenThreshold = -0.75
+shader_parameter/HighlightThreashold = 0.3
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_sxh53"]
+render_priority = 0
+next_pass = ExtResource("4_hts66")
+shader = ExtResource("5_355n0")
+shader_parameter/Albedo = ExtResource("6_b6i1e")
+shader_parameter/DarkenThreshold = -0.75
+shader_parameter/HighlightThreashold = 0.3
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_5ku78"]
+radius = 1.0
+
+[node name="[Interactable] Spring_Red" type="Node3D" unique_id=574615743]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0)
+script = ExtResource("1_q0x6j")
+MaxVelocity = 50.0
+RelativeSnapPoint = Vector3(0, 0, -0.75)
+SoundEffect = ExtResource("2_jwa7v")
+
+[node name="spring_red" parent="." unique_id=117963706 instance=ExtResource("3_c007p")]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0, 0)
+
+[node name="cmn_obj_spring_body" parent="spring_red" index="0" unique_id=1993698245]
+surface_material_override/0 = SubResource("ShaderMaterial_xngud")
+
+[node name="cmn_obj_spring_red" parent="spring_red" index="1" unique_id=1003930803]
+surface_material_override/0 = SubResource("ShaderMaterial_sxh53")
+
+[node name="Area3D" type="Area3D" parent="." unique_id=136135898]
+physics_interpolation_mode = 1
+collision_mask = 3
+monitorable = false
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D" unique_id=938141777]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.5)
+shape = SubResource("SphereShape3D_5ku78")
+
+[node name="HomingTarget" parent="." unique_id=811501562 instance=ExtResource("4_j321p")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 0, -1)
+
+[connection signal="body_entered" from="Area3D" to="." method="OnTriggerEnter"]
+
+[editable path="spring_red"]

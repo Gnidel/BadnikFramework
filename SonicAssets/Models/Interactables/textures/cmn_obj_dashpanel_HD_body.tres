@@ -1,0 +1,10 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://b1sl0u18cf5ym"]
+
+[ext_resource type="Texture2D" uid="uid://dwly7wchlldm5" path="res://SonicAssets/Models/Interactables/textures/cmn_metal_ms_dashpanel_dif.dds" id="1_v67ik"]
+
+[resource]
+resource_name = "cmn_obj_dashpanel_HD_body"
+cull_mode = 2
+vertex_color_use_as_albedo = true
+albedo_texture = ExtResource("1_v67ik")
+metallic = 1.0

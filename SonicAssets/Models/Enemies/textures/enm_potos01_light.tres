@@ -1,0 +1,8 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://bxcohjb3wuc2q"]
+
+[resource]
+resource_name = "enm_potos01_light"
+transparency = 4
+cull_mode = 2
+vertex_color_use_as_albedo = true
+metallic = 1.0

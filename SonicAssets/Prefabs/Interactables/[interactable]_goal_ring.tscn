@@ -1,0 +1,67 @@
+[gd_scene format=3 uid="uid://dhu1smr7ks2e5"]
+
+[ext_resource type="Script" uid="uid://ds0svm8powhj5" path="res://Scripts/Interactables/GoalRing.cs" id="1_kj4mx"]
+[ext_resource type="PackedScene" uid="uid://bp8k4s3l4kqp2" path="res://SonicAssets/Models/Interactables/goal_ring.blend" id="1_u5oad"]
+[ext_resource type="AudioStream" uid="uid://by12i41h7swjl" path="res://SonicAssets/Music/Sonic Boom Fire Ice OST - Stinger Victory 2.ogg" id="2_3bypd"]
+[ext_resource type="AudioStream" uid="uid://c8v12sdw3rfqf" path="res://SonicAssets/Audio/Items/se_wars_sys_common#11 (sys_goal).wav" id="3_4mwuo"]
+[ext_resource type="AudioStream" uid="uid://cr3dagnmeaylt" path="res://SonicAssets/Audio/Items/se_object_common#6 (objsn_goalring_lp).ogg" id="5_j7adx"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_ju23k"]
+resource_local_to_scene = true
+radius = 2.0
+
+[node name="[Interactable] Goal Ring" type="Node3D" unique_id=1785243965 node_paths=PackedStringArray("Model", "PlayerLockPosition", "WhiteOut", "CameraPosition", "AudioPlayer")]
+script = ExtResource("1_kj4mx")
+VictoryMusic = ExtResource("2_3bypd")
+Model = NodePath("goal_ring")
+PlayerLockPosition = [NodePath("PlayerPosition"), NodePath("PlayerPosition2"), NodePath("PlayerPosition3"), NodePath("PlayerPosition4"), NodePath("PlayerPosition5")]
+WhiteOut = NodePath("ColorRect")
+WhiteOutTime = 1.0
+CameraPosition = NodePath("CameraPosition")
+AudioPlayer = NodePath("AudioStreamPlayer3D")
+CollectSoundEffect = ExtResource("3_4mwuo")
+
+[node name="goal_ring" parent="." unique_id=356659641 instance=ExtResource("1_u5oad")]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 2, 0)
+
+[node name="Area3D" type="Area3D" parent="." unique_id=1105704183]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, 0)
+collision_mask = 3
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D" unique_id=582350562]
+shape = SubResource("SphereShape3D_ju23k")
+
+[node name="PlayerPosition" type="Node3D" parent="." unique_id=850423976]
+
+[node name="PlayerPosition2" type="Node3D" parent="." unique_id=1300923523]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 0, 1)
+
+[node name="PlayerPosition3" type="Node3D" parent="." unique_id=72969246]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, 1)
+
+[node name="PlayerPosition4" type="Node3D" parent="." unique_id=229187318]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 1.5)
+
+[node name="PlayerPosition5" type="Node3D" parent="." unique_id=1817843030]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 3)
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=566155283]
+z_index = 255
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+color = Color(1, 1, 1, 0)
+
+[node name="CameraPosition" type="Node3D" parent="." unique_id=1962447320]
+transform = Transform3D(-0.939693, 0, 0.34202, 0, 1, 0, -0.34202, 0, -0.939693, 0, 0.5, -1)
+
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="." unique_id=267196653]
+stream = ExtResource("5_j7adx")
+unit_size = 25.0
+autoplay = true
+max_distance = 100.0
+
+[connection signal="body_entered" from="Area3D" to="." method="OnCollissionEnter"]

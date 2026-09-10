@@ -1,0 +1,15 @@
+[gd_scene format=3 uid="uid://dyx0jq686krub"]
+
+[ext_resource type="Script" uid="uid://dc014bpuidt5c" path="res://Scripts/Interactables/SpeedMultiplierTrigger.cs" id="1_bjays"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_usfft"]
+resource_local_to_scene = true
+size = Vector3(10, 10, 10)
+
+[node name="[Trigger] SpeedMultiplierTrigger" type="Area3D" unique_id=492074982]
+collision_layer = 0
+collision_mask = 2
+script = ExtResource("1_bjays")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1358456670]
+shape = SubResource("BoxShape3D_usfft")

@@ -1,0 +1,30 @@
+[gd_scene format=3 uid="uid://cxrbww2pvtd80"]
+
+[ext_resource type="Script" uid="uid://b02j5q21h57h8" path="res://Scripts/Interactables/LostWorldGravityTrigger.cs" id="1_dxgb1"]
+
+[sub_resource type="Curve3D" id="Curve3D_ghmrj"]
+_data = {
+"points": PackedVector3Array(0, 0, 0, 0, 0, 0, 0, 0, -100, 0, 0, 0, 0, 0, 0, 0, 0, 100),
+"tilts": PackedFloat32Array(0, 0)
+}
+point_count = 2
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_vwwdn"]
+margin = 0.0
+height = 200.0
+radius = 80.0
+
+[node name="[Trigger] LostWorldGravityTriggerTowards2" type="Area3D" unique_id=1759624496 node_paths=PackedStringArray("Path")]
+collision_mask = 7
+script = ExtResource("1_dxgb1")
+Path = NodePath("Path3D")
+
+[node name="Path3D" type="Path3D" parent="." unique_id=50724351]
+curve = SubResource("Curve3D_ghmrj")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=2076742033]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0)
+shape = SubResource("CylinderShape3D_vwwdn")
+
+[connection signal="body_entered" from="." to="." method="OnAreaEnter"]
+[connection signal="body_exited" from="." to="." method="OnAreaExit"]

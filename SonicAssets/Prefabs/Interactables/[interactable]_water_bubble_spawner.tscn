@@ -1,0 +1,43 @@
+[gd_scene format=3 uid="uid://dpro47univr31"]
+
+[ext_resource type="Script" uid="uid://bk5r25w31kf3i" path="res://Scripts/Interactables/InfiniteItemSpawner.cs" id="1_be26u"]
+[ext_resource type="PackedScene" uid="uid://drw7s3yh0m7c3" path="res://SonicAssets/Prefabs/Items/[item]_water_bubble.tscn" id="2_k5d0a"]
+[ext_resource type="Material" uid="uid://bf7517k627un3" path="res://Materials/WaterBubbleMaterial.tres" id="3_1df56"]
+
+[sub_resource type="Curve" id="Curve_lrhub"]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(0.747312, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
+point_count = 3
+
+[sub_resource type="CurveTexture" id="CurveTexture_gorb0"]
+curve = SubResource("Curve_lrhub")
+
+[sub_resource type="Curve" id="Curve_hcnti"]
+_data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(0.252688, 1), 0.0, 0.0, 0, 0, Vector2(1, 1), 0.0, 0.0, 0, 0]
+point_count = 3
+
+[sub_resource type="CurveTexture" id="CurveTexture_6s54y"]
+curve = SubResource("Curve_hcnti")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_atvma"]
+initial_velocity_min = 1.0
+initial_velocity_max = 1.0
+gravity = Vector3(0, 0, 0)
+scale_curve = SubResource("CurveTexture_6s54y")
+alpha_curve = SubResource("CurveTexture_gorb0")
+
+[sub_resource type="SphereMesh" id="SphereMesh_vyhg0"]
+material = ExtResource("3_1df56")
+radial_segments = 16
+rings = 8
+
+[node name="[Interactable] Water Bubble Spawner" type="Node3D" unique_id=236447628 node_paths=PackedStringArray("Container")]
+script = ExtResource("1_be26u")
+ItemTemplate = ExtResource("2_k5d0a")
+Container = NodePath("Container")
+
+[node name="Container" type="Node3D" parent="." unique_id=1234560568]
+
+[node name="GPUParticles3D" type="GPUParticles3D" parent="." unique_id=694275133]
+amount = 4
+process_material = SubResource("ParticleProcessMaterial_atvma")
+draw_pass_1 = SubResource("SphereMesh_vyhg0")

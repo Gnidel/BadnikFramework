@@ -1,0 +1,71 @@
+[gd_scene format=3 uid="uid://bd0480pq8p5uu"]
+
+[ext_resource type="Script" uid="uid://d4i3rx4kyhwbs" path="res://Scripts/Ui/ButtonPromptTextLabel.cs" id="1_b43tj"]
+[ext_resource type="Theme" uid="uid://di28qbb7lki3f" path="res://Misc/MenuTheme.tres" id="2_ng4q0"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_7f5pr"]
+resource_local_to_scene = true
+size = Vector3(5, 5, 5)
+
+[node name="[Trigger] InputPromptCenter" type="Node3D" unique_id=1439570967 node_paths=PackedStringArray("ColorRect", "RichTextLabel")]
+script = ExtResource("1_b43tj")
+ColorRect = NodePath("RichTextLabel/ColorRect")
+RichTextLabel = NodePath("RichTextLabel")
+ControllerButtonToImageMapping = Dictionary[String, String]({
+"touch_actioncharaswap_l": "res://SonicAssets/Images/Mobile/TouchButton_Charaswap_L.png",
+"touch_actioncharaswap_r": "res://SonicAssets/Images/Mobile/TouchButton_Charaswap_R.png",
+"touch_actiondash": "res://SonicAssets/Images/Mobile/TouchButton_Dash.png",
+"touch_actionhoming": "res://SonicAssets/Images/Mobile/TouchButton_Homing.png",
+"touch_actionjump": "res://SonicAssets/Images/Mobile/TouchButton_Jump.png",
+"touch_actionpause": "res://SonicAssets/Images/Mobile/TouchButton_Pause.png",
+"touch_actionroll": "res://SonicAssets/Images/Mobile/TouchButton_Roll.png",
+"touch_actionstomp": "res://SonicAssets/Images/Mobile/TouchButton_Stomp.png",
+"touch_actionsuper": "res://SonicAssets/Images/Mobile/TouchButton_Super.png",
+"touch_quickstep_l": "res://SonicAssets/Images/Mobile/TouchButton_Quickstep_L.png",
+"touch_quickstep_r": "res://SonicAssets/Images/Mobile/TouchButton_Quickstep_R.png"
+})
+
+[node name="RichTextLabel" type="RichTextLabel" parent="." unique_id=1238549553]
+visible = false
+z_index = 256
+custom_minimum_size = Vector2(50, 0)
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -150.0
+offset_top = 200.0
+offset_right = 150.0
+offset_bottom = 322.0
+grow_horizontal = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+mouse_filter = 2
+theme = ExtResource("2_ng4q0")
+bbcode_enabled = true
+fit_content = true
+scroll_active = false
+shortcut_keys_enabled = false
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="ColorRect" type="ColorRect" parent="RichTextLabel" unique_id=712114379]
+z_index = -1
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+mouse_filter = 2
+color = Color(0, 0, 0, 0.501961)
+
+[node name="Area3D" type="Area3D" parent="." unique_id=1374411602]
+collision_mask = 2
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D" unique_id=913205703]
+shape = SubResource("BoxShape3D_7f5pr")
+
+[connection signal="body_entered" from="Area3D" to="." method="OnBodyEnter"]
+[connection signal="body_exited" from="Area3D" to="." method="OnBodyExit"]

@@ -1,0 +1,11 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://crs8luw1xk5cc"]
+
+[ext_resource type="Texture2D" uid="uid://dki6wljwtlyrp" path="res://SonicAssets/Models/Interactables/textures/cmn_metal_ms_thornball_dif.dds" id="1_62kcv"]
+
+[resource]
+resource_name = "cmn_obj_thorngrind_HD_body"
+transparency = 4
+cull_mode = 2
+albedo_texture = ExtResource("1_62kcv")
+metallic = 1.0
+roughness = 0.5

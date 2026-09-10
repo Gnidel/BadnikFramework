@@ -1,0 +1,23 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://bqh8sx2pqf5aw"]
+
+[ext_resource type="Texture2D" uid="uid://b775w8of3qwac" path="res://Games/Example game/Levels/TestLevel/gridTexture_nonum_a.png" id="1_w5xi0"]
+[ext_resource type="Texture2D" uid="uid://dj7sc3cpgy8or" path="res://Games/Example game/Levels/TestLevel/gridTexture_h.png" id="2_ap8sw"]
+[ext_resource type="Texture2D" uid="uid://dvwutourkmypy" path="res://Games/Example game/Levels/TestLevel/gridTexture_n.png" id="3_k2nyd"]
+[ext_resource type="Texture2D" uid="uid://drxj41kjjwrtr" path="res://Games/Example game/Levels/TestLevel/gridTexture_nonum_h.png" id="3_neiwe"]
+
+[resource]
+resource_name = "Numbers"
+vertex_color_use_as_albedo = true
+albedo_color = Color(0.501961, 0.501961, 0.501961, 1)
+albedo_texture = ExtResource("1_w5xi0")
+metallic = 0.5
+metallic_texture = ExtResource("2_ap8sw")
+roughness = 0.5
+normal_enabled = true
+normal_scale = 0.25
+normal_texture = ExtResource("3_k2nyd")
+heightmap_enabled = true
+heightmap_scale = 0.3
+heightmap_texture = ExtResource("3_neiwe")
+texture_filter = 0
+distance_fade_max_distance = 20.0

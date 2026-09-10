@@ -1,0 +1,8 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://bdps2ewcvhtor"]
+
+[ext_resource type="Texture2D" uid="uid://j57qrtdoc2iv" path="res://SonicAssets/Models/Shadow/textures/chr_shadow_body_abd.dds" id="1_s5y7m"]
+
+[resource]
+resource_name = "chr_shadow_skin"
+albedo_texture = ExtResource("1_s5y7m")
+roughness = 0.5
