@@ -809,7 +809,15 @@ public partial class PlayerCamera : Camera3D
         }
         else
         {
-            UpDownManualCorrection = Mathf.Lerp(UpDownManualCorrection, 0, (float)delta);
+            UpDownManualCorrection = Mathf.MoveToward(
+                UpDownManualCorrection,
+                0,
+                CameraSensitivity.Y * (float)delta
+            );
+            if (Mathf.Abs(UpDownManualCorrection) < 0.001f)
+            {
+                UpDownManualCorrection = 0;
+            }
         }
         inputOffset += Player.GroundNormal.Normalized() * UpDownManualCorrection;
         return inputOffset;
