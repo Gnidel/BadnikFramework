@@ -166,7 +166,10 @@ public partial class PlayerDamage : Node
 
         if (StageData.Instance.Style == StageData.StageStyle.ActionStage)
         {
-            CheckpointSystem.DeathCount++;
+            if (!Player.NpcPartnerControl.IsNpc)
+            {
+                CheckpointSystem.DeathCount++;
+            }
 
             if (AlivePlayersCount() == 0 && !CheckpointSystem.ALWAYS_RESPAWN_NO_RELOAD)
             {
