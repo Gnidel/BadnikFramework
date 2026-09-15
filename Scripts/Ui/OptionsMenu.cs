@@ -565,6 +565,10 @@ public partial class OptionsMenu : Control
         AudioServer.SetBusVolumeDb(AudioServer.GetBusIndex("Music"), Mathf.LinearToDb(OptionsMenu.Options.VolumeMusic));
         AudioServer.SetBusVolumeDb(AudioServer.GetBusIndex("SFX"), Mathf.LinearToDb(OptionsMenu.Options.VolumeSFX));
 
+        PlayerInput.MouseCameraSensitivity = new Vector2(
+            OptionsMenu.Options.MouseSensitivityX,
+            OptionsMenu.Options.MouseSensitivityY
+        );
 
 
         UpdatePlayerCameraSettings();
@@ -689,9 +693,9 @@ public partial class OptionsMenu : Control
         RenderDistanceLabel.Text = (OptionsMenu.Options.RenderDistance / 1000f).ToString() + " km";
 
 
-        MouseXSensitivityValue.Text = (OptionsMenu.Options.MouseSensitivityX * 100).ToString() + "%";
+        MouseXSensitivityValue.Text = (OptionsMenu.Options.MouseSensitivityX * 100).ToString("0") + "%";
         MouseXSensitivitySlider.Value = OptionsMenu.Options.MouseSensitivityX;
-        MouseYSensitivityValue.Text = (OptionsMenu.Options.MouseSensitivityY * 100).ToString() + "%";
+        MouseYSensitivityValue.Text = (OptionsMenu.Options.MouseSensitivityY * 100).ToString("0") + "%";
         MouseYSensitivitySlider.Value = OptionsMenu.Options.MouseSensitivityY;
     }
 
@@ -955,6 +959,18 @@ public partial class OptionsMenu : Control
     {
         // TODO: It doesn't work instantly, requires restart.
         OptionsMenu.Options.RenderDistance = value;
+        UpdateLabels();
+    }
+
+    public void OnMouseSensitivityXChange(float value)
+    {
+        OptionsMenu.Options.MouseSensitivityX = value;
+        UpdateLabels();
+    }
+
+    public void OnMouseSensitivityYChange(float value)
+    {
+        OptionsMenu.Options.MouseSensitivityY = value;
         UpdateLabels();
     }
 
