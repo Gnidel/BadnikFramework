@@ -41,6 +41,12 @@ public partial class PlayerController : RigidBody3D
     public float SpeedMultiplier = 1f;
 
     [Export]
+    public bool DampVelocityOnGround = false;
+
+    [Export]
+    public bool DampVelocityInAir = true;
+
+    [Export]
     public bool DisableNoInputDecceleration = false;
 
     [Export]
@@ -161,6 +167,7 @@ public partial class PlayerController : RigidBody3D
 
     private Transform3D movingPlatformLastTransform;
     private Transform3D lastMovingPlatformCorrectionTransform;
+    private bool? velocityDampingEnabled;
 
     public Vector3 VelocityXZ
     {
@@ -203,6 +210,26 @@ public partial class PlayerController : RigidBody3D
         Instances.Remove(this);
     }
 
+    private void ApplyVelocityDamping(bool enabled)
+    {
+        if (velocityDampingEnabled == enabled)
+            return;
+
+        LinearDampMode = enabled ? RigidBody3D.DampMode.Combine : RigidBody3D.DampMode.Replace;
+        LinearDamp = 0;
+        velocityDampingEnabled = enabled;
+    }
+
+    public void DisableVelocityDamping()
+    {
+        ApplyVelocityDamping(false);
+    }
+
+    public void RestoreVelocityDamping()
+    {
+        ApplyVelocityDamping(Grounded ? DampVelocityOnGround : DampVelocityInAir);
+    }
+
     public override void _PhysicsProcess(double delta)
     {
         if (!Enabled)
@@ -217,6 +244,8 @@ public partial class PlayerController : RigidBody3D
             TimedLerpedRotation = 0;
 
         GroundDetection(delta);
+        RestoreVelocityDamping();
+
         HandleInput(delta);
 
         bool lockedVelocity = LockedVelocityPhysics(delta * DeltaMultiplier);
