@@ -303,7 +303,7 @@ public partial class ActionRoll : Node, IActionUsingHitbox
         if (!Player.Grounded && !IsDropDashing)
         {
             if (
-                (!isRolling && PlayerInput.IsActionJustPressed("actionroll"))
+                (PlayerInput.IsActionJustPressed("actionroll"))
                 || (isRolling && HoldJumpTimer > DropDashHoldJumpTime)
                     && PlayerInput.IsActionPressed("actionjump")
             )
