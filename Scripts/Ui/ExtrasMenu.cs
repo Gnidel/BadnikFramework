@@ -17,6 +17,10 @@ public partial class ExtrasMenu : Control
 
     [Export]
     public CheckButton HeroesSwapButton;
+
+    [Export]
+    public CheckButton OverpoweredAerialMomentumButton;
+
     const string SaveFileName = "extras.json";
 
     public class ExtrasFile
@@ -32,6 +36,9 @@ public partial class ExtrasMenu : Control
 
         [JsonInclude]
         public bool HeroesSwap;
+
+        [JsonInclude]
+        public bool OverpoweredAerialMomentum = false;
 
         public void Save()
         {
@@ -96,6 +103,7 @@ public partial class ExtrasMenu : Control
         Options.BoostEnabled = BoostEnabledButton.ButtonPressed;
         Options.SuperFly = SuperFlyButton.ButtonPressed;
         Options.HeroesSwap = HeroesSwapButton.ButtonPressed;
+        Options.OverpoweredAerialMomentum = OverpoweredAerialMomentumButton.ButtonPressed;
     }
 
     void UpdateLabels()
@@ -103,6 +111,7 @@ public partial class ExtrasMenu : Control
         BoostEnabledButton.ButtonPressed = Options.BoostEnabled;
         SuperFlyButton.ButtonPressed = Options.SuperFly;
         HeroesSwapButton.ButtonPressed = Options.HeroesSwap;
+        OverpoweredAerialMomentumButton.ButtonPressed = Options.OverpoweredAerialMomentum;
     }
 
     public override void _Ready()

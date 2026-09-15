@@ -30,6 +30,9 @@ public partial class ExtraSettingsApplicator : Node
             {
                 actionSuper.Flying = ExtrasMenu.Options.SuperFly;
             }
+
+            player.DampVelocityInAir = !ExtrasMenu.Options.OverpoweredAerialMomentum;
+            player.RestoreVelocityDamping();
         }
 
         PlayersManager.Instance.CharacterSwappingEnabled = ExtrasMenu.Options.HeroesSwap;

@@ -309,7 +309,7 @@ offset_top = -270.0
 offset_right = 960.0
 offset_bottom = 270.0
 
-[node name="ExtrasMenu" type="VBoxContainer" parent="." unique_id=621060190 node_paths=PackedStringArray("DefaultFocus", "BoostEnabledButton", "SuperFlyButton", "HeroesSwapButton")]
+[node name="ExtrasMenu" type="VBoxContainer" parent="." unique_id=621060190 node_paths=PackedStringArray("DefaultFocus", "BoostEnabledButton", "SuperFlyButton", "HeroesSwapButton", "OverpoweredAerialMomentumButton")]
 custom_minimum_size = Vector2(960, 540)
 layout_mode = 0
 anchor_top = 0.5
@@ -323,6 +323,7 @@ DefaultFocus = NodePath("Tabs/Extras/GridContainer/BoostCheckButton")
 BoostEnabledButton = NodePath("Tabs/Extras/GridContainer/BoostCheckButton")
 SuperFlyButton = NodePath("Tabs/Extras/GridContainer/FlyCheckButton")
 HeroesSwapButton = NodePath("Tabs/Extras/GridContainer/SwapCheckButton")
+OverpoweredAerialMomentumButton = NodePath("Tabs/Extras/GridContainer/AerialMomentumCheckButton")
 
 [node name="Tabs" type="TabContainer" parent="ExtrasMenu" unique_id=1168922395]
 layout_mode = 2
@@ -358,6 +359,13 @@ layout_mode = 2
 text = "Character swapping"
 
 [node name="SwapCheckButton" type="CheckButton" parent="ExtrasMenu/Tabs/Extras/GridContainer" unique_id=1028831049]
+layout_mode = 2
+
+[node name="AerialMomentumLabel" type="Label" parent="ExtrasMenu/Tabs/Extras/GridContainer" unique_id=387551338]
+layout_mode = 2
+text = "Overpowered aerial momentum"
+
+[node name="AerialMomentumCheckButton" type="CheckButton" parent="ExtrasMenu/Tabs/Extras/GridContainer" unique_id=387551339]
 layout_mode = 2
 
 [node name="HBoxContainer" type="HBoxContainer" parent="ExtrasMenu" unique_id=1495777298]
