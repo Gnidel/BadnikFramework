@@ -11,7 +11,6 @@ Medium:
 
 Low:
 	-	[Improvement] Not all places in main menu have working "back" button. They require scrolling. 
-	-	[Improvement] Pipes only support 1 player at the time.
 	-	[Improvement] Time records don't take characters into consideration. Save file format
 		already supports it, but all records are saved and loaded only as "Sonic".
 	-	[Feature] More HSON integration. For example - triggers.

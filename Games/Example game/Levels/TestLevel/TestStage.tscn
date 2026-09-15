@@ -371,16 +371,24 @@ PointMode = 1
 resource_local_to_scene = true
 size = Vector3(25, 2, 2)
 
-[sub_resource type="BoxShape3D" id="BoxShape3D_1rfqw"]
+[sub_resource type="Curve3D" id="Curve3D_1rfqw"]
+resource_local_to_scene = true
+_data = {
+"points": PackedVector3Array(0, 0, 0, 0, 0, -10, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, -50, 0, 0, 0, 0, 0, 0, 0, 10, -50),
+"tilts": PackedFloat32Array(0, 0, 0)
+}
+point_count = 3
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_8doys"]
 resource_local_to_scene = true
 size = Vector3(20, 10, 30)
 
-[sub_resource type="CylinderShape3D" id="CylinderShape3D_8doys"]
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_tadk0"]
 resource_local_to_scene = true
 height = 362.856
 radius = 25.0
 
-[sub_resource type="BoxShape3D" id="BoxShape3D_tadk0"]
+[sub_resource type="BoxShape3D" id="BoxShape3D_hllei"]
 resource_local_to_scene = true
 size = Vector3(100, 1, 1000)
 
@@ -396,7 +404,7 @@ script = ExtResource("14_glwdl")
 CameraPath3D = NodePath("Path3D")
 metadata/_custom_type_script = "uid://bfibfvipco58n"
 
-[sub_resource type="BoxShape3D" id="BoxShape3D_hllei"]
+[sub_resource type="BoxShape3D" id="BoxShape3D_vyr7x"]
 resource_local_to_scene = true
 size = Vector3(129.025, 14.8398, 32.2207)
 
@@ -407,54 +415,54 @@ _data = {
 }
 point_count = 4
 
-[sub_resource type="CylinderMesh" id="CylinderMesh_vyr7x"]
-resource_local_to_scene = true
-flip_faces = true
-top_radius = 0.4
-bottom_radius = 0.4
-height = 2.224
-radial_segments = 16
-cap_top = false
-cap_bottom = false
-
 [sub_resource type="CylinderMesh" id="CylinderMesh_5slkl"]
 resource_local_to_scene = true
 flip_faces = true
-height = 2.224
-radial_segments = 16
-cap_top = false
-cap_bottom = false
-
-[sub_resource type="CylinderShape3D" id="CylinderShape3D_t4cnx"]
-resource_local_to_scene = true
-radius = 0.8
-
-[sub_resource type="CylinderMesh" id="CylinderMesh_kgyni"]
-resource_local_to_scene = true
-flip_faces = true
 top_radius = 0.4
 bottom_radius = 0.4
 height = 2.224
 radial_segments = 16
 cap_top = false
 cap_bottom = false
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_t4cnx"]
+resource_local_to_scene = true
+flip_faces = true
+height = 2.224
+radial_segments = 16
+cap_top = false
+cap_bottom = false
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_kgyni"]
+resource_local_to_scene = true
+radius = 0.8
 
 [sub_resource type="CylinderMesh" id="CylinderMesh_ibbm4"]
 resource_local_to_scene = true
 flip_faces = true
+top_radius = 0.4
+bottom_radius = 0.4
 height = 2.224
 radial_segments = 16
 cap_top = false
 cap_bottom = false
 
-[sub_resource type="CylinderShape3D" id="CylinderShape3D_rugsk"]
+[sub_resource type="CylinderMesh" id="CylinderMesh_rugsk"]
+resource_local_to_scene = true
+flip_faces = true
+height = 2.224
+radial_segments = 16
+cap_top = false
+cap_bottom = false
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_nsxh1"]
 resource_local_to_scene = true
 radius = 0.8
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_sajgr"]
 size = Vector3(10, 20, 10)
 
-[sub_resource type="BoxShape3D" id="BoxShape3D_nsxh1"]
+[sub_resource type="BoxShape3D" id="BoxShape3D_tc7km"]
 resource_local_to_scene = true
 size = Vector3(10, 10, 10)
 
@@ -1390,6 +1398,7 @@ transform = Transform3D(1, 0, 1.74846e-07, 0, 1, 0, -1.74846e-07, 0, 1, -11.5135
 
 [node name="[Interactable] Transport Pipe2" parent="." unique_id=820528900 instance=ExtResource("65_w4d8e")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -135.62, 7.59236, -4.77491)
+curve = SubResource("Curve3D_1rfqw")
 
 [node name="TestStageTutorial1_Welcome" parent="." unique_id=550021281 instance=ExtResource("59_nd2cx")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 88.3829, 3.25576, 53.4024)
@@ -1411,7 +1420,7 @@ Text = "[input]actionjump[/input] - jump
 
 [node name="CollisionShape3D" parent="TestStageTutorial1_Welcome/[Trigger] InputPrompt/Area3D" parent_id_path=PackedInt32Array(1109489813, 2062885543) index="0" unique_id=822586964]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 5.05377)
-shape = SubResource("BoxShape3D_1rfqw")
+shape = SubResource("BoxShape3D_8doys")
 
 [node name="TestStageTutorial3_Pulley" parent="." unique_id=1554139744 instance=ExtResource("59_nd2cx")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -190.594, 4.30542, -82.3102)
@@ -1611,8 +1620,8 @@ are here."
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -139.553, 4.92693, -10.3222)
 
 [node name="Label3D" parent="TestStageTutorial21_Pipe" index="0" unique_id=284775712]
-text = "It's a pipe that is basically
-an invisible pulley.
+text = "It's a pipe that will transport you from one end
+to the other.
 
 In case you wanted to port Chemical Plant."
 
@@ -1633,7 +1642,7 @@ SlowSkydiveSpeed = 1.0
 
 [node name="CollisionShape3D" parent="[Interactable] Skydiving section" index="0" unique_id=1690313467]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 56.4281, 0)
-shape = SubResource("CylinderShape3D_8doys")
+shape = SubResource("CylinderShape3D_tadk0")
 
 [node name="[Interactable] Balloon" parent="." unique_id=992187001 instance=ExtResource("64_th5q8")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -58.077, 12.2104, -95.7176)
@@ -1679,12 +1688,12 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.89289, 0.999999, -300.474)
 
 [node name="CollisionShape3D" parent="[Trigger] No2DTrigger2/[Trigger] NoSplineTrigger" parent_id_path=PackedInt32Array(1587785707, 2023145832) index="0" unique_id=1859701545]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -26.2679, 0, -258.555)
-shape = SubResource("BoxShape3D_tadk0")
+shape = SubResource("BoxShape3D_hllei")
 debug_color = Color(0.95862, 0, 0.526142, 0.42)
 
 [node name="CollisionShape3D" parent="[Trigger] No2DTrigger2/Camera3DTrigger" parent_id_path=PackedInt32Array(1587785707, 1422507286) index="0" unique_id=571122358]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -26.2679, 0, -258.555)
-shape = SubResource("BoxShape3D_tadk0")
+shape = SubResource("BoxShape3D_hllei")
 debug_color = Color(0.95862, 0, 0.526142, 0.42)
 
 [node name="SpringChain" type="Path3D" parent="." unique_id=608935065]
@@ -1746,7 +1755,7 @@ FreeOnExit = true
 
 [node name="CollisionShape3D" parent="[Trigger] Camera Trigger - tunnel" index="0" unique_id=587286632]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 51.6177, 2.41992, -11.1104)
-shape = SubResource("BoxShape3D_hllei")
+shape = SubResource("BoxShape3D_vyr7x")
 
 [node name="Path3D" type="Path3D" parent="[Trigger] Camera Trigger - tunnel" unique_id=1367387241]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.312491, 0)
@@ -1810,25 +1819,25 @@ transform = Transform3D(-1, 0, -8.742322e-08, 0, 1, 0, 8.742322e-08, 0, -1, -269
 transform = Transform3D(-9.40312e-06, 0.009999969, -2.425492e-05, 8.951378e-06, 2.4262701e-05, 0.009999969, 0.009999995, 9.3807885e-06, -8.974102e-06, -268.93008, 398.2389, 55.588352)
 
 [node name="BeamMesh" parent="[Enemy] Egg Chaser/Laser_L/[Interactable] Laser" parent_id_path=PackedInt32Array(864214425, 2019842755) index="0" unique_id=1006862339]
-mesh = SubResource("CylinderMesh_vyr7x")
-
-[node name="BeamMesh2" parent="[Enemy] Egg Chaser/Laser_L/[Interactable] Laser" parent_id_path=PackedInt32Array(864214425, 2019842755) index="1" unique_id=909123986]
 mesh = SubResource("CylinderMesh_5slkl")
 
+[node name="BeamMesh2" parent="[Enemy] Egg Chaser/Laser_L/[Interactable] Laser" parent_id_path=PackedInt32Array(864214425, 2019842755) index="1" unique_id=909123986]
+mesh = SubResource("CylinderMesh_t4cnx")
+
 [node name="CollisionShape3D" parent="[Enemy] Egg Chaser/Laser_L/[Interactable] Laser/Hitbox" parent_id_path=PackedInt32Array(864214425, 2019842755, 1065576655) index="0" unique_id=939656509]
-shape = SubResource("CylinderShape3D_t4cnx")
+shape = SubResource("CylinderShape3D_kgyni")
 
 [node name="Laser_R" parent="[Enemy] Egg Chaser" index="14" unique_id=110019703]
 transform = Transform3D(-9.365357e-06, -0.00999999, -6.8661557e-06, 8.9537625e-06, -6.8742033e-06, 0.009999994, -0.00999999, 9.358738e-06, 8.959824e-06, 0.79678345, 1.3460083, -0.33166122)
 
 [node name="BeamMesh" parent="[Enemy] Egg Chaser/Laser_R/[Interactable] Laser" parent_id_path=PackedInt32Array(864214425, 1140186521) index="0" unique_id=1006862339]
-mesh = SubResource("CylinderMesh_kgyni")
-
-[node name="BeamMesh2" parent="[Enemy] Egg Chaser/Laser_R/[Interactable] Laser" parent_id_path=PackedInt32Array(864214425, 1140186521) index="1" unique_id=909123986]
 mesh = SubResource("CylinderMesh_ibbm4")
 
+[node name="BeamMesh2" parent="[Enemy] Egg Chaser/Laser_R/[Interactable] Laser" parent_id_path=PackedInt32Array(864214425, 1140186521) index="1" unique_id=909123986]
+mesh = SubResource("CylinderMesh_rugsk")
+
 [node name="CollisionShape3D" parent="[Enemy] Egg Chaser/Laser_R/[Interactable] Laser/Hitbox" parent_id_path=PackedInt32Array(864214425, 1140186521, 1065576655) index="0" unique_id=939656509]
-shape = SubResource("CylinderShape3D_rugsk")
+shape = SubResource("CylinderShape3D_nsxh1")
 
 [node name="PlayerDetector" type="Area3D" parent="[Enemy] Egg Chaser" unique_id=1997906948]
 collision_layer = 256
@@ -1877,7 +1886,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 645.9545, 1, -6.944229)
 
 [node name="CollisionShape3D" parent="[Trigger] SkateRemover" index="0" unique_id=1182135870]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
-shape = SubResource("BoxShape3D_nsxh1")
+shape = SubResource("BoxShape3D_tc7km")
 
 [node name="Label3D" type="Label3D" parent="[Trigger] SkateRemover" unique_id=1199554101]
 transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 0, 10.343618, 0)
