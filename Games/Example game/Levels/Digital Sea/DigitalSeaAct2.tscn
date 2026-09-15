@@ -43,6 +43,8 @@
 [ext_resource type="Script" uid="uid://b3dpdfwhls8c5" path="res://Scripts/Interactables/UniversalPlayerEnterTrigger.cs" id="35_3ek1y"]
 [ext_resource type="PackedScene" uid="uid://cqbir38llka4u" path="res://Prefabs/Triggers/[trigger]_skate_remover.tscn" id="42_eb4m0"]
 [ext_resource type="Script" uid="uid://gofmj6rwoyg" path="res://Scripts/Interactables/SpeedLimitTrigger.cs" id="43_w36e5"]
+[ext_resource type="PackedScene" uid="uid://tc8f2l3mmr2b" path="res://Prefabs/Triggers/[trigger]_input_prompt_bottom.tscn" id="44_vueie"]
+[ext_resource type="PackedScene" uid="uid://bd0480pq8p5uu" path="res://Prefabs/Triggers/[trigger]_input_prompt_center.tscn" id="45_1n32h"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_fhrgg"]
 size = Vector3(20000, 5, 20000)
@@ -150,11 +152,11 @@ point_count = 9
 script = ExtResource("22_xqauq")
 metadata/_custom_type_script = "uid://clwt567x2s1dw"
 
-[sub_resource type="BoxShape3D" id="BoxShape3D_vueie"]
+[sub_resource type="BoxShape3D" id="BoxShape3D_1n32h"]
 resource_local_to_scene = true
 size = Vector3(100, 200, 100)
 
-[sub_resource type="BoxShape3D" id="BoxShape3D_1n32h"]
+[sub_resource type="BoxShape3D" id="BoxShape3D_0enk0"]
 resource_local_to_scene = true
 size = Vector3(200, 500, 10)
 
@@ -162,7 +164,7 @@ size = Vector3(200, 500, 10)
 script = ExtResource("23_5yxk0")
 metadata/_custom_type_script = "uid://pruwuii5643i"
 
-[sub_resource type="BoxShape3D" id="BoxShape3D_0enk0"]
+[sub_resource type="BoxShape3D" id="BoxShape3D_00mt2"]
 resource_local_to_scene = true
 size = Vector3(200, 500, 10)
 
@@ -172,9 +174,9 @@ CameraPoint = NodePath("CameraPoint")
 PointMode = 1
 metadata/_custom_type_script = "uid://cd3cn8knmt25g"
 
-[sub_resource type="BoxShape3D" id="BoxShape3D_00mt2"]
+[sub_resource type="BoxShape3D" id="BoxShape3D_p8anx"]
 resource_local_to_scene = true
-size = Vector3(50, 25, 25)
+size = Vector3(50, 40, 50)
 
 [sub_resource type="Curve3D" id="Curve3D_461s6"]
 _data = {
@@ -189,11 +191,11 @@ CameraPoint = NodePath("Node3D")
 PointMode = 1
 metadata/_custom_type_script = "uid://cd3cn8knmt25g"
 
-[sub_resource type="BoxShape3D" id="BoxShape3D_p8anx"]
+[sub_resource type="BoxShape3D" id="BoxShape3D_xy3wa"]
 resource_local_to_scene = true
 size = Vector3(25, 100, 100)
 
-[sub_resource type="Curve3D" id="Curve3D_xy3wa"]
+[sub_resource type="Curve3D" id="Curve3D_8hmfs"]
 resource_local_to_scene = true
 _data = {
 "points": PackedVector3Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1000, 0, 0),
@@ -201,47 +203,47 @@ _data = {
 }
 point_count = 2
 
-[sub_resource type="CylinderMesh" id="CylinderMesh_8hmfs"]
-resource_local_to_scene = true
-flip_faces = true
-top_radius = 0.4
-bottom_radius = 0.4
-height = 2.224
-radial_segments = 16
-cap_top = false
-cap_bottom = false
-
 [sub_resource type="CylinderMesh" id="CylinderMesh_2ecbo"]
 resource_local_to_scene = true
 flip_faces = true
-height = 2.224
-radial_segments = 16
-cap_top = false
-cap_bottom = false
-
-[sub_resource type="CylinderShape3D" id="CylinderShape3D_uq43y"]
-resource_local_to_scene = true
-radius = 0.8
-
-[sub_resource type="CylinderMesh" id="CylinderMesh_d5cdh"]
-resource_local_to_scene = true
-flip_faces = true
 top_radius = 0.4
 bottom_radius = 0.4
 height = 2.224
 radial_segments = 16
 cap_top = false
 cap_bottom = false
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_uq43y"]
+resource_local_to_scene = true
+flip_faces = true
+height = 2.224
+radial_segments = 16
+cap_top = false
+cap_bottom = false
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_d5cdh"]
+resource_local_to_scene = true
+radius = 0.8
 
 [sub_resource type="CylinderMesh" id="CylinderMesh_03qbn"]
 resource_local_to_scene = true
 flip_faces = true
+top_radius = 0.4
+bottom_radius = 0.4
 height = 2.224
 radial_segments = 16
 cap_top = false
 cap_bottom = false
 
-[sub_resource type="CylinderShape3D" id="CylinderShape3D_t054s"]
+[sub_resource type="CylinderMesh" id="CylinderMesh_t054s"]
+resource_local_to_scene = true
+flip_faces = true
+height = 2.224
+radial_segments = 16
+cap_top = false
+cap_bottom = false
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_plhhm"]
 resource_local_to_scene = true
 radius = 0.8
 
@@ -251,249 +253,249 @@ size = Vector3(100, 50, 5)
 [sub_resource type="BoxShape3D" id="BoxShape3D_dwsd6"]
 size = Vector3(100, 50, 5)
 
-[sub_resource type="CylinderMesh" id="CylinderMesh_plhhm"]
-resource_local_to_scene = true
-flip_faces = true
-top_radius = 0.4
-bottom_radius = 0.4
-height = 2.224
-radial_segments = 16
-cap_top = false
-cap_bottom = false
-
 [sub_resource type="CylinderMesh" id="CylinderMesh_2b6ks"]
 resource_local_to_scene = true
 flip_faces = true
-height = 2.224
-radial_segments = 16
-cap_top = false
-cap_bottom = false
-
-[sub_resource type="CylinderShape3D" id="CylinderShape3D_5rjf2"]
-resource_local_to_scene = true
-radius = 0.8
-
-[sub_resource type="CylinderMesh" id="CylinderMesh_k77bl"]
-resource_local_to_scene = true
-flip_faces = true
 top_radius = 0.4
 bottom_radius = 0.4
 height = 2.224
 radial_segments = 16
 cap_top = false
 cap_bottom = false
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_5rjf2"]
+resource_local_to_scene = true
+flip_faces = true
+height = 2.224
+radial_segments = 16
+cap_top = false
+cap_bottom = false
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_k77bl"]
+resource_local_to_scene = true
+radius = 0.8
 
 [sub_resource type="CylinderMesh" id="CylinderMesh_ukxfh"]
 resource_local_to_scene = true
 flip_faces = true
-height = 2.224
-radial_segments = 16
-cap_top = false
-cap_bottom = false
-
-[sub_resource type="CylinderShape3D" id="CylinderShape3D_n8qbp"]
-resource_local_to_scene = true
-radius = 0.8
-
-[sub_resource type="CylinderMesh" id="CylinderMesh_5jjwb"]
-resource_local_to_scene = true
-flip_faces = true
 top_radius = 0.4
 bottom_radius = 0.4
 height = 2.224
 radial_segments = 16
 cap_top = false
 cap_bottom = false
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_n8qbp"]
+resource_local_to_scene = true
+flip_faces = true
+height = 2.224
+radial_segments = 16
+cap_top = false
+cap_bottom = false
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_5jjwb"]
+resource_local_to_scene = true
+radius = 0.8
 
 [sub_resource type="CylinderMesh" id="CylinderMesh_hgvnl"]
 resource_local_to_scene = true
 flip_faces = true
-height = 2.224
-radial_segments = 16
-cap_top = false
-cap_bottom = false
-
-[sub_resource type="CylinderShape3D" id="CylinderShape3D_m4lpg"]
-resource_local_to_scene = true
-radius = 0.8
-
-[sub_resource type="CylinderMesh" id="CylinderMesh_x1e0j"]
-resource_local_to_scene = true
-flip_faces = true
 top_radius = 0.4
 bottom_radius = 0.4
 height = 2.224
 radial_segments = 16
 cap_top = false
 cap_bottom = false
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_m4lpg"]
+resource_local_to_scene = true
+flip_faces = true
+height = 2.224
+radial_segments = 16
+cap_top = false
+cap_bottom = false
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_x1e0j"]
+resource_local_to_scene = true
+radius = 0.8
 
 [sub_resource type="CylinderMesh" id="CylinderMesh_72rgb"]
 resource_local_to_scene = true
 flip_faces = true
-height = 2.224
-radial_segments = 16
-cap_top = false
-cap_bottom = false
-
-[sub_resource type="CylinderShape3D" id="CylinderShape3D_2nic7"]
-resource_local_to_scene = true
-radius = 0.8
-
-[sub_resource type="CylinderMesh" id="CylinderMesh_swrqs"]
-resource_local_to_scene = true
-flip_faces = true
 top_radius = 0.4
 bottom_radius = 0.4
 height = 2.224
 radial_segments = 16
 cap_top = false
 cap_bottom = false
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_2nic7"]
+resource_local_to_scene = true
+flip_faces = true
+height = 2.224
+radial_segments = 16
+cap_top = false
+cap_bottom = false
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_swrqs"]
+resource_local_to_scene = true
+radius = 0.8
 
 [sub_resource type="CylinderMesh" id="CylinderMesh_8lm5v"]
 resource_local_to_scene = true
 flip_faces = true
-height = 2.224
-radial_segments = 16
-cap_top = false
-cap_bottom = false
-
-[sub_resource type="CylinderShape3D" id="CylinderShape3D_vjvnc"]
-resource_local_to_scene = true
-radius = 0.8
-
-[sub_resource type="CylinderMesh" id="CylinderMesh_6g64t"]
-resource_local_to_scene = true
-flip_faces = true
 top_radius = 0.4
 bottom_radius = 0.4
 height = 2.224
 radial_segments = 16
 cap_top = false
 cap_bottom = false
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_vjvnc"]
+resource_local_to_scene = true
+flip_faces = true
+height = 2.224
+radial_segments = 16
+cap_top = false
+cap_bottom = false
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_6g64t"]
+resource_local_to_scene = true
+radius = 0.8
 
 [sub_resource type="CylinderMesh" id="CylinderMesh_o5urw"]
 resource_local_to_scene = true
 flip_faces = true
-height = 2.224
-radial_segments = 16
-cap_top = false
-cap_bottom = false
-
-[sub_resource type="CylinderShape3D" id="CylinderShape3D_34dt8"]
-resource_local_to_scene = true
-radius = 0.8
-
-[sub_resource type="CylinderMesh" id="CylinderMesh_24yyw"]
-resource_local_to_scene = true
-flip_faces = true
 top_radius = 0.4
 bottom_radius = 0.4
 height = 2.224
 radial_segments = 16
 cap_top = false
 cap_bottom = false
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_34dt8"]
+resource_local_to_scene = true
+flip_faces = true
+height = 2.224
+radial_segments = 16
+cap_top = false
+cap_bottom = false
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_24yyw"]
+resource_local_to_scene = true
+radius = 0.8
 
 [sub_resource type="CylinderMesh" id="CylinderMesh_3dw5a"]
 resource_local_to_scene = true
 flip_faces = true
-height = 2.224
-radial_segments = 16
-cap_top = false
-cap_bottom = false
-
-[sub_resource type="CylinderShape3D" id="CylinderShape3D_rqw0t"]
-resource_local_to_scene = true
-radius = 0.8
-
-[sub_resource type="CylinderMesh" id="CylinderMesh_k5sak"]
-resource_local_to_scene = true
-flip_faces = true
 top_radius = 0.4
 bottom_radius = 0.4
 height = 2.224
 radial_segments = 16
 cap_top = false
 cap_bottom = false
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_rqw0t"]
+resource_local_to_scene = true
+flip_faces = true
+height = 2.224
+radial_segments = 16
+cap_top = false
+cap_bottom = false
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_k5sak"]
+resource_local_to_scene = true
+radius = 0.8
 
 [sub_resource type="CylinderMesh" id="CylinderMesh_ashri"]
 resource_local_to_scene = true
 flip_faces = true
-height = 2.224
-radial_segments = 16
-cap_top = false
-cap_bottom = false
-
-[sub_resource type="CylinderShape3D" id="CylinderShape3D_16mnu"]
-resource_local_to_scene = true
-radius = 0.8
-
-[sub_resource type="CylinderMesh" id="CylinderMesh_qt5uh"]
-resource_local_to_scene = true
-flip_faces = true
 top_radius = 0.4
 bottom_radius = 0.4
 height = 2.224
 radial_segments = 16
 cap_top = false
 cap_bottom = false
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_16mnu"]
+resource_local_to_scene = true
+flip_faces = true
+height = 2.224
+radial_segments = 16
+cap_top = false
+cap_bottom = false
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_qt5uh"]
+resource_local_to_scene = true
+radius = 0.8
 
 [sub_resource type="CylinderMesh" id="CylinderMesh_l608q"]
 resource_local_to_scene = true
 flip_faces = true
-height = 2.224
-radial_segments = 16
-cap_top = false
-cap_bottom = false
-
-[sub_resource type="CylinderShape3D" id="CylinderShape3D_pfper"]
-resource_local_to_scene = true
-radius = 0.8
-
-[sub_resource type="CylinderMesh" id="CylinderMesh_5lmnk"]
-resource_local_to_scene = true
-flip_faces = true
 top_radius = 0.4
 bottom_radius = 0.4
 height = 2.224
 radial_segments = 16
 cap_top = false
 cap_bottom = false
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_pfper"]
+resource_local_to_scene = true
+flip_faces = true
+height = 2.224
+radial_segments = 16
+cap_top = false
+cap_bottom = false
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_5lmnk"]
+resource_local_to_scene = true
+radius = 0.8
 
 [sub_resource type="CylinderMesh" id="CylinderMesh_fy0qc"]
 resource_local_to_scene = true
 flip_faces = true
-height = 2.224
-radial_segments = 16
-cap_top = false
-cap_bottom = false
-
-[sub_resource type="CylinderShape3D" id="CylinderShape3D_wiky8"]
-resource_local_to_scene = true
-radius = 0.8
-
-[sub_resource type="CylinderMesh" id="CylinderMesh_qdy0n"]
-resource_local_to_scene = true
-flip_faces = true
 top_radius = 0.4
 bottom_radius = 0.4
 height = 2.224
 radial_segments = 16
 cap_top = false
 cap_bottom = false
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_wiky8"]
+resource_local_to_scene = true
+flip_faces = true
+height = 2.224
+radial_segments = 16
+cap_top = false
+cap_bottom = false
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_qdy0n"]
+resource_local_to_scene = true
+radius = 0.8
 
 [sub_resource type="CylinderMesh" id="CylinderMesh_rs6vo"]
 resource_local_to_scene = true
 flip_faces = true
+top_radius = 0.4
+bottom_radius = 0.4
 height = 2.224
 radial_segments = 16
 cap_top = false
 cap_bottom = false
 
-[sub_resource type="CylinderShape3D" id="CylinderShape3D_hldtv"]
+[sub_resource type="CylinderMesh" id="CylinderMesh_hldtv"]
+resource_local_to_scene = true
+flip_faces = true
+height = 2.224
+radial_segments = 16
+cap_top = false
+cap_bottom = false
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_7vlev"]
 resource_local_to_scene = true
 radius = 0.8
 
-[sub_resource type="CylinderMesh" id="CylinderMesh_7vlev"]
+[sub_resource type="CylinderMesh" id="CylinderMesh_pwyic"]
 resource_local_to_scene = true
 flip_faces = true
 top_radius = 0.4
@@ -503,7 +505,7 @@ radial_segments = 16
 cap_top = false
 cap_bottom = false
 
-[sub_resource type="CylinderMesh" id="CylinderMesh_pwyic"]
+[sub_resource type="CylinderMesh" id="CylinderMesh_wbxd2"]
 resource_local_to_scene = true
 flip_faces = true
 height = 2.224
@@ -511,11 +513,11 @@ radial_segments = 16
 cap_top = false
 cap_bottom = false
 
-[sub_resource type="CylinderShape3D" id="CylinderShape3D_wbxd2"]
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_es27u"]
 resource_local_to_scene = true
 radius = 0.8
 
-[sub_resource type="BoxShape3D" id="BoxShape3D_es27u"]
+[sub_resource type="BoxShape3D" id="BoxShape3D_77bj1"]
 resource_local_to_scene = true
 size = Vector3(10, 25, 25)
 
@@ -528,6 +530,14 @@ size = Vector3(25, 25, 25)
 [sub_resource type="BoxShape3D" id="BoxShape3D_hxqaj"]
 resource_local_to_scene = true
 size = Vector3(1000, 50, 50)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_17hr8"]
+resource_local_to_scene = true
+size = Vector3(600, 50, 50)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_8hmfs"]
+resource_local_to_scene = true
+size = Vector3(30, 50, 500)
 
 [node name="Digital Sea Act 2" type="Node3D" unique_id=138750853]
 
@@ -772,21 +782,21 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1886.7506, 290.45807, -738.15
 Params = SubResource("Resource_lllwf")
 
 [node name="CollisionShape3D" parent="SpringChain/[Trigger] Camera Trigger_Const_Chase" index="0" unique_id=587286632]
-shape = SubResource("BoxShape3D_vueie")
+shape = SubResource("BoxShape3D_1n32h")
 
 [node name="[Trigger] Camera Trigger_Quickstep1" parent="SpringChain" unique_id=1985609206 instance=ExtResource("21_2e68n")]
 transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 100.06702, 400.458, -4.3740674e-06)
 CardinalDirectionBias = true
 
 [node name="CollisionShape3D" parent="SpringChain/[Trigger] Camera Trigger_Quickstep1" index="0" unique_id=587286632]
-shape = SubResource("BoxShape3D_1n32h")
+shape = SubResource("BoxShape3D_0enk0")
 
 [node name="[Trigger] Camera Trigger_Free_Nobias" parent="SpringChain" unique_id=1662311894 instance=ExtResource("21_2e68n")]
 transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 1471.8623, 240.45801, -13.08965)
 Params = SubResource("Resource_ssvar")
 
 [node name="CollisionShape3D" parent="SpringChain/[Trigger] Camera Trigger_Free_Nobias" index="0" unique_id=587286632]
-shape = SubResource("BoxShape3D_0enk0")
+shape = SubResource("BoxShape3D_00mt2")
 
 [node name="[Trigger] Camera Trigger_Endchase" parent="SpringChain" unique_id=1816544162 instance=ExtResource("21_2e68n")]
 transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 1887.1432, 296.72058, -1714.9126)
@@ -796,7 +806,7 @@ EnterLerpTime = 0.2
 ExitLerpTime = 0.2
 
 [node name="CollisionShape3D" parent="SpringChain/[Trigger] Camera Trigger_Endchase" index="0" unique_id=587286632]
-shape = SubResource("BoxShape3D_00mt2")
+shape = SubResource("BoxShape3D_p8anx")
 
 [node name="CameraPoint" type="Node3D" parent="SpringChain/[Trigger] Camera Trigger_Endchase" unique_id=1915823142]
 
@@ -831,7 +841,7 @@ EnterLerpTime = 0.5
 ExitLerpTime = 0.5
 
 [node name="CollisionShape3D" parent="[Trigger] Camera Trigger" index="0" unique_id=587286632]
-shape = SubResource("BoxShape3D_p8anx")
+shape = SubResource("BoxShape3D_xy3wa")
 
 [node name="Node3D" type="Node3D" parent="[Trigger] Camera Trigger" unique_id=1381314518]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 73.645874, -3.4849472, 0)
@@ -963,10 +973,10 @@ transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 1243
 
 [node name="[Interactable] ChaseSection" parent="." unique_id=523813964 instance=ExtResource("33_22vcl")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 714.5831, 112.500046, 2325.1204)
-Distance = -20.0
+Distance = -40.0
 
 [node name="ChasePath" parent="[Interactable] ChaseSection" index="0" unique_id=1058885054]
-curve = SubResource("Curve3D_xy3wa")
+curve = SubResource("Curve3D_8hmfs")
 
 [node name="[Enemy] Egg Chaser_Mid" parent="[Interactable] ChaseSection/ChasePath/ChasingFollower" parent_id_path=PackedInt32Array(523813964, 1665256038) index="1" unique_id=1560769021 instance=ExtResource("34_3ek1y")]
 
@@ -974,25 +984,25 @@ curve = SubResource("Curve3D_xy3wa")
 transform = Transform3D(0.009999995, 9.380352e-06, -8.9741e-06, 8.951378e-06, 2.4262701e-05, 0.009999969, 9.402684e-06, -0.009999969, 2.425492e-05, 714.9149, 113.84605, 2324.3235)
 
 [node name="BeamMesh" parent="[Interactable] ChaseSection/ChasePath/ChasingFollower/[Enemy] Egg Chaser_Mid/Laser_L/[Interactable] Laser" parent_id_path=PackedInt32Array(1560769021, 2019842755) index="0" unique_id=1006862339]
-mesh = SubResource("CylinderMesh_8hmfs")
-
-[node name="BeamMesh2" parent="[Interactable] ChaseSection/ChasePath/ChasingFollower/[Enemy] Egg Chaser_Mid/Laser_L/[Interactable] Laser" parent_id_path=PackedInt32Array(1560769021, 2019842755) index="1" unique_id=909123986]
 mesh = SubResource("CylinderMesh_2ecbo")
 
+[node name="BeamMesh2" parent="[Interactable] ChaseSection/ChasePath/ChasingFollower/[Enemy] Egg Chaser_Mid/Laser_L/[Interactable] Laser" parent_id_path=PackedInt32Array(1560769021, 2019842755) index="1" unique_id=909123986]
+mesh = SubResource("CylinderMesh_uq43y")
+
 [node name="CollisionShape3D" parent="[Interactable] ChaseSection/ChasePath/ChasingFollower/[Enemy] Egg Chaser_Mid/Laser_L/[Interactable] Laser/Hitbox" parent_id_path=PackedInt32Array(1560769021, 2019842755, 1065576655) index="0" unique_id=939656509]
-shape = SubResource("CylinderShape3D_uq43y")
+shape = SubResource("CylinderShape3D_d5cdh")
 
 [node name="Laser_R" parent="[Interactable] ChaseSection/ChasePath/ChasingFollower/[Enemy] Egg Chaser_Mid" index="14" unique_id=110019703]
 transform = Transform3D(-9.365356e-06, -0.00999999, -6.866156e-06, 8.9537625e-06, -6.8742033e-06, 0.009999994, -0.00999999, 9.358737e-06, 8.959824e-06, 0.796875, 1.3460159, -0.33166504)
 
 [node name="BeamMesh" parent="[Interactable] ChaseSection/ChasePath/ChasingFollower/[Enemy] Egg Chaser_Mid/Laser_R/[Interactable] Laser" parent_id_path=PackedInt32Array(1560769021, 1140186521) index="0" unique_id=1006862339]
-mesh = SubResource("CylinderMesh_d5cdh")
-
-[node name="BeamMesh2" parent="[Interactable] ChaseSection/ChasePath/ChasingFollower/[Enemy] Egg Chaser_Mid/Laser_R/[Interactable] Laser" parent_id_path=PackedInt32Array(1560769021, 1140186521) index="1" unique_id=909123986]
 mesh = SubResource("CylinderMesh_03qbn")
 
+[node name="BeamMesh2" parent="[Interactable] ChaseSection/ChasePath/ChasingFollower/[Enemy] Egg Chaser_Mid/Laser_R/[Interactable] Laser" parent_id_path=PackedInt32Array(1560769021, 1140186521) index="1" unique_id=909123986]
+mesh = SubResource("CylinderMesh_t054s")
+
 [node name="CollisionShape3D" parent="[Interactable] ChaseSection/ChasePath/ChasingFollower/[Enemy] Egg Chaser_Mid/Laser_R/[Interactable] Laser/Hitbox" parent_id_path=PackedInt32Array(1560769021, 1140186521, 1065576655) index="0" unique_id=939656509]
-shape = SubResource("CylinderShape3D_t054s")
+shape = SubResource("CylinderShape3D_plhhm")
 
 [node name="InvisibleWall" type="AnimatableBody3D" parent="[Interactable] ChaseSection/ChasePath/ChasingFollower/[Enemy] Egg Chaser_Mid" unique_id=1498588975]
 transform = Transform3D(1, 0, -1.7484601e-07, 0, 1, 0, 1.7484601e-07, 0, 1, 0, 0, 0.9359131)
@@ -1017,25 +1027,25 @@ transform = Transform3D(1, 0, 1.7484601e-07, 0, 1, 0, -1.7484601e-07, 0, 1, 4, 0
 transform = Transform3D(0.009999995, 9.380352e-06, -8.9741e-06, 8.951378e-06, 2.4262701e-05, 0.009999969, 9.402684e-06, -0.009999969, 2.425492e-05, 714.9149, 113.84605, 2328.3235)
 
 [node name="BeamMesh" parent="[Interactable] ChaseSection/ChasePath/ChasingFollower/[Enemy] Egg Chaser_L1/Laser_L/[Interactable] Laser" parent_id_path=PackedInt32Array(534911749, 2019842755) index="0" unique_id=1006862339]
-mesh = SubResource("CylinderMesh_plhhm")
-
-[node name="BeamMesh2" parent="[Interactable] ChaseSection/ChasePath/ChasingFollower/[Enemy] Egg Chaser_L1/Laser_L/[Interactable] Laser" parent_id_path=PackedInt32Array(534911749, 2019842755) index="1" unique_id=909123986]
 mesh = SubResource("CylinderMesh_2b6ks")
 
+[node name="BeamMesh2" parent="[Interactable] ChaseSection/ChasePath/ChasingFollower/[Enemy] Egg Chaser_L1/Laser_L/[Interactable] Laser" parent_id_path=PackedInt32Array(534911749, 2019842755) index="1" unique_id=909123986]
+mesh = SubResource("CylinderMesh_5rjf2")
+
 [node name="CollisionShape3D" parent="[Interactable] ChaseSection/ChasePath/ChasingFollower/[Enemy] Egg Chaser_L1/Laser_L/[Interactable] Laser/Hitbox" parent_id_path=PackedInt32Array(534911749, 2019842755, 1065576655) index="0" unique_id=939656509]
-shape = SubResource("CylinderShape3D_5rjf2")
+shape = SubResource("CylinderShape3D_k77bl")
 
 [node name="Laser_R" parent="[Interactable] ChaseSection/ChasePath/ChasingFollower/[Enemy] Egg Chaser_L1" index="14" unique_id=110019703]
 transform = Transform3D(-9.365356e-06, -0.00999999, -6.866156e-06, 8.9537625e-06, -6.8742033e-06, 0.009999994, -0.00999999, 9.358737e-06, 8.959824e-06, 0.796875, 1.3460159, -0.33166504)
 
 [node name="BeamMesh" parent="[Interactable] ChaseSection/ChasePath/ChasingFollower/[Enemy] Egg Chaser_L1/Laser_R/[Interactable] Laser" parent_id_path=PackedInt32Array(534911749, 1140186521) index="0" unique_id=1006862339]
-mesh = SubResource("CylinderMesh_k77bl")
-
-[node name="BeamMesh2" parent="[Interactable] ChaseSection/ChasePath/ChasingFollower/[Enemy] Egg Chaser_L1/Laser_R/[Interactable] Laser" parent_id_path=PackedInt32Array(534911749, 1140186521) index="1" unique_id=909123986]
 mesh = SubResource("CylinderMesh_ukxfh")
 
+[node name="BeamMesh2" parent="[Interactable] ChaseSection/ChasePath/ChasingFollower/[Enemy] Egg Chaser_L1/Laser_R/[Interactable] Laser" parent_id_path=PackedInt32Array(534911749, 1140186521) index="1" unique_id=909123986]
+mesh = SubResource("CylinderMesh_n8qbp")
+
 [node name="CollisionShape3D" parent="[Interactable] ChaseSection/ChasePath/ChasingFollower/[Enemy] Egg Chaser_L1/Laser_R/[Interactable] Laser/Hitbox" parent_id_path=PackedInt32Array(534911749, 1140186521, 1065576655) index="0" unique_id=939656509]
-shape = SubResource("CylinderShape3D_n8qbp")
+shape = SubResource("CylinderShape3D_5jjwb")
 
 [node name="[Enemy] Egg Chaser_L2" parent="[Interactable] ChaseSection/ChasePath/ChasingFollower" parent_id_path=PackedInt32Array(523813964, 1665256038) index="3" unique_id=1652093861 instance=ExtResource("34_3ek1y")]
 transform = Transform3D(1, 0, 1.74846e-07, 0, 1, 0, -1.74846e-07, 0, 1, 8, 0, 0)
@@ -1044,25 +1054,25 @@ transform = Transform3D(1, 0, 1.74846e-07, 0, 1, 0, -1.74846e-07, 0, 1, 8, 0, 0)
 transform = Transform3D(0.009999995, 9.380352e-06, -8.9741e-06, 8.951378e-06, 2.4262701e-05, 0.009999969, 9.402684e-06, -0.009999969, 2.425492e-05, 714.9149, 113.84605, 2332.3235)
 
 [node name="BeamMesh" parent="[Interactable] ChaseSection/ChasePath/ChasingFollower/[Enemy] Egg Chaser_L2/Laser_L/[Interactable] Laser" parent_id_path=PackedInt32Array(1652093861, 2019842755) index="0" unique_id=1006862339]
-mesh = SubResource("CylinderMesh_5jjwb")
-
-[node name="BeamMesh2" parent="[Interactable] ChaseSection/ChasePath/ChasingFollower/[Enemy] Egg Chaser_L2/Laser_L/[Interactable] Laser" parent_id_path=PackedInt32Array(1652093861, 2019842755) index="1" unique_id=909123986]
 mesh = SubResource("CylinderMesh_hgvnl")
 
+[node name="BeamMesh2" parent="[Interactable] ChaseSection/ChasePath/ChasingFollower/[Enemy] Egg Chaser_L2/Laser_L/[Interactable] Laser" parent_id_path=PackedInt32Array(1652093861, 2019842755) index="1" unique_id=909123986]
+mesh = SubResource("CylinderMesh_m4lpg")
+
 [node name="CollisionShape3D" parent="[Interactable] ChaseSection/ChasePath/ChasingFollower/[Enemy] Egg Chaser_L2/Laser_L/[Interactable] Laser/Hitbox" parent_id_path=PackedInt32Array(1652093861, 2019842755, 1065576655) index="0" unique_id=939656509]
-shape = SubResource("CylinderShape3D_m4lpg")
+shape = SubResource("CylinderShape3D_x1e0j")
 
 [node name="Laser_R" parent="[Interactable] ChaseSection/ChasePath/ChasingFollower/[Enemy] Egg Chaser_L2" index="14" unique_id=110019703]
 transform = Transform3D(-9.365356e-06, -0.00999999, -6.866156e-06, 8.9537625e-06, -6.8742033e-06, 0.009999994, -0.00999999, 9.358737e-06, 8.959824e-06, 0.796875, 1.3460159, -0.33166504)
 
 [node name="BeamMesh" parent="[Interactable] ChaseSection/ChasePath/ChasingFollower/[Enemy] Egg Chaser_L2/Laser_R/[Interactable] Laser" parent_id_path=PackedInt32Array(1652093861, 1140186521) index="0" unique_id=1006862339]
-mesh = SubResource("CylinderMesh_x1e0j")
-
-[node name="BeamMesh2" parent="[Interactable] ChaseSection/ChasePath/ChasingFollower/[Enemy] Egg Chaser_L2/Laser_R/[Interactable] Laser" parent_id_path=PackedInt32Array(1652093861, 1140186521) index="1" unique_id=909123986]
 mesh = SubResource("CylinderMesh_72rgb")
 
+[node name="BeamMesh2" parent="[Interactable] ChaseSection/ChasePath/ChasingFollower/[Enemy] Egg Chaser_L2/Laser_R/[Interactable] Laser" parent_id_path=PackedInt32Array(1652093861, 1140186521) index="1" unique_id=909123986]
+mesh = SubResource("CylinderMesh_2nic7")
+
 [node name="CollisionShape3D" parent="[Interactable] ChaseSection/ChasePath/ChasingFollower/[Enemy] Egg Chaser_L2/Laser_R/[Interactable] Laser/Hitbox" parent_id_path=PackedInt32Array(1652093861, 1140186521, 1065576655) index="0" unique_id=939656509]
-shape = SubResource("CylinderShape3D_2nic7")
+shape = SubResource("CylinderShape3D_swrqs")
 
 [node name="[Enemy] Egg Chaser_L3" parent="[Interactable] ChaseSection/ChasePath/ChasingFollower" parent_id_path=PackedInt32Array(523813964, 1665256038) index="4" unique_id=301451790 instance=ExtResource("34_3ek1y")]
 transform = Transform3D(1, 0, 1.74846e-07, 0, 1, 0, -1.74846e-07, 0, 1, 12, 0, 0)
@@ -1071,25 +1081,25 @@ transform = Transform3D(1, 0, 1.74846e-07, 0, 1, 0, -1.74846e-07, 0, 1, 12, 0, 0
 transform = Transform3D(0.009999995, 9.380352e-06, -8.9741e-06, 8.951378e-06, 2.4262701e-05, 0.009999969, 9.402684e-06, -0.009999969, 2.425492e-05, 714.9149, 113.84605, 2336.3235)
 
 [node name="BeamMesh" parent="[Interactable] ChaseSection/ChasePath/ChasingFollower/[Enemy] Egg Chaser_L3/Laser_L/[Interactable] Laser" parent_id_path=PackedInt32Array(301451790, 2019842755) index="0" unique_id=1006862339]
-mesh = SubResource("CylinderMesh_swrqs")
-
-[node name="BeamMesh2" parent="[Interactable] ChaseSection/ChasePath/ChasingFollower/[Enemy] Egg Chaser_L3/Laser_L/[Interactable] Laser" parent_id_path=PackedInt32Array(301451790, 2019842755) index="1" unique_id=909123986]
 mesh = SubResource("CylinderMesh_8lm5v")
 
+[node name="BeamMesh2" parent="[Interactable] ChaseSection/ChasePath/ChasingFollower/[Enemy] Egg Chaser_L3/Laser_L/[Interactable] Laser" parent_id_path=PackedInt32Array(301451790, 2019842755) index="1" unique_id=909123986]
+mesh = SubResource("CylinderMesh_vjvnc")
+
 [node name="CollisionShape3D" parent="[Interactable] ChaseSection/ChasePath/ChasingFollower/[Enemy] Egg Chaser_L3/Laser_L/[Interactable] Laser/Hitbox" parent_id_path=PackedInt32Array(301451790, 2019842755, 1065576655) index="0" unique_id=939656509]
-shape = SubResource("CylinderShape3D_vjvnc")
+shape = SubResource("CylinderShape3D_6g64t")
 
 [node name="Laser_R" parent="[Interactable] ChaseSection/ChasePath/ChasingFollower/[Enemy] Egg Chaser_L3" index="14" unique_id=110019703]
 transform = Transform3D(-9.365356e-06, -0.00999999, -6.866156e-06, 8.9537625e-06, -6.8742033e-06, 0.009999994, -0.00999999, 9.358737e-06, 8.959824e-06, 0.796875, 1.3460159, -0.33166504)
 
 [node name="BeamMesh" parent="[Interactable] ChaseSection/ChasePath/ChasingFollower/[Enemy] Egg Chaser_L3/Laser_R/[Interactable] Laser" parent_id_path=PackedInt32Array(301451790, 1140186521) index="0" unique_id=1006862339]
-mesh = SubResource("CylinderMesh_6g64t")
-
-[node name="BeamMesh2" parent="[Interactable] ChaseSection/ChasePath/ChasingFollower/[Enemy] Egg Chaser_L3/Laser_R/[Interactable] Laser" parent_id_path=PackedInt32Array(301451790, 1140186521) index="1" unique_id=909123986]
 mesh = SubResource("CylinderMesh_o5urw")
 
+[node name="BeamMesh2" parent="[Interactable] ChaseSection/ChasePath/ChasingFollower/[Enemy] Egg Chaser_L3/Laser_R/[Interactable] Laser" parent_id_path=PackedInt32Array(301451790, 1140186521) index="1" unique_id=909123986]
+mesh = SubResource("CylinderMesh_34dt8")
+
 [node name="CollisionShape3D" parent="[Interactable] ChaseSection/ChasePath/ChasingFollower/[Enemy] Egg Chaser_L3/Laser_R/[Interactable] Laser/Hitbox" parent_id_path=PackedInt32Array(301451790, 1140186521, 1065576655) index="0" unique_id=939656509]
-shape = SubResource("CylinderShape3D_34dt8")
+shape = SubResource("CylinderShape3D_24yyw")
 
 [node name="[Enemy] Egg Chaser_R1" parent="[Interactable] ChaseSection/ChasePath/ChasingFollower" parent_id_path=PackedInt32Array(523813964, 1665256038) index="5" unique_id=1392241527 instance=ExtResource("34_3ek1y")]
 transform = Transform3D(1, 0, 1.74846e-07, 0, 1, 0, -1.74846e-07, 0, 1, -4, 0, 0)
@@ -1098,25 +1108,25 @@ transform = Transform3D(1, 0, 1.74846e-07, 0, 1, 0, -1.74846e-07, 0, 1, -4, 0, 0
 transform = Transform3D(0.009999995, 9.380352e-06, -8.9741e-06, 8.951378e-06, 2.4262701e-05, 0.009999969, 9.402684e-06, -0.009999969, 2.425492e-05, 714.9149, 113.84605, 2320.3235)
 
 [node name="BeamMesh" parent="[Interactable] ChaseSection/ChasePath/ChasingFollower/[Enemy] Egg Chaser_R1/Laser_L/[Interactable] Laser" parent_id_path=PackedInt32Array(1392241527, 2019842755) index="0" unique_id=1006862339]
-mesh = SubResource("CylinderMesh_24yyw")
-
-[node name="BeamMesh2" parent="[Interactable] ChaseSection/ChasePath/ChasingFollower/[Enemy] Egg Chaser_R1/Laser_L/[Interactable] Laser" parent_id_path=PackedInt32Array(1392241527, 2019842755) index="1" unique_id=909123986]
 mesh = SubResource("CylinderMesh_3dw5a")
 
+[node name="BeamMesh2" parent="[Interactable] ChaseSection/ChasePath/ChasingFollower/[Enemy] Egg Chaser_R1/Laser_L/[Interactable] Laser" parent_id_path=PackedInt32Array(1392241527, 2019842755) index="1" unique_id=909123986]
+mesh = SubResource("CylinderMesh_rqw0t")
+
 [node name="CollisionShape3D" parent="[Interactable] ChaseSection/ChasePath/ChasingFollower/[Enemy] Egg Chaser_R1/Laser_L/[Interactable] Laser/Hitbox" parent_id_path=PackedInt32Array(1392241527, 2019842755, 1065576655) index="0" unique_id=939656509]
-shape = SubResource("CylinderShape3D_rqw0t")
+shape = SubResource("CylinderShape3D_k5sak")
 
 [node name="Laser_R" parent="[Interactable] ChaseSection/ChasePath/ChasingFollower/[Enemy] Egg Chaser_R1" index="14" unique_id=110019703]
 transform = Transform3D(-9.365356e-06, -0.00999999, -6.866156e-06, 8.9537625e-06, -6.8742033e-06, 0.009999994, -0.00999999, 9.358737e-06, 8.959824e-06, 0.796875, 1.3460159, -0.33166504)
 
 [node name="BeamMesh" parent="[Interactable] ChaseSection/ChasePath/ChasingFollower/[Enemy] Egg Chaser_R1/Laser_R/[Interactable] Laser" parent_id_path=PackedInt32Array(1392241527, 1140186521) index="0" unique_id=1006862339]
-mesh = SubResource("CylinderMesh_k5sak")
-
-[node name="BeamMesh2" parent="[Interactable] ChaseSection/ChasePath/ChasingFollower/[Enemy] Egg Chaser_R1/Laser_R/[Interactable] Laser" parent_id_path=PackedInt32Array(1392241527, 1140186521) index="1" unique_id=909123986]
 mesh = SubResource("CylinderMesh_ashri")
 
+[node name="BeamMesh2" parent="[Interactable] ChaseSection/ChasePath/ChasingFollower/[Enemy] Egg Chaser_R1/Laser_R/[Interactable] Laser" parent_id_path=PackedInt32Array(1392241527, 1140186521) index="1" unique_id=909123986]
+mesh = SubResource("CylinderMesh_16mnu")
+
 [node name="CollisionShape3D" parent="[Interactable] ChaseSection/ChasePath/ChasingFollower/[Enemy] Egg Chaser_R1/Laser_R/[Interactable] Laser/Hitbox" parent_id_path=PackedInt32Array(1392241527, 1140186521, 1065576655) index="0" unique_id=939656509]
-shape = SubResource("CylinderShape3D_16mnu")
+shape = SubResource("CylinderShape3D_qt5uh")
 
 [node name="[Enemy] Egg Chaser_R2" parent="[Interactable] ChaseSection/ChasePath/ChasingFollower" parent_id_path=PackedInt32Array(523813964, 1665256038) index="6" unique_id=1695644626 instance=ExtResource("34_3ek1y")]
 transform = Transform3D(1, 0, 1.74846e-07, 0, 1, 0, -1.74846e-07, 0, 1, -8, 0, 0)
@@ -1125,25 +1135,25 @@ transform = Transform3D(1, 0, 1.74846e-07, 0, 1, 0, -1.74846e-07, 0, 1, -8, 0, 0
 transform = Transform3D(0.009999995, 9.380352e-06, -8.9741e-06, 8.951378e-06, 2.4262701e-05, 0.009999969, 9.402684e-06, -0.009999969, 2.425492e-05, 714.9149, 113.84605, 2316.3235)
 
 [node name="BeamMesh" parent="[Interactable] ChaseSection/ChasePath/ChasingFollower/[Enemy] Egg Chaser_R2/Laser_L/[Interactable] Laser" parent_id_path=PackedInt32Array(1695644626, 2019842755) index="0" unique_id=1006862339]
-mesh = SubResource("CylinderMesh_qt5uh")
-
-[node name="BeamMesh2" parent="[Interactable] ChaseSection/ChasePath/ChasingFollower/[Enemy] Egg Chaser_R2/Laser_L/[Interactable] Laser" parent_id_path=PackedInt32Array(1695644626, 2019842755) index="1" unique_id=909123986]
 mesh = SubResource("CylinderMesh_l608q")
 
+[node name="BeamMesh2" parent="[Interactable] ChaseSection/ChasePath/ChasingFollower/[Enemy] Egg Chaser_R2/Laser_L/[Interactable] Laser" parent_id_path=PackedInt32Array(1695644626, 2019842755) index="1" unique_id=909123986]
+mesh = SubResource("CylinderMesh_pfper")
+
 [node name="CollisionShape3D" parent="[Interactable] ChaseSection/ChasePath/ChasingFollower/[Enemy] Egg Chaser_R2/Laser_L/[Interactable] Laser/Hitbox" parent_id_path=PackedInt32Array(1695644626, 2019842755, 1065576655) index="0" unique_id=939656509]
-shape = SubResource("CylinderShape3D_pfper")
+shape = SubResource("CylinderShape3D_5lmnk")
 
 [node name="Laser_R" parent="[Interactable] ChaseSection/ChasePath/ChasingFollower/[Enemy] Egg Chaser_R2" index="14" unique_id=110019703]
 transform = Transform3D(-9.365356e-06, -0.00999999, -6.866156e-06, 8.9537625e-06, -6.8742033e-06, 0.009999994, -0.00999999, 9.358737e-06, 8.959824e-06, 0.796875, 1.3460159, -0.33166504)
 
 [node name="BeamMesh" parent="[Interactable] ChaseSection/ChasePath/ChasingFollower/[Enemy] Egg Chaser_R2/Laser_R/[Interactable] Laser" parent_id_path=PackedInt32Array(1695644626, 1140186521) index="0" unique_id=1006862339]
-mesh = SubResource("CylinderMesh_5lmnk")
-
-[node name="BeamMesh2" parent="[Interactable] ChaseSection/ChasePath/ChasingFollower/[Enemy] Egg Chaser_R2/Laser_R/[Interactable] Laser" parent_id_path=PackedInt32Array(1695644626, 1140186521) index="1" unique_id=909123986]
 mesh = SubResource("CylinderMesh_fy0qc")
 
+[node name="BeamMesh2" parent="[Interactable] ChaseSection/ChasePath/ChasingFollower/[Enemy] Egg Chaser_R2/Laser_R/[Interactable] Laser" parent_id_path=PackedInt32Array(1695644626, 1140186521) index="1" unique_id=909123986]
+mesh = SubResource("CylinderMesh_wiky8")
+
 [node name="CollisionShape3D" parent="[Interactable] ChaseSection/ChasePath/ChasingFollower/[Enemy] Egg Chaser_R2/Laser_R/[Interactable] Laser/Hitbox" parent_id_path=PackedInt32Array(1695644626, 1140186521, 1065576655) index="0" unique_id=939656509]
-shape = SubResource("CylinderShape3D_wiky8")
+shape = SubResource("CylinderShape3D_qdy0n")
 
 [node name="[Enemy] Egg Chaser_R3" parent="[Interactable] ChaseSection/ChasePath/ChasingFollower" parent_id_path=PackedInt32Array(523813964, 1665256038) index="7" unique_id=1926856842 instance=ExtResource("34_3ek1y")]
 transform = Transform3D(1, 0, 1.74846e-07, 0, 1, 0, -1.74846e-07, 0, 1, -12, 0, 0)
@@ -1152,35 +1162,35 @@ transform = Transform3D(1, 0, 1.74846e-07, 0, 1, 0, -1.74846e-07, 0, 1, -12, 0, 
 transform = Transform3D(0.009999995, 9.380352e-06, -8.9741e-06, 8.951378e-06, 2.4262701e-05, 0.009999969, 9.402684e-06, -0.009999969, 2.425492e-05, 714.9149, 113.84605, 2312.3235)
 
 [node name="BeamMesh" parent="[Interactable] ChaseSection/ChasePath/ChasingFollower/[Enemy] Egg Chaser_R3/Laser_L/[Interactable] Laser" parent_id_path=PackedInt32Array(1926856842, 2019842755) index="0" unique_id=1006862339]
-mesh = SubResource("CylinderMesh_qdy0n")
-
-[node name="BeamMesh2" parent="[Interactable] ChaseSection/ChasePath/ChasingFollower/[Enemy] Egg Chaser_R3/Laser_L/[Interactable] Laser" parent_id_path=PackedInt32Array(1926856842, 2019842755) index="1" unique_id=909123986]
 mesh = SubResource("CylinderMesh_rs6vo")
 
+[node name="BeamMesh2" parent="[Interactable] ChaseSection/ChasePath/ChasingFollower/[Enemy] Egg Chaser_R3/Laser_L/[Interactable] Laser" parent_id_path=PackedInt32Array(1926856842, 2019842755) index="1" unique_id=909123986]
+mesh = SubResource("CylinderMesh_hldtv")
+
 [node name="CollisionShape3D" parent="[Interactable] ChaseSection/ChasePath/ChasingFollower/[Enemy] Egg Chaser_R3/Laser_L/[Interactable] Laser/Hitbox" parent_id_path=PackedInt32Array(1926856842, 2019842755, 1065576655) index="0" unique_id=939656509]
-shape = SubResource("CylinderShape3D_hldtv")
+shape = SubResource("CylinderShape3D_7vlev")
 
 [node name="Laser_R" parent="[Interactable] ChaseSection/ChasePath/ChasingFollower/[Enemy] Egg Chaser_R3" index="14" unique_id=110019703]
 transform = Transform3D(-9.365356e-06, -0.00999999, -6.866156e-06, 8.9537625e-06, -6.8742033e-06, 0.009999994, -0.00999999, 9.358737e-06, 8.959824e-06, 0.796875, 1.3460159, -0.33166504)
 
 [node name="BeamMesh" parent="[Interactable] ChaseSection/ChasePath/ChasingFollower/[Enemy] Egg Chaser_R3/Laser_R/[Interactable] Laser" parent_id_path=PackedInt32Array(1926856842, 1140186521) index="0" unique_id=1006862339]
-mesh = SubResource("CylinderMesh_7vlev")
-
-[node name="BeamMesh2" parent="[Interactable] ChaseSection/ChasePath/ChasingFollower/[Enemy] Egg Chaser_R3/Laser_R/[Interactable] Laser" parent_id_path=PackedInt32Array(1926856842, 1140186521) index="1" unique_id=909123986]
 mesh = SubResource("CylinderMesh_pwyic")
 
+[node name="BeamMesh2" parent="[Interactable] ChaseSection/ChasePath/ChasingFollower/[Enemy] Egg Chaser_R3/Laser_R/[Interactable] Laser" parent_id_path=PackedInt32Array(1926856842, 1140186521) index="1" unique_id=909123986]
+mesh = SubResource("CylinderMesh_wbxd2")
+
 [node name="CollisionShape3D" parent="[Interactable] ChaseSection/ChasePath/ChasingFollower/[Enemy] Egg Chaser_R3/Laser_R/[Interactable] Laser/Hitbox" parent_id_path=PackedInt32Array(1926856842, 1140186521, 1065576655) index="0" unique_id=939656509]
-shape = SubResource("CylinderShape3D_wbxd2")
+shape = SubResource("CylinderShape3D_es27u")
 
 [node name="CollisionShape3D" parent="[Interactable] ChaseSection/ChasePath/ChaseStartFollow/ChaseStartTrigger" parent_id_path=PackedInt32Array(523813964, 1382055412) index="0" unique_id=178184736]
-shape = SubResource("BoxShape3D_es27u")
+shape = SubResource("BoxShape3D_77bj1")
 
 [node name="ChaseEndFollow" parent="[Interactable] ChaseSection/ChasePath" index="2" unique_id=1570250900]
 transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 1000.0001, 0, 0)
 progress = 1000.0
 
 [node name="CollisionShape3D" parent="[Interactable] ChaseSection/ChasePath/ChaseEndFollow/ChaseEndTrigger" parent_id_path=PackedInt32Array(523813964, 885331311) index="0" unique_id=616462476]
-shape = SubResource("BoxShape3D_es27u")
+shape = SubResource("BoxShape3D_77bj1")
 
 [node name="EnemyKillHitbox" type="Area3D" parent="[Interactable] ChaseSection/ChasePath/ChaseEndFollow" index="1" unique_id=190701195]
 collision_mask = 64
@@ -1252,6 +1262,20 @@ MinSpeed = 100.0
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 452.00006, 0, 0)
 shape = SubResource("BoxShape3D_hxqaj")
 
+[node name="[Trigger] InputPromptTricks" parent="." unique_id=289787838 instance=ExtResource("44_vueie")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2300, 57, 2325)
+Text = "Press ✜ in the air to do a trick and go faster!"
+
+[node name="CollisionShape3D" parent="[Trigger] InputPromptTricks/Area3D" parent_id_path=PackedInt32Array(289787838, 2062885543) index="0" unique_id=822586964]
+shape = SubResource("BoxShape3D_17hr8")
+
+[node name="[Trigger] InputPromptCenter_Quickstep" parent="." unique_id=1439570967 instance=ExtResource("45_1n32h")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.36738217, 49.999947, 1005.6526)
+Text = "[input]quickstep_l[/input] / [input]quickstep_r[/input]"
+
+[node name="CollisionShape3D" parent="[Trigger] InputPromptCenter_Quickstep/Area3D" parent_id_path=PackedInt32Array(1439570967, 1374411602) index="0" unique_id=913205703]
+shape = SubResource("BoxShape3D_8hmfs")
+
 [connection signal="OnAfterSpawningDone" from="PlayersManager" to="PlayersManager/ExtraSettingsApplicator" method="ApplySettings"]
 [connection signal="OnPlayerEnter" from="[Interactable] ChaseSection/ChasePath/ChasingFollower/[Enemy] Egg Chaser_Mid/InvisibleWallEnabler" to="[Interactable] ChaseSection/ChasePath/ChasingFollower/[Enemy] Egg Chaser_Mid/InvisibleWall/CollisionShape3D" method="set_disabled" flags=6 binds= [false]]
 [connection signal="OnPlayerEnter" from="[Interactable] ChaseSection/ChasePath/LaserTrigger1/Area3D" to="[Interactable] ChaseSection/ChasePath/ChasingFollower/[Enemy] Egg Chaser_Mid/Behaviors/Phase0Alive/EggChaserBehavior" method="Fire"]
@@ -1298,3 +1322,5 @@ shape = SubResource("BoxShape3D_hxqaj")
 [editable path="[Interactable] ChaseSection/ChasePath/ChasingFollower/[Enemy] Egg Chaser_R3/EnemyEggChaser"]
 [editable path="[Interactable] ChaseSection/ChasePath/ChasingFollower/[Enemy] Egg Chaser_R3/Laser_L/[Interactable] Laser"]
 [editable path="[Interactable] ChaseSection/ChasePath/ChasingFollower/[Enemy] Egg Chaser_R3/Laser_R/[Interactable] Laser"]
+[editable path="[Trigger] InputPromptTricks"]
+[editable path="[Trigger] InputPromptCenter_Quickstep"]
