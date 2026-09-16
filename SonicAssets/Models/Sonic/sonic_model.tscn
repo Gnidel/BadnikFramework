@@ -785,6 +785,8 @@ AnimationPlayer = NodePath("Sonic/AnimationPlayer")
 SpinBall = NodePath("SpinBall")
 SpinDashBall = NodePath("SpinDashBall")
 Models = [NodePath("Sonic/chr_Sonic_HD/Skeleton3D/chr_Sonic_HD_mesh"), NodePath("Sonic/chr_Sonic_HD/Skeleton3D/Mesh_006")]
+RunAnimationMidSpeed = 30.0
+RunAnimationFullSpeed = 60.0
 HeadCameraFocusPoint = NodePath("HeadCameraFocusPoint")
 BoneAttachmentSkateboard = NodePath("BoneAttachment3D")
 

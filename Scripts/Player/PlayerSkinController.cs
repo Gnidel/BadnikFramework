@@ -62,6 +62,12 @@ public partial class PlayerSkinController : Node3D
     public float RunSpeedAnimationMax = 30f;
 
     [Export]
+    public float RunAnimationMidSpeed = 15f;
+
+    [Export]
+    public float RunAnimationFullSpeed = 30f;
+
+    [Export]
     public Node3D HeadCameraFocusPoint;
 
     [Export]
@@ -189,13 +195,7 @@ public partial class PlayerSkinController : Node3D
             AnimationTree.Set("parameters/Running/drift/blend_amount", ActionDrift.VisualDriftDir);
         }
 
-        float runAnim =
-            Mathf.Clamp(
-                PlayerController.VelocityXZ.Length() / PlayerController.SpeedMultiplier,
-                0,
-                30
-            ) / 15
-            - 1;
+        float runAnim = GetRunAnimationBlendAmount();
 
         AnimationTree.Set("parameters/Running/runAnim/blend_amount", runAnim);
         float currLeaning = AnimationTree
@@ -291,13 +291,7 @@ public partial class PlayerSkinController : Node3D
                     "parameters/Skate Ground/leaning_midspeed/blend_amount",
                     PlayerController.Leaning
                 );
-                float runAnim =
-                    Mathf.Clamp(
-                        PlayerController.VelocityXZ.Length() / PlayerController.SpeedMultiplier,
-                        0,
-                        30
-                    ) / 15
-                    - 1;
+                float runAnim = GetRunAnimationBlendAmount();
                 AnimationTree.Set("parameters/Skate Ground/runAnim/blend_amount", runAnim);
             }
             else
@@ -377,6 +371,20 @@ public partial class PlayerSkinController : Node3D
     public void SetParameter(string paramName, double value)
     {
         AnimationTree.Set(paramName, value);
+    }
+
+    private float GetRunAnimationBlendAmount()
+    {
+        var speed = PlayerController.VelocityXZ.Length() / PlayerController.SpeedMultiplier;
+        var midSpeed = Mathf.Max(RunAnimationMidSpeed, 0.001f);
+        var fullSpeed = Mathf.Max(RunAnimationFullSpeed, midSpeed);
+
+        if (speed <= midSpeed)
+        {
+            return Mathf.Clamp(Mathf.InverseLerp(0, midSpeed, speed) - 1, -1, 1);
+        }
+
+        return Mathf.Clamp(Mathf.InverseLerp(midSpeed, fullSpeed, speed), -1, 1);
     }
 
     private void SetParticles(double delta)
