@@ -658,19 +658,26 @@ public partial class PlayerController : RigidBody3D
                     inputY -= 1f;
                 }
             }
-            this.LinearVelocity +=
-                -GroundNormal
-                * inputY
-                * (float)(
-                    Acceleration.Sample(
-                        VelocityXZ.Length()
-                            / 100f /*/ slopeFactor*/
-                            / SpeedMultiplier
+            if (Mathf.IsZeroApprox(inputY))
+            {
+                VelocityY = Vector3.Zero;
+            }
+            else
+            {
+                this.LinearVelocity +=
+                    -GroundNormal
+                    * inputY
+                    * (float)(
+                        Acceleration.Sample(
+                            VelocityXZ.Length()
+                                / 100f /*/ slopeFactor*/
+                                / SpeedMultiplier
+                        )
+                        * SpeedMultiplier
+                        * delta
                     )
-                    * SpeedMultiplier
-                    * delta
-                )
-                * FlightUpDownSpeed;
+                    * FlightUpDownSpeed;
+            }
         }
         if (!ignoreAirborneSkateDirection)
         {
