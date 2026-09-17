@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="BadnikFramework"
-config/version="1.0.0"
+config/version="1.0.1"
 run/main_scene="uid://dwkll7gml5r4a"
 config/quit_on_go_back=false
 config/features=PackedStringArray("4.7", "C#", "Mobile")
