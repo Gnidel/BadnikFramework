@@ -535,9 +535,12 @@ size = Vector3(1000, 50, 50)
 resource_local_to_scene = true
 size = Vector3(600, 50, 50)
 
-[sub_resource type="BoxShape3D" id="BoxShape3D_8hmfs"]
+[sub_resource type="BoxShape3D" id="BoxShape3D_02kc0"]
 resource_local_to_scene = true
 size = Vector3(30, 50, 500)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_myu60"]
+size = Vector3(4194.0024, 5, 200)
 
 [node name="Digital Sea Act 2" type="Node3D" unique_id=138750853]
 
@@ -581,12 +584,11 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4509.7637, 137.10574, 2323.80
 
 [node name="Pit" type="Area3D" parent="." unique_id=256654572]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -500, 0)
-collision_mask = 7
+collision_mask = 3
 script = ExtResource("10_0enk0")
 IsInstaKill = true
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Pit" unique_id=168468095]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -500, 0)
 shape = SubResource("BoxShape3D_fhrgg")
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=1520174136]
@@ -626,7 +628,7 @@ ApplyToParent = true
 Destroy = true
 
 [node name="WaterPlaneMobile" type="MeshInstance3D" parent="Water" unique_id=918652264]
-transform = Transform3D(5e-05, 0, 0, 0, 0.0001, 0, 0, 0, 5e-05, -0.074999996, 0.5, -0.074999996)
+transform = Transform3D(5e-05, 0, 0, 0, 0.0001, 0, 0, 0, 5e-05, -0.07498905, 0.49989104, -0.07502742)
 mesh = SubResource("PlaneMesh_sajgr")
 surface_material_override/0 = SubResource("StandardMaterial3D_eckjl")
 
@@ -1274,7 +1276,16 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.36738217, 49.999947, 1005.
 Text = "[input]quickstep_l[/input] / [input]quickstep_r[/input]"
 
 [node name="CollisionShape3D" parent="[Trigger] InputPromptCenter_Quickstep/Area3D" parent_id_path=PackedInt32Array(1439570967, 1374411602) index="0" unique_id=913205703]
-shape = SubResource("BoxShape3D_8hmfs")
+shape = SubResource("BoxShape3D_02kc0")
+
+[node name="InvisibleBarrierForHoverboardSection" type="StaticBody3D" parent="." unique_id=627046279]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4000, -10, 2327.301)
+collision_layer = 33
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="InvisibleBarrierForHoverboardSection" unique_id=315939453]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -59.070557, 0, 0)
+shape = SubResource("BoxShape3D_myu60")
+debug_color = Color(0.9639295, 1.0588765e-06, 0.4929222, 1)
 
 [connection signal="OnAfterSpawningDone" from="PlayersManager" to="PlayersManager/ExtraSettingsApplicator" method="ApplySettings"]
 [connection signal="OnPlayerEnter" from="[Interactable] ChaseSection/ChasePath/ChasingFollower/[Enemy] Egg Chaser_Mid/InvisibleWallEnabler" to="[Interactable] ChaseSection/ChasePath/ChasingFollower/[Enemy] Egg Chaser_Mid/InvisibleWall/CollisionShape3D" method="set_disabled" flags=6 binds= [false]]

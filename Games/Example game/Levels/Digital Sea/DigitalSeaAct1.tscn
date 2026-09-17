@@ -413,7 +413,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 875.1532, 51.57074, 6761.5586
 
 [node name="Pit" type="Area3D" parent="." unique_id=256654572]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -500, 0)
-collision_mask = 7
+collision_mask = 3
 script = ExtResource("10_wnjnd")
 IsInstaKill = true
 
@@ -628,7 +628,7 @@ LockInputTime = 2.0
 SnapCamera = false
 
 [node name="PathFollow3D5" type="PathFollow3D" parent="AutorunRoad" unique_id=1675888905]
-transform = Transform3D(0.020973656, 4.399073e-09, 0.9997482, -2.0973579e-07, 0.999999, -3.5525998e-15, -0.9997632, -2.0969296e-07, 0.020973342, 40.562454, -5.14984e-05, -99.6458)
+transform = Transform3D(0.020973653, 4.399073e-09, 0.99974805, -2.0973576e-07, 0.999999, -3.5525993e-15, -0.9997631, -2.0969296e-07, 0.020973338, 40.562454, -5.14984e-05, -99.6458)
 progress = 174.158
 
 [node name="[Interactable] Speed_Pad" parent="AutorunRoad/PathFollow3D5" unique_id=714881839 instance=ExtResource("13_qxehb")]
@@ -638,7 +638,7 @@ LockInputTime = 2.0
 SnapCamera = false
 
 [node name="PathFollow3D6" type="PathFollow3D" parent="AutorunRoad" unique_id=1367659026]
-transform = Transform3D(0.020973776, 4.399093e-09, 0.9997482, -2.0973579e-07, 0.999999, 1.776302e-15, -0.9997632, -2.0969296e-07, 0.02097346, -2.9674702, -5.149839e-05, -100.558975)
+transform = Transform3D(0.020973772, 4.399093e-09, 0.99974805, -2.0973576e-07, 0.999999, 1.7763018e-15, -0.9997631, -2.0969296e-07, 0.020973457, -2.9674702, -5.149839e-05, -100.558975)
 progress = 217.698
 
 [node name="[Interactable] Speed_Pad" parent="AutorunRoad/PathFollow3D6" unique_id=609739672 instance=ExtResource("13_qxehb")]
@@ -1217,7 +1217,7 @@ collision_mask = 2
 shape = SubResource("ConcavePolygonShape3D_sgb3s")
 
 [node name="PathFollow3D" type="PathFollow3D" parent="digital_sea_curves/Road_009" unique_id=2071651604]
-transform = Transform3D(-0.98757327, 1.12690245e-07, 0.15717214, 6.5192705e-09, 1.000002, 5.9604645e-08, -0.15717244, 5.960476e-08, -0.9875713, 1649.0002, 123.999985, 3220.0005)
+transform = Transform3D(-0.9875735, 1.1269027e-07, 0.15717214, 6.5192722e-09, 1.0000023, 5.9604645e-08, -0.15717249, 5.960477e-08, -0.9875713, 1649.0002, 123.999985, 3220.0005)
 progress = 319.07977
 
 [node name="[Interactable] Spring_Red" parent="digital_sea_curves/Road_009/PathFollow3D" unique_id=574615743 instance=ExtResource("24_r5gx1")]
@@ -1279,7 +1279,7 @@ collision_mask = 2
 shape = SubResource("ConcavePolygonShape3D_dtlen")
 
 [node name="PathFollow3D" type="PathFollow3D" parent="digital_sea_curves/Road_010" unique_id=761003936]
-transform = Transform3D(-0.9875734, 1.1269026e-07, 0.15717214, 6.5192713e-09, 1.0000021, 5.9604645e-08, -0.15717246, 5.9604766e-08, -0.9875713, 1649.0002, 123.999985, 3220.0005)
+transform = Transform3D(-0.9875736, 1.1269029e-07, 0.15717214, 6.5192727e-09, 1.0000024, 5.9604645e-08, -0.1571725, 5.960478e-08, -0.9875713, 1649.0002, 123.999985, 3220.0005)
 progress = 319.07977
 
 [node name="[Interactable] Spring_Red" parent="digital_sea_curves/Road_010/PathFollow3D" unique_id=2039867352 instance=ExtResource("24_r5gx1")]
@@ -1341,7 +1341,7 @@ collision_mask = 2
 shape = SubResource("ConcavePolygonShape3D_guxcq")
 
 [node name="PathFollow3D" type="PathFollow3D" parent="digital_sea_curves/Road_011" unique_id=1465139245]
-transform = Transform3D(-0.9875735, 1.1269027e-07, 0.15717214, 6.5192722e-09, 1.0000023, 5.9604645e-08, -0.15717249, 5.960477e-08, -0.9875713, 1649.0002, 123.999985, 3220.0005)
+transform = Transform3D(-0.98757374, 1.126903e-07, 0.15717214, 6.5192736e-09, 1.0000025, 5.9604645e-08, -0.15717252, 5.960479e-08, -0.9875713, 1649.0002, 123.999985, 3220.0005)
 progress = 319.07977
 
 [node name="[Interactable] Spring_Red" parent="digital_sea_curves/Road_011/PathFollow3D" unique_id=628998793 instance=ExtResource("24_r5gx1")]
