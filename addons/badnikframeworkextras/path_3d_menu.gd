@@ -1103,6 +1103,7 @@ func _append_generated_points(path3d: Path3D, generated: Array, action_name: Str
 	# geometrically correct one (pointing toward the loop/corkscrew's
 	# rotation axis) and store the rotation needed to fix it as that
 	# point's tilt.
+	var previous_tilt := curve.get_point_tilt(original_count - 1) if original_count > 0 else 0.0
 	for i in range(generated.size()):
 		var point_index := original_count + i
 		var pos: Vector3 = generated[i]["pos"]
@@ -1118,7 +1119,16 @@ func _append_generated_points(path3d: Path3D, generated: Array, action_name: Str
 		if cross_vec.dot(tangent) < 0.0:
 			angle = -angle
 
+		# Keep equivalent angles on the same continuous branch. CSGPolygon3D
+		# and PathFollow3D can interpret a +/- PI boundary crossing as a real
+		# twist, even though the orientations are mathematically identical.
+		while angle - previous_tilt > PI:
+			angle -= TAU
+		while angle - previous_tilt < -PI:
+			angle += TAU
+
 		curve.set_point_tilt(point_index, angle)
+		previous_tilt = angle
 
 	# Snapshot the final pos/in/out/tilt of just the new points, so undo/redo
 	# can cheaply re-add or remove them without recomputing anything.
