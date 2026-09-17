@@ -640,7 +640,7 @@ grow_vertical = 0
 mouse_filter = 2
 theme = ExtResource("1_boxas")
 bbcode_enabled = true
-text = "[right]BF v1.0.0
+text = "[right]BF v1.0.1
 by Gnidel[/right]"
 
 [connection signal="pressed" from="MainMenuContainer/Story mode" to="." method="ToLevelSelectMenu"]
