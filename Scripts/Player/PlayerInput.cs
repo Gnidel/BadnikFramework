@@ -14,6 +14,7 @@ public partial class PlayerInput : Node
     public Vector2 LeftRawFlickInput; // A frame when left thumbstick moves from neutral
     public Vector3 LeftInput3D;
     public Vector2 CameraInput2D;
+    public Vector2 MouseCameraInput2D;
 
     [Signal]
     public delegate void OnLeftInputFlickEventHandler(Vector2 flickInput);
@@ -101,6 +102,13 @@ public partial class PlayerInput : Node
             if (em.Pressed)
             {
                 LastInputType = InputType.KEYBOARD_AND_MOUSE;
+            }
+        }
+        else if (@event is InputEventMouseMotion emm)
+        {
+            if (PlayerIdentifier == "kb" || PlayerIdentifier == "any")
+            {
+                MouseCameraInput2D += emm.Relative * MouseCameraSensitivity;
             }
         }
         else if (@event is InputEventJoypadButton ep)
@@ -227,11 +235,6 @@ public partial class PlayerInput : Node
                     PlayerIdentifier + "_camup",
                     PlayerIdentifier + "_camdown"
                 ) * JoypadCameraSensitivity;
-            if (PlayerIdentifier == "kb" || PlayerIdentifier == "any")
-            {
-                CameraInput2D +=
-                    Input.GetLastMouseVelocity() * (float)delta * MouseCameraSensitivity;
-            }
         }
 
         PlayerCamera Camera = null;
