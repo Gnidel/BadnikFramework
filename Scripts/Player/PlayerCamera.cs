@@ -110,6 +110,11 @@ public partial class PlayerCamera : Camera3D
     private float UpDownManualCorrection = 0;
     private Vector3 CollissionOffset = Vector3.Zero;
     private double CameraNotCollidedTimer = 0;
+    private Vector2 MouseCameraInput2D = Vector2.Zero;
+    private Vector2 SmoothedMouseCameraInput2D = Vector2.Zero;
+
+    private const float MouseCameraMotionScale = 1f / 60f;  // Arbitrary calibration. It doesn't create framerate dependence.
+    private const float MouseCameraInputSmoothingSpeed = 20f;
 
     private Vector3 CurrentShake = Vector3.Zero;
     private float ShakeTime = 0;
@@ -164,6 +169,12 @@ public partial class PlayerCamera : Camera3D
         }
 
         SetAnimeSpeedLines(delta);
+        MouseCameraInput2D = Player.PlayerInput.MouseCameraInput2D;
+        Player.PlayerInput.MouseCameraInput2D = Vector2.Zero;
+        SmoothedMouseCameraInput2D = SmoothedMouseCameraInput2D.Lerp(
+            MouseCameraInput2D,
+            1f - Mathf.Exp(-MouseCameraInputSmoothingSpeed * (float)delta)
+        );
 
         if (Player.PlayerDamage.IsDead)
             return;
@@ -783,18 +794,27 @@ public partial class PlayerCamera : Camera3D
         var inputOffset =
             this.GlobalBasis.GetRotationQuaternion()
             * new Vector3(
-                -Player.PlayerInput.CameraInput2D.X * CameraSensitivity.X * (float)delta,
+                -(
+                    Player.PlayerInput.CameraInput2D.X * (float)delta
+                    + SmoothedMouseCameraInput2D.X * MouseCameraMotionScale
+                ) * CameraSensitivity.X,
                 0,
                 0
             );
         //inputOffset = inputOffset.ProjectOnPlane(Player.GroundNormal);
 
         // Controls Y
-        if (Mathf.Abs(Player.PlayerInput.CameraInput2D.Y) > 0.5f)
+        if (
+            Mathf.Abs(Player.PlayerInput.CameraInput2D.Y) > 0.5f
+            || !Mathf.IsZeroApprox(SmoothedMouseCameraInput2D.Y)
+        )
         {
             UpDownManualCorrection = Mathf.Clamp(
                 UpDownManualCorrection
-                    + Player.PlayerInput.CameraInput2D.Y * CameraSensitivity.Y * (float)delta,
+                    + (
+                        Player.PlayerInput.CameraInput2D.Y * (float)delta
+                        + SmoothedMouseCameraInput2D.Y * MouseCameraMotionScale
+                    ) * CameraSensitivity.Y,
                 CameraLimitsY.X,
                 CameraLimitsY.Y
             );
