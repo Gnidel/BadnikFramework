@@ -45,7 +45,7 @@ border_width_right = 100
 border_color = Color(0.8, 0.8, 0.8, 0)
 border_blend = true
 
-[node name="MainMenu" type="Control" unique_id=1199430971 node_paths=PackedStringArray("MainMenuContainer", "DefaultMainMenuButton", "LevelSelectContainer", "CharacterSelector", "DefaultCharacterSelectorButton", "OptionsMenuContainer", "ExtrasMenuContainer", "LoadingScreen", "SaveSelector", "SaveSelectorBackground", "StagesData", "StageTemplateButton")]
+[node name="MainMenu" type="Control" unique_id=1199430971 node_paths=PackedStringArray("MainMenuContainer", "DefaultMainMenuButton", "LevelSelectContainer", "CharacterSelector", "DefaultCharacterSelectorButton", "OptionsMenuContainer", "ExtrasMenuContainer", "LoadingScreen", "SaveSelector", "SaveSelectorBackground", "Copyright", "StagesData", "StageTemplateButton")]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -63,6 +63,7 @@ ExtrasMenuContainer = NodePath("ExtrasMenu")
 LoadingScreen = NodePath("Loading")
 SaveSelector = NodePath("SaveSelector")
 SaveSelectorBackground = NodePath("SaveSelectorBackground")
+Copyright = NodePath("Copyright")
 RedRingYesIcon = ExtResource("3_48eb3")
 RedRingNoIcon = ExtResource("6_027u0")
 StagesData = NodePath("StagesData")

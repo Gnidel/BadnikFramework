@@ -3,7 +3,36 @@
     <TargetFramework>net8.0</TargetFramework>
     <TargetFramework Condition=" '$(GodotTargetPlatform)' == 'android' ">net9.0</TargetFramework>
     <EnableDynamicLoading>true</EnableDynamicLoading>
+    <BuildVersionFile>$(IntermediateOutputPath)BuildVersion.g.cs</BuildVersionFile>
   </PropertyGroup>
+  <Target Name="GenerateBuildVersion" BeforeTargets="CoreCompile">
+    <PropertyGroup>
+      <GitCommitHash></GitCommitHash>
+      <GitCommitHashFile>$(BuildVersionFile).git-hash</GitCommitHashFile>
+    </PropertyGroup>
+    <Delete Files="$(GitCommitHashFile)" />
+    <Exec Command="git rev-parse --short HEAD &gt; &quot;$(GitCommitHashFile)&quot;" IgnoreExitCode="true" />
+    <ReadLinesFromFile File="$(GitCommitHashFile)" Condition="Exists('$(GitCommitHashFile)')">
+      <Output TaskParameter="Lines" PropertyName="GitCommitHash" />
+    </ReadLinesFromFile>
+    <ReadLinesFromFile File="$(MSBuildProjectDirectory)\project.godot">
+      <Output TaskParameter="Lines" ItemName="ProjectSettingsLines" />
+    </ReadLinesFromFile>
+    <PropertyGroup>
+      <ProjectSettingsText>@(ProjectSettingsLines, '&#xA;')</ProjectSettingsText>
+      <ProjectVersion>$([System.Text.RegularExpressions.Regex]::Match('$(ProjectSettingsText)', 'config/version=&quot;([^&quot;]+)&quot;').Groups[1].Value)</ProjectVersion>
+      <ProjectVersion Condition="'$(ProjectVersion)' == ''">0.0.0</ProjectVersion>
+      <BuildVersionText>BF v$(ProjectVersion)</BuildVersionText>
+      <BuildVersionText Condition="'$(GitCommitHash)' != ''">BF v$(ProjectVersion)-$(GitCommitHash)</BuildVersionText>
+    </PropertyGroup>
+    <WriteLinesToFile
+      File="$(BuildVersionFile)"
+      Lines="public static class BuildVersion { public const string Text = &quot;$(BuildVersionText)&quot;%3B }"
+      Overwrite="true" />
+    <ItemGroup>
+      <Compile Include="$(BuildVersionFile)" />
+    </ItemGroup>
+  </Target>
 <ItemGroup>
     <Compile Remove="android\**\*.cs" />
 </ItemGroup>

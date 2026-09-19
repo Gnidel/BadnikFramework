@@ -39,6 +39,10 @@ public partial class MainMenuController : Control
 
     [Export]
     public Control SaveSelectorBackground;
+
+    [Export]
+    public RichTextLabel Copyright;
+
     private string CurrentlyLoadingScene;
     private SaveData SaveData;
 
@@ -69,6 +73,7 @@ public partial class MainMenuController : Control
 
     public override void _Ready()
     {
+        SetVersionText();
         OptionsMenuContainer.Apply();
         HideAll();
         SaveSelector.Visible = true;
@@ -79,6 +84,11 @@ public partial class MainMenuController : Control
         Engine.TimeScale = 1;
 
         PauseMenu.ExitScene = GetTree().CurrentScene.SceneFilePath;
+    }
+
+    private void SetVersionText()
+    {
+        Copyright.Text = $"[right]{BuildVersion.Text}\nby Gnidel[/right]";
     }
 
     public override void _Process(double delta)
