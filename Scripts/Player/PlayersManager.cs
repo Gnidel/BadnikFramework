@@ -125,7 +125,7 @@ public partial class PlayersManager : Node3D
                 camera.PlayerID = player.PlayerID;
             }
 
-            var playerUI = newSubviewport.GetNodeOrNull<OnePlayerUI>("./SubViewport/PlayerUI");
+            var playerUI = newSubviewport.GetNodeOrNull<OnePlayerUI>("./SubViewport/PlayerUILayer/PlayerUI");
             if (playerUI != null)
             {
                 playerUI.PlayerID = player.PlayerID;
@@ -133,7 +133,7 @@ public partial class PlayersManager : Node3D
             }
 
             var playerStatusUI = newSubviewport.GetNodeOrNull<PlayerStatusUI>(
-                "./SubViewport/PlayerUI/MainUI"
+                "./SubViewport/PlayerUILayer/PlayerUI/MainUI"
             );
             if (playerStatusUI != null)
             {
