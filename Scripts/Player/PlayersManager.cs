@@ -220,6 +220,15 @@ public partial class PlayersManager : Node3D
         var swapTransform = currentPlayer.GlobalTransform;
         var swapVelocity = currentPlayer.LinearVelocity;
 
+        var currentWaterInteraction = currentPlayer.GetNodeOrNull<WaterInteraction>(
+            "./PlayerControl/WaterInteraction"
+        );
+        var nextWaterInteraction = nextPlayer.GetNodeOrNull<WaterInteraction>(
+            "./PlayerControl/WaterInteraction"
+        );
+        currentWaterInteraction?.StopDrowningWarningMusicIfOwned();
+        currentWaterInteraction?.TransferOxygenTo(nextWaterInteraction);
+
         // Swap camera
         var cam = PlayerCamera.Instances[currentPlayer.PlayerID];
         cam.PlayerID = nextPlayer.PlayerID;
