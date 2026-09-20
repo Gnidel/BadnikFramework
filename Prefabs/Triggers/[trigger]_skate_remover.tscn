@@ -8,7 +8,7 @@ size = Vector3(55, 40, 70)
 
 [node name="[Trigger] SkateRemover" type="Area3D" unique_id=833825359]
 collision_layer = 257
-collision_mask = 3
+collision_mask = 2
 script = ExtResource("1_vb5tg")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1182135870]

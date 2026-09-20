@@ -15,7 +15,7 @@ height = 200.0
 radius = 80.0
 
 [node name="[Trigger] LostWorldGravityTriggerTowards2" type="Area3D" unique_id=1759624496 node_paths=PackedStringArray("Path")]
-collision_mask = 7
+collision_mask = 66
 script = ExtResource("1_dxgb1")
 Path = NodePath("Path3D")
 

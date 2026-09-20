@@ -113,7 +113,7 @@ public partial class LostWorldGravityTrigger : Area3D
 
         for (int i = 0; i < Enemies.Count; i++)
         {
-            if (Enemies[i].HP <= 0)
+            if (Enemies[i] == null || Enemies[i].HP <= 0)
             {
                 Enemies.RemoveAt(i);
                 // One frame of delay won't hurt. There may be more of them, so do it on the next frames.
@@ -122,7 +122,7 @@ public partial class LostWorldGravityTrigger : Area3D
         }
         foreach (var Enemy in Enemies)
         {
-            if (Enemy != null || !Enemy.Gravity.IsZeroApprox())
+            if (Enemy != null && !Enemy.Gravity.IsZeroApprox())
             {
                 var nearestPoint = Path.Curve.GetClosestPoint(
                     Path.GlobalTransform.AffineInverse() * Enemy.RigidBody.GlobalPosition
@@ -147,7 +147,7 @@ public partial class LostWorldGravityTrigger : Area3D
                             Path.GlobalTransform.AffineInverse() * Enemy.RigidBody.GlobalPosition
                         );
                         var upVector = Path.Curve.SampleBakedUpVector(nearestOffset);
-                        newGravityNormalized = Path.GlobalTransform * upVector;
+                        newGravityNormalized = Path.GlobalBasis * upVector;
                         break;
                     case GravityMode.LAST_STEP:
                         var enemyGroundNormal = -Enemy.Gravity.Normalized(); // TODO: WILL NOT WORK BECAUSE ENEMIES DON'T DETECT GROUND NORMAL! Do something about it?
@@ -212,6 +212,7 @@ public partial class LostWorldGravityTrigger : Area3D
                         Path.GlobalTransform.AffineInverse() * Player.GlobalPosition
                     );
                     var upVector = Path.Curve.SampleBakedUpVector(nearestOffset);
+                    Player.Gravity = (Path.GlobalBasis * upVector).Normalized() * Player.Gravity.Length();
                     break;
                 case GravityMode.LAST_STEP:
                     Player.Gravity = -Player.GroundNormal.Normalized() * Player.Gravity.Length();
@@ -260,6 +261,7 @@ public partial class LostWorldGravityTrigger : Area3D
                         Path.GlobalTransform.AffineInverse() * Enemy.RigidBody.GlobalPosition
                     );
                     var upVector = Path.Curve.SampleBakedUpVector(nearestOffset);
+                    Enemy.Gravity = (Path.GlobalBasis * upVector).Normalized() * Enemy.Gravity.Length();
                     break;
                 case GravityMode.LAST_STEP:
                     // TODO: Will not work because enemies don't detect ground normal.

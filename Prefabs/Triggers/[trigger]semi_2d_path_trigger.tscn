@@ -18,6 +18,7 @@ transparency = 1
 albedo_color = Color(0.172549, 0, 0.631373, 0.32549)
 
 [sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_f2grt"]
+resource_local_to_scene = true
 backface_collision = true
 
 [node name="[Trigger] Semi 2D Path Trigger" type="Path3D" unique_id=1787141681]
