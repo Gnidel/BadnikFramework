@@ -778,8 +778,7 @@ public partial class PlayerController : RigidBody3D
 
             //if (GroundNormal.Normalized().Dot(-Gravity.Normalized()) < flatGroundDot)
             {
-                this.LinearVelocity -=
-                    GroundNormal.Normalized() * GroundStickingPower * (float)delta;
+                this.LinearVelocity -= GroundNormal.Normalized() * GroundStickingPower;
             }
         }
         //else if (LegsTouchGround)
