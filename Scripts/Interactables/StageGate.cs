@@ -219,11 +219,7 @@ public partial class StageGate : Node3D
             BestTimesLabel.Text = "Required:\n";
             foreach (var item in RequiredItems)
             {
-                var allPlayersItemSum = 0;
-                foreach (var player in PlayerController.Instances)
-                {
-                    allPlayersItemSum += player.PlayerInventory.GetItemCount(item.Id);
-                }
+                var allPlayersItemSum = GetAvailableItemCount(item.Id);
                 BestTimesLabel.Text +=
                     "[img=32x32]"
                     + item.Icon.ResourcePath
@@ -355,6 +351,48 @@ public partial class StageGate : Node3D
         }
     }
 
+    private int GetAvailableItemCount(string itemId)
+    {
+        var itemCount = GlobalItemSystem.GetItemCount(itemId);
+        foreach (var player in PlayerController.Instances)
+        {
+            if (player.PlayerInventory != null)
+            {
+                itemCount += player.PlayerInventory.GetItemCount(itemId);
+            }
+        }
+        return itemCount;
+    }
+
+    private void ConsumeItemCount(string itemId, int count)
+    {
+        var globalItemCount = GlobalItemSystem.GetItemCount(SaveData, itemId);
+        var globalItemConsumption = Math.Min(globalItemCount, count);
+        if (globalItemConsumption > 0)
+        {
+            GlobalItemSystem.AddItemCount(SaveData, itemId, -globalItemConsumption);
+            count -= globalItemConsumption;
+        }
+
+        foreach (var player in PlayerController.Instances)
+        {
+            if (count <= 0)
+                break;
+            if (player.PlayerInventory == null)
+                continue;
+
+            var playerItemConsumption = Math.Min(
+                player.PlayerInventory.GetItemCount(itemId),
+                count
+            );
+            if (playerItemConsumption > 0)
+            {
+                player.PlayerInventory.AddItemCount(itemId, -playerItemConsumption);
+                count -= playerItemConsumption;
+            }
+        }
+    }
+
     public bool CanUnlock()
     {
         var remainingItems = new Dictionary<string, int>();
@@ -363,13 +401,9 @@ public partial class StageGate : Node3D
             remainingItems[item.Id] = item.Count;
         }
 
-        foreach (var player in PlayerController.Instances)
+        foreach (var item in remainingItems)
         {
-            var playerInventory = player.PlayerInventory;
-            foreach (var item in remainingItems)
-            {
-                remainingItems[item.Key] -= playerInventory.GetItemCount(item.Key);
-            }
+            remainingItems[item.Key] -= GetAvailableItemCount(item.Key);
         }
 
         foreach (var remainingItem in remainingItems)
@@ -382,11 +416,9 @@ public partial class StageGate : Node3D
 
     public void OnUnlock()
     {
-        // Note: It won't be fair. It will consume items from players in whatever order.
-        // RISKY ASSUMPTION THAT THE REQUIRED ITEMS ARE GLOBAL!
         if (!CanUnlock())
             return;
-        SaveData = SaveData.Load();
+        SaveData = GlobalItemSystem.Load();
 
         var remainingItems = new Dictionary<string, int>();
         foreach (var item in RequiredItems)
@@ -394,23 +426,7 @@ public partial class StageGate : Node3D
             remainingItems[item.Id] = item.Count;
             if (ConsumeItems)
             {
-                SaveData.GlobalItems[item.Id] = 0;
-            }
-        }
-
-        foreach (var player in PlayerController.Instances)
-        {
-            var playerInventory = player.PlayerInventory;
-            foreach (var item in remainingItems)
-            {
-                var currentPlayerItemCount = playerInventory.GetItemCount(item.Key);
-                var itemsToRemove = Math.Min(item.Value, currentPlayerItemCount);
-                remainingItems[item.Key] -= itemsToRemove;
-                if (ConsumeItems)
-                {
-                    playerInventory.SetItemCount(item.Key, currentPlayerItemCount - itemsToRemove);
-                    SaveData.GlobalItems[item.Key] += playerInventory.GetItemCount(item.Key);
-                }
+                ConsumeItemCount(item.Id, item.Count);
             }
         }
 

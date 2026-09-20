@@ -195,7 +195,7 @@ public partial class SpecialStageManiaManager : Node
 
             //player.PlayerInventory.SetItemCount("specialstage_mach", Mach+1);
 
-            var emerald = player.PlayerInventory.GetItemCount(VictoryItem);
+            var emerald = GlobalItemSystem.GetItemCount(VictoryItem);
             if (emerald > 0)
             {
                 Victory(player);
@@ -229,7 +229,7 @@ public partial class SpecialStageManiaManager : Node
 
     void Victory(PlayerController winner)
     {
-        var save = SaveData.Load();
+        var save = GlobalItemSystem.Load();
         save.GlobalItems[VictoryItem] = 1;
         save.Save();
 

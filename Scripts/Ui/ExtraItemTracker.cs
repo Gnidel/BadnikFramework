@@ -20,7 +20,10 @@ public partial class ExtraItemTracker : HBoxContainer
 		if (PlayerID < 0 || PlayerID >= PlayerController.Instances.Count)
 			return;
 
-		int itemCount = PlayerController.Instances[PlayerID].PlayerInventory.GetItemCount(TrackedItem);
+		var save = GlobalItemSystem.Load();
+		int itemCount = save.GlobalItems.ContainsKey(TrackedItem)
+			? GlobalItemSystem.GetItemCount(save, TrackedItem)
+			: PlayerController.Instances[PlayerID].PlayerInventory.GetItemCount(TrackedItem);
 		TextLabel.Text = itemCount.ToString();
 	}
 }

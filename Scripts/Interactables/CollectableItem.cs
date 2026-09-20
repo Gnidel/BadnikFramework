@@ -112,28 +112,32 @@ public partial class CollectableItem : Node3D
         if (player == null)
             return;
 
+        var globalItem = GetNodeOrNull<GlobalItem>("./GlobalItem");
         PlayerInventory inventory = null;
-        var npcControl = other.GetNodeOrNull<NpcPartnerControl>("./PlayerControl/NpcControl");
-        if (npcControl != null && npcControl.IsNpc)
+        if (globalItem == null)
         {
-            inventory = npcControl.OwnerPlayer?.PlayerInventory;
+            var npcControl = other.GetNodeOrNull<NpcPartnerControl>("./PlayerControl/NpcControl");
+            if (npcControl != null && npcControl.IsNpc)
+            {
+                inventory = npcControl.OwnerPlayer?.PlayerInventory;
+            }
+            else
+            {
+                inventory = other.GetNodeOrNull<PlayerInventory>(new NodePath("./Inventory"));
+            }
+            if (inventory == null)
+                return;
         }
-        else
-        {
-            inventory = other.GetNodeOrNull<PlayerInventory>(new NodePath("./Inventory"));
-        }
-        if (inventory == null)
-            return;
 
         if (collected)
             return;
         collected = true;
 
-        if (IsAdditive)
+        if (globalItem == null && IsAdditive)
         {
             inventory.AddItemCount(ItemName, ItemCount, true);
         }
-        else
+        else if (globalItem == null)
         {
             inventory.SetItemCount(ItemName, ItemCount, true);
         }

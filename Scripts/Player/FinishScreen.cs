@@ -163,7 +163,7 @@ public partial class FinishScreen : Control
 
     void SaveResults()
     {
-        var save = SaveData.Load();
+        var save = GlobalItemSystem.Load();
         var levelSave = save.LevelSaves.GetValueOrDefault(
             StageData.Instance.StageUniqueIdentifier,
             new SaveData.LevelSave()
@@ -205,13 +205,7 @@ public partial class FinishScreen : Control
         {
             foreach (var item in GlobalItems)
             {
-                int itemCount = 0;
-                for (int p = 0; p < PlayerController.Instances.Count; p++)
-                {
-                    itemCount += PlayerController.Instances[p].PlayerInventory.GetItemCount(item);
-                }
-
-                save.GlobalItems[item] = itemCount;
+                save.GlobalItems[item] = GlobalItemSystem.GetItemCount(save, item);
             }
         }
 
