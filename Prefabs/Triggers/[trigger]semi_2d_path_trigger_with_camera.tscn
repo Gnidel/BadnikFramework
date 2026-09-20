@@ -60,5 +60,6 @@ script = ExtResource("3_ay15g")
 [node name="CollisionShap3D_Camera" type="CollisionShape3D" parent="Camera Trigger" unique_id=1851869427]
 
 [connection signal="curve_changed" from="." to="CollissionShapeFromCSGPolygon" method="OnCurveChanged"]
+[connection signal="curve_changed" from="." to="CollissionShapeFromCSGPolygon2" method="OnCurveChanged"]
 [connection signal="body_entered" from="2D Trigger" to="2D Trigger" method="OnBodyEnter"]
 [connection signal="body_exited" from="2D Trigger" to="2D Trigger" method="OnBodyExit"]

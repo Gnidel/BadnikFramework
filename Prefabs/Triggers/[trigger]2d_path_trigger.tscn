@@ -53,7 +53,7 @@ smooth_faces = true
 material = SubResource("StandardMaterial3D_qbxhl")
 
 [node name="Area3D_2D" type="Area3D" parent="." unique_id=2006543561 node_paths=PackedStringArray("Path")]
-collision_mask = 7
+collision_mask = 66
 script = ExtResource("1_y6d3t")
 Path = NodePath("..")
 TwoDimensionalMode = true
