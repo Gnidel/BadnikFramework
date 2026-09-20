@@ -860,7 +860,7 @@ public partial class OptionsMenu : Control
 
     void RemapJoypadButton(string actionName, JoyButton button)
     {
-        for (int device = 0; device < 4; device++)
+        for (int device = 0; device < PlayerInput.MaxSupportedJoypadDevices; device++)
         {
             var action = "pad" + device + "_" + actionName;
             if (!InputMap.HasAction(action)) InputMap.AddAction(action);
@@ -873,7 +873,7 @@ public partial class OptionsMenu : Control
 
     void RemapJoypadAxis(string actionName, JoyAxis axis, int direction)
     {
-        for (int device = 0; device < 4; device++)
+        for (int device = 0; device < PlayerInput.MaxSupportedJoypadDevices; device++)
         {
             var action = "pad" + device + "_" + actionName;
             if (!InputMap.HasAction(action)) InputMap.AddAction(action);

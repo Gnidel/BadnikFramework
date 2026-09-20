@@ -53,11 +53,6 @@ public partial class PlayerInventory : Node
         {
             AddItemCount(item.Key, item.Value);
         }
-        // Global items
-        foreach (var item in save.GlobalItems)
-        {
-            AddItemCount(item.Key, item.Value);
-        }
     }
 
     public void ItemsFromCheckpoint()

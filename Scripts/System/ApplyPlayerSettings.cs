@@ -12,9 +12,12 @@ public partial class ApplyPlayerSettings : Node
         {
             cam.Value.Far = OptionsMenu.Options.RenderDistance;
         }
-        FpsDisplay.Visible = OptionsMenu.Options.ShowFps;
-        FpsDisplay.ProcessMode = OptionsMenu.Options.ShowFps
-            ? ProcessModeEnum.Inherit
-            : ProcessModeEnum.Disabled;
+        if (FpsDisplay != null)
+        {
+            FpsDisplay.Visible = OptionsMenu.Options.ShowFps;
+            FpsDisplay.ProcessMode = OptionsMenu.Options.ShowFps
+                ? ProcessModeEnum.Inherit
+                : ProcessModeEnum.Disabled;
+        }
     }
 }

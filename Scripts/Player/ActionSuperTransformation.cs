@@ -310,7 +310,7 @@ public partial class ActionSuperTransformation : Node, IActionUsingHitbox
         };
         foreach (var emerald in emeralds)
         {
-            if (player.PlayerInventory.GetItemCount(emerald) <= 0)
+            if (GlobalItemSystem.GetItemCount(emerald) <= 0)
                 return false;
         }
 

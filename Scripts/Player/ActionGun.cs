@@ -187,6 +187,7 @@ public partial class ActionGun : Node
                 comboTarget.GlobalPosition = potentialTarget.GlobalPosition;
                 comboTarget.CopyPositionFrom = potentialTarget;
                 comboTarget.Camera = PlayerCamera.Instances[Player.PlayerID];
+                comboTarget.SetScreenTargetParent(OnePlayerUI.Instances[Player.PlayerID]);
                 CurrentComboTargets.Add(comboTarget);
             }
             break;

@@ -151,7 +151,7 @@ public partial class GoalRing : Node3D
             {
                 foreach (var p in PlayerController.Instances)
                 {
-                    var actionSuper = player.GetNodeOrNull<ActionSuperTransformation>(
+                    var actionSuper = p.GetNodeOrNull<ActionSuperTransformation>(
                         new NodePath("./PlayerControl/Actions/ActionSuperTransformation")
                     );
                     if (actionSuper != null && actionSuper.IsSuper)

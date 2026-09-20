@@ -109,7 +109,6 @@ public partial class PlayersManager : Node3D
         }
 
         // Adding real players
-        PlayerController player1 = null;
         for (int i = 0; i < PlayablePlayers.Count; i++)
         {
             var player = PlayablePlayers[i].Instantiate<PlayerController>();
@@ -118,11 +117,6 @@ public partial class PlayersManager : Node3D
             PlayersContainer.AddChild(player);
             player.TopLevel = true;
             player.GlobalRotation = this.GlobalRotation;
-
-            if (i == 0)
-            {
-                player1 = player;
-            }
 
             var newSubviewport = ViewportContainerPrefab.Instantiate<SubViewportContainer>(); //FirstViewportContainerPrefab.Duplicate();
             var camera = newSubviewport.GetNodeOrNull<PlayerCamera>("./SubViewport/Camera3D");
@@ -136,6 +130,14 @@ public partial class PlayersManager : Node3D
             {
                 playerUI.PlayerID = player.PlayerID;
                 playerUI.HomingIcon = playerUI.GetNode<Node2D>("./HomingIcon");
+            }
+
+            var playerStatusUI = newSubviewport.GetNodeOrNull<PlayerStatusUI>(
+                "./SubViewport/PlayerUI/MainUI"
+            );
+            if (playerStatusUI != null)
+            {
+                playerStatusUI.PlayerID = player.PlayerID;
             }
 
             SubviewportContainer.AddChild(newSubviewport);
@@ -156,7 +158,8 @@ public partial class PlayersManager : Node3D
             if (npcControl != null)
             {
                 npcControl.IsNpc = true;
-                npcControl.Target = player1;
+                npcControl.OwnerPlayer = PlayerController.Instances[i % PlayablePlayers.Count];
+                npcControl.Target = npcControl.OwnerPlayer;
             }
             PlayersContainer.AddChild(player);
             player.TopLevel = true;
@@ -217,6 +220,15 @@ public partial class PlayersManager : Node3D
         var swapTransform = currentPlayer.GlobalTransform;
         var swapVelocity = currentPlayer.LinearVelocity;
 
+        var currentWaterInteraction = currentPlayer.GetNodeOrNull<WaterInteraction>(
+            "./PlayerControl/WaterInteraction"
+        );
+        var nextWaterInteraction = nextPlayer.GetNodeOrNull<WaterInteraction>(
+            "./PlayerControl/WaterInteraction"
+        );
+        currentWaterInteraction?.StopDrowningWarningMusicIfOwned();
+        currentWaterInteraction?.TransferOxygenTo(nextWaterInteraction);
+
         // Swap camera
         var cam = PlayerCamera.Instances[currentPlayer.PlayerID];
         cam.PlayerID = nextPlayer.PlayerID;
@@ -229,6 +241,7 @@ public partial class PlayersManager : Node3D
 
         // Swap inputs
         currentPlayer.NpcPartnerControl.IsNpc = true;
+        currentPlayer.NpcPartnerControl.OwnerPlayer = nextPlayer;
         currentPlayer.NpcPartnerControl.Target = nextPlayer;
         currentPlayer.PlayerInput.ReadRealInput = false;
 

@@ -258,7 +258,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="PlayerUI" type="Control" parent="." unique_id=2118265082 node_paths=PackedStringArray("UiText", "RedRingsIcons", "MainUI", "FinishUI", "ItemInfoContainer")]
+[node name="PlayerUI" type="Control" parent="." unique_id=2118265082 node_paths=PackedStringArray("FinishUI")]
 process_mode = 3
 layout_mode = 3
 anchors_preset = 15
@@ -268,16 +268,7 @@ grow_horizontal = 2
 grow_vertical = 2
 theme = ExtResource("40_57s6s")
 script = ExtResource("29_ebqca")
-UiText = NodePath("MainUI/StatusContainer/MarginContainer/VBoxContainer/PlayerUI")
-NoRingsColor = Color(1, 0, 0, 1)
-RedRingsIcons = [NodePath("MainUI/StatusContainer/MarginContainer/VBoxContainer/RedRings/RedRing1"), NodePath("MainUI/StatusContainer/MarginContainer/VBoxContainer/RedRings/RedRing2"), NodePath("MainUI/StatusContainer/MarginContainer/VBoxContainer/RedRings/RedRing3"), NodePath("MainUI/StatusContainer/MarginContainer/VBoxContainer/RedRings/RedRing4"), NodePath("MainUI/StatusContainer/MarginContainer/VBoxContainer/RedRings/RedRing5")]
-RedRingsIdentifiers = PackedStringArray("RedRing1", "RedRing2", "RedRing3", "RedRing4", "RedRing5")
-RedRingYesIcon = ExtResource("30_qjn5s")
-RedRingNoIcon = ExtResource("31_mnu4i")
-MainUI = NodePath("MainUI")
 FinishUI = NodePath("FinishScreen")
-ItemInfoContainer = NodePath("MainUI/StatusContainer/MarginContainer/VBoxContainer")
-ExtraItemTracker = ExtResource("35_8d5tr")
 
 [node name="FinishScreen" type="Control" parent="PlayerUI" unique_id=1506628314 node_paths=PackedStringArray("MessageLabel", "TimeLabel", "RingsLabel", "SpheresText", "SpheresLabel", "DeathsText", "DeathsLabel", "RankLabel", "ProgressBarS", "ProgressBarA", "ProgressBarB", "ProgressBarC", "AudioEffectPlayer")]
 layout_mode = 1
@@ -539,105 +530,6 @@ theme_override_font_sizes/font_size = 150
 text = "S"
 horizontal_alignment = 1
 
-[node name="MainUI" type="Control" parent="PlayerUI" unique_id=1309545856]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = 41.0
-offset_top = 32.0
-offset_right = -16.0
-offset_bottom = -9.0
-grow_horizontal = 2
-grow_vertical = 2
-mouse_filter = 1
-
-[node name="StatusContainer" type="Control" parent="PlayerUI/MainUI" unique_id=774857567]
-custom_minimum_size = Vector2(425, 200)
-anchors_preset = 0
-offset_right = 40.0
-offset_bottom = 40.0
-mouse_filter = 2
-
-[node name="ColorRect" type="ColorRect" parent="PlayerUI/MainUI/StatusContainer" unique_id=1588725186]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-color = Color(0, 0, 0, 0.501961)
-
-[node name="MarginContainer" type="MarginContainer" parent="PlayerUI/MainUI/StatusContainer" unique_id=1854993774]
-custom_minimum_size = Vector2(400, 200)
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_constants/margin_left = 20
-theme_override_constants/margin_top = 20
-theme_override_constants/margin_right = 20
-theme_override_constants/margin_bottom = 20
-
-[node name="VBoxContainer" type="VBoxContainer" parent="PlayerUI/MainUI/StatusContainer/MarginContainer" unique_id=2059752841]
-layout_mode = 2
-alignment = 1
-
-[node name="PlayerUI" type="RichTextLabel" parent="PlayerUI/MainUI/StatusContainer/MarginContainer/VBoxContainer" unique_id=464259370]
-layout_mode = 2
-theme_override_fonts/normal_font = ExtResource("41_8eodk")
-theme_override_fonts/bold_font = ExtResource("42_ydhea")
-theme_override_font_sizes/normal_font_size = 30
-theme_override_font_sizes/bold_font_size = 50
-bbcode_enabled = true
-text = "[b]Time[/b]: 0:00:00
-[b]Rings[/b]: [color=FF4500]0[/color]"
-fit_content = true
-
-[node name="RedRings" type="HBoxContainer" parent="PlayerUI/MainUI/StatusContainer/MarginContainer/VBoxContainer" unique_id=584262638]
-layout_mode = 2
-
-[node name="RedRing1" type="TextureRect" parent="PlayerUI/MainUI/StatusContainer/MarginContainer/VBoxContainer/RedRings" unique_id=2092607197]
-layout_mode = 2
-texture = ExtResource("31_mnu4i")
-stretch_mode = 5
-
-[node name="RedRing2" type="TextureRect" parent="PlayerUI/MainUI/StatusContainer/MarginContainer/VBoxContainer/RedRings" unique_id=662176886]
-layout_mode = 2
-texture = ExtResource("31_mnu4i")
-stretch_mode = 5
-
-[node name="RedRing3" type="TextureRect" parent="PlayerUI/MainUI/StatusContainer/MarginContainer/VBoxContainer/RedRings" unique_id=1521728220]
-layout_mode = 2
-texture = ExtResource("31_mnu4i")
-stretch_mode = 5
-
-[node name="RedRing4" type="TextureRect" parent="PlayerUI/MainUI/StatusContainer/MarginContainer/VBoxContainer/RedRings" unique_id=1283459946]
-layout_mode = 2
-texture = ExtResource("31_mnu4i")
-stretch_mode = 5
-
-[node name="RedRing5" type="TextureRect" parent="PlayerUI/MainUI/StatusContainer/MarginContainer/VBoxContainer/RedRings" unique_id=431707918]
-layout_mode = 2
-texture = ExtResource("31_mnu4i")
-stretch_mode = 5
-
-[node name="FpsText" type="RichTextLabel" parent="PlayerUI/MainUI" unique_id=1077428255]
-visible = false
-layout_mode = 1
-anchors_preset = 1
-anchor_left = 1.0
-anchor_right = 1.0
-offset_left = -486.0
-offset_bottom = 210.0
-grow_horizontal = 0
-mouse_filter = 1
-theme = ExtResource("45_0a4k3")
-text = "FPS"
-script = ExtResource("43_xitff")
-
 [node name="PauseMenu" type="Control" parent="PlayerUI" unique_id=285006986 node_paths=PackedStringArray("MenuContainer", "RestartMenuContainer", "RestartCheckpointButton", "RestartLevelButton", "OptionsMenuContainer", "RestartBackButton", "DefaultFocus", "RestartMenuButton", "MapButton")]
 layout_mode = 1
 anchors_preset = 15
@@ -755,7 +647,6 @@ script = ExtResource("48_aa5nt")
 
 [node name="ApplySettings" type="Node" parent="." unique_id=1673331735 node_paths=PackedStringArray("FpsDisplay")]
 script = ExtResource("49_q3rr1")
-FpsDisplay = NodePath("../PlayerUI/MainUI/FpsText")
 
 [node name="StartArrow" parent="." unique_id=1117935513 instance=ExtResource("52_px5rc")]
 

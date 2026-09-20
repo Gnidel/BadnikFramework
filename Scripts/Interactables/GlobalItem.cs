@@ -22,7 +22,7 @@ public partial class GlobalItem : Node3D
 		{
 			RandomGlobalFlagID = GenerateId();
 		}
-		SaveData save = SaveData.Load(); // TODO: THIS IS SO STUPIDLY UNOPTIMIZED I JUST CAN'T, potentially hundrends of JSON deserializations
+        SaveData save = GlobalItemSystem.Load();
         if (
             save.GlobalFlags.ContainsKey(RandomGlobalFlagID.ToString())
             && save.GlobalFlags[RandomGlobalFlagID.ToString()] != 0
@@ -43,11 +43,16 @@ public partial class GlobalItem : Node3D
 
     public void OnCollect(PlayerController player)
     {
-        var save = SaveData.Load();
+        var save = GlobalItemSystem.Load();
         save.GlobalFlags[RandomGlobalFlagID.ToString()] = 1;
-        save.GlobalItems[CollectableItem.ItemName] = player.PlayerInventory.GetItemCount(
-            CollectableItem.ItemName
-        );
+        if (CollectableItem.IsAdditive)
+        {
+            GlobalItemSystem.AddItemCount(save, CollectableItem.ItemName, CollectableItem.ItemCount);
+        }
+        else
+        {
+            GlobalItemSystem.SetItemCount(save, CollectableItem.ItemName, CollectableItem.ItemCount);
+        }
         save.Save();
     }
 }

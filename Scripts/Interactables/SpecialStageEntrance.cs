@@ -185,11 +185,10 @@ public partial class SpecialStageEntrance : Area3D
 
     private string GetNextStagePath(PlayerController player)
     {
-        var inventory = player.PlayerInventory;
         int CurrentSpecialStageIdx = 0;
         foreach (var itemName in ChaosEmeraldItemNames)
         {
-            if (inventory.GetItemCount(itemName) > 0)
+            if (GlobalItemSystem.GetItemCount(itemName) > 0)
             {
                 CurrentSpecialStageIdx++;
             }

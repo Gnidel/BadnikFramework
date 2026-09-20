@@ -4,6 +4,9 @@ using Godot;
 public partial class ExtraItemTracker : HBoxContainer
 {
 	[Export]
+	public int PlayerID;
+
+	[Export]
 	public TextureRect Icon;
 
 	[Export]
@@ -14,11 +17,13 @@ public partial class ExtraItemTracker : HBoxContainer
 
 	public override void _PhysicsProcess(double delta)
 	{
-		int itemCount = 0;
-		foreach (var player in PlayerController.Instances)
-		{
-			itemCount += player.PlayerInventory.GetItemCount(TrackedItem);
-		}
+		if (PlayerID < 0 || PlayerID >= PlayerController.Instances.Count)
+			return;
+
+		var save = GlobalItemSystem.Load();
+		int itemCount = save.GlobalItems.ContainsKey(TrackedItem)
+			? GlobalItemSystem.GetItemCount(save, TrackedItem)
+			: PlayerController.Instances[PlayerID].PlayerInventory.GetItemCount(TrackedItem);
 		TextLabel.Text = itemCount.ToString();
 	}
 }

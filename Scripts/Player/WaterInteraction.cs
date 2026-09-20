@@ -42,6 +42,13 @@ public partial class WaterInteraction : Node
     private PlayerController player;
     private ActionBoost ActionBoost;
 
+    private bool IsNpc()
+    {
+        return player != null
+            && player.NpcPartnerControl != null
+            && player.NpcPartnerControl.IsNpc;
+    }
+
     public override void _Ready()
     {
         player = GetNode<PlayerController>("../../");
@@ -56,10 +63,9 @@ public partial class WaterInteraction : Node
             Oxygen = OxygenLimit;
             LastCountdownEmited = 999;
 
-            if (MusicPlayerController.Instance.OverrideMusic == DrowningWarningMusic)
+            if (!IsNpc())
             {
-                MusicPlayerController.Instance.OverrideMusic = null;
-                MusicPlayerController.Instance.SwitchMusicToMain();
+                StopDrowningWarningMusicIfOwned();
             }
         }
     }
@@ -78,19 +84,21 @@ public partial class WaterInteraction : Node
             Oxygen = OxygenLimit;
             LastCountdownEmited = 999;
 
-            if (MusicPlayerController.Instance.OverrideMusic == DrowningWarningMusic)
+            if (!IsNpc())
             {
-                MusicPlayerController.Instance.OverrideMusic = null;
-                MusicPlayerController.Instance.SwitchMusicToMain();
+                StopDrowningWarningMusicIfOwned();
             }
 
             return;
         }
 
         Oxygen -= (float)delta;
-        if (Oxygen < WarningMusicTime)
+        if (!IsNpc() && Oxygen < WarningMusicTime)
         {
-            if (MusicPlayerController.Instance.OverrideMusic != DrowningWarningMusic)
+            if (
+                MusicPlayerController.Instance != null
+                && MusicPlayerController.Instance.OverrideMusic != DrowningWarningMusic
+            )
             {
                 MusicPlayerController.Instance.OverrideMusic = DrowningWarningMusic;
                 MusicPlayerController.Instance.SwitchMusicToOverride();
@@ -173,5 +181,28 @@ public partial class WaterInteraction : Node
         WaterFeetCounter += diff;
         if (WaterFeetCounter < 0)
             WaterFeetCounter = 0;
+    }
+
+    public void TransferOxygenTo(WaterInteraction target)
+    {
+        if (target == null)
+            return;
+
+        target.Oxygen = Oxygen;
+        target.LastCountdownEmited = LastCountdownEmited;
+        target.WaterMouthCounter = WaterMouthCounter;
+        target.WaterFeetCounter = WaterFeetCounter;
+    }
+
+    public void StopDrowningWarningMusicIfOwned()
+    {
+        if (
+            MusicPlayerController.Instance != null
+            && MusicPlayerController.Instance.OverrideMusic == DrowningWarningMusic
+        )
+        {
+            MusicPlayerController.Instance.OverrideMusic = null;
+            MusicPlayerController.Instance.SwitchMusicToMain();
+        }
     }
 }

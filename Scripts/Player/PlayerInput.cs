@@ -5,6 +5,8 @@ using Godot;
 
 public partial class PlayerInput : Node
 {
+    public const int MaxSupportedJoypadDevices = 16;
+
     //[Export] public PlayerCamera Camera;
     [Export]
     public PlayerController Player;
@@ -85,40 +87,45 @@ public partial class PlayerInput : Node
 
     public override void _Input(InputEvent @event)
     {
-        if (this.PlayerIdentifier != "any")
-        {
+        bool isKeyboardMouseInput = PlayerIdentifier == "kb" || PlayerIdentifier == "any";
+        bool isPadInput = TryGetJoypadDevice(PlayerIdentifier, out var padDevice);
+        if (!isKeyboardMouseInput && !isPadInput)
             return;
-        }
 
-        if (@event is InputEventKey ek)
+        if (isKeyboardMouseInput && @event is InputEventKey ek)
         {
             if (ek.Pressed)
             {
                 LastInputType = InputType.KEYBOARD_AND_MOUSE;
             }
         }
-        else if (@event is InputEventMouseButton em)
+        else if (isKeyboardMouseInput && @event is InputEventMouseButton em)
         {
             if (em.Pressed)
             {
                 LastInputType = InputType.KEYBOARD_AND_MOUSE;
             }
         }
-        else if (@event is InputEventMouseMotion emm)
+        else if (isKeyboardMouseInput && @event is InputEventMouseMotion emm)
         {
-            if (PlayerIdentifier == "kb" || PlayerIdentifier == "any")
-            {
-                MouseCameraInput2D += emm.Relative * MouseCameraSensitivity;
-            }
+            MouseCameraInput2D += emm.Relative * MouseCameraSensitivity;
         }
-        else if (@event is InputEventJoypadButton ep)
+        else if (
+            isPadInput
+            && @event is InputEventJoypadButton ep
+            && ep.Device == padDevice
+        )
         {
             if (ep.Pressed)
             {
                 LastInputType = InputType.PAD;
             }
         }
-        else if (@event is InputEventJoypadMotion epm)
+        else if (
+            isPadInput
+            && @event is InputEventJoypadMotion epm
+            && epm.Device == padDevice
+        )
         {
             if (Mathf.Abs(epm.AxisValue) > DeadZone)
             {
@@ -511,7 +518,7 @@ public partial class PlayerInput : Node
             Tuple.Create("camdown", JoyAxis.RightY, 1f),
         };
 
-        for (int gamepad = 0; gamepad < 4; gamepad++)
+        for (int gamepad = 0; gamepad < MaxSupportedJoypadDevices; gamepad++)
         {
             var identifier = "pad" + gamepad.ToString();
             foreach (var actionButton in actionButtons)
@@ -583,6 +590,15 @@ public partial class PlayerInput : Node
                 InputMap.ActionAddEvent(actionName, ev);
             }
         }
+    }
+
+    public static bool TryGetJoypadDevice(string identifier, out int device)
+    {
+        device = -1;
+        return identifier.StartsWith("pad")
+            && int.TryParse(identifier.Substring(3), out device)
+            && device >= 0
+            && device < MaxSupportedJoypadDevices;
     }
 
     string OverrideAction(string identifier)

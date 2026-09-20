@@ -73,6 +73,10 @@ public partial class StageGate : Node3D
     public bool ConsumeItems = false;
 
     bool waitingForLoading = false;
+    private bool stageMenuOpen = false;
+    private Input.MouseModeEnum previousMouseMode;
+    private Dictionary<int, PlayerCamera.CameraMode> previousCameraModes =
+        new Dictionary<int, PlayerCamera.CameraMode>();
 
     void UpdateStageNameLabels()
     {
@@ -142,10 +146,25 @@ public partial class StageGate : Node3D
         }
     }
 
+    public override void _ExitTree()
+    {
+        if (stageMenuOpen)
+        {
+            UnlockPlayers();
+            UnlockCameras();
+            Input.MouseMode = previousMouseMode;
+            stageMenuOpen = false;
+        }
+    }
+
     public void OnBodyEnter(Node3D other)
     {
         var player = other.GetNodeOrNull<PlayerController>(".");
         if (player == null)
+            return;
+        if (player.NpcPartnerControl != null && player.NpcPartnerControl.IsNpc)
+            return;
+        if (stageMenuOpen)
             return;
 
         player.LinearVelocity = player.LinearVelocity.ProjectOnPlane(player.Gravity);
@@ -219,11 +238,7 @@ public partial class StageGate : Node3D
             BestTimesLabel.Text = "Required:\n";
             foreach (var item in RequiredItems)
             {
-                var allPlayersItemSum = 0;
-                foreach (var player in PlayerController.Instances)
-                {
-                    allPlayersItemSum += player.PlayerInventory.GetItemCount(item.Id);
-                }
+                var allPlayersItemSum = GetAvailableItemCount(item.Id);
                 BestTimesLabel.Text +=
                     "[img=32x32]"
                     + item.Icon.ResourcePath
@@ -272,6 +287,14 @@ public partial class StageGate : Node3D
 
     void OpenStageMenu()
     {
+        if (!stageMenuOpen)
+        {
+            previousMouseMode = Input.MouseMode;
+            LockPlayers();
+            LockCameras();
+            stageMenuOpen = true;
+        }
+
         PlayButton.Disabled = !isUnlocked();
         StageImage.Texture = isUnlocked() ? UnlockedImage : LockedImage;
         UpdateStageNameLabels();
@@ -288,17 +311,20 @@ public partial class StageGate : Node3D
             }
         }
         Input.MouseMode = Input.MouseModeEnum.Visible;
-
-        LockPlayers();
         StageEntryScreen.Scale = Vector2.Zero;
     }
 
     void CloseStageMenu()
     {
+        if (!stageMenuOpen)
+            return;
+
         UnlockPlayers();
+        UnlockCameras();
         StageEntryScreen.Visible = false;
         StageEntryScreen.ProcessMode = ProcessModeEnum.Disabled;
-        Input.MouseMode = Input.MouseModeEnum.Captured;
+        Input.MouseMode = previousMouseMode;
+        stageMenuOpen = false;
     }
 
     private void LockPlayers()
@@ -330,6 +356,28 @@ public partial class StageGate : Node3D
         }
     }
 
+    private void LockCameras()
+    {
+        previousCameraModes.Clear();
+        foreach (var camera in PlayerCamera.Instances)
+        {
+            previousCameraModes[camera.Key] = camera.Value.Mode;
+            camera.Value.Mode = PlayerCamera.CameraMode.Locked;
+        }
+    }
+
+    private void UnlockCameras()
+    {
+        foreach (var camera in PlayerCamera.Instances)
+        {
+            if (previousCameraModes.TryGetValue(camera.Key, out var previousMode))
+            {
+                camera.Value.Mode = previousMode;
+            }
+        }
+        previousCameraModes.Clear();
+    }
+
     void OnPlay()
     {
         waitingForLoading = true;
@@ -355,6 +403,48 @@ public partial class StageGate : Node3D
         }
     }
 
+    private int GetAvailableItemCount(string itemId)
+    {
+        var itemCount = GlobalItemSystem.GetItemCount(itemId);
+        foreach (var player in PlayerController.Instances)
+        {
+            if (player.PlayerInventory != null)
+            {
+                itemCount += player.PlayerInventory.GetItemCount(itemId);
+            }
+        }
+        return itemCount;
+    }
+
+    private void ConsumeItemCount(string itemId, int count)
+    {
+        var globalItemCount = GlobalItemSystem.GetItemCount(SaveData, itemId);
+        var globalItemConsumption = Math.Min(globalItemCount, count);
+        if (globalItemConsumption > 0)
+        {
+            GlobalItemSystem.AddItemCount(SaveData, itemId, -globalItemConsumption);
+            count -= globalItemConsumption;
+        }
+
+        foreach (var player in PlayerController.Instances)
+        {
+            if (count <= 0)
+                break;
+            if (player.PlayerInventory == null)
+                continue;
+
+            var playerItemConsumption = Math.Min(
+                player.PlayerInventory.GetItemCount(itemId),
+                count
+            );
+            if (playerItemConsumption > 0)
+            {
+                player.PlayerInventory.AddItemCount(itemId, -playerItemConsumption);
+                count -= playerItemConsumption;
+            }
+        }
+    }
+
     public bool CanUnlock()
     {
         var remainingItems = new Dictionary<string, int>();
@@ -363,13 +453,9 @@ public partial class StageGate : Node3D
             remainingItems[item.Id] = item.Count;
         }
 
-        foreach (var player in PlayerController.Instances)
+        foreach (var item in remainingItems)
         {
-            var playerInventory = player.PlayerInventory;
-            foreach (var item in remainingItems)
-            {
-                remainingItems[item.Key] -= playerInventory.GetItemCount(item.Key);
-            }
+            remainingItems[item.Key] -= GetAvailableItemCount(item.Key);
         }
 
         foreach (var remainingItem in remainingItems)
@@ -382,11 +468,9 @@ public partial class StageGate : Node3D
 
     public void OnUnlock()
     {
-        // Note: It won't be fair. It will consume items from players in whatever order.
-        // RISKY ASSUMPTION THAT THE REQUIRED ITEMS ARE GLOBAL!
         if (!CanUnlock())
             return;
-        SaveData = SaveData.Load();
+        SaveData = GlobalItemSystem.Load();
 
         var remainingItems = new Dictionary<string, int>();
         foreach (var item in RequiredItems)
@@ -394,23 +478,7 @@ public partial class StageGate : Node3D
             remainingItems[item.Id] = item.Count;
             if (ConsumeItems)
             {
-                SaveData.GlobalItems[item.Id] = 0;
-            }
-        }
-
-        foreach (var player in PlayerController.Instances)
-        {
-            var playerInventory = player.PlayerInventory;
-            foreach (var item in remainingItems)
-            {
-                var currentPlayerItemCount = playerInventory.GetItemCount(item.Key);
-                var itemsToRemove = Math.Min(item.Value, currentPlayerItemCount);
-                remainingItems[item.Key] -= itemsToRemove;
-                if (ConsumeItems)
-                {
-                    playerInventory.SetItemCount(item.Key, currentPlayerItemCount - itemsToRemove);
-                    SaveData.GlobalItems[item.Key] += playerInventory.GetItemCount(item.Key);
-                }
+                ConsumeItemCount(item.Id, item.Count);
             }
         }
 
