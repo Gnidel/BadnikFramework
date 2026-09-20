@@ -12,6 +12,14 @@
 [ext_resource type="Shader" uid="uid://cnkq8qiscg0sj" path="res://Shaders/ChromaticAberrationFilter.tres" id="12_0egqd"]
 [ext_resource type="Script" uid="uid://0whoaqpk27hh" path="res://Scripts/Ui/CharacterSwapUi.cs" id="13_24uhv"]
 [ext_resource type="Script" uid="uid://d4i3rx4kyhwbs" path="res://Scripts/Ui/ButtonPromptTextLabel.cs" id="13_ocke2"]
+[ext_resource type="Script" uid="uid://b72b2c7k08kku" path="res://Scripts/Ui/PlayerStatusUI.cs" id="14_status"]
+[ext_resource type="Texture2D" uid="uid://bqthtdn326ncw" path="res://SonicAssets/Images/UiRedRing_Yes.png" id="15_redyes"]
+[ext_resource type="Texture2D" uid="uid://bhsqifesoq5ue" path="res://SonicAssets/Images/UiRedRing_No.png" id="16_redno"]
+[ext_resource type="PackedScene" uid="uid://hol4qkmcbhxw" path="res://Prefabs/UI/extra_item_tracker.tscn" id="17_tracker"]
+[ext_resource type="FontFile" uid="uid://c00qbjbxkhiyv" path="res://SonicAssets/Fonts/vipnagorgialla rg.otf" id="18_font"]
+[ext_resource type="FontFile" uid="uid://ysevmc4grcp5" path="res://SonicAssets/Fonts/vipnagorgialla bd.otf" id="19_boldfont"]
+[ext_resource type="Script" uid="uid://bvuef8rwgetm1" path="res://Scripts/Ui/DebugUI.cs" id="20_debug"]
+[ext_resource type="Theme" uid="uid://dfn1qo0bwoxuf" path="res://Misc/OptionsMenuTheme.tres" id="21_optionstheme"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_2gmh8"]
 shader = ExtResource("9_cjxnj")
@@ -140,7 +148,7 @@ grow_vertical = 2
 size_flags_vertical = 3
 mouse_filter = 2
 
-[node name="PlayerUI" type="Control" parent="SubViewport" unique_id=1429118263 node_paths=PackedStringArray("HomingIcon", "HomingOffscreenIcon", "BoostUIContainer", "BoostMeter")]
+[node name="PlayerUI" type="Control" parent="SubViewport" unique_id=1429118263 node_paths=PackedStringArray("HomingIcon", "HomingOffscreenIcon", "BoostUIContainer", "BoostMeter", "UiText", "RedRingsIcons", "ItemInfoContainer")]
 z_index = 1
 layout_mode = 3
 anchors_preset = 15
@@ -154,6 +162,112 @@ HomingIcon = NodePath("HomingIcon")
 HomingOffscreenIcon = NodePath("HomingOffscreenIcon")
 BoostUIContainer = NodePath("BoostMeter")
 BoostMeter = NodePath("BoostMeter/MarginContainer/VBoxContainer/ProgressBar")
+
+[node name="MainUI" type="Control" parent="SubViewport/PlayerUI" unique_id=1309545856 node_paths=PackedStringArray("UiText", "RedRingsIcons", "ItemInfoContainer")]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 41.0
+offset_top = 32.0
+offset_right = -16.0
+offset_bottom = -9.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 1
+script = ExtResource("14_status")
+UiText = NodePath("StatusContainer/MarginContainer/VBoxContainer/PlayerUI")
+NoRingsColor = Color(1, 0, 0, 1)
+RedRingsIcons = [NodePath("StatusContainer/MarginContainer/VBoxContainer/RedRings/RedRing1"), NodePath("StatusContainer/MarginContainer/VBoxContainer/RedRings/RedRing2"), NodePath("StatusContainer/MarginContainer/VBoxContainer/RedRings/RedRing3"), NodePath("StatusContainer/MarginContainer/VBoxContainer/RedRings/RedRing4"), NodePath("StatusContainer/MarginContainer/VBoxContainer/RedRings/RedRing5")]
+RedRingsIdentifiers = PackedStringArray("RedRing1", "RedRing2", "RedRing3", "RedRing4", "RedRing5")
+RedRingYesIcon = ExtResource("15_redyes")
+RedRingNoIcon = ExtResource("16_redno")
+ItemInfoContainer = NodePath("StatusContainer/MarginContainer/VBoxContainer")
+ExtraItemTracker = ExtResource("17_tracker")
+
+[node name="StatusContainer" type="Control" parent="SubViewport/PlayerUI/MainUI" unique_id=774857567]
+custom_minimum_size = Vector2(425, 200)
+offset_right = 40.0
+offset_bottom = 40.0
+mouse_filter = 2
+
+[node name="ColorRect" type="ColorRect" parent="SubViewport/PlayerUI/MainUI/StatusContainer" unique_id=1588725186]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.501961)
+
+[node name="MarginContainer" type="MarginContainer" parent="SubViewport/PlayerUI/MainUI/StatusContainer" unique_id=1854993774]
+custom_minimum_size = Vector2(400, 200)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 20
+theme_override_constants/margin_top = 20
+theme_override_constants/margin_right = 20
+theme_override_constants/margin_bottom = 20
+
+[node name="VBoxContainer" type="VBoxContainer" parent="SubViewport/PlayerUI/MainUI/StatusContainer/MarginContainer" unique_id=2059752841]
+layout_mode = 2
+alignment = 1
+
+[node name="PlayerUI" type="RichTextLabel" parent="SubViewport/PlayerUI/MainUI/StatusContainer/MarginContainer/VBoxContainer" unique_id=464259370]
+layout_mode = 2
+theme_override_fonts/normal_font = ExtResource("18_font")
+theme_override_fonts/bold_font = ExtResource("19_boldfont")
+theme_override_font_sizes/normal_font_size = 30
+theme_override_font_sizes/bold_font_size = 50
+bbcode_enabled = true
+text = "[b]Time[/b]: 0:00:00\n[b]Rings[/b]: [color=FF4500]0[/color]"
+fit_content = true
+
+[node name="RedRings" type="HBoxContainer" parent="SubViewport/PlayerUI/MainUI/StatusContainer/MarginContainer/VBoxContainer" unique_id=584262638]
+layout_mode = 2
+
+[node name="RedRing1" type="TextureRect" parent="SubViewport/PlayerUI/MainUI/StatusContainer/MarginContainer/VBoxContainer/RedRings" unique_id=2092607197]
+layout_mode = 2
+texture = ExtResource("16_redno")
+stretch_mode = 5
+
+[node name="RedRing2" type="TextureRect" parent="SubViewport/PlayerUI/MainUI/StatusContainer/MarginContainer/VBoxContainer/RedRings" unique_id=662176886]
+layout_mode = 2
+texture = ExtResource("16_redno")
+stretch_mode = 5
+
+[node name="RedRing3" type="TextureRect" parent="SubViewport/PlayerUI/MainUI/StatusContainer/MarginContainer/VBoxContainer/RedRings" unique_id=1521728220]
+layout_mode = 2
+texture = ExtResource("16_redno")
+stretch_mode = 5
+
+[node name="RedRing4" type="TextureRect" parent="SubViewport/PlayerUI/MainUI/StatusContainer/MarginContainer/VBoxContainer/RedRings" unique_id=1283459946]
+layout_mode = 2
+texture = ExtResource("16_redno")
+stretch_mode = 5
+
+[node name="RedRing5" type="TextureRect" parent="SubViewport/PlayerUI/MainUI/StatusContainer/MarginContainer/VBoxContainer/RedRings" unique_id=431707918]
+layout_mode = 2
+texture = ExtResource("16_redno")
+stretch_mode = 5
+
+[node name="FpsText" type="RichTextLabel" parent="SubViewport/PlayerUI/MainUI" unique_id=1077428255]
+visible = false
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -486.0
+offset_bottom = 210.0
+grow_horizontal = 0
+mouse_filter = 1
+theme = ExtResource("21_optionstheme")
+text = "FPS"
+script = ExtResource("20_debug")
 
 [node name="HomingIcon" type="Sprite2D" parent="SubViewport/PlayerUI" unique_id=1257124488]
 position = Vector2(-453, -173)

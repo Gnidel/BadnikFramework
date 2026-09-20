@@ -51,22 +51,15 @@ public partial class PlayerUI : Control
 
     public override void _Ready()
     {
-        var stageData = StageData.Instance;
-        if (stageData == null)
+        if (UiText == null)
             return;
-
-        foreach (var trackedItem in stageData.ExtraTrackedItems)
-        {
-            var tracker = ExtraItemTracker.Instantiate<ExtraItemTracker>();
-            ItemInfoContainer.AddChild(tracker);
-
-            tracker.TrackedItem = trackedItem.Key;
-            tracker.Icon.Texture = trackedItem.Value;
-        }
     }
 
     public override void _Process(double delta)
     {
+        if (UiText == null || StageData.Instance == null)
+            return;
+
         string timeText =
             "[b]Time: [/b]" + TimeSpan.FromSeconds(CurrentTime).ToString(@"mm\:ss\:ff");
         string ringsText = "[b]Rings: [/b]";
@@ -153,13 +146,15 @@ public partial class PlayerUI : Control
     {
         if (finishMode)
         {
-            MainUI.Visible = false;
+            if (MainUI != null)
+                MainUI.Visible = false;
             FinishUI.Visible = true;
             FinishUI.ProcessMode = ProcessModeEnum.Inherit;
         }
         else
         {
-            MainUI.Visible = true;
+            if (MainUI != null)
+                MainUI.Visible = true;
             FinishUI.Visible = false;
             FinishUI.ProcessMode = ProcessModeEnum.Disabled;
         }

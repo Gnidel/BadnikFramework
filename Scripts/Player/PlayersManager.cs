@@ -138,6 +138,14 @@ public partial class PlayersManager : Node3D
                 playerUI.HomingIcon = playerUI.GetNode<Node2D>("./HomingIcon");
             }
 
+            var playerStatusUI = newSubviewport.GetNodeOrNull<PlayerStatusUI>(
+                "./SubViewport/PlayerUI/MainUI"
+            );
+            if (playerStatusUI != null)
+            {
+                playerStatusUI.PlayerID = player.PlayerID;
+            }
+
             SubviewportContainer.AddChild(newSubviewport);
         }
 
