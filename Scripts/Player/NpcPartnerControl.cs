@@ -1,5 +1,4 @@
 using System;
-using System.Linq;
 using Godot;
 
 public partial class NpcPartnerControl : Node
@@ -15,6 +14,8 @@ public partial class NpcPartnerControl : Node
 
     [Export]
     public Node3D Target;
+
+    public PlayerController OwnerPlayer;
 
     [Export]
     public float ExpectedDistanceFromTarget = 5;
@@ -137,7 +138,13 @@ public partial class NpcPartnerControl : Node
     {
         var TargetPlayer = Target.GetNodeOrNull<PlayerController>(".");
         respawnAfterOffscreenTimer = 0;
-        var cam = PlayerCamera.Instances.First().Value;
+        var followedPlayer = OwnerPlayer ?? TargetPlayer;
+        if (followedPlayer == null)
+            return;
+
+        if (!PlayerCamera.Instances.TryGetValue(followedPlayer.PlayerID, out var cam))
+            return;
+
         if (TargetPlayer != null && TargetPlayer.PlayerInput.TwodimensionalMode)
         {
             Player.GlobalPosition = Target.GlobalPosition;

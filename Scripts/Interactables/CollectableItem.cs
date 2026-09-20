@@ -116,11 +116,7 @@ public partial class CollectableItem : Node3D
         var npcControl = other.GetNodeOrNull<NpcPartnerControl>("./PlayerControl/NpcControl");
         if (npcControl != null && npcControl.IsNpc)
         {
-            var targetPlayer = player.NpcPartnerControl.Target.GetNodeOrNull<PlayerController>(".");
-            if (targetPlayer != null)
-            {
-                inventory = targetPlayer.PlayerInventory;
-            }
+            inventory = npcControl.OwnerPlayer?.PlayerInventory;
         }
         else
         {
