@@ -85,7 +85,7 @@ public partial class PlayerInput : Node
 
     public override void _Input(InputEvent @event)
     {
-        if (this.PlayerIdentifier != "any")
+        if (this.PlayerIdentifier != "kb" && this.PlayerIdentifier != "any")
         {
             return;
         }
