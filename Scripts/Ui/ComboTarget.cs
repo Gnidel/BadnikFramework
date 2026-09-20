@@ -12,6 +12,19 @@ public partial class ComboTarget : Node3D
     public Node3D CopyPositionFrom;
     public Camera3D Camera;
 
+    public void SetScreenTargetParent(Node parent)
+    {
+        Child2D.Reparent(parent, false);
+    }
+
+    public override void _ExitTree()
+    {
+        if (Child2D != null && IsInstanceValid(Child2D) && Child2D.GetParent() != this)
+        {
+            Child2D.QueueFree();
+        }
+    }
+
     public override void _Process(double delta)
     {
         if (
