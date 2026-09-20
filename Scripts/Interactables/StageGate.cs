@@ -73,6 +73,10 @@ public partial class StageGate : Node3D
     public bool ConsumeItems = false;
 
     bool waitingForLoading = false;
+    private bool stageMenuOpen = false;
+    private Input.MouseModeEnum previousMouseMode;
+    private Dictionary<int, PlayerCamera.CameraMode> previousCameraModes =
+        new Dictionary<int, PlayerCamera.CameraMode>();
 
     void UpdateStageNameLabels()
     {
@@ -142,10 +146,25 @@ public partial class StageGate : Node3D
         }
     }
 
+    public override void _ExitTree()
+    {
+        if (stageMenuOpen)
+        {
+            UnlockPlayers();
+            UnlockCameras();
+            Input.MouseMode = previousMouseMode;
+            stageMenuOpen = false;
+        }
+    }
+
     public void OnBodyEnter(Node3D other)
     {
         var player = other.GetNodeOrNull<PlayerController>(".");
         if (player == null)
+            return;
+        if (player.NpcPartnerControl != null && player.NpcPartnerControl.IsNpc)
+            return;
+        if (stageMenuOpen)
             return;
 
         player.LinearVelocity = player.LinearVelocity.ProjectOnPlane(player.Gravity);
@@ -268,6 +287,14 @@ public partial class StageGate : Node3D
 
     void OpenStageMenu()
     {
+        if (!stageMenuOpen)
+        {
+            previousMouseMode = Input.MouseMode;
+            LockPlayers();
+            LockCameras();
+            stageMenuOpen = true;
+        }
+
         PlayButton.Disabled = !isUnlocked();
         StageImage.Texture = isUnlocked() ? UnlockedImage : LockedImage;
         UpdateStageNameLabels();
@@ -284,17 +311,20 @@ public partial class StageGate : Node3D
             }
         }
         Input.MouseMode = Input.MouseModeEnum.Visible;
-
-        LockPlayers();
         StageEntryScreen.Scale = Vector2.Zero;
     }
 
     void CloseStageMenu()
     {
+        if (!stageMenuOpen)
+            return;
+
         UnlockPlayers();
+        UnlockCameras();
         StageEntryScreen.Visible = false;
         StageEntryScreen.ProcessMode = ProcessModeEnum.Disabled;
-        Input.MouseMode = Input.MouseModeEnum.Captured;
+        Input.MouseMode = previousMouseMode;
+        stageMenuOpen = false;
     }
 
     private void LockPlayers()
@@ -324,6 +354,28 @@ public partial class StageGate : Node3D
                 actionAutoGimmick.EndAutoGimmick("Idle");
             }
         }
+    }
+
+    private void LockCameras()
+    {
+        previousCameraModes.Clear();
+        foreach (var camera in PlayerCamera.Instances)
+        {
+            previousCameraModes[camera.Key] = camera.Value.Mode;
+            camera.Value.Mode = PlayerCamera.CameraMode.Locked;
+        }
+    }
+
+    private void UnlockCameras()
+    {
+        foreach (var camera in PlayerCamera.Instances)
+        {
+            if (previousCameraModes.TryGetValue(camera.Key, out var previousMode))
+            {
+                camera.Value.Mode = previousMode;
+            }
+        }
+        previousCameraModes.Clear();
     }
 
     void OnPlay()
