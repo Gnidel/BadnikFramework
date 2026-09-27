@@ -89,6 +89,7 @@ public partial class PlayerInput : Node
     {
         bool isKeyboardMouseInput = PlayerIdentifier == "kb" || PlayerIdentifier == "any";
         bool isPadInput = TryGetJoypadDevice(PlayerIdentifier, out var padDevice);
+        bool isMobile = (OS.GetName() == "Android" || OS.GetName() == "iOS");
         if (!isKeyboardMouseInput && !isPadInput)
             return;
 
@@ -106,7 +107,7 @@ public partial class PlayerInput : Node
                 LastInputType = InputType.KEYBOARD_AND_MOUSE;
             }
         }
-        else if (isKeyboardMouseInput && @event is InputEventMouseMotion emm)
+        else if (isKeyboardMouseInput && @event is InputEventMouseMotion emm && !isMobile)
         {
             MouseCameraInput2D += emm.Relative * MouseCameraSensitivity;
         }
@@ -148,7 +149,10 @@ public partial class PlayerInput : Node
                 et.Pressed
                 && et.Position.X
                     > GetViewport().GetVisibleRect().Position.X
-                        + GetViewport().GetVisibleRect().Size.X / 2
+                        + GetViewport().GetVisibleRect().Size.X / 3
+                && et.Position.X
+                    < GetViewport().GetVisibleRect().Position.X
+                        + GetViewport().GetVisibleRect().Size.X * 2 / 3
             )
             {
                 MobileCameraMoveActive = true;
