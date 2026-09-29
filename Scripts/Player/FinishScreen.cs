@@ -513,7 +513,7 @@ public partial class FinishScreen : Control
             {
                 player.PlayerSkinController.TravelAnimation(animationName);
             }
-            catch (Exception e) { } // Ignore lack of animations
+            catch (Exception) { } // Ignore lack of animations
         }
     }
 

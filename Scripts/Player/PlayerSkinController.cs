@@ -356,7 +356,7 @@ public partial class PlayerSkinController : Node3D
                 stateMachine.Start(animationName, true);
             }
         }
-        catch (Exception e)
+        catch (Exception)
         {
             // This is to prevent abortion of scripts using TravelAnimation() if the animation doesn't exist.
             //GD.PrintErr(e.ToString());

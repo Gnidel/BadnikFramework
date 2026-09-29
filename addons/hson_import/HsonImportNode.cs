@@ -646,7 +646,6 @@ namespace BadnikFramework.Tools.HsonImport
                 path.Curve.AddPoint(newPosition);
             }
 
-            bool isLoop = false;
             if (hsonObject.GetParameter("setParameter/isLoopPath").ValueBoolean)
             {
                 var uuid = childrenUuids[0];
@@ -654,8 +653,6 @@ namespace BadnikFramework.Tools.HsonImport
 
                 var newPosition = hsonNode.LocalPosition.ToVector3();
                 path.Curve.AddPoint(newPosition);
-
-                isLoop = true;
             }
 
             if (hsonObject.GetParameter("setParameter/pathType").ValueString == "GR_PATH")  // TODO: Think whenever it should be grind path BEFORE spawning it

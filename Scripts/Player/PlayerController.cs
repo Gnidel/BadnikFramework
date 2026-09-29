@@ -427,26 +427,11 @@ public partial class PlayerController : RigidBody3D
                 && (this.GetContactCount() <= 1)
             )
             {
-                var touchesWall = false;
-                foreach (var colBody in this.GetCollidingBodies())
-                {
-                    var collObject = colBody.GetNodeOrNull<CollisionObject3D>(".");
-
-                    if (collObject != null && RayCast.GetColliderRid() != collObject.GetRid())
-                    {
-                        touchesWall = true;
-                    }
-                }
-
-                //if (!touchesWall)
-                {
-                    //this.GlobalPosition = this.GlobalPosition.ProjectOnPlane(GroundNormal) + GroundRayHitPoint.Value.Project(GroundNormal);
-                    this.MoveAndCollide(
-                        this.GlobalPosition.ProjectOnPlane(GroundNormal)
-                            + GroundRayHitPoint.Value.Project(GroundNormal)
-                            - this.GlobalPosition
-                    );
-                }
+                this.MoveAndCollide(
+                    this.GlobalPosition.ProjectOnPlane(GroundNormal)
+                        + GroundRayHitPoint.Value.Project(GroundNormal)
+                        - this.GlobalPosition
+                );
             }
         }
 
