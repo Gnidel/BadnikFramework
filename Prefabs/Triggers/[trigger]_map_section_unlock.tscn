@@ -1,0 +1,29 @@
+[gd_scene format=3 uid="uid://cvtxjpbagry6u"]
+
+[ext_resource type="Script" uid="uid://bq18pg3ihg85r" path="res://Scripts/Interactables/MapSectionUnlockTrigger.cs" id="1_unlock_trigger"]
+[ext_resource type="Script" uid="uid://cceurnqlbjy0v" path="res://Scripts/Ui/MapUIIconTrackedObject.cs" id="2_map_icon_script"]
+[ext_resource type="Texture2D" uid="uid://d2arp7rxrtat6" path="res://Prefabs/Menus/Map/Icons/map_unlock.png" id="3_map_unlock"]
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_lrick"]
+height = 5.0
+radius = 5.0
+
+[node name="MapSectionUnlockTrigger" type="Area3D" unique_id=388905825 node_paths=PackedStringArray("MapIcon")]
+collision_layer = 0
+collision_mask = 2
+script = ExtResource("1_unlock_trigger")
+MapIcon = NodePath("MapIcon")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1038953857]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.5, 0)
+shape = SubResource("CylinderShape3D_lrick")
+
+[node name="MapIcon" type="Node3D" parent="." unique_id=1038953858]
+script = ExtResource("2_map_icon_script")
+Texture = ExtResource("3_map_unlock")
+
+[node name="Label3D" type="Label3D" parent="." unique_id=1656295864]
+transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, 0, 10, 0)
+pixel_size = 0.05
+billboard = 2
+text = "👁"

@@ -191,4 +191,13 @@ public partial class PauseMenu : Control
         MapUIControl.Instance.RefreshIcons();
         MapUIControl.Instance.MapUI.Visible = true;
     }
+
+    public void OpenMap()
+    {
+        if (MapUIControl.Instance == null)
+            return;
+
+        Pause();
+        OnMapButton();
+    }
 }

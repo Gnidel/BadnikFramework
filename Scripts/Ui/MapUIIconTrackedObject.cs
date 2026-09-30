@@ -27,5 +27,6 @@ public partial class MapUIIconTrackedObject : Node3D
     public override void _ExitTree()
     {
         Instances.Remove(this);
+        MapUIControl.Instance?.CallDeferred("RefreshIcons");
     }
 }
