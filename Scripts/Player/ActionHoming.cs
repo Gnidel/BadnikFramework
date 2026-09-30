@@ -319,6 +319,8 @@ public partial class ActionHoming : Node
 
     public void StartHoming()
     {
+        Player.GetNodeOrNull<ActionWallStick>("./PlayerControl/Actions/ActionWallStick")
+            ?.EndWallStick();
         IsHoming = true;
         if (Player.Grounded)
         {

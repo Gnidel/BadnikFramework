@@ -158,7 +158,7 @@ public partial class PlayerController : RigidBody3D
 
     const int FLAT_GROUND_LAYER = 4;
     const int MOVING_PLATFORM_LAYER = 5;
-    const int NO_WALK_GROUND_LAYER = 6;
+    public const int NO_WALK_GROUND_LAYER = 6;
 
     // Moving platform cache
     private Vector3 movingPlatformLastPosition = Vector3.Zero;

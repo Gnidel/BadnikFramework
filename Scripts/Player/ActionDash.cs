@@ -30,6 +30,8 @@ public partial class ActionDash : Node
 
     [Export]
     public ActionDrift ActionDrift;
+
+    private ActionWallStick ActionWallStick;
     public int airDashCount = 0;
 
     [Export]
@@ -96,6 +98,10 @@ public partial class ActionDash : Node
         {
             ActionDrift = Player.GetNodeOrNull<ActionDrift>("./PlayerControl/Actions/ActionDrift");
         }
+        if (ActionWallStick == null)
+        {
+            ActionWallStick = Player.GetNodeOrNull<ActionWallStick>("./PlayerControl/Actions/ActionWallStick");
+        }
     }
 
     public override void _Input(InputEvent @event)
@@ -106,7 +112,8 @@ public partial class ActionDash : Node
             canDash =
                 !Player.Grounded
                 && ActionJump.JumpCount > ActionJump.MaxJumpCount
-                && (!ActionHoming.HomingAttackWithJumpButton || ActionHoming.MainTarget == null);
+                && (!ActionHoming.HomingAttackWithJumpButton || ActionHoming.MainTarget == null)
+                && !(ActionWallStick != null && ActionWallStick.IsWallSticking);
         }
         else
         {
@@ -117,6 +124,7 @@ public partial class ActionDash : Node
                 && !(
                     Player.Grounded && ActionRoll.isRolling
                 ) /*&& !(isDrifting || PlayerInput.IsActionPressed("actionroll"))*/
+                && !(ActionWallStick != null && ActionWallStick.IsWallSticking)
             ;
         }
         if (canDash)
@@ -142,6 +150,9 @@ public partial class ActionDash : Node
 
     public void Dash()
     {
+        if (ActionWallStick != null && ActionWallStick.IsWallSticking)
+            return;
+
         if (dashCooldownTimer <= 0 && (Player.Grounded || airDashCount < MaxAllowedAirDashes))
         {
             if (AllowMagnetDash)

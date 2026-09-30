@@ -8,6 +8,7 @@
 [ext_resource type="Script" uid="uid://dt6h8005dk8b7" path="res://Scripts/Player/PlayerActions.cs" id="4_yrv08"]
 [ext_resource type="AudioStream" uid="uid://cd1aw5a6oohp4" path="res://SonicAssets/Audio/Sonic/Synth_2000000_player_2002000_PLY_SNC_GE_2002_029_homing_aif.wav" id="5_5mxhk"]
 [ext_resource type="Script" uid="uid://cl2i8ae6rr3e2" path="res://Scripts/Player/ActionJump.cs" id="6_grlnp"]
+[ext_resource type="Script" uid="uid://c55iv0m3ihmb0" path="res://Scripts/Player/ActionWallStick.cs" id="6_wallstick"]
 [ext_resource type="AudioStream" uid="uid://d2mjacnm1woaf" path="res://SonicAssets/Audio/Sonic/Synth_2000000_player_2002000_PLY_SNC_GE_2002_027_jump_aif.wav" id="7_6s6jw"]
 [ext_resource type="Script" uid="uid://dqiuw2fchaget" path="res://Scripts/Player/ActionRoll.cs" id="8_i5755"]
 [ext_resource type="AudioStream" uid="uid://cny8w2g0qju4f" path="res://SonicAssets/Audio/Sonic/Synth_2000000_player_2001000_PLY_SNC_CL_2001_048_spin_lp_cl_AIF_1.wav" id="9_g351b"]
@@ -378,7 +379,7 @@ shader_parameter/DistortScale = 1.0
 [sub_resource type="QuadMesh" id="QuadMesh_vs2fh"]
 material = SubResource("ShaderMaterial_p5w88")
 
-[sub_resource type="ArrayMesh" id="ArrayMesh_w2i3l"]
+[sub_resource type="ArrayMesh" id="ArrayMesh_rfscu"]
 
 [sub_resource type="Curve" id="Curve_TrailBoost"]
 _data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(1, 0.1), 0.0, 0.0, 0, 0]
@@ -387,7 +388,7 @@ point_count = 2
 [sub_resource type="Gradient" id="Gradient_6dkl6"]
 colors = PackedColorArray(0, 0, 1, 1, 0, 0, 1, 0)
 
-[sub_resource type="ArrayMesh" id="ArrayMesh_rfscu"]
+[sub_resource type="ArrayMesh" id="ArrayMesh_3locw"]
 
 [sub_resource type="Gradient" id="Gradient_TrailBoostSuper"]
 colors = PackedColorArray(1, 1, 0, 1, 1, 1, 0, 0)
@@ -608,6 +609,14 @@ audioPlayer = NodePath("../../../Audio/PlayerSoundEffectsPlayer")
 DashAction = "actionjump"
 ExecutedByJump = true
 TriggersBoost = false
+
+[node name="ActionWallStick" type="Node" parent="PlayerControl/Actions" unique_id=1900621977 node_paths=PackedStringArray("Player", "ActionRoll", "WallSlideDustParticles")]
+script = ExtResource("6_wallstick")
+Player = NodePath("../../..")
+ActionRoll = NodePath("../ActionRoll")
+WallSlideDustParticles = NodePath("../../../Effects/[Particles] WallSlideDust")
+WallSlideDistance = 0.4
+UseWallRunAnimations = true
 
 [node name="ActionJump" type="Node" parent="PlayerControl/Actions" unique_id=106450687 node_paths=PackedStringArray("Player", "ActionRoll", "audioStreamPlayer")]
 script = ExtResource("6_grlnp")
@@ -966,6 +975,8 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.378301)
 
 [node name="[Particles] StepSmoke" parent="Effects" unique_id=2049844635 instance=ExtResource("36_rrow3")]
 
+[node name="[Particles] WallSlideDust" parent="Effects" unique_id=1374701537 instance=ExtResource("36_rrow3")]
+
 [node name="[Particles] StepSplash" parent="Effects" unique_id=376728361 instance=ExtResource("40_hhpkd")]
 visible = false
 
@@ -1017,7 +1028,7 @@ draw_pass_1 = SubResource("QuadMesh_vs2fh")
 [node name="BoostTrail" type="MeshInstance3D" parent="Effects" unique_id=1739000243]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
 visible = false
-mesh = SubResource("ArrayMesh_w2i3l")
+mesh = SubResource("ArrayMesh_rfscu")
 script = ExtResource("65_26ox2")
 lifetime = 1.6666666666666667
 width_curve = SubResource("Curve_TrailBoost")
@@ -1027,7 +1038,7 @@ color_gradient = SubResource("Gradient_6dkl6")
 [node name="BoostTrailSuper" type="MeshInstance3D" parent="Effects" unique_id=1757659197]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
 visible = false
-mesh = SubResource("ArrayMesh_rfscu")
+mesh = SubResource("ArrayMesh_3locw")
 script = ExtResource("65_26ox2")
 lifetime = 1.6666666666666667
 width_curve = SubResource("Curve_TrailBoost")

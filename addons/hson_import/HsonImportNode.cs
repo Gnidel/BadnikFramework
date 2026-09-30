@@ -498,6 +498,13 @@ namespace BadnikFramework.Tools.HsonImport
                         }
                         SetSpringParams(newGameObject, newObject);
                         break;
+                    case "walljumpblock":
+                        if (HedgehogEngineCorrections)
+                        {
+                            newGameObject.RotateObjectLocal(Vector3.Up, Mathf.Pi / 2);
+                        }
+                        SetWallJumpPanelParams(newGameObject, newObject);
+                        break;
                     case "redring":
                         newGameObject.Translate(newGameObject.Basis.Y * 0.5f);      // To spawn slightly above ground instead of in.
                         SetRedRingParams(newGameObject, newObject);
@@ -625,6 +632,27 @@ namespace BadnikFramework.Tools.HsonImport
             if (ooc != null)
             {
                 dirLauncher.Set("LockInputTime", ooc.ValueFloatingPoint);
+            }
+        }
+
+        private void SetWallJumpPanelParams(Node3D wallJumpPanel, libHSON.Object hsonObject)
+        {
+            var width = hsonObject.GetParameter("width");
+            var height = hsonObject.GetParameter("height");
+            if (width == null && height == null)
+                return;
+
+            var panelScale = new Vector3(
+                width == null ? 1f : (float)width.ValueFloatingPoint / 5.2f,
+                height == null ? 1f : (float)height.ValueFloatingPoint / 5.2f,
+                1f
+            );
+            wallJumpPanel.Scale *= panelScale;
+
+            if (height != null)
+            {
+                wallJumpPanel.Position += wallJumpPanel.Basis.Y.Normalized()
+                    * ((float)height.ValueFloatingPoint * 0.5f);
             }
         }
 
