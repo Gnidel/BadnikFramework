@@ -501,28 +501,17 @@ script = ExtResource("6_xkren")
 
 [node name="MapSystem" parent="." unique_id=646975129 instance=ExtResource("85_mei83")]
 
-[node name="MapUIControl" parent="MapSystem/MapUI" parent_id_path=PackedInt32Array(646975129, 1142520450) index="0" unique_id=1463325627]
+[node name="MapUIControl" parent="MapSystem/MapCanvasLayer/MapUI" parent_id_path=PackedInt32Array(646975129, 1142520450) index="0" unique_id=1463325627]
 MapBorders = AABB(-600, 0, -1000, 1600, 0, 1600)
 
-[node name="MapBaker" parent="MapSystem/MapUI/MapUIControl" index="0" unique_id=1111343081]
+[node name="MapBaker" parent="MapSystem/MapCanvasLayer/MapUI/MapUIControl" index="0" unique_id=1111343081]
 AabbMin = Vector3(-600, -100, -1000)
 AabbMax = Vector3(1000, 1000, 600)
 TextureSize = Vector2i(3200, 3200)
 OutputPath = "res://Games/Example game/Levels/TestLevel//test_level_map_baked.png"
 
-[node name="MapTerrain" parent="MapSystem/MapUI/HBoxContainer/MapContainer/MapContainerContent" parent_id_path=PackedInt32Array(646975129, 204532303) index="0" unique_id=1032196947]
+[node name="MapTerrain" parent="MapSystem/MapCanvasLayer/MapUI/HBoxContainer/MapContainer/MapContainerContent" parent_id_path=PackedInt32Array(646975129, 204532303) index="0" unique_id=1032196947]
 texture = ExtResource("86_oxg3e")
-
-[node name="CloseButton" parent="MapSystem/MapUI" parent_id_path=PackedInt32Array(646975129, 1142520450) index="2" unique_id=1463324772]
-layout_mode = 0
-anchors_preset = 0
-anchor_left = 0.0
-anchor_right = 0.0
-offset_left = 0.0
-offset_top = 0.0
-offset_right = 72.0
-offset_bottom = 72.0
-grow_horizontal = 1
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=1174576643]
 environment = SubResource("Environment_wj3j7")
