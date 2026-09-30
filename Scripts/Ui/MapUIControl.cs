@@ -42,6 +42,9 @@ public partial class MapUIControl : Node
     public TextureRect MapTerrain;
 
     [Export]
+    public Control MapSectionsContainer;
+
+    [Export]
     public Button FastTravelButton;
 
     [Export]
@@ -88,6 +91,17 @@ public partial class MapUIControl : Node
         public Sprite2D sprite;
     }
 
+    class MapSectionOverlay
+    {
+        public MapUIMapSection section;
+        public TextureRect overlay;
+        public ShaderMaterial material;
+    }
+
+    readonly List<MapSectionOverlay> mapSectionOverlays = new();
+    readonly Dictionary<MapUIMapSection, Tween> revealTweens = new();
+    Shader mapSectionShader;
+
     public void AddPoi(MapUIIconTrackedObject trackedObject)
     {
         // Sprite
@@ -98,6 +112,7 @@ public partial class MapUIControl : Node
             trackedObject.GlobalPosition.X,
             trackedObject.GlobalPosition.Z
         );
+        newIconSprite.Scale = Vector2.One / MapRoot.Scale;
         IconsContainer.AddChild(newIconSprite);
 
         // Add to collection
@@ -122,8 +137,13 @@ public partial class MapUIControl : Node
 
     public override void _Ready()
     {
-        RefreshIcons();
+        mapSectionShader = new Shader
+        {
+            Code = "shader_type canvas_item; uniform float reveal_progress = 0.0; uniform float flash = 0.0; void fragment() { float mask = texture(TEXTURE, UV).r; float visible = mask * (1.0 - reveal_progress); COLOR = vec4(vec3(flash), visible); }"
+        };
         MapRoot.Scale = new Vector2(MapScaleDefault, MapScaleDefault);
+        RefreshMapSections();
+        RefreshIcons();
     }
 
     public override void _Input(InputEvent @event)
@@ -231,6 +251,8 @@ public partial class MapUIControl : Node
 
     public void RefreshIcons()
     {
+        Cursor.Scale = Vector2.One / MapRoot.Scale;
+
         var currentIcons = IconsContainer.GetChildren();
 
         foreach (var child in currentIcons)
@@ -245,6 +267,7 @@ public partial class MapUIControl : Node
             newIcon.Name = player.Name;
             newIcon.Texture = PlayerIconTexture;
             newIcon.Position = new Vector2(player.GlobalPosition.X, player.GlobalPosition.Z);
+            newIcon.Scale = Vector2.One / MapRoot.Scale;
             newIcon.ZIndex = 128;
             IconsContainer.AddChild(newIcon);
 
@@ -257,8 +280,81 @@ public partial class MapUIControl : Node
         PoiIcons.Clear();
         foreach (var trackedObject in MapUIIconTrackedObject.Instances)
         {
-            AddPoi(trackedObject);
+            if (!GodotObject.IsInstanceValid(trackedObject))
+                continue;
+
+            bool hidden = false;
+            var mapPosition = new Vector2(trackedObject.GlobalPosition.X, trackedObject.GlobalPosition.Z);
+            foreach (var section in MapUIMapSection.Instances)
+            {
+                if (section.IsPointLocked(mapPosition))
+                {
+                    hidden = true;
+                    break;
+                }
+            }
+
+            if (!hidden)
+                AddPoi(trackedObject);
         }
+    }
+
+    public void RefreshMapSections()
+    {
+        if (MapSectionsContainer == null)
+            return;
+
+        foreach (var child in MapSectionsContainer.GetChildren())
+            child.QueueFree();
+        mapSectionOverlays.Clear();
+
+        foreach (var section in MapUIMapSection.Instances)
+        {
+            if (section.MaskTexture == null || section.IsUnlocked)
+                continue;
+
+            var overlay = new TextureRect
+            {
+                Name = section.Name + "_mask",
+                Texture = section.MaskTexture,
+                MouseFilter = Control.MouseFilterEnum.Ignore,
+                Position = new Vector2(MapBorders.Position.X, MapBorders.Position.Z),
+                Size = new Vector2(MapBorders.Size.X, MapBorders.Size.Z),
+                ExpandMode = TextureRect.ExpandModeEnum.IgnoreSize,
+                StretchMode = TextureRect.StretchModeEnum.Scale
+            };
+            var material = new ShaderMaterial { Shader = mapSectionShader };
+            material.SetShaderParameter("reveal_progress", 0f);
+            material.SetShaderParameter("flash", 0f);
+            overlay.Material = material;
+            MapSectionsContainer.AddChild(overlay);
+            mapSectionOverlays.Add(new MapSectionOverlay { section = section, overlay = overlay, material = material });
+        }
+    }
+
+    public void RevealMapSection(MapUIMapSection section)
+    {
+        foreach (var sectionOverlay in mapSectionOverlays)
+        {
+            if (sectionOverlay.section != section)
+                continue;
+
+            revealTweens.TryGetValue(section, out var previousTween);
+            previousTween?.Kill();
+            var tween = CreateTween();
+            revealTweens[section] = tween;
+            tween.TweenMethod(Callable.From<float>(value => sectionOverlay.material.SetShaderParameter("flash", value)), 0f, 1f, 1.5f);
+            tween.TweenMethod(Callable.From<float>(value => sectionOverlay.material.SetShaderParameter("reveal_progress", value)), 0f, 1f, 1.5f);
+            tween.TweenCallback(Callable.From(() =>
+            {
+                sectionOverlay.overlay.QueueFree();
+                section.IsRevealing = false;
+                mapSectionOverlays.Remove(sectionOverlay);
+                RefreshIcons();
+            }));
+            break;
+        }
+
     }
 
     public override void _Process(double delta)
@@ -330,6 +426,7 @@ public partial class MapUIControl : Node
 
         MapTerrain.StretchMode = TextureRect.StretchModeEnum.Scale;
         MapTerrain.ExpandMode = TextureRect.ExpandModeEnum.IgnoreSize;
+        UpdateMapSectionOverlayLayout();
 
         // Prepare icons and scale
         foreach (var icon in PlayerIcons)
@@ -344,6 +441,9 @@ public partial class MapUIControl : Node
 
         foreach (var icon in PoiIcons)
         {
+            if (!GodotObject.IsInstanceValid(icon.trackedObject) || !GodotObject.IsInstanceValid(icon.sprite))
+                continue;
+
             icon.sprite.Position = new Vector2(
                 icon.trackedObject.GlobalPosition.X,
                 icon.trackedObject.GlobalPosition.Z
@@ -358,6 +458,9 @@ public partial class MapUIControl : Node
 
         foreach (var icon in PoiIcons)
         {
+            if (!GodotObject.IsInstanceValid(icon.trackedObject) || !GodotObject.IsInstanceValid(icon.sprite))
+                continue;
+
             if ((icon.sprite.GlobalPosition - Cursor.GlobalPosition).Length() < 50)
             {
                 selectedPoiIcons.Add(icon);
@@ -412,6 +515,17 @@ public partial class MapUIControl : Node
         //MapRoot.GlobalPosition = MapRoot.GetParent<Control>().Size / 2;
         //var MapBorders2D = new Vector2(MapBorders.Size.X, MapBorders.Size.Z);
         //MapRoot.Scale = MapBorders2D / MapRoot.GetParent<Control>().Size;
+    }
+
+    void UpdateMapSectionOverlayLayout()
+    {
+        foreach (var sectionOverlay in mapSectionOverlays)
+        {
+            sectionOverlay.overlay.Position = MapTerrain.Position;
+            sectionOverlay.overlay.Size = MapTerrain.Size;
+            sectionOverlay.overlay.StretchMode = TextureRect.StretchModeEnum.Scale;
+            sectionOverlay.overlay.ExpandMode = TextureRect.ExpandModeEnum.IgnoreSize;
+        }
     }
 
     public void OnTeleport()

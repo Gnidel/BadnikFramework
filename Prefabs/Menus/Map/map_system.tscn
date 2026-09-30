@@ -23,7 +23,7 @@ grow_horizontal = 2
 grow_vertical = 2
 theme = ExtResource("1_4pmaj")
 
-[node name="MapUIControl" type="Node" parent="MapUI" unique_id=1463325627 node_paths=PackedStringArray("MapUI", "IconsContainer", "Cursor", "MapRoot", "MapViewport", "MapTerrain", "FastTravelButton", "CloseButton", "DescriptionHeader", "DescriptionContent")]
+[node name="MapUIControl" type="Node" parent="MapUI" unique_id=1463325627 node_paths=PackedStringArray("MapUI", "IconsContainer", "Cursor", "MapRoot", "MapViewport", "MapTerrain", "MapSectionsContainer", "FastTravelButton", "CloseButton", "DescriptionHeader", "DescriptionContent")]
 script = ExtResource("3_4pmaj")
 MapUI = NodePath("..")
 PlayerIconTexture = ExtResource("1_ojflh")
@@ -32,6 +32,7 @@ Cursor = NodePath("../HBoxContainer/MapContainer/MapContainerContent/Cursor")
 MapRoot = NodePath("../HBoxContainer/MapContainer/MapContainerContent")
 MapViewport = NodePath("../HBoxContainer/MapContainer")
 MapTerrain = NodePath("../HBoxContainer/MapContainer/MapContainerContent/MapTerrain")
+MapSectionsContainer = NodePath("../HBoxContainer/MapContainer/MapContainerContent/MapSections")
 FastTravelButton = NodePath("../HBoxContainer/InfoContainerContainer/VBoxContainer/TeleportButton")
 CloseButton = NodePath("../CloseButton")
 DescriptionHeader = NodePath("../HBoxContainer/InfoContainerContainer/VBoxContainer/Header")
@@ -62,6 +63,11 @@ size_flags_horizontal = 3
 z_index = 200
 layout_mode = 1
 anchors_preset = 0
+
+[node name="MapSections" type="Control" parent="MapUI/HBoxContainer/MapContainer/MapContainerContent" unique_id=204532304]
+z_index = 1
+layout_mode = 0
+mouse_filter = 2
 
 [node name="MapTerrain" type="TextureRect" parent="MapUI/HBoxContainer/MapContainer/MapContainerContent" unique_id=1032196947]
 layout_mode = 0
