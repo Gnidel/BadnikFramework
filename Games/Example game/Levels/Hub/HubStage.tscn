@@ -51,8 +51,11 @@
 [ext_resource type="Texture2D" uid="uid://ca4g6sgnp1tds" path="res://SonicAssets/Stages/Death Egg/Models/DeathEgg_ssz_metal_ym2_eseye01_dif.png" id="31_e0dgu"]
 [ext_resource type="Texture2D" uid="uid://c4m2p4icd0pe3" path="res://SonicAssets/Stages/Death Egg/Icons/StageIconDeathEgg.png" id="32_vs4bg"]
 [ext_resource type="Script" uid="uid://bbh65sxbt16rg" path="res://Scripts/Ui/HideOnMobile.cs" id="50_dt8er"]
+[ext_resource type="PackedScene" path="res://Prefabs/Menus/Map/map_ui_map_section.tscn" id="50_ik4c1"]
 [ext_resource type="Texture2D" uid="uid://be2tgcx8ltscy" path="res://Games/Example game/Levels/Digital Sea/Textures/water_lowend_n.png" id="50_k240n"]
+[ext_resource type="Texture2D" uid="uid://cc3ypa4t08258" path="res://Games/Example game/Levels/Hub/hub_map_section1_lockmask.png" id="51_cs6gc"]
 [ext_resource type="PackedScene" uid="uid://dxhrlgbfh6rn2" path="res://Games/Example game/Levels/Hub/Hub.glb" id="51_vs4bg"]
+[ext_resource type="PackedScene" uid="uid://cvtxjpbagry6u" path="res://Prefabs/Triggers/[trigger]_map_section_unlock.tscn" id="56_boll5"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_fhrgg"]
 size = Vector3(10000, 1, 10000)
@@ -179,20 +182,23 @@ uv1_scale = Vector3(50, 50, 50)
 
 [node name="MapSystem" parent="." unique_id=646975129 instance=ExtResource("1_1g1ix")]
 
-[node name="MapBaker" parent="MapSystem/MapUI/MapUIControl" parent_id_path=PackedInt32Array(646975129, 1463325627) index="0" unique_id=1111343081]
+[node name="MapBaker" parent="MapSystem/MapCanvasLayer/MapUI/MapUIControl" parent_id_path=PackedInt32Array(646975129, 1463325627) index="0" unique_id=1111343081]
 top_level = true
 AabbMin = Vector3(-100, -100, -100)
 AabbMax = Vector3(100, 100, 100)
 HeightmapOutputPath = "res://Games/Example game/Levels/Hub/hub_map_height_baked.png"
 HeightmapSize = Vector2i(1024, 1024)
 
-[node name="MapContainerContent" parent="MapSystem/MapUI/HBoxContainer/MapContainer" parent_id_path=PackedInt32Array(646975129, 101669332) index="0" unique_id=204532303]
+[node name="MapContainerContent" parent="MapSystem/MapCanvasLayer/MapUI/HBoxContainer/MapContainer" parent_id_path=PackedInt32Array(646975129, 101669332) index="0" unique_id=204532303]
 offset_left = 730.0
 offset_top = 493.0
 offset_right = -686.0
 offset_bottom = -587.0
 
-[node name="MapTerrain" parent="MapSystem/MapUI/HBoxContainer/MapContainer/MapContainerContent" index="0" unique_id=1032196947]
+[node name="MapSections" parent="MapSystem/MapCanvasLayer/MapUI/HBoxContainer/MapContainer/MapContainerContent" index="0" unique_id=204532304]
+anchors_preset = 0
+
+[node name="MapTerrain" parent="MapSystem/MapCanvasLayer/MapUI/HBoxContainer/MapContainer/MapContainerContent" index="1" unique_id=1032196947]
 offset_right = 0.0
 offset_bottom = 0.0
 
@@ -582,6 +588,15 @@ script = ExtResource("19_tqd2b")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Water/Area3D" unique_id=263439540]
 shape = SubResource("BoxShape3D_tgitv")
 
+[node name="MapUIMapSection" parent="." unique_id=2112945174 instance=ExtResource("50_ik4c1")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.859374, 10.9999695, 67.98529)
+MaskTexture = ExtResource("51_cs6gc")
+UnlockId = "Hub_1T15"
+
+[node name="MapSectionUnlockTrigger" parent="." unique_id=97063725 node_paths=PackedStringArray("MapSection") instance=ExtResource("56_boll5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5, 65)
+MapSection = NodePath("../MapUIMapSection")
+
 [connection signal="OnAfterSpawningDone" from="PlayersManager" to="PlayersManager/ExtraSettingsApplicator" method="ApplySettings"]
 
 [editable path="MapSystem"]
@@ -606,3 +621,4 @@ shape = SubResource("BoxShape3D_tgitv")
 [editable path="StageGates/[Interactable] StageGate_DE"]
 [editable path="StageGates/[Interactable] StageGate_DE/StageEntrance_DiscoHill2"]
 [editable path="Hub"]
+[editable path="MapSectionUnlockTrigger"]
