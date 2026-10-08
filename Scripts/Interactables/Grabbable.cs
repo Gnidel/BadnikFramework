@@ -43,6 +43,9 @@ public partial class Grabbable : Node3D
     [Export]
     public float Cooldown = 0.5f;
 
+    [Export]
+    public double InputLockTimeAfterExit;
+
     private bool active = false;
     private float cooldownTimer = 0;
     public ActionAutoGimmick currentPlayer;
@@ -94,6 +97,10 @@ public partial class Grabbable : Node3D
         currentPlayer.EndAutoGimmick(EndAnimation);
         currentPlayer.Player.LinearVelocity =
             this.GlobalBasis.GetRotationQuaternion() * RelativeEjectVelocity;
+        currentPlayer.Player.PlayerInput.LeftInputTimedLock = Math.Max(
+            currentPlayer.Player.PlayerInput.LeftInputTimedLock,
+            InputLockTimeAfterExit
+        );
         currentPlayer.Player.GlobalRotation = PlayerLockPosition.GlobalRotation;
         currentPlayer.Player.TimedLerpedRotation = 0.5f;
         active = false;
