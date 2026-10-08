@@ -1,0 +1,15 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://88i3bef81eqf"]
+
+[ext_resource type="Texture2D" uid="uid://r0ilxq1qw0n2" path="res://SonicAssets/Models/Interactables/textures/cmn_obj_wjbpanel_dif_HD.dds" id="1_1deth"]
+[ext_resource type="Texture2D" uid="uid://dgyy765xku8ev" path="res://SonicAssets/Models/Interactables/textures/cmn_obj_wjbpanel_spc_HD.dds" id="2_2anxo"]
+[ext_resource type="Texture2D" uid="uid://cl1jt4bxy5kje" path="res://SonicAssets/Models/Interactables/textures/cmn_obj_wjbpanel_nrm_HD.dds" id="3_ttuft"]
+
+[resource]
+resource_name = "wjblock_arrow"
+vertex_color_use_as_albedo = true
+albedo_texture = ExtResource("1_1deth")
+metallic = 1.0
+metallic_texture = ExtResource("2_2anxo")
+emission_enabled = true
+normal_enabled = true
+normal_texture = ExtResource("3_ttuft")

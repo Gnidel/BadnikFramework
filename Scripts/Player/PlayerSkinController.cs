@@ -3,492 +3,518 @@ using Godot;
 
 public partial class PlayerSkinController : Node3D
 {
-    [Export]
-    public PlayerController PlayerController;
+	[Export]
+	public PlayerController PlayerController;
 
-    [Export]
-    public AnimationTree AnimationTree;
+	[Export]
+	public AnimationTree AnimationTree;
 
-    [Export]
-    public AnimationPlayer AnimationPlayer;
+	[Export]
+	public AnimationPlayer AnimationPlayer;
 
-    [Export]
-    public ActionRoll ActionRoll;
+	[Export]
+	public ActionRoll ActionRoll;
 
-    [Export]
-    public ActionGrind ActionGrind;
+	[Export]
+	public ActionGrind ActionGrind;
 
-    [Export]
-    public ActionDrift ActionDrift;
+	[Export]
+	public ActionDrift ActionDrift;
 
-    [Export]
-    public ActionGun ActionGun;
+	[Export]
+	public ActionGun ActionGun;
 
-    [Export]
-    public ActionSkate ActionSkate;
-    private WaterInteraction WaterInteraction;
+	[Export]
+	public ActionSkate ActionSkate;
+	private ActionWallStick ActionWallStick;
+	private WaterInteraction WaterInteraction;
 
-    [Export]
-    public GpuParticles3D RunWindParticles;
+	[Export]
+	public GpuParticles3D RunWindParticles;
 
-    [Export]
-    public GpuParticles3D RunDustParticles;
+	[Export]
+	public GpuParticles3D RunDustParticles;
 
-    [Export]
-    public GpuParticles3D RunSplashParticles;
+	[Export]
+	public GpuParticles3D RunSplashParticles;
 
-    [Export]
-    public AudioStreamPlayer3D RunWind;
+	[Export]
+	public AudioStreamPlayer3D RunWind;
 
-    [Export]
-    public Node3D Aura;
+	[Export]
+	public Node3D Aura;
 
-    [Export]
-    public Color RunWindColor = new Color(1, 1, 1);
+	[Export]
+	public Color RunWindColor = new Color(1, 1, 1);
 
-    [Export]
-    public MeshInstance3D SpinBall;
+	[Export]
+	public MeshInstance3D SpinBall;
 
-    [Export]
-    public MeshInstance3D SpinDashBall;
+	[Export]
+	public MeshInstance3D SpinDashBall;
 
-    [Export]
-    public Node3D[] Models = new Node3D[0];
+	[Export]
+	public Node3D[] Models = new Node3D[0];
 
-    [Export]
-    public float SpinBallRotationSpeed = 10f;
+	[Export]
+	public float SpinBallRotationSpeed = 10f;
 
-    [Export]
-    public float RunSpeedAnimationMax = 30f;
+	[Export]
+	public float RunSpeedAnimationMax = 30f;
 
-    [Export]
-    public float RunAnimationMidSpeed = 15f;
+	[Export]
+	public float RunAnimationMidSpeed = 15f;
 
-    [Export]
-    public float RunAnimationFullSpeed = 30f;
+	[Export]
+	public float RunAnimationFullSpeed = 30f;
 
-    [Export]
-    public Node3D HeadCameraFocusPoint;
+	[Export]
+	public Node3D HeadCameraFocusPoint;
 
-    [Export]
-    public bool SkipRankWaitAnimation = false;
+	[Export]
+	public bool SkipRankWaitAnimation = false;
 
-    [Export]
-    public Node3D BoneAttachmentSkateboard;
+	[Export]
+	public Node3D BoneAttachmentSkateboard;
 
-    private string prevState;
+	private string prevState;
 
-    public override void _Process(double delta)
-    {
-        if (ActionRoll == null)
-        {
-            ActionRoll = PlayerController.GetNodeOrNull<ActionRoll>(
+	public override void _Process(double delta)
+	{
+		if (ActionRoll == null)
+		{
+			ActionRoll = PlayerController.GetNodeOrNull<ActionRoll>(
                 "./PlayerControl/Actions/ActionRoll"
-            );
-        }
-        if (ActionGrind == null)
-        {
-            ActionGrind = PlayerController.GetNodeOrNull<ActionGrind>(
+			);
+		}
+		if (ActionGrind == null)
+		{
+			ActionGrind = PlayerController.GetNodeOrNull<ActionGrind>(
                 "./PlayerControl/Actions/ActionGrind"
-            );
-        }
-        if (ActionGun == null)
-        {
-            ActionGun = PlayerController.GetNodeOrNull<ActionGun>(
+			);
+		}
+		if (ActionGun == null)
+		{
+			ActionGun = PlayerController.GetNodeOrNull<ActionGun>(
                 "./PlayerControl/Actions/ActionGun"
-            );
-        }
-        if (WaterInteraction == null)
-        {
-            WaterInteraction = PlayerController.GetNodeOrNull<WaterInteraction>(
+			);
+		}
+		if (WaterInteraction == null)
+		{
+			WaterInteraction = PlayerController.GetNodeOrNull<WaterInteraction>(
                 "./PlayerControl/WaterInteraction"
-            );
-        }
-        if (ActionSkate == null)
-        {
-            ActionSkate = PlayerController.GetNodeOrNull<ActionSkate>(
+			);
+		}
+		if (ActionSkate == null)
+		{
+			ActionSkate = PlayerController.GetNodeOrNull<ActionSkate>(
                 "./PlayerControl/Actions/ActionSkate"
-            );
-        }
+			);
+		}
+		if (ActionWallStick == null)
+		{
+			ActionWallStick = PlayerController.GetNodeOrNull<ActionWallStick>(
+                "./PlayerControl/Actions/ActionWallStick"
+			);
+		}
 
-        AnimationNodeStateMachinePlayback stateMachine = (AnimationNodeStateMachinePlayback)
-            AnimationTree.Get("parameters/playback");
-        if (PlayerController.PlayerDamage.IsDead)
-        {
-            stateMachine.Travel("Dead");
-            RunWind.Stop();
-            RunWindParticles.Emitting = false;
-            RunDustParticles.Emitting = false;
-            RunSplashParticles.Emitting = false;
-            return;
-        }
+		AnimationNodeStateMachinePlayback stateMachine = (AnimationNodeStateMachinePlayback)
+			AnimationTree.Get("parameters/playback");
+		if (PlayerController.PlayerDamage.IsDead)
+		{
+			stateMachine.Travel("Dead");
+			RunWind.Stop();
+			RunWindParticles.Emitting = false;
+			RunDustParticles.Emitting = false;
+			RunSplashParticles.Emitting = false;
+			return;
+		}
 
-        if (ActionSkate != null && ActionSkate.IsSkating)
-        {
-            SkatingAnimations(delta);
-        }
-        else
-        {
-            RegularAnimations(delta);
-        }
-    }
+		if (ActionSkate != null && ActionSkate.IsSkating)
+		{
+			SkatingAnimations(delta);
+		}
+		else
+		{
+			RegularAnimations(delta);
+		}
+	}
 
-    private void RegularAnimations(double delta)
-    {
-        AnimationNodeStateMachinePlayback stateMachine = (AnimationNodeStateMachinePlayback)
-            AnimationTree.Get("parameters/playback");
+	private void RegularAnimations(double delta)
+	{
+		AnimationNodeStateMachinePlayback stateMachine = (AnimationNodeStateMachinePlayback)
+			AnimationTree.Get("parameters/playback");
 
-        if (PlayerController.PlayerDamage.IsDamaged)
-        {
-            stateMachine.Travel("Damage");
-        }
-        if (ActionGrind.IsGrinding())
-        {
-            if (stateMachine.GetCurrentNode().ToString().Substr(0, "Grind".Length) != "Grind")
-            {
-                stateMachine.Travel("Grinding");
-            }
-            AnimationTree.Set(
-                "parameters/conditions/isGrinding",
-                ActionGrind.IsGrinding() && !ActionGrind.IsCrouching
-            );
-            AnimationTree.Set(
-                "parameters/conditions/isGrindingSquating",
-                ActionGrind.IsGrinding() && ActionGrind.IsCrouching
-            );
-        }
-        else if (
-            stateMachine.GetCurrentNode() == "Grinding"
-            || stateMachine.GetCurrentNode() == "GrindSquat"
-        )
-        {
-            stateMachine.Travel("Air");
-        }
+		if (ActionWallStick != null && ActionWallStick.IsWallSticking)
+		{
+			var wallRunSpeedScale = GetRunSpeedAnimationScale(false);
+			AnimationTree.Set("parameters/WallRunL/timeScale/scale", wallRunSpeedScale);
+			AnimationTree.Set("parameters/WallRunR/timeScale/scale", wallRunSpeedScale);
+			TravelAnimation(ActionWallStick.CurrentWallAnimation);
+			SetParticles(delta);
+			return;
+		}
 
-        AnimationTree.Set(
-            "parameters/conditions/isIdle",
-            PlayerController.Grounded
-                && PlayerController.VelocityXZ.Length() <= 0.1f
-                && !ActionRoll.isRolling
-                && !ActionGrind.IsGrinding()
-        );
-        AnimationTree.Set(
-            "parameters/conditions/isRunning",
-            PlayerController.Grounded
-                && PlayerController.VelocityXZ.Length() > 0.1f
-                && !ActionRoll.isRolling
-                && !ActionGrind.IsGrinding()
-        );
-        AnimationTree.Set(
-            "parameters/conditions/isAir",
-            !PlayerController.Grounded && !ActionRoll.isRolling && !ActionGrind.IsGrinding()
-        );
+		if (PlayerController.PlayerDamage.IsDamaged)
+		{
+			stateMachine.Travel("Damage");
+		}
+		if (ActionGrind.IsGrinding())
+		{
+			if (stateMachine.GetCurrentNode().ToString().Substr(0, "Grind".Length) != "Grind")
+			{
+				stateMachine.Travel("Grinding");
+			}
+			AnimationTree.Set(
+				"parameters/conditions/isGrinding",
+				ActionGrind.IsGrinding() && !ActionGrind.IsCrouching
+			);
+			AnimationTree.Set(
+				"parameters/conditions/isGrindingSquating",
+				ActionGrind.IsGrinding() && ActionGrind.IsCrouching
+			);
+		}
+		else if (
+			stateMachine.GetCurrentNode() == "Grinding"
+			|| stateMachine.GetCurrentNode() == "GrindSquat"
+		)
+		{
+			stateMachine.Travel("Air");
+		}
 
-        AnimationTree.Set("parameters/conditions/isRolling", ActionRoll.isRolling);
-        if (ActionRoll.isRolling)
-        {
-            stateMachine.Travel("Rolling");
-        }
+		AnimationTree.Set(
+			"parameters/conditions/isIdle",
+			PlayerController.Grounded
+				&& PlayerController.VelocityXZ.Length() <= 0.1f
+				&& !ActionRoll.isRolling
+				&& !ActionGrind.IsGrinding()
+		);
+		AnimationTree.Set(
+			"parameters/conditions/isRunning",
+			PlayerController.Grounded
+				&& PlayerController.VelocityXZ.Length() > 0.1f
+				&& !ActionRoll.isRolling
+				&& !ActionGrind.IsGrinding()
+		);
+		AnimationTree.Set(
+			"parameters/conditions/isAir",
+			!PlayerController.Grounded && !ActionRoll.isRolling && !ActionGrind.IsGrinding()
+		);
 
-        if (ActionDrift != null)
-        {
-            AnimationTree.Set("parameters/Running/drift/blend_amount", ActionDrift.VisualDriftDir);
-        }
+		AnimationTree.Set("parameters/conditions/isRolling", ActionRoll.isRolling);
+		if (ActionRoll.isRolling)
+		{
+			stateMachine.Travel("Rolling");
+		}
 
-        float runAnim = GetRunAnimationBlendAmount();
+		if (ActionDrift != null)
+		{
+			AnimationTree.Set("parameters/Running/drift/blend_amount", ActionDrift.VisualDriftDir);
+		}
 
-        AnimationTree.Set("parameters/Running/runAnim/blend_amount", runAnim);
-        float currLeaning = AnimationTree
-            .Get("parameters/Running/leaning_highspeed/blend_amount")
-            .AsSingle();
+		float runAnim = GetRunAnimationBlendAmount();
 
-        AnimationTree.Set(
-            "parameters/Running/leaning_highspeed/blend_amount",
-            Mathf.Lerp(currLeaning, PlayerController.Leaning, (float)delta * 5)
-        );
-        AnimationTree.Set(
-            "parameters/Running/leaning_midspeed/blend_amount",
-            Mathf.Lerp(currLeaning, PlayerController.Leaning, (float)delta * 5)
-        );
+		AnimationTree.Set("parameters/Running/runAnim/blend_amount", runAnim);
+		float currLeaning = AnimationTree
+			.Get("parameters/Running/leaning_highspeed/blend_amount")
+			.AsSingle();
 
-        var speedScale = 1f;
-        const float scaleBaseline = 10;
-        if (PlayerController.Grounded && PlayerController.VelocityXZ.Length() > scaleBaseline)
-        {
-            speedScale =
-                PlayerController.VelocityXZ.Length()
-                / PlayerController.SpeedMultiplier
-                / scaleBaseline;
-        }
-        speedScale = Mathf.Clamp(speedScale, 0, RunSpeedAnimationMax);
-        AnimationTree.Set("parameters/Running/timeScale/scale", speedScale);
-        var rollRpeedScale = 1f;
+		AnimationTree.Set(
+			"parameters/Running/leaning_highspeed/blend_amount",
+			Mathf.Lerp(currLeaning, PlayerController.Leaning, (float)delta * 5)
+		);
+		AnimationTree.Set(
+			"parameters/Running/leaning_midspeed/blend_amount",
+			Mathf.Lerp(currLeaning, PlayerController.Leaning, (float)delta * 5)
+		);
 
-        if (ActionRoll.IsSpinDashing)
-        {
-            rollRpeedScale = 100f;
-            AnimationTree.Set("parameters/Rolling/isSquating/blend_amount", 0);
-        }
-        else
-        {
-            AnimationTree.Set(
-                "parameters/Rolling/isSquating/blend_amount",
-                !PlayerController.Grounded || PlayerController.VelocityXZ.Length() > 0.1f ? 0 : 1
-            );
-        }
+		var speedScale = GetRunSpeedAnimationScale();
+		AnimationTree.Set("parameters/Running/timeScale/scale", speedScale);
+		var rollRpeedScale = 1f;
 
-        if (PlayerController.Grounded && !ActionRoll.IsSpinDashing)
-        {
-            rollRpeedScale = Mathf.Clamp(PlayerController.VelocityXZ.Length() / 2 / Mathf.Pi, 0, 1);
-            if (PlayerController.VelocityXZ.Normalized().Dot(-PlayerController.Basis.Z) < 0)
-            {
-                rollRpeedScale *= -1;
-            }
-        }
-        AnimationTree.Set("parameters/Rolling/timeScale/scale", rollRpeedScale);
-        AnimationTree.Set(
-            "parameters/Air/velocityY/blend_amount",
-            Mathf.Clamp(PlayerController.VelocityYDirected / 30, 0, 1)
-        );
-        AnimationTree.Set(
-            "parameters/Air/velocityXZ/blend_amount",
-            Mathf.Clamp(PlayerController.VelocityXZ.Length() / 30, 0, 1)
-        );
+		if (ActionRoll.IsSpinDashing)
+		{
+			rollRpeedScale = 100f;
+			AnimationTree.Set("parameters/Rolling/isSquating/blend_amount", 0);
+		}
+		else
+		{
+			AnimationTree.Set(
+				"parameters/Rolling/isSquating/blend_amount",
+				!PlayerController.Grounded || PlayerController.VelocityXZ.Length() > 0.1f ? 0 : 1
+			);
+		}
 
-        if (ActionGun != null)
-        {
-            AnimationTree.Set("parameters/Gun Fire/runAnim/blend_amount", runAnim);
-        }
+		if (PlayerController.Grounded && !ActionRoll.IsSpinDashing)
+		{
+			rollRpeedScale = Mathf.Clamp(PlayerController.VelocityXZ.Length() / 2 / Mathf.Pi, 0, 1);
+			if (PlayerController.VelocityXZ.Normalized().Dot(-PlayerController.Basis.Z) < 0)
+			{
+				rollRpeedScale *= -1;
+			}
+		}
+		AnimationTree.Set("parameters/Rolling/timeScale/scale", rollRpeedScale);
+		AnimationTree.Set(
+			"parameters/Air/velocityY/blend_amount",
+			Mathf.Clamp(PlayerController.VelocityYDirected / 30, 0, 1)
+		);
+		AnimationTree.Set(
+			"parameters/Air/velocityXZ/blend_amount",
+			Mathf.Clamp(PlayerController.VelocityXZ.Length() / 30, 0, 1)
+		);
 
-        SetParticles(delta);
-    }
+		if (ActionGun != null)
+		{
+			AnimationTree.Set("parameters/Gun Fire/runAnim/blend_amount", runAnim);
+		}
 
-    private void SkatingAnimations(double delta)
-    {
-        try
-        {
-            AnimationNodeStateMachinePlayback stateMachine = (AnimationNodeStateMachinePlayback)
-                AnimationTree.Get("parameters/playback");
+		SetParticles(delta);
+	}
 
-            if (ActionSkate.IsTricking) { }
-            else if (ActionGrind != null && ActionGrind.IsGrinding())
-            {
-                stateMachine.Travel("Skate Grind");
-                AnimationTree.Set(
-                    "parameters/Skate Grind/leaning/blend_amount",
-                    PlayerController.Leaning
-                );
-            }
-            else if (PlayerController.Grounded)
-            {
-                stateMachine.Travel("Skate Ground");
+	private float GetRunSpeedAnimationScale(bool requireGrounded = true)
+	{
+		const float scaleBaseline = 10;
+		var speedScale = 1f;
+		if (
+			(!requireGrounded || PlayerController.Grounded)
+			&& PlayerController.VelocityXZ.Length() > scaleBaseline
+		)
+		{
+			speedScale =
+				PlayerController.VelocityXZ.Length()
+				/ PlayerController.SpeedMultiplier
+				/ scaleBaseline;
+		}
+		speedScale = Mathf.Clamp(speedScale, 0, RunSpeedAnimationMax);
+		return speedScale;
+	}
 
-                AnimationTree.Set(
-                    "parameters/Skate Ground/leaning_highspeed/blend_amount",
-                    PlayerController.Leaning
-                );
-                AnimationTree.Set(
-                    "parameters/Skate Ground/leaning_midspeed/blend_amount",
-                    PlayerController.Leaning
-                );
-                float runAnim = GetRunAnimationBlendAmount();
-                AnimationTree.Set("parameters/Skate Ground/runAnim/blend_amount", runAnim);
-            }
-            else
-            {
-                stateMachine.Travel("Skate Air");
-                AnimationTree.Set(
-                    "parameters/Skate Air/velocityY/blend_amount",
-                    Mathf.Clamp(PlayerController.VelocityYDirected / 30 / 2, -0.5f, 0.5f) + 0.5f
-                );
-            }
-        }
-        catch (Exception e)
-        {
-            // This is to prevent abortion of scripts using TravelAnimation() if the animation doesn't exist.
-            GD.PrintErr(e.ToString());
-        }
-    }
+	private void SkatingAnimations(double delta)
+	{
+		try
+		{
+			AnimationNodeStateMachinePlayback stateMachine = (AnimationNodeStateMachinePlayback)
+				AnimationTree.Get("parameters/playback");
 
-    public override void _PhysicsProcess(double delta)
-    {
-        //CorrectClipping(delta);
-    }
+			if (ActionSkate.IsTricking) { }
+			else if (ActionGrind != null && ActionGrind.IsGrinding())
+			{
+				stateMachine.Travel("Skate Grind");
+				AnimationTree.Set(
+					"parameters/Skate Grind/leaning/blend_amount",
+					PlayerController.Leaning
+				);
+			}
+			else if (PlayerController.Grounded)
+			{
+				stateMachine.Travel("Skate Ground");
 
-    private void CorrectClipping(double delta)
-    {
-        /*	Technically, our character flies a bit above the ground instead of touching it. It is to make collission better on small steps, like
-            on small stairs. However, this looks can result in looking wrong (flying a bit above ground or clipping), so we make it not LOOK wrong.
-            Players don't have to know.
-            Note that the raycast is done at the start of player physics calculations, so it's a frame delayed. That's why we keep XZ position and adjust Y position.
-         */
-        if (
-            PlayerController.Grounded
-            && PlayerController.GroundRayHitPoint.HasValue
-            && !ActionGrind.IsGrinding()
-        )
-        {
-            this.GlobalPosition =
-                Vector3Utils.ProjectOnPlane(
-                    PlayerController.GlobalPosition,
-                    PlayerController.Basis.Y
-                )
-                + Vector3Utils.Project(
-                    PlayerController.GroundRayHitPoint.Value
-                        + PlayerController.lastMovingPlatformCorrection * 2,
-                    PlayerController.Basis.Y
-                );
-        }
-        else
-            this.GlobalPosition = PlayerController.GlobalPosition;
-    }
+				AnimationTree.Set(
+					"parameters/Skate Ground/leaning_highspeed/blend_amount",
+					PlayerController.Leaning
+				);
+				AnimationTree.Set(
+					"parameters/Skate Ground/leaning_midspeed/blend_amount",
+					PlayerController.Leaning
+				);
+				float runAnim = GetRunAnimationBlendAmount();
+				AnimationTree.Set("parameters/Skate Ground/runAnim/blend_amount", runAnim);
+			}
+			else
+			{
+				stateMachine.Travel("Skate Air");
+				AnimationTree.Set(
+					"parameters/Skate Air/velocityY/blend_amount",
+					Mathf.Clamp(PlayerController.VelocityYDirected / 30 / 2, -0.5f, 0.5f) + 0.5f
+				);
+			}
+		}
+		catch (Exception e)
+		{
+			// This is to prevent abortion of scripts using TravelAnimation() if the animation doesn't exist.
+			GD.PrintErr(e.ToString());
+		}
+	}
 
-    public void TravelAnimation(string animationName, bool forceAnimRestart = false)
-    {
-        try
-        {
-            AnimationNodeStateMachinePlayback stateMachine = (AnimationNodeStateMachinePlayback)
-                AnimationTree.Get("parameters/playback");
-            stateMachine.Travel(animationName);
-            if (forceAnimRestart)
-            {
-                stateMachine.ResetState();
-                stateMachine.Start(animationName, true);
-            }
-        }
-        catch (Exception)
-        {
-            // This is to prevent abortion of scripts using TravelAnimation() if the animation doesn't exist.
-            //GD.PrintErr(e.ToString());
-        }
-    }
+	public override void _PhysicsProcess(double delta)
+	{
+		//CorrectClipping(delta);
+	}
 
-    public double GetParameter(string paramName)
-    {
-        return AnimationTree.Get(paramName).AsDouble();
-    }
+	private void CorrectClipping(double delta)
+	{
+		/*	Technically, our character flies a bit above the ground instead of touching it. It is to make collission better on small steps, like
+			on small stairs. However, this looks can result in looking wrong (flying a bit above ground or clipping), so we make it not LOOK wrong.
+			Players don't have to know.
+			Note that the raycast is done at the start of player physics calculations, so it's a frame delayed. That's why we keep XZ position and adjust Y position.
+		 */
+		if (
+			PlayerController.Grounded
+			&& PlayerController.GroundRayHitPoint.HasValue
+			&& !ActionGrind.IsGrinding()
+		)
+		{
+			this.GlobalPosition =
+				Vector3Utils.ProjectOnPlane(
+					PlayerController.GlobalPosition,
+					PlayerController.Basis.Y
+				)
+				+ Vector3Utils.Project(
+					PlayerController.GroundRayHitPoint.Value
+						+ PlayerController.lastMovingPlatformCorrection * 2,
+					PlayerController.Basis.Y
+				);
+		}
+		else
+			this.GlobalPosition = PlayerController.GlobalPosition;
+	}
 
-    public void SetParameter(string paramName, double value)
-    {
-        AnimationTree.Set(paramName, value);
-    }
+	public void TravelAnimation(string animationName, bool forceAnimRestart = false)
+	{
+		try
+		{
+			AnimationNodeStateMachinePlayback stateMachine = (AnimationNodeStateMachinePlayback)
+				AnimationTree.Get("parameters/playback");
+			stateMachine.Travel(animationName);
+			if (forceAnimRestart)
+			{
+				stateMachine.ResetState();
+				stateMachine.Start(animationName, true);
+			}
+		}
+		catch (Exception)
+		{
+			// This is to prevent abortion of scripts using TravelAnimation() if the animation doesn't exist.
+			//GD.PrintErr(e.ToString());
+		}
+	}
 
-    private float GetRunAnimationBlendAmount()
-    {
-        var speed = PlayerController.VelocityXZ.Length() / PlayerController.SpeedMultiplier;
-        var midSpeed = Mathf.Max(RunAnimationMidSpeed, 0.001f);
-        var fullSpeed = Mathf.Max(RunAnimationFullSpeed, midSpeed);
+	public double GetParameter(string paramName)
+	{
+		return AnimationTree.Get(paramName).AsDouble();
+	}
 
-        if (speed <= midSpeed)
-        {
-            return Mathf.Clamp(Mathf.InverseLerp(0, midSpeed, speed) - 1, -1, 1);
-        }
+	public void SetParameter(string paramName, double value)
+	{
+		AnimationTree.Set(paramName, value);
+	}
 
-        return Mathf.Clamp(Mathf.InverseLerp(midSpeed, fullSpeed, speed), -1, 1);
-    }
+	private float GetRunAnimationBlendAmount()
+	{
+		var speed = PlayerController.VelocityXZ.Length() / PlayerController.SpeedMultiplier;
+		var midSpeed = Mathf.Max(RunAnimationMidSpeed, 0.001f);
+		var fullSpeed = Mathf.Max(RunAnimationFullSpeed, midSpeed);
 
-    private void SetParticles(double delta)
-    {
-        if (RunWindParticles != null)
-        {
-            RunWindParticles.Emitting = PlayerController.LinearVelocity.Length() > 30;
-            RunWindParticles.ProcessMaterial.Set(
-                "color",
-                new Color(
-                    RunWindColor.R,
-                    RunWindColor.G,
-                    RunWindColor.B,
-                    (PlayerController.LinearVelocity.Length() - 30) / 100f
-                )
-            );
-        }
-        if (RunWind != null)
-        {
-            if (PlayerController.LinearVelocity.Length() > 30)
-            {
-                if (!RunWind.Playing)
-                {
-                    RunWind.Play();
-                }
-                RunWind.VolumeDb = Mathf.Lerp(
-                    RunWind.VolumeDb,
-                    -80 + PlayerController.LinearVelocity.Length(),
-                    (float)delta * 5
-                );
-            }
-            else
-            {
-                RunWind.Playing = false;
-                RunWind.VolumeDb = -80;
-            }
-        }
+		if (speed <= midSpeed)
+		{
+			return Mathf.Clamp(Mathf.InverseLerp(0, midSpeed, speed) - 1, -1, 1);
+		}
 
-        bool isSteppingInWater = (WaterInteraction != null && WaterInteraction.IsSteppingInWater());
-        if (isSteppingInWater)
-        {
-            if (RunSplashParticles != null)
-            {
-                RunSplashParticles.Emitting =
-                    PlayerController.Grounded
-                    && PlayerController.VelocityXZ.Length() > 0
-                    && !PlayerController.PlayerDamage.IsDead;
-                RunSplashParticles.ProcessMaterial.Set(
-                    "scale_max",
-                    (PlayerController.VelocityXZ.Length()) / 20f
-                );
-                RunDustParticles.Emitting = false;
-            }
-        }
-        else
-        {
-            if (RunDustParticles != null)
-            {
-                RunDustParticles.Emitting =
-                    PlayerController.Grounded && PlayerController.LinearVelocity.Length() > 30;
-                RunDustParticles.ProcessMaterial.Set(
-                    "scale_max",
-                    (PlayerController.LinearVelocity.Length() - 30) / 10f
-                );
-                RunSplashParticles.Emitting = false;
-            }
-        }
+		return Mathf.Clamp(Mathf.InverseLerp(midSpeed, fullSpeed, speed), -1, 1);
+	}
 
-        if (Aura != null)
-        {
-            var target = PlayerController
-                .Gravity.Normalized()
-                .Lerp(
-                    PlayerController.LinearVelocity.Normalized(),
-                    Mathf.Clamp((PlayerController.LinearVelocity.Length() - 10) / 10f, 0f, 1)
-                )
-                .Normalized();
-            //Vector3 target = PlayerController.Gravity.Normalized();
-            //if (PlayerController.LinearVelocity.Length() > 10)
-            //{
-            //	target = PlayerController.LinearVelocity.Normalized();
-            //}
-            target = (-Aura.GlobalBasis.Z)
-                .Lerp(target, Mathf.Clamp((float)delta * 10, 0, 1))
-                .Normalized();
-            Aura.LookAt(Aura.GlobalPosition + target, target.Cross(Aura.GlobalBasis.X));
+	private void SetParticles(double delta)
+	{
+		if (RunWindParticles != null)
+		{
+			RunWindParticles.Emitting = PlayerController.LinearVelocity.Length() > 30;
+			RunWindParticles.ProcessMaterial.Set(
+				"color",
+				new Color(
+					RunWindColor.R,
+					RunWindColor.G,
+					RunWindColor.B,
+					(PlayerController.LinearVelocity.Length() - 30) / 100f
+				)
+			);
+		}
+		if (RunWind != null)
+		{
+			if (PlayerController.LinearVelocity.Length() > 30)
+			{
+				if (!RunWind.Playing)
+				{
+					RunWind.Play();
+				}
+				RunWind.VolumeDb = Mathf.Lerp(
+					RunWind.VolumeDb,
+					-80 + PlayerController.LinearVelocity.Length(),
+					(float)delta * 5
+				);
+			}
+			else
+			{
+				RunWind.Playing = false;
+				RunWind.VolumeDb = -80;
+			}
+		}
 
-            Aura.Scale = new Vector3(
-                1,
-                1,
-                Mathf.Clamp(PlayerController.LinearVelocity.Length() / 50, 1f, 2)
-            );
-        }
+		bool isSteppingInWater = (WaterInteraction != null && WaterInteraction.IsSteppingInWater());
+		if (isSteppingInWater)
+		{
+			if (RunSplashParticles != null)
+			{
+				RunSplashParticles.Emitting =
+					PlayerController.Grounded
+					&& PlayerController.VelocityXZ.Length() > 0
+					&& !PlayerController.PlayerDamage.IsDead;
+				RunSplashParticles.ProcessMaterial.Set(
+					"scale_max",
+					(PlayerController.VelocityXZ.Length()) / 20f
+				);
+				RunDustParticles.Emitting = false;
+			}
+		}
+		else
+		{
+			if (RunDustParticles != null)
+			{
+				RunDustParticles.Emitting =
+					PlayerController.Grounded && PlayerController.LinearVelocity.Length() > 30;
+				RunDustParticles.ProcessMaterial.Set(
+					"scale_max",
+					(PlayerController.LinearVelocity.Length() - 30) / 10f
+				);
+				RunSplashParticles.Emitting = false;
+			}
+		}
 
-        if (SpinBall != null)
-        {
-            if (SpinBall.Visible)
-            {
-                SpinBall.RotateX(Mathf.Pi * -2f * SpinBallRotationSpeed * (float)delta);
-            }
-            foreach (var model in Models)
-            {
-                model.Visible = !SpinBall.Visible && !SpinDashBall.Visible;
-            }
-        }
-    }
+		if (Aura != null)
+		{
+			var target = PlayerController
+				.Gravity.Normalized()
+				.Lerp(
+					PlayerController.LinearVelocity.Normalized(),
+					Mathf.Clamp((PlayerController.LinearVelocity.Length() - 10) / 10f, 0f, 1)
+				)
+				.Normalized();
+			//Vector3 target = PlayerController.Gravity.Normalized();
+			//if (PlayerController.LinearVelocity.Length() > 10)
+			//{
+			//	target = PlayerController.LinearVelocity.Normalized();
+			//}
+			target = (-Aura.GlobalBasis.Z)
+				.Lerp(target, Mathf.Clamp((float)delta * 10, 0, 1))
+				.Normalized();
+			Aura.LookAt(Aura.GlobalPosition + target, target.Cross(Aura.GlobalBasis.X));
+
+			Aura.Scale = new Vector3(
+				1,
+				1,
+				Mathf.Clamp(PlayerController.LinearVelocity.Length() / 50, 1f, 2)
+			);
+		}
+
+		if (SpinBall != null)
+		{
+			if (SpinBall.Visible)
+			{
+				SpinBall.RotateX(Mathf.Pi * -2f * SpinBallRotationSpeed * (float)delta);
+			}
+			foreach (var model in Models)
+			{
+				model.Visible = !SpinBall.Visible && !SpinDashBall.Visible;
+			}
+		}
+	}
 }

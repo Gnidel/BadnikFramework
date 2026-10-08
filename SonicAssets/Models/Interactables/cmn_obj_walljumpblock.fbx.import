@@ -1,0 +1,64 @@
+[remap]
+
+importer="scene"
+importer_version=1
+type="PackedScene"
+uid="uid://dwh6thnelqt5"
+path="res://.godot/imported/cmn_obj_walljumpblock.fbx-b3685096314fb4c654625187ff44aec7.scn"
+
+[deps]
+
+source_file="res://SonicAssets/Models/Interactables/cmn_obj_walljumpblock.fbx"
+dest_files=["res://.godot/imported/cmn_obj_walljumpblock.fbx-b3685096314fb4c654625187ff44aec7.scn"]
+
+[params]
+
+nodes/root_type=""
+nodes/root_name=""
+nodes/root_script=null
+mesh_library/use_node_names_as_mesh_names=false
+array_mesh/deduplicate_surfaces=true
+nodes/apply_root_scale=true
+nodes/root_scale=1.0
+nodes/import_as_skeleton_bones=false
+nodes/use_name_suffixes=true
+nodes/use_node_type_suffixes=true
+meshes/ensure_tangents=true
+meshes/generate_lods=true
+meshes/create_shadow_meshes=true
+meshes/light_baking=1
+meshes/lightmap_texel_size=0.2
+meshes/force_disable_compression=false
+skins/use_named_skins=true
+animation/import=true
+animation/fps=30
+animation/trimming=true
+animation/remove_immutable_tracks=true
+animation/import_rest_as_RESET=false
+import_script/path=""
+materials/extract=0
+materials/extract_format=0
+materials/extract_path=""
+_subresources={
+"materials": {
+"wjblock_arrow": {
+"use_external/enabled": true,
+"use_external/fallback_path": "res://SonicAssets/Models/Interactables/textures/wjblock_arrow.tres",
+"use_external/path": "uid://88i3bef81eqf"
+},
+"wjblock_frame": {
+"use_external/enabled": true,
+"use_external/fallback_path": "res://SonicAssets/Models/Interactables/textures/wjblock_frame.tres",
+"use_external/path": "uid://do4ewtwunqf10"
+},
+"wjblock_panel": {
+"use_external/enabled": true,
+"use_external/fallback_path": "res://SonicAssets/Models/Interactables/textures/wjblock_panel.tres",
+"use_external/path": "uid://cpuflctpf4pvf"
+}
+}
+}
+fbx/importer=0
+fbx/allow_geometry_helper_nodes=false
+fbx/embedded_image_handling=1
+fbx/naming_version=2

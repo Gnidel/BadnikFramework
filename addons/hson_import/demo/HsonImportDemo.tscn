@@ -52,7 +52,8 @@ Mapping = Dictionary[String, String]({
 "thorn": "res://SonicAssets/Prefabs/Interactables/Obstacles/[obstacle]_thorns.tscn",
 "thorncylinder": "res://SonicAssets/Prefabs/Interactables/Obstacles/[obstacle]_thorn_cylinder.tscn",
 "upreel": "res://SonicAssets/Prefabs/Interactables/[interactable]_pulley_path.tscn",
-"widespring": "res://SonicAssets/Prefabs/Interactables/[interactable]_spring_red_wide.tscn"
+"widespring": "res://SonicAssets/Prefabs/Interactables/[interactable]_spring_red_wide.tscn",
+"walljumpblock": "res://SonicAssets/Prefabs/Interactables/[interactable]_wall_jump_panel.tscn"
 })
 PathMapping = Dictionary[String, String]({
 "gr_path": "res://Prefabs/Interactables/[interactable]_grind_rail.tscn",

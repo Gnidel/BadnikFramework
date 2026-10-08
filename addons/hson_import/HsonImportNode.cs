@@ -478,7 +478,7 @@ namespace BadnikFramework.Tools.HsonImport
                         SetDashPanelParams(newGameObject, newObject);
                         break;
                     case "dashring":
-                        SetSpringParams(newGameObject, newObject);
+                        SetDashRingParams(newGameObject, newObject);
                         break;
                     case "upreel":
                         if (HedgehogEngineCorrections)
@@ -496,7 +496,14 @@ namespace BadnikFramework.Tools.HsonImport
                         {
                             newGameObject.RotateObjectLocal(Vector3.Up, Mathf.Pi);  // Rotate because BF prefab is different from HE
                         }
-                        SetSpringParams(newGameObject, newObject);
+                        SetGrindBoosterParams(newGameObject, newObject);
+                        break;
+                    case "walljumpblock":
+                        if (HedgehogEngineCorrections)
+                        {
+                            newGameObject.RotateObjectLocal(Vector3.Up, Mathf.Pi / 2);
+                        }
+                        SetWallJumpPanelParams(newGameObject, newObject);
                         break;
                     case "redring":
                         newGameObject.Translate(newGameObject.Basis.Y * 0.5f);      // To spawn slightly above ground instead of in.
@@ -628,6 +635,100 @@ namespace BadnikFramework.Tools.HsonImport
             }
         }
 
+        private void SetDashRingParams(Node3D dashRingNode, libHSON.Object hsonObject)
+        {
+            var dashRing = dashRingNode as DirectionalLauncher;
+            if (dashRing == null)
+                return;
+
+            var speed = hsonObject.GetParameter("Speed");
+            if (speed != null)
+            {
+                dashRing.MinVelocity = (float)speed.ValueFloatingPoint;
+                dashRing.MaxVelocity = (float)speed.ValueFloatingPoint;
+            }
+
+            var outOfControl = hsonObject.GetParameter("OutOfControl");
+            if (outOfControl != null)
+                dashRing.LockInputTime = outOfControl.ValueFloatingPoint;
+
+            var keepVelocity = hsonObject.GetParameter("KeepVelocity");
+            if (keepVelocity != null)
+                dashRing.KeepVelocityTime = (float)keepVelocity.ValueFloatingPoint;
+
+            var positionConstant = hsonObject.GetParameter("PosConst");
+            if (positionConstant != null)
+                dashRing.Snap = positionConstant.ValueBoolean;
+
+            var spin = hsonObject.GetParameter("Spin");
+            if (spin != null)
+                dashRing.Rolling = spin.ValueBoolean;
+
+            var collisionScale = hsonObject.GetParameter("collisionScale");
+            var collisionShape = dashRingNode.GetNodeOrNull<CollisionShape3D>("Area3D/CollisionShape3D");
+            if (collisionScale != null && collisionShape != null && collisionScale.ValueArray.Count >= 3)
+            {
+                collisionShape.Scale = new Vector3(
+                    (float)collisionScale.ValueArray[0].ValueFloatingPoint,
+                    (float)collisionScale.ValueArray[1].ValueFloatingPoint,
+                    (float)collisionScale.ValueArray[2].ValueFloatingPoint
+                );
+            }
+        }
+
+        private void SetGrindBoosterParams(Node3D grindBoosterNode, libHSON.Object hsonObject)
+        {
+            var grindBooster = grindBoosterNode.GetNodeOrNull<DirectionalLauncher>(
+                "./[Interactable] Grind_Booster"
+            );
+            if (grindBooster == null)
+                return;
+
+            var speed = hsonObject.GetParameter("speed");
+            if (speed != null)
+            {
+                grindBooster.MinVelocity = (float)speed.ValueFloatingPoint;
+                grindBooster.MaxVelocity = (float)speed.ValueFloatingPoint;
+            }
+
+            var outOfControl = hsonObject.GetParameter("ocTime");
+            if (outOfControl != null)
+                grindBooster.LockInputTime = outOfControl.ValueFloatingPoint;
+
+            var keepVelocityTime = hsonObject.GetParameter("keepVelocityTime");
+            if (keepVelocityTime != null)
+                grindBooster.KeepVelocityTime = (float)keepVelocityTime.ValueFloatingPoint;
+
+            var reverse = hsonObject.GetParameter("reverse");
+            if (reverse?.ValueBoolean == true)
+                grindBooster.RelativeVelocityDir = -grindBooster.RelativeVelocityDir;
+
+            var isVisible = hsonObject.GetParameter("isVisible");
+            if (isVisible != null)
+                grindBoosterNode.Visible = isVisible.ValueBoolean;
+        }
+
+        private void SetWallJumpPanelParams(Node3D wallJumpPanel, libHSON.Object hsonObject)
+        {
+            var width = hsonObject.GetParameter("width");
+            var height = hsonObject.GetParameter("height");
+            if (width == null && height == null)
+                return;
+
+            var panelScale = new Vector3(
+                width == null ? 1f : (float)width.ValueFloatingPoint / 5.2f,
+                height == null ? 1f : (float)height.ValueFloatingPoint / 5.2f,
+                1f
+            );
+            wallJumpPanel.Scale *= panelScale;
+
+            if (height != null)
+            {
+                wallJumpPanel.Position += wallJumpPanel.Basis.Y.Normalized()
+                    * ((float)height.ValueFloatingPoint * 0.5f);
+            }
+        }
+
         private void SetPathParams(Node3D splineObject, libHSON.Object hsonObject)
         {
             splineObject.Position = Vector3.Zero;
@@ -714,6 +815,28 @@ namespace BadnikFramework.Tools.HsonImport
                 path.Curve.AddPoint(-upreel.Basis.Y * (float)length.ValueFloatingPoint);
                 path.Curve.AddPoint(Vector3.Zero);
             }
+
+            var grabbable = upreel.GetNodeOrNull<Grabbable>(
+                "PathFollow3D/[Interactable] Pulley"
+            );
+            if (grabbable == null)
+                return;
+
+            var firstSpeed = hsonObject.GetParameter("firstSpeed");
+            if (firstSpeed != null)
+                grabbable.Speed = (float)firstSpeed.ValueFloatingPoint;
+
+            var upSpeedMax = hsonObject.GetParameter("upSpeedMax");
+            if (upSpeedMax != null)
+            {
+                var ejectVelocity = grabbable.RelativeEjectVelocity;
+                ejectVelocity.Y = (float)upSpeedMax.ValueFloatingPoint;
+                grabbable.RelativeEjectVelocity = ejectVelocity;
+            }
+
+            var outOfControl = hsonObject.GetParameter("outOfControl");
+            if (outOfControl != null)
+                grabbable.InputLockTimeAfterExit = outOfControl.ValueFloatingPoint;
         }
 
         private void SetBalloonParams(Node3D balloonNode, libHSON.Object hsonObject)
@@ -723,7 +846,48 @@ namespace BadnikFramework.Tools.HsonImport
             var upSpeed = hsonObject.GetParameter("upSpeed");
             if (upSpeed != null)
             {
-                balloon.RelativeEjectVelocity = new Vector3(0, (float)upSpeed.ValueFloatingPoint, 0);
+                var ejectVelocity = balloon.RelativeEjectVelocity;
+                ejectVelocity.Y = (float)upSpeed.ValueFloatingPoint;
+                balloon.RelativeEjectVelocity = ejectVelocity;
+            }
+
+            var speedMin = hsonObject.GetParameter("speedMin");
+            if (speedMin != null)
+                balloon.SpeedMin = (float)speedMin.ValueFloatingPoint;
+
+            var speedMax = hsonObject.GetParameter("speedMax");
+            if (speedMax != null)
+                balloon.SpeedMax = (float)speedMax.ValueFloatingPoint;
+            balloon.UseSpeedBounds = speedMin != null || speedMax != null;
+
+            var outOfControlTime = hsonObject.GetParameter("outOfControlTime");
+            if (outOfControlTime != null)
+                balloon.OutOfControlTime = outOfControlTime.ValueFloatingPoint;
+
+            var keepVelocityTime = hsonObject.GetParameter("keepVelocityTime");
+            if (keepVelocityTime != null)
+                balloon.KeepVelocityTime = (float)keepVelocityTime.ValueFloatingPoint;
+
+            var respawnTime = hsonObject.GetParameter("respawnTime");
+            if (respawnTime != null)
+                balloon.RespawnTime = (float)respawnTime.ValueFloatingPoint;
+
+            var balloonColor = hsonObject.GetParameter("balloonColor");
+            if (balloonColor != null)
+            {
+                Color? color = balloonColor.ValueString switch
+                {
+                    "COLOR_BLUE" => Colors.Blue,
+                    "COLOR_RED" => Colors.Red,
+                    "COLOR_YELLOW" => Colors.Yellow,
+                    "COLOR_GREEN" => Colors.Green,
+                    _ => null,
+                };
+                if (color.HasValue)
+                {
+                    balloon.RandomizeColor = false;
+                    balloon.SetColor(color.Value);
+                }
             }
         }
 

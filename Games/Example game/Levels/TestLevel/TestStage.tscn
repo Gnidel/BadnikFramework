@@ -7,7 +7,6 @@
 [ext_resource type="PackedScene" uid="uid://clt71rt2khju8" path="res://SonicAssets/Prefabs/Player/PlayersManager.tscn" id="3_4w3j3"]
 [ext_resource type="Script" uid="uid://c2iwclb013o1y" path="res://Scripts/System/ApplyWorldEnvironmentSettings.cs" id="3_hs168"]
 [ext_resource type="Texture2D" uid="uid://dngm06vsafimm" path="res://Prefabs/UI/UiHeart.png" id="3_kivhq"]
-[ext_resource type="PackedScene" uid="uid://dph66v4hrgccw" path="res://SonicAssets/Prefabs/Player/player_shadow.tscn" id="5_dj2s0"]
 [ext_resource type="PackedScene" uid="uid://b2myq4ve7aw2x" path="res://SonicAssets/Prefabs/Interactables/Obstacles/[obstacle]_thorns.tscn" id="5_ojf5n"]
 [ext_resource type="PackedScene" uid="uid://dvy6pbmwuo7st" path="res://Prefabs/Interactables/[interactable]_chase_section.tscn" id="6_ogu4x"]
 [ext_resource type="Script" uid="uid://pq5wwkgxhj7e" path="res://Scripts/Player/ExtraSettingsApplicator.cs" id="6_xkren"]
@@ -94,6 +93,7 @@
 [ext_resource type="PackedScene" uid="uid://p1l3extjhtqv" path="res://SonicAssets/Prefabs/Items/[globalitem]_heart.tscn" id="92_mwder"]
 [ext_resource type="PackedScene" uid="uid://cqbir38llka4u" path="res://Prefabs/Triggers/[trigger]_skate_remover.tscn" id="94_vgpqo"]
 [ext_resource type="FontFile" uid="uid://ysevmc4grcp5" path="res://SonicAssets/Fonts/vipnagorgialla bd.otf" id="95_mgq4a"]
+[ext_resource type="PackedScene" uid="uid://b3frmq8e75xf8" path="res://SonicAssets/Prefabs/Interactables/[interactable]_wall_jump_panel.tscn" id="95_vgpqo"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_4wo0b"]
 sky_energy_multiplier = 2.0
@@ -492,7 +492,6 @@ ExtraTrackedItems = Dictionary[String, Texture2D]({
 
 [node name="PlayersManager" parent="." unique_id=253082189 instance=ExtResource("3_4w3j3")]
 transform = Transform3D(1, 0, -1.06581e-14, 0, 1, 0, 1.06581e-14, 0, 1, 90.0366, 12.3948, 93.9944)
-DefaultPlayablePlayers = Array[PackedScene]([ExtResource("5_dj2s0")])
 CharacterSwappingEnabled = true
 
 [node name="ExtraSettingsApplicator" type="Node" parent="PlayersManager" unique_id=1742614868]
@@ -1634,30 +1633,39 @@ shape = SubResource("CylinderShape3D_8doys")
 
 [node name="[Interactable] Balloon" parent="." unique_id=992187001 instance=ExtResource("64_th5q8")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -58.077, 12.2104, -95.7176)
+RespawnTime = 5.0
 
 [node name="[Interactable] Balloon2" parent="." unique_id=1606764600 instance=ExtResource("64_th5q8")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -68.6856, 12.2104, -95.7176)
+RespawnTime = 5.0
 
 [node name="[Interactable] Balloon3" parent="." unique_id=344715785 instance=ExtResource("64_th5q8")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -77.4859, 12.2104, -95.7176)
+RespawnTime = 5.0
 
 [node name="[Interactable] Balloon4" parent="." unique_id=940189113 instance=ExtResource("64_th5q8")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -58.077, 12.2104, -88.6079)
+RespawnTime = 5.0
 
 [node name="[Interactable] Balloon5" parent="." unique_id=1589561705 instance=ExtResource("64_th5q8")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -68.6856, 12.2104, -88.6079)
+RespawnTime = 5.0
 
 [node name="[Interactable] Balloon6" parent="." unique_id=1982452769 instance=ExtResource("64_th5q8")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -77.4859, 12.2104, -88.6079)
+RespawnTime = 5.0
 
 [node name="[Interactable] Balloon7" parent="." unique_id=1784459393 instance=ExtResource("64_th5q8")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -58.077, 12.2104, -81.688)
+RespawnTime = 5.0
 
 [node name="[Interactable] Balloon8" parent="." unique_id=1539285889 instance=ExtResource("64_th5q8")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -68.6856, 12.2104, -81.688)
+RespawnTime = 5.0
 
 [node name="[Interactable] Balloon9" parent="." unique_id=1436577440 instance=ExtResource("64_th5q8")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -77.4859, 12.2104, -81.688)
+RespawnTime = 5.0
 
 [node name="[Interactable] Pole v2" parent="." unique_id=393986395 instance=ExtResource("66_ri0yi")]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 74.458, 6.7299, -27.6033)
@@ -1887,6 +1895,18 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -38.534065, 45.243774, -155.1
 
 [node name="ItemBoxBehavior" parent="[Interactable] Item Box 50" index="1" unique_id=1869190678]
 ItemsCount = 50
+
+[node name="[Interactable] WallJumpPanel" parent="." unique_id=1512219802 instance=ExtResource("95_vgpqo")]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 1, 139.41168, 10.6, 169.2951)
+
+[node name="[Interactable] WallJumpPanel2" parent="." unique_id=1602977095 instance=ExtResource("95_vgpqo")]
+transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 1, 143.41168, 13.6, 181.2951)
+
+[node name="[Interactable] WallJumpPanel3" parent="." unique_id=950061148 instance=ExtResource("95_vgpqo")]
+transform = Transform3D(-2.1855692e-07, 0, 0.99999994, 0, 4.9999995, 0, -5, 0, -4.371139e-08, 156.41168, 13.6, 168.2951)
+
+[node name="[Interactable] WallJumpPanel4" parent="." unique_id=456211270 instance=ExtResource("95_vgpqo")]
+transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, -43, 24, -344)
 
 [connection signal="OnAfterSpawningDone" from="PlayersManager" to="PlayersManager/ExtraSettingsApplicator" method="ApplySettings"]
 [connection signal="body_entered" from="Stage/Items/[Trigger] LostWorldGravityTriggerTowards2" to="Stage/Items/[Trigger] LostWorldGravityTriggerTowards2" method="OnAreaEnter"]

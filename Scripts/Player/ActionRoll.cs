@@ -73,14 +73,30 @@ public partial class ActionRoll : Node, IActionUsingHitbox
     [Export]
     public bool AllowDuringBoost = true;
 
+    private ActionWallStick ActionWallStick;
     private float HoldJumpTimer = 0;
     private bool DontAutoUnroll = false;
 
     [Export]
     public float DropDashHoldJumpTime = 0.5f;
 
+    public override void _Ready()
+    {
+        ActionWallStick = Player.GetNodeOrNull<ActionWallStick>(
+            "./PlayerControl/Actions/ActionWallStick"
+        );
+    }
+
     public override void _Process(double delta)
     {
+        if (ActionWallStick != null && ActionWallStick.IsWallSticking)
+        {
+            HoldJumpTimer = 0;
+            if (isRolling || IsSpinDashing || IsDropDashing)
+                StopRoll();
+            return;
+        }
+
         bool twoDimensionalRollInput =
             PlayerInput.TwodimensionalMode
             && PlayerInput.LeftRawInput.Y > 0.5f
@@ -373,6 +389,10 @@ public partial class ActionRoll : Node, IActionUsingHitbox
         IsDropDashing = false;
         Player.SlopeGravityFactor = 0.3f;
         Player.DisableNoInputDecceleration = false;
+        if (Player.PlayerSkinController.SpinBall != null)
+            Player.PlayerSkinController.SpinBall.Visible = false;
+        if (Player.PlayerSkinController.SpinDashBall != null)
+            Player.PlayerSkinController.SpinDashBall.Visible = false;
     }
 
     public void SetRoll(bool nextRolling)

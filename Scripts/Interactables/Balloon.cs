@@ -16,7 +16,27 @@ public partial class Balloon : Node3D
     public bool RandomizeColor = true;
 
     [Export]
+    public float SpeedMin;
+
+    [Export]
+    public float SpeedMax = Mathf.Inf;
+
+    [Export]
+    public bool UseSpeedBounds;
+
+    [Export]
+    public double OutOfControlTime;
+
+    [Export]
+    public float KeepVelocityTime;
+
+    [Export]
+    public float RespawnTime;
+
+    [Export]
     public MeshInstance3D BalloonMesh;
+
+    private bool consumed;
 
     public override void _Ready()
     {
@@ -46,9 +66,14 @@ public partial class Balloon : Node3D
 
     public void OnBodyEnter(Node3D other)
     {
+        if (consumed)
+            return;
+
         var player = other.GetNodeOrNull<PlayerController>(".");
         if (player == null)
             return;
+
+        consumed = true;
 
         var playerActions = player.GetNodeOrNull<PlayerActions>("./PlayerControl/Actions");
         if (playerActions != null)
@@ -56,12 +81,31 @@ public partial class Balloon : Node3D
             playerActions.ResetActions();
         }
 
-        var rotatedEjectVelocity =
-            new Quaternion(
-                Vector3.Forward,
-                player.LinearVelocity.ProjectOnPlane(this.GlobalBasis.Y).Normalized()
-            ).Normalized() * RelativeEjectVelocity;
+        var tangentVelocity = player.LinearVelocity.ProjectOnPlane(this.GlobalBasis.Y);
+        var ejectVelocity = RelativeEjectVelocity;
+        if (UseSpeedBounds)
+        {
+            ejectVelocity.Z = -Mathf.Clamp(tangentVelocity.Length(), SpeedMin, SpeedMax);
+        }
+        var tangentDirection = tangentVelocity.IsZeroApprox()
+            ? -player.GlobalBasis.Z.ProjectOnPlane(this.GlobalBasis.Y).Normalized()
+            : tangentVelocity.Normalized();
+        if (tangentDirection.IsZeroApprox())
+            tangentDirection = Vector3.Forward;
+        var rotatedEjectVelocity = new Quaternion(
+            Vector3.Forward,
+            tangentDirection
+        ).Normalized() * ejectVelocity;
         player.LinearVelocity = rotatedEjectVelocity;
+        if (OutOfControlTime > 0)
+        {
+            player.PlayerInput.LeftInputTimedLock = Mathf.Max(
+                (float)player.PlayerInput.LeftInputTimedLock,
+                (float)OutOfControlTime
+            );
+        }
+        if (KeepVelocityTime > 0)
+            player.LockVelocity(0, KeepVelocityTime);
 
         if (ExplosionParticles != null)
         {
@@ -79,6 +123,29 @@ public partial class Balloon : Node3D
                 mep.Play();
             }
         }
-        this.QueueFree();
+        var hitbox = GetNodeOrNull<Area3D>("Offset/Hitbox");
+        if (RespawnTime > 0 && hitbox != null)
+        {
+            Visible = false;
+            hitbox.SetDeferred("monitoring", false);
+            hitbox.SetDeferred("monitorable", false);
+            RespawnAfterDelay(hitbox);
+        }
+        else
+        {
+            QueueFree();
+        }
+    }
+
+    private async void RespawnAfterDelay(Area3D hitbox)
+    {
+        await ToSignal(GetTree().CreateTimer(RespawnTime), SceneTreeTimer.SignalName.Timeout);
+        if (!GodotObject.IsInstanceValid(this) || !GodotObject.IsInstanceValid(hitbox))
+            return;
+
+        Visible = true;
+        hitbox.Monitorable = true;
+        hitbox.Monitoring = true;
+        consumed = false;
     }
 }

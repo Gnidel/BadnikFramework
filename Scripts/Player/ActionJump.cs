@@ -36,6 +36,7 @@ public partial class ActionJump : Node
     [Export]
     public bool RollDuringJump = true;
 
+    private ActionWallStick ActionWallStick;
     private bool isJumping;
     private float riseVelocity;
     private double riseTimer;
@@ -47,7 +48,12 @@ public partial class ActionJump : Node
 
     public const string JUMP_INPUT_NAME = "actionjump";
 
-    public override void _Ready() { }
+    public override void _Ready()
+    {
+        ActionWallStick = Player.GetNodeOrNull<ActionWallStick>(
+            "./PlayerControl/Actions/ActionWallStick"
+        );
+    }
 
     public override void _Process(double delta)
     {
@@ -78,6 +84,9 @@ public partial class ActionJump : Node
 
     public override void _Input(InputEvent @event)
     {
+        if (ActionWallStick != null && ActionWallStick.IsWallSticking)
+            return;
+
         if (
             Player.PlayerInput.IsActionPressed(@event, JUMP_INPUT_NAME)
             && !(
@@ -160,8 +169,7 @@ public partial class ActionJump : Node
         //    playerEffects.AirJump.Play();
         //}
 
-        audioStreamPlayer.Stream = this.audioStream;
-        audioStreamPlayer.Play();
+        PlayJumpSound();
 
         if (RollDuringJump && !Player.IsFlying)
         {
@@ -170,6 +178,19 @@ public partial class ActionJump : Node
         }
 
         Player.LockVelocity(0, 0);
+    }
+
+    public void PlayJumpSound()
+    {
+        audioStreamPlayer.Stream = this.audioStream;
+        audioStreamPlayer.Play();
+    }
+
+    public void PrepareForWallJump()
+    {
+        isJumping = false;
+        riseTimer = 0;
+        JumpCount = MaxJumpCount;
     }
 
     public override void _PhysicsProcess(double delta)
