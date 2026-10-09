@@ -18,7 +18,7 @@ public partial class ActionWallStick : Node
     public float SlideSpeed = 3f;
 
     [Export]
-    public float WallRunDistance = 0f;
+    public float WallRunDistance = 0.4f;
 
     [Export]
     public float WallSlideDistance = 0.5f;
