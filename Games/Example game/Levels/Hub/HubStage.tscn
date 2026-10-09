@@ -56,6 +56,7 @@
 [ext_resource type="Texture2D" uid="uid://cc3ypa4t08258" path="res://Games/Example game/Levels/Hub/hub_map_section1_lockmask.png" id="51_cs6gc"]
 [ext_resource type="PackedScene" uid="uid://dxhrlgbfh6rn2" path="res://Games/Example game/Levels/Hub/Hub.glb" id="51_vs4bg"]
 [ext_resource type="PackedScene" uid="uid://cvtxjpbagry6u" path="res://Prefabs/Triggers/[trigger]_map_section_unlock.tscn" id="56_boll5"]
+[ext_resource type="Texture2D" uid="uid://bp4v7bxyj261m" path="res://Games/Example game/Levels/Hub/hub_map_section2_lockmask.png" id="56_cs6gc"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_fhrgg"]
 size = Vector3(10000, 1, 10000)
@@ -178,6 +179,9 @@ uv1_scale = Vector3(50, 50, 50)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_tgitv"]
 
+[sub_resource type="BoxShape3D" id="BoxShape3D_boll5"]
+size = Vector3(100, 25, 50)
+
 [node name="HubStage" type="Node3D" unique_id=220796014]
 
 [node name="MapSystem" parent="." unique_id=646975129 instance=ExtResource("1_1g1ix")]
@@ -194,9 +198,6 @@ offset_left = 730.0
 offset_top = 493.0
 offset_right = -686.0
 offset_bottom = -587.0
-
-[node name="MapSections" parent="MapSystem/MapCanvasLayer/MapUI/HBoxContainer/MapContainer/MapContainerContent" index="0" unique_id=204532304]
-anchors_preset = 0
 
 [node name="MapTerrain" parent="MapSystem/MapCanvasLayer/MapUI/HBoxContainer/MapContainer/MapContainerContent" index="1" unique_id=1032196947]
 offset_right = 0.0
@@ -271,13 +272,13 @@ text = "DISCO HILL ACT 1"
 [node name="StageEntrance_DiscoHill1" parent="StageGates/[Interactable] StageGate_DH1" unique_id=1133743565 instance=ExtResource("10_kt05c")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -10, 0)
 
-[node name="Cube" parent="StageGates/[Interactable] StageGate_DH1/StageEntrance_DiscoHill1" index="1" unique_id=549979986]
+[node name="Cube" parent="StageGates/[Interactable] StageGate_DH1/StageEntrance_DiscoHill1" index="1" unique_id=684977351]
 visible = false
 
 [node name="Number1" parent="StageGates/[Interactable] StageGate_DH1/StageEntrance_DiscoHill1" unique_id=1665918525 instance=ExtResource("12_lb6jg")]
 transform = Transform3D(10, 0, 0, 0, -4.371139e-07, -10, 0, 10, -4.371139e-07, -1, 2.897, 0)
 
-[node name="1" parent="StageGates/[Interactable] StageGate_DH1/StageEntrance_DiscoHill1/Number1" index="0" unique_id=1259135473]
+[node name="1" parent="StageGates/[Interactable] StageGate_DH1/StageEntrance_DiscoHill1/Number1" index="0" unique_id=910125143]
 surface_material_override/0 = ExtResource("13_8unk1")
 surface_material_override/1 = ExtResource("13_8unk1")
 surface_material_override/2 = ExtResource("14_qly5o")
@@ -306,13 +307,13 @@ text = "DISCO HILL ACT 2"
 [node name="StageEntrance_DiscoHill2" parent="StageGates/[Interactable] StageGate_DH2" unique_id=1844892097 instance=ExtResource("10_kt05c")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -10, 0)
 
-[node name="Cube" parent="StageGates/[Interactable] StageGate_DH2/StageEntrance_DiscoHill2" index="1" unique_id=549979986]
+[node name="Cube" parent="StageGates/[Interactable] StageGate_DH2/StageEntrance_DiscoHill2" index="1" unique_id=684977351]
 visible = false
 
 [node name="Number2" parent="StageGates/[Interactable] StageGate_DH2/StageEntrance_DiscoHill2" unique_id=2062346342 instance=ExtResource("18_ll8xy")]
 transform = Transform3D(10, 0, 0, 0, -4.371139e-07, -10, 0, 10, -4.371139e-07, -1, 2.897, 0)
 
-[node name="2" parent="StageGates/[Interactable] StageGate_DH2/StageEntrance_DiscoHill2/Number2" index="0" unique_id=1109184148]
+[node name="2" parent="StageGates/[Interactable] StageGate_DH2/StageEntrance_DiscoHill2/Number2" index="0" unique_id=985261898]
 surface_material_override/0 = ExtResource("13_8unk1")
 surface_material_override/1 = ExtResource("13_8unk1")
 surface_material_override/2 = ExtResource("14_qly5o")
@@ -341,13 +342,13 @@ text = "DISCO HILL BOSS"
 [node name="StageEntrance_DiscoHillBoss" parent="StageGates/[Interactable] StageGate_DHB1" unique_id=1108182716 instance=ExtResource("10_kt05c")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -10, 0)
 
-[node name="Cube" parent="StageGates/[Interactable] StageGate_DHB1/StageEntrance_DiscoHillBoss" index="1" unique_id=549979986]
+[node name="Cube" parent="StageGates/[Interactable] StageGate_DHB1/StageEntrance_DiscoHillBoss" index="1" unique_id=684977351]
 visible = false
 
 [node name="EggmanLogo2" parent="StageGates/[Interactable] StageGate_DHB1/StageEntrance_DiscoHillBoss" unique_id=297279856 instance=ExtResource("20_krmes")]
 transform = Transform3D(3, 0, 0, 0, -1.3113416e-07, -3, 0, 3, -1.3113416e-07, -1, 5.8970003, 0)
 
-[node name="EggmanLogo" parent="StageGates/[Interactable] StageGate_DHB1/StageEntrance_DiscoHillBoss/EggmanLogo2" index="0" unique_id=641044809]
+[node name="EggmanLogo" parent="StageGates/[Interactable] StageGate_DHB1/StageEntrance_DiscoHillBoss/EggmanLogo2" index="0" unique_id=1960955497]
 surface_material_override/0 = ExtResource("14_qly5o")
 surface_material_override/1 = ExtResource("13_8unk1")
 
@@ -378,19 +379,19 @@ Act 1"
 [node name="StageEntrance_DigitalSea" parent="StageGates/[Interactable] StageGate_DS1" unique_id=1663460158 instance=ExtResource("10_kt05c")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -10, 0)
 
-[node name="StageEntrance_DiscoHill" parent="StageGates/[Interactable] StageGate_DS1/StageEntrance_DigitalSea" index="0" unique_id=989637729]
+[node name="StageEntrance_DiscoHill" parent="StageGates/[Interactable] StageGate_DS1/StageEntrance_DigitalSea" index="0" unique_id=2052748568]
 surface_material_override/1 = ExtResource("22_jujyu")
 surface_material_override/2 = ExtResource("23_5dtfi")
 surface_material_override/3 = ExtResource("24_di6k1")
 surface_material_override/4 = ExtResource("25_8xw4r")
 
-[node name="Cube" parent="StageGates/[Interactable] StageGate_DS1/StageEntrance_DigitalSea" index="1" unique_id=549979986]
+[node name="Cube" parent="StageGates/[Interactable] StageGate_DS1/StageEntrance_DigitalSea" index="1" unique_id=684977351]
 visible = false
 
 [node name="Number1" parent="StageGates/[Interactable] StageGate_DS1/StageEntrance_DigitalSea" unique_id=1773721174 instance=ExtResource("12_lb6jg")]
 transform = Transform3D(10, 0, 0, 0, -4.371139e-07, -10, 0, 10, -4.371139e-07, -1, 2.897, 0)
 
-[node name="1" parent="StageGates/[Interactable] StageGate_DS1/StageEntrance_DigitalSea/Number1" index="0" unique_id=1259135473]
+[node name="1" parent="StageGates/[Interactable] StageGate_DS1/StageEntrance_DigitalSea/Number1" index="0" unique_id=910125143]
 surface_material_override/0 = ExtResource("23_5dtfi")
 surface_material_override/1 = ExtResource("23_5dtfi")
 surface_material_override/2 = ExtResource("24_di6k1")
@@ -421,19 +422,19 @@ Act 2"
 [node name="StageEntrance_DigitalSea" parent="StageGates/[Interactable] StageGate_DS2" unique_id=1804144290 instance=ExtResource("10_kt05c")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -10, 0)
 
-[node name="StageEntrance_DiscoHill" parent="StageGates/[Interactable] StageGate_DS2/StageEntrance_DigitalSea" index="0" unique_id=989637729]
+[node name="StageEntrance_DiscoHill" parent="StageGates/[Interactable] StageGate_DS2/StageEntrance_DigitalSea" index="0" unique_id=2052748568]
 surface_material_override/1 = ExtResource("22_jujyu")
 surface_material_override/2 = ExtResource("23_5dtfi")
 surface_material_override/3 = ExtResource("24_di6k1")
 surface_material_override/4 = ExtResource("25_8xw4r")
 
-[node name="Cube" parent="StageGates/[Interactable] StageGate_DS2/StageEntrance_DigitalSea" index="1" unique_id=549979986]
+[node name="Cube" parent="StageGates/[Interactable] StageGate_DS2/StageEntrance_DigitalSea" index="1" unique_id=684977351]
 visible = false
 
 [node name="Number2" parent="StageGates/[Interactable] StageGate_DS2/StageEntrance_DigitalSea" unique_id=1071857326 instance=ExtResource("18_ll8xy")]
 transform = Transform3D(10, 0, 0, 0, -4.371139e-07, -10, 0, 10, -4.371139e-07, -1, 2.897, 0)
 
-[node name="2" parent="StageGates/[Interactable] StageGate_DS2/StageEntrance_DigitalSea/Number2" index="0" unique_id=1109184148]
+[node name="2" parent="StageGates/[Interactable] StageGate_DS2/StageEntrance_DigitalSea/Number2" index="0" unique_id=985261898]
 surface_material_override/0 = ExtResource("23_5dtfi")
 surface_material_override/1 = ExtResource("23_5dtfi")
 surface_material_override/2 = ExtResource("24_di6k1")
@@ -465,19 +466,19 @@ Boss"
 [node name="StageEntrance_DigitalSea" parent="StageGates/[Interactable] StageGate_DSB1" unique_id=1535451296 instance=ExtResource("10_kt05c")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -10, 0)
 
-[node name="StageEntrance_DiscoHill" parent="StageGates/[Interactable] StageGate_DSB1/StageEntrance_DigitalSea" index="0" unique_id=989637729]
+[node name="StageEntrance_DiscoHill" parent="StageGates/[Interactable] StageGate_DSB1/StageEntrance_DigitalSea" index="0" unique_id=2052748568]
 surface_material_override/1 = ExtResource("22_jujyu")
 surface_material_override/2 = ExtResource("23_5dtfi")
 surface_material_override/3 = ExtResource("24_di6k1")
 surface_material_override/4 = ExtResource("25_8xw4r")
 
-[node name="Cube" parent="StageGates/[Interactable] StageGate_DSB1/StageEntrance_DigitalSea" index="1" unique_id=549979986]
+[node name="Cube" parent="StageGates/[Interactable] StageGate_DSB1/StageEntrance_DigitalSea" index="1" unique_id=684977351]
 visible = false
 
 [node name="EggmanLogo2" parent="StageGates/[Interactable] StageGate_DSB1/StageEntrance_DigitalSea" unique_id=1323307223 instance=ExtResource("20_krmes")]
 transform = Transform3D(3, 0, 0, 0, -1.3113416e-07, -3, 0, 3, -1.3113416e-07, -1, 5.8970003, 0)
 
-[node name="EggmanLogo" parent="StageGates/[Interactable] StageGate_DSB1/StageEntrance_DigitalSea/EggmanLogo2" index="0" unique_id=641044809]
+[node name="EggmanLogo" parent="StageGates/[Interactable] StageGate_DSB1/StageEntrance_DigitalSea/EggmanLogo2" index="0" unique_id=1960955497]
 surface_material_override/0 = ExtResource("24_di6k1")
 surface_material_override/1 = ExtResource("23_5dtfi")
 
@@ -508,14 +509,14 @@ text = "DEATH EGG"
 [node name="StageEntrance_DiscoHill2" parent="StageGates/[Interactable] StageGate_DE" unique_id=1977257429 instance=ExtResource("10_kt05c")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -10, 0)
 
-[node name="StageEntrance_DiscoHill" parent="StageGates/[Interactable] StageGate_DE/StageEntrance_DiscoHill2" index="0" unique_id=989637729]
+[node name="StageEntrance_DiscoHill" parent="StageGates/[Interactable] StageGate_DE/StageEntrance_DiscoHill2" index="0" unique_id=2052748568]
 surface_material_override/0 = SubResource("StandardMaterial3D_lkhne")
 surface_material_override/1 = SubResource("StandardMaterial3D_rtk3g")
 surface_material_override/2 = SubResource("StandardMaterial3D_nwo73")
 surface_material_override/3 = SubResource("StandardMaterial3D_2qpv8")
 surface_material_override/4 = SubResource("StandardMaterial3D_0dx5x")
 
-[node name="Cube" parent="StageGates/[Interactable] StageGate_DE/StageEntrance_DiscoHill2" index="1" unique_id=549979986]
+[node name="Cube" parent="StageGates/[Interactable] StageGate_DE/StageEntrance_DiscoHill2" index="1" unique_id=684977351]
 visible = false
 
 [node name="MapUIIcon" type="Node3D" parent="StageGates/[Interactable] StageGate_DE" unique_id=816302063 node_paths=PackedStringArray("FastTravelPoint")]
@@ -538,22 +539,22 @@ MeshInstancesToPopulate = [NodePath("../Hub/Cylinder_Top_Grass_001"), NodePath("
 
 [node name="Hub" parent="." unique_id=1795078070 instance=ExtResource("51_vs4bg")]
 
-[node name="StaticBody3D" parent="Hub/Cylinder_Top" parent_id_path=PackedInt32Array(1795078070, 1965278894) index="0" unique_id=896518583]
+[node name="StaticBody3D" parent="Hub/Cylinder_Top" parent_id_path=PackedInt32Array(1795078070, 444219985) index="0" unique_id=1376028655]
 collision_layer = 2097153
 
-[node name="StaticBody3D" parent="Hub/Cylinder_Top_Grass_001" parent_id_path=PackedInt32Array(1795078070, 2001278977) index="0" unique_id=1354623771]
+[node name="StaticBody3D" parent="Hub/Cylinder_Top_Grass_001" parent_id_path=PackedInt32Array(1795078070, 580089390) index="0" unique_id=454732906]
 collision_layer = 1048577
 
-[node name="StaticBody3D" parent="Hub/Cylinder_Top_Grass_002" parent_id_path=PackedInt32Array(1795078070, 1757925189) index="0" unique_id=827488741]
+[node name="StaticBody3D" parent="Hub/Cylinder_Top_Grass_002" parent_id_path=PackedInt32Array(1795078070, 1742465616) index="0" unique_id=113588600]
 collision_layer = 1048577
 
-[node name="StaticBody3D" parent="Hub/Cylinder_Top_Grass_003" parent_id_path=PackedInt32Array(1795078070, 1874037246) index="0" unique_id=934134702]
+[node name="StaticBody3D" parent="Hub/Cylinder_Top_Grass_003" parent_id_path=PackedInt32Array(1795078070, 1471103192) index="0" unique_id=1555886250]
 collision_layer = 1048577
 
-[node name="StaticBody3D" parent="Hub/Cylinder_Top_Grass_004" parent_id_path=PackedInt32Array(1795078070, 694864053) index="0" unique_id=1194015084]
+[node name="StaticBody3D" parent="Hub/Cylinder_Top_Grass_004" parent_id_path=PackedInt32Array(1795078070, 1477659403) index="0" unique_id=1617591413]
 collision_layer = 1048577
 
-[node name="StaticBody3D" parent="Hub/Cylinder_Top_Grass_005" parent_id_path=PackedInt32Array(1795078070, 369818499) index="0" unique_id=1881327373]
+[node name="StaticBody3D" parent="Hub/Cylinder_Top_Grass_005" parent_id_path=PackedInt32Array(1795078070, 1595593438) index="0" unique_id=980959157]
 collision_layer = 1048577
 
 [node name="Water" type="Node3D" parent="." unique_id=2042637376]
@@ -588,14 +589,29 @@ script = ExtResource("19_tqd2b")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Water/Area3D" unique_id=263439540]
 shape = SubResource("BoxShape3D_tgitv")
 
-[node name="MapUIMapSection" parent="." unique_id=2112945174 instance=ExtResource("50_ik4c1")]
+[node name="MapUIMapSectionDiscoHill" parent="." unique_id=2112945174 instance=ExtResource("50_ik4c1")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.859374, 10.9999695, 67.98529)
 MaskTexture = ExtResource("51_cs6gc")
-UnlockId = "Hub_1T15"
+UnlockId = "Hub_SectorDiscoHill"
+
+[node name="MapUIMapSectionDiscoHill2" parent="." unique_id=572678306 instance=ExtResource("50_ik4c1")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.859374, 10.9999695, 67.98529)
+MaskTexture = ExtResource("56_cs6gc")
+UnlockId = "Hub_SectorDigitalSea"
 
 [node name="MapSectionUnlockTrigger" parent="." unique_id=97063725 node_paths=PackedStringArray("MapSection") instance=ExtResource("56_boll5")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5, 65)
-MapSection = NodePath("../MapUIMapSection")
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5, -77)
+MapSection = NodePath("../MapUIMapSectionDiscoHill")
+
+[node name="CollisionShape3D" parent="MapSectionUnlockTrigger" index="0" unique_id=1038953857]
+shape = SubResource("BoxShape3D_boll5")
+
+[node name="MapSectionUnlockTrigger2" parent="." unique_id=388905825 node_paths=PackedStringArray("MapSection") instance=ExtResource("56_boll5")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 82, 5, -11)
+MapSection = NodePath("../MapUIMapSectionDiscoHill2")
+
+[node name="CollisionShape3D" parent="MapSectionUnlockTrigger2" index="0" unique_id=1038953857]
+shape = SubResource("BoxShape3D_boll5")
 
 [connection signal="OnAfterSpawningDone" from="PlayersManager" to="PlayersManager/ExtraSettingsApplicator" method="ApplySettings"]
 
@@ -622,3 +638,4 @@ MapSection = NodePath("../MapUIMapSection")
 [editable path="StageGates/[Interactable] StageGate_DE/StageEntrance_DiscoHill2"]
 [editable path="Hub"]
 [editable path="MapSectionUnlockTrigger"]
+[editable path="MapSectionUnlockTrigger2"]
