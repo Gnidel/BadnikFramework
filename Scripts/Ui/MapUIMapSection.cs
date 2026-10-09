@@ -5,6 +5,10 @@ public partial class MapUIMapSection : Node3D
 {
     public static readonly List<MapUIMapSection> Instances = new();
 
+    private Texture2D _cachedMaskTexture;
+    private Image _maskImage;
+    private bool _maskImageLoaded;
+
     [Export]
     public Texture2D MaskTexture;   // White = locked, Black = unlocked
 
@@ -46,7 +50,22 @@ public partial class MapUIMapSection : Node3D
         if ((IsUnlocked && !IsRevealing) || MaskTexture == null)
             return false;
 
-        var image = MaskTexture.GetImage();
+        if (_cachedMaskTexture != MaskTexture)
+        {
+            _cachedMaskTexture = MaskTexture;
+            _maskImage = null;
+            _maskImageLoaded = false;
+        }
+
+        if (!_maskImageLoaded)
+        {
+            _maskImage = MaskTexture.GetImage();
+            _maskImageLoaded = true;
+            if (_maskImage != null && _maskImage.IsCompressed() && _maskImage.Decompress() != Error.Ok)
+                _maskImage = null;
+        }
+
+        var image = _maskImage;
         if (image == null || image.IsEmpty())
             return false;
 

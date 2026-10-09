@@ -2,9 +2,9 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cc3ypa4t08258"
-path.s3tc="res://.godot/imported/hub_map_section1_lockmask.png-885cee03b0aab1b86062ef299a16e8db.s3tc.ctex"
-path.etc2="res://.godot/imported/hub_map_section1_lockmask.png-885cee03b0aab1b86062ef299a16e8db.etc2.ctex"
+uid="uid://bp4v7bxyj261m"
+path.s3tc="res://.godot/imported/hub_map_section2_lockmask.png-4acdbfe232587ff9e940e82578005cfd.s3tc.ctex"
+path.etc2="res://.godot/imported/hub_map_section2_lockmask.png-4acdbfe232587ff9e940e82578005cfd.etc2.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
@@ -12,8 +12,8 @@ metadata={
 
 [deps]
 
-source_file="res://Games/Example game/Levels/Hub/hub_map_section1_lockmask.png"
-dest_files=["res://.godot/imported/hub_map_section1_lockmask.png-885cee03b0aab1b86062ef299a16e8db.s3tc.ctex", "res://.godot/imported/hub_map_section1_lockmask.png-885cee03b0aab1b86062ef299a16e8db.etc2.ctex"]
+source_file="res://Games/Example game/Levels/Hub/hub_map_section2_lockmask.png"
+dest_files=["res://.godot/imported/hub_map_section2_lockmask.png-4acdbfe232587ff9e940e82578005cfd.s3tc.ctex", "res://.godot/imported/hub_map_section2_lockmask.png-4acdbfe232587ff9e940e82578005cfd.etc2.ctex"]
 
 [params]
 
