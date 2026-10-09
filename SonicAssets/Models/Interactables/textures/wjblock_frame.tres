@@ -1,7 +1,6 @@
 [gd_resource type="StandardMaterial3D" format=3 uid="uid://do4ewtwunqf10"]
 
 [ext_resource type="Texture2D" uid="uid://blsfy0l2al0co" path="res://SonicAssets/Models/Interactables/textures/cmn_obj_wjbframe_dif_HD.dds" id="1_yxlad"]
-[ext_resource type="Texture2D" uid="uid://crv0in38qrdjw" path="res://SonicAssets/Models/Interactables/textures/cmn_obj_wjbframe_ems.dds" id="2_gdsfo"]
 [ext_resource type="Texture2D" uid="uid://ba2a1qloa0wew" path="res://SonicAssets/Models/Interactables/textures/cmn_obj_wjbframe_spc_HD.dds" id="3_u3g3w"]
 
 [resource]
@@ -11,4 +10,3 @@ albedo_texture = ExtResource("1_yxlad")
 metallic = 1.0
 metallic_texture = ExtResource("3_u3g3w")
 emission_enabled = true
-emission_texture = ExtResource("2_gdsfo")
