@@ -504,7 +504,7 @@ public partial class FinishScreen : Control
 
         foreach (var player in PlayerController.Instances)
         {
-            if (isSkip && !player.PlayerSkinController.SkipRankWaitAnimation)
+            if (isSkip != player.PlayerSkinController.SkipRankWaitAnimation)
             {
                 continue;
             }
