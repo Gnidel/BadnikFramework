@@ -247,6 +247,7 @@ public partial class PlayersManager : Node3D
 
         nextPlayer.NpcPartnerControl.IsNpc = false;
         nextPlayer.PlayerInput.PlayerIdentifier = currentPlayer.PlayerInput.PlayerIdentifier;
+        nextPlayer.PlayerInput.LastInputType = currentPlayer.PlayerInput.LastInputType;
         nextPlayer.PlayerInput.ReadRealInput = true;
 
         // Swap UI

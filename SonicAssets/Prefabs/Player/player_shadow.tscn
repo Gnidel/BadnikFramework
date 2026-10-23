@@ -1,6 +1,7 @@
 [gd_scene format=4 uid="uid://dph66v4hrgccw"]
 
 [ext_resource type="Script" uid="uid://c7qh6w7if6scm" path="res://Scripts/Player/PlayerController.cs" id="1_jleej"]
+[ext_resource type="Texture2D" uid="uid://c26ypjh6mpjk2" path="res://SonicAssets/Images/CharacterSwapIcons/SwapShadow.png" id="swap_shadow"]
 [ext_resource type="PackedScene" uid="uid://d2emur8emdtsc" path="res://SonicAssets/Models/Shadow/Shadow_model.tscn" id="2_6jo78"]
 [ext_resource type="Texture2D" uid="uid://ke3f5vsmbcpw" path="res://SonicAssets/Models/Shadow/textures/chr_shadow_eye_abd.dds" id="3_misvy"]
 [ext_resource type="Material" uid="uid://c5i8lbl65l3di" path="res://SonicAssets/Models/Shadow/textures/chr_shadow_fur_super.tres" id="3_wphia"]
@@ -642,6 +643,7 @@ contact_monitor = true
 max_contacts_reported = 1
 script = ExtResource("1_jleej")
 CharacterName = "Shadow"
+CharacterSwapIcon = ExtResource("swap_shadow")
 CharacterThemeColor = Color(0.501961, 0, 0, 1)
 PlayerInput = NodePath("PlayerControl/Input")
 PlayerInventory = NodePath("Inventory")

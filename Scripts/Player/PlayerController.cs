@@ -15,6 +15,9 @@ public partial class PlayerController : RigidBody3D
     public string CharacterName = "You";
 
     [Export]
+    public Texture2D CharacterSwapIcon;
+
+    [Export]
     public Color CharacterThemeColor = new Color(1, 1, 1, 1);
 
     // Components

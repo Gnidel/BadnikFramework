@@ -19,9 +19,12 @@ public partial class OnePlayerUI : Control
     [Export]
     public ProgressBar BoostMeter;
 
+    public PlayerInput.InputType LastInputType = PlayerInput.InputType.NONE;
+
     public static Dictionary<int, OnePlayerUI> Instances = new Dictionary<int, OnePlayerUI>();
 
     private ActionBoost ActionBoost;
+    private PlayerInput activePlayerInput;
 
     public override void _EnterTree()
     {
@@ -45,10 +48,33 @@ public partial class OnePlayerUI : Control
 
     public void OnCharacterSwap()
     {
+        var newActivePlayerInput = PlayerController.Instances[PlayerID].PlayerInput;
+        if (activePlayerInput != null)
+        {
+            activePlayerInput.OnInputTypeChange -= OnActiveInputTypeChange;
+        }
+
+        if (LastInputType == PlayerInput.InputType.NONE)
+        {
+            LastInputType = newActivePlayerInput.LastInputType;
+        }
+        else
+        {
+            newActivePlayerInput.LastInputType = LastInputType;
+        }
+
+        activePlayerInput = newActivePlayerInput;
+        activePlayerInput.OnInputTypeChange += OnActiveInputTypeChange;
+
         ActionBoost = PlayerController
             .Instances[PlayerID]
             .GetNodeOrNull<ActionBoost>("./PlayerControl/Actions/ActionBoost");
         HomingIcon.Visible = false;
+    }
+
+    private void OnActiveInputTypeChange()
+    {
+        LastInputType = activePlayerInput.LastInputType;
     }
 
     void HandleBoostBar()
