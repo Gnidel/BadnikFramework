@@ -569,8 +569,8 @@ public partial class PlayerInput : Node
             Tuple.Create("actionhoming", MouseButton.Left),
             Tuple.Create("actionstomp", MouseButton.Middle),
             Tuple.Create("actionroll", MouseButton.Right),
-            Tuple.Create("actioncharaswap_l", MouseButton.WheelDown),
-            Tuple.Create("actioncharaswap_r", MouseButton.WheelUp),
+            Tuple.Create("actioncharaswap_l", MouseButton.WheelUp),
+            Tuple.Create("actioncharaswap_r", MouseButton.WheelDown),
         };
 
         List<string> kbidentifiers = new List<string> { "kb" };

@@ -1,6 +1,7 @@
 [gd_scene format=4 uid="uid://c4cjggc0fxfim"]
 
 [ext_resource type="Script" uid="uid://c7qh6w7if6scm" path="res://Scripts/Player/PlayerController.cs" id="1_6f7ml"]
+[ext_resource type="Texture2D" uid="uid://g4jrhnmtghui" path="res://SonicAssets/Images/CharacterSwapIcons/SwapTails.png" id="swap_tails"]
 [ext_resource type="Script" uid="uid://dt6h8005dk8b7" path="res://Scripts/Player/PlayerActions.cs" id="3_6aptm"]
 [ext_resource type="Material" uid="uid://bnyv7scqblrog" path="res://SonicAssets/Models/Tails/Textures/chr_tailsP_super_body.tres" id="3_pym56"]
 [ext_resource type="PackedScene" uid="uid://cmb7hyvametal" path="res://SonicAssets/Models/Tails/tails_model.tscn" id="3_soudd"]
@@ -503,6 +504,7 @@ contact_monitor = true
 max_contacts_reported = 1
 script = ExtResource("1_6f7ml")
 CharacterName = "Tails"
+CharacterSwapIcon = ExtResource("swap_tails")
 CharacterThemeColor = Color(1, 1, 0, 1)
 PlayerInput = NodePath("PlayerControl/Input")
 PlayerInventory = NodePath("Inventory")

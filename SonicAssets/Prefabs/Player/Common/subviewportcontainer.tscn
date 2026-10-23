@@ -323,27 +323,24 @@ custom_minimum_size = Vector2(200, 0)
 layout_mode = 2
 value = 100.0
 
-[node name="CharacterSwapUI" type="ColorRect" parent="SubViewport/PlayerUILayer/PlayerUI" unique_id=266290883 node_paths=PackedStringArray("OnePlayerUI", "CurrentCharacterLabel", "PrevButtonLabel", "NextButtonLabel")]
-custom_minimum_size = Vector2(500, 100)
+[node name="CharacterSwapUI" type="ColorRect" parent="SubViewport/PlayerUILayer/PlayerUI" unique_id=266290883 node_paths=PackedStringArray("OnePlayerUI")]
 clip_contents = true
 layout_mode = 1
-anchors_preset = 1
+anchors_preset = 3
 anchor_left = 1.0
+anchor_top = 0.5
 anchor_right = 1.0
-offset_left = -525.0
-offset_top = 50.0
-offset_right = -25.0
-offset_bottom = 175.0
+anchor_bottom = 0.5
+offset_left = -370.0
+offset_top = -230.0
+offset_right = -20.0
+offset_bottom = 230.0
 grow_horizontal = 0
 mouse_filter = 2
-color = Color(0, 0, 0, 0.501961)
+color = Color(0, 0, 0, 0)
+theme = ExtResource("21_optionstheme")
 script = ExtResource("13_24uhv")
 OnePlayerUI = NodePath("..")
-PrevCharacterButtonLabel = "[input]actioncharaswap_l[/input]"
-NextCharacterButtonLabel = "[input]actioncharaswap_r[/input]"
-CurrentCharacterLabel = NodePath("MarginContainer/VBoxContainer/CurrentChar")
-PrevButtonLabel = NodePath("MarginContainer/VBoxContainer/HBoxContainer/PrevChar/ButtonPromptTextLabel")
-NextButtonLabel = NodePath("MarginContainer/VBoxContainer/HBoxContainer/NextChar/ButtonPromptTextLabel2")
 
 [node name="MarginContainer" type="MarginContainer" parent="SubViewport/PlayerUILayer/PlayerUI/CharacterSwapUI" unique_id=1998819823]
 layout_mode = 1

@@ -1,6 +1,7 @@
 [gd_scene format=4 uid="uid://d8hhtv3xe6u6"]
 
 [ext_resource type="Script" uid="uid://c7qh6w7if6scm" path="res://Scripts/Player/PlayerController.cs" id="1_dr35b"]
+[ext_resource type="Texture2D" uid="uid://b7qy4ndhowttp" path="res://SonicAssets/Images/CharacterSwapIcons/SwapSonic.png" id="swap_sonic"]
 [ext_resource type="PackedScene" uid="uid://bouf4l1axiwa" path="res://SonicAssets/Models/Sonic/sonic_model.tscn" id="2_ifp8b"]
 [ext_resource type="PackedScene" uid="uid://cctqkqj4m0itg" path="res://SonicAssets/Models/Sonic/sonic_super_model.tscn" id="3_lfcf0"]
 [ext_resource type="Script" uid="uid://des8errgg2rlm" path="res://Scripts/Player/ActionDash.cs" id="3_x7gvs"]
@@ -527,6 +528,7 @@ contact_monitor = true
 max_contacts_reported = 1
 script = ExtResource("1_dr35b")
 CharacterName = "Sonic"
+CharacterSwapIcon = ExtResource("swap_sonic")
 CharacterThemeColor = Color(0, 0.501961, 1, 1)
 PlayerInput = NodePath("PlayerControl/Input")
 PlayerInventory = NodePath("Inventory")
