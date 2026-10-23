@@ -228,10 +228,11 @@ public partial class StageGate : Node3D
         return (UnlockedByDefault || SaveData.IsLevelUnlocked(StageUniqueIdentifier));
     }
 
-    void populateBestTimes(string CharacterName = "Sonic") // TODO: Support for more characters
+    void populateBestTimes()
     {
         if (SaveData == null)
             SaveData = SaveData.Load();
+        var characterName = PlayersManager.GetTimeRecordCharacterName();
         var stageSave = SaveData.LevelSaves.GetValueOrDefault(StageUniqueIdentifier, null);
         if ((stageSave == null || !stageSave.Unlocked) && UnlockedWithItems)
         {
@@ -255,17 +256,17 @@ public partial class StageGate : Node3D
             if (
                 stageSave == null
                 || !stageSave.Unlocked
-                || !stageSave.BestTime.ContainsKey(CharacterName)
-                || !stageSave.BestRank.ContainsKey(CharacterName)
+                || !stageSave.BestTime.ContainsKey(characterName)
+                || !stageSave.BestRank.ContainsKey(characterName)
             )
             {
                 BestTimesLabel.Text = "? --:--:--";
             }
             else
             {
-                int minutes = (int)(stageSave.BestTime[CharacterName] / 60);
-                int seconds = (int)(stageSave.BestTime[CharacterName]) % 60;
-                int hect = (int)(stageSave.BestTime[CharacterName] * 100) % 100;
+                int minutes = (int)(stageSave.BestTime[characterName] / 60);
+                int seconds = (int)(stageSave.BestTime[characterName]) % 60;
+                int hect = (int)(stageSave.BestTime[characterName] * 100) % 100;
 
                 string timeString =
                     minutes.ToString("D2")
@@ -273,12 +274,12 @@ public partial class StageGate : Node3D
                     + seconds.ToString("D2")
                     + ":"
                     + hect.ToString("D2");
-                BestTimesLabel.Text = stageSave.BestRank[CharacterName] + " " + timeString;
+                BestTimesLabel.Text = stageSave.BestRank[characterName] + " " + timeString;
 
                 if (MapIcon != null)
                 {
                     MapIcon.Description +=
-                        "\n\nBest rank: " + stageSave.BestRank[CharacterName] + "\n\n";
+                        "\n\nBest rank: " + stageSave.BestRank[characterName] + "\n\n";
                     MapIcon.Description += "Best time: " + timeString + "\n";
                 }
             }

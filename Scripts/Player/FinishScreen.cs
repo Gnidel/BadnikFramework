@@ -169,7 +169,7 @@ public partial class FinishScreen : Control
             new SaveData.LevelSave()
         );
 
-        var characterName = "Sonic";
+        var characterName = PlayersManager.GetTimeRecordCharacterName();
         // Time
         var prevBestTime = levelSave.BestTime.GetValueOrDefault(characterName, Mathf.Inf);
         levelSave.BestTime[characterName] = Mathf.Min(StageData.Instance.ElapsedTime, prevBestTime);
