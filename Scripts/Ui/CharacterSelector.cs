@@ -330,6 +330,7 @@ public partial class CharacterSelector : ScrollContainer
 	void OnPlay()
 	{
 		ApplyCharacters();
+		MainMenuController.Instance?.PopulateLevelSelect();
 		this.Visible = false;
 		NextMenu.Visible = true;
 		NextMenu.FindNextValidFocus().GrabFocus();

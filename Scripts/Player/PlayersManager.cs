@@ -45,6 +45,40 @@ public partial class PlayersManager : Node3D
 
     public static PlayersManager Instance;
 
+    public static string GetTimeRecordCharacterName()
+    {
+        const string MultipleCharacters = "MultipleCharacters";
+
+        var playablePlayers = PlayablePlayers ?? Instance?.DefaultPlayablePlayers;
+        var npcPlayers = NpcPlayers ?? Instance?.DefaultNpcPlayers;
+        if (
+            playablePlayers == null
+            || playablePlayers.Count != 1
+            || (npcPlayers != null && npcPlayers.Count > 0)
+        )
+        {
+            return MultipleCharacters;
+        }
+
+        if (Instance != null)
+        {
+            foreach (var player in PlayerController.Instances)
+            {
+                if (player.NpcPartnerControl?.IsNpc == true)
+                    continue;
+                return player.CharacterName;
+            }
+        }
+
+        var selectedPlayer = playablePlayers[0].Instantiate<PlayerController>();
+        if (selectedPlayer == null)
+            return MultipleCharacters;
+
+        var characterName = selectedPlayer.CharacterName;
+        selectedPlayer.Free();
+        return characterName;
+    }
+
     public override void _EnterTree()
     {
         if (Instance != null)

@@ -250,7 +250,7 @@ public partial class MainMenuController : Control
         GetTree().Quit();
     }
 
-    void PopulateLevelSelect()
+    public void PopulateLevelSelect()
     {
         foreach (var child in LevelSelectContainer.GetChild(0).GetChildren())
         {
@@ -282,7 +282,7 @@ public partial class MainMenuController : Control
             string bestTimeString = "--:--:--";
             string bestRankString = "-";
 
-            string characterName = "Sonic"; // TODO: Use your character
+            string characterName = PlayersManager.GetTimeRecordCharacterName();
 
             if (SaveData.LevelSaves.ContainsKey(stage.StageUniqueIdentifier))
             {
