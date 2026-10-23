@@ -1,0 +1,60 @@
+[gd_scene load_steps=6 format=3]
+
+[ext_resource type="Script" path="res://Scripts/Ui/MapUIMinimap.cs" id="1_minimap"]
+[ext_resource type="Script" path="res://Scripts/Ui/MapUIMinimapViewport.cs" id="2_viewport"]
+[ext_resource type="Theme" uid="uid://dfn1qo0bwoxuf" path="res://Misc/OptionsMenuTheme.tres" id="3_options_theme"]
+
+[sub_resource type="Shader" id="Shader_circle_mask"]
+code = "shader_type canvas_item;\nvoid fragment() {\n    vec4 color = texture(TEXTURE, UV);\n    float distance_from_center = length((UV - vec2(0.5)) * 2.0);\n    color.a *= 1.0 - smoothstep(0.97, 1.0, distance_from_center);\n    COLOR = color;\n}\n"
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_circle_mask"]
+shader = SubResource("Shader_circle_mask")
+
+[node name="MapMinimap" type="Control" node_paths=PackedStringArray("MinimapViewportContainer", "MinimapViewport", "MinimapContent", "NorthLabel")]
+process_mode = 3
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -248.0
+offset_top = 24.0
+offset_right = -24.0
+offset_bottom = 248.0
+grow_horizontal = 0
+mouse_filter = 2
+script = ExtResource("1_minimap")
+MinimapViewportContainer = NodePath("MinimapViewportContainer")
+MinimapViewport = NodePath("MinimapViewportContainer/MinimapViewport")
+MinimapContent = NodePath("MinimapViewportContainer/MinimapViewport/Content")
+NorthLabel = NodePath("NorthLabel")
+
+[node name="MinimapViewportContainer" type="SubViewportContainer" parent="."]
+material = SubResource("ShaderMaterial_circle_mask")
+offset_left = 8.0
+offset_top = 8.0
+offset_right = 216.0
+offset_bottom = 216.0
+stretch = true
+mouse_filter = 2
+
+[node name="MinimapViewport" type="SubViewport" parent="MinimapViewportContainer"]
+size = Vector2i(208, 208)
+transparent_bg = true
+render_target_update_mode = 4
+
+[node name="NorthLabel" type="Label" parent="."]
+z_index = 1
+offset_left = 100.0
+offset_top = 2.0
+offset_right = 124.0
+offset_bottom = 26.0
+theme = ExtResource("3_options_theme")
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 3
+text = "N"
+horizontal_alignment = 1
+vertical_alignment = 1
+mouse_filter = 2
+
+[node name="Content" type="Node2D" parent="MinimapViewportContainer/MinimapViewport"]
+script = ExtResource("2_viewport")

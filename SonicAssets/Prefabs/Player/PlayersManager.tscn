@@ -618,7 +618,10 @@ offset_top = -270.0
 offset_right = 960.0
 offset_bottom = 270.0
 
-[node name="Loading" parent="PlayerUI" unique_id=923570747 instance=ExtResource("46_bkrbp")]
+[node name="LoadingCanvasLayer" type="CanvasLayer" parent="."]
+layer = 101
+
+[node name="Loading" parent="LoadingCanvasLayer" unique_id=923570747 instance=ExtResource("46_bkrbp")]
 visible = false
 layout_mode = 1
 

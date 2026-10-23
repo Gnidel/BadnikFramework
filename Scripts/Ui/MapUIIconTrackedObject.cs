@@ -10,6 +10,9 @@ public partial class MapUIIconTrackedObject : Node3D
     public Texture2D Texture;
 
     [Export]
+    public bool IsTracked = false;
+
+    [Export]
     public Node3D FastTravelPoint; // Set to null to disable fast travel
 
     [Export(PropertyHint.MultilineText)]

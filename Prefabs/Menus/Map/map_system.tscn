@@ -6,6 +6,7 @@
 [ext_resource type="Script" uid="uid://o0xiw65l1xte" path="res://Scripts/Ui/MapUIControl.cs" id="3_4pmaj"]
 [ext_resource type="Script" uid="uid://bx4v4huqsajhi" path="res://Scripts/Utils/MapBaker.cs" id="5_jyqpd"]
 [ext_resource type="Texture2D" uid="uid://cdtcad2hb00wy" path="res://Games/Example game/Levels/Hub/hub_map_baked.png" id="6_sj84b"]
+[ext_resource type="PackedScene" path="res://Prefabs/Menus/Map/map_minimap.tscn" id="7_minimap"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_1g6bm"]
 radius = 25.0
@@ -15,6 +16,8 @@ process_mode = 2
 
 [node name="MapCanvasLayer" type="CanvasLayer" parent="." unique_id=204532305]
 layer = 100
+
+[node name="MapMinimap" parent="MapCanvasLayer" instance=ExtResource("7_minimap")]
 
 [node name="MapUI" type="Control" parent="MapCanvasLayer" unique_id=1142520450]
 z_index = 128

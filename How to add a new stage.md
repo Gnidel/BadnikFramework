@@ -33,3 +33,8 @@
 You're done with the basic setup. Now you can focus on the stage itself and unleash your creativity.
 Useful objects are marked with [Interactable], [Enemy] and [Item] tags in their names.
 You can also check TestStage.tscn for examples how to do certain things and tips.
+
+## Map support
+To enable the map and minimap, add `res://Prefabs/Menus/Map/map_system.tscn` in the stage.
+Assign the baked map texture to `MapTerrain` and set `MapBorders` to the matching world-space X/Z bounds.
+Add `MapUIIcon` objects for points of interest; enable `IsTracked` on icons that should remain visible at the minimap edge when outside its range.

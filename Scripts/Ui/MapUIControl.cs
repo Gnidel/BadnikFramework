@@ -23,6 +23,9 @@ public partial class MapUIControl : Node
     [Export]
     public float MapScaleMax = 5f;
 
+    [Export]
+    public bool KeepNorthUp = false;
+
     List<PlayerIcon> PlayerIcons = new List<PlayerIcon>();
     List<POIIcon> PoiIcons = new List<POIIcon>();
 
